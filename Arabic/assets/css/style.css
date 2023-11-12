@@ -918,16 +918,16 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Services
+# Departments
 --------------------------------------------------------------*/
-.services .icon-box {
+.departments .icon-box {
   text-align: center;
   border: 1px solid #d5e1ed;
   padding: 80px 20px;
   transition: all ease-in-out 0.3s;
 }
 
-.services .icon-box .icon {
+.departments .icon-box .icon {
   margin: 0 auto;
   width: 64px;
   height: 64px;
@@ -943,13 +943,13 @@ section {
   z-index: 2;
 }
 
-.services .icon-box .icon i {
+.departments .icon-box .icon i {
   color: #fff;
   font-size: 28px;
   transition: ease-in-out 0.3s;
 }
 
-.services .icon-box .icon::before {
+.departments .icon-box .icon::before {
   position: absolute;
   content: "";
   left: -8px;
@@ -963,41 +963,41 @@ section {
   z-index: -1;
 }
 
-.services .icon-box h4 {
+.departments .icon-box h4 {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 24px;
 }
 
-.services .icon-box h4 a {
+.departments .icon-box h4 a {
   color: #2c4964;
 }
 
-.services .icon-box p {
+.departments .icon-box p {
   line-height: 24px;
   font-size: 14px;
   margin-bottom: 0;
 }
 
-.services .icon-box:hover {
-  background: #1977cc;
-  border-color: #1977cc;
+.departments .icon-box:hover {
+  background: orange;
+  border-color: gold;
 }
 
-.services .icon-box:hover .icon {
+.departments .icon-box:hover .icon {
   background: #fff;
 }
 
-.services .icon-box:hover .icon i {
+.departments .icon-box:hover .icon i {
   color: #1977cc;
 }
 
-.services .icon-box:hover .icon::before {
+.departments .icon-box:hover .icon::before {
   background: rgba(255, 255, 255, 0.3);
 }
 
-.services .icon-box:hover h4 a,
-.services .icon-box:hover p {
+.departments .icon-box:hover h4 a,
+.departments .icon-box:hover p {
   color: #fff;
 }
 
@@ -1099,17 +1099,17 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Departments
+# Services
 --------------------------------------------------------------*/
-.departments {
+.services {
   overflow: hidden;
 }
 
-.departments .nav-tabs {
+.services .nav-tabs {
   border: 0;
 }
 
-.departments .nav-link {
+.services .nav-link {
   border: 0;
   padding: 12px 15px 12px 0;
   transition: 0.3s;
@@ -1120,41 +1120,41 @@ section {
   font-size: 15px;
 }
 
-.departments .nav-link:hover {
+.services .nav-link:hover {
   color: #1977cc;
 }
 
-.departments .nav-link.active {
+.services .nav-link.active {
   color: #1977cc;
   border-color: #1977cc;
 }
 
-.departments .tab-pane.active {
+.services .tab-pane.active {
   animation: fadeIn 0.5s ease-out;
 }
 
-.departments .details h3 {
+.services .details h3 {
   font-size: 26px;
   font-weight: 600;
   margin-bottom: 20px;
   color: #2c4964;
 }
 
-.departments .details p {
+.services .details p {
   color: #777777;
 }
 
-.departments .details p:last-child {
+.services .details p:last-child {
   margin-bottom: 0;
 }
 
 @media (max-width: 992px) {
-  .departments .nav-link {
+  .services .nav-link {
     border: 0;
     padding: 15px;
   }
 
-  .departments .nav-link.active {
+  .services .nav-link.active {
     color: #fff;
     background: #1977cc;
   }
