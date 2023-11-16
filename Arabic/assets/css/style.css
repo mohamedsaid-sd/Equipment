@@ -10,17 +10,17 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Arial", sans-serif;
   color: #444444;
 }
 
 a {
-  color: #1977cc;
+  color: gold;
   text-decoration: none;
 }
 
 a:hover {
-  color: #3291e6;
+  color: gold;
   text-decoration: none;
 }
 
@@ -30,7 +30,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -80,7 +80,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #1977cc;
+  background: black;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -94,7 +94,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #298ce5;
+  background:orange;
   color: #fff;
 }
 
@@ -113,9 +113,10 @@ h6 {
 #topbar {
   background: rgb(248, 144, 18);
   height: 40px;
-  font-size: 14px;
+  font-size: 15px;
   transition: all 0.5s;
   z-index: 996;
+  font-weight: bold;
 }
 
 #topbar.topbar-scrolled {
@@ -124,23 +125,23 @@ h6 {
 
 #topbar .contact-info a {
   line-height: 1;
-  color: gainsboro;
+  color: black;
   transition: 0.3s;
 }
 
 #topbar .contact-info a:hover {
-  color: #1977cc;
+  color: #fff;
 }
 
 #topbar .contact-info i {
-  color: #1977cc;
+  color: #111;
   padding-right: 4px;
   margin-left: 15px;
   line-height: 0;
 }
 
 #topbar .contact-info i:first-child {
-  margin-left: 0;
+  margin-right: 0;
 }
 
 #topbar .social-links a {
@@ -152,7 +153,7 @@ h6 {
 }
 
 #topbar .social-links a:hover {
-  color: #1977cc;
+  color: black;
 }
 
 #topbar .social-links a:first-child {
@@ -250,14 +251,16 @@ h6 {
 
 .navbar a,
 .navbar a:focus {
+  font-size: 10px;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 14px;
-  color: #2c4964;
+  color: #000;
   white-space: nowrap;
   transition: 0.3s;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid orange;
   padding: 5px 2px;
 }
 
@@ -272,8 +275,8 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #1977cc;
-  border-color: #1977cc;
+  color: #777;
+  border-color: #777;
 }
 
 .navbar .dropdown ul {
@@ -286,7 +289,7 @@ h6 {
   z-index: 99;
   opacity: 0;
   visibility: hidden;
-  background: #fff;
+  background: #f6f5f5;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
 }
@@ -311,7 +314,8 @@ h6 {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  color: #1977cc;
+  color: #fff;
+  background-color: orange;
 }
 
 .navbar .dropdown:hover>ul {
@@ -415,7 +419,7 @@ h6 {
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #1977cc;
+  color: #555;
 }
 
 .navbar-mobile .getstarted,
@@ -688,7 +692,7 @@ section {
 }
 
 .why-us .content .more-btn:hover {
-  color: #1977cc;
+  color: orange;
   background: #fff;
 }
 
@@ -703,7 +707,7 @@ section {
 
 .why-us .icon-boxes .icon-box i {
   font-size: 40px;
-  color: #1977cc;
+  color: orange;
   margin-bottom: 30px;
 }
 
@@ -722,20 +726,22 @@ section {
 # About
 --------------------------------------------------------------*/
 .about .icon-boxes h4 {
-  font-size: 18px;
-  color: #4b7dab;
-  margin-bottom: 15px;
+  font-size: 20px;
+  color: orange;
+  margin-bottom: 10px;
 }
 
 .about .icon-boxes h3 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #2c4964;
-  margin-bottom: 15px;
+   font-size: 25px;
+  color: orange;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .about .icon-box {
-  margin-top: 40px;
+  margin-top: 20px;
+  padding: 10px;
+  border-bottom: solid 2px black;
 }
 
 .about .icon-box .icon {
@@ -767,8 +773,8 @@ section {
 .about .icon-box .title {
   margin-left: 85px;
   font-weight: 700;
-  margin-bottom: 10px;
-  font-size: 18px;
+  margin-bottom: 5px;
+  font-size: 20px;
 }
 
 .about .icon-box .title a {
@@ -783,13 +789,14 @@ section {
 .about .icon-box .description {
   margin-left: 85px;
   line-height: 24px;
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: normal;
 }
 
 .about .video-box {
   background: url("../img/about.jpg") center center no-repeat;
   background-size: cover;
-  min-height: 500px;
+  height: 490px;
 }
 
 .about .play-btn {
@@ -1113,20 +1120,23 @@ section {
   border: 0;
   padding: 12px 15px 12px 0;
   transition: 0.3s;
-  color: #2c4964;
+  color: #fff;
   border-radius: 0;
   border-right: 2px solid #ebf1f6;
   font-weight: 600;
   font-size: 15px;
+  font-weight: bold;
+  background-color: orange;
+  border-radius: 20px;
 }
 
 .services .nav-link:hover {
-  color: #1977cc;
+  color: black;
 }
 
 .services .nav-link.active {
-  color: #1977cc;
-  border-color: #1977cc;
+  color: gold;
+  border-color: black;
 }
 
 .services .tab-pane.active {
@@ -1134,8 +1144,8 @@ section {
 }
 
 .services .details h3 {
-  font-size: 26px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: bold;
   margin-bottom: 20px;
   color: #2c4964;
 }
@@ -1152,11 +1162,15 @@ section {
   .services .nav-link {
     border: 0;
     padding: 15px;
+    width: 100%;
+    margin: 0px;
+    background-color: #fff;
+    color: black;
   }
 
   .services .nav-link.active {
-    color: #fff;
-    background: #1977cc;
+    color: #eee;
+    background-color: orange;
   }
 }
 
