@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Equipation Compoany</title>
+  <title> طلب صيانة </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -63,56 +63,7 @@
     </div>
   </div>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
-
- 
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">الرئيسية</a></li>
-          <li><a class="nav-link scrollto" href="#about">من نحن</a></li>
-          <li><a class="nav-link scrollto" href="#departments">الاقسام</a></li>
-          <li><a class="nav-link scrollto" href="#services"> مجالات عملنا </a></li>
-          <li><a class="nav-link scrollto" href="#parenter"> شركائنا </a></li>
-          <li><a class="nav-link scrollto" href="#cleints"> عملاءنا</a></li>
-          <li><a class="nav-link scrollto" href="#doctors">المنتجات</a></li>
-          <li class="dropdown"><a href="#"><span> تقديم طلب </span>  <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">طلب تأجير</a></li>
-              <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li> -->
-              <li><a href="#">طلب توظيف</a></li>
-              <li><a href="#">طلب تشغيل</a></li>
-              <li><a href="#">طلب صيانة</a></li>
-              <li><a href="#">طلب ترحيل</a></li>
-              
-    
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">تواصل معنا</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
- <!--      <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
-
-           <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/logo.jpg" style="width: 150px;"></a></h1>
-
-    </div>
-  </header><!-- End Header -->
-
- 
+  <?php include 'mainlist.php'; ?>
 
   <main id="main">
 
@@ -125,9 +76,9 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>التواصل معنا </h2>
-          <p> يسعدنا في شركة ايكيوبيشن التواصل مع عملائنا في كل الاوقات , ويسعدنا دوما الرد علي رسائلكم مقترحاتكم وارائكم </p>
-        </div>
+        <br/>
+          <h2> طلب صيانة </h2>
+       </div>
       </div>
 
   
@@ -141,7 +92,7 @@
 
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
 
-                <h1 for="textAreaRemark"> استماره طلب صيانه</h1>
+                <h3 for="textAreaRemark"> استماره طلب صيانه</h3>
 
               <div class="row">
                 <div class="col-md-4 form-group">
@@ -203,7 +154,7 @@
       <div class="form-group mt-3">
         <textarea class="form-control" name="message" rows="5" placeholder="وصف المشكله " required></textarea>
       </div>
-      <h1 for="textAreaRemark">بيانات الموقع </h1>
+      <h3 for="textAreaRemark">بيانات الموقع </h3>
 
       <div class="row">
         <div class="col-md-4 form-group mt-3 mt-md-0">
@@ -240,7 +191,7 @@
               </div>
              
 
-              <h1 for="textAreaRemark">بيانات العميل </h1>
+              <h3 for="textAreaRemark">بيانات العميل </h3>
 
 
               <div class="row">
@@ -263,7 +214,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit"> إرسال </button></div>
+              <div class="text-center"><button type="submit"> إرسال الطلب </button></div>
             </form>
 
           </div>
