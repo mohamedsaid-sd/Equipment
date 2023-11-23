@@ -37,7 +37,91 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<script type="text/javascript">
+  // ready to go with js function 
 
+   // deal with period  
+   function select_period(){
+     var type = document.getElementById("period").value;
+      if(type == "hand"){
+      document.getElementById("periodhide").style.display = "block";
+      }else{
+      document.getElementById("periodhide").value = "";
+      document.getElementById("periodhide").style.display = "none";
+      }
+   }
+
+   //deal with hour
+   function select_hour(){
+     var type = document.getElementById("hour").value;
+      if(type == "hour"){
+      document.getElementById("hourhide").style.display = "block";
+      }else{
+      document.getElementById("hourhide").value = "";
+      document.getElementById("hourhide").style.display = "none";
+      }
+   }
+
+  //deal with hour of day
+   function select_hourday(){
+     var type = document.getElementById("hourday").value;
+      if(type == "hand"){
+      document.getElementById("hourdayhide").style.display = "block";
+      }else{
+      document.getElementById("hourdayhide").value = "";
+      document.getElementById("hourdayhide").style.display = "none";
+      }
+   }
+
+
+    // deal with filed
+    function select_field(){
+     var type = document.getElementById("field").value;
+      if(type == "hand"){
+      document.getElementById("fieldhide").style.display = "block";
+      }else{
+      document.getElementById("fieldhide").value = "";
+      document.getElementById("fieldhide").style.display = "none";
+      }
+   }
+
+
+    // deal with old
+    function select_old(){
+     var type = document.getElementById("old").value;
+      if(type == "old"){
+      document.getElementById("oldhide").style.display = "block";
+      }else{
+      document.getElementById("oldhide").value = "";
+      document.getElementById("oldhide").style.display = "none";
+      }
+   }
+
+
+      // deal with location side
+   function select_side(){
+     var type = document.getElementById("side").value;
+      if(type == "company"){
+      document.getElementById("sidehide").style.display = "block";
+      }else{
+      document.getElementById("sidehide").value = "";
+      document.getElementById("sidehide").style.display = "none";
+      }
+   }
+
+   // deal with work with us 
+   function select_wwus(){
+     var type = document.getElementById("wwus").value;
+      if(type == "yes"){
+      document.getElementById("wwushide").style.display = "block";
+      }else{
+      document.getElementById("wwushide").value = "";
+      document.getElementById("wwushide").style.display = "none";
+      }
+   }
+
+
+</script>
 <body>
 
   <!-- ======= Top Bar ======= -->
@@ -50,7 +134,6 @@
 
         <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
         <i class="bi bi-phone"></i> +249 6445
-
 
       </div>
       <div class="d-none d-lg-flex social-links align-items-center">
@@ -107,27 +190,27 @@
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                   مدة العمل <br/>
-                  <select class="form-control mr-1" name="period" id="period" required>
+                  <select class="form-control mr-1" name="period" id="period" onchange="select_period();" required>
                     <option disabled selected> -- اختار المدة  -- </option>
                     <option> شهر </option>
-                    <option>  3 شهور </option>
-                    <option>  سنه </option>
-                    <option>  ادخال يدوي </option>
+                    <option> 3 شهور </option>
+                    <option> سنه </option>
+                    <option value="hand"> ادخال يدوي </option>
                   </select>
 
-                  <input id="" type="text" class="form-control" placeholder=" ادخل المدة  يدويا " >
+                  <input id="periodhide" type="text" class="form-control" placeholder=" ادخل المدة  يدويا " style="display: none;">
 
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                     ساعات العمل <br/>
-                  <select class="form-control mr-1" name="period" id="period" required>
+                  <select class="form-control mr-1" name="hour" id="hour" onchange="select_hour();" required>
                     <option disabled selected> -- اختار المدة  -- </option>
                     <option> ايجار بالشهر </option>
-                    <option> ايجار بالساعة </option>
+                    <option value="hour"> ايجار بالساعة </option>
                   </select>
 
-                  <input id="" type="text" class="form-control" placeholder=" ادخل عدد  الساعات " >
+                  <input id="hourhide" type="text" class="form-control" placeholder=" ادخل عدد  الساعات " style="display: none;">
                 </div>
 
               </div>
@@ -137,17 +220,17 @@
      <div class="form-group col-md-4">
         <label>ساعات العمل اليومية </label>
 
-          <select class="form-control mr-1" id="time" name="time" required>
+          <select class="form-control mr-1" id="hourday" name="hourday" onchange="select_hourday();" required>
             <option value="" disabled selected> -- اختر الساعات -- </option>
             <option value="10">10</option>
             <option value="12">12</option>
             <option value="15">15</option>
             <option value="16">16</option>
             <option value="20">20</option>
-            <option value="20"> ادخال يدوي </option>
+            <option value="hand"> ادخال يدوي </option>
           </select>
 
-          <input id="" type="text" class="form-control" placeholder=" ادخل عدد الساعات يدوي " required>
+          <input id="hourdayhide" type="text" class="form-control" placeholder=" ادخل عدد الساعات يدوي " required style="display: none;">
         
 
       </div>
@@ -182,44 +265,164 @@
        
         <div class="col-md-4 form-group mt-3 mt-md-0">
               مجال العمل <br/>
-                  <select class="form-control mr-1" name="period" id="period" required>
+                  <select class="form-control mr-1" name="field" id="field" onchange="select_field();" required>
                     <option disabled selected> -- اختار المدة  -- </option>
                     <option> التعدين </option>
                     <option>  الاسمنت </option>
                     <option>  الزراعة </option>
-                    <option>  ادخال يدوي </option>
+                    <option value="hand">  ادخال يدوي </option>
                   </select>
 
-                  <input id="" type="text" class="form-control" placeholder=" ادخل مجال العمل  يدويا " >
+                  <input id="fieldhide" type="text" class="form-control" placeholder=" ادخل مجال العمل  يدويا " style="display: none;">
           </div>
 
-        <div class="form-group col-md-4">
-           <label> جاهزيه الموقع </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="ready" name="ready" required>
-               <option value="" disabled selected></option>
-               <option value="1">تيم للصيانه</option>
-               <option value="2">سائقين</option>
-               <option value="3">مشرف متابعه</option>
-             </select>
-           
-           </div>
-         </div>
-   
          <div class="form-group col-md-4">
            <label>  عمر الموقع </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="workfields" name="workfields" required>
+             <select class="form-control mr-1" id="old" name="old" onchange="select_old();" required>
                <option value="" disabled selected> -- اختار عمر الموقع -- </option>
-               <option value="1"> جديد </option>
-               <option value="2"> قديم </option>
+               <option value="new"> جديد </option>
+               <option value="old"> قديم </option>
              </select>
-
-             <input id="" type="date" class="form-control" placeholder=" تاريخ بداية العمل " >
-           
-           </div>
+             <span id="oldhide" style="display: none;">
+              حدد تاريخ بداية العمل :  <br/>
+             <input type="date" class="form-control" placeholder=" تاريخ بداية العمل " >
+            </span>      
          </div>
               </div>
+
+
+          <div class="row">
+
+          <label> <b>جاهزيه الموقع : </b> </label>
+          
+          <div class="form-group col-md-4">
+           <label> السكن </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد مستوي السكن -- </option>
+               <option value="1"> ممتاز </option>
+               <option value="2"> جيد </option>
+               <option value="3"> عادي </option>
+             </select>
+           </div>
+         </div>
+
+
+          <div class="form-group col-md-4">
+           <label> الاعاشة </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد مستوي الاعاشة -- </option>
+               <option value="1"> ممتازة </option>
+               <option value="2"> جيدة </option>
+               <option value="3"> عادية </option>
+             </select>
+           </div>
+         </div>
+
+          <div class="form-group col-md-4">
+           <label> الانترنت </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد توفر الانترنت -- </option>
+               <option value="1"> متوفر </option>
+               <option value="2"> غير متوفر </option>
+             </select>
+           </div>
+         </div>
+            
+          </div>
+
+       <div class="row">
+            
+        <div class="form-group col-md-4">
+           <label> شبكة الاتصالات </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد توفر الشبكة -- </option>
+               <option value="1"> متوفرة </option>
+               <option value="2"> غير متوفرة </option>
+             </select>
+           </div>
+         </div>
+
+         <div class="form-group col-md-4">
+           <label>  الورشة </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد توفر الورشة -- </option>
+               <option value="1"> متوفرة </option>
+               <option value="2"> غير متوفرة </option>
+             </select>
+           </div>
+         </div>
+
+          <div class="form-group col-md-4">
+           <label> الكمبرسون </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- هل يوجد كمبرسون -- </option>
+               <option value="1"> يوجد </option>
+               <option value="2"> لا يوجد </option>
+             </select>
+           </div>
+         </div>
+
+          </div>
+
+          <div class="row">
+
+          <div class="form-group col-md-4">
+           <label> الجاز </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد توفر الجاز -- </option>
+               <option value="1"> متوفر </option>
+               <option value="2"> غير متوفر </option>
+             </select>
+           </div>
+         </div>
+            
+
+           <div class="form-group col-md-4">
+           <label> المياة </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد توفر المياة   -- </option>
+               <option value="1"> متوفرة </option>
+               <option value="2"> غير متوفرة  </option>
+             </select>
+           </div>
+         </div>
+
+          <div class="form-group col-md-4">
+           <label> الكهرباء </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد توفر الكهرباء -- </option>
+               <option value="1"> متوفرة </option>
+               <option value="2"> غير متوفرة  </option>
+             </select>
+           </div>
+         </div>
+          </div>
+
+          <div class="row">
+
+             <div class="col-md-4 form-group">
+                  <input type="text" name="city" class="form-control" id="name" placeholder="  اقرب مدينة " required>
+              </div>
+
+              <div class="col-md-4 form-group">
+                  <input type="text" name="market" class="form-control" id="name" placeholder="  اقرب سوق " required>
+              </div>
+
+              <div class="col-md-4 form-group">
+                  <input type="text" name="road" class="form-control" id="name" placeholder="  اقرب طريق معبد " required>
+              </div>
+
+            
+          </div>
              
 
                 <h3 for="textAreaRemark">بيانات العميل </h3>
