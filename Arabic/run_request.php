@@ -29,15 +29,44 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Medilab
-  * Updated: Jun 23 2023 with Bootstrap v5.3.0
-  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
+<script type="text/javascript">
+      // deal with period  
+   function select_period(){
+     var type = document.getElementById("period").value;
+      if(type == "hand"){
+      document.getElementById("periodhide").style.display = "block";
+      }else{
+      document.getElementById("periodhide").value = "";
+      document.getElementById("periodhide").style.display = "none";
+      }
+   }
 
+         // deal with location side
+   function select_side(){
+     var type = document.getElementById("side").value;
+      if(type == "company"){
+      document.getElementById("sidehide").style.display = "block";
+      }else{
+      document.getElementById("sidehide").value = "";
+      document.getElementById("sidehide").style.display = "none";
+      }
+   }
+
+      // deal with work with us 
+   function select_wwus(){
+     var type = document.getElementById("wwus").value;
+      if(type == "yes"){
+      document.getElementById("wwushide").style.display = "block";
+      }else{
+      document.getElementById("wwushide").value = "";
+      document.getElementById("wwushide").style.display = "none";
+      }
+   }
+
+
+
+</script>
 <body>
 
   <!-- ======= Top Bar ======= -->
@@ -86,23 +115,34 @@
         <div class="row mt-5">
 
    
-
           <div class="col-lg-12 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="run_request.php" method="post" role="form">
 
                 <h3 for="textAreaRemark">مطلوبات التشغيل</h3>
 
               <div class="row">
                 <div class="col-md-4 form-group">
-                  <input type="text" name="Type" class="form-control" id="Type" placeholder=" نوع العمل " required>
+                  <br/>
+                  <input type="text" name="work_type" class="form-control" id="work_type" placeholder=" نوع العمل " required>
                 </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="timeofwork" id="timeofwork" placeholder=" مده العمل  " required>
+
+                <div class="col-md-4 form-group">
+                    مدة العمل <br/>
+                  <select class="form-control mr-1" name="period" id="period" onchange="select_period();" required>
+                    <option disabled selected value=""> -- اختار المدة  -- </option>
+                    <option> شهر </option>
+                    <option> 3 شهور </option>
+                    <option> سنه </option>
+                    <option value="hand"> ادخال يدوي </option>
+                  </select>
+
+                  <input id="periodhide" name="periodhide" type="text" class="form-control" placeholder=" ادخل مدة العمل يدويا " style="display: none;" >
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="Sashinumber" id="Sashinumber" placeholder="رقم الساشي  " required>
+                  <br/>
+                    <input type="text" class="form-control" name="chassis" id="chassis" placeholder="رقم الساشي  " required>
                   </div>
 
               </div>
@@ -112,8 +152,8 @@
      <div class="form-group col-md-4">
         <label>ساعات العمل </label>
         <div class="d-flex flex-row justify-content-between align-items-center">
-          <select class="form-control mr-1" id="time" name="time" required>
-            <option value="" disabled selected>10</option>
+          <select class="form-control mr-1" id="hour" name="hour" required>
+            <option value="" disabled selected> -- حدد الساعات -- </option>
             <option value="10">10</option>
             <option value="12">12</option>
             <option value="15">15</option>
@@ -127,10 +167,10 @@
         <label> مالكيه الاليه </label>
         <div class="d-flex flex-row justify-content-between align-items-center">
           <select class="form-control mr-1" id="owners" name="owners" required>
-            <option value="" disabled selected></option>
-            <option value="1">مالك الاليه</option>
-            <option value="2">مستثمر</option>
-            <option value="3">وكيل</option>
+            <option value="" disabled selected> -- حدد الملكية -- </option>
+            <option>مالك الاليه</option>
+            <option>مستثمر</option>
+            <option>وكيل</option>
           </select>
         
         </div>
@@ -142,10 +182,10 @@
         <label>  نوع التشغيل </label>
         <div class="d-flex flex-row justify-content-between align-items-center">
           <select class="form-control mr-1" id="Operatingtype" name="Operatingtype" required>
-            <option value="" disabled selected></option>
-            <option value="1"> ساعات</option>
-            <option value="2">انتاج</option>
-            <option value="3">الاثنين معا</option>
+            <option value="" disabled selected> -- حدد نظام التشغيل -- </option>
+            <option> ساعات</option>
+            <option>انتاج</option>
+            <option>الاثنين معا</option>
           </select>
         
         </div>
@@ -156,32 +196,37 @@
 
       <div class="row">
         <div class="col-md-4 form-group">
-          <input type="text" name="Type" class="form-control" id="location" placeholder="  موقع الاليه " required>
+          <br/>
+          <input type="text" name="location" class="form-control" id="location" placeholder="  موقع الاليه " required>
         </div>
         <div class="col-md-4 form-group mt-3 mt-md-0">
-          <input type="text" class="form-control" name="year" id="Counter" placeholder="عداد الاليه   " required>
+          <br/>
+          <input type="text" class="form-control" name="counter" id="counter" placeholder="عداد الاليه   " required>
         </div>
 
         <div class="form-group col-md-4">
             <label for="inputDate">سنه الصنع</label>
-            <input type="date" class="form-control" id="inputDate" name="date" required />
+            <input type="date" class="form-control" id="mdate" name="mdate" required/>
           </div>
       </div>
 
       <h3 for="textAreaRemark">بيانات الموقع </h3>
 
       <div class="row">
+        
         <div class="col-md-4 form-group mt-3 mt-md-0">
-            <input type="text" class="form-control" name="lastloc" id="Counter" placeholder=" اخر موقع عمل   " required>
+          <br/>
+            <input type="text" class="form-control" name="lastloc" id="lastloc" placeholder=" اخر موقع عمل   " required>
           </div>
+
         <div class="form-group col-md-4">
            <label> جاهزيه الاليه </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="ready" required>
-               <option value="" disabled selected></option>
-               <option value="1">تيم للصيانه</option>
-               <option value="2">سائقين</option>
-               <option value="3">مشرف متابعه</option>
+               <option value="" disabled selected> -- حدد جاهزية الالية -- </option>
+               <option>تيم للصيانه</option>
+               <option>سائقين</option>
+               <option>مشرف متابعه</option>
              </select>
            
            </div>
@@ -191,10 +236,10 @@
            <label>  مجالات العمل </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="workfields" name="workfields" required>
-               <option value="" disabled selected></option>
-               <option value="1">التعدين </option>
-               <option value="2">الزراعه</option>
-               <option value="3">الاسمنت</option>
+               <option value="" disabled selected> -- حدد مجال العمل -- </option>
+               <option>التعدين </option>
+               <option>الزراعه</option>
+               <option>الاسمنت</option>
              </select>
            
            </div>
@@ -202,30 +247,120 @@
               </div>
              
 
-              <h3 for="textAreaRemark">بيانات العميل </h3>
+               <h3 for="textAreaRemark">بيانات العميل </h3>
 
 
               <div class="row">
+
                 <div class="col-md-4 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="  الاسم " required>
                 </div>
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="number" id="number" placeholder=" رقم الهاتف   " required>
+                  <input type="text" class="form-control" name="email" id="email" placeholder=" الايميل " required>
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="email" id="email" placeholder="الايميل   " required>
+                    <input type="text" class="form-control" name="job" id="job" placeholder=" الوظيفة " required>
                   </div>
 
               </div>
 
+              <div class="row">
+
+              <div class="col-md-4 form-group">
+                <lable> الجهه التابع لها </lable> 
+                <select class="form-control mr-1" name="side" id="side" onchange="select_side();" required>
+                <option value="" disabled selected> -- اختار الجهه -- </option>
+                <option value="company"> شركة </option>
+                <option value="person"> فرد </option>
+                </select>  
+                <input id="sidehide" type="text" class="form-control" placeholder=" ادخل اسم الشركة يدوي " style="display: none;" />
+              </div>
+
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+              <lable> هل  سبق لك العمل معنا </lable> 
+                <select class="form-control mr-1" name="wwus" id="wwus" onchange="select_wwus();" required>
+                <option value="" disabled selected> -- اختار الاجابة -- </option>
+                <option value="yes"> نعم </option>
+                <option value="no"> لا </option>
+                </select>
+
+               <input id="wwushide" type="text" class="form-control" placeholder=" في اي موقع عملت معنا " style="display: none;" />
+               
+
+              </div>
+
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+              <div class="form-group">
+              <label for="exampleFormControlSelect2">طريقة التعرف علينا</label>
+              <select multiple class="form-control" id="exampleFormControlSelect2">
+                <option> الفيسبوك </option>
+                <option> التويتر </option>
+                <option> الانستغرام </option>
+                <option> عن طريق صديق </option>
+                <option> عن طريق شركه  </option>
+                <option>  اخري  </option>
+              </select>
+              </div>
+             </div>
+
+
               
               <div class="my-3">
-                <div class="loading">Loading</div>
+                
                 <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="sent-message">
+
+                  <?php
+
+                  if(isset($_POST['send'])){
+                        // نوع العمل 
+                        $work_type = $_POST['work_type'];
+                        // مدة العمل
+                        $period    = $_POST['period'];
+                        if($period == "hand"){
+                          $period = $_POST['periodhide'];
+                        }
+                        // رقم الشاسي
+                        $chassis = $_POST['chassis'];
+                        // ساعات العمل 
+                        $hour    = $_POST['hour'];
+                        // ملكية الآلية
+                        $owners  = $_POST['owners'];
+                        // نوع التشغيل
+                        $Operatingtype = $_POST['Operatingtype'];
+                        //  موقع الآلية
+                        $location    = $_POST['location'];
+                        // عداد الآلية
+                        $counter     = $_POST['counter'];
+                        // سنه التصنيع
+                        $mdate       = $_POST['mdate'];
+                        // اخر موقع
+                        $lastloc     = $_POST['lastloc'];
+                        // جاهزية  الموقع
+                        $ready       = $_POST['ready'];
+                        // مجالات العمل
+                        $workfields   = $_POST['workfields'];
+                        // اسم العميل
+                        $name        = $_POST['name'];
+                        // البريد الالكتروني 
+                        $email       = $_POST['email'];
+                        // الوظيفة 
+                        $job         = $_POST['job'];
+                        // الجهه
+                        $side        = $_POST['side'];
+                        // العمل معنا 
+                        $wwus        = $_POST['wwus'];
+
+                        echo "<div class='alert alert-success'>";
+                        echo $work_type ."-". $period ."-". $chassis ."-". $hour ."-". $owners ."-". $Operatingtype ."-". $location ."-". $counter ."-". $mdate  ."-". $lastloc ."-". $ready ."-". $workfields ."-". $name ."-". $email ."-". $job ."-". $side ."-". $wwus;
+                        echo "</div>";
+                  }
+                   ?>
+
+                </div>
               </div>
-              <div class="text-center"><button type="submit"> إرسال طلب </button></div>
+              <div class="text-center"><button type="submit" name="send" style="background-color:orange;border-radius:20px;padding:10px;"> إرسال طلب </button></div>
             </form>
 
           </div>
