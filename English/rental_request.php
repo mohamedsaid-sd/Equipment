@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="rtl">
+<html dir="ltr">
 
 <head>
   <meta charset="utf-8">
@@ -159,7 +159,7 @@
       <div class="container">
         <br/>
         <div class="section-title">
-          <h2> طلب تاجير  </h2>
+          <h2>  Data of Rental Request  </h2>
          </div>
       </div>
 
@@ -174,43 +174,43 @@
 
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
 
-                <h3 for="textAreaRemark">مطلوبات التاجير</h3>
+                <h3 for="textAreaRemark">Data of Rental Request </h3>
 
             <div class="row">
                
                 <div class="col-md-4 form-group">
-                  نوع العمل <br/>
+                WORK TYPE <br/>
                   <select class="form-control mr-1" name="type" id="type" required>
-                    <option disabled selected> -- اختار النوع  -- </option>
-                    <option> جردل </option>
-                    <option> جاك همر </option>
-                    <option> جردل + جاك همر </option>
+                    <option disabled selected> --  Choose the type  -- </option>
+                    <option> bucket </option>
+                    <option>  jackhummer </option>
+                    <option>bucket + jackhummer+   </option>
                   </select>
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                  مدة العمل <br/>
+                DURATION <br/>
                   <select class="form-control mr-1" name="period" id="period" onchange="select_period();" required>
-                    <option disabled selected> -- اختار المدة  -- </option>
-                    <option> شهر </option>
-                    <option> 3 شهور </option>
-                    <option> سنه </option>
-                    <option value="hand"> ادخال يدوي </option>
+                    <option disabled selected> --  Choose the duration  -- </option>
+                    <option> month </option>
+                    <option> 3 month  </option>
+                    <option> year </option>
+                    <option value="hand">  Manual entry </option>
                   </select>
 
-                  <input id="periodhide" type="text" class="form-control" placeholder=" ادخل المدة  يدويا " style="display: none;">
+                  <input id="periodhide" type="text" class="form-control" placeholder="    Manual entry " style="display: none;">
 
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                    ساعات العمل <br/>
+                WORK HOURS <br/>
                   <select class="form-control mr-1" name="hour" id="hour" onchange="select_hour();" required>
-                    <option disabled selected> -- اختار المدة  -- </option>
-                    <option> ايجار بالشهر </option>
-                    <option value="hour"> ايجار بالساعة </option>
+                    <option disabled selected> --   Choose the duration  -- </option>
+                    <option>  monthly rent </option>
+                    <option value="hour"> num hours  </option>
                   </select>
 
-                  <input id="hourhide" type="text" class="form-control" placeholder=" ادخل عدد  الساعات " style="display: none;">
+                  <input id="hourhide" type="text" class="form-control" placeholder="  manual entry hour   " style="display: none;">
                 </div>
 
               </div>
@@ -218,74 +218,74 @@
      <div class="row">
 
      <div class="form-group col-md-4">
-        <label>ساعات العمل اليومية </label>
+        <label>DAILY WORK HOURS   </label>
 
           <select class="form-control mr-1" id="hourday" name="hourday" onchange="select_hourday();" required>
-            <option value="" disabled selected> -- اختر الساعات -- </option>
+            <option value="" disabled selected> -- Choose  -- </option>
             <option value="10">10</option>
             <option value="12">12</option>
             <option value="15">15</option>
             <option value="16">16</option>
             <option value="20">20</option>
-            <option value="hand"> ادخال يدوي </option>
+            <option value="hand"> manual entry  </option>
           </select>
 
-          <input id="hourdayhide" type="text" class="form-control" placeholder=" ادخل عدد الساعات يدوي " required style="display: none;">
+          <input id="hourdayhide" type="text" class="form-control" placeholder="  manual entry Hour   " required style="display: none;">
         
 
       </div>
 
       <div class="form-group col-md-4">
-        <label>  بداية العمل المتوقعة </label>
+        <label>    EXPECTED WORK START </label>
          <input type="date" class="form-control" id="inputDate" name="date" required />
          
       </div>
       </div>
 
-    <h3 for="textAreaRemark">بيانات الموقع</h3>
+    <h3 for="textAreaRemark"> SITE DESCRIPTION:</h3>
 
 
       <div class="row">
         <div class="col-md-4 form-group">
-           مكان العمل <br/>
-          <input type="text" name="Type" class="form-control" id="location" placeholder="   الولاية " required>
+        WORK LOCATION <br/>
+          <input type="text" name="Type" class="form-control" id="location" placeholder="   state " required>
         </div>
         <div class="col-md-4 form-group mt-3 mt-md-0">
           <br/>
-          <input type="text" class="form-control" name="year" id="Counter" placeholder="   المنطقة " required>
+          <input type="text" class="form-control" name="year" id="Counter" placeholder="   region " required>
         </div>
 
         <div class="form-group col-md-4">
           <br/>
-            <input type="text" class="form-control" name="year" id="Counter" placeholder="   اقرب سوق " required>
+       <input type="text" class="form-control" name="year" id="Counter" placeholder=" distance from nearest market " required>
           </div>
       </div>
 
       <div class="row">
        
         <div class="col-md-4 form-group mt-3 mt-md-0">
-              مجال العمل <br/>
+        WORK FIELD <br/>
                   <select class="form-control mr-1" name="field" id="field" onchange="select_field();" required>
-                    <option disabled selected> -- اختار المدة  -- </option>
-                    <option> التعدين </option>
-                    <option>  الاسمنت </option>
-                    <option>  الزراعة </option>
-                    <option value="hand">  ادخال يدوي </option>
+                    <option disabled selected> -- Choose   -- </option>
+                    <option> mining </option>
+                    <option>  cement </option>
+                    <option>  agricultural </option>
+                    <option value="hand">   manual entry </option>
                   </select>
 
-                  <input id="fieldhide" type="text" class="form-control" placeholder=" ادخل مجال العمل  يدويا " style="display: none;">
+                  <input id="fieldhide" type="text" class="form-control" placeholder="   manual entry " style="display: none;">
           </div>
 
          <div class="form-group col-md-4">
-           <label>  عمر الموقع </label>
+           <label>   SITE AGE </label>
              <select class="form-control mr-1" id="old" name="old" onchange="select_old();" required>
-               <option value="" disabled selected> -- اختار عمر الموقع -- </option>
-               <option value="new"> جديد </option>
-               <option value="old"> قديم </option>
+               <option value="" disabled selected> --   Choose -- </option>
+               <option value="new"> new </option>
+               <option value="old"> old </option>
              </select>
              <span id="oldhide" style="display: none;">
-              حدد تاريخ بداية العمل :  <br/>
-             <input type="date" class="form-control" placeholder=" تاريخ بداية العمل " >
+             work starting date (manual entry/calendar) :  <br/>
+             <input type="date" class="form-control" placeholder="   work starting date (manual entry/calendar) " >
             </span>      
          </div>
               </div>
@@ -293,40 +293,40 @@
 
           <div class="row">
 
-          <label> <b>جاهزيه الموقع : </b> </label>
+          <label> <b>JOB SITE READINESS  : </b> </label>
           
           <div class="form-group col-md-4">
-           <label> السكن </label>
+           <label> living </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="ready" required>
-               <option value="" disabled selected> -- حدد مستوي السكن -- </option>
-               <option value="1"> ممتاز </option>
-               <option value="2"> جيد </option>
-               <option value="3"> عادي </option>
+               <option value="" disabled selected> --   Choose -- </option>
+               <option value="1"> excellent </option>
+               <option value="2"> good </option>
+               <option value="3"> normal </option>
              </select>
            </div>
          </div>
 
 
           <div class="form-group col-md-4">
-           <label> الاعاشة </label>
+           <label> subsistence </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="ready" required>
-               <option value="" disabled selected> -- حدد مستوي الاعاشة -- </option>
-               <option value="1"> ممتازة </option>
-               <option value="2"> جيدة </option>
-               <option value="3"> عادية </option>
+               <option value="" disabled selected> --   Choose -- </option>
+               <option value="1"> excellent </option>
+               <option value="2"> good </option>
+               <option value="3"> normal </option>
              </select>
            </div>
          </div>
 
           <div class="form-group col-md-4">
-           <label> الانترنت </label>
+           <label> internet </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="ready" required>
-               <option value="" disabled selected> -- حدد توفر الانترنت -- </option>
-               <option value="1"> متوفر </option>
-               <option value="2"> غير متوفر </option>
+               <option value="" disabled selected> --   Choose -- </option>
+               <option value="1"> available </option>
+               <option value="2"> not available </option>
              </select>
            </div>
          </div>
@@ -336,34 +336,34 @@
        <div class="row">
             
         <div class="form-group col-md-4">
-           <label> شبكة الاتصالات </label>
+           <label>  communication </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="ready" required>
-               <option value="" disabled selected> -- حدد توفر الشبكة -- </option>
-               <option value="1"> متوفرة </option>
-               <option value="2"> غير متوفرة </option>
+               <option value="" disabled selected> --  Choose  -- </option>
+               <option value="1"> available </option>
+               <option value="2">  not available </option>
              </select>
            </div>
          </div>
 
          <div class="form-group col-md-4">
-           <label>  الورشة </label>
+           <label>  workshop </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="ready" required>
-               <option value="" disabled selected> -- حدد توفر الورشة -- </option>
-               <option value="1"> متوفرة </option>
-               <option value="2"> غير متوفرة </option>
+               <option value="" disabled selected> --   Choose -- </option>
+               <option value="1"> available </option>
+               <option value="2">   not available </option>
              </select>
            </div>
          </div>
 
           <div class="form-group col-md-4">
-           <label> الكمبرسون </label>
+           <label> compressor </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="ready" required>
-               <option value="" disabled selected> -- هل يوجد كمبرسون -- </option>
-               <option value="1"> يوجد </option>
-               <option value="2"> لا يوجد </option>
+               <option value="" disabled selected> --   Choose -- </option>
+               <option value="1"> available </option>
+               <option value="2"> not available  </option>
              </select>
            </div>
          </div>
@@ -373,35 +373,35 @@
           <div class="row">
 
           <div class="form-group col-md-4">
-           <label> الجاز </label>
+           <label> fuel </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="ready" required>
-               <option value="" disabled selected> -- حدد توفر الجاز -- </option>
-               <option value="1"> متوفر </option>
-               <option value="2"> غير متوفر </option>
+               <option value="" disabled selected> --   Choose -- </option>
+               <option value="1"> available </option>
+               <option value="2"> not available </option>
              </select>
            </div>
          </div>
             
 
            <div class="form-group col-md-4">
-           <label> المياة </label>
+           <label> water </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="ready" required>
-               <option value="" disabled selected> -- حدد توفر المياة   -- </option>
-               <option value="1"> متوفرة </option>
-               <option value="2"> غير متوفرة  </option>
+               <option value="" disabled selected> --   Choose   -- </option>
+               <option value="1"> available </option>
+               <option value="2"> not available   </option>
              </select>
            </div>
          </div>
 
           <div class="form-group col-md-4">
-           <label> الكهرباء </label>
+           <label> electricity </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="ready" required>
-               <option value="" disabled selected> -- حدد توفر الكهرباء -- </option>
-               <option value="1"> متوفرة </option>
-               <option value="2"> غير متوفرة  </option>
+               <option value="" disabled selected> --   Choose -- </option>
+               <option value="1"> available </option>
+               <option value="2">  not available  </option>
              </select>
            </div>
          </div>
@@ -410,20 +410,20 @@
 
              
 
-                <h3 for="textAreaRemark">بيانات العميل </h3>
+                <h3 for="textAreaRemark">CUSTOMER DATA:  </h3>
 
 
               <div class="row">
 
                 <div class="col-md-4 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="  الاسم " required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="  NAME " required>
                 </div>
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="email" id="email" placeholder=" الايميل " required>
+                  <input type="text" class="form-control" name="email" id="email" placeholder=" EMAIL " required>
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="job" id="job" placeholder=" الوظيفة " required>
+                    <input type="text" class="form-control" name="job" id="job" placeholder=" JOB TITLE " required>
                   </div>
 
               </div>
@@ -431,24 +431,24 @@
               <div class="row">
 
               <div class="col-md-4 form-group">
-                <lable> الجهه التابع لها </lable> 
+                <lable>   CATEGORY </lable> 
                 <select class="form-control mr-1" name="side" id="side" onchange="select_side();" required>
-                <option value="" disabled selected> -- اختار الجهه -- </option>
-                <option value="company"> شركة </option>
-                <option value=""> فرد </option>
+                <option value="" disabled selected> --  Choose -- </option>
+                <option value="company"> company </option>
+                <option value=""> personal </option>
                 </select>  
-                <input id="sidehide" type="text" class="form-control" placeholder=" ادخل اسم الشركة يدوي " style="display: none;" />
+                <input id="sidehide" type="text" class="form-control" placeholder="    company name " style="display: none;" />
               </div>
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
-              <lable> هل  سبق لك العمل معنا </lable> 
+              <lable>     HAVE YOU EVER WORK WITH US </lable> 
                 <select class="form-control mr-1" name="wwus" id="wwus" onchange="select_wwus();" required>
-                <option value="" disabled selected> -- اختار الاجابة -- </option>
-                <option value="yes"> نعم </option>
-                <option value="2"> لا </option>
+                <option value="" disabled selected> --  Choose -- </option>
+                <option value="yes"> YES </option>
+                <option value="2"> NO </option>
                 </select>
 
-               <input id="wwushide" type="text" class="form-control" placeholder=" في اي موقع عملت معنا " style="display: none;" />
+               <input id="wwushide" type="text" class="form-control" placeholder=" workplace  " style="display: none;" />
                <!-- required style="display:none" -->
                
               
@@ -457,14 +457,14 @@
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <div class="form-group">
-              <label for="exampleFormControlSelect2">طريقة التعرف علينا</label>
+              <label for="exampleFormControlSelect2">  HOW TO RECOGNIZE US</label>
               <select multiple class="form-control" id="exampleFormControlSelect2">
-                <option> الفيسبوك </option>
-                <option> التويتر </option>
-                <option> الانستغرام </option>
-                <option> عن طريق صديق </option>
-                <option> عن طريق شركه  </option>
-                <option>  اخري  </option>
+                <option> facebook </option>
+                <option> twitter </option>
+                <option> instagram </option>
+                <option> friend</option>
+                <option>   company  </option>
+                <option>  other  </option>
               </select>
               </div>
              </div>
@@ -478,7 +478,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit"> إرسال الطلب </button></div>
+              <div class="text-center"><button type="submit">  Send </button></div>
             </form>
 
           </div>
@@ -491,82 +491,8 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
+  <?php include 'footer.php'; ?>
 
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>إيكيوبيشن </h3>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>رقم الهاتف:</strong> 6445<br>
-              <strong>Email:</strong> info@example.com<br>
-            </p>
-          </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4> القائمه</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#hero">الرئيسية</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#about">من نحن</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#departments">الاقسام</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#services"> مجالات عملنا </a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#cleints"> عملاءنا</a></li>
-            </ul>
-          </div>
-
-
-
-          <!-- <li><a class="nav-link scrollto" href="#doctors">المنتجات</a></li> -->
-
-
-
-
-          
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>خدماتنا</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#doctors">المنتجات</a></li>
-           
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-              <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/logo.jpg" style="width: 280px;"></a></h1>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container d-md-flex py-4">
-
-      <div class="me-md-auto text-center text-md-start">
-        <div class="copyright">
-          &copy;  <strong><span> شركة ايكيوبيشن </span>2023</strong>. كل الحقوق محفوظة
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
-           تصميم <a href="#">SmartDev</a>
-        </div>
-      </div>
-      <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
