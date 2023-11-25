@@ -10,16 +10,16 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about"> Who we are </a></li>
-          <li><a class="nav-link scrollto" href="#departments"> Departments </a></li>
-          <li><a class="nav-link scrollto" href="#services">  Our field of work  </a></li>
-          <li><a class="nav-link scrollto" href="#parenter"> Our Parenters </a></li>
-          <li><a class="nav-link scrollto" href="#cleints"> Our Clients </a></li>
-          <li><a class="nav-link scrollto" href="#doctors"> store </a></li>
-          <li class="dropdown"><a href="#"><span>  Add Order </span>  <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
+          <li><a class="nav-link scrollto" href="index.php#about"> Who we are </a></li>
+          <li><a class="nav-link scrollto" href="index.php#departments"> Departments </a></li>
+          <li><a class="nav-link scrollto" href="index.php#services">  Our field of work  </a></li>
+          <li><a class="nav-link scrollto" href="index.php#parenter"> Our Parenters </a></li>
+          <li><a class="nav-link scrollto" href="index.php#cleints"> Our Clients </a></li>
+          <li><a class="nav-link scrollto" href="index.php#doctors"> store </a></li>
+          <li class="dropdown"><a href="#"><span>  Add Request </span>  <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="rental_request.php"> Rental Request</a></li>
+              <li><a href="rental_request.php">  Rental Request </a></li>
               <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
@@ -29,15 +29,16 @@
                   <li><a href="#">Deep Drop Down 5</a></li>
                 </ul>
               </li> -->
-              <li><a href="#">طلب توظيف</a></li>
-              <li><a href="run_request.php">CONTRACT REQUEST </a></li>
-              <li><a href="#">طلب صيانة</a></li>
-              <li><a href="deportation_request.php">طلب ترحيل</a></li>
+              <li><a href="job_request.php"> Job Request  </a></li>
+              <li><a href="run_request.php"> Operation Request </a></li>
+              <li><a href="maintenance_request.php"> Maintenance Request </a></li>
+              <li><a href="deportation_request.php"> Deportation Request </a></li>
+              <li><a href="traning_request.php"> Training Request </a></li>
               
     
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#contact"> Contact us </a></li>
+          <li><a class="nav-link scrollto" href="index.php#contact"> Contact us </a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

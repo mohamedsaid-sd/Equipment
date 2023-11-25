@@ -45,8 +45,8 @@
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
 
-        <a href="../English/index.html" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
-        <a href="../Arabic/index.html" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
+        <a href="../English/index.php" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
+        <a href="../Arabic/index.php" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
 
         <i class="bi bi-envelope"></i> <a href="mailto:info@equipation.sd">info@equipation.sd</a>
         <i class="bi bi-phone"></i> +249912322447
@@ -82,9 +82,9 @@
           <li><a class="nav-link scrollto" href="#parenter"> Our Parenters </a></li>
           <li><a class="nav-link scrollto" href="#cleints"> Our Clients </a></li>
           <li><a class="nav-link scrollto" href="#doctors"> store </a></li>
-          <li class="dropdown"><a href="#"><span> تقديم طلب </span>  <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span> Add Request </span>  <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="rental_request.php">طلب تأجير</a></li>
+              <li><a href="rental_request.php"> Rental Request </a></li>
               <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
@@ -94,10 +94,11 @@
                   <li><a href="#">Deep Drop Down 5</a></li>
                 </ul>
               </li> -->
-              <li><a href="#">طلب توظيف</a></li>
-              <li><a href="#">طلب تشغيل</a></li>
-              <li><a href="#">طلب صيانة</a></li>
-              <li><a href="#">طلب ترحيل</a></li>
+              <li><a href="Job_request.php"> Job Request </a></li>
+              <li><a href="run_request.php"> Operation Request </a></li>
+              <li><a href="maintenance_request.php"> Maintenance Request  </a></li>
+              <li><a href="deportation_request.php"> Deportation Request </a></li>
+              <li><a href="traning_request.php"> Training Request </a></li>
               
     
             </ul>

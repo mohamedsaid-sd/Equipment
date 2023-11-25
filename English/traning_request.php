@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html dir="rtl">
+<html dir="ltr">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title> طلب تدريب  </title>
+  <title> Training request  </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -77,7 +77,7 @@
 
         <div class="section-title">
         <br/>
-          <h2> طلب تدريب  </h2>
+          <h2> Training request   </h2>
          </div>
       </div>
 

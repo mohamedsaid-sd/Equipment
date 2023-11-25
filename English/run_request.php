@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title> طلب تشغيل  </title>
+  <title> Operation Request   </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -74,8 +74,8 @@
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
 
-        <a href="../English/index.html" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
-        <a href="../Arabic/index.html" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
+        <a href="../English/index.php" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
+        <a href="../Arabic/index.php" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
 
         <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
         <i class="bi bi-phone"></i> +249 6445
@@ -96,215 +96,407 @@
 
   <main id="main">
 
-  
-
-    
-
     <!-- ======= Contact Section ======= -->
     <section class="contact">
       <div class="container">
       <br/>
         <div class="section-title">
-          <h2>  CONTRACT REQUEST  </h2>
+          <h2> Operation request </h2>
          </div>
       </div>
 
   
 
       <div class="container">
+
+       <form action="run_request.php" method="post" role="form">
+
         <div class="row mt-5">
 
-   
-          <div class="col-lg-12 mt-5 mt-lg-0">
+          <h3> OWNER DETAILS  </h3>
 
-            <form action="run_request.php" method="post" role="form">
+          <div class="col-md-4 form-group  mt-3 mt-md-0">
+              <input type="text" name="name" class="form-control" placeholder="Full name"required>
+          </div>
 
-                <h3 for="textAreaRemark"> CONTRACT REQUIRMENT</h3>
+           <div class="col-md-4 form-group  mt-3 mt-md-0">
+              <input type="text" name="name" class="form-control" placeholder=" Nationality " required>
+          </div>
 
-              <div class="row">
-                <div class="col-md-4 form-group">
-                  <br/>
-                  <input type="text" name="work_type" class="form-control" id="work_type" placeholder="  WORK TYPE " required>
-                </div>
+           <div class="col-md-4 form-group  mt-3 mt-md-0">
+              <input type="number" name="name" class="form-control" placeholder=" ID number "> <font color="red"> * Optionaly </font> 
+          </div>
 
-                <div class="col-md-4 form-group">
-                DURATION <br/>
-                  <select class="form-control mr-1" name="period" id="period" onchange="select_period();" required>
-                    <option disabled selected value=""> --  choose  -- </option>
-                    <option> month </option>
-                    <option> 3 months </option>
-                    <option> year </option>
-                    <option value="hand"> manual entry </option>
-                  </select>
-
-                  <input id="periodhide" name="periodhide" type="text" class="form-control" placeholder="  manual entry " style="display: none;" >
-                </div>
-
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <br/>
-                    <input type="text" class="form-control" name="chassis" id="chassis" placeholder="رقم الساشي  " required>
-                  </div>
-
-              </div>
-     <!-- Start Input Start Time -->
-     <div class="row">
-
-     <div class="form-group col-md-4">
-        <label>ساعات العمل </label>
-        <div class="d-flex flex-row justify-content-between align-items-center">
-          <select class="form-control mr-1" id="hour" name="hour" required>
-            <option value="" disabled selected> -- حدد الساعات -- </option>
-            <option value="10">10</option>
-            <option value="12">12</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-          </select>
-        
         </div>
-      </div>
 
-      <div class="form-group col-md-4">
-        <label> مالكيه الاليه </label>
-        <div class="d-flex flex-row justify-content-between align-items-center">
-          <select class="form-control mr-1" id="owners" name="owners" required>
-            <option value="" disabled selected> -- حدد الملكية -- </option>
-            <option>مالك الاليه</option>
-            <option>مستثمر</option>
-            <option>وكيل</option>
-          </select>
-        
+        <div class="row">
+
+          <div class="col-md-4 form-group">
+              <input type="number" name="name" class="form-control" placeholder=" phone number  " required>
+          </div>
+
+          <div class="col-md-4 form-group  mt-3 mt-md-0">
+              <input type="text" name="name" class="form-control" placeholder=" phone number 2 "> <font color="red"> * Optionaly </font> 
+          </div>
+
+          <div class="col-md-4 form-group">
+              <input type="number" name="name" class="form-control" placeholder=" whatsapp number  " required>
+          </div>
+          
         </div>
-      </div>
 
+        <div class="row">
 
-
-      <div class="form-group col-md-4">
-        <label>  نوع التشغيل </label>
-        <div class="d-flex flex-row justify-content-between align-items-center">
-          <select class="form-control mr-1" id="Operatingtype" name="Operatingtype" required>
-            <option value="" disabled selected> -- حدد نظام التشغيل -- </option>
-            <option> ساعات</option>
-            <option>انتاج</option>
-            <option>الاثنين معا</option>
-          </select>
-        
-        </div>
-      </div>
-
-      </div>
-
-
-      <div class="row">
         <div class="col-md-4 form-group">
-          <br/>
-          <input type="text" name="location" class="form-control" id="location" placeholder="  موقع الاليه " required>
-        </div>
-        <div class="col-md-4 form-group mt-3 mt-md-0">
-          <br/>
-          <input type="text" class="form-control" name="counter" id="counter" placeholder="عداد الاليه   " required>
+            <input type="email" name="name" class="form-control" placeholder=" Email " required>
         </div>
 
-        <div class="form-group col-md-4">
-            <label for="inputDate">سنه الصنع</label>
-            <input type="date" class="form-control" id="mdate" name="mdate" required/>
-          </div>
-      </div>
+        <div class="col-md-4 form-group">
+            <input type="number" name="name" class="form-control" placeholder=" TAX file  ">  <font color="red"> * Optionaly </font> 
+        </div>
 
-      <h3 for="textAreaRemark">بيانات الموقع </h3>
+         <div class="col-md-4 form-group">
+            <input type="text" name="name" class="form-control" placeholder=" Address " required>
+        </div>
+          
+        </div>
 
-      <div class="row">
-        
-        <div class="col-md-4 form-group mt-3 mt-md-0">
-          <br/>
-            <input type="text" class="form-control" name="lastloc" id="lastloc" placeholder=" اخر موقع عمل   " required>
-          </div>
+        <div class="row">
 
-        <div class="form-group col-md-4">
-           <label> جاهزيه الاليه </label>
+         <div class="col-md-4 form-group">
+            <input type="text" name="name" class="form-control" placeholder=" Recommendation  " required>
+        </div>
+
+        <div class="col-md-4 form-group">
+             <input type="text" name="name" class="form-control" placeholder=" code number " required disabled>
+        </div>
+
+       <div class="col-md-4 form-group">
+             <input type="text" name="name" class="form-control" placeholder=" TITLE  " required>
+        </div>  
+          
+        </div>
+
+        <div class="row mt-5">
+
+          <h3> MACHINES INFORMATION  </h3>
+
+          <div class="form-group col-md-4">
+           <label> Group  </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="ready" required>
-               <option value="" disabled selected> -- حدد جاهزية الالية -- </option>
-               <option>تيم للصيانه</option>
-               <option>سائقين</option>
-               <option>مشرف متابعه</option>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option> Compressor </option>
+               <option> generator and tower light  </option>
+               <option> welding machine  </option>
+               <option> carnes  </option>
+               <option> Heavy trucks  </option>
+               <option> Excavation equipment  </option>
+               <option> Pipe line equipment  </option>
+               <option> Civil equipment   </option>
+               <option> Mining equipment  </option>
+               <option> agricultural equipment  </option>
+               <option> facility </option>
+               <option> Light vihicles and trucks   </option>
+               <option> Entry new category </option>
              </select>
-           
-           </div>
-         </div>
-   
-         <div class="form-group col-md-4">
-           <label>  مجالات العمل </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="workfields" name="workfields" required>
-               <option value="" disabled selected> -- حدد مجال العمل -- </option>
-               <option>التعدين </option>
-               <option>الزراعه</option>
-               <option>الاسمنت</option>
-             </select>
-           
-           </div>
-         </div>
-              </div>
-             
-
-               <h3 for="textAreaRemark">بيانات العميل </h3>
-
-
-              <div class="row">
-
-                <div class="col-md-4 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="  الاسم " required>
-                </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="email" id="email" placeholder=" الايميل " required>
-                </div>
-
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="job" id="job" placeholder=" الوظيفة " required>
-                  </div>
-
-              </div>
-
-              <div class="row">
-
-              <div class="col-md-4 form-group">
-                <lable> الجهه التابع لها </lable> 
-                <select class="form-control mr-1" name="side" id="side" onchange="select_side();" required>
-                <option value="" disabled selected> -- اختار الجهه -- </option>
-                <option value="company"> شركة </option>
-                <option value="person"> فرد </option>
-                </select>  
-                <input id="sidehide" type="text" class="form-control" placeholder=" ادخل اسم الشركة يدوي " style="display: none;" />
-              </div>
-
-              <div class="col-md-4 form-group mt-3 mt-md-0">
-              <lable> هل  سبق لك العمل معنا </lable> 
-                <select class="form-control mr-1" name="wwus" id="wwus" onchange="select_wwus();" required>
-                <option value="" disabled selected> -- اختار الاجابة -- </option>
-                <option value="yes"> نعم </option>
-                <option value="no"> لا </option>
-                </select>
-
-               <input id="wwushide" type="text" class="form-control" placeholder=" في اي موقع عملت معنا " style="display: none;" />
-               
-
-              </div>
-
-              <div class="col-md-4 form-group mt-3 mt-md-0">
-              <div class="form-group">
-              <label for="exampleFormControlSelect2">طريقة التعرف علينا</label>
-              <select multiple class="form-control" id="exampleFormControlSelect2">
-                <option> الفيسبوك </option>
-                <option> التويتر </option>
-                <option> الانستغرام </option>
-                <option> عن طريق صديق </option>
-                <option> عن طريق شركه  </option>
-                <option>  اخري  </option>
-              </select>
-              </div>
              </div>
+             <input type="text" class="form-control
+             " name="" placeholder="Entry new category">
+
+           
+         </div>
+
+         <div class="form-group col-md-4">
+           <label> TYPE MACHINE </label>
+             <select class="form-control mr-1" id="ready" name="ready" required>
+              <option value="" disabled selected> -- Choose -- </option>
+              <option> air compressor  </option>
+              <option> generator and tower light </option>
+              <option> welding machine  </option>
+              <option> excavation equipment   </option>
+             </select>
+
+            <select class="form-control mr-1" id="ready" name="ready" required>
+              <option value="" disabled selected> -- Choose -- </option>
+              <option> excavtor </option>
+              <option> dozer </option>
+              <option> grader </option>
+            </select>
+
+            <select class="form-control mr-1" id="ready" name="ready" required>
+              <option value="" disabled selected> -- Choose -- </option>
+              <option> fixed </option>
+              <option> mobile </option>
+            </select>
+
+            <select class="form-control mr-1" id="ready" name="ready" required>
+              <option value="" disabled selected> -- Choose -- </option>
+              <option> fuel </option>
+              <option> electrical </option>
+            </select>
+
+            <select class="form-control mr-1" id="ready" name="ready" required>
+              <option value="" disabled selected> -- Choose -- </option>
+              <option> soundproof </option>
+              <option> open  </option>
+            </select>   
+
+            <select class="form-control mr-1" id="ready" name="ready" required>
+              <option value="" disabled selected> -- Choose -- </option>
+              <option> crawler  </option>
+              <option> wheel </option>
+            </select>   
+        </div>
+
+          <div class="form-group col-md-4">
+           <label> BRAND  </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option> cat </option>
+               <option> JCB </option>
+               <option> Atlas Capco </option>
+               <option> HYUNDAI </option>
+               <option> DOOSAN </option>
+               <option> Entry new brand </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder=" Entry new brand ">
+         </div>
+
+          <div class="form-group col-md-4">
+           <label> SIZE </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option> 250 CFM ( Compressor ) </option>
+               <option> 2000 KVA ( gen ) </option>
+               <option> 220 ( excavator ) </option>
+               <option> D9R ( dozer ) </option>
+               <option> 160أ ( grader ) </option>
+               <option> Entry new size </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder="   Entry new size ">
+         </div>
+
+            <div class="form-group col-md-4">
+           <label>  MODEL </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- choose -- </option>
+               <option> HX225 </option>
+               <option> SD25 </option>
+               <option> entry new model </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder=" Entry machine model ">
+         </div>
+
+         <div class="form-group col-md-4">
+           <label> YEAR OF MANUFACTURE   </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option> 2022 </option>
+               <option> 2023 </option>
+               <option> manualy entry </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder=" Entry manufacture year ">
+         </div>
+
+      </div>
+
+      <div class="row">
+
+          <div class="form-group col-md-4">
+           <label> MONTHLY RENTAL </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option> SGD </option>
+               <option> USD </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder="  entry rental amount ">
+         </div>
+
+          <div class="form-group col-md-4">
+           <label>  CONDITION </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option> new (not more than 500 hours or 1500 km) </option>
+               <option> almost new (between 501 hours and 1000 hrs ) </option>
+               <option> medium (between 1001 hrs and 2500 hrs) </option>
+               <option> consumable (over 2501 hrs) </option>
+               <option> entry manual condition </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder=" entry manual condition ">
+         </div>
+        
+      </div>
 
 
+
+
+
+      <div class="row">
+
+        <h3> CONTRACT TERMS  :  </h3>
+
+        <div class="form-group col-md-4">
+          <label> STATE </label>
+          <select class="form-control">
+            <option value="" disabled selected> -- Choose -- </option>
+            <option> none </option>
+            <option> inside sudan </option>
+            <option> all state of sudan except ... </option>
+            <option> specific state ... </option>
+            <option> add new place </option>
+          </select>
+        <input type="text" class="form-control" placeholder=" Specified the state ">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label> ADVANCE </label>
+          <select class="form-control">
+            <option value="" disabled selected> -- Choose -- </option>
+            <option> none </option>
+            <option> required (XX% of contract value ) </option>
+            <option> full rent required  </option>
+            <option> guarantee </option>
+            <option> entry new condition </option>
+          </select>
+        <input type="text" class="form-control" placeholder=" entry new condition ">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label> CATEGORY  </label>
+          <select class="form-control">
+            <option value="" disabled selected> -- حدد -- </option>
+            <option> none </option>
+            <option> companies only </option>
+            <option> contractiong only </option>
+            <option> manual entry </option>
+          </select>
+        <input type="text" class="form-control" placeholder="  manual entry ">
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label> CONTRACTS  </label>
+          <select class="form-control">
+            <option value="" disabled selected> -- Choose -- </option>
+            <option> none </option>
+            <option> long (not less than 12 month) </option>
+            <option> medium (not less than 3 month) </option>
+            <option> short (no more than a month) </option>
+            <option> manual entry </option>
+          </select>
+        <input type="text" class="form-control" placeholder="manual entry contract ">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label> CLEARENCES  </label>
+          <select class="form-control">
+            <option value="" disabled selected> -- Choose -- </option>
+            <option> USD </option>
+            <option> SDG </option>
+            <option> manual entry </option>
+          </select>
+        <input type="text" class="form-control" placeholder=" maanual entry clearences ">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label> MAINTENANCE  </label>
+            <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option> by me </option>
+               <option> by equipation with ful detucted </option>
+               <option> by equipation with XX% detucted </option>
+               <option> by equipation </option>
+               <option> manual entry </option>
+             </select>
+        <input type="text" class="form-control" placeholder=" manual entry ">
+        </div>
+
+     </div>
+
+      <div class="row">
+
+         <div class="form-group col-md-4">
+          <label>  HAIR OPRATOR  </label>
+            <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option> by equipation </option>
+               <option> set by me </option>
+               <option> manual entry </option>
+             </select>
+        <input type="text" class="form-control" placeholder=" manual entry  ">
+        </div>
+
+         <div class="form-group col-md-4">
+           <label> AVAILABLITY  </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option> on request </option>
+               <option> after request before xx day </option>
+               <option> manual entry </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder=" manual entry ">
+         </div>  
+
+         <div class="form-group col-md-4">
+           <label> GOVERNMENT FEES </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option> by me </option>
+               <option> by equipation with full detucted </option>
+               <option> by equipation with XX% detucted </option>
+               <option> by equipation </option>
+               <option> manual entry </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder=" manualy entry ">
+         </div>        
+
+          <div class="form-group col-md-4">
+           <label> HOURLY WORK  </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option> none </option>
+               <option> not execeed xx hrs per day </option>
+               <option> manual entry </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder="  manual entry ">
+         </div>
+
+
+      </div>
+
+
+
+      
               
               <div class="my-3">
                 
@@ -360,7 +552,7 @@
 
                 </div>
               </div>
-              <div class="text-center"><button type="submit" name="send" style="background-color:orange;border-radius:20px;padding:10px;"> إرسال طلب </button></div>
+              <div class="text-center"><button type="submit" name="send" style="background-color:orange;border-radius:20px;padding:10px;"> Send Request </button></div>
             </form>
 
           </div>

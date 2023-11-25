@@ -74,8 +74,8 @@
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
 
-        <a href="../English/index.html" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
-        <a href="../Arabic/index.html" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
+        <a href="../English/index.php" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
+        <a href="../Arabic/index.php" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
 
         <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
         <i class="bi bi-phone"></i> +249 6445
@@ -112,199 +112,395 @@
   
 
       <div class="container">
+
+       <form action="run_request.php" method="post" role="form">
+
         <div class="row mt-5">
 
-   
-          <div class="col-lg-12 mt-5 mt-lg-0">
+          <h3> معلومات المالك </h3>
 
-            <form action="run_request.php" method="post" role="form">
+          <div class="col-md-4 form-group  mt-3 mt-md-0">
+              <input type="text" name="name" class="form-control" placeholder="إسم طالب الخدمة رباعي" required>
+          </div>
 
-                <h3 for="textAreaRemark">مطلوبات التشغيل</h3>
+           <div class="col-md-4 form-group  mt-3 mt-md-0">
+              <input type="text" name="name" class="form-control" placeholder="جنسية طالب الخدمة" required>
+          </div>
 
-              <div class="row">
-                <div class="col-md-4 form-group">
-                  <br/>
-                  <input type="text" name="work_type" class="form-control" id="work_type" placeholder=" نوع العمل " required>
-                </div>
+           <div class="col-md-4 form-group  mt-3 mt-md-0">
+              <input type="number" name="name" class="form-control" placeholder=" رقم إثبات الشخصية "> <font color="red"> * اختياري </font> 
+          </div>
 
-                <div class="col-md-4 form-group">
-                    مدة العمل <br/>
-                  <select class="form-control mr-1" name="period" id="period" onchange="select_period();" required>
-                    <option disabled selected value=""> -- اختار المدة  -- </option>
-                    <option> شهر </option>
-                    <option> 3 شهور </option>
-                    <option> سنه </option>
-                    <option value="hand"> ادخال يدوي </option>
-                  </select>
-
-                  <input id="periodhide" name="periodhide" type="text" class="form-control" placeholder=" ادخل مدة العمل يدويا " style="display: none;" >
-                </div>
-
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <br/>
-                    <input type="text" class="form-control" name="chassis" id="chassis" placeholder="رقم الساشي  " required>
-                  </div>
-
-              </div>
-     <!-- Start Input Start Time -->
-     <div class="row">
-
-     <div class="form-group col-md-4">
-        <label>ساعات العمل </label>
-        <div class="d-flex flex-row justify-content-between align-items-center">
-          <select class="form-control mr-1" id="hour" name="hour" required>
-            <option value="" disabled selected> -- حدد الساعات -- </option>
-            <option value="10">10</option>
-            <option value="12">12</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-          </select>
-        
         </div>
-      </div>
 
-      <div class="form-group col-md-4">
-        <label> مالكيه الاليه </label>
-        <div class="d-flex flex-row justify-content-between align-items-center">
-          <select class="form-control mr-1" id="owners" name="owners" required>
-            <option value="" disabled selected> -- حدد الملكية -- </option>
-            <option>مالك الاليه</option>
-            <option>مستثمر</option>
-            <option>وكيل</option>
-          </select>
-        
+        <div class="row">
+
+          <div class="col-md-4 form-group">
+              <input type="number" name="name" class="form-control" placeholder=" رقم الموبايل " required>
+          </div>
+
+          <div class="col-md-4 form-group  mt-3 mt-md-0">
+              <input type="text" name="name" class="form-control" placeholder=" رقم الموبايل 2 "> <font color="red"> * اختياري </font> 
+          </div>
+
+          <div class="col-md-4 form-group">
+              <input type="number" name="name" class="form-control" placeholder=" رقم الواتساب " required>
+          </div>
+          
         </div>
-      </div>
 
+        <div class="row">
 
-
-      <div class="form-group col-md-4">
-        <label>  نوع التشغيل </label>
-        <div class="d-flex flex-row justify-content-between align-items-center">
-          <select class="form-control mr-1" id="Operatingtype" name="Operatingtype" required>
-            <option value="" disabled selected> -- حدد نظام التشغيل -- </option>
-            <option> ساعات</option>
-            <option>انتاج</option>
-            <option>الاثنين معا</option>
-          </select>
-        
-        </div>
-      </div>
-
-      </div>
-
-
-      <div class="row">
         <div class="col-md-4 form-group">
-          <br/>
-          <input type="text" name="location" class="form-control" id="location" placeholder="  موقع الاليه " required>
-        </div>
-        <div class="col-md-4 form-group mt-3 mt-md-0">
-          <br/>
-          <input type="text" class="form-control" name="counter" id="counter" placeholder="عداد الاليه   " required>
+            <input type="email" name="name" class="form-control" placeholder=" البريد الالكتروني " required>
         </div>
 
-        <div class="form-group col-md-4">
-            <label for="inputDate">سنه الصنع</label>
-            <input type="date" class="form-control" id="mdate" name="mdate" required/>
-          </div>
-      </div>
+        <div class="col-md-4 form-group">
+            <input type="number" name="name" class="form-control" placeholder=" الرقم الضريبي ">  <font color="red"> * اختياري </font> 
+        </div>
 
-      <h3 for="textAreaRemark">بيانات الموقع </h3>
+         <div class="col-md-4 form-group">
+            <input type="text" name="name" class="form-control" placeholder=" العنوان الدائم " required>
+        </div>
+          
+        </div>
 
-      <div class="row">
-        
-        <div class="col-md-4 form-group mt-3 mt-md-0">
-          <br/>
-            <input type="text" class="form-control" name="lastloc" id="lastloc" placeholder=" اخر موقع عمل   " required>
-          </div>
+        <div class="row">
 
-        <div class="form-group col-md-4">
-           <label> جاهزيه الاليه </label>
+         <div class="col-md-4 form-group">
+            <input type="text" name="name" class="form-control" placeholder=" التزكية  " required>
+        </div>
+
+        <div class="col-md-4 form-group">
+             <input type="text" name="name" class="form-control" placeholder=" رقم سجل العميل " required disabled>
+        </div>
+
+       <div class="col-md-4 form-group">
+             <input type="text" name="name" class="form-control" placeholder=" الصفة  " required>
+        </div>  
+          
+        </div>
+
+        <div class="row mt-5">
+
+          <h3> معلومات الآليات </h3>
+
+          <div class="form-group col-md-4">
+           <label> فئة الآلية </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="ready" required>
-               <option value="" disabled selected> -- حدد جاهزية الالية -- </option>
-               <option>تيم للصيانه</option>
-               <option>سائقين</option>
-               <option>مشرف متابعه</option>
+               <option value="" disabled selected> -- حدد -- </option>
+               <option> كمبروسرات هواء </option>
+               <option> مولدات طاقة وتور لايتس </option>
+               <option> مكنات لحام </option>
+               <option> كرينات والروافع </option>
+               <option> شاحنات ثقيلة </option>
+               <option>  آليات الطرق والحفر </option>
+               <option> آليات خطوط البترول </option>
+               <option> آليات المقاولات المدنية </option>
+               <option> آليات التعدين </option>
+               <option> آليات زراعية </option>
+               <option> مساكن وأصول متحركة </option>
+               <option> مركبات متوسطة وخفيفة </option>
+               <option> إدخال تصنيف جديد </option>
              </select>
-           
-           </div>
-         </div>
-   
-         <div class="form-group col-md-4">
-           <label>  مجالات العمل </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="workfields" name="workfields" required>
-               <option value="" disabled selected> -- حدد مجال العمل -- </option>
-               <option>التعدين </option>
-               <option>الزراعه</option>
-               <option>الاسمنت</option>
-             </select>
-           
-           </div>
-         </div>
-              </div>
-             
-
-               <h3 for="textAreaRemark">بيانات العميل </h3>
-
-
-              <div class="row">
-
-                <div class="col-md-4 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="  الاسم " required>
-                </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="email" id="email" placeholder=" الايميل " required>
-                </div>
-
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="job" id="job" placeholder=" الوظيفة " required>
-                  </div>
-
-              </div>
-
-              <div class="row">
-
-              <div class="col-md-4 form-group">
-                <lable> الجهه التابع لها </lable> 
-                <select class="form-control mr-1" name="side" id="side" onchange="select_side();" required>
-                <option value="" disabled selected> -- اختار الجهه -- </option>
-                <option value="company"> شركة </option>
-                <option value="person"> فرد </option>
-                </select>  
-                <input id="sidehide" type="text" class="form-control" placeholder=" ادخل اسم الشركة يدوي " style="display: none;" />
-              </div>
-
-              <div class="col-md-4 form-group mt-3 mt-md-0">
-              <lable> هل  سبق لك العمل معنا </lable> 
-                <select class="form-control mr-1" name="wwus" id="wwus" onchange="select_wwus();" required>
-                <option value="" disabled selected> -- اختار الاجابة -- </option>
-                <option value="yes"> نعم </option>
-                <option value="no"> لا </option>
-                </select>
-
-               <input id="wwushide" type="text" class="form-control" placeholder=" في اي موقع عملت معنا " style="display: none;" />
-               
-
-              </div>
-
-              <div class="col-md-4 form-group mt-3 mt-md-0">
-              <div class="form-group">
-              <label for="exampleFormControlSelect2">طريقة التعرف علينا</label>
-              <select multiple class="form-control" id="exampleFormControlSelect2">
-                <option> الفيسبوك </option>
-                <option> التويتر </option>
-                <option> الانستغرام </option>
-                <option> عن طريق صديق </option>
-                <option> عن طريق شركه  </option>
-                <option>  اخري  </option>
-              </select>
-              </div>
              </div>
+             <input type="text" class="form-control
+             " name="" placeholder="التصنيف الجديد">
+
+           
+         </div>
+
+         <div class="form-group col-md-4">
+           <label> نوع الآلية (علي سبيل المثال لا الحصر) </label>
+             <select class="form-control mr-1" id="ready" name="ready" required>
+              <option value="" disabled selected> -- حدد -- </option>
+              <option> كمبروسرات هواء </option>
+              <option> مولدات هواء وتور لايتس</option>
+              <option> مكينات لحام </option>
+              <option> آليات الطرق والحفر </option>
+             </select>
+
+            <select class="form-control mr-1" id="ready" name="ready" required>
+              <option value="" disabled selected> -- حدد -- </option>
+              <option> حفار </option>
+              <option> دوزر </option>
+              <option> قريدر </option>
+            </select>
+
+            <select class="form-control mr-1" id="ready" name="ready" required>
+              <option value="" disabled selected> -- حدد -- </option>
+              <option> ثابت </option>
+              <option> متحرك </option>
+            </select>
+
+            <select class="form-control mr-1" id="ready" name="ready" required>
+              <option value="" disabled selected> -- حدد -- </option>
+              <option> جاز </option>
+              <option> كهرباء </option>
+            </select>
+
+            <select class="form-control mr-1" id="ready" name="ready" required>
+              <option value="" disabled selected> -- حدد -- </option>
+              <option> كاتم صوت </option>
+              <option> مفتوح </option>
+            </select>   
+
+            <select class="form-control mr-1" id="ready" name="ready" required>
+              <option value="" disabled selected> -- حدد -- </option>
+              <option> منجزر  </option>
+              <option> عجلات </option>
+            </select>   
+        </div>
+
+          <div class="form-group col-md-4">
+           <label>  ماركة الآلية </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد -- </option>
+               <option> كات </option>
+               <option> JCB </option>
+               <option> Atlas Capco </option>
+               <option> HYUNDAI </option>
+               <option> DOOSAN </option>
+               <option> إدخال ماركة جديدة </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder=" إسم الماركة ">
+         </div>
+
+          <div class="form-group col-md-4">
+           <label>  مقاس الآلية </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد -- </option>
+               <option> 250 CFM (كمبروسسر) </option>
+               <option> 2000 KVA (مولد) </option>
+               <option> 220 (حفار) </option>
+               <option> D9R (دوزر) </option>
+               <option> 160أ (قريدر) </option>
+               <option> إدخال مقاس جديد </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder="  ادخل مقاس الآلية ">
+         </div>
+
+            <div class="form-group col-md-4">
+           <label>  موديل الآلية </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد -- </option>
+               <option> HX225 </option>
+               <option> SD25 </option>
+               <option> إدخال موديل جديد </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder="  ادخل موديل الآلية ">
+         </div>
+
+         <div class="form-group col-md-4">
+           <label>  سنة صنع الآلية </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد -- </option>
+               <option> 2022 </option>
+               <option> 2023 </option>
+               <option> إدخال سنة صنع جديدة </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder="  ادخل سنة صنع الآلية ">
+         </div>
+
+      </div>
+
+      <div class="row">
+
+          <div class="form-group col-md-4">
+           <label>  قيمة الايجار الشهري </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد -- </option>
+               <option>  جنيه سوداني </option>
+               <option> دولار اجنبي </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder="  ادخل قيمة الايجار ">
+         </div>
+
+          <div class="form-group col-md-4">
+           <label>  تقييم الآلية </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد -- </option>
+               <option> جيدة ( لم تتجاوز 500 ساعة او 1500 كلم) </option>
+               <option> شبه جيدة  ( ما بين 501 ساعة حتي 1000 ساعة) </option>
+               <option> متوسطة ( ما بين 1001 ساعة حتي 2500 ساعة ) </option>
+               <option> مستهلكة ( فوق ال 2501 ساعة ) </option>
+               <option> إدخال  قيد جديد </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder="  ادخل سنة صنع الآلية ">
+         </div>
+        
+      </div>
 
 
+
+
+
+      <div class="row">
+
+        <h3> قيود العقود :  </h3>
+
+        <div class="form-group col-md-4">
+          <label> المكان </label>
+          <select class="form-control">
+            <option value="" disabled selected> -- حدد -- </option>
+            <option> لا يوجد قيود </option>
+            <option> داخل السودان فقط </option>
+            <option> كل ولايات السودان عدا ... </option>
+            <option> ولاية محددة .... </option>
+            <option> اضافة قيد مكان جديد </option>
+          </select>
+        <input type="text" class="form-control" placeholder="حدد الولاية">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label> المقدم </label>
+          <select class="form-control">
+            <option value="" disabled selected> -- حدد -- </option>
+            <option> لا يشترط </option>
+            <option> يشترط ( نسبة XX% من قيمة العقد ) </option>
+            <option> يشترط كامل الايجار </option>
+            <option> مؤخؤ ( لامانع بعد استلام الدفعيات ) </option>
+            <option> اضافة شريط جديد </option>
+          </select>
+        <input type="text" class="form-control" placeholder="حدد الشرط">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label> جهه العمل </label>
+          <select class="form-control">
+            <option value="" disabled selected> -- حدد -- </option>
+            <option> لا يوجد قيد </option>
+            <option> شركات فقط </option>
+            <option> مقاولات فقط </option>
+            <option> اضافة قيد جديد </option>
+          </select>
+        <input type="text" class="form-control" placeholder="حدد القيد">
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label> العقودات  </label>
+          <select class="form-control">
+            <option value="" disabled selected> -- حدد -- </option>
+            <option> لا يوجد قيد </option>
+            <option> عقود طويلة (لا تقل عن 12 شهر) </option>
+            <option> عقود متوسطة (لا تقل عن 3 شهور)  </option>
+            <option> عقود قصيرة (لا تزيد عن شهر)  </option>
+            <option> اضافة قيد جديد </option>
+          </select>
+        <input type="text" class="form-control" placeholder="حدد القيد">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label> المخالصات  </label>
+          <select class="form-control">
+            <option value="" disabled selected> -- حدد -- </option>
+            <option> بالدلار </option>
+            <option> بالجنيه السوداني</option>
+            <option> إضافة قيد جديد </option>
+          </select>
+        <input type="text" class="form-control" placeholder="حدد القيد">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label> الصيانة  </label>
+            <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد -- </option>
+               <option> بواستطي </option>
+               <option> بواستطة ايكيوبيشن مع خصم التكلفة الكاملة </option>
+               <option> بواستطة ايكيوبيشن مع تحمل نسبة XX% فقط </option>
+               <option> بواستطة ايكيوبيشن دون خصم اي تكاليف </option>
+               <option> إضافة قيد جديد </option>
+             </select>
+        <input type="text" class="form-control" placeholder=" حدد القيد ">
+        </div>
+
+     </div>
+
+      <div class="row">
+
+         <div class="form-group col-md-4">
+          <label> تعيين المشغلين  </label>
+            <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد -- </option>
+               <option> تعيين بواستطة ايكيوبيشن </option>
+               <option> تعيين بواستطتي </option>
+               <option> إضافة قيد جديد </option>
+             </select>
+        <input type="text" class="form-control" placeholder=" حدد القيد ">
+        </div>
+
+         <div class="form-group col-md-4">
+           <label> التوفر  </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد -- </option>
+               <option> عند الطلب المباشر </option>
+               <option> عند الطلب قبل XX يوم علي الاقل </option>
+               <option> إضافة قيد جديد </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder="  قم بتحديد القيد ">
+         </div>  
+
+         <div class="form-group col-md-4">
+           <label> التجهيزات الاخرى مثل ( التامين التتبع الزكاة الترحيل) </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد -- </option>
+               <option> بواستطي </option>
+               <option> بواستطة ايكيوبيشن مع خصم التكلفة الكاملة </option>
+               <option> بواستطة ايكيوبيشن مع تحمل نسبة XX% فقط </option>
+               <option> بواستطة ايكيوبيشن دون خصم اي تكاليف </option>
+               <option> إضافة قيد جديد </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder="  قم بتحديد القيد ">
+         </div>        
+
+          <div class="form-group col-md-4">
+           <label> ساعات العمل </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="ready" required>
+               <option value="" disabled selected> -- حدد -- </option>
+               <option> دون اي قيود </option>
+               <option> لا تتجاوز عدد XX ساعة باليوم </option>
+               <option> إضافة قيد جديد </option>
+             </select>
+             </div>
+             <input type="text" class="form-control
+             " name="" placeholder="  قم بتحديد القيد ">
+         </div>
+
+
+      </div>
+
+
+
+      
               
               <div class="my-3">
                 
@@ -372,84 +568,9 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>إيكيوبيشن </h3>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>رقم الهاتف:</strong> 6445<br>
-              <strong>Email:</strong> info@example.com<br>
-            </p>
-          </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4> القائمه</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#hero">الرئيسية</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#about">من نحن</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#departments">الاقسام</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#services"> مجالات عملنا </a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#cleints"> عملاءنا</a></li>
-            </ul>
-          </div>
-
-
-
-          <!-- <li><a class="nav-link scrollto" href="#doctors">المنتجات</a></li> -->
-
-
-
-
-          
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>خدماتنا</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#doctors">المنتجات</a></li>
-           
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-              <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/logo.jpg" style="width: 280px;"></a></h1>
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container d-md-flex py-4">
-
-      <div class="me-md-auto text-center text-md-start">
-        <div class="copyright">
-          &copy;  <strong><span> شركة ايكيوبيشن </span>2023</strong>. كل الحقوق محفوظة
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
-           تصميم <a href="#">SmartDev</a>
-        </div>
-      </div>
-      <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
+   <!-- ======= Footer ======= -->
+  <?php include 'footer.php'; ?>
+  
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

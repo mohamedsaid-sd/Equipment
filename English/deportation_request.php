@@ -129,8 +129,8 @@
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
 
-        <a href="../English/index.html" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
-        <a href="../Arabic/index.html" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
+        <a href="../English/index.php" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
+        <a href="../Arabic/index.php" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
 
         <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
         <i class="bi bi-phone"></i> +249 6445
@@ -164,7 +164,7 @@
       <div class="container">
       <br/>
         <div style="margin-bottom:5px;" class="section-title">
-          <h2> Data for a Migration Request </h2>
+          <h2 style="width: 300px;"> Migration Request </h2>
          </div>
       </div>
 

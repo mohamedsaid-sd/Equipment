@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html dir="rtl">
+<html dir="ltr">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title> طلب تدريب  </title>
+  <title>  Job Request  </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -68,16 +68,13 @@
   <main id="main">
 
   
-
-    
-
     <!-- ======= Contact Section ======= -->
     <section class="contact">
       <div class="container">
 
         <div class="section-title">
         <br/>
-          <h2> طلب تدريب  </h2>
+          <h2>  Job Request  </h2>
          </div>
       </div>
 
@@ -91,9 +88,12 @@
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
+    
 
-   <!-- ======= Footer ======= -->
+   
+  <!-- ======= Footer ======= -->
   <?php include 'footer.php'; ?>
+
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

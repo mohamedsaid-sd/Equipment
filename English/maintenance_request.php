@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html dir="rtl">
+<html dir="ltr">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title> طلب صيانة </title>
+  <title> Maintenance Request </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -99,7 +99,7 @@
 
         <div class="section-title">
         <br/>
-          <h2> طلب صيانة </h2>
+          <h2 style="width:300px"> Maintenance Request </h2>
        </div>
       </div>
 
@@ -114,18 +114,18 @@
 
             <form action="forms/contact.php" method="post" role="form">
 
-                <h3 for="textAreaRemark"> استماره طلب صيانه</h3>
+                <h3 for="textAreaRemark">  Maintenance request form : </h3>
 
               <div class="row">
                 <div class="col-md-4 form-group">
-                  <input type="text" name="Type" class="form-control" id="Type" placeholder="نوع الاليه " required>
+                  <input type="text" name="Type" class="form-control" id="Type" placeholder="type of Machine " required>
                 </div>
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="model" id="model" placeholder=" موديل الاليه   " required>
+                  <input type="text" class="form-control" name="model" id="model" placeholder=" Machine model   " required>
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="Sashinumber" id="Sashinumber" placeholder="رقم الساشي  " required>
+                    <input type="text" class="form-control" name="Sashinumber" id="Sashinumber" placeholder=" Chaassis number  " required>
                   </div>
 
               </div>
@@ -134,19 +134,19 @@
 
      <div class="form-group col-md-4">
             <br/>
-            <input type="text" class="form-control" name="time" id="time" placeholder="  ساعات العمل اليوميه    " required>
+            <input type="text" class="form-control" name="time" id="time" placeholder=" daily working hours " required>
       </div>
 
       <div class="form-group col-md-4">
-        <label>  نوع الاصلاح المطلوب </label>
+        <label>  Type of repaire </label>
         <div class="d-flex flex-row justify-content-between align-items-center">
           <select class="form-control mr-1" id="typeoffix" name="typeoffix" required>
-            <option value="" disabled selected> -- حدد نوع الاصلاح -- </option>
-            <option value="1"> مشكله مكانيكا</option>
-            <option value="2">كهرباء</option>
-            <option value="3">حداده</option>
-            <option value="4">تكيف</option>
-            <option value="5">هيدروليك</option>
+            <option value="" disabled selected> -- Choose -- </option>
+            <option value="1"> Mechanics </option>
+            <option value="2"> Electricity </option>
+            <option value="3"> Metalworks </option>
+            <option value="4"> Adaptation </option>
+            <option value="5"> Hydraulic </option>
 
 
           </select>
@@ -157,7 +157,7 @@
 
       <div class="col-md-4 form-group">
         <br/>
-        <input type="text" name="Type" class="form-control" id="location" placeholder="  موقع الاليه " required>
+        <input type="text" name="Type" class="form-control" id="location" placeholder=" Machine location " required>
       </div>
     
      
@@ -169,51 +169,52 @@
         
 
         <div class="form-group col-md-4">
-            <label for="inputDate">سنه الصنع</label>
+            <label for="inputDate"> Date of manufacture</label>
             <input type="date" class="form-control" id="inputDate" name="date" required />
           </div>
       </div>
 
       <div class="form-group mt-3">
-        <textarea class="form-control" name="message" rows="5" placeholder="وصف المشكله " required></textarea>
+        <textarea class="form-control" name="message" rows="5" placeholder=" Discription of the problem " required></textarea>
       </div>
-      <h3 for="textAreaRemark">بيانات الموقع </h3>
+      <br/>
+      <h3 for="textAreaRemark"> Site data :  </h3>
 
       <div class="row">
         <div class="col-md-4 form-group mt-3 mt-md-0">
             <br/>
-            <input type="text" class="form-control" name="lastloc" id="Counter" placeholder=" اخر موقع عمل   " required>
+            <input type="text" class="form-control" name="lastloc" id="Counter" placeholder=" Last job site " required>
           </div>
         <div class="form-group col-md-4">
-           <label>  طبيعه الموقع </label>
+           <label>  The nature of the site </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="ready" required>
-               <option value="" disabled selected> -- حدد طبيعة الموقع -- </option>
-               <option value="1">جبال </option>
-               <option value="2">أبار</option>
-               <option value="3">مزرعه </option>
-               <option value="4">منجم </option>
-               <option value="4">مواقع مفتوحه </option>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option value="1"> Mountains </option>
+               <option value="2"> Wells </option>
+               <option value="3"> Farm </option>
+               <option value="4"> Mine </option>
+               <option value="4"> Open sites </option>
              </select>
            </div>
          </div>
    
          <div class="col-md-4 form-group mt-3 mt-md-0">
               <br/>
-            <input type="text" class="form-control" name="city" id="city" placeholder="   اسم المنطقه   " required>
+            <input type="text" class="form-control" name="city" id="city" placeholder=" Area name " required>
           </div>
 
           <div class="col-md-4 form-group mt-3 mt-md-0">
             <br/>
-            <input type="text" class="form-control" name="city2" id="city2" placeholder="   اسم اقرب سوق   " required>
+            <input type="text" class="form-control" name="city2" id="city2" placeholder=" The nearest market " required>
           </div>
           <div class="col-md-4 form-group mt-3 mt-md-0">
-              <label>  توفر الشبكة </label>
+              <label>  Network availability </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="ready" required>
-               <option value="" disabled selected> -- حدد نوع الشبكة -- </option>
-               <option value="1"> اتصال  </option>
-               <option value="2"> واي فاي </option>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option value="1"> Communication  </option>
+               <option value="2"> WiFi </option>
              </select>
            
            </div>
@@ -221,22 +222,22 @@
           </div>
 
               </div>
-             
+             <br/>
 
-             <h3 for="textAreaRemark">بيانات العميل </h3>
+             <h3 for="textAreaRemark"> Customer data : </h3>
 
 
               <div class="row">
 
                 <div class="col-md-4 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="  الاسم " required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="  Customer name " required>
                 </div>
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="email" id="email" placeholder=" الايميل " required>
+                  <input type="text" class="form-control" name="email" id="email" placeholder=" Customer Email " required>
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="job" id="job" placeholder=" الوظيفة " required>
+                    <input type="text" class="form-control" name="job" id="job" placeholder=" Customer job " required>
                   </div>
 
               </div>
@@ -244,21 +245,21 @@
               <div class="row">
 
               <div class="col-md-4 form-group">
-                <lable> الجهه التابع لها </lable> 
+                <lable>  Your side is </lable> 
                 <select class="form-control mr-1" name="side" id="side" onchange="select_side();" required>
-                <option value="" disabled selected> -- اختار الجهه -- </option>
-                <option value="company"> شركة </option>
-                <option value=""> فرد </option>
+                <option value="" disabled selected> -- Choose -- </option>
+                <option value="company"> Company </option>
+                <option value=""> Individual </option>
                 </select>  
                 <input id="sidehide" type="text" class="form-control" placeholder=" ادخل اسم الشركة يدوي " style="display: none;" />
               </div>
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
-              <lable> هل  سبق لك العمل معنا </lable> 
+              <lable> Have you over worked with us : </lable> 
                 <select class="form-control mr-1" name="wwus" id="wwus" onchange="select_wwus();" required>
-                <option value="" disabled selected> -- اختار الاجابة -- </option>
-                <option value="yes"> نعم </option>
-                <option value="2"> لا </option>
+                <option value="" disabled selected> -- Choose -- </option>
+                <option value="yes"> Yes </option>
+                <option value="2"> No </option>
                 </select>
 
                <input id="wwushide" type="text" class="form-control" placeholder=" في اي موقع عملت معنا " style="display: none;" />
@@ -270,14 +271,14 @@
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <div class="form-group">
-              <label for="exampleFormControlSelect2">طريقة التعرف علينا</label>
+              <label for="exampleFormControlSelect2"> How to know us :  </label>
               <select multiple class="form-control" id="exampleFormControlSelect2">
-                <option> الفيسبوك </option>
-                <option> التويتر </option>
-                <option> الانستغرام </option>
-                <option> عن طريق صديق </option>
-                <option> عن طريق شركه  </option>
-                <option>  اخري  </option>
+                <option> Facebook </option>
+                <option> Twiter </option>
+                <option> Instegram </option>
+                <option> By a friend </option>
+                <option> By company  </option>
+                <option> Others  </option>
               </select>
               </div>
              </div>
@@ -288,7 +289,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit"> إرسال الطلب </button></div>
+              <div class="text-center"><button type="submit"> Send Request </button></div>
             </form>
 
           </div>
@@ -300,9 +301,9 @@
 
   </main><!-- End #main -->
 
-   <!-- ======= Footer ======= -->
+  <!-- ======= Footer ======= -->
   <?php include 'footer.php'; ?>
-
+  
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

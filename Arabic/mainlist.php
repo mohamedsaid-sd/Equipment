@@ -7,7 +7,7 @@
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
+        <ul> 
           <li><a class="nav-link scrollto active" href="index.php#hero">الرئيسية</a></li>
           <li><a class="nav-link scrollto" href="index.php#about">من نحن</a></li>
           <li><a class="nav-link scrollto" href="index.php#departments">الاقسام</a></li>

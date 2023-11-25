@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title> طلب تاجير  </title>
+  <title>  Rental Request  </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -129,8 +129,8 @@
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
 
-        <a href="../English/index.html" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
-        <a href="../Arabic/index.html" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
+        <a href="../English/index.php" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
+        <a href="../Arabic/index.php" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
 
         <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
         <i class="bi bi-phone"></i> +249 6445
@@ -159,7 +159,7 @@
       <div class="container">
         <br/>
         <div class="section-title">
-          <h2>  Data of Rental Request  </h2>
+          <h2> Rental Request  </h2>
          </div>
       </div>
 
@@ -174,7 +174,7 @@
 
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
 
-                <h3 for="textAreaRemark">Data of Rental Request </h3>
+                <h3 for="textAreaRemark">Rental Requirement </h3>
 
             <div class="row">
                
@@ -207,7 +207,7 @@
                   <select class="form-control mr-1" name="hour" id="hour" onchange="select_hour();" required>
                     <option disabled selected> --   Choose the duration  -- </option>
                     <option>  monthly rent </option>
-                    <option value="hour"> num hours  </option>
+                    <option value="hour"> num hours (manual entry) </option>
                   </select>
 
                   <input id="hourhide" type="text" class="form-control" placeholder="  manual entry hour   " style="display: none;">
@@ -242,7 +242,7 @@
       </div>
       </div>
 
-    <h3 for="textAreaRemark"> SITE DESCRIPTION:</h3>
+    <h3 for="textAreaRemark"> SITE DESCRIPTION: </h3>
 
 
       <div class="row">

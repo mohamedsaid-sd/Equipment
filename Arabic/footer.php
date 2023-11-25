@@ -5,24 +5,24 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3> Equpation </h3>
+            <h3>إيكيوبيشن </h3>
             <p>
               A108 Adam Street <br>
               New York, NY 535022<br>
               United States <br><br>
-              <strong>Phone Number :</strong> 6445<br>
+              <strong>رقم الهاتف:</strong> 6445<br>
               <strong>Email:</strong> info@example.com<br>
             </p>
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4> Links</h4>
+            <h4> القائمه</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.php"> Home </a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.php#about"> Who we are </a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.php#departments"> Departments </a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.php#services"> Our field of work </a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.php#cleints"> Our Clients</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#hero">الرئيسية</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#about">من نحن</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#departments">الاقسام</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#services"> مجالات عملنا </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#cleints"> عملاءنا</a></li>
             </ul>
           </div>
 
@@ -35,15 +35,15 @@
 
           
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Service </h4>
+            <h4>خدماتنا</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.php#doctors"> Products  </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#doctors">المنتجات</a></li>
            
             </ul>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-              <h1 class="logo me-auto"><a href="index.php"><img src="assets/img/logo.jpg" style="width: 280px;"></a></h1>
+              <h1 class="logo me-auto"><a href="index.html"><img src="assets/img/logo.jpg" style="width: 280px;"></a></h1>
 
           </div>
 
@@ -55,14 +55,14 @@
 
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
-          &copy;  <strong><span> Equpation Company  </span>2023</strong>. All rights reserved
+          &copy;  <strong><span> شركة ايكيوبيشن </span>2023</strong>. كل الحقوق محفوظة
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
           <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
-           Design By <a href="#">SmartDev</a>
+           تصميم <a href="#">SmartDev</a>
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
