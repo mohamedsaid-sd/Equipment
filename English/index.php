@@ -81,7 +81,7 @@
           <li><a class="nav-link scrollto" href="#services">  Our field of work  </a></li>
           <li><a class="nav-link scrollto" href="#parenter"> Our Parenters </a></li>
           <li><a class="nav-link scrollto" href="#cleints"> Our Clients </a></li>
-          <li><a class="nav-link scrollto" href="#doctors"> store </a></li>
+          <li><a class="nav-link scrollto" href="store.php"> store </a></li>
           <li class="dropdown"><a href="#"><span> Add Request </span>  <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="rental_request.php"> Rental Request </a></li>

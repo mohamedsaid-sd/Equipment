@@ -16,7 +16,7 @@
           <li><a class="nav-link scrollto" href="index.php#services">  Our field of work  </a></li>
           <li><a class="nav-link scrollto" href="index.php#parenter"> Our Parenters </a></li>
           <li><a class="nav-link scrollto" href="index.php#cleints"> Our Clients </a></li>
-          <li><a class="nav-link scrollto" href="index.php#doctors"> store </a></li>
+          <li><a class="nav-link scrollto" href="store.php"> store </a></li>
           <li class="dropdown"><a href="#"><span>  Add Request </span>  <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="rental_request.php">  Rental Request </a></li>

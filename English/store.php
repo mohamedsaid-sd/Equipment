@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html dir="rtl">
+<html>
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<title> المنتجات </title>
+	<title> Products </title>
 	<meta content="" name="description">
   	<meta content="" name="keywords">
 
@@ -61,7 +61,7 @@
       <div class="container">
         <br/>
         <div class="section-title">
-          <h2> ألمنتجات  </h2>
+          <h2> Products  </h2>
          </div>
       </div>
      <div class="container">
