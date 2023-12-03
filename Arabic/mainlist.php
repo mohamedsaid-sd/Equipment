@@ -14,7 +14,7 @@
           <li><a class="nav-link scrollto" href="index.php#services"> مجالات عملنا </a></li>
           <li><a class="nav-link scrollto" href="index.php#parenter"> شركائنا </a></li>
           <li><a class="nav-link scrollto" href="index.php#cleints"> عملاءنا</a></li>
-          <li><a class="nav-link scrollto" href="index.php#doctors">المنتجات</a></li>
+          <li><a class="nav-link scrollto" href="store.php">المنتجات</a></li>
           <li class="dropdown"><a href="#"><span> تقديم طلب </span>  <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="rental_request.php">طلب تأجير</a></li>

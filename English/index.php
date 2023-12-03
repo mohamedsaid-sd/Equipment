@@ -478,7 +478,8 @@
         <div class="section-title">
           <h2> Our partners  </h2>
           <p>
-          <img src="assets/img/parenter.png" alt="" style="width: 100%;">
+            <?php include 'fetch_image_ourpartners.php'; ?>
+          <!-- <img src="assets/img/parenter.png" alt="" style="width: 100%;"> -->
         </p>
         </div>
 
@@ -492,7 +493,10 @@
       <div class="container">
         <div class="section-title">
           <h2> Our customers  </h2>
-          <p><img src="assets/img/clients.png" alt="" style="width: 100%;"></p>
+          <p>
+            <?php include 'fetch_image_ourcustomer.php'; ?>
+            <!-- <img src="assets/img/clients.png" alt="" style="width: 100%;"> -->
+          </p>
         </div>
       </div>
     </section>

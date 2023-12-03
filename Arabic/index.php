@@ -40,10 +40,15 @@
 
 <body>
 
+
+
+
   <!-- ======= Top Bar ======= -->
   <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
+
+
 
         <a href="../English/index.php" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
         <a href="../Arabic/index.php" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
@@ -75,6 +80,7 @@
   </section><!-- End Hero -->
 
   <main id="main">
+   
 
     <!-- ======= Why Us Section ======= -->
     <section id="why-us" class="why-us">
@@ -427,7 +433,8 @@
         <div class="section-title">
           <h2> شركائنا  </h2>
           <p>
-          <img src="assets/img/parenter.png" alt="" style="width: 100%;">
+          <?php include 'fetch_image_ourpartners.php'; ?>
+          <!-- <img src="assets/img/parenter.png" alt="" style="width: 100%;"> -->
         </p>
         </div>
 
@@ -441,7 +448,10 @@
       <div class="container">
         <div class="section-title">
           <h2> عملاءنا  </h2>
-          <p><img src="assets/img/clients.png" alt="" style="width: 100%;"></p>
+          <p>
+            <?php include 'fetch_image_ourcustomer.php'; ?>
+            <!-- <img src="assets/img/clients.png" alt="" style="width: 100%;"> -->
+          </p>
         </div>
       </div>
     </section>
