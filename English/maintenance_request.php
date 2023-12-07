@@ -112,7 +112,7 @@
 
           <div class="col-lg-12 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form">
+            <form action="action_maintenance.php" enctype="multipart/form-data" method="post" role="form">
 
                 <h3 for="textAreaRemark">  Maintenance request form : </h3>
 
@@ -125,7 +125,7 @@
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="Sashinumber" id="Sashinumber" placeholder=" Chaassis number  " required>
+                    <input type="text" class="form-control" name="chassis" id="Sashinumber" placeholder=" Chaassis number  " required>
                   </div>
 
               </div>
@@ -134,13 +134,13 @@
 
      <div class="form-group col-md-4">
             <br/>
-            <input type="text" class="form-control" name="time" id="time" placeholder=" daily working hours " required>
+            <input type="text" class="form-control" name="km_read" id="time" placeholder=" daily working hours " required>
       </div>
 
       <div class="form-group col-md-4">
         <label>  Type of repaire </label>
         <div class="d-flex flex-row justify-content-between align-items-center">
-          <select class="form-control mr-1" id="typeoffix" name="typeoffix" required>
+          <select class="form-control mr-1" id="typeoffix" name="main_type" required>
             <option value="" disabled selected> -- Choose -- </option>
             <option value="1"> Mechanics </option>
             <option value="2"> Electricity </option>
@@ -157,7 +157,7 @@
 
       <div class="col-md-4 form-group">
         <br/>
-        <input type="text" name="Type" class="form-control" id="location" placeholder=" Machine location " required>
+        <input type="text" name="site_location" class="form-control" id="location" placeholder=" Machine location " required>
       </div>
     
      
@@ -183,12 +183,12 @@
       <div class="row">
         <div class="col-md-4 form-group mt-3 mt-md-0">
             <br/>
-            <input type="text" class="form-control" name="lastloc" id="Counter" placeholder=" Last job site " required>
+            <input type="text" class="form-control" name="site_location" id="Counter" placeholder=" Last job site " required>
           </div>
         <div class="form-group col-md-4">
            <label>  The nature of the site </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="ready" name="ready" required>
+             <select class="form-control mr-1" id="ready" name="site_nature" required>
                <option value="" disabled selected> -- Choose -- </option>
                <option value="1"> Mountains </option>
                <option value="2"> Wells </option>
@@ -201,17 +201,17 @@
    
          <div class="col-md-4 form-group mt-3 mt-md-0">
               <br/>
-            <input type="text" class="form-control" name="city" id="city" placeholder=" Area name " required>
+            <input type="text" class="form-control" name="site_location" id="city" placeholder=" Area name " required>
           </div>
 
           <div class="col-md-4 form-group mt-3 mt-md-0">
             <br/>
-            <input type="text" class="form-control" name="city2" id="city2" placeholder=" The nearest market " required>
+            <input type="text" class="form-control" name="Nearest_market" id="city2" placeholder=" The nearest market " required>
           </div>
           <div class="col-md-4 form-group mt-3 mt-md-0">
               <label>  Network availability </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="ready" name="ready" required>
+             <select class="form-control mr-1" id="ready" name="network" required>
                <option value="" disabled selected> -- Choose -- </option>
                <option value="1"> Communication  </option>
                <option value="2"> WiFi </option>
@@ -229,14 +229,18 @@
 
               <div class="row">
 
-                <div class="col-md-4 form-group">
+                <div class="col-md-3 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="  Customer name " required>
                 </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
+
+                <div class="col-md-3 form-group">
+                  <input type="text" name="phone" class="form-control" id="name" placeholder="  phone " required>
+                </div>
+                <div class="col-md-3 form-group mt-3 mt-md-0">
                   <input type="text" class="form-control" name="email" id="email" placeholder=" Customer Email " required>
                 </div>
 
-                <div class="col-md-4 form-group mt-3 mt-md-0">
+                <div class="col-md-3 form-group mt-3 mt-md-0">
                     <input type="text" class="form-control" name="job" id="job" placeholder=" Customer job " required>
                   </div>
 
@@ -246,17 +250,17 @@
 
               <div class="col-md-4 form-group">
                 <lable>  Your side is </lable> 
-                <select class="form-control mr-1" name="side" id="side" onchange="select_side();" required>
+                <select class="form-control mr-1" name="work_for" id="side" onchange="select_side();" required>
                 <option value="" disabled selected> -- Choose -- </option>
                 <option value="company"> Company </option>
                 <option value=""> Individual </option>
                 </select>  
-                <input id="sidehide" type="text" class="form-control" placeholder=" ادخل اسم الشركة يدوي " style="display: none;" />
+                <input id="sidehide" type="text" name="company_name" class="form-control" placeholder=" ادخل اسم الشركة يدوي " style="display: none;" />
               </div>
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <lable> Have you over worked with us : </lable> 
-                <select class="form-control mr-1" name="wwus" id="wwus" onchange="select_wwus();" required>
+                <select class="form-control mr-1" name="previous" id="wwus" onchange="select_wwus();" required>
                 <option value="" disabled selected> -- Choose -- </option>
                 <option value="yes"> Yes </option>
                 <option value="2"> No </option>
@@ -272,7 +276,7 @@
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <div class="form-group">
               <label for="exampleFormControlSelect2"> How to know us :  </label>
-              <select multiple class="form-control" id="exampleFormControlSelect2">
+              <select multiple class="form-control" name="know" id="exampleFormControlSelect2">
                 <option> Facebook </option>
                 <option> Twiter </option>
                 <option> Instegram </option>
