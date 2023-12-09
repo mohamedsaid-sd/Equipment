@@ -187,7 +187,6 @@
 
                       // sending form :
                       if(isset($_POST['send_form'])){
-
                         // success add form alert ...
                         echo "<div class='alert alert-success'>
                         <span class='icon'> <i class='fa fa-check-circle'></i></span>
