@@ -177,37 +177,56 @@
 
           <div class="col-lg-12 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="deportation_request.php" method="post" role="form">
+
+               <div class="my-3">
+                <div class="loading"></div>
+                <div class="error-message"></div>
+                <div class="sent-message">
+                  <?php
+
+                      // sending form :
+                      if(isset($_POST['send_form'])){
+
+                        // success add form alert ...
+                        echo "<div class='alert alert-success'>
+                        <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                         <b> تم ارسال الطلب بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال طلباتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
+                      }
+
+                  ?>
+                </div>
+              </div>
 
                 <h3 for="textAreaRemark">مطلوبات الترحيل</h3>
 
               <div class="row">
                 <div class="col-md-4 form-group">
                   نوع الآليه المرحلة <br/>
-                  <select class="form-control mr-1" name="type" id="type" onchange="select_type();" required>
+                  <select class="form-control mr-1" name="type" id="type" onchange="select_type();" >
                     <option disabled selected> -- اختار النوع  -- </option>
                     <option> دفار </option>
                     <option> دوزر </option>
                     <option> مولد </option>
                     <option value="hand"> يدوي </option>
                   </select>
-                  <input id="typehide" type="text" class="form-control" placeholder=" ادخل نوع الالية يدوي " required style="display:none">
+                  <input id="typehide" type="text" class="form-control" placeholder=" ادخل نوع الالية يدوي "  style="display:none">
                 </div>
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                   مقاس الآليه المرحلة <br/>
-                  <input type="text" class="form-control" placeholder=" ادخل المقاس يدوي  " required>
+                  <input type="text" class="form-control" placeholder=" ادخل المقاس يدوي  ">
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                  ماركة الآليه المرحلة <br/>
-                 <select class="form-control mr-1" name="brand" id="brand" onchange="select_brand();" required>
+                 <select class="form-control mr-1" name="brand" id="brand" onchange="select_brand();" >
                     <option disabled selected> --  اختار الماركة  -- </option>
                     <option> GAT </option>
                     <option> JCB </option>
                     <option> ATLAS CAPS </option>
                     <option value="hand"> يدوي </option>
                   </select>    
-                  <input id="brandhide" type="text" class="form-control" placeholder=" ادخل ماركة الالية يدوي " required style="display:none">
+                  <input id="brandhide" type="text" class="form-control" placeholder=" ادخل ماركة الالية يدوي "  style="display:none">
               
                 </div>
                </div>
@@ -217,7 +236,7 @@
      <div class="col-md-4 form-group">
         <label>وزن الآلية (طن) </label>
        
-          <select class="form-control mr-1" name="weight" id="weight" onchange="select_weight();" required>
+          <select class="form-control mr-1" name="weight" id="weight" onchange="select_weight();" >
           <option value="" disabled selected> -- اختار الوزن -- </option>  
             <option value="10">10</option>
             <option value="12">20</option>
@@ -231,7 +250,7 @@
 
       <div class="form-group col-md-4">
         <label> اوراق الاليه المتوفرة </label>
-          <select class="form-control mr-1" name="paper" id="paper" onchange="select_paper();" required>
+          <select class="form-control mr-1" name="paper" id="paper" onchange="select_paper();" >
             <option value="" disabled selected> -- اختر الاوراق -- </option>
             <option value="1"> شهادة بحث </option>
             <option value="2"> شهادة وارد </option>
@@ -244,7 +263,7 @@
       <div class="form-group col-md-4">
         <label>  مقاس الالية المطلوبة للترحيل </label>
    
-          <select class="form-control mr-1" name="size" id="size" onchange="select_size();" required>
+          <select class="form-control mr-1" name="size" id="size" onchange="select_size();" >
             <option value="" disabled selected> -- اختار المقاس -- </option>
             <option value="1"> لوبد</option>
             <option value="2"> سطحة </option>
@@ -265,33 +284,33 @@
       <div class="row">
         <div class="col-md-4 form-group">
           مكان الآالية <br/>
-          <input type="text" class="form-control" placeholder=" الولاية " required>
+          <input type="text" class="form-control" placeholder=" الولاية " >
         </div>
         <div class="col-md-4 form-group mt-3 mt-md-0">
           <br/>
-          <input type="text" class="form-control"  placeholder=" المنطقة " required>
+          <input type="text" class="form-control"  placeholder=" المنطقة " >
         </div>
 
         <div class="form-group col-md-4">
           <br/>
-          <input type="text" class="form-control" placeholder=" الموقع / الشركة " required>
+          <input type="text" class="form-control" placeholder=" الموقع / الشركة " >
         </div>
       </div>
 
       <div class="row">
       
       <div class="col-md-4 form-group mt-3 mt-md-0">
-        <textarea class="form-control" id="validationTextarea" placeholder="  وصف كتابي دقيق للموقع " required></textarea>    
+        <textarea class="form-control" id="validationTextarea" placeholder="  وصف كتابي دقيق للموقع " ></textarea>    
       </div>
        
       <div class="form-group col-md-4">
            
-        <input type="text" class="form-control" placeholder=" رقم التواصل 1 " required>  
+        <input type="text" class="form-control" placeholder=" رقم التواصل 1 " >  
     </div>
          
    
          <div class="form-group col-md-4">
-         <input type="text" class="form-control" placeholder=" رقم التواصل 2 " required>  
+         <input type="text" class="form-control" placeholder=" رقم التواصل 2 " >  
          </div>
               </div>
              
@@ -302,14 +321,14 @@
               <div class="row">
 
                 <div class="col-md-4 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="  الاسم " required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="  الاسم " >
                 </div>
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="email" id="email" placeholder=" الايميل " required>
+                  <input type="text" class="form-control" name="email" id="email" placeholder=" الايميل " >
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="job" id="job" placeholder=" الوظيفة " required>
+                    <input type="text" class="form-control" name="job" id="job" placeholder=" الوظيفة " >
                   </div>
 
               </div>
@@ -318,7 +337,7 @@
 
               <div class="col-md-4 form-group">
                 <lable> الجهه التابع لها </lable> 
-                <select class="form-control mr-1" name="side" id="side" onchange="select_side();" required>
+                <select class="form-control mr-1" name="side" id="side" onchange="select_side();" >
                 <option value="" disabled selected> -- اختار الجهه -- </option>
                 <option value="company"> شركة </option>
                 <option value=""> فرد </option>
@@ -328,14 +347,14 @@
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <lable> هل  سبق لك العمل معنا </lable> 
-                <select class="form-control mr-1" name="wwus" id="wwus" onchange="select_wwus();" required>
+                <select class="form-control mr-1" name="wwus" id="wwus" onchange="select_wwus();" >
                 <option value="" disabled selected> -- اختار الاجابة -- </option>
                 <option value="yes"> نعم </option>
                 <option value="2"> لا </option>
                 </select>
 
                <input id="wwushide" type="text" class="form-control" placeholder=" في اي موقع عملت معنا " style="display: none;" />
-               <!-- required style="display:none" -->
+     
                
               
 
@@ -358,12 +377,8 @@
               </div>
 
               
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit"> إرسال الطلب </button></div>
+
+              <div class="text-center"><button type="submit" name="send_form"> إرسال الطلب </button></div>
             </form>
 
           </div>
