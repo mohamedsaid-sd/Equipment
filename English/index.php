@@ -263,49 +263,61 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="col-lg-12 col-md-12 d-flex align-items-stretch">
             <div class="icon-box">
-              <!-- <div class="icon"><i class="fas fa-heartbeat"></i></div> -->
-              <h4><a href=""> Department المقاولة </a></h4>
+            <div class="icon"><i class="fas fa-clipboard"></i></div>
+            <br/>
+            <br/>
+            <h4><a href=""> Department المقاولة </a></h4>
               <p> Small preff about the Department ,Small preff about the Department ,Small preff about the Department   </p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+          <div class="col-lg-12 col-md-12 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="icon-box">
-              <!-- <div class="icon"><i class="fas fa-pills"></i></div> -->
+            <div class="icon"><i class="fas fa-tractor"></i></div>
+              <br/>
+              <br/>
               <h4><a href=""> Department التأجير </a></h4>
               <p> Small preff about the Department ,Small preff about the Department ,Small preff about the Department   </p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+          <div class="col-lg-12 col-md-12 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
-              <!-- <div class="icon"><i class="fas fa-hospital-user"></i></div> -->
+            <div class="icon"><i class="fab fa-teamspeak"></i></div>
+              <br/>
+              <br/>
               <h4><a href=""> Department التشغيل  </a></h4>
               <p> Small preff about the Department ,Small preff about the Department ,Small preff about the Department   </p>
              </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="col-lg-12 col-md-12 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
-              <!-- <div class="icon"><i class="fas fa-dna"></i></div> -->
+            <div class="icon"><i class="fab fa-wpforms"></i></div>
+              <br/>
+              <br/>
               <h4><a href=""> Department التوظيف </a></h4>
               <p> Small preff about the Department ,Small preff about the Department ,Small preff about the Department   </p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="col-lg-12 col-md-12 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
-              <!-- <div class="icon"><i class="fas fa-wheelchair"></i></div> -->
+            <div class="icon"><i class="fas fa-tools"></i></div>
+              <br/>
+              <br/>
               <h4><a href="">Department الصيانة </a></h4>
               <p> Small preff about the Department ,Small preff about the Department ,Small preff about the Department   </p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <div class="col-lg-12 col-md-12 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="icon-box">
-              <!-- <div class="icon"><i class="fas fa-notes-medical"></i></div> -->
+            <div class="icon"><i class="fas fa-truck-moving"></i></div>
+              <br/>
+              <br/>
               <h4><a href=""> Department الترحيل  </a></h4>
               <p> Small preff about the Department ,Small preff about the Department ,Small preff about the Department   </p>
             </div>
