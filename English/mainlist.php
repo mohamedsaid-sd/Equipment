@@ -11,11 +11,11 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.php#about"> Who we are </a></li>
+          <li><a class="nav-link scrollto" href="index.php#about"> About </a></li>
           <li><a class="nav-link scrollto" href="index.php#departments"> Departments </a></li>
-          <li><a class="nav-link scrollto" href="index.php#services">  Our field of work  </a></li>
-          <li><a class="nav-link scrollto" href="index.php#parenter"> Our Parenters </a></li>
-          <li><a class="nav-link scrollto" href="index.php#cleints"> Our Clients </a></li>
+          <li><a class="nav-link scrollto" href="index.php#services"> Fields of work  </a></li>
+          <li><a class="nav-link scrollto" href="index.php#parenter"> Parenters </a></li>
+          <li><a class="nav-link scrollto" href="index.php#cleints"> Clients </a></li>
           <li><a class="nav-link scrollto" href="store.php"> store </a></li>
           <li class="dropdown"><a href="#"><span>  Add Request </span>  <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -38,6 +38,7 @@
     
             </ul>
           </li>
+          <li><a class="nav-link scrollto" href="notofication_request.php"> Report or complaints </a></li>
           <li><a class="nav-link scrollto" href="index.php#contact"> Contact us </a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
