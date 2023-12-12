@@ -3,28 +3,38 @@
 
 if(isset($_POST['add'])){
 
+ // rental data : 
+ $work_typ=$_POST['work_typ']; // نوع العمل
+ $duration=$_POST['duration']; // مدة العمل
+ $month_rent=$_POST['month_rent']; // ساعات العمل
+ $hour_num=$_POST['hour_num']; // ساعات العمل اليومية
+ $work_hours=$_POST['work_hours']; // ساعات العمل ادخال يدوي
+ $work_date=$_POST['work_date']; // بدايات العمل المتوقعة
 
-$work_typ=$_POST['work_typ'];
- $duration=$_POST['duration'];
- $month_rent=$_POST['month_rent'];
- $hour_num=$_POST['hour_num'];
- $email=$_POST['email'];
- $work_hours=$_POST['work_hours'];
- $work_date=$_POST['work_date'];
+ // site data :
+ $state=$_POST['state']; // الولاية
+ $start_date=$_POST['start_date']; // 
  $note=$_POST['note'];
  $know=$_POST['Nearest_market'];
  $distance=$_POST['distance'];
- $state=$_POST['state'];
- $site_age=$_POST['site_age'];
- $start_date=$_POST['start_date'];
- $name=$_POST['name'];
- $email=$_POST['email'];
- $job=$_POST['job'];
+
+ $site_age=$_POST['site_age']; // عمر الموقع
+
+
+ 
+
  $categ=$_POST['categ'];
- $company=$_POST['company'];
  $work=$_POST['work'];
- $know=$_POST['know'];
- $status=$_POST['status'];
+ 
+
+
+ // client data : 
+$name=$_POST['name']; // customer name 
+$email=$_POST['email']; // customer email
+$job=$_POST['job']; // customer job
+$company=$_POST['company']; // the company or direction
+$know=$_POST['know']; // pevious work with us 
+$status=$_POST['status']; // how you know us
 
 
 

@@ -80,12 +80,14 @@ $jayParsedAry = [
                 "des_description" => "Transport to destination site.", 
                 "des_phone" => "5557654321", 
                 "des_mobile" => "5556781234", 
+                // customer data
                 "name" => "John Doe", 
                 "email" => "john.doe@example.com", 
                 "job" => "Job Description here", 
                 "work_for" => "company", 
                 "previous" => "yes", 
                 "know" => "google", 
+                //////////////////////////////////////////////////////////////
                 "status" => "draft" 
              ] 
           ] 
