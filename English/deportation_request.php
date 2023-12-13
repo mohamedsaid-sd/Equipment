@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title> طلب ترحيل  </title>
+  <title> Migration Request </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -84,16 +84,16 @@
       }
    }
 
-   // deal with machine size
-   function select_size(){
-     var type = document.getElementById("size").value;
-      if(type == "hand"){
-      document.getElementById("sizehide").style.display = "block";
-      }else{
-      document.getElementById("sizehide").value = "";
-      document.getElementById("sizehide").style.display = "none";
-      }
-   }
+   // // deal with machine size
+   // function select_size(){
+   //   var type = document.getElementById("size").value;
+   //    if(type == "hand"){
+   //    document.getElementById("sizehide").style.display = "block";
+   //    }else{
+   //    document.getElementById("sizehide").value = "";
+   //    document.getElementById("sizehide").style.display = "none";
+   //    }
+   // }
 
    // deal with location side
    function select_side(){
@@ -188,18 +188,24 @@
                       if(isset($_POST['send_form'])){
 
                     @$machine=$_POST['machine']; 
-                     if($machine == "hand"){
+                     if($machine == "hand")
                         @$machine=$_POST['machinehide']; 
-                     }
+                     
                      @$size  = $_POST['size'];
+                     @$sizetxt=$_POST['sizetxt'];                    
+                     @$size = $size . $_POST['sizetxt'];
+                     
                      @$model = $_POST['model'];
-                     if($machine == "hand"){
+                     if($model == "hand")
                         @$machine=$_POST['modelhide']; 
-                     }
+                     
                      @$wieght = $_POST['wieght'];
-                     if($wieght == "hand"){
+                     if($wieght == "hand")
                       $wieght = $_POST['wieghthide'];
-                     }
+                     
+                     @$document = $_POST['document'];
+                     if($document == "hand")
+                      $document = $_POST['documenthide'];
 
                      //location detailes
                      @$state     = $_POST['state'];
@@ -209,19 +215,26 @@
                      @$phone      = $_POST['phone'];
                      @$mobile     = $_POST['mobile'];
 
+                     @$des_state     = $_POST['des_state'];
+                     @$des_zone      = $_POST['des_zone'];
+                     @$des_workplace = $_POST['des_workplace'];
+                     @$des_description=$_POST['des_description'];
+                     @$des_phone     = $_POST['des_phone'];
+                     @$des_mobile     = $_POST['des_mobile'];
+
                      // customers detailes 
                      @$name    = $_POST['name'];
                      @$email   = $_POST['email'];
                      @$job     = $_POST['job'];
                      @$work_for= $_POST['work_for'];
-                     if($work_for == "company"){
+                     if($work_for == "company")
                         $work_for= $_POST['work_forhide'];
-                     }
+                     
                      @$previous= $_POST['previous'];
-                     if($previous == "yes"){
+                     if($previous == "yes")
                         $previous= $_POST['previoushide'];
-                     }
-                     //$know     = $_POST['know'];
+                     
+                     $know     = $_POST['know'];
 
 
                      // echo "Data:".$machine.$size.$model.$wieght.$state.$zone.$workplace.$description.$phone.$mobile.$name.$email.$job.$work_for.$previous;
@@ -254,14 +267,14 @@ $jayParsedAry = [
                 "description" => $description, 
                 "phone" => $phone, 
                 "mobile" => $mobile, 
-                "des_state" => "New Jersey", 
-                "des_zone" => "Zone 2", 
-                "des_workplace" => "Site A", 
+                "des_state" => $des_state, 
+                "des_zone" => $des_zone, 
+                "des_workplace" => $des_workplace, 
                 "des_company_name" => "Company B", 
                 "des_location" => "9876 Branch Street", 
-                "des_description" => "Transport to destination site.", 
-                "des_phone" => "5557654321", 
-                "des_mobile" => "5556781234", 
+                "des_description" => $des_description, 
+                "des_phone" => $des_phone, 
+                "des_mobile" => $des_mobile, 
                 // customer data
                 "name" => $name, 
                 "email" => $email, 
@@ -343,10 +356,11 @@ curl_close($curl);
                 <h3 for="textAreaRemark"> Migration Liabilities:</h3>
 
               <div class="row">
+
                 <div class="col-md-4 form-group">
                 Type Of Machine: <br/>
                   <select class="form-control mr-1" name="machine" id="machine" onchange="select_type();">
-                    <option disabled selected> -- Choose   -- </option>
+                    <option value="" disabled selected> -- Choose   -- </option>
                     <option> Excavator </option>
                     <option> Dozer </option>
                     <option> Generator </option>
@@ -354,9 +368,18 @@ curl_close($curl);
                   </select>
                   <input id="machinehide" name="machinehide" type="text" class="form-control" placeholder="  Manual Entry " style="display:none">
                 </div>
+
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                 SIZE OF MACHINE <br/>
-                  <input type="text" name="size" class="form-control" placeholder=" manual entry size    ">
+                   <select class="form-control mr-1" id="size" name="size" onchange="select_size();">
+                    <option value="" disabled selected> --   Choose  -- </option>
+                    <option> Comprossor </option>
+                    <option> Generator </option>
+                    <option> Welding Machine </option>
+                    <option> Excavator </option>
+                    <option value="hand"> Manual Entry </option>
+                  </select>    
+                  <input type="text" id="sizetxt" name="sizetxt" class="form-control" placeholder="Entry manual the size ">
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
@@ -368,7 +391,7 @@ curl_close($curl);
                     <option> ATLAS CAPS </option>
                     <option value="hand"> manual entry </option>
                   </select>    
-                  <input id="modelhide" type="text" class="form-control" placeholder="    manual entry " style="display:none">
+                  <input id="modelhide" name="modelhide" type="text" class="form-control" placeholder="    manual entry " style="display:none">
               
                 </div>
                </div>
@@ -392,28 +415,28 @@ curl_close($curl);
 
       <div class="form-group col-md-4">
         <label>   DOCUMENTS </label>
-          <select class="form-control mr-1" name="paper" id="paper" onchange="select_paper();">
+          <select class="form-control mr-1" name="document" id="document" onchange="select_paper();">
             <option value="" disabled selected> --  Choose -- </option>
             <option value="1">  machine license </option>
             <option value="2">  custom certificate </option>
             <option value="3"> authorization </option>
             <option value="hand">  other document</option>
           </select>
-          <input id="paperhide" type="text" class="form-control" placeholder=" manual entry  other document " style="display: none" />
+          <input id="documenthide" name="documenthide" type="text" class="form-control" placeholder=" manual entry  other document " style="display: none" />
       </div>
 
       <div class="form-group col-md-4">
-        <label>     TYPE OF MACHINE TO MOB/DIMOB </label>
+        <label>  TYPE OF MACHINE TO MOB/DIMOB </label>
    
-          <select class="form-control mr-1" name="size" id="size" onchange="select_size();">
+          <select class="form-control mr-1" name="size" id="size">
             <option value="" disabled selected> --  Choose -- </option>
             <option value="1"> lowbed</option>
             <option value="2"> trailer </option>
             <option value="3"> truck </option>
-            <option value="hand">  manual entry </option>
+            <option value="hand"> Other </option>
           </select>
 
-          <input id="sizehide" type="text" class="form-control" placeholder="   manual entry " style="display: none;" />
+          <input id="sizehide" name="sizehide" type="text" class="form-control" placeholder="Enter machine Size"/>
     
       </div>
 
@@ -426,16 +449,16 @@ curl_close($curl);
       <div class="row">
         <div class="col-md-4 form-group">
         LOCATION MACHINE <br/>
-          <input type="text" class="form-control" name="state" placeholder=" state ">
+          <input type="text" class="form-control" id="state" name="state" placeholder=" state ">
         </div>
         <div class="col-md-4 form-group mt-3 mt-md-0">
           <br/>
-          <input type="text" class="form-control" name="zone"  placeholder=" zone ">
+          <input type="text" class="form-control" id="zone" name="zone"  placeholder=" zone ">
         </div>
 
         <div class="form-group col-md-4">
           <br/>
-          <input type="text" class="form-control" name="workplace" placeholder="  workplace ">
+          <input type="text" class="form-control" id="workplace" name="workplace" placeholder="  workplace ">
         </div>
       </div>
 
@@ -447,14 +470,48 @@ curl_close($curl);
        
       <div class="form-group col-md-4">
            
-        <input type="text" class="form-control" name="phone" placeholder="  phone number 1">  
+        <input type="text" class="form-control" id="phone" name="phone" placeholder="  phone number 1">  
     </div>
          
    
          <div class="form-group col-md-4">
-         <input type="text" class="form-control" name="mobile" placeholder=" phone number 2 ">  
+         <input type="text" class="form-control" id="mobile" name="mobile" placeholder=" phone number 2 ">  
          </div>
-              </div>
+    </div>
+
+          <div class="row">
+        <div class="col-md-4 form-group">
+        DESTINATION  <br/>
+          <input type="text" class="form-control" id="des_state" name="des_state" placeholder=" state ">
+        </div>
+        <div class="col-md-4 form-group mt-3 mt-md-0">
+          <br/>
+          <input type="text" class="form-control" id="des_zone" name="des_zone"  placeholder=" zone ">
+        </div>
+
+        <div class="form-group col-md-4">
+          <br/>
+          <input type="text" class="form-control" id="des_workplace" name="des_workplace" placeholder="  workplace ">
+        </div>
+      </div>
+
+      <div class="row">
+      
+      <div class="col-md-4 form-group mt-3 mt-md-0">
+        <textarea class="form-control" id="validationTextarea" name="des_description" placeholder="  write a precise description of the workplace    "></textarea>    
+      </div>
+       
+      <div class="form-group col-md-4">
+           
+        <input type="text" class="form-control" id="des_phone" name="des_phone" placeholder="  phone number 1">  
+    </div>
+         
+   
+         <div class="form-group col-md-4">
+         <input type="text" class="form-control" id="des_mobile" name="des_mobile" placeholder=" phone number 2 ">  
+         </div>
+    </div>
+
              
               <!-- **********************Customer Data***************************** -->
               <h3 for="textAreaRemark">CUSTOMER DATA  </h3>

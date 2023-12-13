@@ -42,40 +42,40 @@
   
   // deal with machine type
    function select_type(){
-    var type = document.getElementById("type").value;
+    var type = document.getElementById("machine").value;
       if(type == "hand"){
-      document.getElementById("typehide").style.display = "block";
+      document.getElementById("machinehide").style.display = "block";
       }else{
-      document.getElementById("typehide").value = "";
-      document.getElementById("typehide").style.display = "none";
+      document.getElementById("machinehide").value = "";
+      document.getElementById("machinehide").style.display = "none";
       }
    }
 
    // deal with machine brand
    function select_brand(){
-    var type = document.getElementById("brand").value;
+    var type = document.getElementById("model").value;
       if(type == "hand"){
-      document.getElementById("brandhide").style.display = "block";
+      document.getElementById("modelhide").style.display = "block";
       }else{
-      document.getElementById("brandhide").value = "";
-      document.getElementById("brandhide").style.display = "none";
+      document.getElementById("modelhide").value = "";
+      document.getElementById("modelhide").style.display = "none";
       }
    }
 
    // deal with machine weight
    function select_weight(){
-   	 var type = document.getElementById("weight").value;
+     var type = document.getElementById("wieght").value;
       if(type == "hand"){
-      document.getElementById("weighthide").style.display = "block";
+      document.getElementById("wieghthide").style.display = "block";
       }else{
-      document.getElementById("weighthide").value = "";
-      document.getElementById("weighthide").style.display = "none";
+      document.getElementById("wieghthide").value = "";
+      document.getElementById("wieghthide").style.display = "none";
       }
    }
 
    // deal with machine paper
    function select_paper(){
-   	 var type = document.getElementById("paper").value;
+     var type = document.getElementById("paper").value;
       if(type == "hand"){
       document.getElementById("paperhide").style.display = "block";
       }else{
@@ -97,26 +97,25 @@
 
    // deal with location side
    function select_side(){
-     var type = document.getElementById("side").value;
+     var type = document.getElementById("work_for").value;
       if(type == "company"){
-      document.getElementById("sidehide").style.display = "block";
+      document.getElementById("work_forhide").style.display = "block";
       }else{
-      document.getElementById("sidehide").value = "";
-      document.getElementById("sidehide").style.display = "none";
+      document.getElementById("work_forhide").value = "";
+      document.getElementById("work_forhide").style.display = "none";
       }
    }
 
    // deal with work with us 
    function select_wwus(){
-     var type = document.getElementById("wwus").value;
+     var type = document.getElementById("previous").value;
       if(type == "yes"){
-      document.getElementById("wwushide").style.display = "block";
+      document.getElementById("previoushide").style.display = "block";
       }else{
-      document.getElementById("wwushide").value = "";
-      document.getElementById("wwushide").style.display = "none";
+      document.getElementById("previoushide").value = "";
+      document.getElementById("previoushide").style.display = "none";
       }
    }
-
 
 </script>
 
@@ -187,10 +186,162 @@
 
                       // sending form :
                       if(isset($_POST['send_form'])){
-                        // success add form alert ...
+
+                     @$machine=$_POST['machine']; 
+                     if($machine == "hand")
+                        @$machine=$_POST['machinehide']; 
+                     
+                     @$size  = $_POST['size'];
+                     @$sizetxt=$_POST['sizetxt'];                    
+                     @$size = $size . $_POST['sizetxt'];
+
+                     @$model = $_POST['model'];
+                     if($model == "hand")
+                        @$machine=$_POST['modelhide']; 
+                     
+                     @$wieght = $_POST['wieght'];
+                     if($wieght == "hand")
+                      $wieght = $_POST['wieghthide'];
+                     
+                     @$document = $_POST['document'];
+                     if($document == "hand")
+                      $document = $_POST['documenthide'];
+
+                     //location detailes
+                     @$state     = $_POST['state'];
+                     @$zone      = $_POST['zone'];
+                     @$workplace = $_POST['workplace'];
+                     @$description=$_POST['description'];
+                     @$phone      = $_POST['phone'];
+                     @$mobile     = $_POST['mobile'];
+
+                     @$des_state     = $_POST['des_state'];
+                     @$des_zone      = $_POST['des_zone'];
+                     @$des_workplace = $_POST['des_workplace'];
+                     @$des_description=$_POST['des_description'];
+                     @$des_phone     = $_POST['des_phone'];
+                     @$des_mobile     = $_POST['des_mobile'];
+
+                     // customers detailes 
+                     @$name    = $_POST['name'];
+                     @$email   = $_POST['email'];
+                     @$job     = $_POST['job'];
+                     @$work_for= $_POST['work_for'];
+                     if($work_for == "company"){
+                        $work_for= $_POST['work_forhide'];
+                     }
+                     @$previous= $_POST['previous'];
+                     if($previous == "yes"){
+                        $previous= $_POST['previoushide'];
+                     }
+                     @$know     = $_POST['know'];
+
+
+                     // echo "Data:".$machine.$size.$model.$wieght.$state.$zone.$workplace.$description.$phone.$mobile.$name.$email.$job.$work_for.$previous.$know;
+
+$jayParsedAry = [
+    "params" => [
+          "args" => [
+             "vals_list" => [
+                "machine" => $machine, 
+                "comprossor" => "100 PSI", 
+                "generator" => "15 kW", 
+                "welding_machine" => "200 A", 
+                "excavator" => "Medium", 
+                "model" => $model, 
+                "wieght" => $wieght, 
+                "license" => 1, 
+                "certificate" => 2, 
+                "authorization" => 3, 
+                "other" => 4, 
+                "lowbed" => 15, 
+                "trailer" => "zs", 
+                "truck" => 10, 
+                "state" => $state, 
+                "zone" => $zone, 
+                "workplace" => $workplace, 
+                "company_name" => "XYZ Constructions", 
+                "location" => "1234 Main Street", 
+                "description" => $description, 
+                "phone" => $phone, 
+                "mobile" => $mobile, 
+                "des_state" => $des_state, 
+                "des_zone" => $des_zone, 
+                "des_workplace" => $des_workplace, 
+                "des_company_name" => "Company B", 
+                "des_location" => "9876 Branch Street", 
+                "des_description" => $des_description, 
+                "des_phone" => $des_phone, 
+                "des_mobile" => $des_mobile, 
+                // customer data
+                "name" => $name, 
+                "email" => $email, 
+                "job" => $job, 
+                "work_for" => $work_for, 
+                "previous" => $previous, 
+                "know" => "google", 
+                //////////////////////////////////////////////////////////////
+                "status" => "draft" 
+             ] 
+          ] 
+       ] 
+ ]; 
+
+
+
+$done=json_encode($jayParsedAry);
+//echo $done;
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://equipation-equipation-odoo-com-stage-10590858.dev.odoo.com/apiV2/migration.request/create',
+  CURLOPT_SSL_VERIFYHOST => 0 ,
+  CURLOPT_SSL_VERIFYPEER => 0 ,
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>$done,
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json',
+    'X-Openerp-Session-Id: {{session_id}}',
+    'Cookie: session_id=a1fd8b1c0a71abde4e289ac7f5212eee0e8cc5e7'
+  ),
+));
+
+ $response = curl_exec($curl);
+
+
+
+if(curl_errno($curl)) {
+  echo 'Error: ' . curl_error($curl);
+} else {
+
+  //echo $response;
+      // convert response to array
+    $array = json_decode(  $response , true );
+    // loop the array to fetch item
+    foreach ($array as $key => $value) {
+        if($key == "msg" )
+          if($value == "Success")
+                // success add form alert ...
                         echo "<div class='alert alert-success'>
                         <span class='icon'> <i class='fa fa-check-circle'></i></span>
                          <b> تم ارسال الطلب بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال طلباتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
+            else
+              echo "<div class='alert alert-danger'>
+                        <span class='icon'> <i class='fa fa-cancel'></i></span>
+                         <b> خطأ في عملية الارسال </b> </div>";
+    }
+
+  // echo gettype($x);
+  // echo "R".$x;
+}
+curl_close($curl);
+                  
                       }
 
                   ?>
@@ -200,34 +351,44 @@
                 <h3 for="textAreaRemark">مطلوبات الترحيل</h3>
 
               <div class="row">
+
                 <div class="col-md-4 form-group">
                   نوع الآليه المرحلة <br/>
-                  <select class="form-control mr-1" name="type" id="type" onchange="select_type();" >
-                    <option disabled selected> -- اختار النوع  -- </option>
+                  <select class="form-control mr-1" name="machine" id="machine" onchange="select_type();" >
+                    <option value="" disabled selected> -- اختار النوع  -- </option>
                     <option> دفار </option>
                     <option> دوزر </option>
                     <option> مولد </option>
                     <option value="hand"> يدوي </option>
                   </select>
-                  <input id="typehide" type="text" class="form-control" placeholder=" ادخل نوع الالية يدوي "  style="display:none">
+                  <input id="machinehide" name="machinehide" type="text" class="form-control" placeholder=" ادخل نوع الالية يدوي "  style="display:none">
                 </div>
+
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                  مقاس الآليه المرحلة <br/>
-                  <input type="text" class="form-control" placeholder=" ادخل المقاس يدوي  ">
+                  مقاس الآلية  <br/>
+                  <select class="form-control mr-1" id="size" name="size" onchange="select_size();">
+                    <option value="" disabled selected> --  اختار  -- </option>
+                    <option> كمبروسير </option>
+                    <option> مولد </option>
+                    <option> مكنة لحام </option>
+                    <option> حفار </option>
+                    <option value="hand"> ادخال يدوي </option>
+                  </select>
+                  <input type="text"  id="sizetxt" name="sizetxt" class="form-control" placeholder=" ادخل المقاس يدوي  ">
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                  ماركة الآليه المرحلة <br/>
-                 <select class="form-control mr-1" name="brand" id="brand" onchange="select_brand();" >
+                 <select class="form-control mr-1" name="model" id="model" onchange="select_brand();" >
                     <option disabled selected> --  اختار الماركة  -- </option>
                     <option> GAT </option>
                     <option> JCB </option>
                     <option> ATLAS CAPS </option>
                     <option value="hand"> يدوي </option>
                   </select>    
-                  <input id="brandhide" type="text" class="form-control" placeholder=" ادخل ماركة الالية يدوي "  style="display:none">
-              
+                  <input id="modelhide" name="modelhide" type="text" class="form-control" placeholder=" ادخل ماركة الالية يدوي "  style="display:none">
                 </div>
+
                </div>
      <!-- Start Input Start Time -->
      <div class="row">
@@ -235,34 +396,34 @@
      <div class="col-md-4 form-group">
         <label>وزن الآلية (طن) </label>
        
-          <select class="form-control mr-1" name="weight" id="weight" onchange="select_weight();" >
+          <select class="form-control mr-1" name="wieght" id="wieght" onchange="select_weight();" >
           <option value="" disabled selected> -- اختار الوزن -- </option>  
             <option value="10">10</option>
             <option value="12">20</option>
             <option value="15">30</option>
             <option value="hand">ادخال يدوي</option>
           </select>
-          <input id="weighthide" type="text" class="form-control" placeholder=" ادخل الوزن يدوي " style="display: none;" />
+          <input id="wieghthide" name="wieghthide" type="text" class="form-control" placeholder=" ادخل الوزن يدوي " style="display: none;" />
         
         
       </div>
 
       <div class="form-group col-md-4">
         <label> اوراق الاليه المتوفرة </label>
-          <select class="form-control mr-1" name="paper" id="paper" onchange="select_paper();" >
+          <select class="form-control mr-1" name="document" id="document" onchange="select_paper();" >
             <option value="" disabled selected> -- اختر الاوراق -- </option>
             <option value="1"> شهادة بحث </option>
             <option value="2"> شهادة وارد </option>
             <option value="3"> توكيل </option>
             <option value="hand"> اوراق اخري (يدوي) </option>
           </select>
-          <input id="paperhide" type="text" class="form-control" placeholder=" ادخل الاوراق يدوي " style="display: none" />
+          <input id="documenthide" name="documenthide"  type="text" class="form-control" placeholder=" ادخل الاوراق يدوي " style="display: none" />
       </div>
 
       <div class="form-group col-md-4">
         <label>  مقاس الالية المطلوبة للترحيل </label>
    
-          <select class="form-control mr-1" name="size" id="size" onchange="select_size();" >
+          <select class="form-control mr-1" name="size" id="size" >
             <option value="" disabled selected> -- اختار المقاس -- </option>
             <option value="1"> لوبد</option>
             <option value="2"> سطحة </option>
@@ -270,7 +431,7 @@
             <option value="hand"> ادخال يدوي </option>
           </select>
 
-          <input id="sizehide" type="text" class="form-control" placeholder=" ادخل المقاس يدوي " style="display: none;" />
+          <input id="sizehide" name="sizehide" type="text" class="form-control" placeholder=" ادخل المقاس يدوي "/>
     
       </div>
 
@@ -283,33 +444,67 @@
       <div class="row">
         <div class="col-md-4 form-group">
           مكان الآالية <br/>
-          <input type="text" class="form-control" placeholder=" الولاية " >
+          <input type="text" class="form-control" id="state" name="state" placeholder=" الولاية " >
         </div>
         <div class="col-md-4 form-group mt-3 mt-md-0">
           <br/>
-          <input type="text" class="form-control"  placeholder=" المنطقة " >
+          <input type="text" class="form-control" id="zone" name="zone" placeholder=" المنطقة " >
         </div>
 
         <div class="form-group col-md-4">
           <br/>
-          <input type="text" class="form-control" placeholder=" الموقع / الشركة " >
+          <input type="text" class="form-control" id="workplace" name="workplace" placeholder=" الموقع / الشركة " >
         </div>
       </div>
 
       <div class="row">
       
       <div class="col-md-4 form-group mt-3 mt-md-0">
-        <textarea class="form-control" id="validationTextarea" placeholder="  وصف كتابي دقيق للموقع " ></textarea>    
+        <textarea class="form-control" id="validationTextarea" name="description" placeholder="  وصف كتابي دقيق للموقع " ></textarea>    
       </div>
        
       <div class="form-group col-md-4">
-           
-        <input type="text" class="form-control" placeholder=" رقم التواصل 1 " >  
+            
+        <input type="text" class="form-control" id="phone" name="phone" placeholder=" رقم التواصل 1 " >  
     </div>
          
    
          <div class="form-group col-md-4">
-         <input type="text" class="form-control" placeholder=" رقم التواصل 2 " >  
+         <input type="text" class="form-control" id="mobile" name="mobile" placeholder=" رقم التواصل 2 " >  
+         </div>
+              </div>
+
+
+          <div class="row">
+        <div class="col-md-4 form-group">
+          جهه توصيل الآلية <br/>
+          <input type="text" class="form-control" id="state" name="des_state" placeholder=" الولاية " >
+        </div>
+        <div class="col-md-4 form-group mt-3 mt-md-0">
+          <br/>
+          <input type="text" class="form-control" id="zone" name="des_zone" placeholder=" المنطقة " >
+        </div>
+
+        <div class="form-group col-md-4">
+          <br/>
+          <input type="text" class="form-control" id="workplace" name="des_workplace" placeholder=" الموقع / الشركة " >
+        </div>
+      </div>
+
+      <div class="row">
+      
+      <div class="col-md-4 form-group mt-3 mt-md-0">
+        <textarea class="form-control" id="validationTextarea" name="des_description" placeholder="  وصف كتابي دقيق للموقع " ></textarea>    
+      </div>
+       
+      <div class="form-group col-md-4">
+            
+        <input type="text" class="form-control" id="phone" name="des_phone" placeholder=" رقم التواصل 1 " >  
+    </div>
+         
+   
+         <div class="form-group col-md-4">
+         <input type="text" class="form-control" id="mobile" name="des_mobile" placeholder=" رقم التواصل 2 " >  
          </div>
               </div>
              
@@ -336,23 +531,23 @@
 
               <div class="col-md-4 form-group">
                 <lable> الجهه التابع لها </lable> 
-                <select class="form-control mr-1" name="side" id="side" onchange="select_side();" >
+                <select class="form-control mr-1" name="work_for" id="work_for" onchange="select_side();" >
                 <option value="" disabled selected> -- اختار الجهه -- </option>
                 <option value="company"> شركة </option>
                 <option value=""> فرد </option>
                 </select>  
-                <input id="sidehide" type="text" class="form-control" placeholder=" ادخل اسم الشركة يدوي " style="display: none;" />
+                <input id="work_forhide" name="work_forhide" type="text" class="form-control" placeholder=" ادخل اسم الشركة يدوي " style="display: none;" />
               </div>
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <lable> هل  سبق لك العمل معنا </lable> 
-                <select class="form-control mr-1" name="wwus" id="wwus" onchange="select_wwus();" >
+                <select class="form-control mr-1" name="previous" id="previous" onchange="select_wwus();" >
                 <option value="" disabled selected> -- اختار الاجابة -- </option>
                 <option value="yes"> نعم </option>
-                <option value="2"> لا </option>
+                <option> لا </option>
                 </select>
 
-               <input id="wwushide" type="text" class="form-control" placeholder=" في اي موقع عملت معنا " style="display: none;" />
+               <input id="previoushide" name="previoushide" type="text" class="form-control" placeholder=" في اي موقع عملت معنا " style="display: none;" />
      
                
               
@@ -362,7 +557,7 @@
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <div class="form-group">
               <label for="exampleFormControlSelect2">طريقة التعرف علينا</label>
-              <select multiple class="form-control" id="exampleFormControlSelect2">
+              <select multiple class="form-control" id="exampleFormControlSelect2" name="know">
                 <option> الفيسبوك </option>
                 <option> التويتر </option>
                 <option> الانستغرام </option>
