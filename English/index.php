@@ -280,7 +280,7 @@
               <br/>
               <br/>
               <h4><a href=""> Department التأجير </a></h4>
-              <p> Small preff about the Department ,Small preff about the Department ,Small preff about the Department   </p>
+              <p> It is a service that provides equipment at all times. We also present to you a summary of our third experience to help you choose the program from the beginning so that we can come up with our latest releases shortly after their impact. We participate with you at the beginning of the work during production to evaluate and correct what deviated from the path. We provide you with a detailed report after the end of your project for your experience and to benefit from it. maximum in future projects. This service can mainly benefit from: Mining and exploration companies, road and bridge companies, general contracting companies, agricultural companies, small contractors, and even individuals. The maintenance of our fleet is supervised by a qualified engineering team equipped according to international standards, ready around the clock, and its biggest challenge is to reach zero breakdowns within a period of time. The period of your contract with us. Behind these efforts, an administration that has been carefully chosen to gain your satisfaction stands by your side...  </p>
             </div>
           </div>
 
@@ -290,7 +290,7 @@
               <br/>
               <br/>
               <h4><a href=""> Department التشغيل  </a></h4>
-              <p> Small preff about the Department ,Small preff about the Department ,Small preff about the Department   </p>
+              <p> It is a service created by EQUIPATION to meet the needs of the Sudanese market after making a trusted name in this sector, by creating an asset management model on your behalf that meets your needs as a client, suits all clients, accommodates all their aspirations, and addresses all operating problems for companies, business owners, investors, and vehicle owners, and we know very well that no... This satisfaction can only be achieved by facing several challenges, so we recognized the challenge and accepted it.. The most difficult and most important challenge in the matrix of challenges was how to select competent and experienced operators and attract them to work with EQUIPATION, so we created a model for employment with standards that will not be compromised.According to satisfactory conditions for both parties, it achieves job satisfaction and at the same time leads to quick and amazing results in the production process on the ground. Regarding the challenge of marketing and choosing the most appropriate contracts with the highest return, EQUIPATION did not face any problem due to the spread of its work area in all parts of Sudan, the diversity of its contracts that suit all beneficiaries, and its high efficiency in work and production that is unparalleled, and the name EQUIPATION is associated with high productivity at the lowest possible costs. With the quality that any customer aspires to. Because EQUIPATION knows that success  </p>
              </div>
           </div>
 

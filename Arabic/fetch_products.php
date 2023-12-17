@@ -30,11 +30,32 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
-    "params":{
-        "args":{
-            "fields": [ "name","website_url","default_code", "list_price", "company_id", "qty_available", "type",
- "public_categ_ids","categ_id","taxes_id","product_variant_id","image_1920"],
-                 "domain":[["is_published","=",true]]
+    "params": {
+        "args": {
+            "fields": [
+                "name",
+                "website_url",
+                "default_code",
+                "list_price",
+                "company_id",
+                "qty_available",
+                "type",
+                "public_categ_ids",
+                "categ_id",
+                "taxes_id",
+                "product_variant_id",
+                "image_1920"
+            ],
+            "domain": [
+                [
+                    "is_published",
+                    "=",
+                    true
+                ]
+            ],
+            "context": {
+                "lang": "ar_001"
+            }
         }
     }
 }',
