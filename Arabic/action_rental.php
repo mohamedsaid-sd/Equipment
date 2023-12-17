@@ -61,8 +61,8 @@ $jayParsedAry = [
               "work" => "yes", 
               "know" => "social", 
               "status" => "draft" ,
-              "work_field": "yes",
-              "region": "yes"
+              "work_field" => "yes",
+              "region" => "yes"
            ] 
         ] 
      ] 

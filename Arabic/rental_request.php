@@ -74,14 +74,14 @@
    }
 
 
-    // deal with filed
-    function select_field(){
-     var type = document.getElementById("field").value;
+  // deal with filed
+    function select_work_field(){
+     var type = document.getElementById("work_field").value;
       if(type == "hand"){
-      document.getElementById("fieldhide").style.display = "block";
+      document.getElementById("work_fieldhide").style.display = "block";
       }else{
-      document.getElementById("fieldhide").value = "";
-      document.getElementById("fieldhide").style.display = "none";
+      document.getElementById("work_fieldhide").value = "";
+      document.getElementById("work_fieldhide").style.display = "none";
       }
    }
 
@@ -206,6 +206,10 @@
                   @$note = $site_a." و ".$site_b." و ".$site_c." و ".$site_d." و ".$site_e." و ".$site_f." و ".$site_g." و ".$site_h." و ".$site_i." و ".$site_j." و ".$site_k." و ".$site_l; 
                   @$distance = $_POST['distance'];
                   @$state   = $_POST['state'];
+                  @$region    = $_POST['region'];
+                  @$work_field= $_POST['work_field']; 
+                  if($work_field == "hand")
+                    @$work_field = $_POST['work_fieldhide'];
                   @$site_age = $_POST['site_age'];
                   if($site_age == "old")
                     @$start_date = $_POST['start_date'];
@@ -222,9 +226,6 @@
                   if($work == "yes")
                      // $previous= $_POST['previoushide'];
                   @$know     = $_POST['know'];
-
-                  // the missing value 
-                  // region // work filed // JOB SITE READINESS
 
                     // echo "Data:".$work_typ."-".$duration."-".$month_rent."-".$hour_num."-".$work_hours."-".$work_date."-".$note."-".$distance."-".$state."-".$site_age."-".$start_date."-".$name."-".$email."-".$job."-".$categ."-".$company."-".$work."-".$know;
 $jayParsedAry = [
@@ -249,7 +250,9 @@ $jayParsedAry = [
               "company" => @$company, 
               "work" => @$work, 
               "know" => @$know, 
-              "status" => "draft" 
+              "status" => "draft" ,
+              "work_field" => $work_field,
+              "region" => $region
            ] 
         ] 
      ] 
@@ -393,7 +396,7 @@ curl_close($curl);
         </div>
         <div class="col-md-4 form-group mt-3 mt-md-0">
           <br/>
-          <input type="text" class="form-control" name="year" id="Counter" placeholder="   المنطقة "  >
+          <input type="text" class="form-control" name="region" id="region" placeholder="   المنطقة "  >
         </div>
 
         <div class="form-group col-md-4">
@@ -406,7 +409,7 @@ curl_close($curl);
        
         <div class="col-md-4 form-group mt-3 mt-md-0">
               مجال العمل <br/>
-                  <select class="form-control mr-1" name="field" id="field" onchange="select_field();"  >
+                  <select class="form-control mr-1" name="work_field" id="work_field" onchange="select_work_field();"  >
                     <option disabled selected> -- اختار المدة  -- </option>
                     <option> التعدين </option>
                     <option>  الاسمنت </option>
@@ -414,7 +417,7 @@ curl_close($curl);
                     <option value="hand">  ادخال يدوي </option>
                   </select>
 
-                  <input id="fieldhide" type="text" class="form-control" placeholder=" ادخل مجال العمل  يدويا " style="display: none;">
+                  <input id="work_fieldhide" name="work_fieldhide" type="text" class="form-control" placeholder=" ادخل مجال العمل  يدويا " style="display: none;">
           </div>
 
          <div class="form-group col-md-4">

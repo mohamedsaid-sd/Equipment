@@ -75,13 +75,13 @@
 
 
     // deal with filed
-    function select_field(){
-     var type = document.getElementById("field").value;
+    function select_work_field(){
+     var type = document.getElementById("work_field").value;
       if(type == "hand"){
-      document.getElementById("fieldhide").style.display = "block";
+      document.getElementById("work_fieldhide").style.display = "block";
       }else{
-      document.getElementById("fieldhide").value = "";
-      document.getElementById("fieldhide").style.display = "none";
+      document.getElementById("work_fieldhide").value = "";
+      document.getElementById("work_fieldhide").style.display = "none";
       }
    }
 
@@ -195,16 +195,20 @@
                   if($work_hours == "hand")
                     @$work_hours = $_POST['work_hourshide'];
                   @$work_date = $_POST['work_date'];
-                  $site_a=$_POST['site_a'];$site_b=$_POST['site_b'];$site_c=$_POST['site_c'];
-                  $site_d=$_POST['site_d'];$site_e=$_POST['site_e'];$site_f=$_POST['site_f'];
-                  $site_g=$_POST['site_g'];$site_g=$_POST['site_g'];$site_h=$_POST['site_h'];
-                  $site_i=$_POST['site_i'];
-                  $site_j="Narest City ".$_POST['site_j'];
-                  $site_k="Nearest Market ".$_POST['site_k'];
-                  $site_l="Nearest Paved Road".$_POST['site_l'];
+                  @$site_a=$_POST['site_a'];@$site_b=$_POST['site_b'];@$site_c=$_POST['site_c'];
+                  @$site_d=$_POST['site_d'];@$site_e=$_POST['site_e'];@$site_f=$_POST['site_f'];
+                  @$site_g=$_POST['site_g'];@$site_h=$_POST['site_h'];
+                  @$site_i=$_POST['site_i'];
+                  @$site_j="Narest City ".$_POST['site_j'];
+                  @$site_k="Nearest Market ".$_POST['site_k'];
+                  @$site_l="Nearest Paved Road".$_POST['site_l'];
                   @$note = $site_a." and ".$site_b." and ".$site_c." and ".$site_d." and ".$site_e." and ".$site_f." and ".$site_g." and ".$site_h." and ".$site_i." and ".$site_j." and ".$site_k." and ".$site_l; 
                   @$distance = $_POST['distance'];
                   @$state   = $_POST['state'];
+                  $region    = $_POST['region'];
+                  $work_field= $_POST['work_field']; 
+                  if($work_field == "hand")
+                    @$work_field = $_POST['work_fieldhide'];
                   @$site_age = $_POST['site_age'];
                   if($site_age == "old")
                     @$start_date = $_POST['start_date'];
@@ -222,10 +226,7 @@
                      // $previous= $_POST['previoushide'];
                   @$know     = $_POST['know'];
 
-                  // the missing value 
-                  // region // work filed // JOB SITE READINESS
-
-                    // echo "Data:".$work_typ."-".$duration."-".$month_rent."-".$hour_num."-".$work_hours."-".$work_date."-".$note."-".$distance."-".$state."-".$site_age."-".$start_date."-".$name."-".$email."-".$job."-".$categ."-".$company."-".$work."-".$know;
+                    // echo "Data:".$work_typ."-".$duration."-".$month_rent."-".$hour_num."-".$work_hours."-".$work_date."-".$note."-".$distance."-".$state."-".$region."-".$work_field."-".$site_age."-".$start_date."-".$name."-".$email."-".$job."-".$categ."-".$company."-".$work."-".$know;
 $jayParsedAry = [
   "params" => [
         "args" => [
@@ -248,7 +249,9 @@ $jayParsedAry = [
               "company" => @$company, 
               "work" => @$work, 
               "know" => @$know, 
-              "status" => "draft" 
+              "status" => "draft" ,
+              "work_field" => $work_field,
+              "region" => $region
            ] 
         ] 
      ] 
@@ -289,7 +292,7 @@ if(curl_errno($curl)) {
     $array = json_decode(  $response , true );
     // loop the array to fetch item
     foreach ($array as $key => $value) {
-       echo $key."".$value;
+       // echo $key."".$value;
         if($key == "msg" )
           if($value == "Success")
                 // success add form alert ...
@@ -392,7 +395,7 @@ curl_close($curl);
         </div>
         <div class="col-md-4 form-group mt-3 mt-md-0">
           <br/>
-          <input type="text" class="form-control" name="year" id="Counter" placeholder="   region ">
+          <input type="text" class="form-control" name="region" id="region" placeholder="Region">
         </div>
 
         <div class="form-group col-md-4">
@@ -405,7 +408,7 @@ curl_close($curl);
        
         <div class="col-md-4 form-group mt-3 mt-md-0">
         WORK FIELD <br/>
-                  <select class="form-control mr-1" name="field" id="field" onchange="select_field();">
+                  <select class="form-control mr-1" name="work_field" id="work_field" onchange="select_work_field();">
                     <option disabled selected> -- Choose   -- </option>
                     <option> mining </option>
                     <option>  cement </option>
@@ -413,7 +416,7 @@ curl_close($curl);
                     <option value="hand">   manual entry </option>
                   </select>
 
-                  <input id="fieldhide" type="text" class="form-control" placeholder="   manual entry " style="display: none;">
+                  <input id="work_fieldhide" name="work_fieldhide" type="text" class="form-control" placeholder="   manual entry " style="display: none;">
           </div>
 
          <div class="form-group col-md-4">

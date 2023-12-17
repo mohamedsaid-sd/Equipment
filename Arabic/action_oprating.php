@@ -111,12 +111,12 @@ $jayParsedAry = [
                 "advance_id" => "30% of rental price", 
                 "category_id" => "Heavy Machinery", 
                 "status" => "draft" ,
-                "clearances_id": "yes",
-                "maintenance_id": "yes",
-                "hair_operator_id": "yes",
-                "gorvernment_fees_id": "yes",
-                "hourly_work_id": "yes",
-                "availability_id": "yes"
+                "clearances_id" => "yes",
+                "maintenance_id"=> "yes",
+                "hair_operator_id" => "yes",
+                "gorvernment_fees_id" => "yes",
+                "hourly_work_id" => "yes",
+                "availability_id" => "yes"
              ] 
           ] 
        ] 

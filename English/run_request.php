@@ -112,8 +112,69 @@
       }
    }
 
+   function select_hourly_work(){
+    var variable = document.getElementById("hourly_work_id").value;
+    if(variable == "hand" || variable == "handx"){
+      document.getElementById("hourly_work_idhide").style.display = "block";
+    }else{
+      document.getElementById("hourly_work_idhide").value = "";
+      document.getElementById("hourly_work_idhide").style.display = "none";
+    }
+   }
 
+   function select_gorvernment_fees(){
+    var variable = document.getElementById("gorvernment_fees_id").value;
+    if(variable == "hand" || variable == "handx"){
+      document.getElementById("gorvernment_fees_idhide").style.display = "block";
+    }else{
+      document.getElementById("gorvernment_fees_idhide").value = "";
+      document.getElementById("gorvernment_fees_idhide").style.display = "none";
+    }
+   }
 
+   function select_availablity(){
+    var variable = document.getElementById("availability_id").value;
+    if(variable == "hand" || variable == "handx"){
+      document.getElementById("availability_idhide").style.display = "block";
+    }else{
+      document.getElementById("availability_idhide").value = "";
+      document.getElementById("availability_idhide").style.display = "none";
+    }
+   }
+
+   function select_hair_operator(){
+    var variable = document.getElementById("hair_operator_id").value;
+    if(variable == "hand"){
+      document.getElementById("hair_operator_idhide").style.display = "block";
+    }else{
+      document.getElementById("hair_operator_idhide").value = "";
+      document.getElementById("hair_operator_idhide").style.display = "none";
+    }
+   }
+
+   function select_maintenance(){
+    var variable = document.getElementById("maintenance_id").value;
+    if(variable == "hand" || variable == "handx"){
+      document.getElementById("maintenance_idhide").style.display = "block";
+    }else{
+      document.getElementById("maintenance_idhide").value = "";
+      document.getElementById("maintenance_idhide").style.display = "none";
+    }
+   }
+
+   function select_contracts(){
+    var variable = document.getElementById("cotracts_id").value;
+    if(variable == "hand"){
+      document.getElementById("cotracts_idhide").style.display = "block";
+    }else{
+      document.getElementById("cotracts_idhide").value = "";
+      document.getElementById("cotracts_idhide").style.display = "none";
+    }
+   }
+
+   function select_clearences(){
+    document.getElementById("clearances_idhide").style.display = "block";
+   }
 
 </script>
 <body>
@@ -187,7 +248,7 @@
                         $years_in_field=$_POST['years_in_field'];
                         $owned_machines=$_POST['owned_machines'];
 
-                        $agent = $_POST['agent'];
+                        @$agent = $_POST['agent'];
                         if($agent == "full_authority_agent"){
                             $full_authority_agent= "true";
                             $limit_authority_agent= "false";
@@ -231,44 +292,71 @@
                         $agricultural_equipment = "true"; else $agricultural_equipment = "false";
                         @$facility=$_POST['facility']; 
                         if($facility == "on")
-                        $facility = "true"; else $facility = "false";
+                        @$facility = "true"; else @$facility = "false";
                         @$light_vehicles_trucks =$_POST['light_vehicles_trucks'];
                         if($light_vehicles_trucks == "on")
-                        $light_vehicles_trucks = "true"; else $light_vehicles_trucks = "false";
-                        $air_compressor_selection =$_POST['air_compressor_selection']; 
-                        $generator_tower_light_selection=$_POST['generator_tower_light_selection']; 
-                        $welding_machine_selection=$_POST['welding_machine_selection'];
-                        $excavator_selection =$_POST['excavator_selection']; 
-                        $brand_id=$_POST['brand_id']; 
-                        if($brand_id == "hand")
-                          $brand_id = $_POST['brand_idhide'];
-                        $size_id=$_POST['size_id']; 
-                        if($size_id == "hand")
-                          $size_id = $_POST['size_idhide'];
-                        $model_id=$_POST['model_id'];
+                        @$light_vehicles_trucks = "true"; else @$light_vehicles_trucks = "false";
+                        @$air_compressor_selection =$_POST['air_compressor_selection']; 
+                        @$generator_tower_light_selection=$_POST['generator_tower_light_selection']; 
+                        @$welding_machine_selection=$_POST['welding_machine_selection'];
+                        @$excavator_selection =$_POST['excavator_selection']; 
+                        @$brand_id=$_POST['brand_id']; 
+                        if(@$brand_id == "hand")
+                          @$brand_id = $_POST['brand_idhide'];
+                        @$size_id=$_POST['size_id']; 
+                        if(@$size_id == "hand")
+                          @$size_id = $_POST['size_idhide'];
+                        @$model_id=$_POST['model_id'];
                         if($model_id == "hand")
-                          $model_id = $_POST['model_idhide'];
-                        $year_of_manufacture_id=$_POST['year_of_manufacture_id'];
-                        if($year_of_manufacture_id == "hand")
+                          @$model_id = $_POST['model_idhide'];
+                        @$year_of_manufacture_id=$_POST['year_of_manufacture_id'];
+                        if(@$year_of_manufacture_id == "hand")
                           $year_of_manufacture_id = $_POST['year_of_manufacture_idhide'];
-                        $monthly_rental_id=$_POST['monthly_rental_idhide']." ".$_POST['monthly_rental_id']; 
-                        $condition_id=$_POST['condition_id'];
+                        @$monthly_rental_id=$_POST['monthly_rental_idhide']." ".$_POST['monthly_rental_id']; 
+                        @$condition_id=$_POST['condition_id'];
                         if($condition_id == "hand")
                           $condition_id = $_POST['condition_idhide'];
-                        $state_id=$_POST['state_id']; 
+                        @$state_id=$_POST['state_id']; 
                         if($state_id == "hand")
                           $state_id = $_POST['state_idhide'];
-                        $advance_id =$_POST['advance_id']; 
+                        @$advance_id =$_POST['advance_id']; 
                         if($advance_id == "hand")
                           $advance_id = $_POST['advance_idhide'];
-                        $category_id=$_POST['category_id'];
+                        @$category_id=$_POST['category_id'];
                         if($category_id == "hand")
                           $category_id = $_POST['category_idhide'];
 
-                        // the missing value 
-                        // CONTRACT TERMS FROM category
+                        @$clearances_id = $_POST['clearances_idhide']." ".$_POST['clearances_id'];
 
-                        // echo " Data : ".$full_name."-".$nationality."-".$id_number."-".$phone_number."-".$phone_number_2."-".$whatsapp_num."-".$email."-".$tax_file."-".$address."-".$recommendation."-".$code_number."-".$years_in_field."-".$owned_machines."-".$full_authority_agent."-".$limit_authority_agent."-".$date_of_foundation."-".$registration_number."-".$file_tax_number."-".$expatriate_date."-".$compressor."-".$generator_tower_light."-".$welding_machine."-".$cranes."-".$heavy_trucks."-".$excavation_equipment."-".$pipeline_equipment."-".$civil_equipment."-".$mining_equipment."-".$agricultural_equipment."-".$facility."".$light_vehicles_trucks."-".$air_compressor_selection."".$generator_tower_light_selection."-".$welding_machine_selection."-".$excavator_selection ."-".$brand_id."-".$size_id."-".$model_id."-".$year_of_manufacture_id."".$monthly_rental_id."-".$condition_id."-".$state_id."-".$advance_id."-".$category_id;
+                        @$maintenance_id = $_POST['maintenance_id'];
+                        if($maintenance_id == "hand")
+                          $maintenance_id = $_POST['maintenance_idhide'];
+                        if($maintenance_id == "handx")
+                          $maintenance_id = " by equipation with ".$_POST['maintenance_idhide']." detucted ";
+
+                        @$hair_operator_id=$_POST['hair_operator_id'];
+                        if($hair_operator_id == "hand")
+                          $hair_operator_id = $_POST['hair_operator_idhide'];
+                        @$availability_id = $_POST['availability_id'];
+                        if($availability_id == "hand")
+                          $availability_id = $_POST['availability_idhide'];
+                        if($availability_id == "handx")
+                          $availability_id = " after request before ".$_POST['availability_idhide']." day ";
+
+                        @$gorvernment_fees_id = $_POST['gorvernment_fees_id'];
+                        if($gorvernment_fees_id == "hand")
+                          $gorvernment_fees_id = $_POST['gorvernment_fees_idhide'];
+                        if($gorvernment_fees_id == "handx")
+                          $gorvernment_fees_id = "by equipation with ".$_POST['gorvernment_fees_idhide']." detucted";
+
+                        @$hourly_work_id = $_POST['hourly_work_id'];
+                        if($hourly_work_id == "hand")
+                          $hourly_work_id = $_POST['hourly_work_idhide'];
+                        if($hourly_work_id == "handx")
+                          $hourly_work_id = " not execeed ".$_POST['hourly_work_idhide']." hrs per day ";
+
+
+                        // echo " Data : ".$full_name."-".$nationality."-".$id_number."-".$phone_number."-".$phone_number_2."-".$whatsapp_num."-".$email."-".$tax_file."-".$address."-".$recommendation."-".$code_number."-".$years_in_field."-".$owned_machines."-".$full_authority_agent."-".$limit_authority_agent."-".$date_of_foundation."-".$registration_number."-".$file_tax_number."-".$expatriate_date."-".$compressor."-".$generator_tower_light."-".$welding_machine."-".$cranes."-".$heavy_trucks."-".$excavation_equipment."-".$pipeline_equipment."-".$civil_equipment."-".$mining_equipment."-".$agricultural_equipment."-".$facility."".$light_vehicles_trucks."-".$air_compressor_selection."".$generator_tower_light_selection."-".$welding_machine_selection."-".$excavator_selection ."-".$brand_id."-".$size_id."-".$model_id."-".$year_of_manufacture_id."".$monthly_rental_id."-".$condition_id."-".$state_id."-".$advance_id."-".$category_id."-".$clearances_id."".$maintenance_id."-".$hair_operator_id."-".$availability_id."".$gorvernment_fees_id."-".$hourly_work_id;
 
                     $jayParsedAry = [
     "params" => [
@@ -318,7 +406,13 @@
                 "state_id" => $state_id, 
                 "advance_id" => $advance_id, 
                 "category_id" => $category_id, 
-                "status" => "draft" 
+                "status" => "draft" ,
+                "clearances_id" => $clearances_id,
+                "maintenance_id"=> $maintenance_id,
+                "hair_operator_id" => $hair_operator_id,
+                "gorvernment_fees_id" => $gorvernment_fees_id,
+                "hourly_work_id" => $hourly_work_id,
+                "availability_id" => $availability_id
              ] 
           ] 
        ] 
@@ -360,7 +454,7 @@ if(curl_errno($curl)) {
     $array = json_decode(  $response , true );
     // loop the array to fetch item
     foreach ($array as $key => $value) {
-       echo $key."".$value;
+       // echo $key."".$value;
         if($key == "msg" )
           if($value == "Success")
                 // success add form alert ...
@@ -745,39 +839,38 @@ curl_close($curl);
       <div class="row">
         <div class="form-group col-md-4">
           <label> CONTRACTS  </label>
-          <select class="form-control">
+          <select class="form-control" id="cotracts_id" name="cotracts_id" onchange="select_contracts();">
             <option value="" disabled selected> -- Choose -- </option>
             <option> none </option>
             <option> long (not less than 12 month) </option>
             <option> medium (not less than 3 month) </option>
             <option> short (no more than a month) </option>
-            <option> manual entry </option>
+            <option value="hand"> manual entry </option>
           </select>
-        <input type="text" class="form-control" placeholder="manual entry contract ">
+        <input id="cotracts_idhide" name="cotracts_idhide" type="text" class="form-control" placeholder="Enter manual contract" style="display: none;">
         </div>
 
         <div class="form-group col-md-4">
           <label> CLEARENCES  </label>
-          <select class="form-control">
+          <select class="form-control" id="clearances_id" name="clearances_id" onchange="select_clearences()">
             <option value="" disabled selected> -- Choose -- </option>
             <option> USD </option>
             <option> SDG </option>
-            <option> manual entry </option>
           </select>
-        <input type="text" class="form-control" placeholder=" maanual entry clearences ">
+        <input id="clearances_idhide" name="clearances_idhide" type="text" class="form-control" placeholder="Enter clearances" style="display: none;">
         </div>
 
         <div class="form-group col-md-4">
           <label> MAINTENANCE  </label>
-            <select class="form-control mr-1" id="ready" name="ready" >
+            <select class="form-control mr-1" id="maintenance_id" name="maintenance_id" onchange="select_maintenance();">
                <option value="" disabled selected> -- Choose -- </option>
                <option> by me </option>
                <option> by equipation with ful detucted </option>
-               <option> by equipation with XX% detucted </option>
+               <option value="handx"> by equipation with XX% detucted </option>
                <option> by equipation </option>
-               <option> manual entry </option>
+               <option value="hand"> manual entry </option>
              </select>
-        <input type="text" class="form-control" placeholder=" manual entry ">
+        <input type="text" id="maintenance_idhide" name="maintenance_idhide" class="form-control" placeholder="Enter  maintenance detucted  " style="display: none;">
         </div>
 
      </div>
@@ -786,57 +879,56 @@ curl_close($curl);
 
          <div class="form-group col-md-4">
           <label>  HAIR OPRATOR  </label>
-            <select class="form-control mr-1" id="ready" name="ready" >
+            <select class="form-control mr-1" id="hair_operator_id" name="hair_operator_id" onchange="select_hair_operator();">
                <option value="" disabled selected> -- Choose -- </option>
                <option> by equipation </option>
                <option> set by me </option>
-               <option> manual entry </option>
+               <option value="hand"> manual entry </option>
              </select>
-        <input type="text" class="form-control" placeholder=" manual entry  ">
+        <input type="text" id="hair_operator_idhide" name="hair_operator_idhide" class="form-control" placeholder="Enter hair operator" style="display: none;">
         </div>
 
          <div class="form-group col-md-4">
            <label> AVAILABLITY  </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="ready" name="ready" >
+             <select class="form-control mr-1" id="availability_id" name="availability_id" onchange="select_availablity();">
                <option value="" disabled selected> -- Choose -- </option>
                <option> on request </option>
-               <option> after request before xx day </option>
-               <option> manual entry </option>
+               <option value="handx"> after request before xx day </option>
+               <option value="hand"> manual entry </option>
              </select>
              </div>
-             <input type="text" class="form-control
-             " name="" placeholder=" manual entry ">
+             <input id="availability_idhide" name="availability_idhide" type="text" class="form-control
+             " name="" placeholder="Enter days / availability" style="display: none;">
          </div>  
 
          <div class="form-group col-md-4">
            <label> GOVERNMENT FEES </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="ready" name="ready" >
+             <select class="form-control mr-1" id="gorvernment_fees_id" name="gorvernment_fees_id" onchange="select_gorvernment_fees();">
                <option value="" disabled selected> -- Choose -- </option>
                <option> by me </option>
                <option> by equipation with full detucted </option>
-               <option> by equipation with XX% detucted </option>
+               <option value="handx"> by equipation with XX% detucted </option>
                <option> by equipation </option>
-               <option> manual entry </option>
+               <option value="hand"> manual entry </option>
              </select>
              </div>
-             <input type="text" class="form-control
-             " name="" placeholder=" manualy entry ">
+             <input id="gorvernment_fees_idhide" name="gorvernment_fees_idhide" type="text" class="form-control
+             " name="" placeholder="Enter detuced / or geverments fees" style="display: none;">
          </div>        
 
           <div class="form-group col-md-4">
            <label> HOURLY WORK  </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="ready" name="ready" >
+             <select class="form-control mr-1" id="hourly_work_id" name="hourly_work_id" onchange="select_hourly_work();">
                <option value="" disabled selected> -- Choose -- </option>
                <option> none </option>
-               <option> not execeed xx hrs per day </option>
-               <option> manual entry </option>
+               <option value="handx"> not execeed xx hrs per day </option>
+               <option value="hand"> manual entry </option>
              </select>
              </div>
-             <input type="text" class="form-control
-             " name="" placeholder="  manual entry ">
+             <input id="hourly_work_idhide" name="hourly_work_idhide" type="text" class="form-control" placeholder="Enter hours" style="display: none;">
          </div>
 
 
