@@ -60,7 +60,9 @@ $jayParsedAry = [
               "company" => "Doe Construction Co.", 
               "work" => "yes", 
               "know" => "social", 
-              "status" => "draft" 
+              "status" => "draft" ,
+              "work_field": "yes",
+              "region": "yes"
            ] 
         ] 
      ] 
