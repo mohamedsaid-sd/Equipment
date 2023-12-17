@@ -52,6 +52,12 @@ $full_name=$_POST['full_name'];
                 $advance_id =$_POST['advance_id']; 
                 $category_id=$_POST['category_id'];
                 $status=$_POST['status'];
+                $clearances_id=$_POST['clearances_id'];
+                $maintenance_id=$_POST['maintenance_id'];
+                $hair_operator_id=$_POST['hair_operator_id'];
+                $gorvernment_fees_id=$_POST['gorvernment_fees_id'];
+                $hourly_work_id=$_POST['hourly_work_id'];
+                $availability_id=$_POST['availability_id'];
 
 
 
@@ -104,7 +110,13 @@ $jayParsedAry = [
                 "state_id" => "Operational", 
                 "advance_id" => "30% of rental price", 
                 "category_id" => "Heavy Machinery", 
-                "status" => "draft" 
+                "status" => "draft" ,
+                "clearances_id": "yes",
+                "maintenance_id": "yes",
+                "hair_operator_id": "yes",
+                "gorvernment_fees_id": "yes",
+                "hourly_work_id": "yes",
+                "availability_id": "yes"
              ] 
           ] 
        ] 
