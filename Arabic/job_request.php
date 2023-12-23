@@ -1,3 +1,146 @@
+
+
+<?php 
+
+ $jayParsedAry = [
+   "params" => [
+         "args" => [
+            "vals_list" => [
+               [
+                  "name" => "John Doe", 
+                  "birthdate" => "1990-01-01", 
+                  "place" => "Johnstown", 
+                  "home" => "123 Orchard Lane", 
+                  "house" => "456 Maple Street", 
+                  "national" => "Johnlandian", 
+                  "type_national" => "original", 
+                  "other_national" => "no", 
+                  "request_type" => "employment", 
+                  "social_state" => "single", 
+                  "children" => "no", 
+                  "boys" => 0, 
+                  "girl" => 0, 
+                  "mobile" => 1234567890, 
+                  "phone" => 987654321, 
+                  "email" => "john.doe@example.com", 
+                  "facebook" => "johndoeFB", 
+                  "twiter" => "johndoeTW", 
+                  "instagram" => "johndoeIG", 
+                  "web" => "http://johndoe.com", 
+                  "street" => "123 Orchard Lane", 
+                  "street2" => "Apt 4", 
+                  "zip" => "12345", 
+                  "city" => "Johnstown", 
+                  "state_id" => 1, 
+                  "country_id" => 1, 
+                  "country_code" => "XL", 
+                  "house_type" => "owned", 
+                  "note" => "Some personal note.", 
+                  "id_type" => "passport", 
+                  "issue_place" => "Johnstown Dept.", 
+                  "issue_date" => "2010-01-01", 
+                  "expirty_date" => "2030-01-01", 
+                  "service" => "no", 
+                  "other" => "Other notes.", 
+                  "certificate" => "bachelor", 
+                  "study_field" => "Johnology", 
+                  "study_school" => "John University", 
+                  "emergency_contact" => "Jane Doe", 
+                  "emergency_phone" => "1122334455", 
+                  "details" => "Some more notes.", 
+                  "training" => "Advanced Johnology", 
+                  "know" => "tv", 
+                  "related" => "no", 
+                  "employment_type" => "full", 
+                  "excepted" => 50000, 
+                  "restruction" => "None.", 
+                  "info" => "Some info notes.", 
+                  "sign" => "", 
+                  "recute_date" => "2023-01-01", 
+                  "inform" => "Some inform notes.", 
+                  "status" => "draft", 
+                  "train_ids" => [
+                     [
+                        0, 
+                        0, 
+                        [
+                           "name" => "Project Management Certification", 
+                           "date_from" => "2022-01-01", 
+                           "date_to" => "2022-06-01", 
+                           "job" => "Trainee Project Manager", 
+                           "tasks" => "Completed a series of courses related to project management and passed the final assessment.", 
+                           "attach" => "" 
+                        ] 
+                     ] 
+                  ], 
+                  "exper_ids" => [
+                              [
+                                 0, 
+                                 0, 
+                                 [
+                                    "name" => "Software Development Intern", 
+                                    "date_from" => "2021-07-01", 
+                                    "date_to" => "2022-01-01", 
+                                    "job" => "Junior Developer", 
+                                    "tasks" => "Participated in the development of several web projects and learned programming best practices.", 
+                                    "attach" => "" 
+                                 ] 
+                              ] 
+                           ], 
+                  "skill_ids" => [
+                                       [
+                                          0, 
+                                          0, 
+                                          [
+                                             "name" => "Python Programming", 
+                                             "eval" => "Advanced" 
+                                          ] 
+                                       ], 
+                                       [
+                                                0, 
+                                                0, 
+                                                [
+                                                   "name" => "Communication", 
+                                                   "eval" => "Expert" 
+                                                ] 
+                                             ] 
+                                    ], 
+                  "ref_ids" => [
+                                                      [
+                                                         0, 
+                                                         0, 
+                                                         [
+                                                            "name" => "Jane Smith", 
+                                                            "job" => "Senior Engineer", 
+                                                            "mobile" => 1234567890, 
+                                                            "company" => "Tech Solutions Inc." 
+                                                         ] 
+                                                      ] 
+                                                   ], 
+                  "hobbies_ids" => [
+                                                               [
+                                                                  0, 
+                                                                  0, 
+                                                                  [
+                                                                     "name" => "Programming" 
+                                                                  ] 
+                                                               ], 
+                                                               [
+                                                                        0, 
+                                                                        0, 
+                                                                        [
+                                                                           "name" => "Reading" 
+                                                                        ] 
+                                                                     ] 
+                                                            ] 
+               ] 
+            ] 
+         ] 
+      ] 
+]; 
+ 
+ ?>
+
 <!DOCTYPE html>
 <html dir="rtl">
 
