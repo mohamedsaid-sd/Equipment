@@ -1,143 +1,141 @@
-
-
 <?php 
 
- $jayParsedAry = [
-   "params" => [
-         "args" => [
-            "vals_list" => [
-               [
-                  "name" => "John Doe", 
-                  "birthdate" => "1990-01-01", 
-                  "place" => "Johnstown", 
-                  "home" => "123 Orchard Lane", 
-                  "house" => "456 Maple Street", 
-                  "national" => "Johnlandian", 
-                  "type_national" => "original", 
-                  "other_national" => "no", 
-                  "request_type" => "employment", 
-                  "social_state" => "single", 
-                  "children" => "no", 
-                  "boys" => 0, 
-                  "girl" => 0, 
-                  "mobile" => 1234567890, 
-                  "phone" => 987654321, 
-                  "email" => "john.doe@example.com", 
-                  "facebook" => "johndoeFB", 
-                  "twiter" => "johndoeTW", 
-                  "instagram" => "johndoeIG", 
-                  "web" => "http://johndoe.com", 
-                  "street" => "123 Orchard Lane", 
-                  "street2" => "Apt 4", 
-                  "zip" => "12345", 
-                  "city" => "Johnstown", 
-                  "state_id" => 1, 
-                  "country_id" => 1, 
-                  "country_code" => "XL", 
-                  "house_type" => "owned", 
-                  "note" => "Some personal note.", 
-                  "id_type" => "passport", 
-                  "issue_place" => "Johnstown Dept.", 
-                  "issue_date" => "2010-01-01", 
-                  "expirty_date" => "2030-01-01", 
-                  "service" => "no", 
-                  "other" => "Other notes.", 
-                  "certificate" => "bachelor", 
-                  "study_field" => "Johnology", 
-                  "study_school" => "John University", 
-                  "emergency_contact" => "Jane Doe", 
-                  "emergency_phone" => "1122334455", 
-                  "details" => "Some more notes.", 
-                  "training" => "Advanced Johnology", 
-                  "know" => "tv", 
-                  "related" => "no", 
-                  "employment_type" => "full", 
-                  "excepted" => 50000, 
-                  "restruction" => "None.", 
-                  "info" => "Some info notes.", 
-                  "sign" => "", 
-                  "recute_date" => "2023-01-01", 
-                  "inform" => "Some inform notes.", 
-                  "status" => "draft", 
-                  "train_ids" => [
-                     [
-                        0, 
-                        0, 
-                        [
-                           "name" => "Project Management Certification", 
-                           "date_from" => "2022-01-01", 
-                           "date_to" => "2022-06-01", 
-                           "job" => "Trainee Project Manager", 
-                           "tasks" => "Completed a series of courses related to project management and passed the final assessment.", 
-                           "attach" => "" 
-                        ] 
-                     ] 
-                  ], 
-                  "exper_ids" => [
-                              [
-                                 0, 
-                                 0, 
-                                 [
-                                    "name" => "Software Development Intern", 
-                                    "date_from" => "2021-07-01", 
-                                    "date_to" => "2022-01-01", 
-                                    "job" => "Junior Developer", 
-                                    "tasks" => "Participated in the development of several web projects and learned programming best practices.", 
-                                    "attach" => "" 
-                                 ] 
-                              ] 
-                           ], 
-                  "skill_ids" => [
-                                       [
-                                          0, 
-                                          0, 
-                                          [
-                                             "name" => "Python Programming", 
-                                             "eval" => "Advanced" 
-                                          ] 
-                                       ], 
-                                       [
-                                                0, 
-                                                0, 
-                                                [
-                                                   "name" => "Communication", 
-                                                   "eval" => "Expert" 
-                                                ] 
-                                             ] 
-                                    ], 
-                  "ref_ids" => [
-                                                      [
-                                                         0, 
-                                                         0, 
-                                                         [
-                                                            "name" => "Jane Smith", 
-                                                            "job" => "Senior Engineer", 
-                                                            "mobile" => 1234567890, 
-                                                            "company" => "Tech Solutions Inc." 
-                                                         ] 
-                                                      ] 
-                                                   ], 
-                  "hobbies_ids" => [
-                                                               [
-                                                                  0, 
-                                                                  0, 
-                                                                  [
-                                                                     "name" => "Programming" 
-                                                                  ] 
-                                                               ], 
-                                                               [
-                                                                        0, 
-                                                                        0, 
-                                                                        [
-                                                                           "name" => "Reading" 
-                                                                        ] 
-                                                                     ] 
-                                                            ] 
-               ] 
-            ] 
-         ] 
-      ] 
-]; 
+//  $jayParsedAry = [
+//    "params" => [
+//          "args" => [
+//             "vals_list" => [
+//                [
+//                   "name" => "John Doe", 
+//                   "birthdate" => "1990-01-01", 
+//                   "place" => "Johnstown", 
+//                   "home" => "123 Orchard Lane", 
+//                   "house" => "456 Maple Street", 
+//                   "national" => "Johnlandian", 
+//                   "type_national" => "original", 
+//                   "other_national" => "no", 
+//                   "request_type" => "employment", 
+//                   "social_state" => "single", 
+//                   "children" => "no", 
+//                   "boys" => 0, 
+//                   "girl" => 0, 
+//                   "mobile" => 1234567890, 
+//                   "phone" => 987654321, 
+//                   "email" => "john.doe@example.com", 
+//                   "facebook" => "johndoeFB", 
+//                   "twiter" => "johndoeTW", 
+//                   "instagram" => "johndoeIG", 
+//                   "web" => "http://johndoe.com", 
+//                   "street" => "123 Orchard Lane", 
+//                   "street2" => "Apt 4", 
+//                   "zip" => "12345", 
+//                   "city" => "Johnstown", 
+//                   "state_id" => 1, 
+//                   "country_id" => 1, 
+//                   "country_code" => "XL", 
+//                   "house_type" => "owned", 
+//                   "note" => "Some personal note.", 
+//                   "id_type" => "passport", 
+//                   "issue_place" => "Johnstown Dept.", 
+//                   "issue_date" => "2010-01-01", 
+//                   "expirty_date" => "2030-01-01", 
+//                   "service" => "no", 
+//                   "other" => "Other notes.", 
+//                   "certificate" => "bachelor", 
+//                   "study_field" => "Johnology", 
+//                   "study_school" => "John University", 
+//                   "emergency_contact" => "Jane Doe", 
+//                   "emergency_phone" => "1122334455", 
+//                   "details" => "Some more notes.", 
+//                   "training" => "Advanced Johnology", 
+//                   "know" => "tv", 
+//                   "related" => "no", 
+//                   "employment_type" => "full", 
+//                   "excepted" => 50000, 
+//                   "restruction" => "None.", 
+//                   "info" => "Some info notes.", 
+//                   "sign" => "", 
+//                   "recute_date" => "2023-01-01", 
+//                   "inform" => "Some inform notes.", 
+//                   "status" => "draft", 
+//                   "train_ids" => [
+//                      [
+//                         0, 
+//                         0, 
+//                         [
+//                            "name" => "Project Management Certification", 
+//                            "date_from" => "2022-01-01", 
+//                            "date_to" => "2022-06-01", 
+//                            "job" => "Trainee Project Manager", 
+//                            "tasks" => "Completed a series of courses related to project management and passed the final assessment.", 
+//                            "attach" => "" 
+//                         ] 
+//                      ] 
+//                   ], 
+//                   "exper_ids" => [
+//                               [
+//                                  0, 
+//                                  0, 
+//                                  [
+//                                     "name" => "Software Development Intern", 
+//                                     "date_from" => "2021-07-01", 
+//                                     "date_to" => "2022-01-01", 
+//                                     "job" => "Junior Developer", 
+//                                     "tasks" => "Participated in the development of several web projects and learned programming best practices.", 
+//                                     "attach" => "" 
+//                                  ] 
+//                               ] 
+//                            ], 
+//                   "skill_ids" => [
+//                                        [
+//                                           0, 
+//                                           0, 
+//                                           [
+//                                              "name" => "Python Programming", 
+//                                              "eval" => "Advanced" 
+//                                           ] 
+//                                        ], 
+//                                        [
+//                                                 0, 
+//                                                 0, 
+//                                                 [
+//                                                    "name" => "Communication", 
+//                                                    "eval" => "Expert" 
+//                                                 ] 
+//                                              ] 
+//                                     ], 
+//                   "ref_ids" => [
+//                                                       [
+//                                                          0, 
+//                                                          0, 
+//                                                          [
+//                                                             "name" => "Jane Smith", 
+//                                                             "job" => "Senior Engineer", 
+//                                                             "mobile" => 1234567890, 
+//                                                             "company" => "Tech Solutions Inc." 
+//                                                          ] 
+//                                                       ] 
+//                                                    ], 
+//                   "hobbies_ids" => [
+//                                                                [
+//                                                                   0, 
+//                                                                   0, 
+//                                                                   [
+//                                                                      "name" => "Programming" 
+//                                                                   ] 
+//                                                                ], 
+//                                                                [
+//                                                                         0, 
+//                                                                         0, 
+//                                                                         [
+//                                                                            "name" => "Reading" 
+//                                                                         ] 
+//                                                                      ] 
+//                                                             ] 
+//                ] 
+//             ] 
+//          ] 
+//       ] 
+// ]; 
  
  ?>
 
@@ -180,7 +178,140 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<script type="text/javascript">
+ 
 
+  $habbit_counter = 2;
+  $ref_counter = 2 ;
+  $skill_counter = 2 ; 
+
+
+  function add_skill_line() {
+    //alert("go");
+    var skills = document.getElementById("skill_ids");
+
+    var div = document.createElement("div");
+    div.setAttribute("class" , "col-md-3 form-group");
+    var label = document.createElement("label");
+    var input = document.createElement("input");
+    input.setAttribute("class" , "form-control");
+    input.setAttribute("placeholder" , "المهارة ");
+    input.setAttribute("name" , "skill" + $skill_counter);
+    div.appendChild(label);
+    div.appendChild(input);
+
+    var div2 = document.createElement("div");
+    div2.setAttribute("class" , "col-md-3 form-group");
+    var label2 = document.createElement("label");
+    label2.innerHTML = "التقييم";
+    var select = document.createElement("select");
+    select.setAttribute("class" , "form-control");
+    select.setAttribute("name" , "skill_val" + $skill_counter);
+    var option1 = document.createElement("option");
+    option1.setAttribute("selected" , "true ");
+    option1.setAttribute("disabled" , "true ");
+    option1.innerHTML = "-- Select --";
+    var option2 = document.createElement("option");
+    option2.innerHTML = "جيدة";
+    option2.value = "Good";
+    var option3 = document.createElement("option");
+    option3.innerHTML = "ممتازة";
+    option3.value = "Excellent";
+    select.appendChild(option1);
+    select.appendChild(option2);
+    select.appendChild(option3);
+
+    div2.appendChild(label2);
+    div2.appendChild(select);
+
+
+    skills.appendChild(div);
+    skills.appendChild(div2);
+    
+    $skill_counter ++;
+  }
+
+
+  function add_habbit_line() {
+    // alert("go");
+    
+    var habbits = document.getElementById("habbits");
+
+    var div = document.createElement("div");
+    div.setAttribute("class" , "col-md-4 form-group");
+
+    var label = document.createElement("label");
+   
+    var input = document.createElement("input");
+    input.setAttribute("type" , "text");
+    input.setAttribute("class" , "form-control");
+    input.setAttribute("placeholder" , "ادخل الهوية" + $habbit_counter);
+    input.setAttribute("name" , "h" + $habbit_counter);
+
+    div.appendChild(label);
+    div.appendChild(input);
+
+    habbits.appendChild(div);
+
+    $habbit_counter ++ ;
+  }
+
+  function add_ref_line() {
+
+
+  
+    var ref = document.getElementById("ref_ids");
+
+    var div = document.createElement("div");
+    div.setAttribute("class" , "col-md-3 form-group");
+    var label = document.createElement("label");
+    var input = document.createElement("input");
+    input.setAttribute("class" , "form-control");
+    input.setAttribute("placeholder" , "الاسم");
+    input.setAttribute("name" , "ref_name" + $ref_counter);
+    div.appendChild(label);
+    div.appendChild(input);
+
+    var div2 = document.createElement("div");
+    div2.setAttribute("class" , "col-md-3 form-group");
+    var label2 = document.createElement("label");
+    var input2 = document.createElement("input");
+    input2.setAttribute("class" , "form-control");
+    input2.setAttribute("placeholder" , "الوظيفة");
+    input2.setAttribute("name" , "ref_job" + $ref_counter);
+    div2.appendChild(label2);
+    div2.appendChild(input2);
+
+    var div3 = document.createElement("div");
+    div3.setAttribute("class" , "col-md-3 form-group");
+    var label3 = document.createElement("label");
+    var input3 = document.createElement("input");
+    input3.setAttribute("class" , "form-control");
+    input3.setAttribute("placeholder" , "الجوال");
+    input3.setAttribute("name" , "ref_mobile" + $ref_counter);
+    div3.appendChild(label3);
+    div3.appendChild(input3);
+
+    var div4 = document.createElement("div");
+    div4.setAttribute("class" , "col-md-3 form-group");
+    var label4 = document.createElement("label");
+    var input4 = document.createElement("input");
+    input4.setAttribute("class" , "form-control");
+    input4.setAttribute("placeholder" , "الشركة");
+    input4.setAttribute("name" , "ref_company" + $ref_counter);
+    div4.appendChild(label4);
+    div4.appendChild(input4);
+
+
+    ref.appendChild(div);
+    ref.appendChild(div2);
+    ref.appendChild(div3);
+    ref.appendChild(div4);
+
+    $ref_counter ++ ;
+
+  }
+</script>
 <body>
 
   <!-- ======= Top Bar ======= -->
@@ -221,8 +352,111 @@
          </div>
       </div>
 
+
+        <div class="my-3">
+         <div class="error-message"></div>
+         <div class="sent-message">
+            <?php 
+
+            if(isset($_POST['send'])){
+
+                // INSERT SKILL ARRAY
+                $skill_array = array();
+                $skill_counter = 1 ;
+                while (isset($_POST['skill'.$skill_counter])) {
+                  array_push($skill_array,
+                   $_POST['skill'.$skill_counter],
+                   $_POST['skill_val'.$skill_counter]);
+                  $skill_counter ++;
+                }
+
+
+
+                // INSERT REF ARRAY
+                $ref_array = array();
+                $ref_counter = 1 ;
+                while (isset($_POST['ref_name'.$ref_counter])) {
+                  array_push($ref_array, 
+                      $_POST['ref_name'.$ref_counter] ,
+                      $_POST['ref_job'.$ref_counter] ,
+                      $_POST['ref_mobile'.$ref_counter],
+                      $_POST['ref_company'.$ref_counter]
+                  );
+                  $ref_counter ++ ;
+                }
+
+                // PRINT SKILLS ARRAY
+                $skill_name = "";
+                $skill_value = "";
+                foreach ($skill_array as $key => $value) {
+                  if($key % 2 == 0)
+                    $skill_name = $value ;
+                  elseif ($key % 2 == 1) {
+                    $skill_value = $value;
+                  }
+                  if($key % 2 == 1){
+                    echo "Data:".$skill_name." - ".$skill_value."<br/>";
+                    // [0, 0, [
+                    // "name" => $skill_name, 
+                    // "eval" => $skill_value ]], 
+                  }
+
+                }
+
+                // PRINT REF ARRAY
+                $ref_name = ""; 
+                $ref_job = ""; 
+                $ref_mobile = "";
+                $ref_company = "";
+                foreach ($ref_array as $key => $value) {
+                  if($key % 4 == 0){
+                    $ref_name = $value ; 
+                  }
+                  else if($key % 4 == 1){
+                    $ref_job = $value ;
+                  }
+                  else if($key % 4 == 2){
+                    $ref_mobile = $value ; 
+                  }
+                  else if ($key % 4 == 3) {
+                    $ref_company = $value ;
+                  }
+                  if($key % 4 == 3){
+                  echo "Data:".$ref_name." - ".$ref_job." - ".$ref_mobile." - ".$ref_company."<br/>";
+                     //[0, 0, [
+                   // "name" => "Project Management Certification", 
+                   // "date_from" => "2022-01-01", 
+                   // "date_to" => "2022-06-01", 
+                   // "job" => "Trainee Project Manager", 
+                   // "tasks" => "Completed a series of courses related to project management and passed the final assessment.", 
+                   // "attach" => ""]]], 
+                }
+                 
+                }
+                
+
+                // INSERT HOBBY ARRAY
+                $habbits_array = array();
+                $habbit_counter = 1 ; 
+                while (isset($_POST['h'.$habbit_counter])) {
+                  array_push($habbits_array, $_POST['h'.$habbit_counter]);
+                  $habbit_counter ++ ;
+                }
+
+                // PRINT HOBBY ARRAY
+                foreach ($habbits_array as $value) {
+                  echo " " . $value . " ";
+                  // [0,0,["name"=> $value ]],
+                }
+               
+            }
+
+              ?>
+        </div>
+      </div>
+
       <div class="container">
-      <form>
+      <form method="POST" action="job_request.php">
 
       <div class="row">
 
@@ -699,9 +933,67 @@
       <h3> الكورسات </h3>
       <h3> التدريب </h3>
       <h3> الخبرات </h3>
+
       <h3> المهارات </h3>
+      
+      <div id="skill_ids" class="row">
+
+      <div class="col-md-3 form-group">
+      <label></label>
+      <input type="text" name="skill1" class="form-control" placeholder="المهارة"/>
+      </div>
+
+      <div class="col-md-3 form-group">
+      <label> التقييم </label>
+      <select name="skill_val1" class="form-control">
+        <option selected disabled> -- Select -- </option>
+        <option value="Good"> جيدة  </option>
+        <option value="Excellent"> ممتازة  </option>
+      </select>
+      </div>
+
+
+      </div><br/>
+      <span style="width: 100px; padding: 3px; margin: 5px;" class="btn btn-success" onclick="add_skill_line();"> أضافة + </span>
       <h3> الهوايات </h3>
-      <h3> اشخاص يمكن الرجوع لهم </h3>      
+
+      <div id="habbits" class="row">
+      
+      <div class="col-md-4 form-group">
+      <label></label>
+      <input type="text" name="h1" class="form-control" placeholder="ادخل الهواية">
+      </div>
+
+      </div><br/>
+      <span style="width: 100px; padding: 3px; margin: 5px;" class="btn btn-success" onclick="add_habbit_line();"> أضافة + </span>
+
+     
+      <h3> اشخاص يمكن الرجوع لهم </h3> 
+
+      <div id="ref_ids" class="row">
+          <div class="col-md-3 form-group">
+              <label></label>
+              <input type="text" name="ref_name1" class="form-control" placeholder="الاسم"/>
+          </div>
+
+          <div class="col-md-3 form-group">
+              <label></label>
+              <input type="text" name="ref_job1" class="form-control" placeholder="الوظيفة"/>
+          </div>
+
+          <div class="col-md-3 form-group">
+              <label></label>
+              <input type="text" name="ref_mobile1" class="form-control" placeholder="الجوال"/>
+          </div>
+
+          <div class="col-md-3 form-group">
+              <label></label>
+              <input type="text" name="ref_company1" class="form-control" placeholder="الشركة"/>
+          </div>
+      </div>
+      <br/>
+       <span style="width: 100px; padding: 3px; margin: 5px;" class="btn btn-success" onclick="add_ref_line();"> أضافة + </span>
+
       </div>
 
       <div class="row">
