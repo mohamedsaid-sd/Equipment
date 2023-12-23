@@ -78,26 +78,220 @@
          </div>
       </div>
 
+        <div class="my-3">
+         <div class="error-message"></div>
+         <div class="sent-message">
+            <?php 
+
+            if(isset($_POST['send'])){
+
+              // get the post value 
+              @$full_name = $_POST['full_name'];
+              @$birthdate = $_POST['birthdate'];
+              @$place = $_POST['place'];
+              @$home = $_POST['home'];
+              @$house = $_POST['house'];
+              @$national = $_POST['national'];
+              @$type_national = $_POST['type_national'];
+              @$other_national = $_POST['other_national'];
+              // $request_type = $_POST['request_type'];
+              @$social_state = $_POST['social_state'];
+
+              @$children = $_POST['children'];
+              @$mobile = $_POST['mobile'];
+              @$phone = $_POST['phone'];
+              @$email = $_POST['email'];
+              @$facebook = $_POST['facebook'];
+              @$twiter = $_POST['twiter'];
+              @$instagram = $_POST['instagram'];
+              @$web = $_POST['web'];
+              @$o1=$_POST['o1'];@$o2=$_POST['o2'];@$o3=$_POST['o3'];@$o4=$_POST['o4'];
+              @$o5=$_POST['o5'];@$o6=$_POST['o6'];@$o7=$_POST['o7'];@$o8=$_POST['o8'];
+              @$street = $o1.$o2.$o3.$o4.$o5.$o6.$o7.$o8;
+              @$c1=$_POST['c1'];@$c2=$_POST['c2'];@$c3=$_POST['c3'];@$c4=$_POST['c4'];
+              @$c5=$_POST['c5'];@$c6=$_POST['c6'];@$c7=$_POST['c7'];@$c8=$_POST['c8'];
+              @$street2 = $c1.$c2.$c3.$c4.$c5.$c6.$c7.$c8;
+
+              @$id_type = $_POST['id_type'];
+              @$issue_place = $_POST['issue_place'];
+              @$issue_date = $_POST['issue_date'];
+              @$expirty_date = $_POST['expirty_date'];
+              @$service = $_POST['service'];
+              @$other = $_POST['other'];
+
+              // The Education Pre School and secondary and university and after university
+
+
+
+
+ $jayParsedAry = [
+   "params" => [
+         "args" => [
+            "vals_list" => [
+               [
+                  "name" => $full_name, 
+                  "birthdate" => $birthdate, 
+                  "place" => $place, 
+                  "home" => $home, 
+                  "house" => $house, 
+                  "national" => $national, 
+                  "type_national" => $type_national, 
+                  "other_national" => $other_national, 
+                  "request_type" => "employment", 
+                  "social_state" => $social_state, 
+                  "children" => $children, 
+                  "boys" => 0, 
+                  "girl" => 0, 
+                  "mobile" => $mobile, 
+                  "phone" => $phone, 
+                  "email" => $email, 
+                  "facebook" => $facebook, 
+                  "twiter" => $twiter, 
+                  "instagram" => $instagram, 
+                  "web" => $web, 
+                  "street" => $street, 
+                  "street2" => $street2, 
+                  "zip" => "12345", 
+                  "city" => "Johnstown", 
+                  "state_id" => 1, 
+                  "country_id" => 1, 
+                  "country_code" => "XL", 
+                  "house_type" => "owned", 
+                  "note" => "Some personal note.", 
+                  "id_type" => $id_type, 
+                  "issue_place" => $issue_place, 
+                  "issue_date" => $issue_date, 
+                  "expirty_date" => $expirty_date, 
+                  "service" => $service, 
+                  "other" => $other, 
+                  "certificate" => "bachelor", 
+                  "study_field" => "Johnology", 
+                  "study_school" => "John University", 
+                  "emergency_contact" => "Jane Doe", 
+                  "emergency_phone" => "1122334455", 
+                  "details" => "Some more notes.", 
+                  "training" => "Advanced Johnology", 
+                  "know" => "tv", 
+                  "related" => "no", 
+                  "employment_type" => "full", 
+                  "excepted" => 50000, 
+                  "restruction" => "None.", 
+                  "info" => "Some info notes.", 
+                  "sign" => "", 
+                  "recute_date" => "2023-01-01", 
+                  "inform" => "Some inform notes.", 
+                  "status" => "draft", 
+                  "train_ids" => [
+                     [
+                        0, 
+                        0, 
+                        [
+                           "name" => "Project Management Certification", 
+                           "date_from" => "2022-01-01", 
+                           "date_to" => "2022-06-01", 
+                           "job" => "Trainee Project Manager", 
+                           "tasks" => "Completed a series of courses related to project management and passed the final assessment.", 
+                           "attach" => "" 
+                        ] 
+                     ] 
+                  ], 
+                  "exper_ids" => [
+                              [
+                                 0, 
+                                 0, 
+                                 [
+                                    "name" => "Software Development Intern", 
+                                    "date_from" => "2021-07-01", 
+                                    "date_to" => "2022-01-01", 
+                                    "job" => "Junior Developer", 
+                                    "tasks" => "Participated in the development of several web projects and learned programming best practices.", 
+                                    "attach" => "" 
+                                 ] 
+                              ] 
+                           ], 
+                  "skill_ids" => [
+                                       [
+                                          0, 
+                                          0, 
+                                          [
+                                             "name" => "Python Programming", 
+                                             "eval" => "Advanced" 
+                                          ] 
+                                       ], 
+                                       [
+                                                0, 
+                                                0, 
+                                                [
+                                                   "name" => "Communication", 
+                                                   "eval" => "Expert" 
+                                                ] 
+                                             ] 
+                                    ], 
+                  "ref_ids" => [
+                                                      [
+                                                         0, 
+                                                         0, 
+                                                         [
+                                                            "name" => "Jane Smith", 
+                                                            "job" => "Senior Engineer", 
+                                                            "mobile" => 1234567890, 
+                                                            "company" => "Tech Solutions Inc." 
+                                                         ] 
+                                                      ] 
+                                                   ], 
+                  "hobbies_ids" => [
+                                                               [
+                                                                  0, 
+                                                                  0, 
+                                                                  [
+                                                                     "name" => "Programming" 
+                                                                  ] 
+                                                               ], 
+                                                               [
+                                                                        0, 
+                                                                        0, 
+                                                                        [
+                                                                           "name" => "Reading" 
+                                                                        ] 
+                                                                     ] 
+                                                            ] 
+               ] 
+            ] 
+         ] 
+      ] 
+]; 
+
+  
+              // print the post value 
+
+              echo "Data:".$full_name."-".$birthdate."-".$place."-".$home."-".$house."-".$national."-".$type_national."-".$other_national."-".$social_state."-".$children."-".$mobile."-".$phone."-".$email."-".$facebook."-".$twiter."-".$instagram."-".$web."-".$street."-".$street2."-".$id_type."-".$issue_place."-".$issue_date."-".$expirty_date."-".$service."-".$other;
+
+            }
+
+            ?>        
+          </div>
+        </div>
+
       <div class="container">
-      <form>
+      <form action="job_request.php" method="POST">
 
       <div class="row">
 
       <h3> Personal Information  </h3>  
 
       <div class="col-md-4 form-group">
-        <label> الصورة الشخصية </label>
-        <input type="file" name="image" class="form-control">
+        <label> Profile Image </label>
+        <input type="file" name="" class="form-control">
       </div>
 
       <div class="col-md-4 form-group">
-        <label> profile image  </label>
-        <input type="text" name="name" class="form-control" placeholder="Full Name">
+        <label></label>
+        <input type="text" name="full_name" class="form-control" placeholder="Full Name">
       </div>
 
       <div class="col-md-4 form-group">
         <label> Date of birth  </label>
-        <input type="date" name="date" class="form-control">
+        <input type="date" name="birthdate" class="form-control">
       </div>
 
       </div>
@@ -106,17 +300,17 @@
 
       <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" class="form-control" placeholder="Place of birth">
+        <input type="text" name="place" class="form-control" placeholder="Place of birth">
       </div> 
 
       <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" class="form-control" placeholder="The Originam Place">
+        <input type="text" name="home" class="form-control" placeholder="The Originam Place">
       </div> 
 
       <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" class="form-control" placeholder="The Current Place">
+        <input type="text" name="house" class="form-control" placeholder="The Current Place">
       </div> 
 
       </div>
@@ -125,21 +319,27 @@
 
       <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" class="form-control" placeholder="Nationality">
+        <input type="text" name="national" class="form-control" placeholder="Nationality">
       </div>  
 
        <div class="col-md-4 form-group">
         <br/>
-        <label> Type of Nationality  </label><br/>
-        <input type="checkbox"/> Origin
-        <input type="checkbox"/> Naturalize 
+        <label> Type of Nationality  </label>
+        <select name="type_national" class="form-control">
+          <option selected disabled> -- Select -- </option>
+          <option> Origin </option>
+          <option> Naturalize </option>
+        </select>
       </div> 
 
       <div class="col-md-4 form-group">
         <br/>
         <label> Do you have another Nationality  </label><br/>
-        <input type="checkbox"/> Yes 
-        <input type="checkbox"/> No 
+        <select name="other_national" class="form-control">
+          <option selected disabled> -- Select -- </option>
+          <option> Yes </option>
+          <option> No </option>
+        </select>
       </div> 
         
       </div>
@@ -148,18 +348,26 @@
 
       <div class="col-md-4 form-group">
         <br/>
-        <label> Social Status  </label><br/>
-        <input type="checkbox"/> Single 
-        <input type="checkbox"/> Marred
-        <input type="checkbox"/> Divorced
-        <input type="checkbox"/> ارمل
+        <label> Social Status  </label>
+        <select name="social_state" class="form-control">
+          <option selected disabled> -- Select -- </option>
+          <option> Single </option>
+          <option> Marred </option>
+          <option> Divorced </option>
+          <option> ارمل </option>
+        </select>
       </div> 
 
       <div class="col-md-4 form-group">
         <br/>
         <label> Do You Have Children  </label><br/>
-        <input type="checkbox"/> No 
-        <input type="checkbox"/> Yes
+        <select name="children" class="form-control">
+          <option selected disabled> -- Select -- </option>
+          <option> Yes </option>
+          <option> No </option>
+        </select>
+        <input type="text" name="" class="form-control" placeholder="Boys">
+        <input type="text" name="" class="form-control" placeholder="Girls">
       </div> 
        
       </div>
@@ -170,17 +378,17 @@
 
        <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" name="name" class="form-control" placeholder="Mobile No">
+        <input type="text" name="mobile" class="form-control" placeholder="Mobile No">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="number" class="form-control" placeholder="Mobile No (secondery)">
+      <input type="number" name="phone" class="form-control" placeholder="Mobile No (secondery)">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="email" class="form-control" placeholder="Email">
+      <input type="email" name="email" class="form-control" placeholder="Email">
       </div>
         
       </div>
@@ -189,22 +397,22 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="facebook">
+      <input type="text" name="facebook" class="form-control" placeholder="facebook">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="Instagram">
+      <input type="text" name="instagram" class="form-control" placeholder="Instagram">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="Twitter">
+      <input type="text" name="twiter" class="form-control" placeholder="Twitter">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="P.Website">
+      <input type="text" name="web" class="form-control" placeholder="P.Website">
       </div>
         
       </div>
@@ -219,17 +427,17 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="State">
+      <input type="text" name="o1" class="form-control" placeholder="State">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="Mahlyah">
+      <input type="text" name="o2" class="form-control" placeholder="Mahlyah">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="Squire">
+      <input type="text" name="o3" class="form-control" placeholder="Squire">
       </div>
 
       </div>
@@ -238,17 +446,17 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="Avenue">
+      <input type="text" name="o4" class="form-control" placeholder="Avenue">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="House No.">
+      <input type="text" name="o5" class="form-control" placeholder="House No.">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="Clear Milestone">
+      <input type="text" name="o6" class="form-control" placeholder="Clear Milestone">
       </div>
         
       </div>
@@ -257,15 +465,18 @@
 
         <div class="col-md-4 form-group">
         <br/>
-        <label> Type of Accomm  </label><br/>
-        <input type="checkbox"/> Owner 
-        <input type="checkbox"/> Rental
-        <input type="checkbox"/> Other
+        <label> Type of Accomm  </label>
+        <select name="o7" class="form-control">
+          <option selected disabled> -- Select -- </option>
+          <option>Owner</option>
+          <option>Rental</option>
+          <option>Other</option>
+        </select>
       </div> 
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <textarea class="form-control" placeholder="Detailed Description"></textarea>
+      <textarea name="o8" class="form-control" placeholder="Detailed Description"></textarea>
       </div>
         
       </div>
@@ -277,17 +488,17 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="State">
+      <input type="text" name="c1" class="form-control" placeholder="State">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="Mahyah">
+      <input type="text" name="c2" class="form-control" placeholder="Mahyah">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="Squire">
+      <input type="text" name="c3" class="form-control" placeholder="Squire">
       </div>
 
       </div>
@@ -296,17 +507,17 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="Avenue">
+      <input type="text" name="c4" class="form-control" placeholder="Avenue">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="Mobile No">
+      <input type="text" name="c5" class="form-control" placeholder="Mobile No">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="Clear Milestone">
+      <input type="text" name="c6" class="form-control" placeholder="Clear Milestone">
       </div>
         
       </div>
@@ -315,15 +526,18 @@
 
       <div class="col-md-4 form-group">
         <br/>
-        <label> Type of Accomm  </label><br/>
-        <input type="checkbox"/> Owner 
-        <input type="checkbox"/> Rental
-        <input type="checkbox"/> Other
+        <label> Type of Accomm  </label>
+         <select name="c7" class="form-control">
+          <option selected disabled> -- Select -- </option>
+          <option>Owner</option>
+          <option>Rental</option>
+          <option>Other</option>
+        </select>
       </div> 
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <textarea class="form-control" placeholder="Detailed Description"></textarea>
+      <textarea name="c8" class="form-control" placeholder="Detailed Description"></textarea>
       </div>
         
       </div>
@@ -333,24 +547,24 @@
 
       <div class="col-md-4 form-group">
       ID type
-      <select class="form-control">
-      <option> -- Select -- </option>
+      <select name="id_type" class="form-control">
+      <option selected disabled> -- Select -- </option>
       <option> National Card </option>
       <option> D.License </option>
       <option> Passport </option>
       <option> Other </option>
       </select>
-      <input type="text" placeholder="Enter The ID tyle">
+      <input type="text" class="form-control" placeholder="Enter The ID tyle">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="Issue Place">
+      <input type="text" name="issue_place" class="form-control" placeholder="Issue Place">
       </div>
 
       <div class="col-md-4 form-group">
       <label> Issue Date  </label>
-      <input type="date" class="form-control">
+      <input type="date" name="issue_date" class="form-control">
       </div>
         
       </div>
@@ -359,13 +573,13 @@
 
       <div class="col-md-4 form-group">
       <label> Expired Date  </label>
-      <input type="date" class="form-control">
+      <input type="date" name="expirty_date" class="form-control">
       </div>
 
       <div class="col-md-4 form-group">
         Did You Finish your National Service ? 
-      <select class="form-control">
-      <option> -- Select -- </option>
+      <select name="service" class="form-control">
+      <option selected disabled> -- Select -- </option>
       <option> Yes </option>
       <option> No </option>
       </select>
@@ -373,7 +587,7 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <textarea class="form-control" placeholder="Notes"></textarea>
+      <textarea name="other" class="form-control" placeholder="Notes"></textarea>
       </div>
         
       </div>
