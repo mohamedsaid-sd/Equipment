@@ -126,7 +126,90 @@
                         $email = $_POST['email'];
                         // the date 
 
-                        echo $department."-".$name."-".$note."-".$phone."-".$email;
+                       // echo $department."-".$name."-".$note."-".$phone."-".$email;
+
+
+                        $jayParsedAry = [
+                          "params" => [
+                                "args" => [
+                                   "vals_list" => [
+                                      "name" =>  $name, 
+                                      "requester_type" => "customer", 
+                                      "request_method" => "Online Submission", 
+                                      "reference" => "REF12345", 
+                                      "department" => $department,
+                                      "concerned" => "Issue regarding ...", 
+                                      "note" => $note, 
+                                      "category" => "argent", 
+                                      "complaint_distribution" => "email", 
+                                      "receive_date" => "2023-04-10", 
+                                      "estimated_date" => "2023-04-20", 
+                                      "procedures" => "Initial steps...", 
+                                      "status" => "draft", 
+                                      "closure_date" => null, 
+                                      "recommendation" => "Initial recommendation", 
+                                      "phone" => $phone, 
+                                      "email" => $email 
+                                   ] 
+                                ] 
+                             ] 
+                       ]; 
+
+
+                       $done=json_encode($jayParsedAry);
+//echo $done;
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://equipation-equipation-odoo-com-stage-10590858.dev.odoo.com/apiV2/complaint.request/create',
+  CURLOPT_SSL_VERIFYHOST => 0 ,
+  CURLOPT_SSL_VERIFYPEER => 0 ,
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>$done,
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json',
+    'X-Openerp-Session-Id: {{session_id}}',
+    'Cookie: session_id=a1fd8b1c0a71abde4e289ac7f5212eee0e8cc5e7'
+  ),
+));
+
+ $response = curl_exec($curl);
+
+
+
+if(curl_errno($curl)) {
+  echo 'Error: ' . curl_error($curl);
+} else {
+
+  //echo $response;
+        // convert response to array
+    $array = json_decode(  $response , true );
+    // loop the array to fetch item
+    foreach ($array as $key => $value) {
+      // echo $key."".$value;
+        if($key == "msg" )
+          if($value == "Success")
+                // success add form alert ...
+                        echo "<div class='alert alert-success'>
+                        <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                         <b> تم ارسال البلاغ  بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال بلاغاتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
+            else
+              echo "<div class='alert alert-danger'>
+                        <span class='icon'> <i class='fa fa-cancel'></i></span>
+                         <b> خطأ في عملية الارسال </b> </div>";
+    }
+  // echo gettype($x);
+  // echo "R".$x;
+}
+curl_close($curl);
+
+
 
                         // success add form alert ...
                         echo "<div class='alert alert-success'>

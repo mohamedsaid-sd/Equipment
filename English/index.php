@@ -269,8 +269,18 @@
             <div class="icon"><i class="fas fa-clipboard"></i></div>
             <br/>
             <br/>
-            <h4><a href=""> Department المقاولة </a></h4>
-              <p> Small preff about the Department ,Small preff about the Department ,Small preff about the Department   </p>
+            <h4><a href="">  Contracting </a></h4>
+              <p> Contracting projects always require a comprehensive management system that relies on automation 
+in most of its stages, taking into consideration the sizes, levels, and goals of the projects. The 
+contractor must always be prepared to meet changes and requirements by providing the most 
+suitable equipment in the appropriate sizes at the right time, ensuring the modernity and quality of 
+the equipment, with a qualified engineering team ready 24/7 to ensure the continuity of work 
+without interruption and without wasting time. The contractor's name must be reliable and relied 
+upon to execute difficult and impossible tasks while considering quality, which is the differentiating 
+factor in this competition.
+EQUIPATION is the best choice to meet these requirements and achieve the goals of companies 
+efficiently, with quality and safety rules, at a competitive price. We will be waiting for you to take on 
+this challenge with you.   </p>
             </div>
           </div>
 
@@ -279,8 +289,10 @@
             <div class="icon"><i class="fas fa-tractor"></i></div>
               <br/>
               <br/>
-              <h4><a href=""> Department التأجير </a></h4>
-              <p> It is a service that provides equipment at all times. We also present to you a summary of our third experience to help you choose the program from the beginning so that we can come up with our latest releases shortly after their impact. We participate with you at the beginning of the work during production to evaluate and correct what deviated from the path. We provide you with a detailed report after the end of your project for your experience and to benefit from it. maximum in future projects. This service can mainly benefit from: Mining and exploration companies, road and bridge companies, general contracting companies, agricultural companies, small contractors, and even individuals. The maintenance of our fleet is supervised by a qualified engineering team equipped according to international standards, ready around the clock, and its biggest challenge is to reach zero breakdowns within a period of time. The period of your contract with us. Behind these efforts, an administration that has been carefully chosen to gain your satisfaction stands by your side...  </p>
+              <h4><a href="">  Rental </a></h4>
+              <p> EQUIPATION provides equipment rental services, offering a wide range of machinery, tools, and equipment to its customers, where and when they need it. The company works to provide high-quality equipment in a safe and efficient manner, with unparalleled productivity. This is achieved through a highly professional team that is always there to assist you throughout the work stages.
+The company also leverages its extensive experience to help you select the most suitable equipment for the project during the planning stage, and provides practical advice during the production process to enhance productivity and address any issues that may affect it. Moreover, our company provides detailed reports upon completion of projects to extract lessons learned for future improvement.
+If you are working in the mining sector, road and bridge construction industry, general contracting, or even agricultural field, contractor then EQUIPATION is your best choice. Our fleet maintenance is overseen by a qualified and equipped engineering team according to international standards, ready 24/7 to achieve zero breakdowns during your contract period with us. </p>
             </div>
           </div>
 
@@ -290,7 +302,15 @@
               <br/>
               <br/>
               <h4><a href=""> Department التشغيل  </a></h4>
-              <p> It is a service created by EQUIPATION to meet the needs of the Sudanese market after making a trusted name in this sector, by creating an asset management model on your behalf that meets your needs as a client, suits all clients, accommodates all their aspirations, and addresses all operating problems for companies, business owners, investors, and vehicle owners, and we know very well that no... This satisfaction can only be achieved by facing several challenges, so we recognized the challenge and accepted it.. The most difficult and most important challenge in the matrix of challenges was how to select competent and experienced operators and attract them to work with EQUIPATION, so we created a model for employment with standards that will not be compromised.According to satisfactory conditions for both parties, it achieves job satisfaction and at the same time leads to quick and amazing results in the production process on the ground. Regarding the challenge of marketing and choosing the most appropriate contracts with the highest return, EQUIPATION did not face any problem due to the spread of its work area in all parts of Sudan, the diversity of its contracts that suit all beneficiaries, and its high efficiency in work and production that is unparalleled, and the name EQUIPATION is associated with high productivity at the lowest possible costs. With the quality that any customer aspires to. Because EQUIPATION knows that success  </p>
+              <p> It is a service created by EQUIPATION to meet the needs of the Sudanese market after establishing a trusted name in this sector. This is achieved by introducing a model for asset management on behalf of the client, meeting the needs of all customers, accommodating their aspirations, and addressing all operational problems for companies, business owners, investors, and equipment owners. We are well aware that satisfaction cannot be achieved without facing several challenges, and we have accepted and embraced the challenge.
+
+The most difficult and important challenge in the array of challenges was how to select competent and experienced operators and attract them to work with EQUIPATION. Therefore, we created a recruitment model with non-negotiable standards and satisfactory conditions for both parties, ensuring job satisfaction and delivering quick and amazing results in the production process on the ground.
+
+As for the challenge of marketing and selecting the most suitable and highest-yielding contracts, EQUIPATION did not face any problems due to its widespread work across all regions of Sudan and its diverse contracts that suit all beneficiaries. Its high efficiency in work and production, unparalleled quality, and association with high productivity at the lowest possible cost have made the name EQUIPATION synonymous with quality that any client aspires to.
+
+Regarding the issue of maintenance, EQUIPATION has given it the utmost attention and made it one of its top priorities. It has created a precise monitoring model overseen by a qualified maintenance team carefully selected and ready 24/7 to respond to any request. Their biggest challenge is to achieve zero breakdowns, based on the principle that prevention is better than cure. As for the transportation issue, EQUIPATION has built strong partnerships with reliable transportation providers and established specific criteria for selecting the most suitable, safe, fastest, closest, and cost-effective carrier.
+
+Behind all these efforts stands a management team that monitors all these stages moment by moment through modern tracking systems, which are primarily installed in all assets through specialized global companies in this field. These systems help control wasted time and address issues instantly. </p>
              </div>
           </div>
 
@@ -299,8 +319,12 @@
             <div class="icon"><i class="fab fa-wpforms"></i></div>
               <br/>
               <br/>
-              <h4><a href=""> Department التوظيف </a></h4>
-              <p> Small preff about the Department ,Small preff about the Department ,Small preff about the Department   </p>
+              <h4><a href="">  التوظيف </a></h4>
+              <p> We, at EQUIPATION, believe that Sudan is rich in natural resources and human capital. We also believe that the youth are the future of the world. Therefore, EQUIPATION has placed special emphasis on the youth and employees, striving to provide a suitable environment to satisfy their ambitions, face challenges, and accomplish tasks through guiding their energies using sound scientific methods and the latest findings in human resource management, while taking into consideration the environment and the psychological makeup of the Sudanese personality.
+
+In this section, we aim to facilitate communication between human resource professionals seeking the best employees in the job market. It also provides a space for exchanging experiences, discussing job-related issues and their solutions, as well as opportunities for training offered by some companies to graduates and ambitious individuals who are striving to achieve their dreams. There is also a space for consultations overseen by highly qualified consultants in this field.
+
+We have taken on a great challenge, which is to make EQUIPATION the dream of every graduate to start their career path from here, helping them to clearly define their future path and be prepared to face all challenges and obstacles by equipping them with all the job-related and personal skills that will help them to pursue their path with determination until they achieve all their dreams."  </p>
             </div>
           </div>
 
@@ -309,8 +333,16 @@
             <div class="icon"><i class="fas fa-tools"></i></div>
               <br/>
               <br/>
-              <h4><a href="">Department الصيانة </a></h4>
-              <p> Small preff about the Department ,Small preff about the Department ,Small preff about the Department   </p>
+              <h4><a href="">Maintenance  </a></h4>
+              <p> EQUIPATION recognizes that maintenance is the lifeblood of this sector and has given it the utmost attention. Its success prolongs the life of projects and helps them achieve their goals, while neglecting them accelerates their deterioration, ultimately leading to their premature or eventual demise without achieving their objectives. We found that most of the problems faced by companies, owners, and producers revolve around this point primarily due to lack of specialization, inadequate follow-up, and poor treatment, leading to disastrous results in the end.
+
+Therefore, EQUIPATION has opened this section with the primary motto of prompt response and quality service, while promoting the concept of prevention before treatment. We have attempted to bring together all specialists and practitioners scattered throughout our country for mutual benefit among the members of this sector.
+
+We are pleased to bridge the gap between service providers from companies, business owners, and even individuals and entrepreneurs who are primarily involved in maintenance, inspection, and all related activities. These services are mainly beneficial to construction companies, production companies, equipment owners, and operators across all regions of Sudan.
+
+Our goal is to facilitate your access to each other, enhance the concept of competition in improving services, exchange experiences, and save time in finding the best, fastest, and closest options.
+
+So, welcome among us. May we and you be aided in achieving our goals and objectives from this section.  </p>
             </div>
           </div>
 
@@ -319,8 +351,14 @@
             <div class="icon"><i class="fas fa-truck-moving"></i></div>
               <br/>
               <br/>
-              <h4><a href=""> Department الترحيل  </a></h4>
-              <p> Small preff about the Department ,Small preff about the Department ,Small preff about the Department   </p>
+              <h4><a href=""> transportation   </a></h4>
+              <p> EQUIPATION values the issue of time at every step, recognizing that time is the differential value in the final results. Due to the importance of time, it has become the primary factor in measuring the quality of service. All its operations are linked to time, making it a crucial element in assessing the quality of service.
+
+Because transportation is a major concern for all companies, owners, and producers, EQUIPATION has not overlooked this aspect. It has benefited from its partnership with the "Knights of the Road," who played a significant role in achieving success and completing the full picture.
+
+To ensure that your equipment arrives at the perfect time, you must consider the compatibility of the carrier with the size and weight of the machinery being transported, as well as the carrier's technical readiness, proximity, knowledge of areas and roads, and reliability.
+
+Therefore, we have opened this space to bring together all owners of trailers, flatbeds, and cranes in one place, making it easier for you to choose the most suitable, closest, and most cost-effective option. We aim to enhance the value of time for service providers and their clients, and we will facilitate tracking the transportation process with our partners moment by moment.   </p>
             </div>
           </div>
 
