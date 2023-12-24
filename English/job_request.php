@@ -86,6 +86,10 @@
             if(isset($_POST['send'])){
 
               // get the post value 
+              
+
+              @$request_type = $_POST['request_type'];
+
               @$full_name = $_POST['full_name'];
               @$birthdate = $_POST['birthdate'];
               @$place = $_POST['place'];
@@ -98,6 +102,11 @@
               @$social_state = $_POST['social_state'];
 
               @$children = $_POST['children'];
+              @$girl = $_POST['girl'];
+              @$boys = $_POST['boys'];
+
+
+              
               @$mobile = $_POST['mobile'];
               @$phone = $_POST['phone'];
               @$email = $_POST['email'];
@@ -105,12 +114,13 @@
               @$twiter = $_POST['twiter'];
               @$instagram = $_POST['instagram'];
               @$web = $_POST['web'];
-              @$o1=$_POST['o1'];@$o2=$_POST['o2'];@$o3=$_POST['o3'];@$o4=$_POST['o4'];
-              @$o5=$_POST['o5'];@$o6=$_POST['o6'];@$o7=$_POST['o7'];@$o8=$_POST['o8'];
-              @$street = $o1.$o2.$o3.$o4.$o5.$o6.$o7.$o8;
-              @$c1=$_POST['c1'];@$c2=$_POST['c2'];@$c3=$_POST['c3'];@$c4=$_POST['c4'];
-              @$c5=$_POST['c5'];@$c6=$_POST['c6'];@$c7=$_POST['c7'];@$c8=$_POST['c8'];
-              @$street2 = $c1.$c2.$c3.$c4.$c5.$c6.$c7.$c8;
+              @$o1=$_POST['o1'];@$o2=$_POST['o2'];@$o3=$_POST['o3'];
+              @$c1=$_POST['c1'];@$c2=$_POST['c2'];@$c3=$_POST['c3'];
+
+              @$street = "Origin Home :".$o1."-".$o2."-".$o3;
+              @$street2 = "Origin Home :".$c1."-".$c2."-".$c3;
+              
+              @$house_type = $_POST['house_type'];
 
               @$id_type = $_POST['id_type'];
               @$issue_place = $_POST['issue_place'];
@@ -118,6 +128,16 @@
               @$expirty_date = $_POST['expirty_date'];
               @$service = $_POST['service'];
               @$other = $_POST['other'];
+
+              @$certificate = $_POST['certificate'];
+              @$study_field = $_POST['study_field'];
+              @$study_school = $_POST['study_school'];
+              @$university_address = $_POST['university_address'];
+
+
+              
+
+             
 
               // The Education Pre School and secondary and university and after university
 
@@ -137,11 +157,11 @@
                   "national" => $national, 
                   "type_national" => $type_national, 
                   "other_national" => $other_national, 
-                  "request_type" => "employment", 
+                  "request_type" => $request_type, 
                   "social_state" => $social_state, 
                   "children" => $children, 
-                  "boys" => 0, 
-                  "girl" => 0, 
+                  "boys" => $boys, 
+                  "girl" => $girl, 
                   "mobile" => $mobile, 
                   "phone" => $phone, 
                   "email" => $email, 
@@ -156,7 +176,7 @@
                   "state_id" => 1, 
                   "country_id" => 1, 
                   "country_code" => "XL", 
-                  "house_type" => "owned", 
+                  "house_type" => $house_type, 
                   "note" => "Some personal note.", 
                   "id_type" => $id_type, 
                   "issue_place" => $issue_place, 
@@ -164,9 +184,10 @@
                   "expirty_date" => $expirty_date, 
                   "service" => $service, 
                   "other" => $other, 
-                  "certificate" => "bachelor", 
-                  "study_field" => "Johnology", 
-                  "study_school" => "John University", 
+                  "certificate" => $certificate, 
+                  "study_field" => $study_field, 
+                  "study_school" => $study_school, 
+                  "university_address" => $university_address, 
                   "emergency_contact" => "Jane Doe", 
                   "emergency_phone" => "1122334455", 
                   "details" => "Some more notes.", 
@@ -261,10 +282,66 @@
       ] 
 ]; 
 
-  
+//echo "Data:".$study_field."-".$study_school."-".$university_address."-".$street;
+
               // print the post value 
 
-              echo "Data:".$full_name."-".$birthdate."-".$place."-".$home."-".$house."-".$national."-".$type_national."-".$other_national."-".$social_state."-".$children."-".$mobile."-".$phone."-".$email."-".$facebook."-".$twiter."-".$instagram."-".$web."-".$street."-".$street2."-".$id_type."-".$issue_place."-".$issue_date."-".$expirty_date."-".$service."-".$other;
+           //   echo "Data:".$full_name."-".$birthdate."-".$place."-".$home."-".$house."-".$national."-".$type_national."-".$other_national."-".$social_state."-".$children."-".$mobile."-".$phone."-".$email."-".$facebook."-".$twiter."-".$instagram."-".$web."-".$street."-".$street2."-".$id_type."-".$issue_place."-".$issue_date."-".$expirty_date."-".$service."-".$other."-".$certificate;
+
+           $done=json_encode($jayParsedAry);
+           //echo $done;
+           $curl = curl_init();
+           
+           curl_setopt_array($curl, array(
+             CURLOPT_URL => 'https://equipation-equipation-odoo-com-stage-10590858.dev.odoo.com/apiV2/employment.request/create',
+             CURLOPT_SSL_VERIFYHOST => 0 ,
+             CURLOPT_SSL_VERIFYPEER => 0 ,
+             CURLOPT_RETURNTRANSFER => true,
+             CURLOPT_ENCODING => '',
+             CURLOPT_MAXREDIRS => 10,
+             CURLOPT_TIMEOUT => 0,
+             CURLOPT_FOLLOWLOCATION => true,
+             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+             CURLOPT_CUSTOMREQUEST => 'POST',
+             CURLOPT_POSTFIELDS =>$done,
+             CURLOPT_HTTPHEADER => array(
+               'Content-Type: application/json',
+               'X-Openerp-Session-Id: {{session_id}}',
+               'Cookie: session_id=a1fd8b1c0a71abde4e289ac7f5212eee0e8cc5e7'
+             ),
+           ));
+           
+            $response = curl_exec($curl);
+           
+           
+           
+           if(curl_errno($curl)) {
+             echo 'Error: ' . curl_error($curl);
+           } else {
+           
+             //echo $response;
+                   // convert response to array
+               $array = json_decode(  $response , true );
+               // loop the array to fetch item
+               foreach ($array as $key => $value) {
+                 // echo $key."".$value;
+                   if($key == "msg" )
+                     if($value == "Success")
+                           // success add form alert ...
+                                   echo "<div class='alert alert-success'>
+                                   <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                                    <b> تم ارسال البلاغ  بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال بلاغاتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
+                       else
+                         echo "<div class='alert alert-danger'>
+                                   <span class='icon'> <i class='fa fa-cancel'></i></span>
+                                    <b> خطأ في عملية الارسال </b> </div>";
+               }
+             // echo gettype($x);
+             // echo "R".$x;
+           }
+           curl_close($curl);
+
+
 
             }
 
@@ -278,6 +355,15 @@
       <div class="row">
 
       <h3> Personal Information  </h3>  
+      <div class="col-md-4 form-group">
+        <br/>
+        <label> Type of Request  </label>
+        <select name="request_type" class="form-control">
+          <option selected disabled> -- Select -- </option>
+          <option> employment </option>
+          <option> employment </option>
+        </select>
+      </div> 
 
       <div class="col-md-4 form-group">
         <label> Profile Image </label>
@@ -327,7 +413,7 @@
         <label> Type of Nationality  </label>
         <select name="type_national" class="form-control">
           <option selected disabled> -- Select -- </option>
-          <option> Origin </option>
+          <option> original </option>
           <option> Naturalize </option>
         </select>
       </div> 
@@ -338,7 +424,7 @@
         <select name="other_national" class="form-control">
           <option selected disabled> -- Select -- </option>
           <option> Yes </option>
-          <option> No </option>
+          <option> no </option>
         </select>
       </div> 
         
@@ -351,7 +437,7 @@
         <label> Social Status  </label>
         <select name="social_state" class="form-control">
           <option selected disabled> -- Select -- </option>
-          <option> Single </option>
+          <option> single </option>
           <option> Marred </option>
           <option> Divorced </option>
           <option> ارمل </option>
@@ -364,10 +450,10 @@
         <select name="children" class="form-control">
           <option selected disabled> -- Select -- </option>
           <option> Yes </option>
-          <option> No </option>
+          <option> no </option>
         </select>
-        <input type="text" name="" class="form-control" placeholder="Boys">
-        <input type="text" name="" class="form-control" placeholder="Girls">
+        <input type="text" name="boys"  class="form-control" placeholder="Boys">
+        <input type="text" name="girl" class="form-control" placeholder="Girls">
       </div> 
        
       </div>
@@ -442,42 +528,13 @@
 
       </div>
 
-      <div class="row">
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" name="o4" class="form-control" placeholder="Avenue">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" name="o5" class="form-control" placeholder="House No.">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" name="o6" class="form-control" placeholder="Clear Milestone">
-      </div>
-        
-      </div>
+   
 
       <div class="row">
 
-        <div class="col-md-4 form-group">
-        <br/>
-        <label> Type of Accomm  </label>
-        <select name="o7" class="form-control">
-          <option selected disabled> -- Select -- </option>
-          <option>Owner</option>
-          <option>Rental</option>
-          <option>Other</option>
-        </select>
-      </div> 
+   
 
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <textarea name="o8" class="form-control" placeholder="Detailed Description"></textarea>
-      </div>
+    
         
       </div>
 
@@ -503,35 +560,18 @@
 
       </div>
 
-      <div class="row">
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" name="c4" class="form-control" placeholder="Avenue">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" name="c5" class="form-control" placeholder="Mobile No">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" name="c6" class="form-control" placeholder="Clear Milestone">
-      </div>
-        
-      </div>
+      
 
       <div class="row">
 
       <div class="col-md-4 form-group">
         <br/>
         <label> Type of Accomm  </label>
-         <select name="c7" class="form-control">
+         <select name="house_type" class="form-control">
           <option selected disabled> -- Select -- </option>
-          <option>Owner</option>
-          <option>Rental</option>
-          <option>Other</option>
+          <option>owned</option>
+          <option>owned</option>
+          <option>owned</option>
         </select>
       </div> 
 
@@ -551,7 +591,7 @@
       <option selected disabled> -- Select -- </option>
       <option> National Card </option>
       <option> D.License </option>
-      <option> Passport </option>
+      <option> passport </option>
       <option> Other </option>
       </select>
       <input type="text" class="form-control" placeholder="Enter The ID tyle">
@@ -581,7 +621,7 @@
       <select name="service" class="form-control">
       <option selected disabled> -- Select -- </option>
       <option> Yes </option>
-      <option> No </option>
+      <option> no </option>
       </select>
       </div>
 
@@ -595,76 +635,11 @@
       <div class="row">
       <h3> Education Certificates </h3>
 
-      <h4>Pre Univercity </h4>
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="School Name">
-      </div>
+  
 
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="School Place">
-      </div>
+     
 
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="number" class="form-control" placeholder="Graduate Year">
-      </div>
-
-      </div>
-
-      <div class="row">
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="The Grade">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <textarea class="form-control" placeholder="Notes"></textarea>
-      </div>
-        
-      </div>
-
-      <div class="row">
-
-      <h4> Secondary School </h4>
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="School Name">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="School place">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="The Level">
-      </div>
-
-      </div>
-
-      <div class="row">
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="number" class="form-control" placeholder="Graduate Year">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="The Degree">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <textarea class="form-control" placeholder="Notes"></textarea>
-      </div>
-        
-      </div>
+  
 
       <div class="row">
 
@@ -672,100 +647,40 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="University name">
+      <input type="text" name="study_school" class="form-control" placeholder="University name">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="University Place">
+      <input type="text" name="university_address" class="form-control" placeholder="University Place">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="The College">
+      <input type="text" name="study_field" class="form-control" placeholder="The College">
       </div>
 
       </div>
 
       <div class="row">
 
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="number" class="form-control" placeholder="Graduate Year">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="The Degree">
-      </div>
 
       <div class="col-md-4 form-group">
       <label> The Education Degree  </label>
-      <select class="form-control">
+      <select name="certificate" class="form-control">
       <option> -- Select -- </option>
-      <option> دبلوم </option>
-      <option> بكلريوس </option>
+      <option> bachelor </option>
+      <option> bachelor </option>
       <option> Other </option>
       </select>
       </div>
 
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <textarea class="form-control" placeholder="Note"></textarea>
-      </div>
         
       </div>
 
-      <div class="row">
-      <br/>
-      <h4> The after University </h4>
+     
 
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="University Name">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="University Place">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="The College">
-      </div>
-
-      </div>
-
-      <div class="row">
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="number" class="form-control" placeholder="Graduate Year">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="The Degree">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label> The Education Degree  </label>
-      <select class="form-control">
-      <option> -- Select -- </option>
-      <option> دبلوم عالى </option>
-      <option> ماجستير </option>
-      <option> دكتوراة </option>
-      <option> Other </option>
-      </select>
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <textarea class="form-control" placeholder="Notes"></textarea>
-      </div>
-        
-      </div>
+  
 
       <div class="row">
       <h3> Courses </h3>
