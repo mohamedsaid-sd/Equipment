@@ -37,7 +37,56 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<script type="text/javascript">
 
+    $skill_counter = 2 ; 
+
+    function add_skill_line() {
+    //alert("go");
+    var skills = document.getElementById("skill_ids");
+
+    var div = document.createElement("div");
+    div.setAttribute("class" , "col-md-3 form-group");
+    var label = document.createElement("label");
+    var input = document.createElement("input");
+    input.setAttribute("class" , "form-control");
+    input.setAttribute("placeholder" , "المهارة ");
+    input.setAttribute("name" , "skill" + $skill_counter);
+    div.appendChild(label);
+    div.appendChild(input);
+
+    var div2 = document.createElement("div");
+    div2.setAttribute("class" , "col-md-3 form-group");
+    var label2 = document.createElement("label");
+    label2.innerHTML = "التقييم";
+    var select = document.createElement("select");
+    select.setAttribute("class" , "form-control");
+    select.setAttribute("name" , "skill_val" + $skill_counter);
+    var option1 = document.createElement("option");
+    option1.setAttribute("selected" , "true ");
+    option1.setAttribute("disabled" , "true ");
+    option1.innerHTML = "-- Select --";
+    var option2 = document.createElement("option");
+    option2.innerHTML = "جيدة";
+    option2.value = "Good";
+    var option3 = document.createElement("option");
+    option3.innerHTML = "ممتازة";
+    option3.value = "Excellent";
+    select.appendChild(option1);
+    select.appendChild(option2);
+    select.appendChild(option3);
+
+    div2.appendChild(label2);
+    div2.appendChild(select);
+
+
+    skills.appendChild(div);
+    skills.appendChild(div2);
+    
+    $skill_counter ++;
+  }
+
+</script>
 <body>
 
   <!-- ======= Top Bar ======= -->
@@ -101,7 +150,7 @@
               // $request_type = $_POST['request_type'];
               @$social_state = $_POST['social_state'];
 
-              @$children = $_POST['children'];
+              //@$children = $_POST['children'];
               @$girl = $_POST['girl'];
               @$boys = $_POST['boys'];
 
@@ -134,6 +183,35 @@
               @$study_school = $_POST['study_school'];
               @$university_address = $_POST['university_address'];
 
+                    // INSERT SKILL ARRAY
+              $skill_array = array();
+              $skill_counter = 1 ;
+              while (isset($_POST['skill'.$skill_counter])) {
+                  array_push($skill_array,
+                   $_POST['skill'.$skill_counter],
+                   $_POST['skill_val'.$skill_counter]);
+                  $skill_counter ++;
+              }
+
+              // PRINT SKILLS ARRAY
+                $skill_name = "";
+                $skill_value = "";
+                foreach ($skill_array as $key => $value) {
+                  if($key % 2 == 0)
+                    $skill_name = $value ;
+                  elseif ($key % 2 == 1) {
+                    $skill_value = $value;
+                  }
+                  if($key % 2 == 1){
+                    echo "Data:".$skill_name." - ".$skill_value."<br/>";
+                    // [0, 0, [
+                    // "name" => $skill_name, 
+                    // "eval" => $skill_value ]], 
+                    $skilljarray = [0,0,["name" => $skill_name,"eval" => $skill_value]];
+                  }
+
+                }
+
 
               
 
@@ -156,10 +234,10 @@
                   "house" => $house, 
                   "national" => $national, 
                   "type_national" => $type_national, 
-                  "other_national" => $other_national, 
-                  "request_type" => $request_type, 
+                  "other_national" => "yes", 
+                  "request_type" => "employment", 
                   "social_state" => $social_state, 
-                  "children" => $children, 
+                  "children" => "no", 
                   "boys" => $boys, 
                   "girl" => $girl, 
                   "mobile" => $mobile, 
@@ -230,24 +308,8 @@
                                  ] 
                               ] 
                            ], 
-                  "skill_ids" => [
-                                       [
-                                          0, 
-                                          0, 
-                                          [
-                                             "name" => "Python Programming", 
-                                             "eval" => "Advanced" 
-                                          ] 
-                                       ], 
-                                       [
-                                                0, 
-                                                0, 
-                                                [
-                                                   "name" => "Communication", 
-                                                   "eval" => "Expert" 
-                                                ] 
-                                             ] 
-                                    ], 
+                  "skill_ids" => [$skilljarray] ,
+                  
                   "ref_ids" => [
                                                       [
                                                          0, 
@@ -324,7 +386,7 @@
                $array = json_decode(  $response , true );
                // loop the array to fetch item
                foreach ($array as $key => $value) {
-                 // echo $key."".$value;
+                // echo $key."".$value;
                    if($key == "msg" )
                      if($value == "Success")
                            // success add form alert ...
@@ -423,8 +485,8 @@
         <label> Do you have another Nationality  </label><br/>
         <select name="other_national" class="form-control">
           <option selected disabled> -- Select -- </option>
-          <option> Yes </option>
-          <option> no </option>
+          <option value="yes"> Yes </option>
+          <option value="no"> no </option>
         </select>
       </div> 
         
@@ -620,8 +682,8 @@
         Did You Finish your National Service ? 
       <select name="service" class="form-control">
       <option selected disabled> -- Select -- </option>
-      <option> Yes </option>
-      <option> no </option>
+      <option value="yes"> Yes </option>
+      <option value="no"> no </option>
       </select>
       </div>
 
@@ -687,6 +749,27 @@
       <h3> Training </h3>
       <h3> Experience </h3>
       <h3> Skills </h3>
+
+      <div id="skill_ids" class="row">
+
+      <div class="col-md-3 form-group">
+      <label></label>
+      <input type="text" name="skill1" class="form-control" placeholder="Skill"/>
+      </div>
+
+      <div class="col-md-3 form-group">
+      <label> Evaluation </label>
+      <select name="skill_val1" class="form-control">
+        <option selected disabled> -- Select -- </option>
+        <option value="Good"> Good  </option>
+        <option value="Excellent"> Excellent  </option>
+      </select>
+      </div>
+
+
+      </div><br/>
+      <span style="width: 150px; padding: 3px; margin: 5px;" class="btn btn-primary" onclick="add_skill_line();"> أضافة مهارة + </span>
+
       <h3> Habbies </h3>
       <h3> Reference </h3>      
       </div>
