@@ -184,6 +184,71 @@
   $habbit_counter = 2;
   $ref_counter = 2 ;
   $skill_counter = 2 ; 
+  $exper_counter = 2 ;
+
+  function add_exper_line(argument) {
+    // alert("gooo");
+    var exper = document.getElementById("exper_ids");
+
+    var div = document.createElement("div");
+    div.setAttribute("class" , "col-md-3 form-group");
+    var label = document.createElement("label");
+    var input = document.createElement("input");
+    input.setAttribute("class" , "form-control");
+    input.setAttribute("placeholder" , "إسم المؤسسة");
+    input.setAttribute("name" , "exper_name" + $exper_counter);
+    div.appendChild(label);
+    div.appendChild(input);
+
+    var div1 = document.createElement("div");
+    div1.setAttribute("class" , "col-md-2 form-group");
+    var label1 = document.createElement("label");
+    label1.innerHTML = "من تاريخ";
+    var input1 = document.createElement("input");
+    input1.setAttribute("class" , "form-control");
+    input1.setAttribute("type" , "date");
+    input1.setAttribute("name" , "exper_date_from" + $exper_counter);
+    div1.appendChild(label1);
+    div1.appendChild(input1);
+
+    var div2 = document.createElement("div");
+    div2.setAttribute("class" , "col-md-2 form-group");
+    var label2 = document.createElement("label");
+    label2.innerHTML = "الي تاريخ";
+    var input2 = document.createElement("input");
+    input2.setAttribute("class" , "form-control");
+    input2.setAttribute("type" , "date");
+    input2.setAttribute("name" , "exper_date_to" + $exper_counter);
+    div2.appendChild(label2);
+    div2.appendChild(input2);
+
+    var div3 = document.createElement("div");
+    div3.setAttribute("class" , "col-md-2 form-group");
+    var label3 = document.createElement("label");
+    var input3 = document.createElement("input");
+    input3.setAttribute("class" , "form-control");
+    input3.setAttribute("placeholder" , "المسمي الوظيفي");
+    input3.setAttribute("name" , "exper_job" + $exper_counter);
+    div3.appendChild(label3);
+    div3.appendChild(input3);
+
+    var div4 = document.createElement("div");
+    div4.setAttribute("class" , "col-md-3 form-group");
+    var label4 = document.createElement("label");
+    var textarea = document.createElement("textarea");
+    textarea.setAttribute("class" , "form-control");
+    textarea.setAttribute("placeholder" , "المهام");
+    textarea.setAttribute("name" , "exper_tasks" + $exper_counter);
+    div4.appendChild(label4);
+    div4.appendChild(textarea);
+
+    exper.appendChild(div);
+    exper.appendChild(div1);
+    exper.appendChild(div2);
+    exper.appendChild(div3);
+    exper.appendChild(div4);
+
+  }
 
 
   function add_skill_line() {
@@ -245,7 +310,7 @@
     var input = document.createElement("input");
     input.setAttribute("type" , "text");
     input.setAttribute("class" , "form-control");
-    input.setAttribute("placeholder" , "ادخل الهوية" + $habbit_counter);
+    input.setAttribute("placeholder" , "ادخل الهوية");
     input.setAttribute("name" , "h" + $habbit_counter);
 
     div.appendChild(label);
@@ -348,7 +413,7 @@
 
         <div class="section-title">
         <br/>
-          <h2>  إستمارق تقديم  </h2>
+          <h2>  إستمارة توظيف  </h2>
          </div>
       </div>
 
@@ -359,6 +424,50 @@
             <?php 
 
             if(isset($_POST['send'])){
+
+                // INSERT EXPEAR ARRAY
+                $exper_array = array();
+                $exper_counter = 1 ;
+                while (isset($_POST['exper_name'.$exper_counter])) {
+                  array_push($exper_array, 
+                      $_POST['exper_name'.$exper_counter],
+                      $_POST['exper_date_from'.$exper_counter],
+                      $_POST['exper_date_to'.$exper_counter],
+                      $_POST['exper_job'.$exper_counter],
+                      $_POST['exper_tasks'.$exper_counter]
+                  );
+                  $exper_counter ++ ;
+                }
+
+                // PRINT EXPIR ARRAY
+                $exper_name = "";
+                $exper_date_from = "";
+                $exper_date_to = "";
+                $exper_job = "";
+                $exper_tasks = "";
+                foreach ($exper_array as $key => $value) {
+                  if($key % 5 == 0)
+                   $exper_name = $value;
+                  elseif( $key % 5 == 1)
+                    $exper_date_from = $value;
+                  elseif( $key % 5 == 2)
+                    $exper_date_to = $value;
+                  elseif( $key % 5 == 3)
+                    $exper_job = $value;
+                  elseif( $key % 5 == 4){
+                    $exper_tasks = $value;
+
+                    echo "Data".$exper_name."-".$exper_date_from."-".$exper_date_to."-".$exper_job."-".$exper_tasks."<br/>";
+
+                       // [0,0,["name" => $exper_name, 
+                       //       "date_from" => $exper_date_from, 
+                       //       "date_to" => $exper_date_to, 
+                       //       "job" => $exper_job, 
+                       //       "tasks" => $exper_tasks, 
+                       //       "attach" => ""]]], 
+                  }
+                }
+
 
                 // INSERT SKILL ARRAY
                 $skill_array = array();
@@ -930,9 +1039,61 @@
       </div>
 
       <div class="row">
-      <h3> الكورسات </h3>
-      <h3> التدريب </h3>
-      <h3> الخبرات </h3>
+      <h3> الكورسات التدريبية </h3>
+
+      <div id="courses_ids" class="row">
+        <div class="col-md-2 form-group">
+        <label></label>
+        <input type="text" class="form-control" placeholder="إسم الكورس"/>
+        </div>
+        <div class="col-md-2 form-group">
+        <label> من تاريخ </label>
+        <input type="date" class="form-control"/>
+        </div>
+        <div class="col-md-2 form-group">
+        <label> الى تاريخ </label>
+        <input type="date" class="form-control"/>
+        </div>
+        <div class="col-md-2 form-group">
+        <label></label>
+        <input type="text" class="form-control" placeholder="اسم المعهد"/>
+        </div>
+        <div class="col-md-2 form-group">
+        <label></label>
+        <input type="text" class="form-control" placeholder="اسم المدرب"/>
+        </div>
+        <div class="col-md-2 form-group">
+        <label></label>
+        <input type="text" class="form-control" placeholder="التقدير"/>
+        </div>
+      </div><br/>
+      <span style="width: 100px; padding: 3px; margin: 5px;" class="btn btn-success" onclick="add_courses_line();"> أضافة + </span> <font color="red"> الكورسات غير موجود في ال api بعد </font>  
+
+      <h3> الخبرات الوظيفية </h3>
+      
+      <div id="exper_ids" class="row">
+        <div class="col-md-3 form-group">
+        <label></label>
+        <input type="text" name="exper_name1" class="form-control" placeholder="إسم المؤسسة"/>
+        </div>
+        <div class="col-md-2 form-group">
+        <label> من تاريخ </label>
+        <input type="date" name="exper_date_from1" class="form-control"/>
+        </div>
+        <div class="col-md-2 form-group">
+        <label> الى تاريخ </label>
+        <input type="date" name="exper_date_to1" class="form-control"/>
+        </div>
+        <div class="col-md-2 form-group">
+        <label></label>
+        <input type="text" name="exper_job1" class="form-control" placeholder="المسمى الوظيفي"/>
+        </div>
+        <div class="col-md-3 form-group">
+        <label></label>
+        <textarea class="form-control" name="exper_tasks1" placeholder="المهام"></textarea>
+        </div>
+      </div><br/>
+      <span style="width: 150px; padding: 3px; margin: 5px;" class="btn btn-primary" onclick="add_exper_line();"> أضافة خبرة + </span>
 
       <h3> المهارات </h3>
       
@@ -954,7 +1115,7 @@
 
 
       </div><br/>
-      <span style="width: 100px; padding: 3px; margin: 5px;" class="btn btn-success" onclick="add_skill_line();"> أضافة + </span>
+      <span style="width: 150px; padding: 3px; margin: 5px;" class="btn btn-primary" onclick="add_skill_line();"> أضافة مهارة + </span>
       <h3> الهوايات </h3>
 
       <div id="habbits" class="row">
@@ -965,7 +1126,7 @@
       </div>
 
       </div><br/>
-      <span style="width: 100px; padding: 3px; margin: 5px;" class="btn btn-success" onclick="add_habbit_line();"> أضافة + </span>
+      <span style="width: 150px; padding: 3px; margin: 5px;" class="btn btn-primary" onclick="add_habbit_line();"> أضافة هواية + </span>
 
      
       <h3> اشخاص يمكن الرجوع لهم </h3> 
@@ -992,7 +1153,7 @@
           </div>
       </div>
       <br/>
-       <span style="width: 100px; padding: 3px; margin: 5px;" class="btn btn-success" onclick="add_ref_line();"> أضافة + </span>
+       <span style="width: 150px; padding: 3px; margin: 5px;" class="btn btn-primary" onclick="add_ref_line();"> أضافة شخص + </span>
 
       </div>
 
