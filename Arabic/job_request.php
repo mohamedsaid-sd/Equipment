@@ -557,6 +557,285 @@
                   echo " " . $value . " ";
                   // [0,0,["name"=> $value ]],
                 }
+
+
+
+ // get the post value 
+              
+
+ @$request_type = $_POST['request_type'];
+
+ @$full_name = $_POST['full_name'];
+ @$birthdate = $_POST['birthdate'];
+ @$place = $_POST['place'];
+ @$home = $_POST['home'];
+ @$house = $_POST['house'];
+ @$national = $_POST['national'];
+ @$type_national = $_POST['type_national'];
+ @$other_national = $_POST['other_national'];
+ // $request_type = $_POST['request_type'];
+ @$social_state = $_POST['social_state'];
+
+ //@$children = $_POST['children'];
+ @$girl = $_POST['girl'];
+ @$boys = $_POST['boys'];
+
+
+ 
+ @$mobile = $_POST['mobile'];
+ @$phone = $_POST['phone'];
+ @$email = $_POST['email'];
+ @$facebook = $_POST['facebook'];
+ @$twiter = $_POST['twiter'];
+ @$instagram = $_POST['instagram'];
+ @$web = $_POST['web'];
+ @$o1=$_POST['o1'];@$o2=$_POST['o2'];@$o3=$_POST['o3'];
+ @$c1=$_POST['c1'];@$c2=$_POST['c2'];@$c3=$_POST['c3'];
+
+ @$street = "Origin Home :".$o1."-".$o2."-".$o3;
+ @$street2 = "Origin Home :".$c1."-".$c2."-".$c3;
+ 
+ @$house_type = $_POST['house_type'];
+
+ @$id_type = $_POST['id_type'];
+ @$issue_place = $_POST['issue_place'];
+ @$issue_date = $_POST['issue_date'];
+ @$expirty_date = $_POST['expirty_date'];
+ @$service = $_POST['service'];
+ @$other = $_POST['other'];
+
+ @$certificate = $_POST['certificate'];
+ @$study_field = $_POST['study_field'];
+ @$study_school = $_POST['study_school'];
+ @$university_address = $_POST['university_address'];
+
+       // INSERT SKILL ARRAY
+ $skill_array = array();
+ $skill_counter = 1 ;
+ while (isset($_POST['skill'.$skill_counter])) {
+     array_push($skill_array,
+      $_POST['skill'.$skill_counter],
+      $_POST['skill_val'.$skill_counter]);
+     $skill_counter ++;
+ }
+
+ // PRINT SKILLS ARRAY
+   $skill_name = "";
+   $skill_value = "";
+   foreach ($skill_array as $key => $value) {
+     if($key % 2 == 0)
+       $skill_name = $value ;
+     elseif ($key % 2 == 1) {
+       $skill_value = $value;
+     }
+     if($key % 2 == 1){
+       echo "Data:".$skill_name." - ".$skill_value."<br/>";
+       // [0, 0, [
+       // "name" => $skill_name, 
+       // "eval" => $skill_value ]], 
+       $skilljarray = [0,0,["name" => $skill_name,"eval" => $skill_value]];
+     }
+
+   }
+
+
+ 
+
+
+
+ // The Education Pre School and secondary and university and after university
+
+
+
+
+$jayParsedAry = [
+"params" => [
+"args" => [
+"vals_list" => [
+  [
+     "name" => $full_name, 
+     "birthdate" => $birthdate, 
+     "place" => $place, 
+     "home" => $home, 
+     "house" => $house, 
+     "national" => $national, 
+     "type_national" => $type_national, 
+     "other_national" => "yes", 
+     "request_type" => "employment", 
+     "social_state" => $social_state, 
+     "children" => "no", 
+     "boys" => $boys, 
+     "girl" => $girl, 
+     "mobile" => $mobile, 
+     "phone" => $phone, 
+     "email" => $email, 
+     "facebook" => $facebook, 
+     "twiter" => $twiter, 
+     "instagram" => $instagram, 
+     "web" => $web, 
+     "street" => $street, 
+     "street2" => $street2, 
+     "zip" => "12345", 
+     "city" => "Johnstown", 
+     "state_id" => 1, 
+     "country_id" => 1, 
+     "country_code" => "XL", 
+     "house_type" => $house_type, 
+     "note" => "Some personal note.", 
+     "id_type" => $id_type, 
+     "issue_place" => $issue_place, 
+     "issue_date" => $issue_date, 
+     "expirty_date" => $expirty_date, 
+     "service" => $service, 
+     "other" => $other, 
+     "certificate" => $certificate, 
+     "study_field" => $study_field, 
+     "study_school" => $study_school, 
+     "university_address" => $university_address, 
+     "emergency_contact" => "Jane Doe", 
+     "emergency_phone" => "1122334455", 
+     "details" => "Some more notes.", 
+     "training" => "Advanced Johnology", 
+     "know" => "tv", 
+     "related" => "no", 
+     "employment_type" => "full", 
+     "excepted" => 50000, 
+     "restruction" => "None.", 
+     "info" => "Some info notes.", 
+     "sign" => "", 
+     "recute_date" => "2023-01-01", 
+     "inform" => "Some inform notes.", 
+     "status" => "draft", 
+     "train_ids" => [
+        [
+           0, 
+           0, 
+           [
+              "name" => "Project Management Certification", 
+              "date_from" => "2022-01-01", 
+              "date_to" => "2022-06-01", 
+              "job" => "Trainee Project Manager", 
+              "tasks" => "Completed a series of courses related to project management and passed the final assessment.", 
+              "attach" => "" 
+           ] 
+        ] 
+     ], 
+     "exper_ids" => [
+                 [
+                    0, 
+                    0, 
+                    [
+                       "name" => "Software Development Intern", 
+                       "date_from" => "2021-07-01", 
+                       "date_to" => "2022-01-01", 
+                       "job" => "Junior Developer", 
+                       "tasks" => "Participated in the development of several web projects and learned programming best practices.", 
+                       "attach" => "" 
+                    ] 
+                 ] 
+              ], 
+     "skill_ids" => [$skilljarray] ,
+     
+     "ref_ids" => [
+                                         [
+                                            0, 
+                                            0, 
+                                            [
+                                               "name" => "Jane Smith", 
+                                               "job" => "Senior Engineer", 
+                                               "mobile" => 1234567890, 
+                                               "company" => "Tech Solutions Inc." 
+                                            ] 
+                                         ] 
+                                      ], 
+     "hobbies_ids" => [
+                                                  [
+                                                     0, 
+                                                     0, 
+                                                     [
+                                                        "name" => "Programming" 
+                                                     ] 
+                                                  ], 
+                                                  [
+                                                           0, 
+                                                           0, 
+                                                           [
+                                                              "name" => "Reading" 
+                                                           ] 
+                                                        ] 
+                                               ] 
+  ] 
+] 
+] 
+] 
+]; 
+
+//echo "Data:".$study_field."-".$study_school."-".$university_address."-".$street;
+
+ // print the post value 
+
+//   echo "Data:".$full_name."-".$birthdate."-".$place."-".$home."-".$house."-".$national."-".$type_national."-".$other_national."-".$social_state."-".$children."-".$mobile."-".$phone."-".$email."-".$facebook."-".$twiter."-".$instagram."-".$web."-".$street."-".$street2."-".$id_type."-".$issue_place."-".$issue_date."-".$expirty_date."-".$service."-".$other."-".$certificate;
+
+$done=json_encode($jayParsedAry);
+//echo $done;
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+CURLOPT_URL => 'https://equipation-equipation-odoo-com-stage-10590858.dev.odoo.com/apiV2/employment.request/create',
+CURLOPT_SSL_VERIFYHOST => 0 ,
+CURLOPT_SSL_VERIFYPEER => 0 ,
+CURLOPT_RETURNTRANSFER => true,
+CURLOPT_ENCODING => '',
+CURLOPT_MAXREDIRS => 10,
+CURLOPT_TIMEOUT => 0,
+CURLOPT_FOLLOWLOCATION => true,
+CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+CURLOPT_CUSTOMREQUEST => 'POST',
+CURLOPT_POSTFIELDS =>$done,
+CURLOPT_HTTPHEADER => array(
+  'Content-Type: application/json',
+  'X-Openerp-Session-Id: {{session_id}}',
+  'Cookie: session_id=a1fd8b1c0a71abde4e289ac7f5212eee0e8cc5e7'
+),
+));
+
+$response = curl_exec($curl);
+
+
+
+if(curl_errno($curl)) {
+echo 'Error: ' . curl_error($curl);
+} else {
+
+//echo $response;
+      // convert response to array
+  $array = json_decode(  $response , true );
+  // loop the array to fetch item
+  foreach ($array as $key => $value) {
+   // echo $key."".$value;
+      if($key == "msg" )
+        if($value == "Success")
+              // success add form alert ...
+                      echo "<div class='alert alert-success'>
+                      <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                       <b> تم ارسال البلاغ  بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال بلاغاتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
+          else
+            echo "<div class='alert alert-danger'>
+                      <span class='icon'> <i class='fa fa-cancel'></i></span>
+                       <b> خطأ في عملية الارسال </b> </div>";
+  }
+// echo gettype($x);
+// echo "R".$x;
+}
+curl_close($curl);
+
+
+
+
+
+
+
+                
                
             }
 
@@ -570,6 +849,16 @@
       <div class="row">
 
       <h3> المعلومات الشخصية  </h3>  
+      
+      <div class="col-md-4 form-group">
+        <br/>
+        <label> نوع التقديم  </label>
+        <select name="request_type" class="form-control">
+          <option selected disabled> -- اختار -- </option>
+          <option value="employment">  موظف</option>
+          <option value="employment"> متدرب </option>
+        </select>
+      </div> 
 
       <div class="col-md-4 form-group">
         <label> الصورة الشخصية </label>
@@ -583,7 +872,7 @@
 
       <div class="col-md-4 form-group">
         <label> تاريخ الميلاد  </label>
-        <input type="date" name="date" class="form-control" placeholder="Full name">
+        <input type="date" name="birthdate" class="form-control" placeholder=" ">
       </div>
 
       </div>
@@ -592,17 +881,17 @@
 
       <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" class="form-control" placeholder="مكان الميلاد">
+        <input type="text" name="place" class="form-control" placeholder="مكان الميلاد">
       </div> 
 
       <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" class="form-control" placeholder="موطن الإقامة الاصلى">
+        <input type="text"  name="home" class="form-control" placeholder="موطن الإقامة الاصلى">
       </div> 
 
       <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" class="form-control" placeholder="موطن الإقامة الحالى">
+        <input type="text" name="house" class="form-control" placeholder="موطن الإقامة الحالى">
       </div> 
 
       </div>
@@ -611,21 +900,29 @@
 
       <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" class="form-control" placeholder="الجنسية">
+        <input type="text"  name="national" class="form-control" placeholder="الجنسية">
       </div>  
 
        <div class="col-md-4 form-group">
         <br/>
         <label> نوع الجنسية  </label><br/>
-        <input type="checkbox"/> ميلاد
-        <input type="checkbox"/> تجنس 
+
+        <select name="type_national" class="form-control">
+          <option selected disabled> -- اختار -- </option>
+          <option value="original"> ميلاد </option>
+          <option value="original"> تجنس </option>
+        </select>
       </div> 
 
       <div class="col-md-4 form-group">
         <br/>
         <label> هل لديك جنسية اخرى  </label><br/>
-        <input type="checkbox"/> نعم 
-        <input type="checkbox"/> لال 
+  
+        <select name="other_national" class="form-control">
+          <option selected disabled> -- اختار -- </option>
+          <option value="yes"> نغم </option>
+          <option value="no"> لا </option>
+        </select>
       </div> 
         
       </div>
@@ -635,17 +932,27 @@
       <div class="col-md-4 form-group">
         <br/>
         <label> الحاله الإجتماعية  </label><br/>
-        <input type="checkbox"/> عازب 
-        <input type="checkbox"/> متزوج
-        <input type="checkbox"/> مطلق
-        <input type="checkbox"/> ارمل
+        <select name="social_state" class="form-control">
+          <option selected disabled> -- اختار -- </option>
+          <option value="single"> عازب </option>
+          <option value="single"> متزوج </option>
+          <option value="single"> مطلق </option>
+          <option value="single"> ارمل </option>
+        </select>
       </div> 
 
       <div class="col-md-4 form-group">
         <br/>
         <label> هل لديك ابناء  </label><br/>
-        <input type="checkbox"/> لا 
-        <input type="checkbox"/> نعم
+     
+        <select name="children" class="form-control">
+          <option selected disabled> -- اختار -- </option>
+          <option value="yes"> نعم </option>
+          <option value="no"> لا </option>
+
+        </select>
+        <input type="text" name="boys"  class="form-control" placeholder="الابناء">
+        <input type="text" name="girl" class="form-control" placeholder="البنات">
       </div> 
        
       </div>
@@ -656,17 +963,17 @@
 
        <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" name="name" class="form-control" placeholder="رقم الهاتف">
+        <input type="text" name="mobile" class="form-control" placeholder="رقم الهاتف">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="number" class="form-control" placeholder="رقم هاتف آخر">
+      <input type="number" name="phone" class="form-control" placeholder="رقم هاتف آخر">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="email" class="form-control" placeholder="البريد الإلكترونى">
+      <input type="email" name="email" class="form-control" placeholder="البريد الإلكترونى">
       </div>
         
       </div>
@@ -675,22 +982,22 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="حساب الفيسبوك">
+      <input type="text" name="facebook" class="form-control" placeholder="حساب الفيسبوك">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="حساب الإنستقرام">
+      <input type="text" name="instagram" class="form-control" placeholder="حساب الإنستقرام">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="حساب التويتر">
+      <input type="text"  name="twiter" class="form-control" placeholder="حساب التويتر">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder=" موقع شخصى">
+      <input type="text" name="web" class="form-control" placeholder=" موقع شخصى">
       </div>
         
       </div>
@@ -705,48 +1012,36 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="الولاية">
+      <input type="text"  name="o1" class="form-control" placeholder="الولاية">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="المحلية">
+      <input type="text"  name="o2" class="form-control" placeholder="المحلية">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="المربع">
+      <input type="text"  name="o3" class="form-control" placeholder="المربع">
       </div>
 
       </div>
+
+ 
 
       <div class="row">
 
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="الحى">
-      </div>
+
 
       <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="رقم المنزل">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="معلم واضح">
-      </div>
-        
-      </div>
-
-      <div class="row">
-
-        <div class="col-md-4 form-group">
         <br/>
-        <label> نوع السكن  </label><br/>
-        <input type="checkbox"/> ملك 
-        <input type="checkbox"/> ايجار
-        <input type="checkbox"/> اخري
+        <label> نوع السكن   </label>
+         <select name="house_type" class="form-control">
+          <option selected disabled> -- Select -- </option>
+          <option value="owned">ملك</option>
+          <option value="owned">ايجار</option>
+          <option value="owned">اخري</option>
+        </select>
       </div> 
 
       <div class="col-md-4 form-group">
@@ -763,79 +1058,47 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="الولاية">
+      <input type="text" name="c1" class="form-control" placeholder="الولاية">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="المحلية">
+      <input type="text" name="c2" class="form-control" placeholder="المحلية">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="المربع">
+      <input type="text" name="c3" class="form-control" placeholder="المربع">
       </div>
 
       </div>
 
-      <div class="row">
+      
 
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="الحى">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="رقم الهاتف">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="معلم واضح">
-      </div>
-        
-      </div>
-
-      <div class="row">
-
-      <div class="col-md-4 form-group">
-        <br/>
-        <label> نوع السكن  </label><br/>
-        <input type="checkbox"/> ملك 
-        <input type="checkbox"/> إيجار
-        <input type="checkbox"/> أخرى
-      </div> 
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <textarea class="form-control" placeholder="وصف تفصيلى"></textarea>
-      </div>
-        
-      </div>
+    
 
       <div class="row">
       <h3> إثبات الشخصية </h3>
 
       <div class="col-md-4 form-group">
       نوع إثبات الشخصية
-      <select class="form-control">
+      <select name="id_type" class="form-control">
       <option> -- إختار -- </option>
-      <option> بطاقة قومية </option>
-      <option> رخصة قيادة </option>
-      <option> جواز سفر</option>
+      <option value="passport"> بطاقة قومية </option>
+      <option value="passport"> رخصة قيادة </option>
+      <option value="passport"> جواز سفر</option>
       </select>
       <input type="text" placeholder="ادخل نوع اثبات الهوية">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="مكان الإصدار">
+      <input type="text" name="issue_place" class="form-control" placeholder="مكان الإصدار">
       </div>
 
       <div class="col-md-4 form-group">
       <label> تاريخ الإصدار  </label>
-      <input type="date" class="form-control">
+      <input type="date" name="issue_date" class="form-control">
       </div>
         
       </div>
@@ -844,21 +1107,21 @@
 
       <div class="col-md-4 form-group">
       <label> تاريخ الانتهاء  </label>
-      <input type="date" class="form-control">
+      <input type="date" name="expirty_date" class="form-control">
       </div>
 
       <div class="col-md-4 form-group">
         هل اديت الخدمة الوطنية
-      <select class="form-control">
+      <select name="service"  class="form-control">
       <option> -- إختار -- </option>
-      <option> نعم </option>
-      <option> لا </option>
+      <option value="yes"> نعم </option>
+      <option value="no"> لا </option>
       </select>
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <textarea class="form-control" placeholder="ملاحظات"></textarea>
+      <textarea   name="other" class="form-control" placeholder="ملاحظات"></textarea>
       </div>
         
       </div>
@@ -866,76 +1129,9 @@
       <div class="row">
       <h3> الشهادات التعليميمة </h3>
 
-      <h4> المرحلة دون الثانوية </h4>
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="إسم المدرسة">
       </div>
 
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="مكان المدرسة">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="number" class="form-control" placeholder="سنة التخرج">
-      </div>
-
-      </div>
-
-      <div class="row">
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="نسبة النجاح">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <textarea class="form-control" placeholder="ملاحظات"></textarea>
-      </div>
-        
-      </div>
-
-      <div class="row">
-
-      <h4> المرحلة الثانوية </h4>
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="إسم المدرسة">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="مكان المدرسة">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="المساق">
-      </div>
-
-      </div>
-
-      <div class="row">
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="number" class="form-control" placeholder="سنة التخرج">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="نسبة النجاح">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <textarea class="form-control" placeholder="ملاحظات"></textarea>
-      </div>
-        
-      </div>
+    
 
       <div class="row">
 
@@ -943,100 +1139,41 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="إسم الجامعة">
+      <input type="text" name="study_school" class="form-control" placeholder="إسم الجامعة">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="مكان الجامعة">
+      <input type="text" name="university_address" class="form-control" placeholder="مكان الجامعة">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="الكلية">
+      <input type="text" name="study_field" class="form-control" placeholder="الكلية">
       </div>
 
       </div>
 
       <div class="row">
 
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="number" class="form-control" placeholder="سنة التخرج">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="التقدير">
-      </div>
-
+  
+      
       <div class="col-md-4 form-group">
       <label> الدرجة العلمية  </label>
-      <select class="form-control">
-      <option> -- إختار -- </option>
-      <option> دبلوم </option>
-      <option> بكلريوس </option>
-      <option> اخرى </option>
+      <select  name="certificate" class="form-control">
+      <option value="bachelor"> -- إختار -- </option>
+      <option value="bachelor"> دبلوم </option>
+      <option value="bachelor"> بكلريوس </option>
+      <option value="bachelor"> اخرى </option>
       </select>
       </div>
 
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <textarea class="form-control" placeholder="ملاحظات"></textarea>
-      </div>
-        
+  
       </div>
 
-      <div class="row">
-      <br/>
-      <h4> المرحلة فوق الجامعية </h4>
+   
 
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="إسم الجامعة">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="مكان الجامعة">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="الكلية">
-      </div>
-
-      </div>
-
-      <div class="row">
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="number" class="form-control" placeholder="سنة التخرج">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="التقدير">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label> الدرجة العلمية  </label>
-      <select class="form-control">
-      <option> -- إختار -- </option>
-      <option> دبلوم عالى </option>
-      <option> ماجستير </option>
-      <option> دكتوراة </option>
-      <option> أخرى </option>
-      </select>
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <textarea class="form-control" placeholder="ملاحظات"></textarea>
-      </div>
-        
-      </div>
+    
 
       <div class="row">
       <h3> الكورسات التدريبية </h3>
