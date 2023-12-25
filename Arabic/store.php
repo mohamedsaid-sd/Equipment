@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_GET['exit'])){
+session_unset();
+session_destroy();
+}
+?>
 <!DOCTYPE html>
 <html dir="rtl">
 <head>
@@ -52,7 +59,45 @@
     </div>
   </div>
 
-  <?php include 'mainlist.php'; ?>
+  <?php 
+  $flag = false ; 
+
+   // the array that hold the cart valse
+      if(!isset($_SESSION['cart']))
+      {$_SESSION['cart'] = array();}
+      // ADD ITEM TO CART
+      if(isset($_POST['add_to_cart']))
+      {
+        $count = $_POST['count']; // special key for all product
+        $id    = $_POST['id'];
+        $name  = $_POST['name'];
+        $price = $_POST['price'];
+
+        // check if item found
+        $flag = false;
+        foreach ($_SESSION['cart'] as $key => $value) {
+          if($key % 3 == 0){
+              if($value == $id)
+                  $flag = true;
+          }
+        }
+        
+        if($flag){
+
+        }else{
+        // add item to cart 
+        array_push($_SESSION['cart'] ,
+        $id , $name , $price );
+        // array_unique($_SESSION['cart'] , SORT_REGULAR);
+        }
+
+
+
+      }
+
+  include 'mainlist.php';
+
+   ?>
 
   <main id="main">
 
@@ -64,6 +109,22 @@
           <h2> ألمنتجات  </h2>
          </div>
       </div>
+
+      <?php 
+
+        // foreach (@$_SESSION['cart'] as $key => $value) {
+        //   if($key % 3 == 0){
+        //   echo "Data".$value."<br/>";
+    
+        // }
+        // }
+
+
+   // print cart
+      print_r(@$_SESSION['cart']);
+
+      ?>
+
      <div class="container">
         <div class="row mt-5">
           <div class="col-lg-12 mt-5 mt-lg-0">
@@ -71,9 +132,72 @@
 				// get the products from the server 
 				include 'fetch_products.php' ; 
 				?>
+
+        <div class='row'>
+
+        <div class='col-lg-3'>
+        <form method='post' action='store.php'>
+        <center>
+        <div style='background-color:#eee;margin:5px; border-radius: 10px;padding:5px;'>
+        <input type='text' name='count' value='1'/>
+        <input type='text' name='id' value='10'/>
+        <input type='text' name='name' value='Title1'/>
+        <input type='text' name='price' value='100 SDG'>
+        <h4 align='center'> Title </h4>
+        <img src='#' style='width:100%;'/>
+        <b style='font-size:20px;'> 300 SDG </b><br/>
+        <button class='btn btn-success' name='add_to_cart' style='width:100%;'> Add to card </button>
+        </div>
+        </center>
+        </form>
+        </div>
+
+        <div class='col-lg-3'>
+        <form method='post' action='store.php'>
+        <center>
+        <div style='background-color:#eee;margin:5px; border-radius: 10px;padding:5px;'>
+        <input type='text' name='count' value='2'/>
+        <input type='text' name='id' value='20' />
+        <input type='text' name='name' value='Title2'/>
+        <input type='text' name='price' value='200 SDG' />
+        <h4 align='center'> Title </h4>
+        <img src='#' style='width:100%;'/>
+        <b style='font-size:20px;'> 300 SDG </b><br/>
+        <!-- <input type="number" name="" value="1" style="width: 100%; text-align: center;padding: 5px;font-weight: bold;"> -->
+        <button class='btn btn-success' name='add_to_cart' style='width:100%;'> 
+        Add to card </button>
+        </div>
+        </center>
+        </form>
+        </div>
+
+        <div class='col-lg-3'>
+        <form method='post' action='store.php'>
+        <center>
+        <div style='background-color:#eee;margin:5px; border-radius: 10px;padding:5px;'>
+        <input type='text' name='count' value='3'/>
+        <input type='text' name='id' value='30'/>
+        <input type='text' name='name' value='Title3'/>
+        <input type='text' name='price' value='300 SDG'>
+        <h4 align='center'> Title </h4>
+        <img src='#' style='width:100%;'/>
+        <b style='font-size:20px;'> 300 SDG </b><br/>
+        <button class='btn btn-success' name='add_to_cart' style='width:100%;'> Add to card </button>
+        </div>
+        </center>
+        </form>
+        </div>
+
+
+        <a href="store.php?exit=0" class="btn btn-danger"> تفريغ السلة </a>
+
+        </div>
+
+
 			</div>
 		</div>
 	</div>
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 </section>
 </main>
  
