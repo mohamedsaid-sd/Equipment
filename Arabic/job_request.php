@@ -423,142 +423,327 @@
          <div class="sent-message">
             <?php 
 
-            if(isset($_POST['send'])){
+              if(isset($_POST['send'])){
 
+        
+                // get the post value       
+                @$request_type = $_POST['request_type'];
+  
+                @$full_name = $_POST['full_name'];
+                @$birthdate = $_POST['birthdate'];
+                @$place = $_POST['place'];
+                @$home = $_POST['home'];
+                @$house = $_POST['house'];
+                @$national = $_POST['national'];
+                @$type_national = $_POST['type_national'];
+                @$other_national = $_POST['other_national'];
+                // $request_type = $_POST['request_type'];
+                @$social_state = $_POST['social_state'];
+  
+                //@$children = $_POST['children'];
+                @$girl = $_POST['girl'];
+                @$boys = $_POST['boys'];
+  
+  
+                
+                @$mobile = $_POST['mobile'];
+                @$phone = $_POST['phone'];
+                @$email = $_POST['email'];
+                @$facebook = $_POST['facebook'];
+                @$twiter = $_POST['twiter'];
+                @$instagram = $_POST['instagram'];
+                @$web = $_POST['web'];
+                @$o1=$_POST['o1'];@$o2=$_POST['o2'];@$o3=$_POST['o3'];
+                @$c1=$_POST['c1'];@$c2=$_POST['c2'];@$c3=$_POST['c3'];
+  
+                @$street = "Origin Home :".$o1."-".$o2."-".$o3;
+                @$street2 = "Origin Home :".$c1."-".$c2."-".$c3;
+                
+                @$house_type = $_POST['house_type'];
+  
+                @$id_type = $_POST['id_type'];
+                @$issue_place = $_POST['issue_place'];
+                @$issue_date = $_POST['issue_date'];
+                @$expirty_date = $_POST['expirty_date'];
+                @$service = $_POST['service'];
+                @$other = $_POST['other'];
+  
+                @$certificate = $_POST['certificate'];
+                @$study_field = $_POST['study_field'];
+                @$study_school = $_POST['study_school'];
+                @$university_address = $_POST['university_address'];
+  
                 // INSERT EXPEAR ARRAY
                 $exper_array = array();
                 $exper_counter = 1 ;
                 while (isset($_POST['exper_name'.$exper_counter])) {
-                  array_push($exper_array, 
-                      $_POST['exper_name'.$exper_counter],
-                      $_POST['exper_date_from'.$exper_counter],
-                      $_POST['exper_date_to'.$exper_counter],
-                      $_POST['exper_job'.$exper_counter],
-                      $_POST['exper_tasks'.$exper_counter]
+                    array_push($exper_array, 
+                        $_POST['exper_name'.$exper_counter],
+                        $_POST['exper_date_from'.$exper_counter],
+                        $_POST['exper_date_to'.$exper_counter],
+                        $_POST['exper_job'.$exper_counter],
+                        $_POST['exper_tasks'.$exper_counter]
                   );
                   $exper_counter ++ ;
                 }
-
+  
                 // PRINT EXPIR ARRAY
                 $exper_name = "";
                 $exper_date_from = "";
                 $exper_date_to = "";
                 $exper_job = "";
                 $exper_tasks = "";
+                $experArray = array();
                 foreach ($exper_array as $key => $value) {
-                  if($key % 5 == 0)
-                   $exper_name = $value;
-                  elseif( $key % 5 == 1)
-                    $exper_date_from = $value;
-                  elseif( $key % 5 == 2)
-                    $exper_date_to = $value;
-                  elseif( $key % 5 == 3)
-                    $exper_job = $value;
-                  elseif( $key % 5 == 4){
-                    $exper_tasks = $value;
-
-                    echo "Data".$exper_name."-".$exper_date_from."-".$exper_date_to."-".$exper_job."-".$exper_tasks."<br/>";
-
-                       // [0,0,["name" => $exper_name, 
-                       //       "date_from" => $exper_date_from, 
-                       //       "date_to" => $exper_date_to, 
-                       //       "job" => $exper_job, 
-                       //       "tasks" => $exper_tasks, 
-                       //       "attach" => ""]]], 
-                  }
-                }
-
-
+                    if($key % 5 == 0)
+                     $exper_name = $value;
+                    elseif( $key % 5 == 1)
+                      $exper_date_from = $value;
+                    elseif( $key % 5 == 2)
+                      $exper_date_to = $value;
+                    elseif( $key % 5 == 3)
+                      $exper_job = $value;
+                    elseif( $key % 5 == 4){
+                      $exper_tasks = $value;
+                     //echo "Data".$exper_name."-".$exper_date_from."-".$exper_date_to."-".$exper_job."-".$exper_tasks."<br/>".$key;
+                     array_push($experArray,[0,0,[
+                      "name" => $exper_name, 
+                      "date_from" => $exper_date_from, 
+                      "date_to" => $exper_date_to, 
+                      "job" => $exper_job, 
+                      "tasks" => $exper_tasks, 
+                      "attach" => ""]]);
+                   }
+              
+                 }
+  
                 // INSERT SKILL ARRAY
                 $skill_array = array();
                 $skill_counter = 1 ;
                 while (isset($_POST['skill'.$skill_counter])) {
-                  array_push($skill_array,
-                   $_POST['skill'.$skill_counter],
-                   $_POST['skill_val'.$skill_counter]);
-                  $skill_counter ++;
+                    array_push($skill_array,
+                     $_POST['skill'.$skill_counter],
+                     $_POST['skill_val'.$skill_counter]);
+                    $skill_counter ++;
                 }
-
-
-
-                // INSERT REF ARRAY
-                $ref_array = array();
-                $ref_counter = 1 ;
-                while (isset($_POST['ref_name'.$ref_counter])) {
-                  array_push($ref_array, 
-                      $_POST['ref_name'.$ref_counter] ,
-                      $_POST['ref_job'.$ref_counter] ,
-                      $_POST['ref_mobile'.$ref_counter],
-                      $_POST['ref_company'.$ref_counter]
-                  );
-                  $ref_counter ++ ;
-                }
-
+  
                 // PRINT SKILLS ARRAY
-                $skill_name = "";
-                $skill_value = "";
-                foreach ($skill_array as $key => $value) {
-                  if($key % 2 == 0)
-                    $skill_name = $value ;
-                  elseif ($key % 2 == 1) {
-                    $skill_value = $value;
+                  $skill_name = "";
+                  $skill_value = "";
+                  $skillsArray = array();
+                  foreach ($skill_array as $key => $value) {
+                    if($key % 2 == 0)
+                      $skill_name = $value ;
+                    elseif ($key % 2 == 1) {
+                      $skill_value = $value;
+                    }
+                    if($key % 2 == 1){
+                      // echo "Data:".$skill_name." - ".$skill_value."<br/>"; 
+                      array_push($skillsArray,[0,0,["name" => $skill_name,"eval" => $skill_value]]);
+                    }
+  
                   }
-                  if($key % 2 == 1){
-                    echo "Data:".$skill_name." - ".$skill_value."<br/>";
-                    // [0, 0, [
-                    // "name" => $skill_name, 
-                    // "eval" => $skill_value ]], 
+  
+                  // INSERT HOBBY ARRAY
+                  $hobbies_array = array();
+                  $habbit_counter = 1 ; 
+                  while (isset($_POST['h'.$habbit_counter])) {
+                    array_push($hobbies_array, $_POST['h'.$habbit_counter]);
+                    $habbit_counter ++ ;
                   }
-
+  
+                  // PRINT HOBBY ARRAY
+                  $hobbiesArray = array();
+                  foreach ($hobbies_array as $value) {
+                    // echo " " . $value . " ";
+                    array_push($hobbiesArray,[0,0,["name" => $value]]);
+                  }
+  
+  
+                  // INSERT REF ARRAY
+                  $ref_array = array();
+                  $ref_counter = 1 ;
+                  while (isset($_POST['ref_name'.$ref_counter])) {
+                    array_push($ref_array, 
+                        $_POST['ref_name'.$ref_counter] ,
+                        $_POST['ref_job'.$ref_counter] ,
+                        $_POST['ref_mobile'.$ref_counter],
+                        $_POST['ref_company'.$ref_counter]
+                    );
+                    $ref_counter ++ ;
+                  }
+  
+                  // PRINT REF ARRAY
+                  $ref_name = ""; 
+                  $ref_job = ""; 
+                  $ref_mobile = "";
+                  $ref_company = "";
+                  $refArray = array();
+                  foreach ($ref_array as $key => $value) {
+                    if($key % 4 == 0){
+                      $ref_name = $value ; 
+                    }
+                    else if($key % 4 == 1){
+                      $ref_job = $value ;
+                    }
+                    else if($key % 4 == 2){
+                      $ref_mobile = $value ; 
+                    }
+                    else if ($key % 4 == 3) {
+                      $ref_company = $value ;
+                    }
+                    if($key % 4 == 3){
+                    // echo "Data:".$ref_name." - ".$ref_job." - ".$ref_mobile." - ".$ref_company."<br/>";
+                    array_push($refArray, [0,0,[
+                    "name" => $ref_name, 
+                    "job" => $ref_job, 
+                    "mobile" => $ref_mobile, 
+                    "company" => $ref_company]]);
+                  }
                 }
-
-                // PRINT REF ARRAY
-                $ref_name = ""; 
-                $ref_job = ""; 
-                $ref_mobile = "";
-                $ref_company = "";
-                foreach ($ref_array as $key => $value) {
-                  if($key % 4 == 0){
-                    $ref_name = $value ; 
-                  }
-                  else if($key % 4 == 1){
-                    $ref_job = $value ;
-                  }
-                  else if($key % 4 == 2){
-                    $ref_mobile = $value ; 
-                  }
-                  else if ($key % 4 == 3) {
-                    $ref_company = $value ;
-                  }
-                  if($key % 4 == 3){
-                  echo "Data:".$ref_name." - ".$ref_job." - ".$ref_mobile." - ".$ref_company."<br/>";
-                     //[0, 0, [
-                   // "name" => "Project Management Certification", 
-                   // "date_from" => "2022-01-01", 
-                   // "date_to" => "2022-06-01", 
-                   // "job" => "Trainee Project Manager", 
-                   // "tasks" => "Completed a series of courses related to project management and passed the final assessment.", 
-                   // "attach" => ""]]], 
-                }
-                 
-                }
-                
-
-                // INSERT HOBBY ARRAY
-                $habbits_array = array();
-                $habbit_counter = 1 ; 
-                while (isset($_POST['h'.$habbit_counter])) {
-                  array_push($habbits_array, $_POST['h'.$habbit_counter]);
-                  $habbit_counter ++ ;
-                }
-
-                // PRINT HOBBY ARRAY
-                foreach ($habbits_array as $value) {
-                  echo " " . $value . " ";
-                  // [0,0,["name"=> $value ]],
-                }
-               
-            }
+  
+  
+   $jayParsedAry = [
+     "params" => [
+           "args" => [
+              "vals_list" => [
+                 [
+                    "name" => $full_name, 
+                    "birthdate" => $birthdate, 
+                    "place" => $place, 
+                    "home" => $home, 
+                    "house" => $house, 
+                    "national" => $national, 
+                    "type_national" => $type_national, 
+                    "other_national" => "yes", 
+                    "request_type" => "employment", 
+                    "social_state" => $social_state, 
+                    "children" => "no", 
+                    "boys" => $boys, 
+                    "girl" => $girl, 
+                    "mobile" => $mobile, 
+                    "phone" => $phone, 
+                    "email" => $email, 
+                    "facebook" => $facebook, 
+                    "twiter" => $twiter, 
+                    "instagram" => $instagram, 
+                    "web" => $web, 
+                    "street" => $street, 
+                    "street2" => $street2, 
+                    "zip" => "12345", 
+                    "city" => "Johnstown", 
+                    "state_id" => 1, 
+                    "country_id" => 1, 
+                    "country_code" => "XL", 
+                    "house_type" => $house_type, 
+                    "note" => "Some personal note.", 
+                    "id_type" => $id_type, 
+                    "issue_place" => $issue_place, 
+                    "issue_date" => $issue_date, 
+                    "expirty_date" => $expirty_date, 
+                    "service" => $service, 
+                    "other" => $other, 
+                    "certificate" => $certificate, 
+                    "study_field" => $study_field, 
+                    "study_school" => $study_school, 
+                    "university_address" => $university_address, 
+                    "emergency_contact" => "Jane Doe", 
+                    "emergency_phone" => "1122334455", 
+                    "details" => "Some more notes.", 
+                    "training" => "Advanced Johnology", 
+                    "know" => "tv", 
+                    "related" => "no", 
+                    "employment_type" => "full", 
+                    "excepted" => 50000, 
+                    "restruction" => "None.", 
+                    "info" => "Some info notes.", 
+                    "sign" => "", 
+                    "recute_date" => "2023-01-01", 
+                    "inform" => "Some inform notes.", 
+                    "status" => "draft", 
+                    "train_ids" => [
+                       [
+                          0, 
+                          0, 
+                          [
+                             "name" => "Project Management Certification", 
+                             "date_from" => "2022-01-01", 
+                             "date_to" => "2022-06-01", 
+                             "job" => "Trainee Project Manager", 
+                             "tasks" => "Completed a series of courses related to project management and passed the final assessment.", 
+                             "attach" => "" 
+                          ] 
+                       ] 
+                    ], 
+                    "exper_ids" => [$experArray], 
+                    "skill_ids" => [$skillsArray] ,
+                    "ref_ids" => [$refArray], 
+                    "hobbies_ids" => [$hobbiesArray] 
+                 ] 
+              ] 
+           ] 
+        ] 
+  ]; 
+  
+             // print the post value 
+             //   echo "Data:".$full_name."-".$birthdate."-".$place."-".$home."-".$house."-".$national."-".$type_national."-".$other_national."-".$social_state."-".$children."-".$mobile."-".$phone."-".$email."-".$facebook."-".$twiter."-".$instagram."-".$web."-".$street."-".$street2."-".$id_type."-".$issue_place."-".$issue_date."-".$expirty_date."-".$service."-".$other."-".$certificate;
+  
+             $done=json_encode($jayParsedAry);
+             //echo $done;
+             $curl = curl_init();
+             
+             curl_setopt_array($curl, array(
+               CURLOPT_URL => 'https://equipation-equipation-odoo-com-stage-10590858.dev.odoo.com/apiV2/employment.request/create',
+               CURLOPT_SSL_VERIFYHOST => 0 ,
+               CURLOPT_SSL_VERIFYPEER => 0 ,
+               CURLOPT_RETURNTRANSFER => true,
+               CURLOPT_ENCODING => '',
+               CURLOPT_MAXREDIRS => 10,
+               CURLOPT_TIMEOUT => 0,
+               CURLOPT_FOLLOWLOCATION => true,
+               CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+               CURLOPT_CUSTOMREQUEST => 'POST',
+               CURLOPT_POSTFIELDS =>$done,
+               CURLOPT_HTTPHEADER => array(
+                 'Content-Type: application/json',
+                 'X-Openerp-Session-Id: {{session_id}}',
+                 'Cookie: session_id=a1fd8b1c0a71abde4e289ac7f5212eee0e8cc5e7'
+               ),
+             ));
+             
+              $response = curl_exec($curl);
+             
+             
+             
+             if(curl_errno($curl)) {
+               echo 'Error: ' . curl_error($curl);
+             } else {
+             
+               echo $response;
+                     // convert response to array
+                 $array = json_decode(  $response , true );
+                 // loop the array to fetch item
+                 foreach ($array as $key => $value) {
+                  // echo $key."".$value;
+                     if($key == "msg" )
+                       if($value == "Success")
+                             // success add form alert ...
+                                     echo "<div class='alert alert-success'>
+                                     <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                                      <b> تم ارسال البلاغ  بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال بلاغاتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
+                         else
+                           echo "<div class='alert alert-danger'>
+                                     <span class='icon'> <i class='fa fa-cancel'></i></span>
+                                      <b> خطأ في عملية الارسال </b> </div>";
+                 }
+               // echo gettype($x);
+               // echo "R".$x;
+             }
+             curl_close($curl);
+  
+  
+  
+              }
 
               ?>
         </div>
@@ -572,18 +757,30 @@
       <h3> المعلومات الشخصية  </h3>  
 
       <div class="col-md-4 form-group">
+        <br/>
+        <label> نوع الطلب  </label>
+        <select name="request_type" class="form-control">
+          <option selected disabled> -- اختار -- </option>
+          <option value="employment"> توظيف </option>
+          <option value="training"> تدريب </option>
+        </select>
+        <b> الرجاء اضافة التدريب </b>
+      </div> 
+
+      <div class="col-md-4 form-group">
         <label> الصورة الشخصية </label>
         <input type="file" name="image" class="form-control">
+        <b> الرجاء نمرير الصورة </b>
       </div>
 
       <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" name="name" class="form-control" placeholder="الإسم الرباعي (عربي)">
+        <input type="text" name="full_name" class="form-control" placeholder="الإسم الرباعي (عربي)">
       </div>
 
       <div class="col-md-4 form-group">
         <label> تاريخ الميلاد  </label>
-        <input type="date" name="date" class="form-control" placeholder="Full name">
+        <input type="date" name="birthdate" class="form-control" placeholder="Full name">
       </div>
 
       </div>
@@ -592,17 +789,17 @@
 
       <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" class="form-control" placeholder="مكان الميلاد">
+        <input type="text" name="place" class="form-control" placeholder="مكان الميلاد">
       </div> 
 
       <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" class="form-control" placeholder="موطن الإقامة الاصلى">
+        <input type="text" name="home" class="form-control" placeholder="موطن الإقامة الاصلى">
       </div> 
 
       <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" class="form-control" placeholder="موطن الإقامة الحالى">
+        <input type="text" name="house" class="form-control" placeholder="موطن الإقامة الحالى">
       </div> 
 
       </div>
@@ -611,21 +808,28 @@
 
       <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" class="form-control" placeholder="الجنسية">
+        <input type="text" name="national" class="form-control" placeholder="الجنسية">
       </div>  
 
        <div class="col-md-4 form-group">
         <br/>
-        <label> نوع الجنسية  </label><br/>
-        <input type="checkbox"/> ميلاد
-        <input type="checkbox"/> تجنس 
+        <label> نوع الجنسية  </lable>
+        <select name="type_national" class="form-control">
+          <option selected disabled> -- اختار -- </option>
+          <option value="original"> اصلية </option>
+          <option value="naturalize"> توطين </option>
+        </select>
       </div> 
 
       <div class="col-md-4 form-group">
         <br/>
-        <label> هل لديك جنسية اخرى  </label><br/>
-        <input type="checkbox"/> نعم 
-        <input type="checkbox"/> لال 
+        <label> هل لديك جنسية اخرى  </label>
+        <select name="other_national" class="form-control">
+          <option selected disabled> -- اختار -- </option>
+          <option value="yes"> نعم </option>
+          <option value="no"> لا </option>
+        </select>
+        
       </div> 
         
       </div>
@@ -634,18 +838,25 @@
 
       <div class="col-md-4 form-group">
         <br/>
-        <label> الحاله الإجتماعية  </label><br/>
-        <input type="checkbox"/> عازب 
-        <input type="checkbox"/> متزوج
-        <input type="checkbox"/> مطلق
-        <input type="checkbox"/> ارمل
+        <label> الحاله الإجتماعية  </label>
+        <select name="social_state" class="form-control">
+          <option selected disabled> -- اختار -- </option>
+          <option value="single"> اعذب </option>
+          <option value="married"> متزوج </option>
+          <option value="cohabitant"> مرتبط </option>
+          <option value="divorced"> مطلق </option>
+          <option value="widower"> ارمل </option>
+        </select>
       </div> 
 
       <div class="col-md-4 form-group">
         <br/>
-        <label> هل لديك ابناء  </label><br/>
-        <input type="checkbox"/> لا 
-        <input type="checkbox"/> نعم
+        <label> هل لديك ابناء  </label>
+        <select name="children" class="form-control">
+          <option selected disabled> -- اختار -- </option>
+          <option value="yes"> نعم </option>
+          <option value="no"> لا </option>
+        </select>
       </div> 
        
       </div>
@@ -656,17 +867,17 @@
 
        <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" name="name" class="form-control" placeholder="رقم الهاتف">
+        <input type="number" name="mobile" class="form-control" placeholder="رقم الهاتف">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="number" class="form-control" placeholder="رقم هاتف آخر">
+      <input type="number" name="phone" class="form-control" placeholder="رقم هاتف آخر">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="email" class="form-control" placeholder="البريد الإلكترونى">
+      <input type="email" name="email" class="form-control" placeholder="البريد الإلكترونى">
       </div>
         
       </div>
@@ -675,22 +886,22 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="حساب الفيسبوك">
+      <input type="text" name="facebook" class="form-control" placeholder="حساب الفيسبوك">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="حساب الإنستقرام">
+      <input type="text" name="instagram" class="form-control" placeholder="حساب الإنستقرام">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="حساب التويتر">
+      <input type="text" name="twiter" class="form-control" placeholder="حساب التويتر">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder=" موقع شخصى">
+      <input type="text"  name="web" class="form-control" placeholder=" موقع شخصى">
       </div>
         
       </div>
@@ -705,55 +916,19 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="الولاية">
+      <input type="text" name="o1" class="form-control" placeholder="الولاية">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="المحلية">
+      <input type="text" name="o2" class="form-control" placeholder="المحلية">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="المربع">
+      <input type="text" name="o3" class="form-control" placeholder="المربع">
       </div>
 
-      </div>
-
-      <div class="row">
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="الحى">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="رقم المنزل">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="معلم واضح">
-      </div>
-        
-      </div>
-
-      <div class="row">
-
-        <div class="col-md-4 form-group">
-        <br/>
-        <label> نوع السكن  </label><br/>
-        <input type="checkbox"/> ملك 
-        <input type="checkbox"/> ايجار
-        <input type="checkbox"/> اخري
-      </div> 
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <textarea class="form-control" placeholder="وصف تفصيلي"></textarea>
-      </div>
-        
       </div>
 
        <div class="row">
@@ -763,53 +938,36 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="الولاية">
+      <input type="text" name="c1" class="form-control" placeholder="الولاية">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="المحلية">
+      <input type="text" name="c2" class="form-control" placeholder="المحلية">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="المربع">
+      <input type="text" name="c3" class="form-control" placeholder="المربع">
       </div>
 
-      </div>
-
-      <div class="row">
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="الحى">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="رقم الهاتف">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="معلم واضح">
-      </div>
-        
       </div>
 
       <div class="row">
 
       <div class="col-md-4 form-group">
         <br/>
-        <label> نوع السكن  </label><br/>
-        <input type="checkbox"/> ملك 
-        <input type="checkbox"/> إيجار
-        <input type="checkbox"/> أخرى
+        <label> نوع السكن  </label>
+        <select name="house_type" class="form-control">
+          <option selected disabled> -- Select -- </option>
+          <option value="owned"> Owned </option>
+          <option value="rental_request"> Rental </option>
+        </select>
       </div> 
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <textarea class="form-control" placeholder="وصف تفصيلى"></textarea>
+      <textarea name="c8" class="form-control" placeholder="وصف تفصيلى"></textarea>
       </div>
         
       </div>
@@ -819,23 +977,24 @@
 
       <div class="col-md-4 form-group">
       نوع إثبات الشخصية
-      <select class="form-control">
-      <option> -- إختار -- </option>
-      <option> بطاقة قومية </option>
-      <option> رخصة قيادة </option>
-      <option> جواز سفر</option>
+      <select name="id_type" class="form-control">
+      <option selected disabled> -- اختار -- </option>
+      <option value="id_card"> بطاقة قومية </option>
+      <option value="car_lince"> رخصة قيادة </option>
+      <option value="passport"> جواز سفر </option>
+      <option value="other"> اخرى </option>
       </select>
-      <input type="text" placeholder="ادخل نوع اثبات الهوية">
+      <input type="text" class="form-control" placeholder="ادخل نوع اثبات الهوية">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="مكان الإصدار">
+      <input type="text" name="issue_place" class="form-control" placeholder="مكان الإصدار">
       </div>
 
       <div class="col-md-4 form-group">
       <label> تاريخ الإصدار  </label>
-      <input type="date" class="form-control">
+      <input type="date" name="issue_date" class="form-control">
       </div>
         
       </div>
@@ -844,21 +1003,21 @@
 
       <div class="col-md-4 form-group">
       <label> تاريخ الانتهاء  </label>
-      <input type="date" class="form-control">
+      <input type="date" name="expirty_date" class="form-control">
       </div>
 
       <div class="col-md-4 form-group">
         هل اديت الخدمة الوطنية
-      <select class="form-control">
+      <select name="service" class="form-control">
       <option> -- إختار -- </option>
-      <option> نعم </option>
-      <option> لا </option>
+      <option value="yes"> نعم </option>
+      <option value="no"> لا </option>
       </select>
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <textarea class="form-control" placeholder="ملاحظات"></textarea>
+      <textarea name="other" class="form-control" placeholder="ملاحظات"></textarea>
       </div>
         
       </div>
@@ -866,174 +1025,39 @@
       <div class="row">
       <h3> الشهادات التعليميمة </h3>
 
-      <h4> المرحلة دون الثانوية </h4>
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="إسم المدرسة">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="مكان المدرسة">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="number" class="form-control" placeholder="سنة التخرج">
-      </div>
-
-      </div>
-
-      <div class="row">
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="نسبة النجاح">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <textarea class="form-control" placeholder="ملاحظات"></textarea>
-      </div>
-        
-      </div>
-
-      <div class="row">
-
-      <h4> المرحلة الثانوية </h4>
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="إسم المدرسة">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="مكان المدرسة">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="المساق">
-      </div>
-
-      </div>
-
-      <div class="row">
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="number" class="form-control" placeholder="سنة التخرج">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="نسبة النجاح">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <textarea class="form-control" placeholder="ملاحظات"></textarea>
-      </div>
-        
-      </div>
-
       <div class="row">
 
       <h4> المرحلة الجامعية </h4>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="إسم الجامعة">
+      <input type="text" name="study_school" class="form-control" placeholder="إسم الجامعة">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="مكان الجامعة">
+      <input type="text" name="university_address" class="form-control" placeholder="مكان الجامعة">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" class="form-control" placeholder="الكلية">
+      <input type="text" name="study_field" class="form-control" placeholder="الكلية">
       </div>
 
       </div>
 
-      <div class="row">
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="number" class="form-control" placeholder="سنة التخرج">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="التقدير">
-      </div>
+     
 
       <div class="col-md-4 form-group">
       <label> الدرجة العلمية  </label>
-      <select class="form-control">
-      <option> -- إختار -- </option>
-      <option> دبلوم </option>
-      <option> بكلريوس </option>
-      <option> اخرى </option>
+      <select name="certificate" class="form-control">
+      <option selected disabled> -- اختار -- </option>
+      <option value="graduate"> تخريج </option>
+      <option value="bachelor"> بكلريوس </option>
+      <option value="master"> ماجستير </option>
+      <option value="doctor"> دكتوراة </option>
+      <option value="other"> اخرى </option>
       </select>
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <textarea class="form-control" placeholder="ملاحظات"></textarea>
-      </div>
-        
-      </div>
-
-      <div class="row">
-      <br/>
-      <h4> المرحلة فوق الجامعية </h4>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="إسم الجامعة">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="مكان الجامعة">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="الكلية">
-      </div>
-
-      </div>
-
-      <div class="row">
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="number" class="form-control" placeholder="سنة التخرج">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" class="form-control" placeholder="التقدير">
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label> الدرجة العلمية  </label>
-      <select class="form-control">
-      <option> -- إختار -- </option>
-      <option> دبلوم عالى </option>
-      <option> ماجستير </option>
-      <option> دكتوراة </option>
-      <option> أخرى </option>
-      </select>
-      </div>
-
-      <div class="col-md-4 form-group">
-      <label>   </label>
-      <textarea class="form-control" placeholder="ملاحظات"></textarea>
       </div>
         
       </div>

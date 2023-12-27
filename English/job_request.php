@@ -38,8 +38,75 @@
   ======================================================== -->
 </head>
 <script type="text/javascript">
-
+    
+    $exper_counter = 2 ;
     $skill_counter = 2 ; 
+    $ref_counter = 2 ;
+    $habbit_counter = 2 ;
+
+    function add_exper_line(argument) {
+    // alert("gooo");
+    var exper = document.getElementById("exper_ids");
+
+    var div = document.createElement("div");
+    div.setAttribute("class" , "col-md-3 form-group");
+    var label = document.createElement("label");
+    var input = document.createElement("input");
+    input.setAttribute("class" , "form-control");
+    input.setAttribute("placeholder" , "Enterprise Name");
+    input.setAttribute("name" , "exper_name" + $exper_counter);
+    div.appendChild(label);
+    div.appendChild(input);
+
+    var div1 = document.createElement("div");
+    div1.setAttribute("class" , "col-md-2 form-group");
+    var label1 = document.createElement("label");
+    label1.innerHTML = "Date from";
+    var input1 = document.createElement("input");
+    input1.setAttribute("class" , "form-control");
+    input1.setAttribute("type" , "date");
+    input1.setAttribute("name" , "exper_date_from" + $exper_counter);
+    div1.appendChild(label1);
+    div1.appendChild(input1);
+
+    var div2 = document.createElement("div");
+    div2.setAttribute("class" , "col-md-2 form-group");
+    var label2 = document.createElement("label");
+    label2.innerHTML = "Date to";
+    var input2 = document.createElement("input");
+    input2.setAttribute("class" , "form-control");
+    input2.setAttribute("type" , "date");
+    input2.setAttribute("name" , "exper_date_to" + $exper_counter);
+    div2.appendChild(label2);
+    div2.appendChild(input2);
+
+    var div3 = document.createElement("div");
+    div3.setAttribute("class" , "col-md-2 form-group");
+    var label3 = document.createElement("label");
+    var input3 = document.createElement("input");
+    input3.setAttribute("class" , "form-control");
+    input3.setAttribute("placeholder" , "Job title");
+    input3.setAttribute("name" , "exper_job" + $exper_counter);
+    div3.appendChild(label3);
+    div3.appendChild(input3);
+
+    var div4 = document.createElement("div");
+    div4.setAttribute("class" , "col-md-3 form-group");
+    var label4 = document.createElement("label");
+    var textarea = document.createElement("textarea");
+    textarea.setAttribute("class" , "form-control");
+    textarea.setAttribute("placeholder" , "Missions");
+    textarea.setAttribute("name" , "exper_tasks" + $exper_counter);
+    div4.appendChild(label4);
+    div4.appendChild(textarea);
+
+    exper.appendChild(div);
+    exper.appendChild(div1);
+    exper.appendChild(div2);
+    exper.appendChild(div3);
+    exper.appendChild(div4);
+
+  }
 
     function add_skill_line() {
     //alert("go");
@@ -50,7 +117,7 @@
     var label = document.createElement("label");
     var input = document.createElement("input");
     input.setAttribute("class" , "form-control");
-    input.setAttribute("placeholder" , "المهارة ");
+    input.setAttribute("placeholder" , "The skill ");
     input.setAttribute("name" , "skill" + $skill_counter);
     div.appendChild(label);
     div.appendChild(input);
@@ -58,7 +125,7 @@
     var div2 = document.createElement("div");
     div2.setAttribute("class" , "col-md-3 form-group");
     var label2 = document.createElement("label");
-    label2.innerHTML = "التقييم";
+    label2.innerHTML = "Evaluation";
     var select = document.createElement("select");
     select.setAttribute("class" , "form-control");
     select.setAttribute("name" , "skill_val" + $skill_counter);
@@ -67,10 +134,10 @@
     option1.setAttribute("disabled" , "true ");
     option1.innerHTML = "-- Select --";
     var option2 = document.createElement("option");
-    option2.innerHTML = "جيدة";
+    option2.innerHTML = "Good";
     option2.value = "Good";
     var option3 = document.createElement("option");
-    option3.innerHTML = "ممتازة";
+    option3.innerHTML = "Excellent";
     option3.value = "Excellent";
     select.appendChild(option1);
     select.appendChild(option2);
@@ -84,6 +151,82 @@
     skills.appendChild(div2);
     
     $skill_counter ++;
+  }
+
+  function add_habbit_line() {
+    // alert("go");
+    
+    var habbits = document.getElementById("habbits");
+
+    var div = document.createElement("div");
+    div.setAttribute("class" , "col-md-4 form-group");
+
+    var label = document.createElement("label");
+   
+    var input = document.createElement("input");
+    input.setAttribute("type" , "text");
+    input.setAttribute("class" , "form-control");
+    input.setAttribute("placeholder" , "The Hobby");
+    input.setAttribute("name" , "h" + $habbit_counter);
+
+    div.appendChild(label);
+    div.appendChild(input);
+
+    habbits.appendChild(div);
+
+    $habbit_counter ++ ;
+  }
+
+    function add_ref_line() {
+
+    var ref = document.getElementById("ref_ids");
+    var div = document.createElement("div");
+    div.setAttribute("class" , "col-md-3 form-group");
+    var label = document.createElement("label");
+    var input = document.createElement("input");
+    input.setAttribute("class" , "form-control");
+    input.setAttribute("placeholder" , "The name");
+    input.setAttribute("name" , "ref_name" + $ref_counter);
+    div.appendChild(label);
+    div.appendChild(input);
+    var div2 = document.createElement("div");
+    div2.setAttribute("class" , "col-md-3 form-group");
+    var label2 = document.createElement("label");
+    var input2 = document.createElement("input");
+    input2.setAttribute("class" , "form-control");
+    input2.setAttribute("placeholder" , "The job");
+    input2.setAttribute("name" , "ref_job" + $ref_counter);
+    div2.appendChild(label2);
+    div2.appendChild(input2);
+
+    var div3 = document.createElement("div");
+    div3.setAttribute("class" , "col-md-3 form-group");
+    var label3 = document.createElement("label");
+    var input3 = document.createElement("input");
+    input3.setAttribute("class" , "form-control");
+    input3.setAttribute("placeholder" , "The Mobile No.");
+    input3.setAttribute("name" , "ref_mobile" + $ref_counter);
+    div3.appendChild(label3);
+    div3.appendChild(input3);
+
+    var div4 = document.createElement("div");
+    div4.setAttribute("class" , "col-md-3 form-group");
+    var label4 = document.createElement("label");
+    var input4 = document.createElement("input");
+    input4.setAttribute("class" , "form-control");
+    input4.setAttribute("placeholder" , "The company");
+    input4.setAttribute("name" , "ref_company" + $ref_counter);
+    div4.appendChild(label4);
+    div4.appendChild(input4);
+
+
+    ref.appendChild(div);
+    ref.appendChild(div2);
+    ref.appendChild(div3);
+    ref.appendChild(div4);
+
+    $ref_counter ++ ;
+
   }
 
 </script>
@@ -134,9 +277,8 @@
 
             if(isset($_POST['send'])){
 
-              // get the post value 
-              
-
+        
+              // get the post value       
               @$request_type = $_POST['request_type'];
 
               @$full_name = $_POST['full_name'];
@@ -183,7 +325,51 @@
               @$study_school = $_POST['study_school'];
               @$university_address = $_POST['university_address'];
 
-                    // INSERT SKILL ARRAY
+              // INSERT EXPEAR ARRAY
+              $exper_array = array();
+              $exper_counter = 1 ;
+              while (isset($_POST['exper_name'.$exper_counter])) {
+                  array_push($exper_array, 
+                      $_POST['exper_name'.$exper_counter],
+                      $_POST['exper_date_from'.$exper_counter],
+                      $_POST['exper_date_to'.$exper_counter],
+                      $_POST['exper_job'.$exper_counter],
+                      $_POST['exper_tasks'.$exper_counter]
+                );
+                $exper_counter ++ ;
+              }
+
+              // PRINT EXPIR ARRAY
+              $exper_name = "";
+              $exper_date_from = "";
+              $exper_date_to = "";
+              $exper_job = "";
+              $exper_tasks = "";
+              $experArray = array();
+              foreach ($exper_array as $key => $value) {
+                  if($key % 5 == 0)
+                   $exper_name = $value;
+                  elseif( $key % 5 == 1)
+                    $exper_date_from = $value;
+                  elseif( $key % 5 == 2)
+                    $exper_date_to = $value;
+                  elseif( $key % 5 == 3)
+                    $exper_job = $value;
+                  elseif( $key % 5 == 4){
+                    $exper_tasks = $value;
+                   //echo "Data".$exper_name."-".$exper_date_from."-".$exper_date_to."-".$exper_job."-".$exper_tasks."<br/>".$key;
+                   array_push($experArray,[0,0,[
+                    "name" => $exper_name, 
+                    "date_from" => $exper_date_from, 
+                    "date_to" => $exper_date_to, 
+                    "job" => $exper_job, 
+                    "tasks" => $exper_tasks, 
+                    "attach" => ""]]);
+                 }
+            
+               }
+
+              // INSERT SKILL ARRAY
               $skill_array = array();
               $skill_counter = 1 ;
               while (isset($_POST['skill'.$skill_counter])) {
@@ -196,6 +382,7 @@
               // PRINT SKILLS ARRAY
                 $skill_name = "";
                 $skill_value = "";
+                $skillsArray = array();
                 foreach ($skill_array as $key => $value) {
                   if($key % 2 == 0)
                     $skill_name = $value ;
@@ -203,23 +390,69 @@
                     $skill_value = $value;
                   }
                   if($key % 2 == 1){
-                    echo "Data:".$skill_name." - ".$skill_value."<br/>";
-                    // [0, 0, [
-                    // "name" => $skill_name, 
-                    // "eval" => $skill_value ]], 
-                    $skilljarray = [0,0,["name" => $skill_name,"eval" => $skill_value]];
+                    // echo "Data:".$skill_name." - ".$skill_value."<br/>"; 
+                    array_push($skillsArray,[0,0,["name" => $skill_name,"eval" => $skill_value]]);
                   }
 
                 }
 
+                // INSERT HOBBY ARRAY
+                $hobbies_array = array();
+                $habbit_counter = 1 ; 
+                while (isset($_POST['h'.$habbit_counter])) {
+                  array_push($hobbies_array, $_POST['h'.$habbit_counter]);
+                  $habbit_counter ++ ;
+                }
 
-              
+                // PRINT HOBBY ARRAY
+                $hobbiesArray = array();
+                foreach ($hobbies_array as $value) {
+                  // echo " " . $value . " ";
+                  array_push($hobbiesArray,[0,0,["name" => $value]]);
+                }
 
-             
 
-              // The Education Pre School and secondary and university and after university
+                // INSERT REF ARRAY
+                $ref_array = array();
+                $ref_counter = 1 ;
+                while (isset($_POST['ref_name'.$ref_counter])) {
+                  array_push($ref_array, 
+                      $_POST['ref_name'.$ref_counter] ,
+                      $_POST['ref_job'.$ref_counter] ,
+                      $_POST['ref_mobile'.$ref_counter],
+                      $_POST['ref_company'.$ref_counter]
+                  );
+                  $ref_counter ++ ;
+                }
 
-
+                // PRINT REF ARRAY
+                $ref_name = ""; 
+                $ref_job = ""; 
+                $ref_mobile = "";
+                $ref_company = "";
+                $refArray = array();
+                foreach ($ref_array as $key => $value) {
+                  if($key % 4 == 0){
+                    $ref_name = $value ; 
+                  }
+                  else if($key % 4 == 1){
+                    $ref_job = $value ;
+                  }
+                  else if($key % 4 == 2){
+                    $ref_mobile = $value ; 
+                  }
+                  else if ($key % 4 == 3) {
+                    $ref_company = $value ;
+                  }
+                  if($key % 4 == 3){
+                  // echo "Data:".$ref_name." - ".$ref_job." - ".$ref_mobile." - ".$ref_company."<br/>";
+                  array_push($refArray, [0,0,[
+                  "name" => $ref_name, 
+                  "job" => $ref_job, 
+                  "mobile" => $ref_mobile, 
+                  "company" => $ref_company]]);
+                }
+              }
 
 
  $jayParsedAry = [
@@ -234,7 +467,7 @@
                   "house" => $house, 
                   "national" => $national, 
                   "type_national" => $type_national, 
-                  "other_national" => "yes", 
+                  "other_national" => $other_national, 
                   "request_type" => "employment", 
                   "social_state" => $social_state, 
                   "children" => "no", 
@@ -294,60 +527,17 @@
                         ] 
                      ] 
                   ], 
-                  "exper_ids" => [
-                              [
-                                 0, 
-                                 0, 
-                                 [
-                                    "name" => "Software Development Intern", 
-                                    "date_from" => "2021-07-01", 
-                                    "date_to" => "2022-01-01", 
-                                    "job" => "Junior Developer", 
-                                    "tasks" => "Participated in the development of several web projects and learned programming best practices.", 
-                                    "attach" => "" 
-                                 ] 
-                              ] 
-                           ], 
-                  "skill_ids" => [$skilljarray] ,
-                  
-                  "ref_ids" => [
-                                                      [
-                                                         0, 
-                                                         0, 
-                                                         [
-                                                            "name" => "Jane Smith", 
-                                                            "job" => "Senior Engineer", 
-                                                            "mobile" => 1234567890, 
-                                                            "company" => "Tech Solutions Inc." 
-                                                         ] 
-                                                      ] 
-                                                   ], 
-                  "hobbies_ids" => [
-                                                               [
-                                                                  0, 
-                                                                  0, 
-                                                                  [
-                                                                     "name" => "Programming" 
-                                                                  ] 
-                                                               ], 
-                                                               [
-                                                                        0, 
-                                                                        0, 
-                                                                        [
-                                                                           "name" => "Reading" 
-                                                                        ] 
-                                                                     ] 
-                                                            ] 
+                  "exper_ids" => $experArray, 
+                  "skill_ids" => $skillsArray ,
+                  "ref_ids" => $refArray, 
+                  "hobbies_ids" => $hobbiesArray 
                ] 
             ] 
          ] 
       ] 
 ]; 
 
-//echo "Data:".$study_field."-".$study_school."-".$university_address."-".$street;
-
-              // print the post value 
-
+           // print the post value 
            //   echo "Data:".$full_name."-".$birthdate."-".$place."-".$home."-".$house."-".$national."-".$type_national."-".$other_national."-".$social_state."-".$children."-".$mobile."-".$phone."-".$email."-".$facebook."-".$twiter."-".$instagram."-".$web."-".$street."-".$street2."-".$id_type."-".$issue_place."-".$issue_date."-".$expirty_date."-".$service."-".$other."-".$certificate;
 
            $done=json_encode($jayParsedAry);
@@ -381,7 +571,7 @@
              echo 'Error: ' . curl_error($curl);
            } else {
            
-             //echo $response;
+             echo $response;
                    // convert response to array
                $array = json_decode(  $response , true );
                // loop the array to fetch item
@@ -422,14 +612,14 @@
         <label> Type of Request  </label>
         <select name="request_type" class="form-control">
           <option selected disabled> -- Select -- </option>
-          <option> employment </option>
-          <option> employment </option>
+          <option value="employment"> Employment </option>
+          <option value="training"> Training </option>
         </select>
       </div> 
 
       <div class="col-md-4 form-group">
         <label> Profile Image </label>
-        <input type="file" name="" class="form-control">
+        <input type="file" name="image"  class="form-control"><b> الرجاء نمرير الصورة </b>
       </div>
 
       <div class="col-md-4 form-group">
@@ -475,8 +665,8 @@
         <label> Type of Nationality  </label>
         <select name="type_national" class="form-control">
           <option selected disabled> -- Select -- </option>
-          <option> original </option>
-          <option> Naturalize </option>
+          <option value="original"> Original </option>
+          <option value="naturalize"> Naturalize </option>
         </select>
       </div> 
 
@@ -499,10 +689,11 @@
         <label> Social Status  </label>
         <select name="social_state" class="form-control">
           <option selected disabled> -- Select -- </option>
-          <option> single </option>
-          <option> Marred </option>
-          <option> Divorced </option>
-          <option> ارمل </option>
+          <option value="single"> Single </option>
+          <option value="married"> Marred </option>
+          <option value="cohabitant"> Cohabitant </option>
+          <option value="divorced"> Divorced </option>
+          <option value="widower"> Widower </option>
         </select>
       </div> 
 
@@ -511,8 +702,8 @@
         <label> Do You Have Children  </label><br/>
         <select name="children" class="form-control">
           <option selected disabled> -- Select -- </option>
-          <option> Yes </option>
-          <option> no </option>
+          <option value="yes"> Yes </option>
+          <option value="no"> No </option>
         </select>
         <input type="text" name="boys"  class="form-control" placeholder="Boys">
         <input type="text" name="girl" class="form-control" placeholder="Girls">
@@ -526,7 +717,7 @@
 
        <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" name="mobile" class="form-control" placeholder="Mobile No">
+        <input type="number" name="mobile" class="form-control" placeholder="Mobile No">
       </div>
 
       <div class="col-md-4 form-group">
@@ -631,9 +822,8 @@
         <label> Type of Accomm  </label>
          <select name="house_type" class="form-control">
           <option selected disabled> -- Select -- </option>
-          <option>owned</option>
-          <option>owned</option>
-          <option>owned</option>
+          <option value="owned"> Owned </option>
+          <option value="rental_request"> Rental </option>
         </select>
       </div> 
 
@@ -651,10 +841,10 @@
       ID type
       <select name="id_type" class="form-control">
       <option selected disabled> -- Select -- </option>
-      <option> National Card </option>
-      <option> D.License </option>
-      <option> passport </option>
-      <option> Other </option>
+      <option value="id_card"> National Card </option>
+      <option value="car_lince"> D.License </option>
+      <option value="passport"> passport </option>
+      <option value="other"> Other </option>
       </select>
       <input type="text" class="form-control" placeholder="Enter The ID tyle">
       </div>
@@ -695,13 +885,7 @@
       </div>
 
       <div class="row">
-      <h3> Education Certificates </h3>
-
-  
-
-     
-
-  
+      <h3> Education Certificates </h3>  
 
       <div class="row">
 
@@ -730,24 +914,47 @@
       <div class="col-md-4 form-group">
       <label> The Education Degree  </label>
       <select name="certificate" class="form-control">
-      <option> -- Select -- </option>
-      <option> bachelor </option>
-      <option> bachelor </option>
-      <option> Other </option>
+      <option selected disabled> -- Select -- </option>
+      <option value="graduate"> Graduate </option>
+      <option value="bachelor"> Bachelor </option>
+      <option value="master"> Master </option>
+      <option value="doctor"> Doctor </option>
+      <option value="other"> Other </option>
       </select>
       </div>
 
         
-      </div>
-
-     
-
-  
+      </div>  
 
       <div class="row">
       <h3> Courses </h3>
       <h3> Training </h3>
       <h3> Experience </h3>
+      
+      <div id="exper_ids" class="row">
+        <div class="col-md-3 form-group">
+        <label></label>
+        <input type="text" name="exper_name1" class="form-control" placeholder="Enterprise Name"/>
+        </div>
+        <div class="col-md-2 form-group">
+        <label> Date from </label>
+        <input type="date" name="exper_date_from1" class="form-control"/>
+        </div>
+        <div class="col-md-2 form-group">
+        <label> Date to  </label>
+        <input type="date" name="exper_date_to1" class="form-control"/>
+        </div>
+        <div class="col-md-2 form-group">
+        <label></label>
+        <input type="text" name="exper_job1" class="form-control" placeholder="Job title"/>
+        </div>
+        <div class="col-md-3 form-group">
+        <label></label>
+        <textarea class="form-control" name="exper_tasks1" placeholder="Missions"></textarea>
+        </div>
+      </div><br/>
+      <span style="width: 150px; padding: 3px; margin: 5px;" class="btn btn-primary" onclick="add_exper_line();"> Add Experience + </span>
+
       <h3> Skills </h3>
 
       <div id="skill_ids" class="row">
@@ -768,10 +975,45 @@
 
 
       </div><br/>
-      <span style="width: 150px; padding: 3px; margin: 5px;" class="btn btn-primary" onclick="add_skill_line();"> أضافة مهارة + </span>
+      <span style="width: 150px; padding: 3px; margin: 5px;" class="btn btn-primary" onclick="add_skill_line();"> Add Skills + </span>
 
       <h3> Habbies </h3>
-      <h3> Reference </h3>      
+
+      <div id="habbits" class="row">
+      
+      <div class="col-md-4 form-group">
+      <label></label>
+      <input type="text" name="h1" class="form-control" placeholder="The Hobby">
+      </div>
+
+      </div><br/>
+      <span style="width: 150px; padding: 3px; margin: 5px;" class="btn btn-primary" onclick="add_habbit_line();"> Add Hobby + </span>
+
+      <h3> Reference </h3>   
+      <div id="ref_ids" class="row">
+          <div class="col-md-3 form-group">
+              <label></label>
+              <input type="text" name="ref_name1" class="form-control" placeholder="The name"/>
+          </div>
+
+          <div class="col-md-3 form-group">
+              <label></label>
+              <input type="text" name="ref_job1" class="form-control" placeholder="The job"/>
+          </div>
+
+          <div class="col-md-3 form-group">
+              <label></label>
+              <input type="text" name="ref_mobile1" class="form-control" placeholder="The Mobile no."/>
+          </div>
+
+          <div class="col-md-3 form-group">
+              <label></label>
+              <input type="text" name="ref_company1" class="form-control" placeholder="The company"/>
+          </div>
+      </div>
+      <br/>
+       <span style="width: 150px; padding: 3px; margin: 5px;" class="btn btn-primary" onclick="add_ref_line();"> Add person + </span>
+
       </div>
 
       <div class="row">
