@@ -1,144 +1,3 @@
-<?php 
-
-//  $jayParsedAry = [
-//    "params" => [
-//          "args" => [
-//             "vals_list" => [
-//                [
-//                   "name" => "John Doe", 
-//                   "birthdate" => "1990-01-01", 
-//                   "place" => "Johnstown", 
-//                   "home" => "123 Orchard Lane", 
-//                   "house" => "456 Maple Street", 
-//                   "national" => "Johnlandian", 
-//                   "type_national" => "original", 
-//                   "other_national" => "no", 
-//                   "request_type" => "employment", 
-//                   "social_state" => "single", 
-//                   "children" => "no", 
-//                   "boys" => 0, 
-//                   "girl" => 0, 
-//                   "mobile" => 1234567890, 
-//                   "phone" => 987654321, 
-//                   "email" => "john.doe@example.com", 
-//                   "facebook" => "johndoeFB", 
-//                   "twiter" => "johndoeTW", 
-//                   "instagram" => "johndoeIG", 
-//                   "web" => "http://johndoe.com", 
-//                   "street" => "123 Orchard Lane", 
-//                   "street2" => "Apt 4", 
-//                   "zip" => "12345", 
-//                   "city" => "Johnstown", 
-//                   "state_id" => 1, 
-//                   "country_id" => 1, 
-//                   "country_code" => "XL", 
-//                   "house_type" => "owned", 
-//                   "note" => "Some personal note.", 
-//                   "id_type" => "passport", 
-//                   "issue_place" => "Johnstown Dept.", 
-//                   "issue_date" => "2010-01-01", 
-//                   "expirty_date" => "2030-01-01", 
-//                   "service" => "no", 
-//                   "other" => "Other notes.", 
-//                   "certificate" => "bachelor", 
-//                   "study_field" => "Johnology", 
-//                   "study_school" => "John University", 
-//                   "emergency_contact" => "Jane Doe", 
-//                   "emergency_phone" => "1122334455", 
-//                   "details" => "Some more notes.", 
-//                   "training" => "Advanced Johnology", 
-//                   "know" => "tv", 
-//                   "related" => "no", 
-//                   "employment_type" => "full", 
-//                   "excepted" => 50000, 
-//                   "restruction" => "None.", 
-//                   "info" => "Some info notes.", 
-//                   "sign" => "", 
-//                   "recute_date" => "2023-01-01", 
-//                   "inform" => "Some inform notes.", 
-//                   "status" => "draft", 
-//                   "train_ids" => [
-//                      [
-//                         0, 
-//                         0, 
-//                         [
-//                            "name" => "Project Management Certification", 
-//                            "date_from" => "2022-01-01", 
-//                            "date_to" => "2022-06-01", 
-//                            "job" => "Trainee Project Manager", 
-//                            "tasks" => "Completed a series of courses related to project management and passed the final assessment.", 
-//                            "attach" => "" 
-//                         ] 
-//                      ] 
-//                   ], 
-//                   "exper_ids" => [
-//                               [
-//                                  0, 
-//                                  0, 
-//                                  [
-//                                     "name" => "Software Development Intern", 
-//                                     "date_from" => "2021-07-01", 
-//                                     "date_to" => "2022-01-01", 
-//                                     "job" => "Junior Developer", 
-//                                     "tasks" => "Participated in the development of several web projects and learned programming best practices.", 
-//                                     "attach" => "" 
-//                                  ] 
-//                               ] 
-//                            ], 
-//                   "skill_ids" => [
-//                                        [
-//                                           0, 
-//                                           0, 
-//                                           [
-//                                              "name" => "Python Programming", 
-//                                              "eval" => "Advanced" 
-//                                           ] 
-//                                        ], 
-//                                        [
-//                                                 0, 
-//                                                 0, 
-//                                                 [
-//                                                    "name" => "Communication", 
-//                                                    "eval" => "Expert" 
-//                                                 ] 
-//                                              ] 
-//                                     ], 
-//                   "ref_ids" => [
-//                                                       [
-//                                                          0, 
-//                                                          0, 
-//                                                          [
-//                                                             "name" => "Jane Smith", 
-//                                                             "job" => "Senior Engineer", 
-//                                                             "mobile" => 1234567890, 
-//                                                             "company" => "Tech Solutions Inc." 
-//                                                          ] 
-//                                                       ] 
-//                                                    ], 
-//                   "hobbies_ids" => [
-//                                                                [
-//                                                                   0, 
-//                                                                   0, 
-//                                                                   [
-//                                                                      "name" => "Programming" 
-//                                                                   ] 
-//                                                                ], 
-//                                                                [
-//                                                                         0, 
-//                                                                         0, 
-//                                                                         [
-//                                                                            "name" => "Reading" 
-//                                                                         ] 
-//                                                                      ] 
-//                                                             ] 
-//                ] 
-//             ] 
-//          ] 
-//       ] 
-// ]; 
- 
- ?>
-
 <!DOCTYPE html>
 <html dir="rtl">
 
@@ -422,6 +281,7 @@
          <div class="error-message"></div>
          <div class="sent-message">
             <?php 
+            
             if(isset($_POST['send'])){
 
         
@@ -743,7 +603,8 @@
 
 
             }
-              ?>
+  
+            ?>
         </div>
       </div>
 
@@ -754,15 +615,6 @@
 
       <h3> المعلومات الشخصية  </h3>  
       
-      <div class="col-md-4 form-group">
-        <br/>
-        <label> نوع التقديم  </label>
-        <select name="request_type" class="form-control">
-          <option selected disabled> -- اختار -- </option>
-          <option value="employment">  موظف</option>
-          <option value="employment"> متدرب </option>
-        </select>
-      </div> 
 
       <div class="col-md-4 form-group">
         <br/>
@@ -772,7 +624,6 @@
           <option value="employment"> توظيف </option>
           <option value="training"> تدريب </option>
         </select>
-        <b> الرجاء اضافة التدريب </b>
       </div> 
 
       <div class="col-md-4 form-group">
@@ -788,11 +639,7 @@
 
       <div class="col-md-4 form-group">
         <label> تاريخ الميلاد  </label>
-<<<<<<< HEAD
-        <input type="date" name="birthdate" class="form-control" placeholder="Full name">
-=======
         <input type="date" name="birthdate" class="form-control" placeholder=" ">
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
       </div>
 
       </div>
@@ -806,11 +653,7 @@
 
       <div class="col-md-4 form-group">
         <label>   </label>
-<<<<<<< HEAD
         <input type="text" name="home" class="form-control" placeholder="موطن الإقامة الاصلى">
-=======
-        <input type="text"  name="home" class="form-control" placeholder="موطن الإقامة الاصلى">
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
       </div> 
 
       <div class="col-md-4 form-group">
@@ -824,51 +667,25 @@
 
       <div class="col-md-4 form-group">
         <label>   </label>
-<<<<<<< HEAD
         <input type="text" name="national" class="form-control" placeholder="الجنسية">
-=======
-        <input type="text"  name="national" class="form-control" placeholder="الجنسية">
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
       </div>  
 
        <div class="col-md-4 form-group">
-        <br/>
-<<<<<<< HEAD
-        <label> نوع الجنسية  </lable>
+        <label> نوع الجنسية  </label>
         <select name="type_national" class="form-control">
           <option selected disabled> -- اختار -- </option>
           <option value="original"> اصلية </option>
           <option value="naturalize"> توطين </option>
-=======
-        <label> نوع الجنسية  </label><br/>
-
-        <select name="type_national" class="form-control">
-          <option selected disabled> -- اختار -- </option>
-          <option value="original"> ميلاد </option>
-          <option value="original"> تجنس </option>
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
         </select>
       </div> 
 
       <div class="col-md-4 form-group">
-        <br/>
-<<<<<<< HEAD
         <label> هل لديك جنسية اخرى  </label>
         <select name="other_national" class="form-control">
           <option selected disabled> -- اختار -- </option>
           <option value="yes"> نعم </option>
           <option value="no"> لا </option>
         </select>
-        
-=======
-        <label> هل لديك جنسية اخرى  </label><br/>
-  
-        <select name="other_national" class="form-control">
-          <option selected disabled> -- اختار -- </option>
-          <option value="yes"> نغم </option>
-          <option value="no"> لا </option>
-        </select>
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
       </div> 
         
       </div>
@@ -876,8 +693,6 @@
       <div class="row">
 
       <div class="col-md-4 form-group">
-        <br/>
-<<<<<<< HEAD
         <label> الحاله الإجتماعية  </label>
         <select name="social_state" class="form-control">
           <option selected disabled> -- اختار -- </option>
@@ -886,53 +701,29 @@
           <option value="cohabitant"> مرتبط </option>
           <option value="divorced"> مطلق </option>
           <option value="widower"> ارمل </option>
-=======
-        <label> الحاله الإجتماعية  </label><br/>
-        <select name="social_state" class="form-control">
-          <option selected disabled> -- اختار -- </option>
-          <option value="single"> عازب </option>
-          <option value="single"> متزوج </option>
-          <option value="single"> مطلق </option>
-          <option value="single"> ارمل </option>
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
         </select>
       </div> 
 
       <div class="col-md-4 form-group">
-        <br/>
-<<<<<<< HEAD
-        <label> هل لديك ابناء  </label>
-=======
-        <label> هل لديك ابناء  </label><br/>
-     
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
+      <label> هل لديك ابناء  </label>
         <select name="children" class="form-control">
           <option selected disabled> -- اختار -- </option>
           <option value="yes"> نعم </option>
           <option value="no"> لا </option>
-<<<<<<< HEAD
         </select>
-=======
-
-        </select>
-        <input type="text" name="boys"  class="form-control" placeholder="الابناء">
-        <input type="text" name="girl" class="form-control" placeholder="البنات">
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
+        <input type="text" name="boys"  class="form-control" placeholder="الابناء"/>
+        <input type="text" name="girl" class="form-control" placeholder="البنات"/>
       </div> 
-       
+  
+
       </div>
-      <br/>
       <div class="row">
 
       <h3> معلومات التواصل </h3>
 
        <div class="col-md-4 form-group">
         <label>   </label>
-<<<<<<< HEAD
         <input type="number" name="mobile" class="form-control" placeholder="رقم الهاتف">
-=======
-        <input type="text" name="mobile" class="form-control" placeholder="رقم الهاتف">
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
       </div>
 
       <div class="col-md-4 form-group">
@@ -961,25 +752,15 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-<<<<<<< HEAD
       <input type="text" name="twiter" class="form-control" placeholder="حساب التويتر">
-=======
-      <input type="text"  name="twiter" class="form-control" placeholder="حساب التويتر">
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-<<<<<<< HEAD
       <input type="text"  name="web" class="form-control" placeholder=" موقع شخصى">
-=======
-      <input type="text" name="web" class="form-control" placeholder=" موقع شخصى">
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
-      </div>
-        
+      </div>        
       </div>
 
-      <br/>
 
       <div class="row">
 
@@ -989,60 +770,41 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-<<<<<<< HEAD
-      <input type="text" name="o1" class="form-control" placeholder="الولاية">
-=======
-      <input type="text"  name="o1" class="form-control" placeholder="الولاية">
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
+      <input type="text" name="o1" class="form-control" placeholder="الولاية"/>
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-<<<<<<< HEAD
-      <input type="text" name="o2" class="form-control" placeholder="المحلية">
-=======
-      <input type="text"  name="o2" class="form-control" placeholder="المحلية">
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
+      <input type="text" name="o2" class="form-control" placeholder="المحلية"/>
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-<<<<<<< HEAD
       <input type="text" name="o3" class="form-control" placeholder="المربع">
-=======
-      <input type="text"  name="o3" class="form-control" placeholder="المربع">
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
       </div>
 
       </div>
 
-<<<<<<< HEAD
-=======
- 
 
       <div class="row">
-
-
 
       <div class="col-md-4 form-group">
         <br/>
         <label> نوع السكن   </label>
          <select name="house_type" class="form-control">
-          <option selected disabled> -- Select -- </option>
-          <option value="owned">ملك</option>
-          <option value="owned">ايجار</option>
-          <option value="owned">اخري</option>
+          <option selected disabled> -- اختار -- </option>
+          <option value="owned"> ملك </option>
+          <option value="rental_request"> ايجار </option>
         </select>
       </div> 
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <textarea class="form-control" placeholder="وصف تفصيلي"></textarea>
-      </div>
-        
+      <textarea name="c8" class="form-control" placeholder="وصف تفصيلي"></textarea>
+      </div>        
       </div>
 
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
+
        <div class="row">
 
 
@@ -1065,7 +827,7 @@
 
       </div>
 
-<<<<<<< HEAD
+
       <div class="row">
 
       <div class="col-md-4 form-group">
@@ -1084,11 +846,7 @@
       </div>
         
       </div>
-=======
-      
 
-    
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
 
       <div class="row">
       <h3> إثبات الشخصية </h3>
@@ -1096,18 +854,11 @@
       <div class="col-md-4 form-group">
       نوع إثبات الشخصية
       <select name="id_type" class="form-control">
-<<<<<<< HEAD
       <option selected disabled> -- اختار -- </option>
       <option value="id_card"> بطاقة قومية </option>
       <option value="car_lince"> رخصة قيادة </option>
       <option value="passport"> جواز سفر </option>
       <option value="other"> اخرى </option>
-=======
-      <option> -- إختار -- </option>
-      <option value="passport"> بطاقة قومية </option>
-      <option value="passport"> رخصة قيادة </option>
-      <option value="passport"> جواز سفر</option>
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
       </select>
       <input type="text" class="form-control" placeholder="ادخل نوع اثبات الهوية">
       </div>
@@ -1132,12 +883,7 @@
       </div>
 
       <div class="col-md-4 form-group">
-        هل اديت الخدمة الوطنية
-<<<<<<< HEAD
       <select name="service" class="form-control">
-=======
-      <select name="service"  class="form-control">
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
       <option> -- إختار -- </option>
       <option value="yes"> نعم </option>
       <option value="no"> لا </option>
@@ -1146,25 +892,16 @@
 
       <div class="col-md-4 form-group">
       <label>   </label>
-<<<<<<< HEAD
       <textarea name="other" class="form-control" placeholder="ملاحظات"></textarea>
-=======
-      <textarea   name="other" class="form-control" placeholder="ملاحظات"></textarea>
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
       </div>
         
       </div>
 
       <div class="row">
       <h3> الشهادات التعليميمة </h3>
-
-<<<<<<< HEAD
-=======
       </div>
 
-    
-
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
+  
       <div class="row">
 
       <h4> المرحلة الجامعية </h4>
@@ -1185,8 +922,6 @@
       </div>
 
       </div>
-
-<<<<<<< HEAD
      
 
       <div class="col-md-4 form-group">
@@ -1202,7 +937,6 @@
       </div>
         
       </div>
-=======
       <div class="row">
 
   
@@ -1219,11 +953,6 @@
 
   
       </div>
-
-   
-
-    
->>>>>>> bed4279fdc62b7cf7bb50ad5e815e8121445f4aa
 
       <div class="row">
       <h3> الكورسات التدريبية </h3>
