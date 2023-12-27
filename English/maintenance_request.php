@@ -112,9 +112,142 @@
 
           <div class="col-lg-12 mt-5 mt-lg-0">
 
-            <form action="action_maintenance.php" enctype="multipart/form-data" method="post" role="form">
+            <form action="maintenance_request.php" enctype="multipart/form-data" method="post" role="form">
 
                 <h3 for="textAreaRemark">  Maintenance request form : </h3>
+
+                <div class="my-3">
+                <div class="error-message"></div>
+                <div class="sent-message">
+                  
+                  <?php
+                  // sendding form 
+    if(isset($_POST['Send-form'])){
+
+ $Nearest_market=$_POST['Nearest_market'];
+ $chassis=$_POST['chassis'];
+ $company_name=$_POST['company_name'];
+ //$date=$_POST['date'];
+ $email=$_POST['email'];
+// $engine=$_POST['engine'];
+ $job=$_POST['job'];
+ $km_read=$_POST['km_read'];
+ $know=$_POST['know'];
+ $main_type=$_POST['main_type'];
+ $manufacturing_year=$_POST['manufacturing_year'];
+ $model=$_POST['model'];
+ $name=$_POST['name'];
+ $network=$_POST['network'];
+ $phone=$_POST['phone'];
+ $previous=$_POST['previous'];
+ //$request_no=$_POST['request_no'];
+ $site_location=$_POST['site_location'];
+ $site_nature=$_POST['site_nature'];
+ $work_for=$_POST['work_for'];
+ //$work_hour=$_POST['work_hour'];
+
+
+      //  echo $Nearest_market."-".$chassis."-".$know."-".$company_name."-".$email;
+      //  echo $job."-".$km_read."-".$phone."-".$manufacturing_year."-".$work_for;
+      //  echo $network."-".$site_nature."-".$site_location."-".$previous."-".$model;
+
+
+$jayParsedAry = [
+  "params" => [
+        "args" => [
+           "vals_list" => [
+              "Nearest_market" => $Nearest_market, 
+              "chassis" => $chassis, 
+              "company_name" => $company_name, 
+              "date" => "2023-01-01 00:00:00", 
+              "email" => $email, 
+              "engine" => "EN12345", 
+              "job" =>$job , 
+              "km_read" => $km_read, 
+              "know" => $know, 
+              "main_type" => $main_type, 
+              "manufacturing_year" => "2020", 
+              "model" => $model, 
+              "name" => $name, 
+              "network" => $network, 
+              "phone" => $phone, 
+              "previous" => "no", 
+              "request_no" => 1, 
+              "site_location" => $site_location, 
+              "site_nature" =>  $site_nature,
+              "work_for" => $work_for           ] 
+        ] 
+     ] 
+]; 
+
+
+                  // get the post value:
+              
+$done=json_encode($jayParsedAry);
+//echo $done;
+$curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://equipation-equipation-odoo-com-stage-10590858.dev.odoo.com/apiV2/request.maintenance/create',
+  CURLOPT_SSL_VERIFYHOST => 0 ,
+  CURLOPT_SSL_VERIFYPEER => 0 ,
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>$done,
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json',
+    'X-Openerp-Session-Id: {{session_id}}',
+    'Cookie: session_id=a1fd8b1c0a71abde4e289ac7f5212eee0e8cc5e7'
+  ),
+));
+
+$response = curl_exec($curl);
+
+
+
+if(curl_errno($curl)) {
+  echo 'Error: ' . curl_error($curl);
+} else {
+
+  //echo $response;
+        // convert response to array
+    $array = json_decode(  $response , true );
+    // loop the array to fetch item
+    foreach ($array as $key => $value) {
+       // echo $key."".$value;
+        if($key == "msg" )
+          if($value == "Success")
+                // success add form alert ...
+                        echo "<div class='alert alert-success'>
+                        <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                         <b> تم ارسال الطلب بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال طلباتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
+            else
+              echo "<div class='alert alert-danger'>
+                        <span class='icon'> <i class='fa fa-cancel'></i></span>
+                         <b> خطأ في عملية الارسال </b> </div>";
+                     
+
+
+    }
+  // echo gettype($x);
+  // echo "R".$x;
+}
+curl_close($curl);
+
+
+
+
+                  }
+
+                  ?>
+
+                </div>
+              </div>
 
               <div class="row">
                 <div class="col-md-4 form-group">
@@ -142,11 +275,11 @@
         <div class="d-flex flex-row justify-content-between align-items-center">
           <select class="form-control mr-1" id="typeoffix" name="main_type" required>
             <option value="" disabled selected> -- Choose -- </option>
-            <option value="1"> Mechanics </option>
-            <option value="2"> Electricity </option>
-            <option value="3"> Metalworks </option>
-            <option value="4"> Adaptation </option>
-            <option value="5"> Hydraulic </option>
+            <option value="Type A"> Mechanics </option>
+            <option value="Type A"> Electricity </option>
+            <option value="Type A"> Metalworks </option>
+            <option value="Type A"> Adaptation </option>
+            <option value="Type A"> Hydraulic </option>
 
 
           </select>
@@ -170,7 +303,7 @@
 
         <div class="form-group col-md-4">
             <label for="inputDate"> Date of manufacture</label>
-            <input type="date" class="form-control" id="inputDate" name="date" required />
+            <input type="date"  class="form-control" id="inputDate" name="manufacturing_year" required />
           </div>
       </div>
 
@@ -190,11 +323,11 @@
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="site_nature" required>
                <option value="" disabled selected> -- Choose -- </option>
-               <option value="1"> Mountains </option>
-               <option value="2"> Wells </option>
-               <option value="3"> Farm </option>
-               <option value="4"> Mine </option>
-               <option value="4"> Open sites </option>
+               <option value="Nature Y"> Mountains </option>
+               <option value="Nature Y"> Wells </option>
+               <option value="Nature Y"> Farm </option>
+               <option value="Nature Y"> Mine </option>
+               <option value="Nature Y"> Open sites </option>
              </select>
            </div>
          </div>
@@ -213,8 +346,8 @@
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="network" required>
                <option value="" disabled selected> -- Choose -- </option>
-               <option value="1"> Communication  </option>
-               <option value="2"> WiFi </option>
+               <option value="Available"> Available  </option>
+               <option value="Available"> Npt Available </option>
              </select>
            
            </div>
@@ -234,7 +367,7 @@
                 </div>
 
                 <div class="col-md-3 form-group">
-                  <input type="text" name="phone" class="form-control" id="name" placeholder="  phone " required>
+                  <input type="text" name="phone" class="form-control"  placeholder="  phone " required>
                 </div>
                 <div class="col-md-3 form-group mt-3 mt-md-0">
                   <input type="text" class="form-control" name="email" id="email" placeholder=" Customer Email " required>
@@ -252,8 +385,8 @@
                 <lable>  Your side is </lable> 
                 <select class="form-control mr-1" name="work_for" id="side" onchange="select_side();" required>
                 <option value="" disabled selected> -- Choose -- </option>
-                <option value="company"> Company </option>
-                <option value=""> Individual </option>
+                <option value="individual"> Company </option>
+                <option value="individual"> Individual </option>
                 </select>  
                 <input id="sidehide" type="text" name="company_name" class="form-control" placeholder=" ادخل اسم الشركة يدوي " style="display: none;" />
               </div>
@@ -263,7 +396,7 @@
                 <select class="form-control mr-1" name="previous" id="wwus" onchange="select_wwus();" required>
                 <option value="" disabled selected> -- Choose -- </option>
                 <option value="yes"> Yes </option>
-                <option value="2"> No </option>
+                <option value="no"> No </option>
                 </select>
 
                <input id="wwushide" type="text" class="form-control" placeholder=" في اي موقع عملت معنا " style="display: none;" />
@@ -276,24 +409,20 @@
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <div class="form-group">
               <label for="exampleFormControlSelect2"> How to know us :  </label>
-              <select multiple class="form-control" name="know" id="exampleFormControlSelect2">
-                <option> Facebook </option>
-                <option> Twiter </option>
-                <option> Instegram </option>
-                <option> By a friend </option>
-                <option> By company  </option>
-                <option> Others  </option>
+              <select  class="form-control" name="know" id="exampleFormControlSelect2">
+                <option value="google"> Facebook </option>
+                <option value="google"> Twiter </option>
+                <option value="google"> Instegram </option>
+                <option value="google"> By a friend </option>
+                <option value="google"> By company  </option>
+                <option value="google"> Others  </option>
               </select>
               </div>
              </div>
 
               
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit"> Send Request </button></div>
+        
+              <div class="text-center"><button type="submit" name="Send-form"> Send Request </button></div>
             </form>
 
           </div>
