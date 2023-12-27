@@ -298,11 +298,11 @@ if(curl_errno($curl)) {
                 // success add form alert ...
                         echo "<div class='alert alert-success'>
                         <span class='icon'> <i class='fa fa-check-circle'></i></span>
-                         <b> تم ارسال الطلب بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال طلباتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
+                         <b> The request has been sent successfully , we at Equipation company are always happy to receive your requests at all times , Equipation company employee will respond to you as soon as possible via the phone number or email sent in the request , Thank you for your Understanding  </b> </div>";
             else
               echo "<div class='alert alert-danger'>
                         <span class='icon'> <i class='fa fa-cancel'></i></span>
-                         <b> خطأ في عملية الارسال </b> </div>";
+                         <b> Erorr in sending Request </b> </div>";
     }
   // echo gettype($x);
   // echo "R".$x;
@@ -323,8 +323,8 @@ curl_close($curl);
                
                 <div class="col-md-4 form-group">
                 WORK TYPE <br/>
-                  <select class="form-control mr-1" name="work_typ" id="work_typ">
-                    <option disabled selected> --  Choose the type  -- </option>
+                  <select class="form-control mr-1" name="work_typ" id="work_typ" required>
+                    <option value="" disabled selected> --  Choose the type  -- </option>
                     <option value="bucket"> bucket </option>
                     <option value="jackhummer"> jackhummer </option>
                     <option value="both"> bucket + jackhummer  </option>
@@ -333,11 +333,11 @@ curl_close($curl);
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                 DURATION <br/>
-                  <select class="form-control mr-1" name="duration" id="duration" onchange="select_period();">
-                    <option disabled selected> --  Choose the duration  -- </option>
-                    <option> month </option>
-                    <option> 3 month  </option>
-                    <option> year </option>
+                  <select class="form-control mr-1" name="duration" id="duration" onchange="select_period();" required>
+                    <option value="" disabled selected> --  Choose the duration  -- </option>
+                    <option value="month"> month </option>
+                    <option value="3month"> 3 month  </option>
+                    <option value="year"> year </option>
                     <option value="hand">  Manual entry </option>
                   </select>
 
@@ -347,7 +347,7 @@ curl_close($curl);
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                 WORK HOURS <br/>
-                  <select class="form-control mr-1" name="month_rent" id="month_rent" onchange="select_hour();">
+                  <select class="form-control mr-1" name="month_rent" id="month_rent" onchange="select_hour();" required>
                     <option value="" disabled selected> --   Choose the duration  -- </option>
                     <option value="true">  monthly rent </option>
                     <option value="false"> num hours (manual entry) </option>
@@ -363,7 +363,7 @@ curl_close($curl);
      <div class="form-group col-md-4">
         <label>DAILY WORK HOURS   </label>
 
-          <select class="form-control mr-1" id="work_hours" name="work_hours" onchange="select_hourday();">
+          <select class="form-control mr-1" id="work_hours" name="work_hours" onchange="select_hourday();" required>
             <option value="" disabled selected> -- Choose  -- </option>
             <option value="10">10</option>
             <option value="12">12</option>
@@ -380,7 +380,7 @@ curl_close($curl);
 
       <div class="form-group col-md-4">
         <label>    EXPECTED WORK START </label>
-         <input type="date" class="form-control" id="inputDate" name="work_date"/>
+         <input type="date" class="form-control" id="inputDate" name="work_date" required/>
          
       </div>
       </div>
@@ -391,16 +391,16 @@ curl_close($curl);
       <div class="row">
         <div class="col-md-4 form-group">
         WORK LOCATION <br/>
-          <input type="text" id="state" name="state" class="form-control" placeholder="state ">
+          <input type="text" id="state" name="state" class="form-control" placeholder="state" required>
         </div>
         <div class="col-md-4 form-group mt-3 mt-md-0">
           <br/>
-          <input type="text" class="form-control" name="region" id="region" placeholder="Region">
+          <input type="text" class="form-control" name="region" id="region" placeholder="Region" required>
         </div>
 
         <div class="form-group col-md-4">
           <br/>
-       <input type="text" class="form-control" name="distance" id="distance" placeholder=" distance from nearest market ">
+       <input type="text" class="form-control" name="distance" id="distance" placeholder=" distance from nearest market " required>
           </div>
       </div>
 
@@ -408,7 +408,7 @@ curl_close($curl);
        
         <div class="col-md-4 form-group mt-3 mt-md-0">
         WORK FIELD <br/>
-                  <select class="form-control mr-1" name="work_field" id="work_field" onchange="select_work_field();">
+                  <select class="form-control mr-1" name="work_field" id="work_field" onchange="select_work_field();" required>
                     <option disabled selected> -- Choose   -- </option>
                     <option> mining </option>
                     <option>  cement </option>
@@ -421,7 +421,7 @@ curl_close($curl);
 
          <div class="form-group col-md-4">
            <label>   SITE AGE </label>
-             <select class="form-control mr-1" id="site_age" name="site_age" onchange="select_old();">
+             <select class="form-control mr-1" id="site_age" name="site_age" onchange="select_old();" required>
                <option value="" disabled selected> --   Choose -- </option>
                <option value="new"> new </option>
                <option value="old"> old </option>
@@ -441,7 +441,7 @@ curl_close($curl);
           <div class="form-group col-md-4">
            <label> living </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_a" name="site_a">
+             <select class="form-control mr-1" id="site_a" name="site_a" required>
                <option value="" disabled selected> --   Choose -- </option>
                <option value="living is excellent"> excellent </option>
                <option value="living is good"> good </option>
@@ -454,7 +454,7 @@ curl_close($curl);
           <div class="form-group col-md-4">
            <label> subsistence </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_b" name="site_b">
+             <select class="form-control mr-1" id="site_b" name="site_b" required>
                <option value="" disabled selected> --   Choose -- </option>
                <option value="subsistence is excellent"> excellent </option>
                <option value="subsistence is good"> good </option>
@@ -466,7 +466,7 @@ curl_close($curl);
           <div class="form-group col-md-4">
            <label> internet </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_c" name="site_c">
+             <select class="form-control mr-1" id="site_c" name="site_c" required>
                <option value="" disabled selected> --   Choose -- </option>
                <option value="internet is available"> available </option>
                <option value="internet is not available"> not available </option>
@@ -481,7 +481,7 @@ curl_close($curl);
         <div class="form-group col-md-4">
            <label>  communication </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_d" name="site_d">
+             <select class="form-control mr-1" id="site_d" name="site_d" required>
                <option value="" disabled selected> --  Choose  -- </option>
                <option value="communication is available"> available </option>
                <option value="communication is not available">  not available </option>
@@ -492,7 +492,7 @@ curl_close($curl);
          <div class="form-group col-md-4">
            <label>  workshop </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_e" name="site_e">
+             <select class="form-control mr-1" id="site_e" name="site_e" required>
                <option value="" disabled selected> --   Choose -- </option>
                <option value="workshop is available"> available </option>
                <option value="workshop is not available">   not available </option>
@@ -503,7 +503,7 @@ curl_close($curl);
           <div class="form-group col-md-4">
            <label> compressor </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_f" name="site_f">
+             <select class="form-control mr-1" id="site_f" name="site_f" required>
                <option value="" disabled selected> --   Choose -- </option>
                <option value="compressor is available"> available </option>
                <option value="compressor is not available"> not available  </option>
@@ -518,7 +518,7 @@ curl_close($curl);
           <div class="form-group col-md-4">
            <label> fuel </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_g" name="site_g">
+             <select class="form-control mr-1" id="site_g" name="site_g" required>
                <option value="" disabled selected> --   Choose -- </option>
                <option value="fuel is available"> available </option>
                <option value="fuel is not available"> not available </option>
@@ -530,7 +530,7 @@ curl_close($curl);
            <div class="form-group col-md-4">
            <label> water </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_h" name="site_h">
+             <select class="form-control mr-1" id="site_h" name="site_h" required>
                <option value="" disabled selected> --   Choose   -- </option>
                <option value="water is available"> available </option>
                <option value="water is not available "> not available   </option>
@@ -541,7 +541,7 @@ curl_close($curl);
           <div class="form-group col-md-4">
            <label> electricity </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_i" name="site_i">
+             <select class="form-control mr-1" id="site_i" name="site_i" required>
                <option value="" disabled selected> --   Choose -- </option>
                <option value="electricity is available"> available </option>
                <option value="electricity is not available">  not available  </option>
@@ -554,17 +554,17 @@ curl_close($curl);
 
             <div class="col-md-4 form-group mt-3 mt-md-0">
             <label> Narest City </label>
-            <input type="text" name="site_j" class="form-control" placeholder="Enter nearest city"/>
+            <input type="text" name="site_j" class="form-control" placeholder="Enter nearest city" required/>
             </div>
 
             <div class="col-md-4 form-group mt-3 mt-md-0">
             <label> Nearest Market </label>
-            <input type="text" name="site_k" class="form-control" placeholder="Enter nearest market"/>
+            <input type="text" name="site_k" class="form-control" placeholder="Enter nearest market" required/>
             </div>
 
             <div class="col-md-4 form-group mt-3 mt-md-0">
             <label> Nearest Paved Road </label>
-            <input type="text" name="site_l" class="form-control" placeholder="Enter nearest paved road"/>
+            <input type="text" name="site_l" class="form-control" placeholder="Enter nearest paved road" required/>
             </div>                        
             
           </div>
@@ -575,14 +575,14 @@ curl_close($curl);
               <div class="row">
 
                 <div class="col-md-4 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="  NAME ">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="  NAME " required>
                 </div>
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="email" id="email" placeholder=" EMAIL ">
+                  <input type="text" class="form-control" name="email" id="email" placeholder=" EMAIL " required>
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="job" id="job" placeholder=" JOB TITLE ">
+                    <input type="text" class="form-control" name="job" id="job" placeholder=" JOB TITLE " required>
                   </div>
 
               </div>
@@ -591,7 +591,7 @@ curl_close($curl);
 
               <div class="col-md-4 form-group">
                 <lable>   CATEGORY </lable> 
-                <select class="form-control mr-1" name="categ" id="categ" onchange="select_side();">
+                <select class="form-control mr-1" name="categ" id="categ" onchange="select_side();" required>
                 <option value="" disabled selected> --  Choose -- </option>
                 <option value="company"> company </option>
                 <option value="personal"> personal </option>
@@ -601,7 +601,7 @@ curl_close($curl);
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <lable>     HAVE YOU EVER WORK WITH US </lable> 
-                <select class="form-control mr-1" name="work" id="work" onchange="select_wwus();">
+                <select class="form-control mr-1" name="work" id="work" onchange="select_wwus();" required>
                 <option value="" disabled selected> --  Choose -- </option>
                 <option value="yes"> YES </option>
                 <option value="no"> NO </option>
@@ -614,20 +614,20 @@ curl_close($curl);
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <div class="form-group">
               <label for="exampleFormControlSelect2">  HOW TO RECOGNIZE US</label>
-            <select multiple class="form-control" id="exampleFormControlSelect2" name="know">
-                <option>friend</option>
-                <option>social</option>
-                <option>tv</option>
-                <option>radio</option>
-                <option>ads</option>
-                <option>other</option>
+             <select multiple class="form-control" id="exampleFormControlSelect2" name="know" required>
+                <option value="friend">friend</option>
+                <option value="social">social</option>
+                <option value="tv">tv</option>
+                <option value="radio">radio</option>
+                <option value="ads">ads</option>
+                <option value="other">other</option>
               </select>
               </div>
              </div>
 
               </div>
 
-              <div class="text-center"><button type="submit" name="Send-form">  Send </button></div>
+              <div class="text-center"><button style="background-color:orange;border-radius:20px;padding:10px;" type="submit" name="Send-form">  Send </button></div>
             </form>
 
           </div>

@@ -288,7 +288,7 @@ if(curl_errno($curl)) {
   echo 'Error: ' . curl_error($curl);
 } else {
 
-  //echo $response;
+  echo $response;
         // convert response to array
     $array = json_decode(  $response , true );
     // loop the array to fetch item
@@ -324,8 +324,8 @@ curl_close($curl);
                
                 <div class="col-md-4 form-group">
                   نوع العمل <br/>
-                  <select class="form-control mr-1" name="work_typ" id="work_typ"  >
-                    <option disabled selected> -- اختار النوع  -- </option>
+                  <select class="form-control mr-1" name="work_typ" id="work_typ"  required>
+                    <option value="" disabled selected> -- اختار النوع  -- </option>
                     <option value="bucket"> جردل </option>
                     <option value="jackhummer"> جاك همر </option>
                     <option value="both"> جردل + جاك همر </option>
@@ -334,12 +334,12 @@ curl_close($curl);
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                   مدة العمل <br/>
-                  <select class="form-control mr-1" name="duration" id="duration" onchange="select_period();"  >
-                    <option disabled selected> -- اختار المدة  -- </option>
-                    <option> شهر </option>
-                    <option> 3 شهور </option>
-                    <option> سنه </option>
-                    <option value="hand"> ادخال يدوي </option>
+                  <select class="form-control mr-1" name="duration" id="duration" onchange="select_period();" required>
+                    <option value="" disabled selected> --  اختار   -- </option>
+                    <option value="month"> شهر </option>
+                    <option value="3month"> 3 شهور  </option>
+                    <option value="year"> سنه </option>
+                    <option value="hand">  يدوي </option>
                   </select>
 
                   <input id="durationhide" name="durationhide" type="text" class="form-control" placeholder=" ادخل المدة  يدويا " style="display: none;">
