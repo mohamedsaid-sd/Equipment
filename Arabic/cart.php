@@ -80,51 +80,63 @@
      <div class="error-message"></div>
      <div class="sent-message">
      	<?php
+      
+
      	if(isset($_POST['confirm'])){
 
      		$name = $_POST['name'];
      		$phone = $_POST['phone'];
      		$email = $_POST['email'];
+        
 
     		//PRINT FROM CART
-
-     		$cartArray = array();
+        $cartArray = array();
+     		
             $cart_counter = 1 ;
-            $id_cart = "";
-            $title_cart = "";
-            $price_cart = "";
+            $id_cart = 0;
+            $title_cart = 0;
+            $price_cart = 0;
             if(isset($_SESSION['cart'])){
+
+        
      		foreach ($_SESSION['cart'] as $key => $value) {
      			if($key % 3 == 0)
   				{$id_cart = $value ;}
   				elseif ($key % 3 == 1) 
   				{$title_cart = $value ;}
   				elseif ($key % 3 == 2) 
-  				{$price_cart = $value ;
-  				array_push($cartArray,
-  					[[0, 0, [
-                     "product_id" => $id_cart,
-                     "product_uom_qty" => "1",
-                     "price_unit" => $price_cart
-                 ]]]);
-  				}
+  				{
+            $price_cart = $value ;
+
+
+         array_push($cartArray,
+             [0,0,[
+              "product_id" => ""+$id_cart ,
+              "product_uom_qty" => 1,
+              "price_unit" => ""+$price_cart]]
+               );
+
+  				 }
+
+          
      		} //end for each
+        
      		}
 
      		$jayParsedAry = [
   			"params" => [
         	"args" => [
            		"vals_list" => [
-           		    "state"  => "draft",
+           		  "state" => "draft",
             	 	"customer_name"  => $name,
-            	 	"phone"  => $phone,
-            	 	"email"  => $email,
+            	 	"phone" => $phone,
+            	 	"email" => $email,
             	 	"company_id" => 1,
-            	 	"partner_id"  => 1,
-           		 	"order_line" => $cartArray ,
-                  	"message_follower_ids" => [],
-                	"message_ids" => []
-               			]]]]; 
+            	 	"partner_id" => 1,
+           		 	"order_line" => $cartArray,
+                "message_follower_ids" => [],
+                "message_ids" => [],
+          ]]]]; 
 
         $done=json_encode($jayParsedAry);
 //echo $done;
@@ -158,13 +170,13 @@ if(curl_errno($curl)) {
     $array = json_decode(  $response , true );
     // loop the array to fetch item
     foreach ($array as $key => $value) {
-     // echo $key."".$value;
+      // echo $key."".$value;
         if($key == "msg" )
           if($value == "Success"){
                 // success add form alert ...
-                         echo '<meta http-equiv="refresh" content="1;url=store.php?suc=0"';
-                         session_unset();
-						session_destroy();
+                echo '<meta http-equiv="refresh" content="1;url=store.php?suc=0"';
+                session_unset();
+			    			session_destroy();
           }
             else
             {
@@ -218,14 +230,18 @@ if(isset($_SESSION['cart'])){
   	$title = "";
   	$price = "";
   	$sum = 0 ;
-   // print_r(@$_SESSION['cart']);
+   print_r(@$_SESSION['cart']);
   	foreach (@$_SESSION['cart'] as $key => $value) {
   	if($key % 3 == 1)
   	{	
   		$title = $value ;
   		//echo "T:".$value;
   	}
-  	elseif ($key % 3 == 2) 
+  	elseif ($key % 3 == 0) 
+    {
+      echo "Dfffff".$value;
+    }
+    elseif ($key % 3 == 2) 
   	{
   		$price = $value ;
   		$sum += $price;
