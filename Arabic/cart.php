@@ -230,7 +230,7 @@ if(isset($_SESSION['cart'])){
   	$title = "";
   	$price = "";
   	$sum = 0 ;
-   print_r(@$_SESSION['cart']);
+  
   	foreach (@$_SESSION['cart'] as $key => $value) {
   	if($key % 3 == 1)
   	{	
@@ -239,7 +239,7 @@ if(isset($_SESSION['cart'])){
   	}
   	elseif ($key % 3 == 0) 
     {
-      echo "Dfffff".$value;
+     
     }
     elseif ($key % 3 == 2) 
   	{
