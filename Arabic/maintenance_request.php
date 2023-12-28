@@ -41,7 +41,7 @@
 <script type="text/javascript">
            // deal with location side
    function select_side(){
-     var type = document.getElementById("side").value;
+     var type = document.getElementById("work_for").value;
       if(type == "company"){
       document.getElementById("sidehide").style.display = "block";
       }else{
@@ -113,7 +113,7 @@
 
           <div class="col-lg-12 mt-5 mt-lg-0">
 
-            <form action="action_maintenance.php" enctype="multipart/form-data" method="post" role="form">
+            <form action="maintenance_request.php" enctype="multipart/form-data" method="post" role="form">
 
                 <h3 for="textAreaRemark"> استماره طلب صيانه</h3>
 
@@ -136,12 +136,14 @@
  $km_read=$_POST['km_read'];
  $know=$_POST['know'];
  $main_type=$_POST['main_type'];
- $manufacturing_year=$_POST['manufacturing_year'];
+ //$manufacturing_year=$_POST['manufacturing_year'];
  $model=$_POST['model'];
  $name=$_POST['name'];
  $network=$_POST['network'];
  $phone=$_POST['phone'];
  $previous=$_POST['previous'];
+ $date = date('Y-m-d H:i:s');
+
  //$request_no=$_POST['request_no'];
  $site_location=$_POST['site_location'];
  $site_nature=$_POST['site_nature'];
@@ -161,7 +163,7 @@ $jayParsedAry = [
               "Nearest_market" => $Nearest_market, 
               "chassis" => $chassis, 
               "company_name" => $company_name, 
-              "date" => "2023-01-01 00:00:00", 
+              "date" => $date, 
               "email" => $email, 
               "engine" => "EN12345", 
               "job" =>$job , 
@@ -174,7 +176,6 @@ $jayParsedAry = [
               "network" => $network, 
               "phone" => $phone, 
               "previous" => "no", 
-              "request_no" => 1, 
               "site_location" => $site_location, 
               "site_nature" =>  $site_nature,
               "work_for" => $work_for           ] 
@@ -277,11 +278,11 @@ curl_close($curl);
         <div class="d-flex flex-row justify-content-between align-items-center">
           <select class="form-control mr-1" id="main_type" name="main_type" required>
             <option value="" disabled selected> -- حدد نوع الاصلاح -- </option>
-            <option value="1"> مشكله مكانيكا</option>
-            <option value="2">كهرباء</option>
-            <option value="3">حداده</option>
-            <option value="4">تكيف</option>
-            <option value="5">هيدروليك</option>
+            <option value="مشكله مكانيكا"> مشكله مكانيكا</option>
+            <option value="كهرباء">كهرباء</option>
+            <option value="كهرباء">حداده</option>
+            <option value="تكيف">تكيف</option>
+            <option value="هيدروليك">هيدروليك</option>
 
 
           </select>
@@ -292,7 +293,7 @@ curl_close($curl);
 
       <div class="col-md-4 form-group">
         <br/>
-        <input type="text" name="Type" class="form-control" id="location" placeholder="  موقع الاليه " required>
+        <input type="text" name="site_location" class="form-control" id="site_location" placeholder="  موقع الاليه " required>
       </div>
     
      
@@ -324,11 +325,11 @@ curl_close($curl);
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="site_nature" required>
                <option value="" disabled selected> -- حدد طبيعة الموقع -- </option>
-               <option value="1">جبال </option>
-               <option value="2">أبار</option>
-               <option value="3">مزرعه </option>
-               <option value="4">منجم </option>
-               <option value="4">مواقع مفتوحه </option>
+               <option value="جبال">جبال </option>
+               <option value="أبار">أبار</option>
+               <option value="مزرعه">مزرعه </option>
+               <option value="منجم">منجم </option>
+               <option value="مواقع مفتوحه">مواقع مفتوحه </option>
              </select>
            </div>
          </div>
@@ -347,8 +348,8 @@ curl_close($curl);
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="network" required>
                <option value="" disabled selected> -- حدد نوع الشبكة -- </option>
-               <option value="1"> اتصال  </option>
-               <option value="2"> واي فاي </option>
+               <option value="متاح"> متاح  </option>
+               <option value="غير متاح"> غير متاح</option>
              </select>
            
            </div>
@@ -387,7 +388,7 @@ curl_close($curl);
                 <select class="form-control mr-1" name="work_for" id="work_for" onchange="select_side();" required>
                 <option value="" disabled selected> -- اختار الجهه -- </option>
                 <option value="company"> شركة </option>
-                <option value=""> فرد </option>
+                <option value="individual"> فرد </option>
                 </select>  
                 <input id="sidehide" type="text" name="company_name" class="form-control" placeholder=" ادخل اسم الشركة يدوي " style="display: none;" />
               </div>
@@ -397,7 +398,7 @@ curl_close($curl);
                 <select class="form-control mr-1" name="previous" id="previous" onchange="select_wwus();" required>
                 <option value="" disabled selected> -- اختار الاجابة -- </option>
                 <option value="yes"> نعم </option>
-                <option value="2"> لا </option>
+                <option value="no"> لا </option>
                 </select>
 
                <input id="wwushide" type="text" class="form-control" placeholder=" في اي موقع عملت معنا " style="display: none;" />
@@ -411,23 +412,23 @@ curl_close($curl);
               <div class="form-group">
               <label for="exampleFormControlSelect2">طريقة التعرف علينا</label>
               <select multiple class="form-control" name="know" id="exampleFormControlSelect2">
-                <option> الفيسبوك </option>
-                <option> التويتر </option>
-                <option> الانستغرام </option>
-                <option> عن طريق صديق </option>
-                <option> عن طريق شركه  </option>
-                <option>  اخري  </option>
+                <option value="media"> الفيسبوك </option>
+                <option value="media"> التويتر </option>
+                <option value="media"> الانستغرام </option>
+                <option value="friend"> عن طريق صديق </option>
+                <option value="advertisemen"> عن طريق الاعلانات  </option>
+                <option value="other">  اخري  </option>
               </select>
               </div>
              </div>
 
               
               <div class="my-3">
-                <div class="loading">Loading</div>
+                <div class="loading"></div>
                 <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="sent-message"></div>
               </div>
-              <div class="text-center"><button type="submit" name="add" > إرسال الطلب </button></div>
+              <div class="text-center"><button type="submit" name="Send-form" > إرسال الطلب </button></div>
             </form>
 
           </div>

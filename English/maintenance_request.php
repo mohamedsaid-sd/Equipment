@@ -140,6 +140,7 @@
  $network=$_POST['network'];
  $phone=$_POST['phone'];
  $previous=$_POST['previous'];
+ $date = date('Y-m-d H:i:s');
  //$request_no=$_POST['request_no'];
  $site_location=$_POST['site_location'];
  $site_nature=$_POST['site_nature'];
@@ -159,7 +160,7 @@ $jayParsedAry = [
               "Nearest_market" => $Nearest_market, 
               "chassis" => $chassis, 
               "company_name" => $company_name, 
-              "date" => "2023-01-01 00:00:00", 
+              "date" => $date, 
               "email" => $email, 
               "engine" => "EN12345", 
               "job" =>$job , 
@@ -223,17 +224,14 @@ if(curl_errno($curl)) {
         if($key == "msg" )
           if($value == "Success")
                 // success add form alert ...
-                        echo "<div class='alert alert-success'>
-                        <span class='icon'> <i class='fa fa-check-circle'></i></span>
-                         <b> تم ارسال الطلب بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال طلباتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
-            else
-              echo "<div class='alert alert-danger'>
-                        <span class='icon'> <i class='fa fa-cancel'></i></span>
-                         <b> خطأ في عملية الارسال </b> </div>";
-                     
-
-
-    }
+                echo "<div class='alert alert-success'>
+                <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                 <b> The request has been sent successfully , we at Equipation company are always happy to receive your requests at all times , Equipation company employee will respond to you as soon as possible via the phone number or email sent in the request , Thank you for your Understanding  </b> </div>";
+      else
+      echo "<div class='alert alert-danger'>
+      <span class='icon'> <i class='fa fa-cancel'></i></span>
+       <b> Erorr in sending Request </b> </div>";
+}
   // echo gettype($x);
   // echo "R".$x;
 }
@@ -275,11 +273,11 @@ curl_close($curl);
         <div class="d-flex flex-row justify-content-between align-items-center">
           <select class="form-control mr-1" id="typeoffix" name="main_type" required>
             <option value="" disabled selected> -- Choose -- </option>
-            <option value="Type A"> Mechanics </option>
-            <option value="Type A"> Electricity </option>
-            <option value="Type A"> Metalworks </option>
-            <option value="Type A"> Adaptation </option>
-            <option value="Type A"> Hydraulic </option>
+            <option value="Mechanics"> Mechanics </option>
+            <option value="Electricity"> Electricity </option>
+            <option value="Metalworks"> Metalworks </option>
+            <option value="Adaptation"> Adaptation </option>
+            <option value="Hydraulic"> Hydraulic </option>
 
 
           </select>
@@ -323,11 +321,11 @@ curl_close($curl);
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="site_nature" required>
                <option value="" disabled selected> -- Choose -- </option>
-               <option value="Nature Y"> Mountains </option>
-               <option value="Nature Y"> Wells </option>
-               <option value="Nature Y"> Farm </option>
-               <option value="Nature Y"> Mine </option>
-               <option value="Nature Y"> Open sites </option>
+               <option value="Mountains"> Mountains </option>
+               <option value=" Wells"> Wells </option>
+               <option value="Farm"> Farm </option>
+               <option value="Mine"> Mine </option>
+               <option value="Open sites"> Open sites </option>
              </select>
            </div>
          </div>
@@ -346,8 +344,8 @@ curl_close($curl);
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="network" required>
                <option value="" disabled selected> -- Choose -- </option>
-               <option value="Available"> Available  </option>
-               <option value="Available"> Npt Available </option>
+               <option value="available"> Available  </option>
+               <option value="not_available"> Not Available </option>
              </select>
            
            </div>
@@ -385,10 +383,10 @@ curl_close($curl);
                 <lable>  Your side is </lable> 
                 <select class="form-control mr-1" name="work_for" id="side" onchange="select_side();" required>
                 <option value="" disabled selected> -- Choose -- </option>
-                <option value="individual"> Company </option>
+                <option value="company"> Company </option>
                 <option value="individual"> Individual </option>
                 </select>  
-                <input id="sidehide" type="text" name="company_name" class="form-control" placeholder=" ادخل اسم الشركة يدوي " style="display: none;" />
+                <input id="sidehide" type="text" name="company_name" class="form-control" placeholder="   Company Name " style="display: none;" />
               </div>
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
@@ -399,7 +397,7 @@ curl_close($curl);
                 <option value="no"> No </option>
                 </select>
 
-               <input id="wwushide" type="text" class="form-control" placeholder=" في اي موقع عملت معنا " style="display: none;" />
+               <input id="wwushide" type="text" class="form-control" placeholder=" On any construction site with us" style="display: none;" />
                <!-- required style="display:none" -->
                
               
@@ -410,12 +408,11 @@ curl_close($curl);
               <div class="form-group">
               <label for="exampleFormControlSelect2"> How to know us :  </label>
               <select  class="form-control" name="know" id="exampleFormControlSelect2">
-                <option value="google"> Facebook </option>
-                <option value="google"> Twiter </option>
-                <option value="google"> Instegram </option>
-                <option value="google"> By a friend </option>
-                <option value="google"> By company  </option>
-                <option value="google"> Others  </option>
+                <option value="media"> Facebook </option>
+                <option value="media"> Twiter </option>
+                <option value="advertisemen"> Advertisment </option>
+                <option value="friend"> By a friend </option>
+                <option value="other"> Others  </option>
               </select>
               </div>
              </div>

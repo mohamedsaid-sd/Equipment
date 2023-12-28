@@ -51,6 +51,8 @@
       }
    }
 
+
+
    //deal with hour
    function select_hour(){
      var type = document.getElementById("month_rent").value;
@@ -100,12 +102,12 @@
 
       // deal with location side
    function select_side(){
-     var type = document.getElementById("side").value;
+     var type = document.getElementById("categ").value;
       if(type == "company"){
-      document.getElementById("sidehide").style.display = "block";
+      document.getElementById("company").style.display = "block";
       }else{
-      document.getElementById("sidehide").value = "";
-      document.getElementById("sidehide").style.display = "none";
+      document.getElementById("company").value = "";
+      document.getElementById("company").style.display = "none";
       }
    }
 
@@ -200,8 +202,8 @@
                   @$site_g=$_POST['site_g'];@$site_h=$_POST['site_h'];
                   @$site_i=$_POST['site_i'];
                   @$site_j="Narest City ".$_POST['site_j'];
-                  @$site_k="Nearest Market ".$_POST['site_k'];
-                  @$site_l="Nearest Paved Road".$_POST['site_l'];
+                  @$site_k="Nearest Market  ".$_POST['site_k'];
+                  @$site_l="Nearest Paved Road  ".$_POST['site_l'];
                   @$note = $site_a." and ".$site_b." and ".$site_c." and ".$site_d." and ".$site_e." and ".$site_f." and ".$site_g." and ".$site_h." and ".$site_i." and ".$site_j." and ".$site_k." and ".$site_l; 
                   @$distance = $_POST['distance'];
                   @$state   = $_POST['state'];
@@ -578,7 +580,7 @@ curl_close($curl);
                   <input type="text" name="name" class="form-control" id="name" placeholder="  NAME " required>
                 </div>
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="email" id="email" placeholder=" EMAIL " required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder=" EMAIL " required>
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">

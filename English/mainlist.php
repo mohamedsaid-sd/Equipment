@@ -33,7 +33,6 @@
               <li><a href="run_request.php"> Operation Request </a></li>
               <li><a href="maintenance_request.php"> Maintenance Request </a></li>
               <li><a href="deportation_request.php"> Deportation Request </a></li>
-              <li><a href="traning_request.php"> Training Request </a></li>
               
     
             </ul>

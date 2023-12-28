@@ -100,12 +100,12 @@
 
       // deal with location side
    function select_side(){
-     var type = document.getElementById("side").value;
+     var type = document.getElementById("categ").value;
       if(type == "company"){
-      document.getElementById("sidehide").style.display = "block";
+      document.getElementById("company").style.display = "block";
       }else{
-      document.getElementById("sidehide").value = "";
-      document.getElementById("sidehide").style.display = "none";
+      document.getElementById("company").value = "";
+      document.getElementById("company").style.display = "none";
       }
    }
 
@@ -200,9 +200,9 @@
                   $site_d=$_POST['site_d'];$site_e=$_POST['site_e'];$site_f=$_POST['site_f'];
                   $site_g=$_POST['site_g'];$site_g=$_POST['site_g'];$site_h=$_POST['site_h'];
                   $site_i=$_POST['site_i'];
-                  $site_j="Narest City ".$_POST['site_j'];
-                  $site_k="Nearest Market ".$_POST['site_k'];
-                  $site_l="Nearest Paved Road".$_POST['site_l'];
+                  $site_j=" اقرب مدينه ".$_POST['site_j'];
+                  $site_k=" اقرب سوق ".$_POST['site_k'];
+                  $site_l="اقرب طريق ".$_POST['site_l'];
                   @$note = $site_a." و ".$site_b." و ".$site_c." و ".$site_d." و ".$site_e." و ".$site_f." و ".$site_g." و ".$site_h." و ".$site_i." و ".$site_j." و ".$site_k." و ".$site_l; 
                   @$distance = $_POST['distance'];
                   @$state   = $_POST['state'];
@@ -288,7 +288,7 @@ if(curl_errno($curl)) {
   echo 'Error: ' . curl_error($curl);
 } else {
 
-  echo $response;
+ // echo $response;
         // convert response to array
     $array = json_decode(  $response , true );
     // loop the array to fetch item
@@ -348,7 +348,7 @@ curl_close($curl);
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                     ساعات العمل <br/>
-                  <select class="form-control mr-1" name="month_rent" id="month_rent" onchange="select_hour();"  >
+                  <select class="form-control mr-1" name="month_rent" id="month_rent" onchange="select_hour();"  required>
                     <option value="" disabled selected> -- اختار المدة  -- </option>
                     <option value="true"> ايجار بالشهر </option>
                     <option value="false"> ايجار بالساعة </option>
@@ -364,7 +364,7 @@ curl_close($curl);
      <div class="form-group col-md-4">
         <label>ساعات العمل اليومية </label>
 
-          <select class="form-control mr-1" id="work_hours" name="work_hours" onchange="select_hourday();"  >
+          <select class="form-control mr-1" id="work_hours" name="work_hours" onchange="select_hourday();"  required >
             <option value="" disabled selected> -- اختر الساعات -- </option>
             <option value="10">10</option>
             <option value="12">12</option>
@@ -381,7 +381,7 @@ curl_close($curl);
 
       <div class="form-group col-md-4">
         <label>  بداية العمل المتوقعة </label>
-         <input type="date" class="form-control" id="inputDate" name="work_date"   />
+         <input type="date" class="form-control" id="inputDate" name="work_date"  required />
          
       </div>
       </div>
@@ -392,16 +392,16 @@ curl_close($curl);
       <div class="row">
         <div class="col-md-4 form-group">
            مكان العمل <br/>
-          <input type="text" id="state" name="state" class="form-control" id="location" placeholder="   الولاية "  >
+          <input type="text" id="state" name="state" class="form-control" id="location" placeholder="   الولاية "  required>
         </div>
         <div class="col-md-4 form-group mt-3 mt-md-0">
           <br/>
-          <input type="text" class="form-control" name="region" id="region" placeholder="   المنطقة "  >
+          <input type="text" class="form-control" name="region" id="region" placeholder="   المنطقة "  required>
         </div>
 
         <div class="form-group col-md-4">
           <br/>
-            <input type="text" class="form-control" name="distance" id="distance" placeholder="   اقرب سوق "  >
+            <input type="text" class="form-control" name="distance" id="distance" placeholder="   اقرب سوق "  required>
           </div>
       </div>
 
@@ -409,7 +409,7 @@ curl_close($curl);
        
         <div class="col-md-4 form-group mt-3 mt-md-0">
               مجال العمل <br/>
-                  <select class="form-control mr-1" name="work_field" id="work_field" onchange="select_work_field();"  >
+                  <select class="form-control mr-1" name="work_field" id="work_field" onchange="select_work_field();"  required>
                     <option disabled selected> -- اختار المدة  -- </option>
                     <option> التعدين </option>
                     <option>  الاسمنت </option>
@@ -422,7 +422,7 @@ curl_close($curl);
 
          <div class="form-group col-md-4">
            <label>  عمر الموقع </label>
-             <select class="form-control mr-1" id="site_age" name="site_age" onchange="select_old();"  >
+             <select class="form-control mr-1" id="site_age" name="site_age" onchange="select_old();" required >
                <option value="" disabled selected> -- اختار عمر الموقع -- </option>
                <option value="new"> جديد </option>
                <option value="old"> قديم </option>
@@ -442,7 +442,7 @@ curl_close($curl);
           <div class="form-group col-md-4">
            <label> السكن </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_a" name="site_a"  >
+             <select class="form-control mr-1" id="site_a" name="site_a" required >
                <option value="" disabled selected> -- حدد مستوي السكن -- </option>
                <option value="السكن ممتاز "> ممتاز </option>
                <option value="السكن جيد"> جيد </option>
@@ -455,7 +455,7 @@ curl_close($curl);
           <div class="form-group col-md-4">
            <label> الاعاشة </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_b" name="site_b"  >
+             <select class="form-control mr-1" id="site_b" name="site_b" required >
                <option value="" disabled selected> -- حدد مستوي الاعاشة -- </option>
                <option value="الاعاشة ممتازة"> ممتازة </option>
                <option value="الاعاشة جيدة"> جيدة </option>
@@ -467,7 +467,7 @@ curl_close($curl);
           <div class="form-group col-md-4">
            <label> الانترنت </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_c" name="site_c"  >
+             <select class="form-control mr-1" id="site_c" name="site_c" required >
                <option value="" disabled selected> -- حدد توفر الانترنت -- </option>
                <option value="الانترنت متوفر"> متوفر </option>
                <option value="الانترنت غير متوفر"> غير متوفر </option>
@@ -482,7 +482,7 @@ curl_close($curl);
         <div class="form-group col-md-4">
            <label> شبكة الاتصالات </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_d" name="site_d"  >
+             <select class="form-control mr-1" id="site_d" name="site_d"  required>
                <option value="" disabled selected> -- حدد توفر الشبكة -- </option>
                <option value="شبكة الاتصالات متوفرة"> متوفرة </option>
                <option value="شبكة الاتصالات غير متوفرة"> غير متوفرة </option>
@@ -493,7 +493,7 @@ curl_close($curl);
          <div class="form-group col-md-4">
            <label>  الورشة </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_e" name="site_e"  >
+             <select class="form-control mr-1" id="site_e" name="site_e"  required>
                <option value="" disabled selected> -- حدد توفر الورشة -- </option>
                <option value="الورشة متوفرة"> متوفرة </option>
                <option value="الورشة غير متوفرة"> غير متوفرة </option>
@@ -504,7 +504,7 @@ curl_close($curl);
           <div class="form-group col-md-4">
            <label> الكمبرسون </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_f" name="site_f"  >
+             <select class="form-control mr-1" id="site_f" name="site_f" required >
                <option value="" disabled selected> -- هل يوجد كمبرسون -- </option>
                <option value="يوجد الكمبرسون"> يوجد </option>
                <option value="لا يوجد الكمبرسون"> لا يوجد </option>
@@ -519,7 +519,7 @@ curl_close($curl);
           <div class="form-group col-md-4">
            <label> الجاز </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_g" name="site_g"  >
+             <select class="form-control mr-1" id="site_g" name="site_g" required >
                <option value="" disabled selected> -- حدد توفر الجاز -- </option>
                <option value="الجاز متوفر"> متوفر </option>
                <option value="الجاز غير متوفر"> غير متوفر </option>
@@ -531,7 +531,7 @@ curl_close($curl);
            <div class="form-group col-md-4">
            <label> المياة </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_h" name="site_h"  >
+             <select class="form-control mr-1" id="site_h" name="site_h" required >
                <option value="" disabled selected> -- حدد توفر المياة   -- </option>
                <option value="المياة متوفرة"> متوفرة </option>
                <option value="المياة غير متوفرة "> غير متوفرة  </option>
@@ -556,17 +556,17 @@ curl_close($curl);
 
             <div class="col-md-4 form-group mt-3 mt-md-0">
             <label> اقرب مدينة </label>
-            <input type="text" name="site_j" class="form-control" placeholder="ادخل اقرب مدينة"/>
+            <input type="text" name="site_j" class="form-control" placeholder="ادخل اقرب مدينة"  required/>
             </div>
 
             <div class="col-md-4 form-group mt-3 mt-md-0">
             <label> اقرب سوق </label>
-            <input type="text" name="site_k" class="form-control" placeholder="ادخل اقرب سوق"/>
+            <input type="text" name="site_k" class="form-control" placeholder="ادخل اقرب سوق" required/>
             </div>
 
             <div class="col-md-4 form-group mt-3 mt-md-0">
             <label> اقرب طريق معبد </label>
-            <input type="text" name="site_l" class="form-control" placeholder="ادخل  اقرب طريق معبد"/>
+            <input type="text" name="site_l" class="form-control" placeholder="ادخل  اقرب طريق معبد" required/>
             </div>                        
             
           </div>
@@ -579,14 +579,14 @@ curl_close($curl);
               <div class="row">
 
                 <div class="col-md-4 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="  الاسم "  >
+                  <input type="text" name="name" class="form-control" id="name" placeholder="  الاسم "  required>
                 </div>
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="email" id="email" placeholder=" الايميل "  >
+                  <input type="text" class="form-control" name="email" id="email" placeholder=" الايميل " required >
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="job" id="job" placeholder=" الوظيفة "  >
+                    <input type="text" class="form-control" name="job" id="job" placeholder=" الوظيفة " required >
                   </div>
 
               </div>
@@ -595,7 +595,7 @@ curl_close($curl);
 
               <div class="col-md-4 form-group">
                 <lable> الجهه التابع لها </lable> 
-                <select class="form-control mr-1" name="categ" id="categ" onchange="select_side();"  >
+                <select class="form-control mr-1" name="categ" id="categ" onchange="select_side();"  required>
                 <option value="" disabled selected> -- اختار الجهه -- </option>
                 <option value="company"> شركة </option>
                 <option value="personal"> فرد </option>
@@ -605,7 +605,7 @@ curl_close($curl);
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <lable> هل  سبق لك العمل معنا </lable> 
-                <select class="form-control mr-1" name="work" id="work" onchange="select_wwus();"  >
+                <select class="form-control mr-1" name="work" id="work" onchange="select_wwus();" required >
                 <option value="" disabled selected> -- اختار الاجابة -- </option>
                 <option value="yes"> نعم </option>
                 <option value="no"> لا </option>

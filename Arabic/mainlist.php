@@ -35,7 +35,6 @@
               <li><a href="run_request.php">طلب تشغيل</a></li>
               <li><a href="maintenance_request.php">طلب صيانة</a></li>
               <li><a href="deportation_request.php">طلب ترحيل</a></li>
-              <li><a href="traning_request.php">طلب تدريب</a></li>
               
     
             </ul>
