@@ -60,6 +60,8 @@ session_destroy();
   </div>
 
   <?php 
+
+
   $flag = false ; 
 
    // the array that hold the cart valse
@@ -68,7 +70,6 @@ session_destroy();
       // ADD ITEM TO CART
       if(isset($_POST['add_to_cart']))
       {
-        $count = $_POST['count']; // special key for all product
         $id    = $_POST['id'];
         $name  = $_POST['name'];
         $price = $_POST['price'];
@@ -121,7 +122,7 @@ session_destroy();
 
 
    // print cart
-      print_r(@$_SESSION['cart']);
+//      print_r(@$_SESSION['cart']);
 
       ?>
 
@@ -129,20 +130,27 @@ session_destroy();
         <div class="row mt-5">
           <div class="col-lg-12 mt-5 mt-lg-0">
 				<?php 
+        
+        if(isset($_GET['suc'])){
+  echo "<div class='alert alert-success'>
+                        <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                         <b> تم ارسال الطلب بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال طلباتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
+}
+
 				// get the products from the server 
 				include 'fetch_products.php' ; 
+
 				?>
 
-        <div class='row'>
+ <!--        <div class='row'> -->
 
-        <div class='col-lg-3'>
+       <!--  <div class='col-lg-3'>
         <form method='post' action='store.php'>
         <center>
         <div style='background-color:#eee;margin:5px; border-radius: 10px;padding:5px;'>
-        <input type='text' name='count' value='1'/>
-        <input type='text' name='id' value='10'/>
-        <input type='text' name='name' value='Title1'/>
-        <input type='text' name='price' value='100 SDG'>
+        <input type='text' name='id' value='10' hidden/>
+        <input type='text' name='name' value='Title1' hidden/>
+        <input type='text' name='price' value='100' hidden>
         <h4 align='center'> Title </h4>
         <img src='#' style='width:100%;'/>
         <b style='font-size:20px;'> 300 SDG </b><br/>
@@ -156,14 +164,12 @@ session_destroy();
         <form method='post' action='store.php'>
         <center>
         <div style='background-color:#eee;margin:5px; border-radius: 10px;padding:5px;'>
-        <input type='text' name='count' value='2'/>
-        <input type='text' name='id' value='20' />
-        <input type='text' name='name' value='Title2'/>
-        <input type='text' name='price' value='200 SDG' />
+        <input type='text' name='id' value='20' hidden/>
+        <input type='text' name='name' value='Title2' hidden/>
+        <input type='text' name='price' value='200' hidden/>
         <h4 align='center'> Title </h4>
         <img src='#' style='width:100%;'/>
         <b style='font-size:20px;'> 300 SDG </b><br/>
-        <!-- <input type="number" name="" value="1" style="width: 100%; text-align: center;padding: 5px;font-weight: bold;"> -->
         <button class='btn btn-success' name='add_to_cart' style='width:100%;'> 
         Add to card </button>
         </div>
@@ -175,10 +181,9 @@ session_destroy();
         <form method='post' action='store.php'>
         <center>
         <div style='background-color:#eee;margin:5px; border-radius: 10px;padding:5px;'>
-        <input type='text' name='count' value='3'/>
-        <input type='text' name='id' value='30'/>
-        <input type='text' name='name' value='Title3'/>
-        <input type='text' name='price' value='300 SDG'>
+        <input type='text' name='id' value='30' hidden/>
+        <input type='text' name='name' value='Title3' hidden/>
+        <input type='text' name='price' value='300' hidden/>
         <h4 align='center'> Title </h4>
         <img src='#' style='width:100%;'/>
         <b style='font-size:20px;'> 300 SDG </b><br/>
@@ -186,12 +191,12 @@ session_destroy();
         </div>
         </center>
         </form>
-        </div>
+        </div> -->
 
 
-        <a href="store.php?exit=0" class="btn btn-danger"> تفريغ السلة </a>
+        <!-- <a href="store.php?exit=0" class="btn btn-danger"> تفريغ السلة </a> -->
 
-        </div>
+  <!--       </div> -->
 
 
 			</div>
