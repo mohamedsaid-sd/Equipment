@@ -187,52 +187,62 @@
                       // sending form :
                       if(isset($_POST['send_form'])){
 
-                     @$machine=$_POST['machine']; 
+                     $machine=$_POST['machine']; 
                      if($machine == "hand")
-                        @$machine=$_POST['machinehide']; 
+                        $machine=$_POST['machinehide']; 
                      
-                     @$size  = $_POST['size'];
-                     @$sizetxt=$_POST['sizetxt'];                    
-                     @$size = $size . $_POST['sizetxt'];
+                  
 
-                     @$model = $_POST['model'];
+                     $comprossor = $_POST['comprossor'];
+                     $generator = $_POST['generator'];
+                     $welding_machine = $_POST['welding_machine'];
+                     $excavator = $_POST['excavator'];
+     
+                     $lowbed = $_POST['lowbed'];
+                     $trailer = $_POST['trailer'];
+                     $truck = $_POST['truck'];
+                   
+     
+     
+
+                     $model = $_POST['model'];
                      if($model == "hand")
-                        @$machine=$_POST['modelhide']; 
+                        $machine=$_POST['modelhide']; 
                      
-                     @$wieght = $_POST['wieght'];
+                     $wieght = $_POST['wieght'];
                      if($wieght == "hand")
                       $wieght = $_POST['wieghthide'];
                      
-                     @$document = $_POST['document'];
-                     if($document == "hand")
-                      $document = $_POST['documenthide'];
+                 
 
                      //location detailes
-                     @$state     = $_POST['state'];
-                     @$zone      = $_POST['zone'];
-                     @$workplace = $_POST['workplace'];
-                     @$description=$_POST['description'];
-                     @$phone      = $_POST['phone'];
-                     @$mobile     = $_POST['mobile'];
+                     $state     = $_POST['state'];
+                     $zone      = $_POST['zone'];
+                     $workplace = $_POST['workplace'];
+                     $description=$_POST['description'];
+                     $phone      = $_POST['phone'];
+                     $mobile     = $_POST['mobile'];
 
-                     @$des_state     = $_POST['des_state'];
-                     @$des_zone      = $_POST['des_zone'];
-                     @$des_workplace = $_POST['des_workplace'];
-                     @$des_description=$_POST['des_description'];
-                     @$des_phone     = $_POST['des_phone'];
-                     @$des_mobile     = $_POST['des_mobile'];
+                     $des_state     = $_POST['des_state'];
+                     $des_zone      = $_POST['des_zone'];
+                     $des_workplace = $_POST['des_workplace'];
+                     $des_description=$_POST['des_description'];
+                     $des_phone     = $_POST['des_phone'];
+                     $des_mobile     = $_POST['des_mobile'];
+                     $location=$_POST['location'];
+
 
                      // customers detailes 
-                     @$name    = $_POST['name'];
-                     @$email   = $_POST['email'];
+                     $name    = $_POST['name'];
+                     $email   = $_POST['email'];
                      @$job     = $_POST['job'];
-                     @$work_for= $_POST['work_for'];
+                     $work_for= $_POST['work_for'];
                      if($work_for == "company"){
-                        $work_for= $_POST['work_forhide'];
+                        $work_for= $_POST['work_for'];
                      }
-                     @$previous= $_POST['previous'];
+                     $previous= $_POST['previous'];
                      if($previous == "yes"){
-                        $previous= $_POST['previoushide'];
+                        $previous= $_POST['previous'];
                      }
                      @$know     = $_POST['know'];
 
@@ -244,24 +254,24 @@ $jayParsedAry = [
           "args" => [
              "vals_list" => [
                 "machine" => $machine, 
-                "comprossor" => "100 PSI", 
-                "generator" => "15 kW", 
-                "welding_machine" => "200 A", 
-                "excavator" => "Medium", 
+                "comprossor" => $comprossor, 
+                "generator" => $generator, 
+                "welding_machine" => $welding_machine, 
+                "excavator" => $excavator, 
                 "model" => $model, 
                 "wieght" => $wieght, 
-                "license" => 1, 
-                "certificate" => 2, 
-                "authorization" => 3, 
-                "other" => 4, 
-                "lowbed" => 15, 
-                "trailer" => "zs", 
-                "truck" => 10, 
+                "license" => "", 
+                "certificate" => "", 
+                "authorization" => "", 
+                "other" => "", 
+                "lowbed" =>$lowbed, 
+                "trailer" => $trailer, 
+                "truck" => $truck, 
                 "state" => $state, 
                 "zone" => $zone, 
                 "workplace" => $workplace, 
-                "company_name" => "XYZ Constructions", 
-                "location" => "1234 Main Street", 
+                "company_name" => $work_for, 
+                "location" => $location, 
                 "description" => $description, 
                 "phone" => $phone, 
                 "mobile" => $mobile, 
@@ -273,14 +283,12 @@ $jayParsedAry = [
                 "des_description" => $des_description, 
                 "des_phone" => $des_phone, 
                 "des_mobile" => $des_mobile, 
-                // customer data
                 "name" => $name, 
                 "email" => $email, 
                 "job" => $job, 
                 "work_for" => $work_for, 
                 "previous" => $previous, 
-                "know" => "google", 
-                //////////////////////////////////////////////////////////////
+                "know" => $know, 
                 "status" => "draft" 
              ] 
           ] 
@@ -320,7 +328,7 @@ if(curl_errno($curl)) {
   echo 'Error: ' . curl_error($curl);
 } else {
 
-  //echo $response;
+ // echo $response;
       // convert response to array
     $array = json_decode(  $response , true );
     // loop the array to fetch item
@@ -366,15 +374,14 @@ curl_close($curl);
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                   مقاس الآلية  <br/>
-                  <select class="form-control mr-1" id="size" name="size" onchange="select_size();">
-                    <option value="" disabled selected> --  اختار  -- </option>
-                    <option> كمبروسير </option>
-                    <option> مولد </option>
-                    <option> مكنة لحام </option>
-                    <option> حفار </option>
-                    <option value="hand"> ادخال يدوي </option>
-                  </select>
-                  <input type="text"  id="sizetxt" name="sizetxt" class="form-control" placeholder=" ادخل المقاس يدوي  ">
+
+
+                  <input type="number" step="0.01" id="comprossor" name="comprossor" class="form-control" placeholder="ادخل حجم كمبروسير ">
+                <input type="number" step="0.01" id="generator" name="generator" class="form-control" placeholder="ادخل حجم مولد ">
+                <input type="number" step="0.01" id="welding_machine" name="welding_machine" class="form-control" placeholder="ادخل حجم  مكنة لحام  ">
+                <input type="number" step="0.01" id="excavator" name="excavator" class="form-control" placeholder="ادخل حجم حفار">
+
+              
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
@@ -408,30 +415,22 @@ curl_close($curl);
         
       </div>
 
-      <div class="form-group col-md-4">
-        <label> اوراق الاليه المتوفرة </label>
-          <select class="form-control mr-1" name="document" id="document" onchange="select_paper();" >
-            <option value="" disabled selected> -- اختر الاوراق -- </option>
-            <option value="1"> شهادة بحث </option>
-            <option value="2"> شهادة وارد </option>
-            <option value="3"> توكيل </option>
-            <option value="hand"> اوراق اخري (يدوي) </option>
-          </select>
-          <input id="documenthide" name="documenthide"  type="text" class="form-control" placeholder=" ادخل الاوراق يدوي " style="display: none" />
-      </div>
-
+   
       <div class="form-group col-md-4">
         <label>  مقاس الالية المطلوبة للترحيل </label>
-   
-          <select class="form-control mr-1" name="size" id="size" >
-            <option value="" disabled selected> -- اختار المقاس -- </option>
-            <option value="1"> لوبد</option>
-            <option value="2"> سطحة </option>
-            <option value="3"> دفار </option>
-            <option value="hand"> ادخال يدوي </option>
-          </select>
 
-          <input id="sizehide" name="sizehide" type="text" class="form-control" placeholder=" ادخل المقاس يدوي "/>
+
+        <input id="lowbed" name="lowbed" type="number" step="0.01" class="form-control" placeholder="Enter lowbed Size"/>
+     <input id="truck" name="truck" type="number" step="0.01" class="form-control" placeholder="Enter truck Size"/>
+     <label>   trailer </label>
+          <select class="form-control mr-1" name="trailer" id="trailer" >
+            <option value="zs" disabled selected> --  Choose -- </option>
+            <option value="zs">  zs </option>
+            <option value="zy">  zy </option>
+          
+          </select>
+       
+
     
       </div>
 
@@ -462,15 +461,19 @@ curl_close($curl);
       <div class="col-md-4 form-group mt-3 mt-md-0">
         <textarea class="form-control" id="validationTextarea" name="description" placeholder="  وصف كتابي دقيق للموقع " ></textarea>    
       </div>
+      <div class="col-md-4 form-group mt-3 mt-md-0">
+      <input type="text" class="form-control" id="location" name="location" placeholder="  الموقع ">
+
+      </div>
        
       <div class="form-group col-md-4">
             
-        <input type="text" class="form-control" id="phone" name="phone" placeholder=" رقم التواصل 1 " >  
+        <input type="number" class="form-control" id="phone" name="phone" placeholder=" رقم التواصل 1 " >  
     </div>
          
    
          <div class="form-group col-md-4">
-         <input type="text" class="form-control" id="mobile" name="mobile" placeholder=" رقم التواصل 2 " >  
+         <input type="number" class="form-control" id="mobile" name="mobile" placeholder=" رقم التواصل 2 " >  
          </div>
               </div>
 
@@ -499,12 +502,12 @@ curl_close($curl);
        
       <div class="form-group col-md-4">
             
-        <input type="text" class="form-control" id="phone" name="des_phone" placeholder=" رقم التواصل 1 " >  
+        <input type="number" class="form-control" id="phone" name="des_phone" placeholder=" رقم التواصل 1 " >  
     </div>
          
    
          <div class="form-group col-md-4">
-         <input type="text" class="form-control" id="mobile" name="des_mobile" placeholder=" رقم التواصل 2 " >  
+         <input type="number" class="form-control" id="mobile" name="des_mobile" placeholder=" رقم التواصل 2 " >  
          </div>
               </div>
              
@@ -534,7 +537,7 @@ curl_close($curl);
                 <select class="form-control mr-1" name="work_for" id="work_for" onchange="select_side();" >
                 <option value="" disabled selected> -- اختار الجهه -- </option>
                 <option value="company"> شركة </option>
-                <option value=""> فرد </option>
+                <option value="individual"> فرد </option>
                 </select>  
                 <input id="work_forhide" name="work_forhide" type="text" class="form-control" placeholder=" ادخل اسم الشركة يدوي " style="display: none;" />
               </div>
@@ -542,9 +545,9 @@ curl_close($curl);
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <lable> هل  سبق لك العمل معنا </lable> 
                 <select class="form-control mr-1" name="previous" id="previous" onchange="select_wwus();" >
-                <option value="" disabled selected> -- اختار الاجابة -- </option>
+                <option value="yes" disabled selected> -- اختار الاجابة -- </option>
                 <option value="yes"> نعم </option>
-                <option> لا </option>
+                <option value="no"> لا </option>
                 </select>
 
                <input id="previoushide" name="previoushide" type="text" class="form-control" placeholder=" في اي موقع عملت معنا " style="display: none;" />
@@ -558,12 +561,12 @@ curl_close($curl);
               <div class="form-group">
               <label for="exampleFormControlSelect2">طريقة التعرف علينا</label>
               <select multiple class="form-control" id="exampleFormControlSelect2" name="know">
-                <option> الفيسبوك </option>
-                <option> التويتر </option>
-                <option> الانستغرام </option>
-                <option> عن طريق صديق </option>
-                <option> عن طريق شركه  </option>
-                <option>  اخري  </option>
+                <option value="media"> الفيسبوك </option>
+                <option value="media"> التويتر </option>
+                <option value="media"> الانستغرام </option>
+                <option value="friend"> عن طريق صديق </option>
+                <option value="advertisemen">  الاعلانات  </option>
+                <option value="other">  اخري  </option>
               </select>
               </div>
              </div>

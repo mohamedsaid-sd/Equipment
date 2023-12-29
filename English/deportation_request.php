@@ -196,10 +196,7 @@
                      if($model == "hand")
                         $machine=$_POST['modelhide']; 
                      
-                     $wieght = $_POST['wieght'];
-                     if($wieght == "hand")
-                      $wieght = $_POST['wieghthide'];
-                     
+                
                
                
                 $comprossor = $_POST['comprossor'];
@@ -219,6 +216,13 @@
                      $zone      = $_POST['zone'];
                      $workplace = $_POST['workplace'];
                      $description=$_POST['description'];
+                     $location=$_POST['location'];
+
+                     
+                     $wieght = $_POST['wieght'];
+                     if($wieght == "hand")
+                      $wieght = $_POST['wieghthide'];
+                    
                      $phone      = $_POST['phone'];
                      $mobile     = $_POST['mobile'];
 
@@ -234,12 +238,14 @@
                      $email   = $_POST['email'];
                      $job     = $_POST['job'];
                      $work_for= $_POST['work_for'];
-                     if($work_for == "company")
-                        $work_for= $_POST['work_forhide'];
+                     if($work_for == "company"){
+                        $work_forhide= $_POST['work_forhide'];
+                 
+                     }
                      
                      $previous= $_POST['previous'];
-                     if($previous == "yes")
-                        $previous= $_POST['previoushide'];
+                    //  if($previous == "yes")
+                    //     $previous= $_POST['previoushide'];
                      
                      $know     = $_POST['know'];
 
@@ -269,8 +275,8 @@ $jayParsedAry = [
                 "state" => $state, 
                 "zone" => $zone, 
                 "workplace" => $workplace, 
-                "company_name" => $work_for, 
-                "location" => "1234 Main Street", 
+                "company_name" => $work_forhide, 
+                "location" => $location, 
                 "description" => $description, 
                 "phone" => $phone, 
                 "mobile" => $mobile, 
@@ -335,9 +341,9 @@ if(curl_errno($curl)) {
         if($key == "msg" )
           if($value == "Success")
                 // success add form alert ...
-                        echo "<div class='alert alert-success'>
-                        <span class='icon'> <i class='fa fa-check-circle'></i></span>
-                         <b> تم ارسال الطلب بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال طلباتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
+                echo "<div class='alert alert-success'>
+                <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                 <b> The request has been sent successfully , we at Equipation company are always happy to receive your requests at all times , Equipation company employee will respond to you as soon as possible via the phone number or email sent in the request , Thank you for your Understanding  </b> </div>";
             else
               echo "<div class='alert alert-danger'>
                         <span class='icon'> <i class='fa fa-cancel'></i></span>
@@ -378,10 +384,10 @@ curl_close($curl);
                 SIZE OF MACHINE <br/>
 
               
-                <input type="text" id="comprossor" name="comprossor" class="form-control" placeholder="Entry comprossor  size ">
-                <input type="text" id="generator" name="generator" class="form-control" placeholder="Entry generator size ">
-                <input type="text" id="welding_machine" name="welding_machine" class="form-control" placeholder="Entry welding_machine size ">
-                <input type="text" id="excavator" name="excavator" class="form-control" placeholder="Entry excavator size ">
+                <input type="number" step="0.01" id="comprossor" name="comprossor" class="form-control" placeholder="Entry comprossor  size ">
+                <input type="number" step="0.01" id="generator" name="generator" class="form-control" placeholder="Entry generator size ">
+                <input type="number" step="0.01" id="welding_machine" name="welding_machine" class="form-control" placeholder="Entry welding_machine size ">
+                <input type="number" step="0.01" id="excavator" name="excavator" class="form-control" placeholder="Entry excavator size ">
 
                 </div>
 
@@ -422,8 +428,8 @@ curl_close($curl);
         <label>  TYPE OF MACHINE TO MOB/DIMOB </label>
 
 
-    <input id="lowbed" name="lowbed" type="text" class="form-control" placeholder="Enter lowbed Size"/>
-     <input id="truck" name="truck" type="text" class="form-control" placeholder="Enter truck Size"/>
+    <input id="lowbed" name="lowbed" type="number" step="0.01" class="form-control" placeholder="Enter lowbed Size"/>
+     <input id="truck" name="truck" type="number" step="0.01" class="form-control" placeholder="Enter truck Size"/>
      <label>   trailer </label>
           <select class="form-control mr-1" name="trailer" id="trailer" >
             <option value="zs" disabled selected> --  Choose -- </option>
@@ -463,15 +469,19 @@ curl_close($curl);
       <div class="col-md-4 form-group mt-3 mt-md-0">
         <textarea class="form-control" id="validationTextarea" name="description" placeholder="  write a precise description of the workplace    "></textarea>    
       </div>
+      <div class="col-md-4 form-group mt-3 mt-md-0">
+      <input type="text" class="form-control" id="location" name="location" placeholder="  location ">
+
+      </div>
        
       <div class="form-group col-md-4">
            
-        <input type="text" class="form-control" id="phone" name="phone" placeholder="  phone number 1">  
+        <input type="number" class="form-control" id="phone" name="phone" placeholder="  phone number 1">  
     </div>
          
    
          <div class="form-group col-md-4">
-         <input type="text" class="form-control" id="mobile" name="mobile" placeholder=" phone number 2 ">  
+         <input type="number" class="form-control" id="mobile" name="mobile" placeholder=" phone number 2 ">  
          </div>
     </div>
 
@@ -499,12 +509,12 @@ curl_close($curl);
        
       <div class="form-group col-md-4">
            
-        <input type="text" class="form-control" id="des_phone" name="des_phone" placeholder="  phone number 1">  
+        <input type="number" class="form-control" id="des_phone" name="des_phone" placeholder="  phone number 1">  
     </div>
          
    
          <div class="form-group col-md-4">
-         <input type="text" class="form-control" id="des_mobile" name="des_mobile" placeholder=" phone number 2 ">  
+         <input type="number" class="form-control" id="des_mobile" name="des_mobile" placeholder=" phone number 2 ">  
          </div>
     </div>
 
