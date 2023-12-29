@@ -101,7 +101,6 @@
               <li><a href="run_request.php"> Operation Request </a></li>
               <li><a href="maintenance_request.php"> Maintenance Request  </a></li>
               <li><a href="deportation_request.php"> Deportation Request </a></li>
-              <li><a href="traning_request.php"> Training Request </a></li>
               
     
             </ul>
@@ -331,7 +330,7 @@ If you are working in the mining sector, road and bridge construction industry, 
             <div class="icon"><i class="fab fa-teamspeak"></i></div>
               <br/>
               <br/>
-              <h4><a href=""> Department التشغيل  </a></h4>
+              <h4><a href=""> Operations  </a></h4>
               <p> It is a service created by EQUIPATION to meet the needs of the Sudanese market after establishing a trusted name in this sector. This is achieved by introducing a model for asset management on behalf of the client, meeting the needs of all customers, accommodating their aspirations, and addressing all operational problems for companies, business owners, investors, and equipment owners. We are well aware that satisfaction cannot be achieved without facing several challenges, and we have accepted and embraced the challenge.
 
 The most difficult and important challenge in the array of challenges was how to select competent and experienced operators and attract them to work with EQUIPATION. Therefore, we created a recruitment model with non-negotiable standards and satisfactory conditions for both parties, ensuring job satisfaction and delivering quick and amazing results in the production process on the ground.
@@ -349,7 +348,7 @@ Behind all these efforts stands a management team that monitors all these stages
             <div class="icon"><i class="fab fa-wpforms"></i></div>
               <br/>
               <br/>
-              <h4><a href="">  التوظيف </a></h4>
+              <h4><a href="">  Recruitment </a></h4>
               <p> We, at EQUIPATION, believe that Sudan is rich in natural resources and human capital. We also believe that the youth are the future of the world. Therefore, EQUIPATION has placed special emphasis on the youth and employees, striving to provide a suitable environment to satisfy their ambitions, face challenges, and accomplish tasks through guiding their energies using sound scientific methods and the latest findings in human resource management, while taking into consideration the environment and the psychological makeup of the Sudanese personality.
 
 In this section, we aim to facilitate communication between human resource professionals seeking the best employees in the job market. It also provides a space for exchanging experiences, discussing job-related issues and their solutions, as well as opportunities for training offered by some companies to graduates and ambitious individuals who are striving to achieve their dreams. There is also a space for consultations overseen by highly qualified consultants in this field.
@@ -894,11 +893,9 @@ Therefore, we have opened this space to bring together all owners of trailers, f
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3> Equpation </h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone Number :</strong> 6445<br>
-              <strong>Email:</strong> info@example.com<br>
+              
+              <strong>Phone Number :</strong> 249912322447<br>
+              <strong>Email:</strong> info@equipation.sd<br>
             </p>
           </div>
 

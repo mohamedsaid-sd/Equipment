@@ -808,11 +808,9 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>إيكيوبيشن </h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>رقم الهاتف:</strong> 6445<br>
-              <strong>Email:</strong> info@example.com<br>
+             
+              <strong>رقم الهاتف:</strong> 249912322447<br>
+              <strong>الايميل:</strong> info@equipation.sd<br>
             </p>
           </div>
 
