@@ -84,16 +84,16 @@
       }
    }
 
-   // // deal with machine size
-   // function select_size(){
-   //   var type = document.getElementById("size").value;
-   //    if(type == "hand"){
-   //    document.getElementById("sizehide").style.display = "block";
-   //    }else{
-   //    document.getElementById("sizehide").value = "";
-   //    document.getElementById("sizehide").style.display = "none";
-   //    }
-   // }
+   // deal with machine size
+   function select_size(){
+     var type = document.getElementById("size").value;
+      if(type == "hand"){
+      document.getElementById("sizehide").style.display = "block";
+      }else{
+      document.getElementById("sizehide").value = "";
+      document.getElementById("sizehide").style.display = "none";
+      }
+   }
 
    // deal with location side
    function select_side(){
@@ -187,50 +187,57 @@
                       // sending form :
                       if(isset($_POST['send_form'])){
 
-                    @$machine=$_POST['machine']; 
+                    $machine=$_POST['machine']; 
                      if($machine == "hand")
                         @$machine=$_POST['machinehide']; 
                      
-                     @$size  = $_POST['size'];
-                     @$sizetxt=$_POST['sizetxt'];                    
-                     @$size = $size . $_POST['sizetxt'];
                      
-                     @$model = $_POST['model'];
+                     $model = $_POST['model'];
                      if($model == "hand")
-                        @$machine=$_POST['modelhide']; 
+                        $machine=$_POST['modelhide']; 
                      
-                     @$wieght = $_POST['wieght'];
+                     $wieght = $_POST['wieght'];
                      if($wieght == "hand")
                       $wieght = $_POST['wieghthide'];
                      
-                     @$document = $_POST['document'];
-                     if($document == "hand")
-                      $document = $_POST['documenthide'];
+               
+               
+                $comprossor = $_POST['comprossor'];
+                $generator = $_POST['generator'];
+                $welding_machine = $_POST['welding_machine'];
+                $excavator = $_POST['excavator'];
+
+                $lowbed = $_POST['lowbed'];
+                $trailer = $_POST['trailer'];
+                $truck = $_POST['truck'];
+              
+
+
 
                      //location detailes
-                     @$state     = $_POST['state'];
-                     @$zone      = $_POST['zone'];
-                     @$workplace = $_POST['workplace'];
-                     @$description=$_POST['description'];
-                     @$phone      = $_POST['phone'];
-                     @$mobile     = $_POST['mobile'];
+                     $state     = $_POST['state'];
+                     $zone      = $_POST['zone'];
+                     $workplace = $_POST['workplace'];
+                     $description=$_POST['description'];
+                     $phone      = $_POST['phone'];
+                     $mobile     = $_POST['mobile'];
 
-                     @$des_state     = $_POST['des_state'];
-                     @$des_zone      = $_POST['des_zone'];
-                     @$des_workplace = $_POST['des_workplace'];
-                     @$des_description=$_POST['des_description'];
-                     @$des_phone     = $_POST['des_phone'];
-                     @$des_mobile     = $_POST['des_mobile'];
+                     $des_state     = $_POST['des_state'];
+                     $des_zone      = $_POST['des_zone'];
+                     $des_workplace = $_POST['des_workplace'];
+                     $des_description=$_POST['des_description'];
+                     $des_phone     = $_POST['des_phone'];
+                     $des_mobile     = $_POST['des_mobile'];
 
                      // customers detailes 
-                     @$name    = $_POST['name'];
-                     @$email   = $_POST['email'];
-                     @$job     = $_POST['job'];
-                     @$work_for= $_POST['work_for'];
+                     $name    = $_POST['name'];
+                     $email   = $_POST['email'];
+                     $job     = $_POST['job'];
+                     $work_for= $_POST['work_for'];
                      if($work_for == "company")
                         $work_for= $_POST['work_forhide'];
                      
-                     @$previous= $_POST['previous'];
+                     $previous= $_POST['previous'];
                      if($previous == "yes")
                         $previous= $_POST['previoushide'];
                      
@@ -246,23 +253,23 @@ $jayParsedAry = [
           "args" => [
              "vals_list" => [
                 "machine" => $machine, 
-                "comprossor" => "100 PSI", 
-                "generator" => "15 kW", 
-                "welding_machine" => "200 A", 
-                "excavator" => "Medium", 
+                "comprossor" =>  $comprossor, 
+                "generator" =>  $generator, 
+                "welding_machine" =>  $welding_machine, 
+                "excavator" =>  $excavator, 
                 "model" => $model, 
                 "wieght" => $wieght, 
-                "license" => 1, 
-                "certificate" => 2, 
-                "authorization" => 3, 
-                "other" => 4, 
-                "lowbed" => 15, 
-                "trailer" => "zs", 
-                "truck" => 10, 
+                "license" => "", 
+                "certificate" => "", 
+                "authorization" => "", 
+                "other" => "", 
+                "lowbed" => $lowbed, 
+                "trailer" => $trailer, 
+                "truck" => $truck, 
                 "state" => $state, 
                 "zone" => $zone, 
                 "workplace" => $workplace, 
-                "company_name" => "XYZ Constructions", 
+                "company_name" => $work_for, 
                 "location" => "1234 Main Street", 
                 "description" => $description, 
                 "phone" => $phone, 
@@ -275,14 +282,12 @@ $jayParsedAry = [
                 "des_description" => $des_description, 
                 "des_phone" => $des_phone, 
                 "des_mobile" => $des_mobile, 
-                // customer data
                 "name" => $name, 
                 "email" => $email, 
                 "job" => $job, 
                 "work_for" => $work_for, 
                 "previous" => $previous, 
-                "know" => "google", 
-                //////////////////////////////////////////////////////////////
+                "know" =>  $know, 
                 "status" => "draft" 
              ] 
           ] 
@@ -322,7 +327,7 @@ if(curl_errno($curl)) {
   echo 'Error: ' . curl_error($curl);
 } else {
 
-  //echo $response;
+  echo $response;
       // convert response to array
     $array = json_decode(  $response , true );
     // loop the array to fetch item
@@ -371,22 +376,20 @@ curl_close($curl);
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                 SIZE OF MACHINE <br/>
-                   <select class="form-control mr-1" id="size" name="size" onchange="select_size();">
-                    <option value="" disabled selected> --   Choose  -- </option>
-                    <option> Comprossor </option>
-                    <option> Generator </option>
-                    <option> Welding Machine </option>
-                    <option> Excavator </option>
-                    <option value="hand"> Manual Entry </option>
-                  </select>    
-                  <input type="text" id="sizetxt" name="sizetxt" class="form-control" placeholder="Entry manual the size ">
+
+              
+                <input type="text" id="comprossor" name="comprossor" class="form-control" placeholder="Entry comprossor  size ">
+                <input type="text" id="generator" name="generator" class="form-control" placeholder="Entry generator size ">
+                <input type="text" id="welding_machine" name="welding_machine" class="form-control" placeholder="Entry welding_machine size ">
+                <input type="text" id="excavator" name="excavator" class="form-control" placeholder="Entry excavator size ">
+
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                 MODEL OF MACHINE <br/>
                  <select class="form-control mr-1" name="model" id="model" onchange="select_brand();">
                     <option disabled selected> --   Choose  -- </option>
-                    <option> GAT </option>
+                    <option > GAT </option>
                     <option> JCB </option>
                     <option> ATLAS CAPS </option>
                     <option value="hand"> manual entry </option>
@@ -413,30 +416,23 @@ curl_close($curl);
         
       </div>
 
-      <div class="form-group col-md-4">
-        <label>   DOCUMENTS </label>
-          <select class="form-control mr-1" name="document" id="document" onchange="select_paper();">
-            <option value="" disabled selected> --  Choose -- </option>
-            <option value="1">  machine license </option>
-            <option value="2">  custom certificate </option>
-            <option value="3"> authorization </option>
-            <option value="hand">  other document</option>
-          </select>
-          <input id="documenthide" name="documenthide" type="text" class="form-control" placeholder=" manual entry  other document " style="display: none" />
-      </div>
+
 
       <div class="form-group col-md-4">
         <label>  TYPE OF MACHINE TO MOB/DIMOB </label>
-   
-          <select class="form-control mr-1" name="size" id="size">
-            <option value="" disabled selected> --  Choose -- </option>
-            <option value="1"> lowbed</option>
-            <option value="2"> trailer </option>
-            <option value="3"> truck </option>
-            <option value="hand"> Other </option>
-          </select>
 
-          <input id="sizehide" name="sizehide" type="text" class="form-control" placeholder="Enter machine Size"/>
+
+    <input id="lowbed" name="lowbed" type="text" class="form-control" placeholder="Enter lowbed Size"/>
+     <input id="truck" name="truck" type="text" class="form-control" placeholder="Enter truck Size"/>
+     <label>   trailer </label>
+          <select class="form-control mr-1" name="trailer" id="trailer" >
+            <option value="zs" disabled selected> --  Choose -- </option>
+            <option value="zs">  zs </option>
+            <option value="zy">  zy </option>
+          
+          </select>
+       
+
     
       </div>
 
@@ -537,7 +533,7 @@ curl_close($curl);
                 <select class="form-control mr-1" name="work_for" id="work_for" onchange="select_side();">
                 <option value="" disabled selected> -- Choose  -- </option>
                 <option value="company"> company </option>
-                <option > personal </option>
+                <option value="individual"> personal </option>
                 </select>  
                 <input id="work_forhide" name="work_forhide" type="text" class="form-control" placeholder="  company name (manual entry) " style="display: none;" />
               </div>
@@ -547,7 +543,7 @@ curl_close($curl);
                 <select class="form-control mr-1" name="previous" id="previous" onchange="select_wwus();">
                 <option value="" disabled selected> --  Choose -- </option>
                 <option value="yes"> Yes </option>
-                <option> No </option>
+                <option value="no"> No </option>
                 </select>
 
                <input id="previoushide" name="previoushide" type="text" class="form-control" placeholder=" workplace(manual entry)	" style="display: none;" />
@@ -558,12 +554,12 @@ curl_close($curl);
               <div class="form-group">
               <label for="exampleFormControlSelect2">  HOW TO RECOGNIZE US?</label>
               <select multiple class="form-control" id="know" name="know">
-                <option> facebook	 </option>
-                <option> twitter </option>
-                <option> instagram </option>
-                <option>   friend </option>
-                <option>   company  </option>
-                <option>  other  </option>
+                <option value="media"> facebook	 </option>
+                <option value="google"> google </option>
+                <option value="media"> instagram </option>
+                <option value="friend">   friend </option>
+                <option value="advertisemen">   Advertisemen  </option>
+                <option value="other">  other  </option>
               </select>
               </div>
              </div>
