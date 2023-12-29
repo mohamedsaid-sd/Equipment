@@ -250,11 +250,11 @@
 
                         @$agent = $_POST['agent'];
                         if($agent == "full_authority_agent"){
-                            $full_authority_agent= "true";
-                            $limit_authority_agent= "false";
+                            $full_authority_agent= true;
+                            $limit_authority_agent= false;
                         }else{
-                            $full_authority_agent= "false";
-                            $limit_authority_agent= "true";
+                            $full_authority_agent= false;
+                            $limit_authority_agent= true;
                         }
                         $date_of_foundation=$_POST['date_of_foundation'];
                         $registration_number=$_POST['registration_number'];
@@ -262,40 +262,40 @@
                         $expatriate_date=$_POST['expatriate_date'];
                         @$compressor=$_POST['compressor'];
                         if($compressor == "on")
-                        $compressor = "true"; else $compressor = "false";
+                        $compressor = true; else $compressor = false;
                         @$generator_tower_light=$_POST['generator_tower_light'];
                         if($generator_tower_light == "on")
-                        $generator_tower_light = "true"; else $generator_tower_light = "false";
+                        $generator_tower_light = true; else $generator_tower_light = false;
                         @$welding_machine=$_POST['welding_machine'];
                         if($welding_machine == "on")
-                        $welding_machine = "true"; else $welding_machine = "false";
+                        $welding_machine = true; else $welding_machine = false;
                         @$cranes  =$_POST['cranes']; 
                         if($cranes == "on")
-                        $cranes = "true"; else $cranes = "false";
+                        $cranes = true; else $cranes = false;
                         @$heavy_trucks=$_POST['heavy_trucks'];
                         if($heavy_trucks == "on")
-                        $heavy_trucks = "true"; else $heavy_trucks = "false";
+                        $heavy_trucks = true; else $heavy_trucks = false;
                         @$excavation_equipment =$_POST['excavation_equipment'];
                         if($excavation_equipment == "on")
-                        $excavation_equipment = "true"; else $excavation_equipment = "false";
+                        $excavation_equipment = true; else $excavation_equipment = false;
                         @$pipeline_equipment =$_POST['pipeline_equipment'];
                         if($pipeline_equipment == "on")
-                        $pipeline_equipment = "true"; else $pipeline_equipment = "false";
+                        $pipeline_equipment = true; else $pipeline_equipment = false;
                         @$civil_equipment =$_POST['civil_equipment'];
                         if($civil_equipment == "on")
-                        $civil_equipment = "true"; else $civil_equipment = "false";
+                        $civil_equipment = true; else $civil_equipment = false;
                         @$mining_equipment =$_POST['mining_equipment']; 
                         if($mining_equipment == "on")
-                        $mining_equipment = "true"; else $mining_equipment = "false";
+                        $mining_equipment = true; else $mining_equipment = false;
                         @$agricultural_equipment =$_POST['agricultural_equipment'];
                         if($agricultural_equipment == "on")
-                        $agricultural_equipment = "true"; else $agricultural_equipment = "false";
+                        $agricultural_equipment = true; else $agricultural_equipment = false;
                         @$facility=$_POST['facility']; 
                         if($facility == "on")
-                        @$facility = "true"; else @$facility = "false";
+                        @$facility = true; else @$facility = false;
                         @$light_vehicles_trucks =$_POST['light_vehicles_trucks'];
                         if($light_vehicles_trucks == "on")
-                        @$light_vehicles_trucks = "true"; else @$light_vehicles_trucks = "false";
+                        @$light_vehicles_trucks = true; else @$light_vehicles_trucks = false;
                         @$air_compressor_selection =$_POST['air_compressor_selection']; 
                         @$generator_tower_light_selection=$_POST['generator_tower_light_selection']; 
                         @$welding_machine_selection=$_POST['welding_machine_selection'];
@@ -356,7 +356,7 @@
                           $hourly_work_id = " not execeed ".$_POST['hourly_work_idhide']." hrs per day ";
 
 
-                        // echo " Data : ".$full_name."-".$nationality."-".$id_number."-".$phone_number."-".$phone_number_2."-".$whatsapp_num."-".$email."-".$tax_file."-".$address."-".$recommendation."-".$code_number."-".$years_in_field."-".$owned_machines."-".$full_authority_agent."-".$limit_authority_agent."-".$date_of_foundation."-".$registration_number."-".$file_tax_number."-".$expatriate_date."-".$compressor."-".$generator_tower_light."-".$welding_machine."-".$cranes."-".$heavy_trucks."-".$excavation_equipment."-".$pipeline_equipment."-".$civil_equipment."-".$mining_equipment."-".$agricultural_equipment."-".$facility."".$light_vehicles_trucks."-".$air_compressor_selection."".$generator_tower_light_selection."-".$welding_machine_selection."-".$excavator_selection ."-".$brand_id."-".$size_id."-".$model_id."-".$year_of_manufacture_id."".$monthly_rental_id."-".$condition_id."-".$state_id."-".$advance_id."-".$category_id."-".$clearances_id."".$maintenance_id."-".$hair_operator_id."-".$availability_id."".$gorvernment_fees_id."-".$hourly_work_id;
+                        echo " Data : ".$full_name."-".$nationality."-".$id_number."-".$phone_number."-".$phone_number_2."-".$whatsapp_num."-".$email."-".$tax_file."-".$address."-".$recommendation."-".$code_number."-".$years_in_field."-".$owned_machines."-".$full_authority_agent."-".$limit_authority_agent."-".$date_of_foundation."-".$registration_number."-".$file_tax_number."-".$expatriate_date."-".$compressor."-".$generator_tower_light."-".$welding_machine."-".$cranes."-".$heavy_trucks."-".$excavation_equipment."-".$pipeline_equipment."-".$civil_equipment."-".$mining_equipment."-".$agricultural_equipment."-".$facility."".$light_vehicles_trucks."-".$air_compressor_selection."".$generator_tower_light_selection."-".$welding_machine_selection."-".$excavator_selection ."-".$brand_id."-".$size_id."-".$model_id."-".$year_of_manufacture_id."".$monthly_rental_id."-".$condition_id."-".$state_id."-".$advance_id."-".$category_id."-".$clearances_id."".$maintenance_id."-".$hair_operator_id."-".$availability_id."".$gorvernment_fees_id."-".$hourly_work_id;
 
                     $jayParsedAry = [
     "params" => [
@@ -680,14 +680,13 @@ curl_close($curl);
           <label> generator and tower light </label>
           <select class="form-control mr-1" id="generator_tower_light_selection" name="generator_tower_light_selection"  >
               <option value="" disabled selected> -- Choose -- </option>
-              <option> soundproof </option>
-              <option> open  </option>
+              <option value="soundproof"> Soundproof </option>
+              <option value="open"> Open  </option>
             </select>  
 
           <label>excavation equipment</label><br/>
           <select class="form-control mr-1" id="excavator_selection" name="excavator_selection" >
               <option value="" disabled selected> -- Choose -- </option>
-              <option> excavtor </option>
               <option> dozer </option>
               <option> grader </option>
             </select>
