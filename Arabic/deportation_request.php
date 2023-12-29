@@ -374,15 +374,28 @@ curl_close($curl);
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                   مقاس الآلية  <br/>
-
-
                   <input type="number" step="0.01" id="comprossor" name="comprossor" class="form-control" placeholder="ادخل حجم كمبروسير ">
-                <input type="number" step="0.01" id="generator" name="generator" class="form-control" placeholder="ادخل حجم مولد ">
-                <input type="number" step="0.01" id="welding_machine" name="welding_machine" class="form-control" placeholder="ادخل حجم  مكنة لحام  ">
-                <input type="number" step="0.01" id="excavator" name="excavator" class="form-control" placeholder="ادخل حجم حفار">
-
-              
                 </div>
+
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                <label></label>
+                <input type="number" step="0.01" id="generator" name="generator" class="form-control" placeholder="ادخل حجم مولد ">
+                </div>
+
+              </div>
+
+              <div class="row">
+                
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                <label></label>
+                <input type="number" step="0.01" id="welding_machine" name="welding_machine" class="form-control" placeholder="ادخل حجم  مكنة لحام  ">
+                </div>
+
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                <label></label>
+                <input type="number" step="0.01" id="excavator" name="excavator" class="form-control" placeholder="ادخل حجم حفار">
+              </div>
+
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                  ماركة الآليه المرحلة <br/>
@@ -395,6 +408,10 @@ curl_close($curl);
                   </select>    
                   <input id="modelhide" name="modelhide" type="text" class="form-control" placeholder=" ادخل ماركة الالية يدوي "  style="display:none">
                 </div>
+
+              
+                </div>
+
 
                </div>
      <!-- Start Input Start Time -->
@@ -411,28 +428,34 @@ curl_close($curl);
             <option value="hand">ادخال يدوي</option>
           </select>
           <input id="wieghthide" name="wieghthide" type="text" class="form-control" placeholder=" ادخل الوزن يدوي " style="display: none;" />
-        
-        
       </div>
 
    
       <div class="form-group col-md-4">
         <label>  مقاس الالية المطلوبة للترحيل </label>
+        <input id="lowbed" name="lowbed" type="number" step="0.01" class="form-control" placeholder="ادخل مقاس اللوبيد"/>
+      </div>
 
+      <div class="form-group col-md-4">
+      <label></label>
+     <input id="truck" name="truck" type="number" step="0.01" class="form-control" placeholder="ادخل مقاس الدفار"/>
+      </div>
+  
+  </div>
 
-        <input id="lowbed" name="lowbed" type="number" step="0.01" class="form-control" placeholder="Enter lowbed Size"/>
-     <input id="truck" name="truck" type="number" step="0.01" class="form-control" placeholder="Enter truck Size"/>
-     <label>   trailer </label>
+    <div class="form-group col-md-4">
+     <label>   سطحة </label>
           <select class="form-control mr-1" name="trailer" id="trailer" >
-            <option value="zs" disabled selected> --  Choose -- </option>
+            <option value="zs" disabled selected> --  اختار -- </option>
             <option value="zs">  zs </option>
             <option value="zy">  zy </option>
           
           </select>
+    </div>
        
 
     
-      </div>
+
 
       </div>
 

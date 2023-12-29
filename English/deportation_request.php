@@ -382,16 +382,29 @@ curl_close($curl);
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                 SIZE OF MACHINE <br/>
-
-              
                 <input type="number" step="0.01" id="comprossor" name="comprossor" class="form-control" placeholder="Entry comprossor  size ">
+                </div>
+                
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                <label></label>
                 <input type="number" step="0.01" id="generator" name="generator" class="form-control" placeholder="Entry generator size ">
-                <input type="number" step="0.01" id="welding_machine" name="welding_machine" class="form-control" placeholder="Entry welding_machine size ">
-                <input type="number" step="0.01" id="excavator" name="excavator" class="form-control" placeholder="Entry excavator size ">
-
                 </div>
 
-                <div class="col-md-4 form-group mt-3 mt-md-0">
+              </div>
+
+              <div class="row">
+
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+                <label></label>
+                <input type="number" step="0.01" id="welding_machine" name="welding_machine" class="form-control" placeholder="Entry welding_machine size ">
+              </div>
+
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+                <label></label>
+                <input type="number" step="0.01" id="excavator" name="excavator" class="form-control" placeholder="Entry excavator size ">
+              </div>
+
+              <div class="col-md-4 form-group mt-3 mt-md-0">
                 MODEL OF MACHINE <br/>
                  <select class="form-control mr-1" name="model" id="model" onchange="select_brand();">
                     <option disabled selected> --   Choose  -- </option>
@@ -403,6 +416,10 @@ curl_close($curl);
                   <input id="modelhide" name="modelhide" type="text" class="form-control" placeholder="    manual entry " style="display:none">
               
                 </div>
+
+                </div>
+
+          
                </div>
      <!-- Start Input Start Time -->
      <div class="row">
@@ -418,18 +435,21 @@ curl_close($curl);
             <option value="hand"> manual entry</option>
           </select>
           <input id="wieghthide" name="wieghthide" type="text" class="form-control" placeholder="   manual entry " style="display: none;" />
-        
-        
       </div>
 
 
 
       <div class="form-group col-md-4">
         <label>  TYPE OF MACHINE TO MOB/DIMOB </label>
+        <input id="lowbed" name="lowbed" type="number" step="0.01" class="form-control" placeholder="Enter lowbed Size"/>
+      </div>
 
-
-    <input id="lowbed" name="lowbed" type="number" step="0.01" class="form-control" placeholder="Enter lowbed Size"/>
+    <div class="form-group col-md-4">
+     <label></label>
      <input id="truck" name="truck" type="number" step="0.01" class="form-control" placeholder="Enter truck Size"/>
+   </div>
+
+   <div class="form-group col-md-4">
      <label>   trailer </label>
           <select class="form-control mr-1" name="trailer" id="trailer" >
             <option value="zs" disabled selected> --  Choose -- </option>
@@ -438,7 +458,7 @@ curl_close($curl);
           
           </select>
        
-
+    </div>
     
       </div>
 

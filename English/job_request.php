@@ -927,8 +927,8 @@
       </div>  
 
       <div class="row">
-      <h3> Courses </h3>
-      <h3> Training </h3>
+<!--       <h3> Courses </h3>
+      <h3> Training </h3> -->
       <h3> Experience </h3>
       
       <div id="exper_ids" class="row">

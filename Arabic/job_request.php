@@ -922,6 +922,8 @@
       </div>
 
       </div>
+
+      <div class="row">
      
 
       <div class="col-md-4 form-group">
@@ -955,8 +957,8 @@
       </div>
 
       <div class="row">
-      <h3> الكورسات التدريبية </h3>
-
+      
+ <!--      <h3> الكورسات التدريبية </h3>
       <div id="courses_ids" class="row">
         <div class="col-md-2 form-group">
         <label></label>
@@ -983,7 +985,7 @@
         <input type="text" class="form-control" placeholder="التقدير"/>
         </div>
       </div><br/>
-      <span style="width: 100px; padding: 3px; margin: 5px;" class="btn btn-success" onclick="add_courses_line();"> أضافة + </span> <font color="red"> الكورسات غير موجود في ال api بعد </font>  
+      <span style="width: 100px; padding: 3px; margin: 5px;" class="btn btn-success" onclick="add_courses_line();"> أضافة + </span> <font color="red"> الكورسات غير موجود في ال api بعد </font>   -->
 
       <h3> الخبرات الوظيفية </h3>
       
