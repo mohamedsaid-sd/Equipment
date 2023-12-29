@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_GET['exit'])){
+session_unset();
+session_destroy();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,7 +59,43 @@
     </div>
   </div>
 
-  <?php include 'mainlist.php'; ?>
+  <?php
+
+  $flag = false ; 
+
+   // the array that hold the cart valse
+      if(!isset($_SESSION['cart']))
+      {$_SESSION['cart'] = array();}
+      // ADD ITEM TO CART
+      if(isset($_POST['add_to_cart']))
+      {
+        $id    = $_POST['id'];
+        $name  = $_POST['name'];
+        $price = $_POST['price'];
+
+        // check if item found
+        $flag = false;
+        foreach ($_SESSION['cart'] as $key => $value) {
+          if($key % 3 == 0){
+              if($value == $id)
+                  $flag = true;
+          }
+        }
+        
+        if($flag){
+
+        }else{
+        // add item to cart 
+        array_push($_SESSION['cart'] ,
+        $id , $name , $price );
+        // array_unique($_SESSION['cart'] , SORT_REGULAR);
+        }
+
+
+
+      }
+
+   include 'mainlist.php'; ?>
 
   <main id="main">
 
@@ -68,6 +111,12 @@
         <div class="row mt-5">
           <div class="col-lg-12 mt-5 mt-lg-0">
 				<?php 
+
+                if(isset($_GET['suc'])){
+ echo "<div class='alert alert-success'>
+                        <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                         <b> The request has been sent successfully , we at Equipation company are always happy to receive your requests at all times , Equipation company employee will respond to you as soon as possible via the phone number or email sent in the request , Thank you for your Understanding  </b> </div>";
+}
 				// get the products from the server 
 				include 'fetch_products.php' ; 
 				?>

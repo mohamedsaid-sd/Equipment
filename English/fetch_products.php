@@ -85,28 +85,32 @@ if(curl_errno($curl)) {
          // loop the nested array 
           foreach ($value as $key2 => $value2) {
             // loop the nested array 
-              echo "
+                  echo "
             <div class='col-lg-3'>
+            <form method='post' action='store.php'>
             <center>
             <div style='background-color:#eee;margin:5px; border-radius: 10px;padding:5px;'>
-            
             ";
             foreach ($value2 as $key3 => $value3) {
                 // loop the nested array 
-                if($key3 == "name"){
+                if($key3 == "name"){ 
                   // product name
+                  echo "<input type='text' name='name' value='".$value3."' hidden/>";
                   echo "<h4 align='center'> ".$value3." </h4>";
+                }elseif($key3 == "id"){
+                  echo "<input type='text' name='id' value='".$value3."' hidden/>";
                 }elseif($key3 == "image_1920"){
                   //  product image 
                   echo "<img src='".$value3."' style='width:100%;'/>";
                 }elseif($key3 == "list_price"){
                   // product price
+                  echo "<input type='text' name='price' value='".$value3."' hidden/>";
                   echo "<b style='font-size:20px;'> 300 SDG </b><br/>";
                 }
             }
               // devider between items 
 
-            echo " <button class='btn btn-success' style='width:100%;'> Add to card </button></center></div> ";
+            echo " <button class='btn btn-success' name='add_to_cart' style='width:100%;'> Add to card </button></center></form></div> ";
             
           }
           echo "</div>";

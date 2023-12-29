@@ -1,3 +1,6 @@
+<?php 
+  session_start();
+  ?>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
@@ -39,6 +42,34 @@
           </li>
           <li><a class="nav-link scrollto" href="notofication_request.php"> Report or complaints </a></li>
           <li><a class="nav-link scrollto" href="index.php#contact"> Contact us </a></li>
+            
+           <?php
+           if(isset($_SESSION['cart']))
+          {
+           ?>
+
+          <a href="cart.php" style='border:none;'>
+          <div class="icon" style='padding: 10px;color:#123;'> <span style='background-color:red;color:#fff;border-radius:50px;padding:6px;margin:5px;'><b> <?php
+
+          echo sizeof($_SESSION['cart']) / 3 ;
+
+          ?> </b></span> <i style="width:100px;" class="fa fa-shopping-cart"></i></div>
+          </a>
+          <?php
+          }
+          else
+          {
+          ?>
+          <a href="#" style='border:none;'>
+          <div class="icon" style='padding: 10px;color:#123;'> <span style='background-color:red;color:#fff;border-radius:50px;padding:6px;margin:5px;'><b> <?php
+
+          echo '0' ;
+
+          ?> </b></span> <i style="width:100px;" class="fa fa-shopping-cart"></i></div>
+          </a>
+          <?php
+          }
+          ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
