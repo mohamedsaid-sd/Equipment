@@ -250,6 +250,19 @@
                      $know     = $_POST['know'];
 
 
+                     $Machinelicense = file_get_contents($_FILES['Machinelicense']['tmp_name']);
+                     $MachinelicenseData = base64_encode($Machinelicense);
+
+                     $Customercertificate = file_get_contents($_FILES['Customercertificate']['tmp_name']);
+                     $CustomercertificateData = base64_encode($Customercertificate);
+
+                     $Authorization = file_get_contents($_FILES['Authorization']['tmp_name']);
+                     $AuthorizationData = base64_encode($Authorization);
+
+                     $otherdocument = file_get_contents($_FILES['otherdocument']['tmp_name']);
+                     $otherdocumentData = base64_encode($otherdocument);
+
+
                      // echo "Data:".$machine.$size.$model.$wieght.$state.$zone.$workplace.$description.$phone.$mobile.$name.$email.$job.$work_for.$previous;
 
 
@@ -265,10 +278,10 @@ $jayParsedAry = [
                 "excavator" =>  $excavator, 
                 "model" => $model, 
                 "wieght" => $wieght, 
-                "license" => "", 
-                "certificate" => "", 
-                "authorization" => "", 
-                "other" => "", 
+                "license" => $MachinelicenseData, 
+                "certificate" => $CustomercertificateData, 
+                "authorization" => $AuthorizationData, 
+                "other" =>  $otherdocumentData, 
                 "lowbed" => $lowbed, 
                 "trailer" => $trailer, 
                 "truck" => $truck, 
@@ -596,6 +609,36 @@ curl_close($curl);
              <!-- *****************************End the Section************************ -->
 
               </div>
+
+
+              <br>
+              <br>
+              <br>
+
+              <div class="row">
+
+              <div class="col-md-3 form-group">
+        <label>   Machine license </label>
+        <input type="file" name="Machinelicense" class="form-control">
+      </div>
+              
+
+      <div class="col-md-3 form-group">
+        <label>   Customer certificate </label>
+        <input type="file" name="Customercertificate" class="form-control">
+      </div>
+      <div class="col-md-3 form-group">
+        <label>  Authorization </label>
+        <input type="file" name="Authorization" class="form-control">
+      </div>
+      <div class="col-md-3 form-group">
+        <label> other document </label>
+        <input type="file" name="otherdocument" class="form-control">
+      </div>
+      </div>
+      <br>
+              <br>
+              <br>
               <div class="text-center"><button type="submit" name="send_form">  Send </button></div>
             </form>
 

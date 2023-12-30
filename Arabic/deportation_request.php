@@ -176,7 +176,7 @@
 
           <div class="col-lg-12 mt-5 mt-lg-0">
 
-            <form action="deportation_request.php" method="post" role="form">
+            <form action="deportation_request.php" method="post" role="form" enctype="multipart/form-data">
 
                <div class="my-3">
                 <div class="loading"></div>
@@ -244,7 +244,21 @@
                      if($previous == "yes"){
                         $previous= $_POST['previous'];
                      }
-                     @$know     = $_POST['know'];
+                     $know     = $_POST['know'];
+
+
+                     $Machinelicense = file_get_contents($_FILES['Machinelicense']['tmp_name']);
+                     $MachinelicenseData = base64_encode($Machinelicense);
+
+                     $Customercertificate = file_get_contents($_FILES['Customercertificate']['tmp_name']);
+                     $CustomercertificateData = base64_encode($Customercertificate);
+
+                     $Authorization = file_get_contents($_FILES['Authorization']['tmp_name']);
+                     $AuthorizationData = base64_encode($Authorization);
+
+                     $otherdocument = file_get_contents($_FILES['otherdocument']['tmp_name']);
+                     $otherdocumentData = base64_encode($otherdocument);
+                     
 
 
                      // echo "Data:".$machine.$size.$model.$wieght.$state.$zone.$workplace.$description.$phone.$mobile.$name.$email.$job.$work_for.$previous.$know;
@@ -260,10 +274,10 @@ $jayParsedAry = [
                 "excavator" => $excavator, 
                 "model" => $model, 
                 "wieght" => $wieght, 
-                "license" => "", 
-                "certificate" => "", 
-                "authorization" => "", 
-                "other" => "", 
+                "license" => $MachinelicenseData, 
+                "certificate" => $CustomercertificateData, 
+                "authorization" => $AuthorizationData, 
+                "other" => $otherdocumentData, 
                 "lowbed" =>$lowbed, 
                 "trailer" => $trailer, 
                 "truck" => $truck, 
@@ -576,6 +590,9 @@ curl_close($curl);
                <input id="previoushide" name="previoushide" type="text" class="form-control" placeholder=" في اي موقع عملت معنا " style="display: none;" />
      
                
+
+               
+      
               
 
               </div>
@@ -596,7 +613,36 @@ curl_close($curl);
 
               </div>
 
+
+
+              <br>
+              <br>
+              <br>
+
+              <div class="row">
+
+              <div class="col-md-3 form-group">
+        <label>  رخصة الآلة </label>
+        <input type="file" name="Machinelicense" class="form-control">
+      </div>
               
+
+      <div class="col-md-3 form-group">
+        <label>  شهادة العميل </label>
+        <input type="file" name="Customercertificate" class="form-control">
+      </div>
+      <div class="col-md-3 form-group">
+        <label>  الترخيص </label>
+        <input type="file" name="Authorization" class="form-control">
+      </div>
+      <div class="col-md-3 form-group">
+        <label>  ملفات اخري </label>
+        <input type="file" name="otherdocument" class="form-control">
+      </div>
+      </div>
+      <br>
+              <br>
+              <br>
 
               <div class="text-center"><button type="submit" name="send_form"> إرسال الطلب </button></div>
             </form>
