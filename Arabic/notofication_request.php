@@ -210,12 +210,7 @@ if(curl_errno($curl)) {
 curl_close($curl);
 
 
-
-                        // success add form alert ...
-                        echo "<div class='alert alert-success'>
-                        <span class='icon'> <i class='fa fa-check-circle'></i></span>
-                         <b> تم ارسال الطلب بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال طلباتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
-                      }
+        }
 
                   ?>
                 </div>
@@ -228,12 +223,11 @@ curl_close($curl);
                <label>  القسم </label>
               <select class="form-control mr-1" name="department" id="department" required>
                <option value="" disabled selected> --  حدد القسم  -- </option>
-               <option> قسم التاجير </option>
-               <option> قسم الترحيل </option>
-               <option> قسم التوظيف </option>
-               <option> قسم التشغيل </option>
-               <option> قسم الصيانة </option>
-              <option> قسم التدريب </option>
+               <option value="rental"> قسم التاجير </option>
+               <option value="migration"> قسم الترحيل </option>
+               <option value="hr"> قسم التوظيف </option>
+               <option value="operating"> قسم التشغيل </option>
+               <option value="maintenance"> قسم الصيانة </option>
                </select>   
               
                 </div>

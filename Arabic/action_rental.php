@@ -113,3 +113,20 @@ curl_close($curl);
 
 ?>
 
+
+
+If you have a Web Form which manages your Image upoad through $_POST. You could use this ..
+
+<?php 
+if(isset($_POST)){
+  $imgData = file_get_contents($_FILES['userImage']['tmp_name']);
+  $imgData = base64_encode($imgData);
+  echo "samba".$imgData;
+    }
+
+?> 
+<form method="POST" enctype="multipart/form-data"> 
+<input type="file" name="userImage"> 
+<input type="submit" value="Upload"> 
+</form>
+

@@ -7,11 +7,9 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3> Equpation </h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone Number :</strong> 6445<br>
-              <strong>Email:</strong> info@example.com<br>
+             
+              <strong>Phone Number :</strong> 249912322447<br>
+              <strong>Email:</strong> info@equipation.sd<br>
             </p>
           </div>
 

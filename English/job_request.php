@@ -240,8 +240,8 @@
         <a href="../English/index.php" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
         <a href="../Arabic/index.php" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
 
-        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-        <i class="bi bi-phone"></i> +249 6445
+        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">info@equipation.sd</a>
+        <i class="bi bi-phone"></i> +249912322447
 
 
       </div>
@@ -571,7 +571,7 @@
              echo 'Error: ' . curl_error($curl);
            } else {
            
-             echo $response;
+           //  echo $response;
                    // convert response to array
                $array = json_decode(  $response , true );
                // loop the array to fetch item
@@ -619,7 +619,7 @@
 
       <div class="col-md-4 form-group">
         <label> Profile Image </label>
-        <input type="file" name="image"  class="form-control"><b> الرجاء نمرير الصورة </b>
+        <input type="file" name="image"  class="form-control">
       </div>
 
       <div class="col-md-4 form-group">
@@ -1067,13 +1067,13 @@
     </div>
 
     <div class="col-md-4 form-group">
-    <label> هل لديك إضافة او ملاحظة تريد أن تقدمها لشركة ايكيوبيشن ؟</label>
-    <textarea class="form-control" placeholder="الجواب"></textarea>
+    <label> Do you have an addition or comment that you would like to present to Equipation Company?</label>
+    <textarea class="form-control" placeholder=" answer"></textarea>
     </div>
 
     <div class="col-md-4 form-group">
-    <label>هل لديك مانع بالعمل في فروع ايكيوبيشن خارج الخرطوم او السودان ؟</label>
-    <textarea class="form-control" placeholder="الجواب"></textarea>
+    <label>Do you mind working in Equation branches outside Khartoum or Sudan?</label>
+    <textarea class="form-control" placeholder="answer"></textarea>
     </div>
       
     </div>

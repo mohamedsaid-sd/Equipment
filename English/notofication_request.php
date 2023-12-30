@@ -196,13 +196,13 @@ foreach ($array as $key => $value) {
     if($key == "msg" )
       if($value == "Success")
             // success add form alert ...
-                    echo "<div class='alert alert-success'>
-                    <span class='icon'> <i class='fa fa-check-circle'></i></span>
-                     <b> تم ارسال البلاغ  بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال بلاغاتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
-        else
-          echo "<div class='alert alert-danger'>
-                    <span class='icon'> <i class='fa fa-cancel'></i></span>
-                     <b> خطأ في عملية الارسال </b> </div>";
+            echo "<div class='alert alert-success'>
+            <span class='icon'> <i class='fa fa-check-circle'></i></span>
+             <b> The request has been sent successfully , we at Equipation company are always happy to receive your requests at all times , Equipation company employee will respond to you as soon as possible via the phone number or email sent in the request , Thank you for your Understanding  </b> </div>";
+else
+echo "<div class='alert alert-danger'>
+<span class='icon'> <i class='fa fa-cancel'></i></span>
+ <b> Erorr in sending Request </b> </div>";
 }
 // echo gettype($x);
 // echo "R".$x;
@@ -226,12 +226,11 @@ curl_close($curl);
               <label>  Department </label>
               <select class="form-control" name="department" id="department" required>
                <option value="" disabled selected> -- Selection -- </option>
-               <option> Rental Department </option>
-               <option> Deportation Department </option>
-               <option> Employment Department </option>
-               <option> Operation Department </option>
-               <option> Maintenance Department </option>
-               <option> Training Department </option>
+               <option value="rental"> Rental Department </option>
+               <option value="migration"> Deportation Department </option>
+               <option value="hr"> Employment Department </option>
+               <option value="operating"> Operation Department </option>
+               <option value="maintenance"> Maintenance Department </option>
                </select>   
               
                 </div>
@@ -271,7 +270,7 @@ curl_close($curl);
 
            
 
-              <div class="text-center">  <br/><button type="submit" name="send_form"> إرسال الطلب </button></div>
+              <div class="text-center">  <br/><button type="submit" name="send_form"> Send  </button></div>
             </form>
 
           </div>
