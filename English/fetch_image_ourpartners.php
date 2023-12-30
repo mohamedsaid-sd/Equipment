@@ -29,7 +29,7 @@ if(curl_errno($ch)) {
 			foreach ($value as $key2 => $value2) {
 				// echo "<br/>Sub:".$key2."=".$value2."";
 				if($key2 == "our_partners"){
-					echo "<img src='".$value2."'>";
+					echo "<img src='".$value2."' style='width:100%;'>";
 				}
 			}
 		}else{

@@ -62,6 +62,7 @@ session_destroy();
   <?php
 
   $flag = false ; 
+  $flagalert = false;
 
    // the array that hold the cart valse
       if(!isset($_SESSION['cart']))
@@ -88,6 +89,7 @@ session_destroy();
         // add item to cart 
         array_push($_SESSION['cart'] ,
         $id , $name , $price );
+        $flagalert = true;
         // array_unique($_SESSION['cart'] , SORT_REGULAR);
         }
 
@@ -107,6 +109,16 @@ session_destroy();
           <h2> Products  </h2>
          </div>
       </div>
+
+    <?php
+
+    if($flagalert){
+       echo "<div class='alert alert-success'>
+                        <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                         <b> ِAdded Item to cart successfully  </b> </div>";
+    }
+
+    ?>
      <div class="container">
         <div class="row mt-5">
           <div class="col-lg-12 mt-5 mt-lg-0">

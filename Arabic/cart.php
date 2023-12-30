@@ -266,7 +266,8 @@ if(isset($_SESSION['cart'])){
   	<input type="submit" name="confirm" class="btn btn-success" value="إكمال الطلب">
 
   </center>	
-  </form>
+  </form><br/>
+  <a href="store.php?exit=0" class="btn btn-danger"> إفراغ السلة </a>
   <?php
 	}// end session check
 	else{

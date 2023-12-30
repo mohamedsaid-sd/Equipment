@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Equipation Compoany</title>
+  <title>شركة ايكيوبيشن</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -91,7 +91,7 @@
             <div class="content">
               <h3>لماذا اختار ايكيوبيشن</h3>
               <p>
-                شركة Equipation هي شركة خدمية تعمل علي توفير احدث وأفضل الآليات والمعدات الثقيلة للمشاريع الإنتاجية في مختلف المجالات , بدأت العمل 2015 م , وذلك باستخدام نظم إدارية محكمة ومتطورة , وعبر كوادر ذات الكفاءة , وبالاستناد الي قاعدة بيانات كبيرة , وبالشراكة مع عملائنا القائمين علي المشاريع الاإنتاجية بالبلاد
+                شركة إيكيوبيشن هي شركة خدمية تعمل علي توفير احدث وأفضل الآليات والمعدات الثقيلة للمشاريع الإنتاجية في مختلف المجالات , بدأت العمل 2015 م , وذلك باستخدام نظم إدارية محكمة ومتطورة , وعبر كوادر ذات الكفاءة , وبالاستناد الي قاعدة بيانات كبيرة , وبالشراكة مع عملائنا القائمين علي المشاريع الاإنتاجية بالبلاد
               </p>
               <div class="text-center">
                 <!-- <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a> -->
@@ -136,7 +136,7 @@
 
         <div class="row">
           <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
+            <a href="#" class="glightbox play-btn mb-4"></a>
           </div>
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
@@ -353,7 +353,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
                 <div class="tab-pane active show" id="tab-1">
                   <div class="row gy-4">
                     <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3> مشاريع استخراج المعادن </h3>
+                      <h3> مشاريع استخراج المعادن </h3> <hr/>
                       <p class="fst-italic"> تعمل شركة Equiption في مشاريع إستحراج الذهب في مختلف مناطق السودان </p>
                       <p>
                         <ul>
@@ -367,14 +367,14 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
                       </p>
                     </div>
                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/logo.jpg" alt="" class="img-fluid">
+                      <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid" style="width: 100%; height: 90%;">
                     </div>
                   </div>
                 </div>
                 <div class="tab-pane" id="tab-2">
                   <div class="row gy-4">
                     <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3> مشاريع إستخراج الاحجار </h3>
+                      <h3> مشاريع إستخراج الاحجار </h3><hr/>
                       <p class="fst-italic"> توفر Equipation الأليات اللازمة لتشغيل المحاجر وتعمل الشركة في  </p>
                       <p>
                         <b> مشاريع محاجر الرخام : </b>
@@ -385,14 +385,14 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
                       </p>
                     </div>
                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/logo.jpg" alt="" class="img-fluid">
+                      <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid" style="width: 100%; height: 90%;">
                     </div>
                   </div>
                 </div>
                 <div class="tab-pane" id="tab-3">
                   <div class="row gy-4">
                     <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3>المشاريع الزراعية </h3>
+                      <h3>المشاريع الزراعية </h3> <hr/>
                       <p> تلعب الاليات الثقيلة دورا في تحضير الاراضى الزراعية وتسويتها . تساهم Equipation بفعالية في عدد من المشتريع الزراعية عن طريق توفير اليات ذات اداء عالي وفريق فني مختص </p>
                       <p>
                         <ul>
@@ -405,26 +405,26 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
                       </p>
                     </div>
                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/logo.jpg" alt="" class="img-fluid">
+                      <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid" style="width: 100%; height: 90%;">
                     </div>
                   </div>
                 </div>
                 <div class="tab-pane" id="tab-4">
                   <div class="row gy-4">
                     <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3> مشاريع الطرق والجسور </h3>
+                      <h3> مشاريع الطرق والجسور </h3> <hr/>
                       <p> تعمل Equipation علي تنفيذ مشاريع الطرق والجسور ومصارف المياء مسلحة بأحدث الآليات <br> </p>
                       <p> والمعدات وبفريق من المهندسين والفنيين المهرة لتنفيذ مشاريع الطرق والجسور بمواصفات عالمية </p>
                     </div>
                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/logo.jpg" alt="" class="img-fluid">
+                      <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid" style="width: 100%; height: 110%;">
                     </div>
                   </div>
                 </div>
                 <div class="tab-pane" id="tab-5">
                   <div class="row gy-4">
                     <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3> مشاريع الإنشاءات </h3>
+                      <h3> مشاريع الإنشاءات </h3> <hr/>
                       <p> تماشيا مع الطفرة العمرانية التي تشهدها البلاد , طورت Equipation من خدماتها في مجال الإنشاءات ووفرت مجموعة من الخدمات التي تخدم مشاريع الإنشاءات منها :  </p>
                       <p>
                         <ul>
@@ -436,7 +436,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
                         </p>
                     </div>
                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/logo.jpg" alt="" class="img-fluid">
+                      <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid" style="width: 100%; height: 90%;">
                     </div>
                   </div>
                 </div>
@@ -444,7 +444,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
                 <div class="tab-pane" id="tab-6">
                   <div class="row gy-4">
                     <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3> المشاريع الوطنية </h3>
+                      <h3> المشاريع الوطنية </h3> <hr/>
                       <p> انطلاقا من مسؤوليتها تجاه البلاد والعباد نفذت Equipation عددا من المشاريع الوطنية مثل :  </p>
                       <p>
                         <ul>
@@ -456,7 +456,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
                         </p>
                     </div>
                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/logo.jpg" alt="" class="img-fluid">
+                      <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid" style="width: 100%; height: 90%;">
                     </div>
                   </div>
                 </div>
@@ -838,7 +838,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>خدماتنا</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#doctors">المنتجات</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="store.php">المنتجات</a></li>
            
             </ul>
           </div>

@@ -63,6 +63,7 @@ session_destroy();
 
 
   $flag = false ; 
+  $flagalert = false;
 
    // the array that hold the cart valse
       if(!isset($_SESSION['cart']))
@@ -89,7 +90,7 @@ session_destroy();
         // add item to cart 
         array_push($_SESSION['cart'] ,
         $id , $name , $price );
-        // array_unique($_SESSION['cart'] , SORT_REGULAR);
+        $flagalert = true;
         }
 
 
@@ -112,6 +113,12 @@ session_destroy();
       </div>
 
       <?php 
+
+      if($flagalert){
+          echo "<div class='alert alert-success'>
+                        <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                         <b> تمت إضافة المنتج للسلة بنجاح  </b> </div>";
+      }
 
         // foreach (@$_SESSION['cart'] as $key => $value) {
         //   if($key % 3 == 0){

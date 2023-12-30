@@ -16,7 +16,7 @@
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="index.php#about"> About </a></li>
           <li><a class="nav-link scrollto" href="index.php#departments"> Departments </a></li>
-          <li><a class="nav-link scrollto" href="index.php#services"> Fields of work  </a></li>
+          <li><a class="nav-link scrollto" href="index.php#services"> Our Fields </a></li>
           <li><a class="nav-link scrollto" href="index.php#parenter"> Parenters </a></li>
           <li><a class="nav-link scrollto" href="index.php#cleints"> Clients </a></li>
           <li><a class="nav-link scrollto" href="store.php"> store </a></li>

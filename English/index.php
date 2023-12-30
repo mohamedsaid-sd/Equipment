@@ -79,9 +79,9 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about"> about </a></li>
+          <li><a class="nav-link scrollto" href="#about"> About </a></li>
           <li><a class="nav-link scrollto" href="#departments"> Departments </a></li>
-          <li><a class="nav-link scrollto" href="#services">  Fields of work  </a></li>
+          <li><a class="nav-link scrollto" href="#services">  Our Fields </a></li>
           <li><a class="nav-link scrollto" href="#parenter"> Parenters </a></li>
           <li><a class="nav-link scrollto" href="#cleints"> Clients </a></li>
           <li><a class="nav-link scrollto" href="store.php"> store </a></li>
@@ -437,7 +437,7 @@ Therefore, we have opened this space to bring together all owners of trailers, f
                 <div class="tab-pane active show" id="tab-1">
                   <div class="row gy-4">
                     <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3> Mineral extraction projects </h3>
+                      <h3> Mineral extraction projects </h3><hr/>
                       <p class="fst-italic"> Equpation works in gold extraction projects in various regions of Sudan  </p>
                       <p>
                         <ul>
@@ -451,14 +451,15 @@ Therefore, we have opened this space to bring together all owners of trailers, f
                       </p>
                     </div>
                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/logo.jpg" alt="" class="img-fluid">
+                      <br/>
+                      <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid" style="width:100%;height: 90%;">
                     </div>
                   </div>
                 </div>
                 <div class="tab-pane" id="tab-2">
                   <div class="row gy-4">
                     <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3> Stone extraction projects </h3>
+                      <h3> Stone extraction projects </h3><hr/>
                       <p class="fst-italic"> Equipation provides the necessary mechanisms to operate the quarries . The Company operates in :  </p>
                       <p>
                         <b> Cement quarrying projects : </b>
@@ -468,14 +469,14 @@ Therefore, we have opened this space to bring together all owners of trailers, f
                       </p>
                     </div>
                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/logo.jpg" alt="" class="img-fluid">
+                      <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid" style="width:100%;height: 90%;">
                     </div>
                   </div>
                 </div>
                 <div class="tab-pane" id="tab-3">
                   <div class="row gy-4">
                     <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3> Agricultural projects </h3>
+                      <h3> Agricultural projects </h3><hr/>
                       <p> Heavy machinery plays a vital role in preparing and leveling agricultural lands .
                         Equipation actively contributes to number of agricultural projects by providing hight-performance machinery and a specialized technical team <br/>
                         Equipation performs the following operations
@@ -491,26 +492,28 @@ Therefore, we have opened this space to bring together all owners of trailers, f
                       </p>
                     </div>
                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/logo.jpg" alt="" class="img-fluid">
+                      <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid" style="width:100%;height: 90%;">
                     </div>
                   </div>
                 </div>
                 <div class="tab-pane" id="tab-4">
                   <div class="row gy-4">
                     <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3> Roads and bridges projects  </h3>
+                      <h3> Roads and bridges projects  </h3><hr/>
                       <p> Equipation works on implementing road , bridge and water drainge projects armed with the lates machinery and equipment <br> </p>
                       <p> and team of skilled engineers and technicians to implement projects complied to international standards</p>
                     </div>
+                    <br/>
+                    <br/>
                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/logo.jpg" alt="" class="img-fluid">
+                      <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid" style="width:100%;height:100%;">
                     </div>
                   </div>
                 </div>
                 <div class="tab-pane" id="tab-5">
                   <div class="row gy-4">
                     <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3> construction projects  </h3>
+                      <h3> construction projects  </h3><hr/>
                       <p> In line with the construction boom in the country , Equipation has developed it's services in the field of construction and provided a wide range of services that serve construction projects, including  :  </p>
                       <p>
                         <ul>
@@ -522,7 +525,7 @@ Therefore, we have opened this space to bring together all owners of trailers, f
                         </p>
                     </div>
                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/logo.jpg" alt="" class="img-fluid">
+                      <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid" style="width:100%;height: 90%;">
                     </div>
                   </div>
                 </div>
@@ -530,7 +533,7 @@ Therefore, we have opened this space to bring together all owners of trailers, f
                 <div class="tab-pane" id="tab-6">
                   <div class="row gy-4">
                     <div class="col-lg-8 details order-2 order-lg-1">
-                      <h3> National projects  </h3>
+                      <h3> National projects  </h3><hr/>
                       <p> Based on our responsibilities towards sudan and the sudanese , Equipation has implemented a number of national projects such as :  </p>
                       <p>
                         <ul>
@@ -542,7 +545,7 @@ Therefore, we have opened this space to bring together all owners of trailers, f
                         </p>
                     </div>
                     <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img src="assets/img/logo.jpg" alt="" class="img-fluid">
+                      <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid" style="width:100%;height: 90%;">
                     </div>
                   </div>
                 </div>
@@ -924,7 +927,7 @@ Therefore, we have opened this space to bring together all owners of trailers, f
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Service </h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#doctors"> Products  </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="store.php"> Products  </a></li>
            
             </ul>
           </div>

@@ -101,7 +101,7 @@ if(curl_errno($curl)) {
                   echo "<input type='text' name='id' value='".$value3."' hidden/>";
                 }elseif($key3 == "image_1920"){
                   //  product image 
-                  echo "<img src='".$value3."' style='width:100%;'/>";
+                  echo "<img src='".$value3."' style='width:100%;height:150px;'/>";
                 }elseif($key3 == "list_price"){
                   // product price
                   echo "<input type='text' name='price' value='".$value3."' hidden/>";
@@ -109,7 +109,7 @@ if(curl_errno($curl)) {
                 }
             }
               // devider between items 
-            echo " <button class='btn btn-success' name='add_to_cart' style='width:100%;'> Add to card </button></center></form></div> ";
+            echo " <button class='btn btn-success' name='add_to_cart' style='width:100%;'> إضافة للسلة </button></center></form></div> ";
             
           }
           echo "</div>";
