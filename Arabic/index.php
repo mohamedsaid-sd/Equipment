@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>شركة ايكيوبيشن</title>
+  <title>شركة اكوبيشن</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -37,7 +37,38 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
-
+<style type="text/css">
+  .col-lg-2{
+    padding: 8px;
+    text-align: center;
+  }
+  .col-lg-2 b{
+    padding: 5px;
+    margin: 4px;
+  }
+  .icon{
+    margin: 5px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius:1px;
+    color: gray;
+    text-align: center;
+    border-bottom : solid 4px #ddd;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .fas , .fab{
+    color: orange;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    margin: 10px;
+  }
+  .icon:hover{
+    color: #fff;
+    background-color: #555;
+  }
+</style>
 <body>
 
 
@@ -73,8 +104,8 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container" style="background-color: #00000077;padding: 10px;color: #fff;">
-      <h1 style="color: #fff;">مرحبا بكم في شركة ايكيوبيشن</h1>
-      <h2 style="color: #eee;">تعمل ايكيوبيشن علي تنفيذ مشاريع الطرق والجسور ومصارف المياة مسلحة بأحدث الآليات والمعدات وبفريق من المهندسين والفنيين المهرة لتنفيذ مواصفات الطرق والجسور وبجودة عالية</h2>
+      <h1 style="color: #fff;">مرحبا بكم في شركة اكوبيشن</h1>
+      <h2 style="color: #eee;">تعمل اكوبيشن علي تنفيذ مشاريع الطرق والجسور ومصارف المياة مسلحة بأحدث الآليات والمعدات وبفريق من المهندسين والفنيين المهرة لتنفيذ مواصفات الطرق والجسور وبجودة عالية</h2>
       <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
     </div>
   </section><!-- End Hero -->
@@ -89,7 +120,7 @@
         <div class="row">
           <div class="col-lg-4 d-flex align-items-stretch">
             <div class="content">
-              <h3>لماذا اختار ايكيوبيشن</h3>
+              <h3>لماذا اختار اكوبيشن</h3>
               <p>
                 شركة إيكيوبيشن هي شركة خدمية تعمل علي توفير احدث وأفضل الآليات والمعدات الثقيلة للمشاريع الإنتاجية في مختلف المجالات , بدأت العمل 2015 م , وذلك باستخدام نظم إدارية محكمة ومتطورة , وعبر كوادر ذات الكفاءة , وبالاستناد الي قاعدة بيانات كبيرة , وبالشراكة مع عملائنا القائمين علي المشاريع الاإنتاجية بالبلاد
               </p>
@@ -104,22 +135,22 @@
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-notepad"></i>
-                    <h4> انشطة ايكيوبيشن </h4>
-                    <p> لدي شركة ايكيوبيشن الكثير من الانشطة في اغلب ولايات السودان من اسنخراج معادن وحفريات و حفر ابار و البحث عن مختلف انواع الخام .  </p>
+                    <h4> انشطة اكوبيشن </h4>
+                    <p> لدي شركة اكوبيشن الكثير من الانشطة في اغلب ولايات السودان من اسنخراج معادن وحفريات و حفر ابار و البحث عن مختلف انواع الخام .  </p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-bar-chart"></i>
-                    <h4> مشاريع ايكيوبيشن </h4>
-                    <p> لدي شركة ايكيوبيشن الكثير من المشاريع التجارية والخدمية والوطنية من تعميم الطرق وعمل الجسور وحفر الابار للقري البعيدة وبناء العمارات </p>
+                    <h4> مشاريع اكوبيشن </h4>
+                    <p> لدي شركة اكوبيشن الكثير من المشاريع التجارية والخدمية والوطنية من تعميم الطرق وعمل الجسور وحفر الابار للقري البعيدة وبناء العمارات </p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-support"></i>
-                    <h4> فريق ايكيوبيشن </h4>
-                    <p> تحتوي شركة ايكيوبيشن علي فريق ماهر تقني متتدرب علي العمل ومعالجة اكثر المشاكل تعقيدا والتعامل مع العملاء والزبائن بمهارة وحرفية عالية </p>
+                    <h4> فريق اكوبيشن </h4>
+                    <p> تحتوي شركة اكوبيشن علي فريق ماهر تقني متتدرب علي العمل ومعالجة اكثر المشاكل تعقيدا والتعامل مع العملاء والزبائن بمهارة وحرفية عالية </p>
                   </div>
                 </div>
               </div>
@@ -141,7 +172,7 @@
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
             <h3>من نحن التعريف بالشركة </h3>
-            <p> شركة ايكيوبيشن هى شركة خدمية تعمل في توفير أحدث وأفضل الآليات والمعدات الثقيلة للمشاريع الانتاجية في مختلف المجالات , بدأت العمل منذ العام 2015م , وذلك باستخدام باستخدام نظم إدارية محكمة و متطورة  .  </p>
+            <p> شركة اكوبيشن هى شركة خدمية تعمل في توفير أحدث وأفضل الآليات والمعدات الثقيلة للمشاريع الانتاجية في مختلف المجالات , بدأت العمل منذ العام 2015م , وذلك باستخدام باستخدام نظم إدارية محكمة و متطورة  .  </p>
 
             <div class="icon-box">
               <!-- <div class="icon"><i class="bx bx-fingerprint"></i></div> -->
@@ -215,11 +246,42 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>  الاقسام  </h2>
-          <p> تضم شركة Equipation العديد من الاقسام </p>
+          <h2>  الخدمات  </h2>
+          <p> لدي شركة Equipation العديد من الخدمات </p>
         </div>
 
-        <div class="row">
+        <div class="row" style="margin: 5px;">
+
+        <div class="col-lg-4">
+       <a href="details.php?id=مقاولة"><div class="icon"> <i class="fas fa-clipboard"></i> <b> خدمات المقاولة </b> </div></a>
+        </div>
+
+        <div class="col-lg-4">
+        <a href="details.php?id=تاجير"><div class="icon"> <i class="fas fa-tractor"></i> <b> خدمات التاجير </b> </div>
+        </div></a>
+        
+        <div class="col-lg-4">
+        <a href="details.php?id=تشغيل"><div class="icon"> <i class="fab fa-teamspeak"></i> <b> خدمات التشغيل </b> </div></a>
+        </div>
+        
+        <div class="col-lg-4">
+        <a href="details.php?id=توظيف"><div class="icon"> <i class="fab fa-wpforms"></i> <b> خدمات التوظيف </b> </div></a>
+        </div>
+        
+        <div class="col-lg-4">
+        <a href="details.php?id=صيانة"><div class="icon"> <i class="fas fa-tools"></i> <b> خدمات الصيانه </b> </div></a>
+        </div>
+
+        <div class="col-lg-4">
+        <a href="details.php?id=ترحيل"><div class="icon"> <i class="fas fa-truck-moving"></i> <b> خدمات الترحيل </b> </div></a>
+        </div>
+          
+        </div>
+
+  
+
+
+<!--         <div class="row">
           <div class="col-lg-12 col-md-12 d-flex align-items-stretch">
             <div class="icon-box">
               <div class="icon"><i class="fas fa-clipboard"></i></div>
@@ -310,7 +372,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 
         </div>
 
-      </div>
+      </div> -->
     </section><!-- End Services Section -->
 
       <!-- ======= Departments Section ======= -->
@@ -731,7 +793,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 
         <div class="section-title">
           <h2>التواصل معنا </h2>
-          <p> يسعدنا في شركة ايكيوبيشن التواصل مع عملائنا في كل الاوقات , ويسعدنا دوما الرد علي رسائلكم مقترحاتكم وارائكم </p>
+          <p> يسعدنا في شركة اكوبيشن التواصل مع عملائنا في كل الاوقات , ويسعدنا دوما الرد علي رسائلكم مقترحاتكم وارائكم </p>
         </div>
       </div>
 
@@ -854,7 +916,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
-          &copy;  <strong><span> شركة ايكيوبيشن </span>2023</strong>. كل الحقوق محفوظة
+          &copy;  <strong><span> شركة اكوبيشن </span>2023</strong>. كل الحقوق محفوظة
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
