@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>  Rental Request  </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medilab
+  * Updated: Jun 23 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+<script type="text/javascript">
+  // ready to go with js function 
+
+   // deal with period  
+   function select_period(){
+     var type = document.getElementById("work_duration_id").value;
+      if(type == "hand"){
+      document.getElementById("durationhide").style.display = "block";
+      }else{
+      document.getElementById("durationhide").value = "";
+      document.getElementById("durationhide").style.display = "none";
+      }
+   }
+
+  //deal with hour of day
+   function select_hourday(){
+     var type = document.getElementById("daily_work_hours_id").value;
+      if(type == "hand"){
+      document.getElementById("work_hourshide").style.display = "block";
+      }else{
+      document.getElementById("work_hourshide").value = "";
+      document.getElementById("work_hourshide").style.display = "none";
+      }
+   }
+
+
+    // deal with filed
+    function select_work_field(){
+     var type = document.getElementById("work_field_id").value;
+      if(type == "hand"){
+      document.getElementById("work_fieldhide").style.display = "block";
+      }else{
+      document.getElementById("work_fieldhide").value = "";
+      document.getElementById("work_fieldhide").style.display = "none";
+      }
+   }
+
+
+    // deal with old
+    function select_old(){
+     var type = document.getElementById("site_age").value;
+      if(type == "old"){
+      document.getElementById("oldhide").style.display = "block";
+      }else{
+      document.getElementById("start_date").value = "";
+      document.getElementById("oldhide").style.display = "none";
+      }
+   }
+
+
+      // deal with location side
+   function select_side(){
+     var type = document.getElementById("customer_type_selection").value;
+      if(type == "company"){
+      document.getElementById("company").style.display = "block";
+      }else{
+      document.getElementById("company").value = "";
+      document.getElementById("company").style.display = "none";
+      }
+   }
+
+   // deal with work with us 
+   function select_wwus(){
+     var type = document.getElementById("ever_work_with_us").value;
+      if(type == "yes"){
+      document.getElementById("wwushide").style.display = "block";
+      }else{
+      document.getElementById("wwushide").value = "";
+      document.getElementById("wwushide").style.display = "none";
+      }
+   }
+
+
+</script>
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+
+        <a href="../English/index.php" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
+        <a href="../Arabic/index.php" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
+
+        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
+        <i class="bi bi-phone"></i> +249 6445
+
+      </div>
+      <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+
+      </div>
+    </div>
+  </div>
+
+  <?php include 'mainlist.php'; ?>
+
+  <main id="main">
+
+  
+
+    
+
+    <!-- ======= Contact Section ======= -->
+    <section class="contact">
+      <div class="container">
+        <br/>
+        <div class="section-title">
+          <h2> Contract Request  </h2>
+         </div>
+      </div>
+
+  
+
+      <div class="container">
+        <div class="row mt-5">
+
+   
+
+          <div class="col-lg-12 mt-5 mt-lg-0">
+
+            <form action="contract_request.php" method="post" role="form">
+
+                <h3 for="textAreaRemark">Contract Requirement </h3>
+
+              <div class="my-3">
+                <div class="error-message"></div>
+                <div class="sent-message">
+                  
+                  <?php
+
+                  // sendding form 
+                  if(isset($_POST['Send-form'])){
+
+                  // get the post value:
+  $work_type_id = $_POST['work_type_id'];
+  $work_duration_id =  $_POST['work_duration_id'];
+  $mobilization_row_distance =  $_POST['mobilization_row_distance'];
+  $mobilization_waste_distance =  $_POST['mobilization_waste_distance'];
+  $total_ton =  $_POST['total_ton'];
+  $daily_ton =  $_POST['daily_ton'];
+  $daily_work_hours_id =  $_POST['daily_work_hours_id'];
+  $expected_beginning_of_work =  $_POST['expected_beginning_of_work'];
+  $state =  $_POST['state'];
+  $region =  $_POST['region'];
+  $distance_from_nearest =  $_POST['distance_from_nearest'];
+  $work_field_id =  $_POST['work_field_id'];
+  $living_selection = $_POST['living_selection'];
+  $subsistence_selection = $_POST['subsistence_selection'];
+  $internet_selection =  $_POST['internet_selection'];
+  $communication_selection = $_POST['communication_selection'];
+  $workshop_selection =  $_POST['workshop_selection'];
+  $compressor_selection =  $_POST['compressor_selection'];
+  $fuel_selection =  $_POST['fuel_selection'];
+  $water_selection =  $_POST['water_selection'];
+  $electricity_selection = $_POST['electricity_selection'];
+  $nearest_city =  $_POST['nearest_city'];
+  $nearest_market =  $_POST['nearest_market'];
+  $nearest_paved_road =  $_POST['nearest_paved_road'];
+  $site_age = $_POST['site_age'];
+  $customer_name =  $_POST['customer_name'];
+  $customer_email =  $_POST['customer_email'];
+  $customer_job_title =  $_POST['customer_job_title'];
+  $customer_type_selection = $_POST['customer_type_selection'];
+  $ever_work_with_us =  $_POST['ever_work_with_us'];
+  $social_media_selection =  $_POST['social_media_selection'];
+  $friend = @$_POST['friend'];
+  $friend = "********// راجع";
+  $company =  $_POST['company'];
+
+  
+  echo "Data".$work_type_id.$work_duration_id.$mobilization_row_distance.$mobilization_waste_distance.$total_ton.$daily_ton.$daily_work_hours_id.$expected_beginning_of_work.$state.$region.$distance_from_nearest.$work_field_id.$living_selection.$subsistence_selection.$internet_selection.$communication_selection.$workshop_selection.$compressor_selection.$fuel_selection.$water_selection.$electricity_selection.$nearest_city.$nearest_market.$nearest_paved_road.$site_age.$customer_name.$customer_email.$customer_job_title.$customer_type_selection.$ever_work_with_us.$social_media_selection.$friend.$company;
+
+
+// $jayParsedAry = [
+//   "params" => [
+//         "args" => [
+//            "vals_list" => [
+//               "work_typ" => @$work_typ, 
+//               "duration" => @$duration, 
+//               "month_rent" => @$month_rent, 
+//               "hour_num" => @$hour_num, 
+//               "work_hours" => @$work_hours, 
+//               "work_date" => @$work_date, 
+//               "note" => @$note, 
+//               "distance" => @$distance, 
+//               "state" => @$state, 
+//               "site_age" => @$site_age, 
+//               "start_date" => @$start_date, 
+//               "name" => @$name, 
+//               "email" => @$email, 
+//               "job" => @$job, 
+//               "categ" => @$categ, 
+//               "company" => @$company, 
+//               "work" => @$work, 
+//               "know" => @$know, 
+//               "status" => "draft" ,
+//               "work_field" => $work_field,
+//               "region" => $region
+//            ] 
+//         ] 
+//      ] 
+// ]; 
+// $done=json_encode($jayParsedAry);
+// //echo $done;
+// $curl = curl_init();
+
+// curl_setopt_array($curl, array(
+//   CURLOPT_URL => 'https://equipation-equipation-odoo-com-stage-10590858.dev.odoo.com/apiV2/rental.request/create',
+//   CURLOPT_SSL_VERIFYHOST => 0 ,
+//   CURLOPT_SSL_VERIFYPEER => 0 ,
+//   CURLOPT_RETURNTRANSFER => true,
+//   CURLOPT_ENCODING => '',
+//   CURLOPT_MAXREDIRS => 10,
+//   CURLOPT_TIMEOUT => 0,
+//   CURLOPT_FOLLOWLOCATION => true,
+//   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+//   CURLOPT_CUSTOMREQUEST => 'POST',
+//   CURLOPT_POSTFIELDS =>$done,
+//   CURLOPT_HTTPHEADER => array(
+//     'Content-Type: application/json',
+//     'X-Openerp-Session-Id: {{session_id}}',
+//     'Cookie: session_id=a1fd8b1c0a71abde4e289ac7f5212eee0e8cc5e7'
+//   ),
+// ));
+
+//  $response = curl_exec($curl);
+
+
+
+// if(curl_errno($curl)) {
+//   echo 'Error: ' . curl_error($curl);
+// } else {
+
+//   //echo $response;
+//         // convert response to array
+//     $array = json_decode(  $response , true );
+//     // loop the array to fetch item
+//     foreach ($array as $key => $value) {
+//        // echo $key."".$value;
+//         if($key == "msg" )
+//           if($value == "Success")
+//                 // success add form alert ...
+//                         echo "<div class='alert alert-success'>
+//                         <span class='icon'> <i class='fa fa-check-circle'></i></span>
+//                          <b> The request has been sent successfully , we at Equipation company are always happy to receive your requests at all times , Equipation company employee will respond to you as soon as possible via the phone number or email sent in the request , Thank you for your Understanding  </b> </div>";
+//             else
+//               echo "<div class='alert alert-danger'>
+//                         <span class='icon'> <i class='fa fa-cancel'></i></span>
+//                          <b> Erorr in sending Request </b> </div>";
+//     }
+//   // echo gettype($x);
+//   // echo "R".$x;
+// }
+// curl_close($curl);
+                 }
+                  ?>
+
+                </div>
+              </div>
+
+            <div class="row">
+               
+                <div class="col-md-4 form-group">
+                WORK TYPE <br/>
+                <input id="work_type_id" name="work_type_id" type="text" class="form-control" placeholder=" Work type Manual entry ">
+                </div>
+
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                DURATION <br/>
+                  <select class="form-control mr-1" name="work_duration_id" id="work_duration_id" onchange="select_period();" required>
+                    <option value="" disabled selected> --  Choose the duration  -- </option>
+                    <option value="month"> month </option>
+                    <option value="3month"> 3 month  </option>
+                    <option value="year"> year </option>
+                    <option value="hand">  Manual entry </option>
+                  </select>
+                  <input id="durationhide" name="durationhide" type="text" class="form-control" placeholder="    Manual entry " style="display: none;">
+                </div>
+
+                <div class="col-md-4 form-group">
+                <label></label>
+                <input id="mobilization_row_distance" name="mobilization_row_distance" type="text" class="form-control" placeholder="Distance of mobilization row"/>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+              <div class="col-md-4 form-group">
+              <label></label>
+              <input id="mobilization_waste_distance" name="mobilization_waste_distance" type="text" class="form-control" placeholder="distance of mobilization waste"/>
+              </div>   
+
+              <div class="col-md-4 form-group">
+              <label>OTAL TON</label>
+              <input id="total_ton" name="total_ton" type="text" class="form-control" placeholder="distance of mobilization waste"/>
+              </div> 
+
+              <div class="col-md-4 form-group">
+              <label>DAILY TON</label>
+              <input id="daily_ton" name="daily_ton" type="text" class="form-control" placeholder="distance of mobilization waste"/>
+              </div> 
+
+              </div>
+
+              <div class="row">
+
+        <div class="form-group col-md-4">
+        <label>DAILY WORK HOURS   </label>
+          <select class="form-control mr-1" id="daily_work_hours_id" name="daily_work_hours_id" onchange="select_hourday();" required>
+            <option value="" disabled selected> -- Choose  -- </option>
+            <option value="10">10</option>
+            <option value="12">12</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="20">20</option>
+            <option value="hand"> manual entry  </option>
+          </select>
+          <input id="work_hourshide" name="work_hourshide" type="text" class="form-control" placeholder="  manual entry Hour   " style="display: none;">
+        </div>
+
+         <div class="col-md-4 form-group">
+         <label>EXPECTED BEGINNING OF WORK</label>
+          <input id="expected_beginning_of_work" name="expected_beginning_of_work" type="date" class="form-control" placeholder=" "/>
+        </div> 
+                
+              </div>
+    <br/>
+    <h3 for="textAreaRemark"> SITE DESCRIPTION: </h3>
+
+
+      <div class="row">
+        <div class="col-md-4 form-group">
+        WORK LOCATION <br/>
+          <input type="text" id="state" name="state" class="form-control" placeholder="state" required>
+        </div>
+        <div class="col-md-4 form-group mt-3 mt-md-0">
+          <br/>
+          <input type="text" class="form-control" name="region" id="region" placeholder="Region" required>
+        </div>
+
+        <div class="form-group col-md-4">
+          <br/>
+       <input type="text" class="form-control" name="distance_from_nearest" id="distance_from_nearest" placeholder=" distance from nearest market " required>
+          </div>
+      </div>
+
+      <div class="row">
+       
+        <div class="col-md-4 form-group mt-3 mt-md-0">
+        WORK FIELD <br/>
+                  <select class="form-control mr-1" name="work_field_id" id="work_field_id" onchange="select_work_field();" required>
+                    <option disabled selected> -- Choose   -- </option>
+                    <option> mining </option>
+                    <option>  cement </option>
+                    <option>  agricultural </option>
+                    <option value="hand">   manual entry </option>
+                  </select>
+
+                  <input id="work_fieldhide" name="work_fieldhide" type="text" class="form-control" placeholder="   manual entry " style="display: none;">
+          </div>
+
+         <div class="form-group col-md-4">
+           <label>   SITE AGE </label>
+             <select class="form-control mr-1" id="site_age" name="site_age" onchange="select_old();" required>
+               <option value="" disabled selected> --   Choose -- </option>
+               <option value="new"> new </option>
+               <option value="old"> old </option>
+             </select>
+             <span id="oldhide" style="display: none;">
+             work starting date (manual entry/calendar) :  <br/>
+             <input type="date" name="start_date" class="form-control" placeholder="   work starting date (manual entry/calendar) " >
+            </span>      
+         </div>
+              </div>
+
+
+          <div class="row">
+
+          <label> <b>JOB SITE READINESS  : </b> </label>
+          
+          <div class="form-group col-md-4">
+           <label> living </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="living_selection" name="living_selection" required>
+               <option value="" disabled selected> --   Choose -- </option>
+               <option value="excellent"> excellent </option>
+               <option value="good"> good </option>
+               <option value="normal"> normal </option>
+             </select>
+           </div>
+         </div>
+
+
+          <div class="form-group col-md-4">
+           <label> subsistence </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="subsistence_selection" name="subsistence_selection" required>
+               <option value="" disabled selected> --   Choose -- </option>
+                <option value="excellent"> excellent </option>
+               <option value="good"> good </option>
+               <option value="normal"> normal </option>
+             </select>
+           </div>
+         </div>
+
+          <div class="form-group col-md-4">
+           <label> internet </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="internet_selection" name="internet_selection" required>
+               <option value="" disabled selected> --   Choose -- </option>
+               <option value="available"> available </option>
+               <option value="not_available"> not available </option>
+             </select>
+           </div>
+         </div>
+            
+          </div>
+
+       <div class="row">
+            
+        <div class="form-group col-md-4">
+           <label>  communication </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="communication_selection" name="communication_selection" required>
+               <option value="" disabled selected> --  Choose  -- </option>
+               <option value="available"> available </option>
+               <option value="not_available"> not available </option>
+             </select>
+           </div>
+         </div>
+
+         <div class="form-group col-md-4">
+           <label>  workshop </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="workshop_selection" name="workshop_selection" required>
+               <option value="" disabled selected> --   Choose -- </option>
+               <option value="available"> available </option>
+               <option value="not_available"> not available </option>
+             </select>
+           </div>
+         </div>
+
+          <div class="form-group col-md-4">
+           <label> compressor </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="compressor_selection" name="compressor_selection" required>
+               <option value="" disabled selected> --   Choose -- </option>
+               <option value="available"> available </option>
+               <option value="not_available"> not available </option>
+             </select>
+           </div>
+         </div>
+
+          </div>
+
+          <div class="row">
+
+          <div class="form-group col-md-4">
+           <label> fuel </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="fuel_selection" name="fuel_selection" required>
+               <option value="" disabled selected> --   Choose -- </option>
+               <option value="available"> available </option>
+               <option value="not_available"> not available </option>
+             </select>
+           </div>
+         </div>
+            
+
+           <div class="form-group col-md-4">
+           <label> water </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="water_selection" name="water_selection" required>
+               <option value="" disabled selected> --   Choose   -- </option>
+               <option value="available"> available </option>
+               <option value="not_available"> not available </option>
+             </select>
+           </div>
+         </div>
+
+          <div class="form-group col-md-4">
+           <label> electricity </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="electricity_selection" name="electricity_selection" required>
+               <option value="" disabled selected> --   Choose -- </option>
+               <option value="available"> available </option>
+               <option value="not_available"> not available </option>
+             </select>
+           </div>
+         </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+            <label> Narest City </label>
+            <input type="text" name="nearest_city" class="form-control" placeholder="Enter nearest city" required/>
+            </div>
+
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+            <label> Nearest Market </label>
+            <input type="text" id="nearest_market" name="nearest_market" class="form-control" placeholder="Enter nearest market" required/>
+            </div>
+
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+            <label> Nearest Paved Road </label>
+            <input type="text" id="nearest_paved_road" name="nearest_paved_road" class="form-control" placeholder="Enter nearest paved road" required/>
+            </div>                        
+            
+          </div>
+
+                <h3 for="textAreaRemark">CUSTOMER DATA:  </h3>
+
+
+              <div class="row">
+
+                <div class="col-md-4 form-group">
+                  <input type="text" name="customer_name" class="form-control" placeholder="  NAME " required>
+                </div>
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="customer_email" placeholder=" EMAIL " required>
+                </div>
+
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                    <input type="text" class="form-control" name="customer_job_title" placeholder=" JOB TITLE " required>
+                  </div>
+
+              </div>
+
+              <div class="row">
+
+              <div class="col-md-4 form-group">
+                <lable>   CATEGORY </lable> 
+                <select class="form-control mr-1" name="customer_type_selection" id="customer_type_selection" onchange="select_side();" required>
+                <option value="" disabled selected> --  Choose -- </option>
+                <option value="company"> company </option>
+                <option value="personal"> personal </option>
+                </select>  
+                <input id="company" name="company" type="text" class="form-control" placeholder="Enter company name" style="display: none;" />
+              </div>
+
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+              <lable>     HAVE YOU EVER WORK WITH US </lable> 
+                <select class="form-control mr-1" name="ever_work_with_us" id="ever_work_with_us" onchange="select_wwus();" required>
+                <option value="" disabled selected> --  Choose -- </option>
+                <option value="yes"> YES </option>
+                <option value="no"> NO </option>
+                </select>
+
+               <!-- <input id="wwushide" type="text" class="form-control" placeholder=" workplace  " style="display: none;" /> -->
+               
+              </div>
+
+              <div class="col-md-4 form-group mt-3 mt-md-0">
+              <div class="form-group">
+              <label for="exampleFormControlSelect2">  HOW TO RECOGNIZE US</label>
+             <select multiple class="form-control" id="exampleFormControlSelect2" name="social_media_selection" required>
+                <option value="friend">friend</option>
+                <option value="social">social</option>
+                <option value="tv">tv</option>
+                <option value="radio">radio</option>
+                <option value="ads">ads</option>
+                <option value="other">other</option>
+              </select>
+              </div>
+             </div>
+
+              </div>
+
+              <div class="text-center"><button style="background-color:orange;border-radius:20px;padding:10px;" type="submit" name="Send-form">  Send </button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <?php include 'footer.php'; ?>
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

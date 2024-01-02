@@ -107,6 +107,7 @@
           <li><a class="nav-link scrollto" href="store.php"> Our fleet </a></li>
           <li class="dropdown"><a href="#"><span> Add Request </span>  <i class="bi bi-chevron-down"></i></a>
             <ul>
+              <li><a href="contract_request.php">  Contract Request </a></li>
               <li><a href="rental_request.php"> Rental Request </a></li>
               <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
