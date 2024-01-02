@@ -18,7 +18,7 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="index.php"> Home </a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="index.php#about"> Who we are </a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.php#departments"> Departments </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#departments"> Our services  </a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="index.php#services"> Our field of work </a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="index.php#cleints"> Our Clients</a></li>
             </ul>

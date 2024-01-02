@@ -80,11 +80,11 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about"> About </a></li>
-          <li><a class="nav-link scrollto" href="#departments"> Departments </a></li>
+          <li><a class="nav-link scrollto" href="#departments"> Our services </a></li>
           <li><a class="nav-link scrollto" href="#services">  Our Fields </a></li>
           <li><a class="nav-link scrollto" href="#parenter"> Parenters </a></li>
           <li><a class="nav-link scrollto" href="#cleints"> Clients </a></li>
-          <li><a class="nav-link scrollto" href="store.php"> store </a></li>
+          <li><a class="nav-link scrollto" href="store.php"> Our fleet </a></li>
           <li class="dropdown"><a href="#"><span> Add Request </span>  <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="rental_request.php"> Rental Request </a></li>
@@ -284,7 +284,7 @@
     </section>End Counts Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="departments" class="departments">
+    <!-- <section id="departments" class="departments">
       <div class="container">
 
         <div class="section-title">
@@ -394,9 +394,48 @@ Therefore, we have opened this space to bring together all owners of trailers, f
         </div>
 
       </div>
-    </section><!-- End Services Section -->
+    </section>End Services Section -->
 
       <!-- ======= Departments Section ======= -->
+
+
+      <section id="departments" class="departments">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>  Services  </h2>
+          <p> Equipation Company includes many departments</p>
+        </div>
+
+        <div class="row" style="margin: 5px;">
+
+        <div class="col-lg-4">
+       <a href="details.php?id=contracting"><div class="icon"> <i class="fas fa-clipboard"></i> <b> Contracting  </b> </div></a>
+        </div>
+
+        <div class="col-lg-4">
+        <a href="details.php?id=rental"><div class="icon"> <i class="fas fa-tractor"></i> <b>  Rental </b> </div>
+        </div></a>
+        
+        <div class="col-lg-4">
+        <a href="details.php?id=operations"><div class="icon"> <i class="fab fa-teamspeak"></i> <b> Operations  </b> </div></a>
+        </div>
+        
+        <div class="col-lg-4">
+        <a href="details.php?id=recruitment"><div class="icon"> <i class="fab fa-wpforms"></i> <b> Recruitment  </b> </div></a>
+        </div>
+        
+        <div class="col-lg-4">
+        <a href="details.php?id=maintenance"><div class="icon"> <i class="fas fa-tools"></i> <b>  Maintenance </b> </div></a>
+        </div>
+
+        <div class="col-lg-4">
+        <a href="details.php?id=transportation"><div class="icon"> <i class="fas fa-truck-moving"></i> <b> Transportation  </b> </div></a>
+        </div>
+          
+        </div>
+        </section><!-- End Services Section -->
+
       <section id="services" class="services">
         <div class="container">
   
@@ -553,7 +592,7 @@ Therefore, we have opened this space to bring together all owners of trailers, f
           </div>
   
         </div>
-      </section><!-- End Departments Section -->
+      </section>
 
     <!-- ========== Parenter Section ============-->
     <section id="parenter" class="parenter"> 
@@ -907,7 +946,7 @@ Therefore, we have opened this space to bring together all owners of trailers, f
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#hero"> Home </a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#about"> Who we are </a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#departments"> Departments </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#departments"> Our services </a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#services"> Our field of work </a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#cleints"> Our Clients</a></li>
             </ul>
@@ -962,7 +1001,6 @@ Therefore, we have opened this space to bring together all owners of trailers, f
     </div>
   </footer><!-- End Footer -->
 
-  <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->

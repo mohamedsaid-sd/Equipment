@@ -868,7 +868,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>إيكيوبيشن </h3>
+            <h3>إكوبيشن </h3>
             <p>
              
               <strong>رقم الهاتف:</strong> 249912322447<br>
@@ -881,7 +881,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#hero">الرئيسية</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#about">من نحن</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#departments">الاقسام</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#departments">الخدمات</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#services"> مجالات عملنا </a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#cleints"> عملاءنا</a></li>
             </ul>
@@ -898,7 +898,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>خدماتنا</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="store.php">المنتجات</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="store.php">الاسطول</a></li>
            
             </ul>
           </div>
@@ -936,7 +936,6 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
     </div>
   </footer><!-- End Footer -->
 
-  <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->

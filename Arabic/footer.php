@@ -5,7 +5,7 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>إيكيوبيشن </h3>
+            <h3>إكوبيشن </h3>
             <p>
             
               <strong>رقم الهاتف:</strong> 249912322447<br>
@@ -18,7 +18,7 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="index.php#hero">الرئيسية</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="index.php#about">من نحن</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.php#departments">الاقسام</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#departments">الخدمات</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="index.php#services"> مجالات عملنا </a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="index.php#cleints"> عملاءنا</a></li>
             </ul>
@@ -35,7 +35,7 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>خدماتنا</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.php#doctors">المنتجات</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php#doctors">الاسطول</a></li>
            
             </ul>
           </div>

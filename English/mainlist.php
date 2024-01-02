@@ -15,11 +15,11 @@
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">Home</a></li>
           <li><a class="nav-link scrollto" href="index.php#about"> About </a></li>
-          <li><a class="nav-link scrollto" href="index.php#departments"> Departments </a></li>
+          <li><a class="nav-link scrollto" href="index.php#departments"> Our services  </a></li>
           <li><a class="nav-link scrollto" href="index.php#services"> Our Fields </a></li>
           <li><a class="nav-link scrollto" href="index.php#parenter"> Parenters </a></li>
           <li><a class="nav-link scrollto" href="index.php#cleints"> Clients </a></li>
-          <li><a class="nav-link scrollto" href="store.php"> store </a></li>
+          <li><a class="nav-link scrollto" href="store.php"> Our fleet </a></li>
           <li class="dropdown"><a href="#"><span>  Add Request </span>  <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="rental_request.php">  Rental Request </a></li>
