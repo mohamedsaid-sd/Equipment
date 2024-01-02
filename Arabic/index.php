@@ -46,27 +46,16 @@
     padding: 5px;
     margin: 4px;
   }
-  .icon{
-    margin: 5px;
-    background-color: #fff;
-    padding: 15px;
-    border-radius:1px;
-    color: gray;
-    text-align: center;
-    border-bottom : solid 4px #ddd;
-    font-weight: bold;
-    font-size: 20px;
-  }
   .fas , .fab{
     color: orange;
-    width: 20px;
-    height: 20px;
-    padding: 10px;
     margin: 10px;
   }
   .icon:hover{
     color: #fff;
     background-color: #555;
+  }
+  #cart{
+    padding: 0px;
   }
 </style>
 <body>
@@ -253,27 +242,27 @@
         <div class="row" style="margin: 5px;">
 
         <div class="col-lg-4">
-       <a href="details.php?id=مقاولة"><div class="icon"> <i class="fas fa-clipboard"></i> <b> خدمات المقاولة </b> </div></a>
+       <a href="details.php?id=مقاولة"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-clipboard"></i> <b> خدمات المقاولة </b> </div></a>
         </div>
 
         <div class="col-lg-4">
-        <a href="details.php?id=تاجير"><div class="icon"> <i class="fas fa-tractor"></i> <b> خدمات التاجير </b> </div>
+        <a href="details.php?id=تاجير"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-tractor"></i> <b> خدمات التاجير </b> </div>
         </div></a>
         
         <div class="col-lg-4">
-        <a href="details.php?id=تشغيل"><div class="icon"> <i class="fab fa-teamspeak"></i> <b> خدمات التشغيل </b> </div></a>
+        <a href="details.php?id=تشغيل"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fab fa-teamspeak"></i> <b> خدمات التشغيل </b> </div></a>
         </div>
         
         <div class="col-lg-4">
-        <a href="details.php?id=توظيف"><div class="icon"> <i class="fab fa-wpforms"></i> <b> خدمات التوظيف </b> </div></a>
+        <a href="details.php?id=توظيف"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fab fa-wpforms"></i> <b> خدمات التوظيف </b> </div></a>
         </div>
         
         <div class="col-lg-4">
-        <a href="details.php?id=صيانة"><div class="icon"> <i class="fas fa-tools"></i> <b> خدمات الصيانه </b> </div></a>
+        <a href="details.php?id=صيانة"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-tools"></i> <b> خدمات الصيانه </b> </div></a>
         </div>
 
         <div class="col-lg-4">
-        <a href="details.php?id=ترحيل"><div class="icon"> <i class="fas fa-truck-moving"></i> <b> خدمات الترحيل </b> </div></a>
+        <a href="details.php?id=ترحيل"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-truck-moving"></i> <b> خدمات الترحيل </b> </div></a>
         </div>
           
         </div>

@@ -73,6 +73,10 @@
 		border-radius: 5px;
 	}
 
+  #lest a:hover{
+      color: orange;
+  }
+
 
 </style>
 <body>
@@ -114,7 +118,7 @@
 
   <div class="row">
 
-   <div id="lest" class="col-lg-2">
+   <div id="lest" class="col-lg-3">
    	<div style="margin: 10px;">
   		
   		<a href="details.php?id=contracting"> <i class="fas fa-clipboard"></i> Contracting  </a> 
@@ -129,7 +133,7 @@
 <?php
 if($_GET['id'] == "contracting"){
 ?>
-  <div id="content" class="col-lg-10">
+  <div id="content" class="col-lg-9">
   <img src="assets/img/gallery/gallery-1.jpg">
   		
   <h2> Contracting  </h2>
@@ -148,8 +152,8 @@ this challenge with you.   </p>
 <?php
 } else if($_GET['id'] == "rental"){
 ?>
-  <div id="content" class="col-lg-10">
-  <img src="assets/img/gallery/gallery-2.jpg">
+  <div id="content" class="col-lg-9">
+  <img src="assets/img/gallery/gallery-7.jpg">
   		
   <h2>  Rental </h2>
   <p> EQUIPATION provides equipment rental services, offering a wide range of machinery, tools, and equipment to its customers, where and when they need it. The company works to provide high-quality equipment in a safe and efficient manner, with unparalleled productivity. This is achieved through a highly professional team that is always there to assist you throughout the work stages.
@@ -159,15 +163,15 @@ If you are working in the mining sector, road and bridge construction industry, 
 
 
 </div>
-<div class="col-lg-2">
+<div class="col-lg-3">
 </div>
-<div class="col-lg-10" style="padding: 0px;margin: 0px;">
+<div class="col-lg-9" style="padding: 0px;margin: 0px;">
 <a href="rental_request.php"><div class="btn btn-success" style="width: 100%;padding: 10px;border:none;"><b>     Send a service request + </b></div></a>
 </div>
 <?php
 } if($_GET['id'] == "operations"){
 ?>
-  <div id="content" class="col-lg-10">
+  <div id="content" class="col-lg-9">
   <img src="assets/img/gallery/gallery-3.jpg">
   		
   <h2>  Operations </h2>
@@ -184,17 +188,17 @@ Behind all these efforts stands a management team that monitors all these stages
          
 
 </div>
-<div class="col-lg-2">
+<div class="col-lg-3">
 </div>
-<div class="col-lg-10" style="padding: 0px;margin: 0px;">
+<div class="col-lg-9" style="padding: 0px;margin: 0px;">
 <a href="run_request.php"><div class="btn btn-success" style="width: 100%;padding: 10px;border:none;"><b>     Send a service request + </b></div></a>
 </div>
 <?php
 } else if($_GET['id'] == "recruitment"){
 ?>
 
-<div id="content" class="col-lg-10">
-  <img src="assets/img/gallery/gallery-3.jpg">
+<div id="content" class="col-lg-9">
+  <img src="assets/img/gallery/gallery-5.jpg">
   		
   <h2>  Recruitment </h2>
 
@@ -206,16 +210,16 @@ We have taken on a great challenge, which is to make EQUIPATION the dream of eve
       
 
 </div>
-<div class="col-lg-2">
+<div class="col-lg-3">
 </div>
-<div class="col-lg-10" style="padding: 0px;margin: 0px;">
+<div class="col-lg-9" style="padding: 0px;margin: 0px;">
 <a href="job_request.php"><div class="btn btn-success" style="width: 100%;padding: 10px;border:none;"><b>     Send a service request + </b></div></a>
 </div>
 <?php
 } if($_GET['id'] == "maintenance"){
 ?>	
-<div id="content" class="col-lg-10">
-  <img src="assets/img/gallery/gallery-3.jpg">
+<div id="content" class="col-lg-9">
+  <img src="assets/img/gallery/gallery-6.jpg">
   		
   <h2>  Maintenance </h2>
 
@@ -231,9 +235,9 @@ So, welcome among us. May we and you be aided in achieving our goals and objecti
            
 
 </div>
-<div class="col-lg-2">
+<div class="col-lg-3">
 </div>
-<div class="col-lg-10" style="padding: 0px;margin: 0px;">
+<div class="col-lg-9" style="padding: 0px;margin: 0px;">
 <a href="maintenance_request.php"><div class="btn btn-success" style="width: 100%;padding: 10px;border:none;"><b>     Send a service request + </b></div></a>
 </div>
 <?php
@@ -242,8 +246,8 @@ So, welcome among us. May we and you be aided in achieving our goals and objecti
 
 
 
-<div id="content" class="col-lg-10">
-  <img src="assets/img/gallery/gallery-3.jpg">
+<div id="content" class="col-lg-9">
+  <img src="assets/img/gallery/gallery-8.jpg">
   		
   <h2>  Transportation </h2>
 
@@ -257,9 +261,9 @@ Therefore, we have opened this space to bring together all owners of trailers, f
       
 
 </div>
-<div class="col-lg-2">
+<div class="col-lg-3">
 </div>
-<div class="col-lg-10" style="padding: 0px;margin: 0px;">
+<div class="col-lg-9" style="padding: 0px;margin: 0px;">
 <a href="deportation_request.php"><div class="btn btn-success" style="width: 100%;padding: 10px;border:none;"><b>     Send a service request + </b></div></a>
 </div>
 

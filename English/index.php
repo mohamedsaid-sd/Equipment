@@ -40,7 +40,27 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
-
+<style type="text/css">
+    .col-lg-2{
+    padding: 8px;
+    text-align: center;
+  }
+  .col-lg-2 b{
+    padding: 5px;
+    margin: 4px;
+  }
+  .fas , .fab{
+    color: orange;
+    margin: 10px;
+  }
+  .icon:hover{
+    color: #fff;
+    background-color: #555;
+  }
+  #cart{
+    padding: 0px;
+  }
+</style>
 <body>
 
   <!-- ======= Top Bar ======= -->
@@ -410,27 +430,27 @@ Therefore, we have opened this space to bring together all owners of trailers, f
         <div class="row" style="margin: 5px;">
 
         <div class="col-lg-4">
-       <a href="details.php?id=contracting"><div class="icon"> <i class="fas fa-clipboard"></i> <b> Contracting  </b> </div></a>
+       <a href="details.php?id=contracting"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-clipboard"></i> <b> Contracting  </b> </div></a>
         </div>
 
         <div class="col-lg-4">
-        <a href="details.php?id=rental"><div class="icon"> <i class="fas fa-tractor"></i> <b>  Rental </b> </div>
+        <a href="details.php?id=rental"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-tractor"></i> <b>  Rental </b> </div>
         </div></a>
         
         <div class="col-lg-4">
-        <a href="details.php?id=operations"><div class="icon"> <i class="fab fa-teamspeak"></i> <b> Operations  </b> </div></a>
+        <a href="details.php?id=operations"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fab fa-teamspeak"></i> <b> Operations  </b> </div></a>
         </div>
         
         <div class="col-lg-4">
-        <a href="details.php?id=recruitment"><div class="icon"> <i class="fab fa-wpforms"></i> <b> Recruitment  </b> </div></a>
+        <a href="details.php?id=recruitment"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fab fa-wpforms"></i> <b> Recruitment  </b> </div></a>
         </div>
         
         <div class="col-lg-4">
-        <a href="details.php?id=maintenance"><div class="icon"> <i class="fas fa-tools"></i> <b>  Maintenance </b> </div></a>
+        <a href="details.php?id=maintenance"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-tools"></i> <b>  Maintenance </b> </div></a>
         </div>
 
         <div class="col-lg-4">
-        <a href="details.php?id=transportation"><div class="icon"> <i class="fas fa-truck-moving"></i> <b> Transportation  </b> </div></a>
+        <a href="details.php?id=transportation"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-truck-moving"></i> <b> Transportation  </b> </div></a>
         </div>
           
         </div>

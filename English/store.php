@@ -106,7 +106,7 @@ session_destroy();
       <div class="container">
         <br/>
         <div class="section-title">
-          <h2> Products  </h2>
+          <h2> Our fleet  </h2>
          </div>
       </div>
 

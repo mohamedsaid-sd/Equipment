@@ -48,7 +48,7 @@
            ?>
 
           <a href="cart.php" style='border:none;'>
-          <div class="icon" style='padding: 10px;color:#123;'> <span style='background-color:red;color:#fff;border-radius:50px;padding:6px;margin:5px;'><b> <?php
+          <div id="cart" class="icon" style='padding: 10px;color:#123;'> <span style='background-color:red;color:#fff;border-radius:50px;padding:6px;margin:5px;'><b> <?php
 
           echo sizeof($_SESSION['cart']) / 3 ;
 
@@ -62,7 +62,7 @@
           <a href="#" style='border:none;'>
           <div class="icon" style='padding: 10px;color:#123;'> <span style='background-color:red;color:#fff;border-radius:50px;padding:6px;margin:5px;'><b> <?php
 
-          echo '0' ;
+          echo '09' ;
 
           ?> </b></span> <i style="width:100px;" class="fa fa-shopping-cart"></i></div>
           </a>

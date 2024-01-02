@@ -272,7 +272,7 @@
 
         <div class="section-title">
         <br/>
-          <h2>  إستمارة توظيف  </h2>
+          <h2>  طلب توظيف  </h2>
          </div>
       </div>
 

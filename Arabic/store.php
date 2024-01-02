@@ -10,7 +10,7 @@ session_destroy();
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<title> المنتجات </title>
+	<title> الاسطول </title>
 	<meta content="" name="description">
   	<meta content="" name="keywords">
 
@@ -108,7 +108,7 @@ session_destroy();
       <div class="container">
         <br/>
         <div class="section-title">
-          <h2> ألمنتجات  </h2>
+          <h2> الاسطول  </h2>
          </div>
       </div>
 

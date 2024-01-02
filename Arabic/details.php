@@ -73,6 +73,10 @@
 		border-radius: 5px;
 	}
 
+  #lest a:hover{
+      color: orange;
+  }
+
 
 </style>
 <body>
@@ -103,6 +107,7 @@
   </div>
 
   <?php include 'mainlist.php';  ?>
+  
  <br/><br/><br/>
  <main id="main">
  <section class="contact" style="background-color: #eee;">
@@ -145,7 +150,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 } else if($_GET['id'] == "تاجير"){
 ?>
   <div id="content" class="col-lg-10">
-  <img src="assets/img/gallery/gallery-2.jpg">
+  <img src="assets/img/gallery/gallery-7.jpg">
   		
   <h2> خدمات التاجير </h2>
               <p>هي خدمة تقدمها EQUIPATION وتوفر فيها الآليات والمعدات والأدوات المساعدة، بجميع أنواعها وأحجامها ومهامها، لفترة زمنية محدودة، لتؤدي الغرض منها بكفاءة عالية وطريقة آمنة وبإنتاجية لا مثيل لها، وفريق عمل إحترافي في كافة المراحل.
@@ -193,7 +198,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 ?>
 
 <div id="content" class="col-lg-10">
-  <img src="assets/img/gallery/gallery-3.jpg">
+  <img src="assets/img/gallery/gallery-5.jpg">
   		
   <h2> خدمات التوظيف </h2>
 
@@ -210,7 +215,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 } if($_GET['id'] == "صيانه"){
 ?>	
 <div id="content" class="col-lg-10">
-  <img src="assets/img/gallery/gallery-3.jpg">
+  <img src="assets/img/gallery/gallery-6.jpg">
   		
   <h2> خدمات الصيانه </h2>
 
@@ -230,7 +235,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 
 
 <div id="content" class="col-lg-10">
-  <img src="assets/img/gallery/gallery-3.jpg">
+  <img src="assets/img/gallery/gallery-8.jpg">
   		
   <h2> خدمات الترحيل </h2>
 
