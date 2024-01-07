@@ -325,6 +325,9 @@
               @$study_school = $_POST['study_school'];
               @$university_address = $_POST['university_address'];
 
+              $cv = file_get_contents($_FILES['cv']['tmp_name']);
+              $cv_data = base64_encode($cv);
+
               // INSERT EXPEAR ARRAY
               $exper_array = array();
               $exper_counter = 1 ;
@@ -468,7 +471,7 @@
                   "national" => $national, 
                   "type_national" => $type_national, 
                   "other_national" => $other_national, 
-                  "request_type" => "employment", 
+                  "request_type" => $request_type, 
                   "social_state" => $social_state, 
                   "children" => "no", 
                   "boys" => $boys, 
@@ -513,6 +516,7 @@
                   "recute_date" => "2023-01-01", 
                   "inform" => "Some inform notes.", 
                   "status" => "draft", 
+                  "cv" => $cv_data ,
                   "train_ids" => [
                      [
                         0, 
@@ -620,6 +624,7 @@
       <div class="col-md-4 form-group">
         <label> Profile Image </label>
         <input type="file" name="image"  class="form-control">
+        <label> <b style="color: #a12"> Picture in format JPG , JPEG , PNG </b> </label>
       </div>
 
       <div class="col-md-4 form-group">
@@ -716,42 +721,48 @@
       <h3> Contact Information </h3>
 
        <div class="col-md-4 form-group">
-        <label>   </label>
-        <input type="number" name="mobile" class="form-control" placeholder="Mobile No">
+        <label>  Mobile No </label>
+        <input type="number" name="mobile" class="form-control" placeholder="ex : 249912322447">
       </div>
 
       <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="number" name="phone" class="form-control" placeholder="Mobile No (secondery)">
+      <label> Mobile No (secondery)  </label>
+      <input type="number" name="phone" class="form-control" placeholder="ex : 249912322447">
       </div>
 
       <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="email" name="email" class="form-control" placeholder="Email">
+      <label> Whatsapp no </label>
+      <input type="number" name="whatsapp" class="form-control" placeholder="ex : 249912322447">
       </div>
         
       </div>
 
       <div class="row">
 
+
       <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" name="facebook" class="form-control" placeholder="facebook">
+      <label> "Email  </label>
+      <input type="email" name="email" class="form-control" placeholder="ex : example@gmail.com">
       </div>
 
       <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" name="instagram" class="form-control" placeholder="Instagram">
+      <label> Facebook Account </label>
+      <input type="text" name="facebook" class="form-control" placeholder="https://www.facebook.com/facebook.user">
       </div>
 
       <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" name="twiter" class="form-control" placeholder="Twitter">
+      <label> Instagram Account  </label>
+      <input type="text" name="instagram" class="form-control" placeholder="https://www.instagram.com/instagram.user">
       </div>
 
       <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" name="web" class="form-control" placeholder="P.Website">
+      <label> Twitter Account  </label>
+      <input type="text" name="twiter" class="form-control" placeholder="https://www.twitter.com/twitter.user">
+      </div>
+
+      <div class="col-md-4 form-group">
+      <label> Personal Website  </label>
+      <input type="text" name="web" class="form-control" placeholder="ex: www.website.com">
       </div>
         
       </div>
@@ -881,6 +892,12 @@
       <label>   </label>
       <textarea name="other" class="form-control" placeholder="Notes"></textarea>
       </div>
+
+      <div class="col-md-4 form-group">
+      <label> Attachment ID   </label>
+      <input type="file" name="attach" class="form-control"/>
+      <label> <b style="color: #a12;"> Picture in JPG , JPEG , PNG  </b> </label>
+      </div> 
         
       </div>
 
@@ -1078,7 +1095,26 @@
       
     </div>
 
+        <div class="row">
+
+       <div class="col-md-3 form-group">
+          <label> CV </label>
+              <input type="file" name="cv" class="form-control" placeholder="الجوال"/>
+          <label> <b style="color: #a12;"> add cv if it's found  </b> </label>
+        </div>
+
+        <div class="col-md-3 form-group">
+              <label> Other attachment </label>
+              <input type="file" name="ref_mobile1" class="form-control" placeholder="الجوال"/>
+              <label> <b style="color: #a12;"> add other attachment in PDF format  </b> </label>
+        </div>
+
+    </div>
+  </div>
+    <br/><br/>
+
       <div class="row">
+        <br/><br/>
         <br/><br/>
         <b> By Submiting the  I acknowledge the correctness of the above-mentioned data and assume 
 full responsibility for any error found Also, I have no right to claim this document or the 
