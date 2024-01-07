@@ -190,7 +190,7 @@
                   @$duration = $_POST['duration'];
                   if($duration == "hand")
                     @$duration = $_POST['durationhide'];
-                  @$month_rent = $_POST['month_rent'];
+              //    @$month_rent = $_POST['month_rent'];
                   @$hour_num   = $_POST['hour_num'];
                   @$work_hours = $_POST['work_hours'];
                   if($work_hours == "hand")
@@ -201,9 +201,8 @@
                   $site_g=$_POST['site_g'];$site_g=$_POST['site_g'];$site_h=$_POST['site_h'];
                   $site_i=$_POST['site_i'];
                   $site_j=" اقرب مدينه ".$_POST['site_j'];
-                  $site_k=" اقرب سوق ".$_POST['site_k'];
                   $site_l="اقرب طريق ".$_POST['site_l'];
-                  @$note = $site_a." و ".$site_b." و ".$site_c." و ".$site_d." و ".$site_e." و ".$site_f." و ".$site_g." و ".$site_h." و ".$site_i." و ".$site_j." و ".$site_k." و ".$site_l; 
+                  @$note = $site_a." و ".$site_b." و ".$site_c." و ".$site_d." و ".$site_e." و ".$site_f." و ".$site_g." و ".$site_h." و ".$site_i." و ".$site_j." و ".$site_l; 
                   @$distance = $_POST['distance'];
                   @$state   = $_POST['state'];
                   @$region    = $_POST['region'];
@@ -227,6 +226,18 @@
                      // $previous= $_POST['previoushide'];
                   @$know     = $_POST['know'];
 
+
+
+                  @$nearest_market     = $_POST['nearest_market'];
+                  @$nearest_road     = $_POST['nearest_road'];
+                  @$network     = $_POST['network'];
+                  @$requested_number     = $_POST['requested_number'];
+                  @$notes     = $_POST['notes'];
+                  @$size_machine     = $_POST['size_machine'];
+
+                  @$type_contract     = $_POST['type_contract'];
+
+
                     // echo "Data:".$work_typ."-".$duration."-".$month_rent."-".$hour_num."-".$work_hours."-".$work_date."-".$note."-".$distance."-".$state."-".$site_age."-".$start_date."-".$name."-".$email."-".$job."-".$categ."-".$company."-".$work."-".$know;
 $jayParsedAry = [
   "params" => [
@@ -234,7 +245,7 @@ $jayParsedAry = [
            "vals_list" => [
               "work_typ" => @$work_typ, 
               "duration" => @$duration, 
-              "month_rent" => @$month_rent, 
+              "month_rent" => true, 
               "hour_num" => @$hour_num, 
               "work_hours" => @$work_hours, 
               "work_date" => @$work_date, 
@@ -252,7 +263,17 @@ $jayParsedAry = [
               "know" => @$know, 
               "status" => "draft" ,
               "work_field" => $work_field,
-              "region" => $region
+              "region" => $region,
+              "nearest_market" => $site_l,
+              "nearest_road" =>$site_j,
+              "network" =>$network,
+              "latitude" => "1234",
+              "longitude" => "4321",
+              "other_attachment" =>"",
+              "requested_number" => $requested_number,
+              "type_contract" =>$type_contract,
+              "notes" =>"Additional Notes",
+              "size_machine" => $size_machine
            ] 
         ] 
      ] 
@@ -288,7 +309,7 @@ if(curl_errno($curl)) {
   echo 'Error: ' . curl_error($curl);
 } else {
 
- // echo $response;
+  echo $response;
         // convert response to array
     $array = json_decode(  $response , true );
     // loop the array to fetch item
@@ -322,18 +343,44 @@ curl_close($curl);
 
             <div class="row">
                
-                <div class="col-md-4 form-group">
-                  نوع العمل <br/>
+                <div class="col-md-3 form-group">
+                نوع المعدة:  <br/>
+                
                   <select class="form-control mr-1" name="work_typ" id="work_typ"  required>
-                    <option value="" disabled selected> -- اختار النوع  -- </option>
-                    <option value="bucket"> جردل </option>
-                    <option value="jackhummer"> جاك همر </option>
-                    <option value="both"> جردل + جاك همر </option>
+                    <option value="" disabled selected> -- اختار نوع المعدة  -- </option>
+                    <option value="حفار"> حفار </option>
+                    <option value="لوبد">  لوبد </option>
+                    <option value="لودر">  لودر </option>
+                    <option value="دوزر">  دوزر </option>
+                    <option value="فوركلفت">  فوركلفت </option>
+                    <option value="درداقة">  درداقة </option>
+                    <option value="كرين">  كرين </option>
+                    <option value="تنكر ماء ">  تنكر ماء </option>
+                    <option value="قريدر">  قريدر </option>
+                    <option value=" تانكر جاز">   تانكر جاز </option>
+                    <option value="سطحة">  سطحة </option>
+                    <option value="مولد">  مولد </option>
+                    <option value="ماكينة تخريم">  ماكينة تخريم </option>
+
+
                   </select>
                 </div>
 
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                  مدة العمل <br/>
+
+                <div class="form-group col-md-3">
+        <label>    العدد المطلوب </label>
+         <input type="number" class="form-control" id="inputDate" name="requested_number"  required />
+         
+      </div>
+
+      <div class="form-group col-md-3">
+        <label>     مقاس المعدة </label>
+         <input type="text" class="form-control" id="inputDate" name="size_machine"  required />
+         
+      </div>
+
+                <div class="col-md-3 form-group mt-3 mt-md-0">
+                مدة العمل الكلية <br/>
                   <select class="form-control mr-1" name="duration" id="duration" onchange="select_period();" required>
                     <option value="" disabled selected> --  اختار   -- </option>
                     <option value="month"> شهر </option>
@@ -347,11 +394,11 @@ curl_close($curl);
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                    ساعات العمل <br/>
-                  <select class="form-control mr-1" name="month_rent" id="month_rent" onchange="select_hour();"  required>
-                    <option value="" disabled selected> -- اختار المدة  -- </option>
-                    <option value="true"> ايجار بالشهر </option>
-                    <option value="false"> ايجار بالساعة </option>
+                نوع العقد: <br/>
+                  <select class="form-control mr-1" name="type_contract" id="month_rent" onchange="select_hour();"  required>
+                    <option value="" disabled selected> -- اختار   -- </option>
+                    <option value="عقد بالساعات ">  عقد بالساعات  </option>
+                    <option value="عقد بالإنتاج">  عقد بالإنتاج </option>
                   </select>
 
                   <input id="hour_num" name="hour_num" type="text" class="form-control" placeholder=" ادخل عدد  الساعات " style="display: none;">
@@ -391,17 +438,42 @@ curl_close($curl);
 
       <div class="row">
         <div class="col-md-4 form-group">
-           مكان العمل <br/>
-          <input type="text" id="state" name="state" class="form-control" id="location" placeholder="   الولاية "  required>
+
+
+          <label>    الولايه </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="state_id" name="state_id" required>
+               <option value="" disabled selected> -- حدد  الولايه -- </option>
+               <option value="ولاية الخرطوم">ولاية الخرطوم </option>
+               <option value="ولاية الجزيرة">ولاية الجزيرة</option>
+               <option value="ولاية البحر الأحمر">ولاية البحر الأحمر </option>
+               <option value="ولاية كسلا">ولاية كسلا </option>
+               <option value="ولاية القضارف">ولاية القضارف </option>
+               <option value="ولاية سنار">ولاية سنار </option>
+               <option value="ولاية النيل الأبيض">ولاية النيل الأبيض </option>
+               <option value="ولاية النيل الأزرق">ولاية النيل الأزرق </option>
+               <option value="الولاية الشمالية">الولاية الشمالية </option>
+               <option value="ولاية نهر النيل">ولاية نهر النيل </option>
+               <option value="ولاية غرب كردفان">ولاية غرب كردفان </option>
+               <option value="ولاية جنوب كردفان">ولاية جنوب كردفان </option>
+               <option value="ولاية شمال دارفور">ولاية شمال دارفور </option>
+               <option value="ولاية غرب دارفور">ولاية غرب دارفور </option>
+               <option value="ولاية جنوب دارفور">ولاية جنوب دارفور </option>
+               <option value="ولاية شرق دارفور">ولاية شرق دارفور </option>
+               <option value="ولاية وسط دارفور">ولاية وسط دارفور </option>
+
+
+             </select>
+           </div>
         </div>
         <div class="col-md-4 form-group mt-3 mt-md-0">
           <br/>
-          <input type="text" class="form-control" name="region" id="region" placeholder="   المنطقة "  required>
+          <input type="text" class="form-control" name="region" id="region" placeholder="   ادخل اقرب مدينة" "  required>
         </div>
 
         <div class="form-group col-md-4">
           <br/>
-            <input type="text" class="form-control" name="distance" id="distance" placeholder="   اقرب سوق "  required>
+            <input type="text" class="form-control" name="distance" id="distance" placeholder="     مسافة أقرب طريق معبَّد  "  required>
           </div>
       </div>
 
@@ -418,6 +490,19 @@ curl_close($curl);
                   </select>
 
                   <input id="work_fieldhide" name="work_fieldhide" type="text" class="form-control" placeholder=" ادخل مجال العمل  يدويا " style="display: none;">
+          </div>
+
+          <div class="col-md-4 form-group mt-3 mt-md-0">
+              <label>  توفر الشبكة </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="network" required>
+               <option value="" disabled selected> -- حدد نوع الشبكة -- </option>
+               <option value="متاح"> متاح  </option>
+               <option value="غير متاح"> غير متاح</option>
+             </select>
+           
+           </div>
+
           </div>
 
          <div class="form-group col-md-4">
@@ -559,10 +644,7 @@ curl_close($curl);
             <input type="text" name="site_j" class="form-control" placeholder="ادخل اقرب مدينة"  required/>
             </div>
 
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-            <label> اقرب سوق </label>
-            <input type="text" name="site_k" class="form-control" placeholder="ادخل اقرب سوق" required/>
-            </div>
+           
 
             <div class="col-md-4 form-group mt-3 mt-md-0">
             <label> اقرب طريق معبد </label>
@@ -579,15 +661,35 @@ curl_close($curl);
               <div class="row">
 
                 <div class="col-md-4 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="  الاسم "  required>
+                <input type="text" name="name" class="form-control" id="name" placeholder="   الاسم  ثلاثي" required>
                 </div>
+
+                <div class="col-md-3 form-group">
+                  <input type="text" name="phone" class="form-control" id="phone" placeholder="   رقم الهاتف  مثال 00249123000000" required>
+                </div>
+
+                <div class="col-md-3 form-group">
+                  <input type="text" name="whats" class="form-control" id="phone" placeholder="    رقم الواتساب  مثال 00249123000000" required>
+                </div>
+
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                   <input type="text" class="form-control" name="email" id="email" placeholder=" الايميل " required >
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="job" id="job" placeholder=" الوظيفة " required >
-                  </div>
+  <lable>   نوع العلاقه بالموقع </lable> 
+                <select class="form-control mr-1" name="job" id="job" onchange="" required>
+                <option value="" disabled selected> -- اختار الجهه -- </option>
+                <option value="مالك"> مالك   </option>
+                <option value="شريك"> شريك </option>
+                <option value="مدير"> مدير </option>
+                <option value="موظف"> موظف </option>
+                <option value="مشرف"> مشرف </option>
+                <option value="وكيل"> وكيل </option>
+                <option value="وسيط"> وسيط </option>
+
+                </select> 
+                                </div>
 
               </div>
 
@@ -621,7 +723,7 @@ curl_close($curl);
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <div class="form-group">
               <label for="exampleFormControlSelect2">طريقة التعرف علينا</label>
-              <select multiple class="form-control" id="exampleFormControlSelect2" name="know">
+              <select  class="form-control" id="exampleFormControlSelect2" name="know">
                 <option value="friend"> عن طريق صديق </option>
                 <option value="social"> وسائل التواصل </option>
                 <option value="tv"> التلفزيون </option>

@@ -146,6 +146,13 @@
  $site_nature=$_POST['site_nature'];
  $work_for=$_POST['work_for'];
  //$work_hour=$_POST['work_hour'];
+ $engine=$_POST['engine'];
+
+ $issue_description=$_POST['issue_description'];
+ 
+ $fleet_operating_type=$_POST['fleet_operating_type'];
+ $state_id=$_POST['state_id'];
+
 
 
       //  echo $Nearest_market."-".$chassis."-".$know."-".$company_name."-".$email;
@@ -162,7 +169,7 @@ $jayParsedAry = [
               "company_name" => $company_name, 
               "date" => $date, 
               "email" => $email, 
-              "engine" => "EN12345", 
+              "engine" =>  $engine, 
               "job" =>$job , 
               "km_read" => $km_read, 
               "know" => $know, 
@@ -176,7 +183,18 @@ $jayParsedAry = [
               "request_no" => 1, 
               "site_location" => $site_location, 
               "site_nature" =>  $site_nature,
-              "work_for" => $work_for           ] 
+              "work_for" => $work_for ,
+              "nearest_road"=> "North Road",
+              "latitude"=>"1234",
+              "longitude"=>"5432",
+              "issue_description"=> $issue_description,
+              "fleet_operating_type"=> $fleet_operating_type,
+              "other_attachment"=> "",
+              "state_id"=>$state_id
+                
+              
+              
+              ] 
         ] 
      ] 
 ]; 
@@ -256,6 +274,10 @@ curl_close($curl);
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <input type="text" class="form-control" name="engine" id="engine" placeholder=" Engine serial number   " required>
+                </div>
+
+                <div class="col-md-4 form-group mt-3 mt-md-0">
                     <input type="text" class="form-control" name="chassis" id="Sashinumber" placeholder=" Chaassis number  " required>
                   </div>
 
@@ -265,7 +287,7 @@ curl_close($curl);
 
      <div class="form-group col-md-4">
             <br/>
-            <input type="text" class="form-control" name="km_read" id="time" placeholder=" daily working hours " required>
+            <input type="text" class="form-control" name="km_read" id="time" placeholder=" km_read   " required>
       </div>
 
       <div class="form-group col-md-4">
@@ -303,10 +325,27 @@ curl_close($curl);
             <label for="inputDate"> Date of manufacture</label>
             <input type="date"  class="form-control" id="inputDate" name="manufacturing_year" required />
           </div>
+
+
+
+          <div class="form-group col-md-4">
+        <label>   The nature of the mechanism's work </label>
+        <div class="d-flex flex-row justify-content-between align-items-center">
+          <select class="form-control mr-1" id="fleet_operating_type" name="fleet_operating_type" required>
+            <option value="" disabled selected> -- Choose   -- </option>
+            <option value=" Bucket"> Bucket</option>
+            <option value=" Jack Hammer"> Jack Hammer</option>
+
+
+          </select>
+        
+        </div>
+      </div>
+
       </div>
 
       <div class="form-group mt-3">
-        <textarea class="form-control" name="message" rows="5" placeholder=" Discription of the problem " required></textarea>
+        <textarea class="form-control" name="issue_description" rows="5" placeholder=" Discription of the problem " required></textarea>
       </div>
       <br/>
       <h3 for="textAreaRemark"> Site data :  </h3>
@@ -316,6 +355,35 @@ curl_close($curl);
             <br/>
             <input type="text" class="form-control" name="site_location" id="Counter" placeholder=" Last job site " required>
           </div>
+
+          <div class="form-group col-md-4">
+           <label>  states  </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="state_id" name="state_id" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option value="Khartoum"> Khartoum </option>
+               <option value=" North Kordofan"> North Kordofan </option>
+               <option value="Northern"> Northern </option>
+               <option value="Kassala"> Kassala </option>
+               <option value="Blue Nile"> Blue Nile </option>
+               <option value="North Darfur "> North Darfur  </option>
+               <option value="South Darfur "> South Darfur  </option>
+               <option value="South Kordofan "> South Kordofan  </option>
+               <option value="Gezira"> Gezira </option>
+               <option value="White Nile "> White Nile  </option>
+               <option value="River Nile "> River Nile  </option>
+               <option value="Red Sea"> Red Sea </option>
+               <option value="Al Qadarif "> Al Qadarif  </option>
+               <option value="Sennar"> Sennar </option>
+               <option value="West Darfur "> West Darfur  </option>
+               <option value="Central Darfur "> Central Darfur  </option>
+               <option value="East Darfur "> East Darfur  </option>
+               <option value="West Kordofan"> West Kordofan </option>
+             </select>
+           </div>
+         </div>
+
+
         <div class="form-group col-md-4">
            <label>  The nature of the site </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
@@ -367,12 +435,27 @@ curl_close($curl);
                 <div class="col-md-3 form-group">
                   <input type="text" name="phone" class="form-control"  placeholder="  phone " required>
                 </div>
+
+                <div class="col-md-3 form-group">
+                  <input type="text" name="phone" class="form-control"  placeholder=" whats phone " required>
+                </div>
                 <div class="col-md-3 form-group mt-3 mt-md-0">
                   <input type="text" class="form-control" name="email" id="email" placeholder=" Customer Email " required>
                 </div>
 
                 <div class="col-md-3 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="job" id="job" placeholder=" Customer job " required>
+                <lable>     Type of relationship to the site </lable> 
+                <select class="form-control mr-1" name="job" id="job" onchange="" required>
+                <option value="" disabled selected> --  Choose -- </option>
+                <option value="Owner"> Owner   </option>
+                <option value="Partner"> Partner </option>
+                <option value="Manager"> Manager </option>
+                <option value="Employee"> Employee </option>
+                <option value="Moderator"> Moderator </option>
+                <option value="agent"> agent </option>
+                <option value="broker"> broker </option>
+
+                </select> 
                   </div>
 
               </div>
