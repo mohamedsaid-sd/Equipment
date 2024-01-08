@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>  Rental Request  </title>
+  <title>  Contract Request  </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -211,90 +211,104 @@
   $company =  $_POST['company'];
 
   
-  echo "Data".$work_type_id.$work_duration_id.$mobilization_row_distance.$mobilization_waste_distance.$total_ton.$daily_ton.$daily_work_hours_id.$expected_beginning_of_work.$state.$region.$distance_from_nearest.$work_field_id.$living_selection.$subsistence_selection.$internet_selection.$communication_selection.$workshop_selection.$compressor_selection.$fuel_selection.$water_selection.$electricity_selection.$nearest_city.$nearest_market.$nearest_paved_road.$site_age.$customer_name.$customer_email.$customer_job_title.$customer_type_selection.$ever_work_with_us.$social_media_selection.$friend.$company;
+  // echo "Data".$work_type_id.$work_duration_id.$mobilization_row_distance.$mobilization_waste_distance.$total_ton.$daily_ton.$daily_work_hours_id.$expected_beginning_of_work.$state.$region.$distance_from_nearest.$work_field_id.$living_selection.$subsistence_selection.$internet_selection.$communication_selection.$workshop_selection.$compressor_selection.$fuel_selection.$water_selection.$electricity_selection.$nearest_city.$nearest_market.$nearest_paved_road.$site_age.$customer_name.$customer_email.$customer_job_title.$customer_type_selection.$ever_work_with_us.$social_media_selection.$friend.$company;
 
 
-// $jayParsedAry = [
-//   "params" => [
-//         "args" => [
-//            "vals_list" => [
-//               "work_typ" => @$work_typ, 
-//               "duration" => @$duration, 
-//               "month_rent" => @$month_rent, 
-//               "hour_num" => @$hour_num, 
-//               "work_hours" => @$work_hours, 
-//               "work_date" => @$work_date, 
-//               "note" => @$note, 
-//               "distance" => @$distance, 
-//               "state" => @$state, 
-//               "site_age" => @$site_age, 
-//               "start_date" => @$start_date, 
-//               "name" => @$name, 
-//               "email" => @$email, 
-//               "job" => @$job, 
-//               "categ" => @$categ, 
-//               "company" => @$company, 
-//               "work" => @$work, 
-//               "know" => @$know, 
-//               "status" => "draft" ,
-//               "work_field" => $work_field,
-//               "region" => $region
-//            ] 
-//         ] 
-//      ] 
-// ]; 
-// $done=json_encode($jayParsedAry);
-// //echo $done;
-// $curl = curl_init();
+$jayParsedAry = [
+  "params" => [
+        "args" => [
+           "vals_list" => [
+            "work_type_id" => $work_type_id, 
+            "work_duration_id" => $work_duration_id, 
+            "mobilization_row_distance" => $mobilization_row_distance, 
+            "mobilization_waste_distance" => $mobilization_waste_distance, 
+            "total_ton" => $total_ton, 
+            "daily_ton" => $daily_ton, 
+            "daily_work_hours_id" => $daily_work_hours_id, 
+            "expected_beginning_of_work" => $expected_beginning_of_work, 
+            "state" => $state, 
+            "region" => $region, 
+            "distance_from_nearest" => $distance_from_nearest, 
+            "work_field_id" => $work_field_id, 
+            "living_selection" => $living_selection, 
+            "subsistence_selection" => $subsistence_selection, 
+            "internet_selection" => $internet_selection, 
+            "communication_selection" =>$communication_selection, 
+            "workshop_selection" => $workshop_selection, 
+            "compressor_selection" => $compressor_selection, 
+            "fuel_selection" => $fuel_selection, 
+            "water_selection" => $water_selection, 
+            "electricity_selection" => $electricity_selection, 
+            "nearest_city" => $nearest_city, 
+            "nearest_market" => $nearest_market, 
+            "nearest_paved_road" => $nearest_paved_road, 
+            "site_age" => $site_age, 
+            "customer_name" => $customer_name, 
+            "customer_email" => $customer_email, 
+            "customer_job_title" => $customer_job_title, 
+            "customer_type_selection" => $customer_type_selection, 
+            "ever_work_with_us" => $ever_work_with_us ,
+            "social_media_selection" => $social_media_selection, 
+            "friend" => $friend, 
+            "company" => $company, 
+            "other" => "Some other information", 
+            "status" => "draft" 
+           ] 
+        ] 
+     ] 
+]; 
+$done=json_encode($jayParsedAry);
+//echo $done;
+$curl = curl_init();
 
-// curl_setopt_array($curl, array(
-//   CURLOPT_URL => 'https://equipation-equipation-odoo-com-stage-10590858.dev.odoo.com/apiV2/rental.request/create',
-//   CURLOPT_SSL_VERIFYHOST => 0 ,
-//   CURLOPT_SSL_VERIFYPEER => 0 ,
-//   CURLOPT_RETURNTRANSFER => true,
-//   CURLOPT_ENCODING => '',
-//   CURLOPT_MAXREDIRS => 10,
-//   CURLOPT_TIMEOUT => 0,
-//   CURLOPT_FOLLOWLOCATION => true,
-//   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-//   CURLOPT_CUSTOMREQUEST => 'POST',
-//   CURLOPT_POSTFIELDS =>$done,
-//   CURLOPT_HTTPHEADER => array(
-//     'Content-Type: application/json',
-//     'X-Openerp-Session-Id: {{session_id}}',
-//     'Cookie: session_id=a1fd8b1c0a71abde4e289ac7f5212eee0e8cc5e7'
-//   ),
-// ));
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://equipation-equipation-odoo-com-stage-10590858.dev.odoo.com/apiV2/rental.request/create',
+  CURLOPT_SSL_VERIFYHOST => 0 ,
+  CURLOPT_SSL_VERIFYPEER => 0 ,
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>$done,
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json',
+    'X-Openerp-Session-Id: {{session_id}}',
+    'Cookie: session_id=a1fd8b1c0a71abde4e289ac7f5212eee0e8cc5e7'
+  ),
+));
 
-//  $response = curl_exec($curl);
+ $response = curl_exec($curl);
 
 
 
-// if(curl_errno($curl)) {
-//   echo 'Error: ' . curl_error($curl);
-// } else {
+if(curl_errno($curl)) {
+  echo 'Error: ' . curl_error($curl);
+} else {
 
-//   //echo $response;
-//         // convert response to array
-//     $array = json_decode(  $response , true );
-//     // loop the array to fetch item
-//     foreach ($array as $key => $value) {
-//        // echo $key."".$value;
-//         if($key == "msg" )
-//           if($value == "Success")
-//                 // success add form alert ...
-//                         echo "<div class='alert alert-success'>
-//                         <span class='icon'> <i class='fa fa-check-circle'></i></span>
-//                          <b> The request has been sent successfully , we at Equipation company are always happy to receive your requests at all times , Equipation company employee will respond to you as soon as possible via the phone number or email sent in the request , Thank you for your Understanding  </b> </div>";
-//             else
-//               echo "<div class='alert alert-danger'>
-//                         <span class='icon'> <i class='fa fa-cancel'></i></span>
-//                          <b> Erorr in sending Request </b> </div>";
-//     }
-//   // echo gettype($x);
-//   // echo "R".$x;
-// }
-// curl_close($curl);
+  //echo $response;
+        // convert response to array
+    $array = json_decode(  $response , true );
+    // loop the array to fetch item
+    foreach ($array as $key => $value) {
+       // echo $key."".$value;
+        if($key == "msg" )
+          if($value == "Success")
+                // success add form alert ...
+                        echo "<div class='alert alert-success'>
+                        <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                         <b> The request has been sent successfully , we at Equipation company are always happy to receive your requests at all times , Equipation company employee will respond to you as soon as possible via the phone number or email sent in the request , Thank you for your Understanding  </b> </div>";
+            else
+              echo "<div class='alert alert-danger'>
+                        <span class='icon'> <i class='fa fa-cancel'></i></span>
+                         <b> Erorr in sending Request </b> </div>";
+    }
+  // echo gettype($x);
+  // echo "R".$x;
+}
+curl_close($curl);
                  }
                   ?>
 
@@ -373,18 +387,51 @@
 
 
       <div class="row">
-        <div class="col-md-4 form-group">
-        WORK LOCATION <br/>
-          <input type="text" id="state" name="state" class="form-control" placeholder="state" required>
-        </div>
-        <div class="col-md-4 form-group mt-3 mt-md-0">
-          <br/>
-          <input type="text" class="form-control" name="region" id="region" placeholder="Region" required>
-        </div>
+      
+        <div class="form-group col-md-4">
+           <label>  states  </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="state" name="state" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option value="Khartoum"> Khartoum </option>
+               <option value=" North Kordofan"> North Kordofan </option>
+               <option value="Northern"> Northern </option>
+               <option value="Kassala"> Kassala </option>
+               <option value="Blue Nile"> Blue Nile </option>
+               <option value="North Darfur "> North Darfur  </option>
+               <option value="South Darfur "> South Darfur  </option>
+               <option value="South Kordofan "> South Kordofan  </option>
+               <option value="Gezira"> Gezira </option>
+               <option value="White Nile "> White Nile  </option>
+               <option value="River Nile "> River Nile  </option>
+               <option value="Red Sea"> Red Sea </option>
+               <option value="Al Qadarif "> Al Qadarif  </option>
+               <option value="Sennar"> Sennar </option>
+               <option value="West Darfur "> West Darfur  </option>
+               <option value="Central Darfur "> Central Darfur  </option>
+               <option value="East Darfur "> East Darfur  </option>
+               <option value="West Kordofan"> West Kordofan </option>
+             </select>
+           </div>
+         </div>
+
+
+          <div class="form-group col-md-4">
+           <label>  The nature of the site </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="region" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option value="Mountains"> Mountains </option>
+               <option value=" Wells"> Wells </option>
+               <option value="Farm"> Farm </option>
+               <option value="Mine"> Mine </option>
+               <option value="Open sites"> Open sites </option>
+             </select>
+           </div>
+         </div>
 
         <div class="form-group col-md-4">
-          <br/>
-       <input type="text" class="form-control" name="distance_from_nearest" id="distance_from_nearest" placeholder=" distance from nearest market " required>
+       <input type="text" class="form-control" name="distance_from_nearest" id="distance_from_nearest" placeholder=" Nearest city  " required>
           </div>
       </div>
 
@@ -555,40 +602,66 @@
 
                 <h3 for="textAreaRemark">CUSTOMER DATA:  </h3>
 
-
               <div class="row">
 
                 <div class="col-md-4 form-group">
-                  <input type="text" name="customer_name" class="form-control" placeholder="  NAME " required>
-                </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="customer_email" placeholder=" EMAIL " required>
+                  <label></label>
+                  <input type="text" name="customer_name" class="form-control" placeholder=" Full name " required>
                 </div>
 
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="customer_job_title" placeholder=" JOB TITLE " required>
-                  </div>
+
+                <div class="col-md-4 form-group">
+                  <label style="color: red"> *no api </label>
+                  <input type="text" name="phone" class="form-control" id="phone" placeholder="  phone number ex: 00249123000000" required>
+                </div>
+
+                <div class="col-md-4 form-group">
+                  <label style="color: red"> *no api </label>
+                  <input type="text" name="whatsapp_num" class="form-control" id="phone" placeholder="Whatsapp number ex: 00249123000000" required>
+                </div>
 
               </div>
 
               <div class="row">
 
-              <div class="col-md-4 form-group">
-                <lable>   CATEGORY </lable> 
-                <select class="form-control mr-1" name="customer_type_selection" id="customer_type_selection" onchange="select_side();" required>
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <label></label>
+                  <input type="email" class="form-control" name="customer_email" placeholder=" Email " required>
+                </div>
+
+
+              <div class="col-md-4 form- mt-4 mt-md-0">
+              <lable>   Type of relationship to the site </lable> 
+                <select class="form-control mr-1" name="customer_job_title" id="job" onchange="" required>
                 <option value="" disabled selected> --  Choose -- </option>
-                <option value="company"> company </option>
-                <option value="personal"> personal </option>
-                </select>  
-                <input id="company" name="company" type="text" class="form-control" placeholder="Enter company name" style="display: none;" />
+                <option value="Owner"> Owner   </option>
+                <option value="Partner"> Partner </option>
+                <option value="Manager"> Manager </option>
+                <option value="Employee"> Employee </option>
+                <option value="Moderator"> Moderator </option>
+                <option value="agent"> agent </option>
+                <option value="broker"> broker </option>       
+                </select>
               </div>
 
+              <div class="col-md-4 form-group">
+                <lable>  Your side is </lable> 
+                <select class="form-control mr-1" name="customer_type_selection" id="customer_type_selection" onchange="select_side();" required>
+                <option value="" disabled selected> -- Choose -- </option>
+                <option value="company"> Company </option>
+                <option value="individual"> Individual </option>
+                </select>  
+                <input id="company" name="company" type="text" class="form-control" placeholder="ادخل اسم الشركة" style="display: none;" />
+              </div>
+
+    
+
               <div class="col-md-4 form-group mt-3 mt-md-0">
-              <lable>     HAVE YOU EVER WORK WITH US </lable> 
+              <lable> Have you over worked with us : </lable>
                 <select class="form-control mr-1" name="ever_work_with_us" id="ever_work_with_us" onchange="select_wwus();" required>
-                <option value="" disabled selected> --  Choose -- </option>
-                <option value="yes"> YES </option>
-                <option value="no"> NO </option>
+                <option value="" disabled selected> -- Choose -- </option>
+                <option value="yes"> Yes </option>
+                <option value="no"> No </option>
                 </select>
 
                <!-- <input id="wwushide" type="text" class="form-control" placeholder=" workplace  " style="display: none;" /> -->
@@ -597,14 +670,14 @@
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <div class="form-group">
-              <label for="exampleFormControlSelect2">  HOW TO RECOGNIZE US</label>
+              <label for="exampleFormControlSelect2"> How to know us : </label>
              <select multiple class="form-control" id="exampleFormControlSelect2" name="social_media_selection" required>
-                <option value="friend">friend</option>
-                <option value="social">social</option>
-                <option value="tv">tv</option>
-                <option value="radio">radio</option>
-                <option value="ads">ads</option>
-                <option value="other">other</option>
+                <option value="friend"> Friend </option>
+                <option value="social"> Social </option>
+                <option value="tv"> TV </option>
+                <option value="radio"> Radio </option>
+                <option value="ads"> ADS </option>
+                <option value="other"> Other </option>
               </select>
               </div>
              </div>
