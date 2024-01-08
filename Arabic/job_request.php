@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title> طلب توظيف  </title>
+  <title> طلب التوظيف  </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -272,7 +272,7 @@
 
         <div class="section-title">
         <br/>
-          <h2>  طلب توظيف  </h2>
+          <h2>  طلب التوظيف  </h2>
          </div>
       </div>
 
@@ -334,6 +334,22 @@
               @$education_level = $_POST['education_level'];
               @$whatsapp_num = $_POST['whatsapp_num'];
 
+              @$restruction = $_POST['restruction'];
+              @$info = $_POST['info'];
+              @$related = $_POST['related'];
+              @$excepted = $_POST['excepted'];
+              @$employment_type = $_POST['employment_type'];
+              @$complain = $_POST['complain'];
+
+
+
+              
+              
+
+              
+
+              
+              
               // Posst the files 
 
               // Personal Image 
@@ -538,15 +554,16 @@
                   "details" => "Some more notes.", 
                   "training" => "Advanced Johnology", 
                   "know" => "tv", 
-                  "related" => "no", 
-                  "employment_type" => "full", 
-                  "excepted" => 50000, 
-                  "restruction" => "None.", 
-                  "info" => "Some info notes.", 
+                  "related" => $related, 
+                  "employment_type" => $employment_type, 
+                  "excepted" => $excepted, 
+                  "restruction" => $restruction, 
+                  "info" => $info, 
                   "sign" => "", 
                   "recute_date" => "2023-01-01", 
                   "inform" => "Some inform notes.", 
                   "status" => "draft", 
+                  "complain" => $complain , 
                   "cv" => $cv_data , 
                   "image" => $image ,
                   "whatsapp_num" => $whatsapp_num ,
@@ -1166,20 +1183,24 @@
       <div class="col-md-4 form-group">
       <label> كيف تعرفت على شركة إيكيوبيشن ؟ </label>
      <br/>
-      <input type="checkbox">صديق<br/>
-      <input type="checkbox">اعلان مطبوع<br/>
-      <input type="checkbox">سوشيال ميديا<br/>
-      <input type="checkbox">إذاعة<br/>
-      <input type="checkbox">تيليفزيون<br/>
+      <select  class="form-control" name="know" id="exampleFormControlSelect2">
+
+          <option value="media"> الفيسبوك </option>
+                <option value="social"> وسائل التواصل الاجتماعي </option>
+                <option value="tv"> التلفزيون </option>
+                <option value="friend"> عن طريق صديق </option>
+                <option value="ads"> عن طريق الاعلانات  </option>
+                <option value="other">  اخري  </option>
+              </select>
      </div>
 
       <div class="col-md-4 form-group">
       <label> هل لديك شريك او صديق يعمل بالشركة ؟ </label>
      <br/>
-    <select class="form-control">
+    <select class="form-control"   name="related">
       <option> -- إختار -- </option>
-      <option> نعم </option>
-      <option> لا </option>
+      <option value="yes" > نعم </option>
+      <option value="no"> لا </option>
     </select>
     <input type="text" class="form-control" placeholder="اذكره">
      </div>
@@ -1187,16 +1208,18 @@
     <div class="col-md-4 form-group">
       <label> ما نوع التوظيف الذى ترغب بالإلتحاق به ضمن فريق إيكيوبيشن ؟ </label>
      <br/>
-    <select class="form-control">
+    <select class="form-control" name="employment_type">
       <option> -- إختار -- </option>
-      <option> دائم </option>
-      <option> بارت تايم </option>
-      <option> مؤقت(موسم) </option>
+      <option  value="full" > دائم </option>
+      <option  value="part" > بارت تايم </option>
+      <option  value="temp" > مؤقت(موسم) </option>
+      <option  value="training" > تدريب</option>
+
     </select>
 
     <br/>
     <label> ما الراتب المتوقع ؟ </label>
-    <input type="number" class="form-control" placeholder="ادخل الراتب المتوقع">
+    <input type="number"  name="excepted" class="form-control" placeholder="ادخل الراتب المتوقع">
 
      </div>
 
@@ -1208,17 +1231,17 @@
 
      <div class="col-md-4 form-group">
     <label>ما هى المشاكل او الهواجس التي ستمنعك من الإستمرار ضمن فريق إيكيوبيشن ؟</label>
-    <textarea class="form-control" placeholder="الجواب"></textarea>
+    <textarea class="form-control" name="complain" placeholder="الجواب"></textarea>
     </div>
 
     <div class="col-md-4 form-group">
     <label> هل لديك إضافة او ملاحظة تريد أن تقدمها لشركة ايكيوبيشن ؟</label>
-    <textarea class="form-control" placeholder="الجواب"></textarea>
+    <textarea class="form-control"  name="info" placeholder="الجواب"></textarea>
     </div>
 
     <div class="col-md-4 form-group">
     <label>هل لديك مانع بالعمل في فروع ايكيوبيشن خارج الخرطوم او السودان ؟</label>
-    <textarea class="form-control" placeholder="الجواب"></textarea>
+    <textarea class="form-control" name="restruction"  placeholder="الجواب"></textarea>
     </div>
       
     </div>
