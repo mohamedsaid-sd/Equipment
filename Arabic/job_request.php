@@ -332,6 +332,9 @@
               @$study_school = $_POST['study_school'];
               @$university_address = $_POST['university_address'];
 
+              @$cv = file_get_contents($_FILES['cv']['tmp_name']);
+              @$cv_data = base64_encode($cv);
+
               // INSERT EXPEAR ARRAY
               $exper_array = array();
               $exper_counter = 1 ;
@@ -468,6 +471,7 @@
             "vals_list" => [
                [
                   "name" => $full_name, 
+                  "image" => $image_data,
                   "birthdate" => $birthdate, 
                   "place" => $place, 
                   "home" => $home, 
@@ -475,7 +479,7 @@
                   "national" => $national, 
                   "type_national" => $type_national, 
                   "other_national" => $other_national, 
-                  "request_type" => "employment", 
+                  "request_type" => $request_type, 
                   "social_state" => $social_state, 
                   "children" => "no", 
                   "boys" => $boys, 
@@ -520,6 +524,7 @@
                   "recute_date" => "2023-01-01", 
                   "inform" => "Some inform notes.", 
                   "status" => "draft", 
+                  "cv" => $cv_data , 
                   "train_ids" => [
                      [
                         0, 
@@ -629,6 +634,7 @@
       <div class="col-md-4 form-group">
         <label> الصورة الشخصية </label>
         <input type="file" name="image" class="form-control">
+         <label> <b style="color: #a12;"> نوع الصورة يجب ان يكون JPG , JPEG  </b> </label>
       </div>
 
       <div class="col-md-4 form-group">
@@ -695,7 +701,7 @@
         <label> الحاله الإجتماعية  </label>
         <select name="social_state" class="form-control">
           <option selected disabled> -- اختار -- </option>
-          <option value="single"> اعذب </option>
+          <option value="single"> اعزب </option>
           <option value="married"> متزوج </option>
           <option value="cohabitant"> مرتبط </option>
           <option value="divorced"> مطلق </option>
@@ -721,18 +727,18 @@
       <h3> معلومات التواصل </h3>
 
        <div class="col-md-4 form-group">
-        <label>   </label>
-        <input type="number" name="mobile" class="form-control" placeholder="رقم الهاتف">
+        <label> رقم الهاتف  </label>
+        <input type="number" name="mobile" class="form-control" placeholder="ex : 249912322447">
       </div>
 
       <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="number" name="phone" class="form-control" placeholder="رقم هاتف آخر">
+      <label> رقم هاتف آخر </label>
+      <input type="number" name="phone" class="form-control" placeholder="ex : 249912322447">
       </div>
 
       <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="email" name="email" class="form-control" placeholder="البريد الإلكترونى">
+      <label> رقم الواتساب </label>
+      <input type="number" name="whatsapp" class="form-control" placeholder="ex : 249912322447">
       </div>
         
       </div>
@@ -740,23 +746,28 @@
       <div class="row">
 
       <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" name="facebook" class="form-control" placeholder="حساب الفيسبوك">
+      <label> البريد الإلكتروني  </label>
+      <input type="email" name="email" class="form-control" placeholder="ex : example@gmail.com">
       </div>
 
       <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" name="instagram" class="form-control" placeholder="حساب الإنستقرام">
+      <label> حساب الفيسبوك  </label>
+      <input type="text" name="facebook" class="form-control" placeholder="https://www.facebook.com/facebook.user">
       </div>
 
       <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" name="twiter" class="form-control" placeholder="حساب التويتر">
+      <label> حساب الإنستقرام  </label>
+      <input type="text" name="instagram" class="form-control" placeholder="https://www.instagram.com/instagram.user">
       </div>
 
       <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text"  name="web" class="form-control" placeholder=" موقع شخصى">
+      <label> حساب التويتر  </label>
+      <input type="text" name="twiter" class="form-control" placeholder="https://www.twitter.com/twitter.user">
+      </div>
+
+      <div class="col-md-4 form-group">
+      <label> الموقع شخصى  </label>
+      <input type="text"  name="web" class="form-control" placeholder="ex: www.website.com">
       </div>        
       </div>
 
@@ -882,6 +893,7 @@
       </div>
 
       <div class="col-md-4 form-group">
+      <label> هل قمت بانهاء الخدمة الوطنية ؟ </label>
       <select name="service" class="form-control">
       <option> -- إختار -- </option>
       <option value="yes"> نعم </option>
@@ -893,7 +905,13 @@
       <label>   </label>
       <textarea name="other" class="form-control" placeholder="ملاحظات"></textarea>
       </div>
-        
+
+      <div class="col-md-4 form-group">
+      <label> إرفاق اثبات الشخصية  </label>
+      <input type="file" name="attach" class="form-control"/>
+      <label> <b style="color: #a12;"> ارفاق صورة JPG , JPEG , PNG  </b> </label>
+      </div> 
+
       </div>
 
       <div class="row">
@@ -1136,9 +1154,30 @@
       
     </div>
 
+    <div class="row">
+
+       <div class="col-md-4 form-group">
+          <label> السيرة الذاتية </label>
+              <input type="file" name="cv" class="form-control" placeholder="الجوال"/>
+          <label> <b style="color: #a12;"> إرفاق السيرة الذاتية إن وجدت  </b> </label>
+        </div>
+
+        <div class="col-md-4 form-group">
+              <label> مرفقات اخرى </label>
+              <input type="file" name="ref_mobile1" class="form-control" placeholder="الجوال"/>
+              <label> <b style="color: #a12;"> إضافة مستندات اخرى بصيغة PDF  </b> </label>
+        </div>
+
+    </div>
+    <br/><br/>
+
       <div class="row">
         <br/><br/>
         <b> بتقديمي لهذا الطلب انا اقر بصحة البيانات المذكورة اعلاه وأتحمل كامل المسؤولية القانونية والمعتبرة عن الخطأ الموجود فيه </b>
+
+      </div>
+
+      <div class="row">
         
       <div class="text-center"><button type="submit" name="send" style="background-color:orange;border-radius:20px;padding:10px;"> إرسال الطلب </button></div>
         
