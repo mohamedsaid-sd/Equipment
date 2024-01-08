@@ -552,7 +552,27 @@ curl_close($curl);
 
          
 
-          <div class="form-group col-md-4">
+    
+
+       <div class="row">
+            
+        <div class="form-group col-md-4">
+           <label> مدي توفر شبكه الاتصالات في الموقع  </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="site_d" name="site_d"  required>
+               <option value="" disabled selected> -- حدد   -- </option>
+               <option value="  تتوفر في الموقع "> تتوفر في الموقع </option>
+               <option value="   لا تتوفر في الموقع ">  لا تتوفر في الموقع </option>
+
+               <option value="  تتوفر علي بعد مسافه يمكن الذهاب اليها بالأرجل  ">  تتوفر علي بعد مسافه يمكن الذهاب اليها بالأرجل </option>
+               <option value="تتوفر عن طريق الذهاب اليها بالسيارة   ">   تتوفر عن طريق الذهاب اليها بالسيارة</option>
+
+
+             </select>
+           </div>
+         </div>
+
+         <div class="form-group col-md-4">
            <label> الانترنت </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="site_c" name="site_c" required >
@@ -564,24 +584,6 @@ curl_close($curl);
          </div>
             
           </div>
-
-       <div class="row">
-            
-        <div class="form-group col-md-4">
-           <label> مدي توفر شبكه الاتصالات في الموقع  </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="site_d" name="site_d"  required>
-               <option value="" disabled selected> -- حدد   -- </option>
-               <option value="  تتوفر في الموقع "> تتوفر في الموقع </option>
-               <option value="   لا تتوفر في الموق ">  لا تتوفر في الموق </option>
-
-               <option value="  تتوفر علي بعد مسافه يمكن الذهاب اليها بالأرجل  ">  تتوفر علي بعد مسافه يمكن الذهاب اليها بالأرجل </option>
-               <option value="تتوفر عن طريق الذهاب اليها بالسيارة   ">   تتوفر عن طريق الذهاب اليها بالسيارة</option>
-
-
-             </select>
-           </div>
-         </div>
 
          <div class="col-md-4 form-group mt-3 mt-md-0">
               <label>    نوع الشبكه المتوفره </label>
