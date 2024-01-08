@@ -228,6 +228,21 @@
                      // $previous= $_POST['previoushide'];
                   @$know     = $_POST['know'];
 
+
+                  
+                  @$nearest_market     = $_POST['nearest_market'];
+                  @$nearest_road     = $_POST['nearest_road'];
+                  @$network     = $_POST['network'];
+                  @$requested_number     = $_POST['requested_number'];
+              //    @$notes     = $_POST['notes'];
+                  @$size_machine     = $_POST['size_machine'];
+
+                  @$type_contract     = $_POST['type_contract'];
+                  @$machine_type     = $_POST['machine_type'];
+                  @$whatsapp_num     = $_POST['whatsapp_num'];
+                  @$phone     = $_POST['phone'];
+
+
                     // echo "Data:".$work_typ."-".$duration."-".$month_rent."-".$hour_num."-".$work_hours."-".$work_date."-".$note."-".$distance."-".$state."-".$region."-".$work_field."-".$site_age."-".$start_date."-".$name."-".$email."-".$job."-".$categ."-".$company."-".$work."-".$know;
 $jayParsedAry = [
   "params" => [
@@ -253,7 +268,21 @@ $jayParsedAry = [
               "know" => @$know, 
               "status" => "draft" ,
               "work_field" => $work_field,
-              "region" => $region
+              "region" => $region,
+              "nearest_market" => $site_l,
+              "nearest_road" =>$site_j,
+              "network" =>$network,
+              "latitude" => "1234",
+              "longitude" => "4321",
+              "other_attachment" =>"",
+              "requested_number" => $requested_number,
+              "type_contract" =>$type_contract,
+              "notes" =>"Additional Notes",
+              "size_machine" => $size_machine,
+              "machine_type" => $machine_type,
+              "whatsapp_num" => $whatsapp_num,
+              "phone" => $phone
+
            ] 
         ] 
      ] 
@@ -333,6 +362,40 @@ curl_close($curl);
                   </select>
                 </div>
 
+                <div class="col-md-3 form-group">
+                Equipment type:  <br/>
+                
+                  <select class="form-control mr-1" name="machine_type" id="machine_type"  required>
+                    <option value="" disabled selected> --   Choose  -- </option>
+                    <option value="Digger"> Digger </option>
+                    <option value="LOBID">  LOBID </option>
+                    <option value="Loader">  Loader </option>
+                    <option value="Dozer">  Dozer </option>
+                    <option value="Forklift">  Forklift </option>
+                    <option value="Checkout">  Checkout </option>
+                    <option value="Crane">  Crane </option>
+                    <option value=" Water Disguise ">   Water Disguise </option>
+                    <option value="reader">  reader </option>
+                    <option value="  Tanker Jazz">    Tanker Jazz </option>
+                    <option value="Flat">  Flat </option>
+                    <option value="generator">  generator </option>
+
+
+                  </select>
+                </div>
+
+                <div class="form-group col-md-3">
+        <label>    quantity</label>
+         <input type="number" class="form-control" id="inputDate" name="requested_number"  required />
+         
+      </div>
+
+      <div class="form-group col-md-3">
+        <label>     size machine</label>
+         <input type="text" class="form-control" id="inputDate" name="size_machine"  required />
+         
+      </div>
+
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                 DURATION <br/>
                   <select class="form-control mr-1" name="duration" id="duration" onchange="select_period();" required>
@@ -348,6 +411,17 @@ curl_close($curl);
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
+                Type of Contract: <br/>
+                  <select class="form-control mr-1" name="type_contract" id="month_rent" onchange="select_hour();"  required>
+                    <option value="" disabled selected> -- Choose   -- </option>
+                    <option value=" Hourly contract "> Hourly contract </option>
+                    <option value=" Production contract"> Production contract </option>
+                  </select>
+
+                  <input id="hour_num" name="hour_num" type="text" class="form-control" placeholder=" ادخل عدد  الساعات " style="display: none;">
+                </div>
+
+                <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
                 WORK HOURS <br/>
                   <select class="form-control mr-1" name="month_rent" id="month_rent" onchange="select_hour();" required>
                     <option value="" disabled selected> --   Choose the duration  -- </option>
@@ -356,7 +430,7 @@ curl_close($curl);
                   </select>
 
                   <input id="hour_num" name="hour_num" type="text" class="form-control" placeholder="  manual entry hour   " style="display: none;">
-                </div>
+                </div> -->
 
               </div>
      <!-- Start Input Start Time -->
@@ -392,17 +466,40 @@ curl_close($curl);
 
       <div class="row">
         <div class="col-md-4 form-group">
-        WORK LOCATION <br/>
-          <input type="text" id="state" name="state" class="form-control" placeholder="state" required>
+
+        <label>  states  </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="state" name="state" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option value="Khartoum"> Khartoum </option>
+               <option value=" North Kordofan"> North Kordofan </option>
+               <option value="Northern"> Northern </option>
+               <option value="Kassala"> Kassala </option>
+               <option value="Blue Nile"> Blue Nile </option>
+               <option value="North Darfur "> North Darfur  </option>
+               <option value="South Darfur "> South Darfur  </option>
+               <option value="South Kordofan "> South Kordofan  </option>
+               <option value="Gezira"> Gezira </option>
+               <option value="White Nile "> White Nile  </option>
+               <option value="River Nile "> River Nile  </option>
+               <option value="Red Sea"> Red Sea </option>
+               <option value="Al Qadarif "> Al Qadarif  </option>
+               <option value="Sennar"> Sennar </option>
+               <option value="West Darfur "> West Darfur  </option>
+               <option value="Central Darfur "> Central Darfur  </option>
+               <option value="East Darfur "> East Darfur  </option>
+               <option value="West Kordofan"> West Kordofan </option>
+             </select>
+           </div>
         </div>
         <div class="col-md-4 form-group mt-3 mt-md-0">
           <br/>
-          <input type="text" class="form-control" name="region" id="region" placeholder="Region" required>
+          <input type="text" class="form-control" name="region" id="region" placeholder="Enter the nearest city" required>
         </div>
 
         <div class="form-group col-md-4">
           <br/>
-       <input type="text" class="form-control" name="distance" id="distance" placeholder=" distance from nearest market " required>
+       <input type="text" class="form-control" name="distance" id="distance" placeholder=" Distance to nearest paved road " required>
           </div>
       </div>
 
@@ -419,6 +516,18 @@ curl_close($curl);
                   </select>
 
                   <input id="work_fieldhide" name="work_fieldhide" type="text" class="form-control" placeholder="   manual entry " style="display: none;">
+          </div>
+          <div class="col-md-4 form-group mt-3 mt-md-0">
+              <label>  Network availability </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="network" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option value="available"> Available  </option>
+               <option value="not_available"> Not Available </option>
+             </select>
+           
+           </div>
+
           </div>
 
          <div class="form-group col-md-4">
@@ -579,13 +688,31 @@ curl_close($curl);
                 <div class="col-md-4 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="  NAME " required>
                 </div>
+
+                <div class="col-md-3 form-group">
+                  <input type="number" name="phone" class="form-control"  placeholder="  phone " required>
+                </div>
+
+                <div class="col-md-3 form-group">
+                  <input type="number" name="whatsapp_num" class="form-control"  placeholder=" whatsap phone " required>
+                </div>
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                   <input type="email" class="form-control" name="email" id="email" placeholder=" EMAIL " required>
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="job" id="job" placeholder=" JOB TITLE " required>
-                  </div>
+                <lable>     Type of relationship to the site </lable> 
+                <select class="form-control mr-1" name="job" id="job" onchange="" required>
+                <option value="" disabled selected> --  Choose -- </option>
+                <option value="Owner"> Owner   </option>
+                <option value="Partner"> Partner </option>
+                <option value="Manager"> Manager </option>
+                <option value="Employee"> Employee </option>
+                <option value="Moderator"> Moderator </option>
+                <option value="agent"> agent </option>
+                <option value="broker"> broker </option>
+
+                </select>                   </div>
 
               </div>
 
@@ -616,7 +743,7 @@ curl_close($curl);
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <div class="form-group">
               <label for="exampleFormControlSelect2">  HOW TO RECOGNIZE US</label>
-             <select multiple class="form-control" id="exampleFormControlSelect2" name="know" required>
+             <select  class="form-control" id="exampleFormControlSelect2" name="know" required>
                 <option value="friend">friend</option>
                 <option value="social">social</option>
                 <option value="tv">tv</option>

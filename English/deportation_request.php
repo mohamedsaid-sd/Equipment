@@ -248,6 +248,7 @@
                     //     $previous= $_POST['previoushide'];
                      
                      $know     = $_POST['know'];
+                     $whatsapp_num     = $_POST['whatsapp_num'];
 
 
                      $Machinelicense = file_get_contents($_FILES['Machinelicense']['tmp_name']);
@@ -307,6 +308,8 @@ $jayParsedAry = [
                 "work_for" => $work_for, 
                 "previous" => $previous, 
                 "know" =>  $know, 
+                "whatsapp_num" => $whatsapp_num, 
+
                 "status" => "draft" 
              ] 
           ] 
@@ -484,7 +487,30 @@ curl_close($curl);
       <div class="row">
         <div class="col-md-4 form-group">
         LOCATION MACHINE <br/>
-          <input type="text" class="form-control" id="state" name="state" placeholder=" state ">
+
+          <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="state" name="state_id" required>
+               <option value="" disabled selected> -- state -- </option>
+               <option value="Khartoum"> Khartoum </option>
+               <option value=" North Kordofan"> North Kordofan </option>
+               <option value="Northern"> Northern </option>
+               <option value="Kassala"> Kassala </option>
+               <option value="Blue Nile"> Blue Nile </option>
+               <option value="North Darfur "> North Darfur  </option>
+               <option value="South Darfur "> South Darfur  </option>
+               <option value="South Kordofan "> South Kordofan  </option>
+               <option value="Gezira"> Gezira </option>
+               <option value="White Nile "> White Nile  </option>
+               <option value="River Nile "> River Nile  </option>
+               <option value="Red Sea"> Red Sea </option>
+               <option value="Al Qadarif "> Al Qadarif  </option>
+               <option value="Sennar"> Sennar </option>
+               <option value="West Darfur "> West Darfur  </option>
+               <option value="Central Darfur "> Central Darfur  </option>
+               <option value="East Darfur "> East Darfur  </option>
+               <option value="West Kordofan"> West Kordofan </option>
+             </select>
+           </div>
         </div>
         <div class="col-md-4 form-group mt-3 mt-md-0">
           <br/>
@@ -505,23 +531,46 @@ curl_close($curl);
       <div class="col-md-4 form-group mt-3 mt-md-0">
       <input type="text" class="form-control" id="location" name="location" placeholder="  location ">
 
-      </div>
+      </div>z
        
       <div class="form-group col-md-4">
            
-        <input type="number" class="form-control" id="phone" name="phone" placeholder="  phone number 1">  
+        <input type="number" class="form-control" id="phone" name="phone" placeholder="  phone number 1 (002499123xxx)">  
     </div>
          
    
          <div class="form-group col-md-4">
-         <input type="number" class="form-control" id="mobile" name="mobile" placeholder=" phone number 2 ">  
+         <input type="number" class="form-control" id="mobile" name="mobile" placeholder=" phone number 2 (002499123xxx) ">  
          </div>
     </div>
 
           <div class="row">
         <div class="col-md-4 form-group">
         DESTINATION  <br/>
-          <input type="text" class="form-control" id="des_state" name="des_state" placeholder=" state ">
+
+          <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="des_state" name="des_state" required>
+               <option value="" disabled selected> -- state -- </option>
+               <option value="Khartoum"> Khartoum </option>
+               <option value=" North Kordofan"> North Kordofan </option>
+               <option value="Northern"> Northern </option>
+               <option value="Kassala"> Kassala </option>
+               <option value="Blue Nile"> Blue Nile </option>
+               <option value="North Darfur "> North Darfur  </option>
+               <option value="South Darfur "> South Darfur  </option>
+               <option value="South Kordofan "> South Kordofan  </option>
+               <option value="Gezira"> Gezira </option>
+               <option value="White Nile "> White Nile  </option>
+               <option value="River Nile "> River Nile  </option>
+               <option value="Red Sea"> Red Sea </option>
+               <option value="Al Qadarif "> Al Qadarif  </option>
+               <option value="Sennar"> Sennar </option>
+               <option value="West Darfur "> West Darfur  </option>
+               <option value="Central Darfur "> Central Darfur  </option>
+               <option value="East Darfur "> East Darfur  </option>
+               <option value="West Kordofan"> West Kordofan </option>
+             </select>
+           </div>
         </div>
         <div class="col-md-4 form-group mt-3 mt-md-0">
           <br/>
@@ -542,12 +591,12 @@ curl_close($curl);
        
       <div class="form-group col-md-4">
            
-        <input type="number" class="form-control" id="des_phone" name="des_phone" placeholder="  phone number 1">  
+        <input type="number" class="form-control" id="des_phone" name="des_phone" placeholder="  phone number 1 (002499123xxx)">  
     </div>
          
    
          <div class="form-group col-md-4">
-         <input type="number" class="form-control" id="des_mobile" name="des_mobile" placeholder=" phone number 2 ">  
+         <input type="number" class="form-control" id="des_mobile" name="des_mobile" placeholder=" phone number 2 (002499123xxx) ">  
          </div>
     </div>
 
@@ -556,16 +605,30 @@ curl_close($curl);
               <h3 for="textAreaRemark">CUSTOMER DATA  </h3>
               <div class="row">
 
-                <div class="col-md-4 form-group">
+                <div class="col-md-3 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="  NAME ">
                 </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
+                <div class="col-md-3 form-group">
+                  <input type="text" name="whatsapp_num" class="form-control"  placeholder=" whatsapp phone (002499123xxx) " required>
+                </div>
+                <div class="col-md-3 form-group mt-3 mt-md-0">
                   <input type="text" class="form-control" name="email" id="email" placeholder=" EMAIL ">
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="job" id="job" placeholder=" JOB TITLE ">
-                  </div>
+                <lable>     Type of relationship to the site </lable> 
+                <select class="form-control mr-1" name="job" id="job" onchange="" required>
+                <option value="" disabled selected> --  Choose -- </option>
+                <option value="Owner"> Owner   </option>
+                <option value="Partner"> Partner </option>
+                <option value="Manager"> Manager </option>
+                <option value="Employee"> Employee </option>
+                <option value="Moderator"> Moderator </option>
+                <option value="agent"> agent </option>
+                <option value="broker"> broker </option>
+
+                </select> 
+                                </div>
 
               </div>
 
@@ -596,7 +659,7 @@ curl_close($curl);
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <div class="form-group">
               <label for="exampleFormControlSelect2">  HOW TO RECOGNIZE US?</label>
-              <select multiple class="form-control" id="know" name="know">
+              <select  class="form-control" id="know" name="know">
                 <option value="media"> facebook	 </option>
                 <option value="google"> google </option>
                 <option value="media"> instagram </option>

@@ -114,7 +114,7 @@
  <div class="container">
 
  <div class="row">
- 	<h3> الرئيسية / الخدمات / <?php echo $_GET['id']; ?> </h3>
+ 	<h3> الرئيسية / الخدمات </h3>
  </div>
 
   <div class="row">
@@ -123,11 +123,11 @@
    	<div style="margin: 10px;">
   		
   		<a href="details.php?id=مقاولة"> <i class="fas fa-clipboard"></i> خدمات المقاولة </a> 
-  		<a href="details.php?id=تاجير"> <i class="fas fa-tractor"></i> خدمات تاجير </a> 
-  		<a href="details.php?id=تشغيل"> <i class="fab fa-teamspeak"></i> خدمات تشغيل </a> 
-  		<a href="details.php?id=توظيف"> <i class="fab fa-wpforms"></i> خدمات توظيف </a> 
-  		<a href="details.php?id=صيانه"> <i class="fas fa-tools"></i> خدمات صيانه </a> 
-  		<a href="details.php?id=ترحيل"> <i class="fas fa-truck-moving"></i> خدمات ترحيل </a> 
+  		<a href="details.php?id=تاجير"> <i class="fas fa-tractor"></i> خدمات التأجير </a> 
+  		<a href="details.php?id=تشغيل"> <i class="fab fa-teamspeak"></i> خدمات تشغيل المعدات </a> 
+  		<a href="details.php?id=توظيف"> <i class="fab fa-wpforms"></i> خدمات التوظيف </a> 
+  		<a href="details.php?id=صيانه"> <i class="fas fa-tools"></i> خدمات الصيانة </a> 
+  		<a href="details.php?id=ترحيل"> <i class="fas fa-truck-moving"></i> خدمات الترحيل </a> 
 	</div>
   	</div>
 

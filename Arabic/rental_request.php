@@ -133,8 +133,8 @@
         <a href="../English/index.php" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
         <a href="../Arabic/index.php" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
 
-        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-        <i class="bi bi-phone"></i> +249 6445
+        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">info@equipation.sd</a>
+        <i class="bi bi-phone"></i>  +249912322447 
 
       </div>
       <div class="d-none d-lg-flex social-links align-items-center">
@@ -160,7 +160,7 @@
       <div class="container">
         <br/>
         <div class="section-title">
-          <h2> طلب تاجير  </h2>
+          <h2> طلب تأجير  </h2>
          </div>
       </div>
 
@@ -175,7 +175,7 @@
 
             <form action="rental_request.php" method="post" role="form">
 
-                <h3 for="textAreaRemark">مطلوبات التاجير</h3>
+                <h3 for="textAreaRemark">مطلوبات التأجير</h3>
 
   <div class="my-3">
                 <div class="error-message"></div>
@@ -227,17 +227,25 @@
                   @$know     = $_POST['know'];
 
 
+                  @$phone     = $_POST['phone'];
+
+                  
+
 
                   @$nearest_market     = $_POST['nearest_market'];
                   @$nearest_road     = $_POST['nearest_road'];
                   @$network     = $_POST['network'];
                   @$requested_number     = $_POST['requested_number'];
-                  @$notes     = $_POST['notes'];
+              //    @$notes     = $_POST['notes'];
                   @$size_machine     = $_POST['size_machine'];
 
                   @$type_contract     = $_POST['type_contract'];
+                  @$machine_type     = $_POST['machine_type'];
+                  @$whatsapp_num     = $_POST['whatsapp_num'];
 
+                  
 
+                  
                     // echo "Data:".$work_typ."-".$duration."-".$month_rent."-".$hour_num."-".$work_hours."-".$work_date."-".$note."-".$distance."-".$state."-".$site_age."-".$start_date."-".$name."-".$email."-".$job."-".$categ."-".$company."-".$work."-".$know;
 $jayParsedAry = [
   "params" => [
@@ -273,7 +281,13 @@ $jayParsedAry = [
               "requested_number" => $requested_number,
               "type_contract" =>$type_contract,
               "notes" =>"Additional Notes",
-              "size_machine" => $size_machine
+              "size_machine" => $size_machine,
+              "machine_type" => $machine_type,
+              "whatsapp_num" => $whatsapp_num,
+              "phone" => $phone
+
+              
+
            ] 
         ] 
      ] 
@@ -342,11 +356,20 @@ curl_close($curl);
               </div>
 
             <div class="row">
+            <div class="col-md-4 form-group">
+                  نوع العمل <br/>
+                  <select class="form-control mr-1" name="work_typ" id="work_typ"  required>
+                    <option value="" disabled selected> -- اختار النوع  -- </option>
+                    <option value="bucket"> جردل </option>
+                    <option value="jackhummer"> جاك همر </option>
+                    <option value="both"> جردل + جاك همر </option>
+                  </select>
+                </div>
                
                 <div class="col-md-3 form-group">
                 نوع المعدة:  <br/>
                 
-                  <select class="form-control mr-1" name="work_typ" id="work_typ"  required>
+                  <select class="form-control mr-1" name="machine_type" id="machine_type"  required>
                     <option value="" disabled selected> -- اختار نوع المعدة  -- </option>
                     <option value="حفار"> حفار </option>
                     <option value="لوبد">  لوبد </option>
@@ -440,10 +463,10 @@ curl_close($curl);
         <div class="col-md-4 form-group">
 
 
-          <label>    الولايه </label>
+          <label>   الولاية </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="state_id" name="state_id" required>
-               <option value="" disabled selected> -- حدد  الولايه -- </option>
+             <select class="form-control mr-1" id="state" name="state" required>
+               <option value="" disabled selected> -- حدد  الولاية -- </option>
                <option value="ولاية الخرطوم">ولاية الخرطوم </option>
                <option value="ولاية الجزيرة">ولاية الجزيرة</option>
                <option value="ولاية البحر الأحمر">ولاية البحر الأحمر </option>
@@ -669,7 +692,7 @@ curl_close($curl);
                 </div>
 
                 <div class="col-md-3 form-group">
-                  <input type="text" name="whats" class="form-control" id="phone" placeholder="    رقم الواتساب  مثال 00249123000000" required>
+                  <input type="text" name="whatsapp_num" class="form-control" id="whatsapp_num" placeholder="    رقم الواتساب  مثال 00249123000000" required>
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
@@ -679,7 +702,7 @@ curl_close($curl);
                 <div class="col-md-4 form-group mt-3 mt-md-0">
   <lable>   نوع العلاقه بالموقع </lable> 
                 <select class="form-control mr-1" name="job" id="job" onchange="" required>
-                <option value="" disabled selected> -- اختار الجهه -- </option>
+                <option value="" disabled selected> -- اختار  -- </option>
                 <option value="مالك"> مالك   </option>
                 <option value="شريك"> شريك </option>
                 <option value="مدير"> مدير </option>
@@ -696,9 +719,9 @@ curl_close($curl);
               <div class="row">
 
               <div class="col-md-4 form-group">
-                <lable> الجهه التابع لها </lable> 
+                <lable> الجهة التابع لها </lable> 
                 <select class="form-control mr-1" name="categ" id="categ" onchange="select_side();"  required>
-                <option value="" disabled selected> -- اختار الجهه -- </option>
+                <option value="" disabled selected> -- اختار  -- </option>
                 <option value="company"> شركة </option>
                 <option value="personal"> فرد </option>
                 </select>  
@@ -752,7 +775,6 @@ curl_close($curl);
    <!-- ======= Footer ======= -->
   <?php include 'footer.php'; ?>
 
-  <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->

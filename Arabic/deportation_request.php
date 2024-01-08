@@ -245,8 +245,9 @@
                         $previous= $_POST['previous'];
                      }
                      $know     = $_POST['know'];
+                     $whatsapp_num     = $_POST['whatsapp_num'];
 
-
+                     
                      $Machinelicense = file_get_contents($_FILES['Machinelicense']['tmp_name']);
                      $MachinelicenseData = base64_encode($Machinelicense);
 
@@ -303,6 +304,10 @@ $jayParsedAry = [
                 "work_for" => $work_for, 
                 "previous" => $previous, 
                 "know" => $know, 
+                "whatsapp_num" => $whatsapp_num, 
+
+
+                
                 "status" => "draft" 
              ] 
           ] 
@@ -375,7 +380,7 @@ curl_close($curl);
               <div class="row">
 
                 <div class="col-md-4 form-group">
-                  نوع الآليه المرحلة <br/>
+                  نوع الآلية المرحلة <br/>
                   <select class="form-control mr-1" name="machine" id="machine" onchange="select_type();" >
                     <option value="" disabled selected> -- اختار النوع  -- </option>
                     <option> دفار </option>
@@ -412,7 +417,7 @@ curl_close($curl);
 
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                 ماركة الآليه المرحلة <br/>
+                 ماركة الآلية المرحلة <br/>
                  <select class="form-control mr-1" name="model" id="model" onchange="select_brand();" >
                     <option disabled selected> --  اختار الماركة  -- </option>
                     <option> GAT </option>
@@ -479,17 +484,41 @@ curl_close($curl);
 
       <div class="row">
         <div class="col-md-4 form-group">
-          مكان الآالية <br/>
-          <input type="text" class="form-control" id="state" name="state" placeholder=" الولاية " >
+             <br/>
+
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="state" name="state" required>
+               <option value="" disabled selected> -- حدد  الولاية -- </option>
+               <option value="ولاية الخرطوم">ولاية الخرطوم </option>
+               <option value="ولاية الجزيرة">ولاية الجزيرة</option>
+               <option value="ولاية البحر الأحمر">ولاية البحر الأحمر </option>
+               <option value="ولاية كسلا">ولاية كسلا </option>
+               <option value="ولاية القضارف">ولاية القضارف </option>
+               <option value="ولاية سنار">ولاية سنار </option>
+               <option value="ولاية النيل الأبيض">ولاية النيل الأبيض </option>
+               <option value="ولاية النيل الأزرق">ولاية النيل الأزرق </option>
+               <option value="الولاية الشمالية">الولاية الشمالية </option>
+               <option value="ولاية نةر النيل">ولاية نةر النيل </option>
+               <option value="ولاية غرب كردفان">ولاية غرب كردفان </option>
+               <option value="ولاية جنوب كردفان">ولاية جنوب كردفان </option>
+               <option value="ولاية شمال دارفور">ولاية شمال دارفور </option>
+               <option value="ولاية غرب دارفور">ولاية غرب دارفور </option>
+               <option value="ولاية جنوب دارفور">ولاية جنوب دارفور </option>
+               <option value="ولاية شرق دارفور">ولاية شرق دارفور </option>
+               <option value="ولاية وسط دارفور">ولاية وسط دارفور </option>
+
+
+             </select>
+           </div>
         </div>
         <div class="col-md-4 form-group mt-3 mt-md-0">
           <br/>
-          <input type="text" class="form-control" id="zone" name="zone" placeholder=" المنطقة " >
+          <input type="text" class="form-control" id="zone" name="zone" placeholder=" المدينة " >
         </div>
 
         <div class="form-group col-md-4">
           <br/>
-          <input type="text" class="form-control" id="workplace" name="workplace" placeholder=" الموقع / الشركة " >
+          <input type="text" class="form-control" id="workplace" name="workplace" placeholder="الشركة " >
         </div>
       </div>
 
@@ -505,29 +534,54 @@ curl_close($curl);
        
       <div class="form-group col-md-4">
             
-        <input type="number" class="form-control" id="phone" name="phone" placeholder=" رقم التواصل 1 " >  
+        <input type="number" class="form-control" id="phone" name="phone" placeholder=" رقم التواصل 1    مثال 00249123000000" >  
     </div>
          
    
          <div class="form-group col-md-4">
-         <input type="number" class="form-control" id="mobile" name="mobile" placeholder=" رقم التواصل 2 " >  
+         <input type="number" class="form-control" id="mobile" name="mobile" placeholder=" رقم التواصل 2   مثال 00249123000000" >  
          </div>
               </div>
 
 
           <div class="row">
         <div class="col-md-4 form-group">
-          جهه توصيل الآلية <br/>
-          <input type="text" class="form-control" id="state" name="des_state" placeholder=" الولاية " >
+          <h3 for="textAreaRemark"> جهة توصيل الآلية </h3>
+
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="des_state" name="des_state" required>
+               <option value="" disabled selected> -- حدد  الولاية -- </option>
+               <option value="ولاية الخرطوم">ولاية الخرطوم </option>
+               <option value="ولاية الجزيرة">ولاية الجزيرة</option>
+               <option value="ولاية البحر الأحمر">ولاية البحر الأحمر </option>
+               <option value="ولاية كسلا">ولاية كسلا </option>
+               <option value="ولاية القضارف">ولاية القضارف </option>
+               <option value="ولاية سنار">ولاية سنار </option>
+               <option value="ولاية النيل الأبيض">ولاية النيل الأبيض </option>
+               <option value="ولاية النيل الأزرق">ولاية النيل الأزرق </option>
+               <option value="الولاية الشمالية">الولاية الشمالية </option>
+               <option value="ولاية نةر النيل">ولاية نةر النيل </option>
+               <option value="ولاية غرب كردفان">ولاية غرب كردفان </option>
+               <option value="ولاية جنوب كردفان">ولاية جنوب كردفان </option>
+               <option value="ولاية شمال دارفور">ولاية شمال دارفور </option>
+               <option value="ولاية غرب دارفور">ولاية غرب دارفور </option>
+               <option value="ولاية جنوب دارفور">ولاية جنوب دارفور </option>
+               <option value="ولاية شرق دارفور">ولاية شرق دارفور </option>
+               <option value="ولاية وسط دارفور">ولاية وسط دارفور </option>
+
+
+             </select>
+           </div>
         </div>
+        
         <div class="col-md-4 form-group mt-3 mt-md-0">
           <br/>
-          <input type="text" class="form-control" id="zone" name="des_zone" placeholder=" المنطقة " >
+          <input type="text" class="form-control" id="zone" name="des_zone" placeholder=" المدينة " >
         </div>
 
         <div class="form-group col-md-4">
           <br/>
-          <input type="text" class="form-control" id="workplace" name="des_workplace" placeholder=" الموقع / الشركة " >
+          <input type="text" class="form-control" id="workplace" name="des_workplace" placeholder="   الشركة " >
         </div>
       </div>
 
@@ -539,12 +593,12 @@ curl_close($curl);
        
       <div class="form-group col-md-4">
             
-        <input type="number" class="form-control" id="phone" name="des_phone" placeholder=" رقم التواصل 1 " >  
+        <input type="number" class="form-control" id="phone" name="des_phone" placeholder="    رقم التواصل 1   مثال 00249123000000" >  
     </div>
          
    
          <div class="form-group col-md-4">
-         <input type="number" class="form-control" id="mobile" name="des_mobile" placeholder=" رقم التواصل 2 " >  
+         <input type="number" class="form-control" id="mobile" name="des_mobile" placeholder="   رقم التواصل 2   مثال 00249123000000" >  
          </div>
               </div>
              
@@ -554,25 +608,43 @@ curl_close($curl);
 
               <div class="row">
 
-                <div class="col-md-4 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="  الاسم " >
+                <div class="col-md-3 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="  الاسم  ثلاثي" >
                 </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
+                <div class="col-md-3 form-">
+                  <input type="text" name="phone" class="form-control" id="phone" placeholder="   رقم الهاتف  مثال 00249123000000" required>
+                </div>
+
+                <div class="col-md-3 form-">
+                  <input type="text" name="whatsapp_num" class="form-control" id="whatsapp_num" placeholder="    رقم الواتساب  مثال 00249123000000" required>
+                </div>
+                <div class="col-md-3 form-group mt-3 mt-md-0">
                   <input type="text" class="form-control" name="email" id="email" placeholder=" الايميل " >
                 </div>
 
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="job" id="job" placeholder=" الوظيفة " >
-                  </div>
+                <div class="col-md-3 form-group mt-3 mt-md-0">
+                <lable>   نوع العلاقة بالموقع </lable> 
+                <select class="form-control mr-1" name="job" id="job" onchange="" required>
+                <option value="" disabled selected> -- اختار  -- </option>
+                <option value="مالك"> مالك   </option>
+                <option value="شريك"> شريك </option>
+                <option value="مدير"> مدير </option>
+                <option value="موظف"> موظف </option>
+                <option value="مشرف"> مشرف </option>
+                <option value="وكيل"> وكيل </option>
+                <option value="وسيط"> وسيط </option>
+
+                </select> 
+                      </div>
 
               </div>
 
               <div class="row">
 
               <div class="col-md-4 form-group">
-                <lable> الجهه التابع لها </lable> 
+                <lable> الجهة  التابع لها </lable> 
                 <select class="form-control mr-1" name="work_for" id="work_for" onchange="select_side();" >
-                <option value="" disabled selected> -- اختار الجهه -- </option>
+                <option value="" disabled selected> -- اختار الجهة-- </option>
                 <option value="company"> شركة </option>
                 <option value="individual"> فرد </option>
                 </select>  
@@ -600,7 +672,7 @@ curl_close($curl);
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <div class="form-group">
               <label for="exampleFormControlSelect2">طريقة التعرف علينا</label>
-              <select multiple class="form-control" id="exampleFormControlSelect2" name="know">
+              <select  class="form-control" id="exampleFormControlSelect2" name="know">
                 <option value="media"> الفيسبوك </option>
                 <option value="media"> التويتر </option>
                 <option value="media"> الانستغرام </option>
@@ -659,7 +731,6 @@ curl_close($curl);
   <!-- ======= Footer ======= -->
   <?php include 'footer.php'; ?>
 
-  <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->

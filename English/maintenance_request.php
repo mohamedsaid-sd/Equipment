@@ -152,7 +152,9 @@
  
  $fleet_operating_type=$_POST['fleet_operating_type'];
  $state_id=$_POST['state_id'];
+ $whatsapp_num=$_POST['whatsapp_num'];
 
+ 
 
 
       //  echo $Nearest_market."-".$chassis."-".$know."-".$company_name."-".$email;
@@ -190,7 +192,8 @@ $jayParsedAry = [
               "issue_description"=> $issue_description,
               "fleet_operating_type"=> $fleet_operating_type,
               "other_attachment"=> "",
-              "state_id"=>$state_id
+              "state_id"=>$state_id,
+              "whatsapp_num"=>$whatsapp_num
                 
               
               
@@ -308,11 +311,7 @@ curl_close($curl);
       </div>
 
 
-      <div class="col-md-4 form-group">
-        <br/>
-        <input type="text" name="site_location" class="form-control" id="location" placeholder=" Machine location " required>
-      </div>
-    
+
      
 
       </div>
@@ -351,10 +350,7 @@ curl_close($curl);
       <h3 for="textAreaRemark"> Site data :  </h3>
 
       <div class="row">
-        <div class="col-md-4 form-group mt-3 mt-md-0">
-            <br/>
-            <input type="text" class="form-control" name="site_location" id="Counter" placeholder=" Last job site " required>
-          </div>
+       
 
           <div class="form-group col-md-4">
            <label>  states  </label>
@@ -400,12 +396,12 @@ curl_close($curl);
    
          <div class="col-md-4 form-group mt-3 mt-md-0">
               <br/>
-            <input type="text" class="form-control" name="site_location" id="city" placeholder=" Area name " required>
+            <input type="text" class="form-control" name="site_location" id="city" placeholder=" Nearest city  " required>
           </div>
 
           <div class="col-md-4 form-group mt-3 mt-md-0">
             <br/>
-            <input type="text" class="form-control" name="Nearest_market" id="city2" placeholder=" The nearest market " required>
+            <input type="text" class="form-control" name="Nearest_market" id="city2" placeholder=" The nearest road " required>
           </div>
           <div class="col-md-4 form-group mt-3 mt-md-0">
               <label>  Network availability </label>
@@ -433,11 +429,11 @@ curl_close($curl);
                 </div>
 
                 <div class="col-md-3 form-group">
-                  <input type="text" name="phone" class="form-control"  placeholder="  phone " required>
+                  <input type="text" name="phone" class="form-control"  placeholder="  phone (002499123xxx) " required>
                 </div>
 
                 <div class="col-md-3 form-group">
-                  <input type="text" name="phone" class="form-control"  placeholder=" whats phone " required>
+                  <input type="text" name="whatsapp_num" class="form-control"  placeholder=" whatsapp phone (002499123xxx) " required>
                 </div>
                 <div class="col-md-3 form-group mt-3 mt-md-0">
                   <input type="text" class="form-control" name="email" id="email" placeholder=" Customer Email " required>

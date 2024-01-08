@@ -254,7 +254,7 @@
         </div>
 
         <div class="col-lg-4">
-        <a href="details.php?id=تاجير"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-tractor"></i> <b> خدمات التاجير </b> </div>
+        <a href="details.php?id=تاجير"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-tractor"></i> <b> خدمات التأجير </b> </div>
         </div></a>
         
         <div class="col-lg-4">
@@ -266,7 +266,7 @@
         </div>
         
         <div class="col-lg-4">
-        <a href="details.php?id=صيانة"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-tools"></i> <b> خدمات الصيانه </b> </div></a>
+        <a href="details.php?id=صيانه"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-tools"></i> <b>خدمات الصيانة </b> </div></a>
         </div>
 
         <div class="col-lg-4">

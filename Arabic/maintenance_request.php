@@ -64,27 +64,7 @@
 <body>
 
   <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="d-flex align-items-center fixed-top">
-    <div class="container d-flex justify-content-between">
-      <div class="contact-info d-flex align-items-center">
 
-        <a href="../English/index.php" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
-        <a href="../Arabic/index.php" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
-
-        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-        <i class="bi bi-phone"></i> +249 6445
-
-
-      </div>
-      <div class="d-none d-lg-flex social-links align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-
-      </div>
-    </div>
-  </div>
 
   <?php include 'mainlist.php'; ?>
 
@@ -115,7 +95,7 @@
 
             <form action="maintenance_request.php" enctype="multipart/form-data" method="post" role="form">
 
-                <h3 for="textAreaRemark"> استماره طلب صيانه</h3>
+                <h3 for="textAreaRemark"> استمارة طلب صيانة</h3>
 
 
                 <div class="my-3">
@@ -153,8 +133,9 @@
  
  $fleet_operating_type=$_POST['fleet_operating_type'];
  $state_id=$_POST['state_id'];
-
  
+ $whatsapp_num=$_POST['whatsapp_num'];
+
  //$work_hour=$_POST['work_hour'];
 
 
@@ -192,7 +173,10 @@ $jayParsedAry = [
               "issue_description"=> $issue_description,
               "fleet_operating_type"=> $fleet_operating_type,
               "other_attachment"=> "",
-              "state_id"=>$state_id
+              "state_id"=>$state_id,
+              "whatsapp_num"=>$whatsapp_num
+
+              
               
               ] 
         ] 
@@ -244,7 +228,7 @@ if(curl_errno($curl)) {
                 // success add form alert ...
                         echo "<div class='alert alert-success'>
                         <span class='icon'> <i class='fa fa-check-circle'></i></span>
-                         <b> تم ارسال الطلب بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال طلباتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
+                         <b> تم ارسال الطلب بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال طلباتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الةاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفةمكم  </b> </div>";
             else
               echo "<div class='alert alert-danger'>
                         <span class='icon'> <i class='fa fa-cancel'></i></span>
@@ -269,18 +253,18 @@ curl_close($curl);
               </div>
 
               <div class="row">
-                <div class="col-md-4 form-group">
-                  <input type="text" name="Type" class="form-control" id="Type" placeholder="نوع الاليه " required>
+                <div class="col-md-4 form-">
+                  <input type="text" name="Type" class="form-control" id="Type" placeholder="نوع الالية " required>
                 </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="model" id="model" placeholder=" موديل الاليه   " required>
+                <div class="col-md-4 form- mt-3 mt-md-0">
+                  <input type="text" class="form-control" name="model" id="model" placeholder=" موديل الالية   " required>
                 </div>
 
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="chassis" id="Sashinumber" placeholder="رقم الساشي  " required>
+                <div class="col-md-4 form- mt-3 mt-md-0">
+                    <input type="text" class="form-control" name="chassis" id="Sashinumber" placeholder="رقم الشاسي  " required>
                   </div>
 
-                  <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <div class="col-md-4 form- mt-3 mt-md-0">
                     <input type="text" class="form-control" name="engine" id="engine" placeholder="رقم المحرك  " required>
                   </div>
 
@@ -288,21 +272,21 @@ curl_close($curl);
      <!-- Start Input Start Time -->
      <div class="row">
 
-     <div class="form-group col-md-4">
+     <div class="form- col-md-4">
             <br/>
             <input type="text" class="form-control" name="km_read" id="km_read" placeholder="    عداد الساعات /الكيلومترات    " required>
       </div>
 
-      <div class="form-group col-md-4">
+      <div class="form- col-md-4">
         <label>  نوع الاصلاح المطلوب </label>
         <div class="d-flex flex-row justify-content-between align-items-center">
           <select class="form-control mr-1" id="main_type" name="main_type" required>
             <option value="" disabled selected> -- حدد نوع الاصلاح -- </option>
-            <option value="مشكله مكانيكا"> مشكله مكانيكا</option>
-            <option value="كهرباء">كهرباء</option>
-            <option value="كهرباء">حداده</option>
+            <option value="مشكلة مكانيكا"> مشكلة مكانيكا</option>
+            <option value="كةرباء">كةرباء</option>
+            <option value="كةرباء">حدادة</option>
             <option value="تكيف">تكيف</option>
-            <option value="هيدروليك">هيدروليك</option>
+            <option value="ةيدروليك">ةيدروليك</option>
 
 
           </select>
@@ -310,12 +294,12 @@ curl_close($curl);
         </div>
       </div>
 
-
-      <div class="col-md-4 form-group">
+<!-- 
+      <div class="col-md-4 form-">
         <br/>
-        <input type="text" name="site_location" class="form-control" id="site_location" placeholder="  موقع الاليه " required>
+        <input type="text" name="site_location" class="form-control" id="site_location" placeholder="  موقع الالية " required>
       </div>
-    
+     -->
      
 
       </div>
@@ -324,18 +308,18 @@ curl_close($curl);
       <div class="row">
         
 
-        <div class="form-group col-md-4">
-            <label for="inputDate">سنه الصنع</label>
+        <div class="form- col-md-4">
+            <label for="inputDate">سنة الصنع</label>
             <input type="date" class="form-control" id="inputDate" name="date" required />
           </div>
 
-          <div class="form-group col-md-4">
+          <div class="form- col-md-4">
         <label>    طبيعة عمل الآلية </label>
         <div class="d-flex flex-row justify-content-between align-items-center">
           <select class="form-control mr-1" id="fleet_operating_type" name="fleet_operating_type" required>
             <option value="" disabled selected> -- حدد نوع الاصلاح -- </option>
             <option value=" جردل"> جردل</option>
-            <option value="جاك همر">جاك همر</option>
+            <option value="جاك ةمر">جاك ةمر</option>
 
 
           </select>
@@ -345,22 +329,21 @@ curl_close($curl);
       </div>
       
 
-      <div class="form-group mt-3">
-        <textarea class="form-control" name="issue_description" rows="5" placeholder="وصف المشكله " required></textarea>
+      <div class="form- mt-3">
+        <textarea class="form-control" name="issue_description" rows="5" placeholder="وصف المشكلة " required></textarea>
       </div>
 
       
-      <h3 for="textAreaRemark">بيانات الموقع </h3>
+      <h3 for="textAreaRemark">بيانات موقع الالية </h3>
 
       <div class="row">
-        <div class="col-md-4 form-group mt-3 mt-md-0">
+        <div class="col-md-4 form- mt-3 mt-md-0">
             <br/>
-            <input type="text" class="form-control" name="lastloc" id="Counter" placeholder=" اخر موقع عمل   " required>
 
-            <label>    الولايه </label>
+            <label>    الولاية </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="state_id" name="state_id" required>
-               <option value="" disabled selected> -- حدد  الولايه -- </option>
+               <option value="" disabled selected> -- حدد  الولاية -- </option>
                <option value="ولاية الخرطوم">ولاية الخرطوم </option>
                <option value="ولاية الجزيرة">ولاية الجزيرة</option>
                <option value="ولاية البحر الأحمر">ولاية البحر الأحمر </option>
@@ -370,7 +353,7 @@ curl_close($curl);
                <option value="ولاية النيل الأبيض">ولاية النيل الأبيض </option>
                <option value="ولاية النيل الأزرق">ولاية النيل الأزرق </option>
                <option value="الولاية الشمالية">الولاية الشمالية </option>
-               <option value="ولاية نهر النيل">ولاية نهر النيل </option>
+               <option value="ولاية نةر النيل">ولاية نةر النيل </option>
                <option value="ولاية غرب كردفان">ولاية غرب كردفان </option>
                <option value="ولاية جنوب كردفان">ولاية جنوب كردفان </option>
                <option value="ولاية شمال دارفور">ولاية شمال دارفور </option>
@@ -384,30 +367,30 @@ curl_close($curl);
            </div>
 
           </div>
-        <div class="form-group col-md-4">
-           <label>  طبيعه الموقع </label>
+        <div class="form- col-md-4">
+           <label>  طبيعة الموقع </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="site_nature" required>
                <option value="" disabled selected> -- حدد طبيعة الموقع -- </option>
                <option value="جبال">جبال </option>
                <option value="أبار">أبار</option>
-               <option value="مزرعه">مزرعه </option>
+               <option value="مزرعة">مزرعة </option>
                <option value="منجم">منجم </option>
-               <option value="مواقع مفتوحه">مواقع مفتوحه </option>
+               <option value="مواقع مفتوحة">مواقع مفتوحة </option>
              </select>
            </div>
          </div>
    
-         <div class="col-md-4 form-group mt-3 mt-md-0">
+         <div class="col-md-4 form- mt-3 mt-md-0">
               <br/>
-            <input type="text" class="form-control" name="city" id="site_location" placeholder="   اقرب مدينه    " required>
+            <input type="text" class="form-control" name="city" id="site_location" placeholder="   اقرب مدينة    " required>
           </div>
 
-          <div class="col-md-4 form-group mt-3 mt-md-0">
+          <div class="col-md-4 form- mt-3 mt-md-0">
             <br/>
             <input type="text" class="form-control" name="Nearest_market" id="Nearest_market" placeholder="    مسافة أقرب طريق معبَّد    " required>
           </div>
-          <div class="col-md-4 form-group mt-3 mt-md-0">
+          <div class="col-md-4 form- mt-3 mt-md-0">
               <label>  توفر الشبكة </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="ready" name="network" required>
@@ -428,25 +411,25 @@ curl_close($curl);
 
               <div class="row">
 
-                <div class="col-md-3 form-group">
+                <div class="col-md-3 form-">
                   <input type="text" name="name" class="form-control" id="name" placeholder="   الاسم  ثلاثي" required>
                 </div>
 
-                <div class="col-md-3 form-group">
+                <div class="col-md-3 form-">
                   <input type="text" name="phone" class="form-control" id="phone" placeholder="   رقم الهاتف  مثال 00249123000000" required>
                 </div>
 
-                <div class="col-md-3 form-group">
-                  <input type="text" name="whats" class="form-control" id="phone" placeholder="    رقم الواتساب  مثال 00249123000000" required>
+                <div class="col-md-3 form-">
+                  <input type="text" name="whatsapp_num" class="form-control" id="phone" placeholder="    رقم الواتساب  مثال 00249123000000" required>
                 </div>
-                <div class="col-md-3 form-group mt-3 mt-md-0">
+                <div class="col-md-3 form- mt-3 mt-md-0">
                   <input type="text" class="form-control" name="email" id="email" placeholder=" الايميل " required>
                 </div>
 
-                <div class="col-md-3 form-group mt-3 mt-md-0">
-                    <lable>   نوع العلاقه بالموقع </lable> 
+                <div class="col-md-3 form- mt-3 mt-md-0">
+                    <lable>   نوع العلاقة بالموقع </lable> 
                 <select class="form-control mr-1" name="job" id="job" onchange="" required>
-                <option value="" disabled selected> -- اختار الجهه -- </option>
+                <option value="" disabled selected> -- اختار  -- </option>
                 <option value="مالك"> مالك   </option>
                 <option value="شريك"> شريك </option>
                 <option value="مدير"> مدير </option>
@@ -462,17 +445,17 @@ curl_close($curl);
 
               <div class="row">
 
-              <div class="col-md-4 form-group">
-                <lable> الجهه التابع لها </lable> 
+              <div class="col-md-4 form-">
+                <lable> الجةة التابع لها </lable> 
                 <select class="form-control mr-1" name="work_for" id="work_for" onchange="select_side();" required>
-                <option value="" disabled selected> -- اختار الجهه -- </option>
+                <option value="" disabled selected> -- اختار  -- </option>
                 <option value="company"> شركة </option>
                 <option value="individual"> فرد </option>
                 </select>  
                 <input id="sidehide" type="text" name="company_name" class="form-control" placeholder=" ادخل اسم الشركة يدوي " style="display: none;" />
               </div>
 
-              <div class="col-md-4 form-group mt-3 mt-md-0">
+              <div class="col-md-4 form- mt-3 mt-md-0">
               <lable> هل  سبق لك العمل معنا </lable> 
                 <select class="form-control mr-1" name="previous" id="previous" onchange="select_wwus();" required>
                 <option value="" disabled selected> -- اختار الاجابة -- </option>
@@ -487,8 +470,8 @@ curl_close($curl);
 
               </div>
 
-              <div class="col-md-4 form-group mt-3 mt-md-0">
-              <div class="form-group">
+              <div class="col-md-4 form- mt-3 mt-md-0">
+              <div class="form-">
               <label for="exampleFormControlSelect2">طريقة التعرف علينا</label>
               <select  class="form-control" name="know" id="exampleFormControlSelect2">
                 <option value="media"> الفيسبوك </option>

@@ -1,4 +1,26 @@
-  <?php 
+<div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+
+        <a href="../English/index.php" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
+        <a href="../Arabic/index.php" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
+
+        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">info@equipation.sd</a>
+        <i class="bi bi-phone"></i>  +249912322447 
+
+
+      </div>
+      <div class="d-none d-lg-flex social-links align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+
+      </div>
+    </div>
+  </div>
+
+<?php 
   session_start();
   ?>
   <!-- ======= Header ======= -->
@@ -63,7 +85,7 @@
           <a href="#" style='border:none;'>
           <div class="icon" style='padding: 10px;color:#123;'> <span style='background-color:red;color:#fff;border-radius:50px;padding:6px;margin:5px;'><b> <?php
 
-          echo '09' ;
+          echo '0' ;
 
           ?> </b></span> <i style="width:100px;" class="fa fa-shopping-cart"></i></div>
           </a>
