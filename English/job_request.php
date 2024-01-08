@@ -649,13 +649,13 @@
                    if($key == "msg" )
                      if($value == "Success")
                            // success add form alert ...
-                                   echo "<div class='alert alert-success'>
-                                   <span class='icon'> <i class='fa fa-check-circle'></i></span>
-                                    <b> تم ارسال البلاغ  بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال بلاغاتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
-                       else
-                         echo "<div class='alert alert-danger'>
-                                   <span class='icon'> <i class='fa fa-cancel'></i></span>
-                                    <b> خطأ في عملية الارسال </b> </div>";
+                           echo "<div class='alert alert-success'>
+                           <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                            <b> The request has been sent successfully , we at Equipation company are always happy to receive your requests at all times , Equipation company employee will respond to you as soon as possible via the phone number or email sent in the request , Thank you for your Understanding  </b> </div>";
+                   else
+                   echo "<div class='alert alert-danger'>
+                   <span class='icon'> <i class='fa fa-cancel'></i></span>
+                    <b> Erorr in sending Request </b> </div>";
                }
              // echo gettype($x);
              // echo "R".$x;
@@ -972,16 +972,16 @@
       <div class="row">
 
       <div class="col-md-4 form-group">
-      <label> مستوي التعليم  </label>
+      <label>  Education level  </label>
       <select name="education_level" class="form-control">
-      <option> -- إختار -- </option>
-      <option> دون الثانوي </option>
-      <option> الثانوى </option> 
-      <option> دبلوم </option> 
-      <option> بكلريوس </option> 
-      <option> ماجستير </option> 
-      <option> دكتوراة </option> 
-      <option> شهادة فنية </option> 
+      <option> -- Select -- </option>
+      <option> without secondary  </option>
+      <option> Secondary  </option> 
+      <option> Diploma </option> 
+      <option> Bachelor's </option> 
+      <option> Master  </option> 
+      <option> PhD  </option> 
+      <option>  Technical certificate </option> 
       </select>
       </div>
 
@@ -1019,9 +1019,9 @@
       </div>
 
       <div class="col-md-4 form-group">
-      <label> ارفاق الشهادة  </label>
+      <label>  Attach the certificate  </label>
       <input type="file" name="ed_certificate" class="form-control"/>
-      <label> <b style="color: #a12">  الرجاء ارفاق الشهادة بصيغة PDF </b> </label>
+      <label> <b style="color: #a12">     Please attach the certificate in PDF format  </b> </label>
       </div>
 
         
@@ -1183,7 +1183,7 @@
 
        <div class="col-md-3 form-group">
           <label> CV </label>
-              <input type="file" name="cv" class="form-control" placeholder="الجوال"/>
+              <input type="file" name="cv" class="form-control" placeholder=""/>
           <label> <b style="color: #a12;"> add cv if it's found  </b> </label>
         </div>
 
