@@ -111,26 +111,26 @@ if(curl_errno($curl)) {
                 }elseif($key3 == "list_price"){
                   // product price
                   echo "<input type='text' name='price' value='".$value3."' hidden/>";
-                  echo "<b style='font-size:20px;'> ".$value3." SDG </b><br/>";
+                  echo "<b style='font-size:18px;'> ".$value3." SDG </b><br/>";
                 }elseif($key3 == "fleet_type"){
                   // fleet type
-                  echo "<div style='width:50%;float:right;text-align:right;padding:5px;'> النوع ".$value3." </div>";
+                  echo "<div class='card' style='width:50%;float:left;text-align:right;padding:5px;'> <i> النوع : ".$value3." </div>";
                 }elseif($key3 == "fleet_brand"){
                   // fleet type
-                  echo "<div style='width:50%;float:left;text-align:right;padding:5px;'> الماركة ".$value3." </div>";
+                  echo "<div class='card' style='width:50%;float:right;text-align:right;padding:5px;'>  الماركة : ".$value3." </div>";
                 }elseif($key3 == "fleet_model"){
                   // fleet model
-                  echo "<div style='width:50%;float:right;text-align:right;padding:5px;'> الموديل ".$value3." </div>";
+                  echo "<div class='card' style='width:50%;float:right;text-align:right;padding:5px;'>  الموديل : ".$value3." </div>";
                 }elseif($key3 == "fleet_size"){
                   // fleet model
-                  echo "<div style='width:50%;float:left;text-align:right;padding:5px;'> الحجم ".$value3." </div>";
+                  echo "<div class='card' style='width:50%;float:left;text-align:right;padding:5px;'>  الحجم : ".$value3." </div>";
                 }elseif($key3 == "fleet_manufacturing_year"){
                   // product price
-                  echo "<div style='width:50%;float:right;text-align:right;padding:5px;'> سنه الصنع".$value3." </div>";
+                  echo "<div class='card' style='width:50%;float:right;text-align:right;padding:5px;'>  سنه الصنع : ".$value3." </div>";
 
                 }elseif($key3 == "fleet_available_quantity"){
                   // product price
-                  echo "<div style='width:50%;float:left;text-align:right;padding:5px;'> الكمية المتوفرة ".$value3."  </div>";
+                  echo "<div class='card' style='width:50%;float:left;text-align:right;padding:5px;'> الكمية المتوفرة : ".$value3." </i> </div>";
                 }
             }
               // devider between items 

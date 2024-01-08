@@ -35,6 +35,13 @@ session_destroy();
   <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
+<style type="text/css">
+  .card{
+    color: #555;
+    font-weight: bold;
+    font-size: 15px;
+  }
+</style>
 <body>
 
 <div id="topbar" class="d-flex align-items-center fixed-top">

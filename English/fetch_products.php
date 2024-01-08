@@ -111,26 +111,26 @@ if(curl_errno($curl)) {
                 }elseif($key3 == "list_price"){
                   // product price
                   echo "<input type='text' name='price' value='".$value3."' hidden/>";
-                  echo "<b style='font-size:20px;'> 300 SDG </b><br/>";
+                  echo "<b style='font-size:18px;'> 300 SDG </b><br/>";
                 }elseif($key3 == "fleet_type"){
                   // fleet type
-                  echo "<div style='width:50%;float:right;text-align:left;padding:5px;'> Type ".$value3." </div>";
+                  echo "<div class='card' style='width:50%;float:right;text-align:left;padding:5px;'> <i> Type : ".$value3." </div>";
                 }elseif($key3 == "fleet_brand"){
                   // fleet type
-                  echo "<div style='width:50%;float:left;text-align:left;padding:5px;'> Brand ".$value3." </div>";
+                  echo "<div class='card'  style='width:50%;float:left;text-align:left;padding:5px;'> Brand : ".$value3." </div>";
                 }elseif($key3 == "fleet_model"){
                   // fleet model
-                  echo "<div style='width:50%;float:right;text-align:left;padding:5px;'> Model ".$value3." </div>";
+                  echo "<div class='card'  style='width:50%;float:right;text-align:left;padding:5px;'> Model : ".$value3." </div>";
                 }elseif($key3 == "fleet_size"){
                   // fleet model
-                  echo "<div style='width:50%;float:left;text-align:left;padding:5px;'> Size ".$value3." </div>";
+                  echo "<div class='card'  style='width:50%;float:left;text-align:left;padding:5px;'> Size : ".$value3." </div>";
                 }elseif($key3 == "fleet_manufacturing_year"){
                   // product price
-                  echo "<div style='width:50%;float:right;text-align:left;padding:5px;'>  Manfucture Year ".$value3." </div>";
+                  echo "<div class='card'  style='width:50%;float:right;text-align:left;padding:5px;'>   MFD : ".$value3." </div>";
 
                 }elseif($key3 == "fleet_available_quantity"){
                   // product price
-                  echo "<div style='width:50%;float:left;text-align:left;padding:5px;'> Available Quantaty  ".$value3."  </div>";
+                  echo "<div class='card'  style='width:50%;float:left;text-align:left;padding:5px;'> Quantity :  ".$value3." </i> </div>";
                 }
             }
               // devider between items 
