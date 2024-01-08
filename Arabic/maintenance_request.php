@@ -253,28 +253,37 @@ curl_close($curl);
               </div>
 
               <div class="row">
-                <div class="col-md-4 form-">
+
+                <div class="col-md-4 form-group">
+                  <label></label>
                   <input type="text" name="Type" class="form-control" id="Type" placeholder="نوع الالية " required>
                 </div>
+
                 <div class="col-md-4 form- mt-3 mt-md-0">
+                  <label></label>
                   <input type="text" class="form-control" name="model" id="model" placeholder=" موديل الالية   " required>
                 </div>
 
                 <div class="col-md-4 form- mt-3 mt-md-0">
+                  <label></label>
                     <input type="text" class="form-control" name="chassis" id="Sashinumber" placeholder="رقم الشاسي  " required>
                   </div>
 
-                  <div class="col-md-4 form- mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="engine" id="engine" placeholder="رقم المحرك  " required>
-                  </div>
+                </div>
 
-              </div>
      <!-- Start Input Start Time -->
      <div class="row">
 
+
+    <div class="col-md-4 form- mt-3 mt-md-0">
+      <label></label>
+    <input type="text" class="form-control" name="engine" id="engine" placeholder="رقم المحرك  " required>
+    </div>
+
+
      <div class="form- col-md-4">
-            <br/>
-            <input type="text" class="form-control" name="km_read" id="km_read" placeholder="    عداد الساعات /الكيلومترات    " required>
+      <label></label>   
+    <input type="text" class="form-control" name="km_read" id="km_read" placeholder="    عداد الساعات /الكيلومترات    " required>
       </div>
 
       <div class="form- col-md-4">
@@ -287,20 +296,9 @@ curl_close($curl);
             <option value="كةرباء">حدادة</option>
             <option value="تكيف">تكيف</option>
             <option value="ةيدروليك">ةيدروليك</option>
-
-
           </select>
-        
         </div>
-      </div>
-
-<!-- 
-      <div class="col-md-4 form-">
-        <br/>
-        <input type="text" name="site_location" class="form-control" id="site_location" placeholder="  موقع الالية " required>
-      </div>
-     -->
-     
+      </div>     
 
       </div>
 
@@ -320,26 +318,21 @@ curl_close($curl);
             <option value="" disabled selected> -- حدد نوع الاصلاح -- </option>
             <option value=" جردل"> جردل</option>
             <option value="جاك ةمر">جاك ةمر</option>
-
-
           </select>
-        
         </div>
       </div>
-      </div>
-      
 
-      <div class="form- mt-3">
+       <div class="col-md-4 form- mt-3">
         <textarea class="form-control" name="issue_description" rows="5" placeholder="وصف المشكلة " required></textarea>
       </div>
 
+      </div>
       
-      <h3 for="textAreaRemark">بيانات موقع الالية </h3>
+      
+      <br/><h3 for="textAreaRemark">بيانات موقع الالية </h3>
 
       <div class="row">
         <div class="col-md-4 form- mt-3 mt-md-0">
-            <br/>
-
             <label>    الولاية </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="state_id" name="state_id" required>
@@ -406,28 +399,38 @@ curl_close($curl);
               </div>
              
 
-             <h3 for="textAreaRemark">بيانات العميل </h3>
+             <br/><h3 for="textAreaRemark">بيانات العميل </h3>
 
 
               <div class="row">
 
-                <div class="col-md-3 form-">
+                <div class="col-md-4 form-">
+                  <label></label>
                   <input type="text" name="name" class="form-control" id="name" placeholder="   الاسم  ثلاثي" required>
                 </div>
 
-                <div class="col-md-3 form-">
+                <div class="col-md-4 form-">
+                  <label></label>
                   <input type="text" name="phone" class="form-control" id="phone" placeholder="   رقم الهاتف  مثال 00249123000000" required>
                 </div>
 
-                <div class="col-md-3 form-">
+                <div class="col-md-4 form-">
+                  <label></label>
                   <input type="text" name="whatsapp_num" class="form-control" id="phone" placeholder="    رقم الواتساب  مثال 00249123000000" required>
                 </div>
-                <div class="col-md-3 form- mt-3 mt-md-0">
+
+              </div>
+
+              <div class="row">
+
+
+                <div class="col-md-4 form- mt-3 mt-md-0">
+                  <label></label>
                   <input type="text" class="form-control" name="email" id="email" placeholder=" الايميل " required>
                 </div>
 
-                <div class="col-md-3 form- mt-3 mt-md-0">
-                    <lable>   نوع العلاقة بالموقع </lable> 
+                <div class="col-md-4 form- mt-3 mt-md-0">
+                <lable>   نوع العلاقة بالموقع </lable> 
                 <select class="form-control mr-1" name="job" id="job" onchange="" required>
                 <option value="" disabled selected> -- اختار  -- </option>
                 <option value="مالك"> مالك   </option>
@@ -437,13 +440,8 @@ curl_close($curl);
                 <option value="مشرف"> مشرف </option>
                 <option value="وكيل"> وكيل </option>
                 <option value="وسيط"> وسيط </option>
-
                 </select> 
                   </div>
-
-              </div>
-
-              <div class="row">
 
               <div class="col-md-4 form-">
                 <lable> الجةة التابع لها </lable> 

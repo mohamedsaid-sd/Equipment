@@ -405,18 +405,18 @@ curl_close($curl);
 
               <div class="row">
                 
-                <div class="col-md-4 form-group mt-3 mt-md-0">
+              <div class="col-md-4 form-group mt-3 mt-md-0">
                 <label></label>
                 <input type="number" step="0.01" id="welding_machine" name="welding_machine" class="form-control" placeholder="ادخل حجم  مكنة لحام  ">
-                </div>
+               </div>
 
-                <div class="col-md-4 form-group mt-3 mt-md-0">
+              <div class="col-md-4 form-group mt-3 mt-md-0">
                 <label></label>
                 <input type="number" step="0.01" id="excavator" name="excavator" class="form-control" placeholder="ادخل حجم حفار">
               </div>
 
 
-                <div class="col-md-4 form-group mt-3 mt-md-0">
+              <div class="col-md-4 form-group mt-3 mt-md-0">
                  ماركة الآلية المرحلة <br/>
                  <select class="form-control mr-1" name="model" id="model" onchange="select_brand();" >
                     <option disabled selected> --  اختار الماركة  -- </option>
@@ -431,8 +431,6 @@ curl_close($curl);
               
                 </div>
 
-
-               </div>
      <!-- Start Input Start Time -->
      <div class="row">
 
@@ -473,19 +471,14 @@ curl_close($curl);
     </div>
        
 
-    
 
-
-      </div>
-
-
-      <h3 for="textAreaRemark">معلومات الموقع</h3>
+    <br/><h3 for="textAreaRemark">معلومات الموقع</h3>
 
 
       <div class="row">
-        <div class="col-md-4 form-group">
-             <br/>
 
+        <div class="col-md-4 form-group">
+          <label></label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="state" name="state" required>
                <option value="" disabled selected> -- حدد  الولاية -- </option>
@@ -511,43 +504,48 @@ curl_close($curl);
              </select>
            </div>
         </div>
+
         <div class="col-md-4 form-group mt-3 mt-md-0">
-          <br/>
+          <label></label>
           <input type="text" class="form-control" id="zone" name="zone" placeholder=" المدينة " >
         </div>
 
         <div class="form-group col-md-4">
-          <br/>
+          <label></label>
           <input type="text" class="form-control" id="workplace" name="workplace" placeholder="الشركة " >
         </div>
+
       </div>
 
       <div class="row">
       
       <div class="col-md-4 form-group mt-3 mt-md-0">
+        <label></label>
         <textarea class="form-control" id="validationTextarea" name="description" placeholder="  وصف كتابي دقيق للموقع " ></textarea>    
       </div>
-      <div class="col-md-4 form-group mt-3 mt-md-0">
-      <input type="text" class="form-control" id="location" name="location" placeholder="  الموقع ">
 
+      <div class="col-md-4 form-group mt-3 mt-md-0">
+      <label></label>
+      <input type="text" class="form-control" id="location" name="location" placeholder="  الموقع ">
       </div>
        
       <div class="form-group col-md-4">
-            
+      <label></label>
         <input type="number" class="form-control" id="phone" name="phone" placeholder=" رقم التواصل 1    مثال 00249123000000" >  
     </div>
          
    
          <div class="form-group col-md-4">
+          <label></label>
          <input type="number" class="form-control" id="mobile" name="mobile" placeholder=" رقم التواصل 2   مثال 00249123000000" >  
          </div>
-              </div>
+
+    </div>
 
 
           <div class="row">
         <div class="col-md-4 form-group">
           <h3 for="textAreaRemark"> جهة توصيل الآلية </h3>
-
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="des_state" name="des_state" required>
                <option value="" disabled selected> -- حدد  الولاية -- </option>
@@ -568,61 +566,72 @@ curl_close($curl);
                <option value="ولاية جنوب دارفور">ولاية جنوب دارفور </option>
                <option value="ولاية شرق دارفور">ولاية شرق دارفور </option>
                <option value="ولاية وسط دارفور">ولاية وسط دارفور </option>
-
-
              </select>
            </div>
         </div>
         
         <div class="col-md-4 form-group mt-3 mt-md-0">
-          <br/>
+          <label></label>
           <input type="text" class="form-control" id="zone" name="des_zone" placeholder=" المدينة " >
         </div>
 
         <div class="form-group col-md-4">
-          <br/>
+          <label></label>
           <input type="text" class="form-control" id="workplace" name="des_workplace" placeholder="   الشركة " >
         </div>
+
       </div>
 
       <div class="row">
       
       <div class="col-md-4 form-group mt-3 mt-md-0">
+        <label></label>
         <textarea class="form-control" id="validationTextarea" name="des_description" placeholder="  وصف كتابي دقيق للموقع " ></textarea>    
       </div>
        
       <div class="form-group col-md-4">
-            
+        <label></label>  
         <input type="number" class="form-control" id="phone" name="des_phone" placeholder="    رقم التواصل 1   مثال 00249123000000" >  
-    </div>
+      </div>
          
    
          <div class="form-group col-md-4">
+          <label></label>
          <input type="number" class="form-control" id="mobile" name="des_mobile" placeholder="   رقم التواصل 2   مثال 00249123000000" >  
          </div>
               </div>
              
-
+              <br/>
               <h3 for="textAreaRemark">بيانات العميل </h3>
 
 
               <div class="row">
 
-                <div class="col-md-3 form-group">
+                <div class="col-md-4 form-group">
+                  <label></label>
                   <input type="text" name="name" class="form-control" id="name" placeholder="  الاسم  ثلاثي" >
                 </div>
-                <div class="col-md-3 form-">
+
+                <div class="col-md-4 form-">
+                  <label></label>
                   <input type="text" name="phone" class="form-control" id="phone" placeholder="   رقم الهاتف  مثال 00249123000000" required>
                 </div>
 
-                <div class="col-md-3 form-">
+                <div class="col-md-4 form-">
+                  <label></label>
                   <input type="text" name="whatsapp_num" class="form-control" id="whatsapp_num" placeholder="    رقم الواتساب  مثال 00249123000000" required>
-                </div>
-                <div class="col-md-3 form-group mt-3 mt-md-0">
+                </div>               
+
+              </div>
+
+              <div class="row">
+
+               <div class="col-md-4 form-group mt-3 mt-md-0">
+                <label></label>
                   <input type="text" class="form-control" name="email" id="email" placeholder=" الايميل " >
                 </div>
 
-                <div class="col-md-3 form-group mt-3 mt-md-0">
+                <div class="col-md-4 form-group mt-3 mt-md-0">
                 <lable>   نوع العلاقة بالموقع </lable> 
                 <select class="form-control mr-1" name="job" id="job" onchange="" required>
                 <option value="" disabled selected> -- اختار  -- </option>
@@ -637,10 +646,6 @@ curl_close($curl);
                 </select> 
                       </div>
 
-              </div>
-
-              <div class="row">
-
               <div class="col-md-4 form-group">
                 <lable> الجهة  التابع لها </lable> 
                 <select class="form-control mr-1" name="work_for" id="work_for" onchange="select_side();" >
@@ -651,6 +656,10 @@ curl_close($curl);
                 <input id="work_forhide" name="work_forhide" type="text" class="form-control" placeholder=" ادخل اسم الشركة يدوي " style="display: none;" />
               </div>
 
+            </div>
+
+            <div class="row">
+
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <lable> هل  سبق لك العمل معنا </lable> 
                 <select class="form-control mr-1" name="previous" id="previous" onchange="select_wwus();" >
@@ -658,15 +667,7 @@ curl_close($curl);
                 <option value="yes"> نعم </option>
                 <option value="no"> لا </option>
                 </select>
-
                <input id="previoushide" name="previoushide" type="text" class="form-control" placeholder=" في اي موقع عملت معنا " style="display: none;" />
-     
-               
-
-               
-      
-              
-
               </div>
 
               <div class="col-md-4 form-group mt-3 mt-md-0">

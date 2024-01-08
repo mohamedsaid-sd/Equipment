@@ -439,14 +439,15 @@ curl_close($curl);
             <label> اقرب سوق </label>
             <input type="text" id="nearest_market" name="nearest_market" class="form-control" placeholder=" ادخل اقرب سوق" required/>
             </div> -->
-
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-            <label>   اقرب طريق معبد </label>
-            <input type="text" id="nearest_paved_road" name="nearest_paved_road" class="form-control" placeholder="ادخل اقرب طريق معبد" required/>
-            </div>  
       </div>
 
       <div class="row">
+
+
+        <div class="col-md-4 form-group mt-3 mt-md-0">
+        <label>   اقرب طريق معبد </label>
+        <input type="text" id="nearest_paved_road" name="nearest_paved_road" class="form-control" placeholder="ادخل اقرب طريق معبد" required/>
+        </div>  
        
         <div class="col-md-4 form-group mt-3 mt-md-0">
         طبيعة العمل <br/>
@@ -508,9 +509,12 @@ curl_close($curl);
              </select>
            </div>
          </div>
+            
+          </div>
 
+       <div class="row">
 
-          <div class="form-group col-md-4">
+                  <div class="form-group col-md-4">
            <label> الانترنت </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="internet_selection" name="internet_selection" required>
@@ -520,10 +524,6 @@ curl_close($curl);
              </select>
            </div>
          </div>
-            
-          </div>
-
-       <div class="row">
             
     
          <div class="form-group col-md-4">
@@ -586,12 +586,7 @@ curl_close($curl);
            </div>
          </div>
           </div>
-
-          <div class="row">
-
-                              
-            
-          </div>
+          <br/>
 
                 <h3 for="textAreaRemark">بيانات العميل:  </h3>
 
@@ -664,6 +659,7 @@ curl_close($curl);
               <div class="form-group">
               <label for="exampleFormControlSelect2"> كيف تعرفت علينا </label>
              <select  class="form-control" id="exampleFormControlSelect2" name="social_media_selection" required>
+                <option value="" selected disabled> -- إختار -- </option>
                 <option value="facebook">Facebook</option>
                 <option value="twitter"> Twitter </option>
                 <option value="instagram"> Instagram </option>
@@ -672,6 +668,8 @@ curl_close($curl);
              </div>
 
               </div>
+
+              <br/><br/>
 
               <div class="text-center"><button style="background-color:orange;border-radius:20px;padding:10px;" type="submit" name="Send-form">  ارسال الطلب </button></div>
             </form>

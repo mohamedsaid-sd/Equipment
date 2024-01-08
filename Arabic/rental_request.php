@@ -401,7 +401,11 @@ curl_close($curl);
 
                 </div>
 
-                <div class="col-md-4 form-group mt-3 mt-md-0">
+              </div>
+     <!-- Start Input Start Time -->
+     <div class="row">
+
+               <div class="col-md-3 form-group mt-3 mt-md-0">
                 نوع العقد: <br/>
                   <select class="form-control mr-1" name="type_contract" id="month_rent" onchange="select_hour();"  required>
                     <option value="" disabled selected> -- اختار   -- </option>
@@ -412,11 +416,7 @@ curl_close($curl);
                   <input id="hour_num" name="hour_num" type="text" class="form-control" placeholder=" ادخل عدد  الساعات " style="display: none;">
                 </div>
 
-              </div>
-     <!-- Start Input Start Time -->
-     <div class="row">
-
-     <div class="form-group col-md-4">
+     <div class="form-group col-md-3">
         <label>ساعات العمل اليومية </label>
 
           <select class="form-control mr-1" id="work_hours" name="work_hours" onchange="select_hourday();"  required >
@@ -434,14 +434,14 @@ curl_close($curl);
 
       </div>
 
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-3">
         <label>  بداية العمل المتوقعة </label>
          <input type="date" class="form-control" id="inputDate" name="work_date"  required />
          
       </div>
       </div>
 
-    <h3 for="textAreaRemark">بيانات الموقع</h3>
+    <br/><h3 for="textAreaRemark">بيانات الموقع</h3>
 
 
       <div class="row">
@@ -550,13 +550,7 @@ curl_close($curl);
            </div>
          </div>
 
-         
-
-    
-
-       <div class="row">
-            
-        <div class="form-group col-md-4">
+                 <div class="form-group col-md-4">
            <label> مدي توفر شبكه الاتصالات في الموقع  </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="site_d" name="site_d"  required>
@@ -572,6 +566,13 @@ curl_close($curl);
            </div>
          </div>
 
+
+       </div>
+
+
+       <div class="row">
+            
+
          <div class="form-group col-md-4">
            <label> الانترنت </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
@@ -583,7 +584,7 @@ curl_close($curl);
            </div>
          </div>
             
-          </div>
+ 
 
          <div class="col-md-4 form-group mt-3 mt-md-0">
               <label>    نوع الشبكه المتوفره </label>
@@ -596,15 +597,11 @@ curl_close($curl);
                <option value=" سوداني و زين ">  سوداني و زين  </option>
                <option value=" زين و إم تي إن ">  زين و إم تي إن </option>
                <option value=" سوداني و إم تي إن ">  سوداني و إم تي إن </option>
-
-
              </select>
-           
            </div>
-
           </div>
 
-         <div class="form-group col-md-4">
+          <div class="form-group col-md-4">
            <label>  الورشة </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="site_e" name="site_e"  required>
@@ -614,6 +611,11 @@ curl_close($curl);
              </select>
            </div>
          </div>
+
+          </div>
+
+          <div class="row">
+
 
           <div class="form-group col-md-4">
            <label> الكمبرسون </label>
@@ -625,10 +627,6 @@ curl_close($curl);
              </select>
            </div>
          </div>
-
-          </div>
-
-          <div class="row">
 
           <div class="form-group col-md-4">
            <label> الجاز </label>
@@ -677,7 +675,7 @@ curl_close($curl);
 
              
 
-                <h3 for="textAreaRemark">بيانات العميل </h3>
+                <br/><h3 for="textAreaRemark">بيانات العميل </h3>
 
 
               <div class="row">
@@ -686,20 +684,25 @@ curl_close($curl);
                 <input type="text" name="name" class="form-control" id="name" placeholder="   الاسم  ثلاثي" required>
                 </div>
 
-                <div class="col-md-3 form-group">
+                <div class="col-md-4 form-group">
                   <input type="text" name="phone" class="form-control" id="phone" placeholder="   رقم الهاتف  مثال 00249123000000" required>
                 </div>
 
-                <div class="col-md-3 form-group">
+                <div class="col-md-4 form-group">
                   <input type="text" name="whatsapp_num" class="form-control" id="whatsapp_num" placeholder="    رقم الواتساب  مثال 00249123000000" required>
                 </div>
 
+              </div>
+
+              <div class="row">
+
                 <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <label></label>
                   <input type="text" class="form-control" name="email" id="email" placeholder=" الايميل " required >
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-  <lable>   نوع العلاقه بالموقع </lable> 
+                <lable>   نوع العلاقه بالموقع </lable> 
                 <select class="form-control mr-1" name="job" id="job" onchange="" required>
                 <option value="" disabled selected> -- اختار  -- </option>
                 <option value="مالك"> مالك   </option>
@@ -709,13 +712,8 @@ curl_close($curl);
                 <option value="مشرف"> مشرف </option>
                 <option value="وكيل"> وكيل </option>
                 <option value="وسيط"> وسيط </option>
-
                 </select> 
-                                </div>
-
-              </div>
-
-              <div class="row">
+                </div>
 
               <div class="col-md-4 form-group">
                 <lable> الجهة التابع لها </lable> 
@@ -726,6 +724,12 @@ curl_close($curl);
                 </select>  
                 <input id="company" name="company" type="text" class="form-control" placeholder=" ادخل اسم الشركة يدوي " style="display: none;" />
               </div>
+
+              </div>
+
+              <div class="row">
+
+   
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <lable> هل  سبق لك العمل معنا </lable> 
@@ -758,7 +762,7 @@ curl_close($curl);
 
               </div>
 
-
+              <br/><br/>
               <div class="text-center"><button type="submit" name="Send-form"> إرسال الطلب </button></div>
             </form>
 
