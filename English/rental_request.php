@@ -187,7 +187,7 @@
                   if(isset($_POST['Send-form'])){
 
                   // get the post value:
-                  @$work_typ = $_POST['work_typ'];
+                  // @$work_typ = $_POST['work_typ'];
                   @$duration = $_POST['duration'];
                   if($duration == "hand")
                     @$duration = $_POST['durationhide'];
@@ -201,10 +201,10 @@
                   @$site_d=$_POST['site_d'];@$site_e=$_POST['site_e'];@$site_f=$_POST['site_f'];
                   @$site_g=$_POST['site_g'];@$site_h=$_POST['site_h'];
                   @$site_i=$_POST['site_i'];
-                  @$site_j="Narest City ".$_POST['site_j'];
-                  @$site_k="Nearest Market  ".$_POST['site_k'];
-                  @$site_l="Nearest Paved Road  ".$_POST['site_l'];
-                  @$note = $site_a." and ".$site_b." and ".$site_c." and ".$site_d." and ".$site_e." and ".$site_f." and ".$site_g." and ".$site_h." and ".$site_i." and ".$site_j." and ".$site_k." and ".$site_l; 
+                  // @$site_j="Narest City ".$_POST['site_j'];
+                  // @$site_k="Nearest Market  ".$_POST['site_k'];
+                  // @$site_l="Nearest Paved Road  ".$_POST['site_l'];
+                  @$note = $site_a." and ".$site_b." and ".$site_c." and ".$site_d." and ".$site_e." and ".$site_f." and ".$site_g." and ".$site_h." and ".$site_i; 
                   @$distance = $_POST['distance'];
                   @$state   = $_POST['state'];
                   $region    = $_POST['region'];
@@ -248,7 +248,6 @@ $jayParsedAry = [
   "params" => [
         "args" => [
            "vals_list" => [
-              "work_typ" => @$work_typ, 
               "duration" => @$duration, 
               "month_rent" => @$month_rent, 
               "hour_num" => @$hour_num, 
@@ -269,8 +268,6 @@ $jayParsedAry = [
               "status" => "draft" ,
               "work_field" => $work_field,
               "region" => $region,
-              "nearest_market" => $site_l,
-              "nearest_road" =>$site_j,
               "network" =>$network,
               "latitude" => "1234",
               "longitude" => "4321",
@@ -352,7 +349,7 @@ curl_close($curl);
 
             <div class="row">
                
-                <div class="col-md-4 form-group">
+                <!-- <div class="col-md-4 form-group">
                 WORK TYPE <br/>
                   <select class="form-control mr-1" name="work_typ" id="work_typ" required>
                     <option value="" disabled selected> --  Choose the type  -- </option>
@@ -360,7 +357,7 @@ curl_close($curl);
                     <option value="jackhummer"> jackhummer </option>
                     <option value="both"> bucket + jackhummer  </option>
                   </select>
-                </div>
+                </div> -->
 
                 <div class="col-md-3 form-group">
                 Equipment type:  <br/>
@@ -517,18 +514,7 @@ curl_close($curl);
 
                   <input id="work_fieldhide" name="work_fieldhide" type="text" class="form-control" placeholder="   manual entry " style="display: none;">
           </div>
-          <div class="col-md-4 form-group mt-3 mt-md-0">
-              <label>  Network availability </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="ready" name="network" required>
-               <option value="" disabled selected> -- Choose -- </option>
-               <option value="available"> Available  </option>
-               <option value="not_available"> Not Available </option>
-             </select>
-           
-           </div>
-
-          </div>
+     
 
          <div class="form-group col-md-4">
            <label>   SITE AGE </label>
@@ -555,8 +541,10 @@ curl_close($curl);
              <select class="form-control mr-1" id="site_a" name="site_a" required>
                <option value="" disabled selected> --   Choose -- </option>
                <option value="living is excellent"> excellent </option>
-               <option value="living is good"> good </option>
-               <option value="living is normal"> normal </option>
+               <option value="living is Standard"> Standard </option>
+               <option value="living is Bad "> Bad  </option>
+               <option value="living is not available "> not available  </option>
+
              </select>
            </div>
          </div>
@@ -568,8 +556,10 @@ curl_close($curl);
              <select class="form-control mr-1" id="site_b" name="site_b" required>
                <option value="" disabled selected> --   Choose -- </option>
                <option value="subsistence is excellent"> excellent </option>
-               <option value="subsistence is good"> good </option>
-               <option value="subsistence is normal"> normal </option>
+               <option value="subsistence is Standard"> Standard </option>
+               <option value="subsistence is Bad"> Bad </option>
+               <option value="subsistence is not available "> not available  </option>
+
              </select>
            </div>
          </div>
@@ -590,15 +580,38 @@ curl_close($curl);
        <div class="row">
             
         <div class="form-group col-md-4">
-           <label>  communication </label>
+           <label>  The availability of the communications network at the site </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="site_d" name="site_d" required>
                <option value="" disabled selected> --  Choose  -- </option>
                <option value="communication is available"> available </option>
                <option value="communication is not available">  not available </option>
+               <option value="communication is Available within walking distance">  Available within walking distance </option>
+               <option value="communication is Available by car">  Available by car </option>
+
+
+               
              </select>
            </div>
          </div>
+
+         <div class="col-md-4 form-group mt-3 mt-md-0">
+              <label>  Network type </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="network" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option value="Zain"> Zain  </option>
+               <option value="MTN"> MTN  </option>
+               <option value="Sudanese"> Sudanese  </option>
+               <option value="Sudanese and Zain"> Sudanese and Zain  </option>
+               <option value="Zain and MTN"> Zain and MTN  </option>
+               <option value="Sudanese and MTN"> Sudanese and MTN  </option>
+
+             </select>
+           
+           </div>
+
+          </div>
 
          <div class="form-group col-md-4">
            <label>  workshop </label>
@@ -663,7 +676,7 @@ curl_close($curl);
 
           <div class="row">
 
-            <div class="col-md-4 form-group mt-3 mt-md-0">
+            <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
             <label> Narest City </label>
             <input type="text" name="site_j" class="form-control" placeholder="Enter nearest city" required/>
             </div>
@@ -676,7 +689,7 @@ curl_close($curl);
             <div class="col-md-4 form-group mt-3 mt-md-0">
             <label> Nearest Paved Road </label>
             <input type="text" name="site_l" class="form-control" placeholder="Enter nearest paved road" required/>
-            </div>                        
+            </div>                         -->
             
           </div>
 

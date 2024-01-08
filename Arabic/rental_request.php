@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title> طلب تاجير  </title>
+  <title> طلب التاجير  </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -160,7 +160,7 @@
       <div class="container">
         <br/>
         <div class="section-title">
-          <h2> طلب تأجير  </h2>
+          <h2> طلب التأجير  </h2>
          </div>
       </div>
 
@@ -186,7 +186,6 @@
                   if(isset($_POST['Send-form'])){
 
                   // get the post value:
-                  @$work_typ = $_POST['work_typ'];
                   @$duration = $_POST['duration'];
                   if($duration == "hand")
                     @$duration = $_POST['durationhide'];
@@ -200,9 +199,7 @@
                   $site_d=$_POST['site_d'];$site_e=$_POST['site_e'];$site_f=$_POST['site_f'];
                   $site_g=$_POST['site_g'];$site_g=$_POST['site_g'];$site_h=$_POST['site_h'];
                   $site_i=$_POST['site_i'];
-                  $site_j=" اقرب مدينه ".$_POST['site_j'];
-                  $site_l="اقرب طريق ".$_POST['site_l'];
-                  @$note = $site_a." و ".$site_b." و ".$site_c." و ".$site_d." و ".$site_e." و ".$site_f." و ".$site_g." و ".$site_h." و ".$site_i." و ".$site_j." و ".$site_l; 
+                  @$note = $site_a." و ".$site_b." و ".$site_c." و ".$site_d." و ".$site_e." و ".$site_f." و ".$site_g." و ".$site_h." و ".$site_i; 
                   @$distance = $_POST['distance'];
                   @$state   = $_POST['state'];
                   @$region    = $_POST['region'];
@@ -251,7 +248,6 @@ $jayParsedAry = [
   "params" => [
         "args" => [
            "vals_list" => [
-              "work_typ" => @$work_typ, 
               "duration" => @$duration, 
               "month_rent" => true, 
               "hour_num" => @$hour_num, 
@@ -272,8 +268,6 @@ $jayParsedAry = [
               "status" => "draft" ,
               "work_field" => $work_field,
               "region" => $region,
-              "nearest_market" => $site_l,
-              "nearest_road" =>$site_j,
               "network" =>$network,
               "latitude" => "1234",
               "longitude" => "4321",
@@ -356,16 +350,7 @@ curl_close($curl);
               </div>
 
             <div class="row">
-            <div class="col-md-4 form-group">
-                  نوع العمل <br/>
-                  <select class="form-control mr-1" name="work_typ" id="work_typ"  required>
-                    <option value="" disabled selected> -- اختار النوع  -- </option>
-                    <option value="bucket"> جردل </option>
-                    <option value="jackhummer"> جاك همر </option>
-                    <option value="both"> جردل + جاك همر </option>
-                  </select>
-                </div>
-               
+   
                 <div class="col-md-3 form-group">
                 نوع المعدة:  <br/>
                 
@@ -435,7 +420,7 @@ curl_close($curl);
         <label>ساعات العمل اليومية </label>
 
           <select class="form-control mr-1" id="work_hours" name="work_hours" onchange="select_hourday();"  required >
-            <option value="" disabled selected> -- اختر الساعات -- </option>
+            <option value="" disabled selected> --اختار  -- </option>
             <option value="10">10</option>
             <option value="12">12</option>
             <option value="15">15</option>
@@ -515,18 +500,7 @@ curl_close($curl);
                   <input id="work_fieldhide" name="work_fieldhide" type="text" class="form-control" placeholder=" ادخل مجال العمل  يدويا " style="display: none;">
           </div>
 
-          <div class="col-md-4 form-group mt-3 mt-md-0">
-              <label>  توفر الشبكة </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="ready" name="network" required>
-               <option value="" disabled selected> -- حدد نوع الشبكة -- </option>
-               <option value="متاح"> متاح  </option>
-               <option value="غير متاح"> غير متاح</option>
-             </select>
-           
-           </div>
-
-          </div>
+         
 
          <div class="form-group col-md-4">
            <label>  عمر الموقع </label>
@@ -548,29 +522,35 @@ curl_close($curl);
           <label> <b>جاهزيه الموقع : </b> </label>
           
           <div class="form-group col-md-4">
-           <label> السكن </label>
+           <label> يتوفر السكن في الموقع بجودة  </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="site_a" name="site_a" required >
-               <option value="" disabled selected> -- حدد مستوي السكن -- </option>
-               <option value="السكن ممتاز "> ممتاز </option>
-               <option value="السكن جيد"> جيد </option>
-               <option value="السكن عادي"> عادي </option>
+               <option value="" disabled selected> -- حدد   -- </option>
+               <option value="السكن ممتاز "> ممتازة </option>
+               <option value="السكن عادية"> عادية </option>
+               <option value="السكن سيئة"> سيئة </option>
+               <option value="السكن لا يتوفر "> لايتوفر </option>
+
              </select>
            </div>
          </div>
 
 
           <div class="form-group col-md-4">
-           <label> الاعاشة </label>
+           <label> تتوفر الإعاشه في الموقع بجودة </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="site_b" name="site_b" required >
                <option value="" disabled selected> -- حدد مستوي الاعاشة -- </option>
-               <option value="الاعاشة ممتازة"> ممتازة </option>
-               <option value="الاعاشة جيدة"> جيدة </option>
-               <option value="الاعاشة عادية"> عادية </option>
+               <option value="الإعاشه ممتازة"> ممتازة </option>
+               <option value="الإعاشه عادية"> عادية </option>
+               <option value="الإعاشه سيئة"> سيئة </option>
+               <option value="الإعاشه لا يتوفر "> لايتوفر </option>
+
              </select>
            </div>
          </div>
+
+         
 
           <div class="form-group col-md-4">
            <label> الانترنت </label>
@@ -588,15 +568,39 @@ curl_close($curl);
        <div class="row">
             
         <div class="form-group col-md-4">
-           <label> شبكة الاتصالات </label>
+           <label> مدي توفر شبكه الاتصالات في الموقع  </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="site_d" name="site_d"  required>
-               <option value="" disabled selected> -- حدد توفر الشبكة -- </option>
-               <option value="شبكة الاتصالات متوفرة"> متوفرة </option>
-               <option value="شبكة الاتصالات غير متوفرة"> غير متوفرة </option>
+               <option value="" disabled selected> -- حدد   -- </option>
+               <option value="  تتوفر في الموقع "> تتوفر في الموقع </option>
+               <option value="   لا تتوفر في الموق ">  لا تتوفر في الموق </option>
+
+               <option value="  تتوفر علي بعد مسافه يمكن الذهاب اليها بالأرجل  ">  تتوفر علي بعد مسافه يمكن الذهاب اليها بالأرجل </option>
+               <option value="تتوفر عن طريق الذهاب اليها بالسيارة   ">   تتوفر عن طريق الذهاب اليها بالسيارة</option>
+
+
              </select>
            </div>
          </div>
+
+         <div class="col-md-4 form-group mt-3 mt-md-0">
+              <label>    نوع الشبكه المتوفره </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="network" required>
+               <option value="" disabled selected> -- حدد   -- </option>
+               <option value="زين"> زين  </option>
+               <option value=" سوداني">  سوداني</option>
+               <option value=" ام تي إن">  ام تي إن</option>
+               <option value=" سوداني و زين ">  سوداني و زين  </option>
+               <option value=" زين و إم تي إن ">  زين و إم تي إن </option>
+               <option value=" سوداني و إم تي إن ">  سوداني و إم تي إن </option>
+
+
+             </select>
+           
+           </div>
+
+          </div>
 
          <div class="form-group col-md-4">
            <label>  الورشة </label>
@@ -662,17 +666,10 @@ curl_close($curl);
 
           <div class="row">
 
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-            <label> اقرب مدينة </label>
-            <input type="text" name="site_j" class="form-control" placeholder="ادخل اقرب مدينة"  required/>
-            </div>
-
+        
            
 
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-            <label> اقرب طريق معبد </label>
-            <input type="text" name="site_l" class="form-control" placeholder="ادخل  اقرب طريق معبد" required/>
-            </div>                        
+                           
             
           </div>
 

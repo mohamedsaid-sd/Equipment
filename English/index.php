@@ -168,8 +168,8 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container" style="background-color: #00000077;padding: 10px;color: #fff;">
-      <h1 style="color: #fff;"> Wellcome to Equipation Company </h1>
-      <h2 style="color: #eee;"> Equation works on implementing roads, fences, and armed water drains projects in states only, with a team of competing engineers and technicians, and the specifications of bicycles and fences, with high quality.</h2>
+      <h1 style="color: #fff;"> Welcome to the Equation electronic platform</h1>
+      <h2 style="color: #eee;"> Equipation works to implement civil contracting, infrastructure, and mining contracting projects, armed with the latest machinery and equipment and a team of qualified, skilled engineers and technicians, to implement projects with the highest required quality.</h2>
       <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
     </div>
   </section><!-- End Hero -->
@@ -185,7 +185,8 @@
             <div class="content">
               <h3> Why choose Equipation </h3>
               <p>
-                It is a service company that works to provide the latest and best machinery and heavy equipment for production projects in various fields. It began work in 2015 AD, using sophisticated and sophisticated administrative systems, and through efficient staff, and based on a large database, and in partnership with our clients who are in charge of productive projects in the country.
+
+               is a service company that works to provide the latest and best machinery and heavy equipment for production projects in various fields. It began operating since 2015 AD, using robust and advanced administrative systems, and through highly qualified staff, and based on a large and comprehensive database, and in partnership with our clients who are based on the largest Production projects in the country
               </p>
               <div class="text-center">
                 <!-- <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a> -->
@@ -199,21 +200,27 @@
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-notepad"></i>
                     <h4> Equipation Activities   </h4>
-                    <p>   Equation Company has many activities in most states of Sudan, including extracting minerals, excavations, drilling wells, and searching for different types of ore.  </p>
+                    <p>  
+                    Equipation has many activities in most states of Sudan, including extracting minerals, digging excavations and wells, and searching and exploring for various types of ore.                      
+                      </p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-bar-chart"></i>
                     <h4> Equipation projects  </h4>
-                    <p> Equation Company has many commercial, service and national projects, including paving the way for roads, making bridges, digging wells for remote villages, and building buildings.</p>
+                    <p> 
+                    Equipation has many national production and service projects, including paving roads, making bridges, digging wells for remote villages, and reconstruction throughout the country.                    
+                    </p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-support"></i>
                     <h4> Equipation Team </h4>
-                    <p> Equation Company has a skilled technical team trained to work and solve the most complex problems and deal with clients and customers with high skill and professionalism.</p>
+                    <p>
+                    Equipation has a skilled technical team trained to work and solve the most complex problems and deal with clients and customers with high skill and professionalism.
+                    </p>
                   </div>
                 </div>
               </div>

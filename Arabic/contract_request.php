@@ -213,87 +213,101 @@
 
     echo "Data".$work_type_id.$work_duration_id.$mobilization_row_distance.$mobilization_waste_distance.$total_ton.$daily_ton.$daily_work_hours_id.$expected_beginning_of_work.$state.$region.$distance_from_nearest.$work_field_id.$living_selection.$subsistence_selection.$internet_selection.$communication_selection.$workshop_selection.$compressor_selection.$fuel_selection.$water_selection.$electricity_selection.$nearest_city.$nearest_market.$nearest_paved_road.$site_age.$customer_name.$customer_email.$customer_job_title.$customer_type_selection.$ever_work_with_us.$social_media_selection.$friend.$company;
 
-// $jayParsedAry = [
-//   "params" => [
-//         "args" => [
-//            "vals_list" => [
-//               "work_typ" => @$work_typ, 
-//               "duration" => @$duration, 
-//               "month_rent" => @$month_rent, 
-//               "hour_num" => @$hour_num, 
-//               "work_hours" => @$work_hours, 
-//               "work_date" => @$work_date, 
-//               "note" => @$note, 
-//               "distance" => @$distance, 
-//               "state" => @$state, 
-//               "site_age" => @$site_age, 
-//               "start_date" => @$start_date, 
-//               "name" => @$name, 
-//               "email" => @$email, 
-//               "job" => @$job, 
-//               "categ" => @$categ, 
-//               "company" => @$company, 
-//               "work" => @$work, 
-//               "know" => @$know, 
-//               "status" => "draft" ,
-//               "work_field" => $work_field,
-//               "region" => $region
-//            ] 
-//         ] 
-//      ] 
-// ]; 
-// $done=json_encode($jayParsedAry);
-// //echo $done;
-// $curl = curl_init();
+$jayParsedAry = [
+  "params" => [
+        "args" => [
+           "vals_list" => [
+            "work_type_id" => $work_type_id, 
+            "work_duration_id" => $work_duration_id, 
+            "mobilization_row_distance" => $mobilization_row_distance, 
+            "mobilization_waste_distance" => $mobilization_waste_distance, 
+            "total_ton" => $total_ton, 
+            "daily_ton" => $daily_ton, 
+            "daily_work_hours_id" => $daily_work_hours_id, 
+            "expected_beginning_of_work" => $expected_beginning_of_work, 
+            "state" => $state, 
+            "region" => $region, 
+            "distance_from_nearest" => $distance_from_nearest, 
+            "work_field_id" => $work_field_id, 
+            "living_selection" => $living_selection, 
+            "subsistence_selection" => $subsistence_selection, 
+            "internet_selection" => $internet_selection, 
+            "communication_selection" =>$communication_selection, 
+            "workshop_selection" => $workshop_selection, 
+            "compressor_selection" => $compressor_selection, 
+            "fuel_selection" => $fuel_selection, 
+            "water_selection" => $water_selection, 
+            "electricity_selection" => $electricity_selection, 
+            "nearest_city" => $nearest_city, 
+            "nearest_market" => $nearest_market, 
+            "nearest_paved_road" => $nearest_paved_road, 
+            "site_age" => $site_age, 
+            "customer_name" => $customer_name, 
+            "customer_email" => $customer_email, 
+            "customer_job_title" => $customer_job_title, 
+            "customer_type_selection" => $customer_type_selection, 
+            "ever_work_with_us" => $ever_work_with_us ,
+            "social_media_selection" => $social_media_selection, 
+            "friend" => $friend, 
+            "company" => $company, 
+            "other" => "Some other information", 
+            "status" => "draft" 
+           ] 
+        ] 
+     ] 
+]; 
+$done=json_encode($jayParsedAry);
+//echo $done;
+$curl = curl_init();
 
-// curl_setopt_array($curl, array(
-//   CURLOPT_URL => 'https://equipation-equipation-odoo-com-stage-10590858.dev.odoo.com/apiV2/rental.request/create',
-//   CURLOPT_SSL_VERIFYHOST => 0 ,
-//   CURLOPT_SSL_VERIFYPEER => 0 ,
-//   CURLOPT_RETURNTRANSFER => true,
-//   CURLOPT_ENCODING => '',
-//   CURLOPT_MAXREDIRS => 10,
-//   CURLOPT_TIMEOUT => 0,
-//   CURLOPT_FOLLOWLOCATION => true,
-//   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-//   CURLOPT_CUSTOMREQUEST => 'POST',
-//   CURLOPT_POSTFIELDS =>$done,
-//   CURLOPT_HTTPHEADER => array(
-//     'Content-Type: application/json',
-//     'X-Openerp-Session-Id: {{session_id}}',
-//     'Cookie: session_id=a1fd8b1c0a71abde4e289ac7f5212eee0e8cc5e7'
-//   ),
-// ));
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://equipation-equipation-odoo-com-stage-10590858.dev.odoo.com/apiV2/rental.request/create',
+  CURLOPT_SSL_VERIFYHOST => 0 ,
+  CURLOPT_SSL_VERIFYPEER => 0 ,
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>$done,
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json',
+    'X-Openerp-Session-Id: {{session_id}}',
+    'Cookie: session_id=a1fd8b1c0a71abde4e289ac7f5212eee0e8cc5e7'
+  ),
+));
 
-//  $response = curl_exec($curl);
+ $response = curl_exec($curl);
 
 
 
-// if(curl_errno($curl)) {
-//   echo 'Error: ' . curl_error($curl);
-// } else {
+if(curl_errno($curl)) {
+  echo 'Error: ' . curl_error($curl);
+} else {
 
-//   //echo $response;
-//         // convert response to array
-//     $array = json_decode(  $response , true );
-//     // loop the array to fetch item
-//     foreach ($array as $key => $value) {
-//        // echo $key."".$value;
-//         if($key == "msg" )
-//           if($value == "Success")
-//                 // success add form alert ...
-//                         echo "<div class='alert alert-success'>
-//                         <span class='icon'> <i class='fa fa-check-circle'></i></span>
-//                          <b> The request has been sent successfully , we at Equipation company are always happy to receive your requests at all times , Equipation company employee will respond to you as soon as possible via the phone number or email sent in the request , Thank you for your Understanding  </b> </div>";
-//             else
-//               echo "<div class='alert alert-danger'>
-//                         <span class='icon'> <i class='fa fa-cancel'></i></span>
-//                          <b> Erorr in sending Request </b> </div>";
-//     }
-//   // echo gettype($x);
-//   // echo "R".$x;
-// }
-// curl_close($curl);
+  //echo $response;
+        // convert response to array
+    $array = json_decode(  $response , true );
+    // loop the array to fetch item
+    foreach ($array as $key => $value) {
+       // echo $key."".$value;
+        if($key == "msg" )
+          if($value == "Success")
+                // success add form alert ...
+                        echo "<div class='alert alert-success'>
+                        <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                         <b> The request has been sent successfully , we at Equipation company are always happy to receive your requests at all times , Equipation company employee will respond to you as soon as possible via the phone number or email sent in the request , Thank you for your Understanding  </b> </div>";
+            else
+              echo "<div class='alert alert-danger'>
+                        <span class='icon'> <i class='fa fa-cancel'></i></span>
+                         <b> Erorr in sending Request </b> </div>";
+    }
+  // echo gettype($x);
+  // echo "R".$x;
+}
+curl_close($curl);
                  }
                   ?>
 
