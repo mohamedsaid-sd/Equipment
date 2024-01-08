@@ -325,8 +325,34 @@
               @$study_school = $_POST['study_school'];
               @$university_address = $_POST['university_address'];
 
+              @$education_level = $_POST['education_level'];
+              @$whatsapp_num = $_POST['whatsapp_num'];
+
+              // Posst the files 
+
+              // Personal Image 
+              @$image = file_get_contents($_FILES['image']['tmp_name']);
+              @$image = base64_encode($image);
+              
+              // Identification ID 
+              @$id_attachment = file_get_contents($_FILES['id_attachment']['tmp_name']);
+              @$id_attachment = base64_encode($id_attachment);
+              @$id_attachment_type = pathinfo($_FILES['id_attachment']['name'] , PATHINFO_EXTENSION);
+
+              // Education Certificate
+              @$ed_certificate = file_get_contents($_FILES['ed_certificate']['tmp_name']);
+              @$ed_certificate = base64_encode($ed_certificate);
+              @$ed_certificate_type = pathinfo($_FILES['ed_certificate']['name'] , PATHINFO_EXTENSION);
+
+              // cv : 
               $cv = file_get_contents($_FILES['cv']['tmp_name']);
               $cv_data = base64_encode($cv);
+
+              // Other attachment : 
+              @$other_attachment = file_get_contents($_FILES['other_attachment']['tmp_name']);
+              @$other_attachment = base64_encode($other_attachment);
+              @$other_attachment_type = pathinfo($_FILES['other_attachment']['name'] , PATHINFO_EXTENSION);
+
 
               // INSERT EXPEAR ARRAY
               $exper_array = array();
@@ -517,6 +543,9 @@
                   "inform" => "Some inform notes.", 
                   "status" => "draft", 
                   "cv" => $cv_data ,
+                  "image" => $image ,
+                  "whatsapp_num" => $whatsapp_num ,
+                  "education_level" => $education_level ,
                   "train_ids" => [
                      [
                         0, 
@@ -531,6 +560,42 @@
                         ] 
                      ] 
                   ], 
+                                    "attachment_ids" => [
+                        [
+                            0,
+                            0,
+                            [
+                                "name" => "ID attachment",
+                                "type" => $id_attachment_type,
+                                "file" => $id_attachment//binary file
+                                
+                            ]
+                        ]
+                    ],
+                  "certification_ids" => [
+                        [
+                            0,
+                            0,
+                            [
+                                "name" => "Education Certificate",
+                                "type" => $ed_certificate_type,
+                                "file" => $ed_certificate//binary file
+                                
+                            ]
+                        ]
+                  ],
+                  "other_attachment_ids" => [
+                        [
+                            0,
+                            0,
+                            [
+                                "name" => "Other attachment",
+                                "type" => $other_attachment_type,
+                                "file" => $other_attachment //binary file
+                                
+                            ]
+                        ]
+                    ],
                   "exper_ids" => $experArray, 
                   "skill_ids" => $skillsArray ,
                   "ref_ids" => $refArray, 
@@ -606,7 +671,7 @@
         </div>
 
       <div class="container">
-      <form action="job_request.php" method="POST">
+      <form action="job_request.php" method="POST" enctype="multipart/form-data">
 
       <div class="row">
 
@@ -732,7 +797,7 @@
 
       <div class="col-md-4 form-group">
       <label> Whatsapp no </label>
-      <input type="number" name="whatsapp" class="form-control" placeholder="ex : 249912322447">
+      <input type="number" name="whatsapp_num" class="form-control" placeholder="ex : 249912322447">
       </div>
         
       </div>
@@ -895,7 +960,7 @@
 
       <div class="col-md-4 form-group">
       <label> Attachment ID   </label>
-      <input type="file" name="attach" class="form-control"/>
+      <input type="file" name="id_attachment" class="form-control"/>
       <label> <b style="color: #a12;"> Picture in JPG , JPEG , PNG  </b> </label>
       </div> 
         
@@ -906,26 +971,39 @@
 
       <div class="row">
 
-      <h4> The University </h4>
-
       <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" name="study_school" class="form-control" placeholder="University name">
+      <label> مستوي التعليم  </label>
+      <select name="education_level" class="form-control">
+      <option> -- إختار -- </option>
+      <option> دون الثانوي </option>
+      <option> الثانوى </option> 
+      <option> دبلوم </option> 
+      <option> بكلريوس </option> 
+      <option> ماجستير </option> 
+      <option> دكتوراة </option> 
+      <option> شهادة فنية </option> 
+      </select>
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" name="university_address" class="form-control" placeholder="University Place">
+      <input type="text" name="study_school" class="form-control" placeholder="Enterprise name">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" name="study_field" class="form-control" placeholder="The College">
+      <input type="text" name="university_address" class="form-control" placeholder="Enterprise Place">
       </div>
 
       </div>
 
       <div class="row">
+
+
+      <div class="col-md-4 form-group">
+      <label>   </label>
+      <input type="text" name="study_field" class="form-control" placeholder="The College">
+      </div>
 
 
       <div class="col-md-4 form-group">
@@ -938,6 +1016,12 @@
       <option value="doctor"> Doctor </option>
       <option value="other"> Other </option>
       </select>
+      </div>
+
+      <div class="col-md-4 form-group">
+      <label> ارفاق الشهادة  </label>
+      <input type="file" name="ed_certificate" class="form-control"/>
+      <label> <b style="color: #a12">  الرجاء ارفاق الشهادة بصيغة PDF </b> </label>
       </div>
 
         
@@ -1105,7 +1189,7 @@
 
         <div class="col-md-3 form-group">
               <label> Other attachment </label>
-              <input type="file" name="ref_mobile1" class="form-control" placeholder="الجوال"/>
+              <input type="file" name="other_attachment" class="form-control"/>
               <label> <b style="color: #a12;"> add other attachment in PDF format  </b> </label>
         </div>
 

@@ -331,9 +331,33 @@
               @$study_field = $_POST['study_field'];
               @$study_school = $_POST['study_school'];
               @$university_address = $_POST['university_address'];
+              @$education_level = $_POST['education_level'];
+              @$whatsapp_num = $_POST['whatsapp_num'];
 
+              // Posst the files 
+
+              // Personal Image 
+              @$image = file_get_contents($_FILES['image']['tmp_name']);
+              @$image = base64_encode($image);
+              
+              // Identification ID 
+              @$id_attachment = file_get_contents($_FILES['id_attachment']['tmp_name']);
+              @$id_attachment = base64_encode($id_attachment);
+              @$id_attachment_type = pathinfo($_FILES['id_attachment']['name'] , PATHINFO_EXTENSION);
+
+              // Education Certificate
+              @$ed_certificate = file_get_contents($_FILES['ed_certificate']['tmp_name']);
+              @$ed_certificate = base64_encode($ed_certificate);
+              @$ed_certificate_type = pathinfo($_FILES['ed_certificate']['name'] , PATHINFO_EXTENSION);
+
+              // cv : 
               @$cv = file_get_contents($_FILES['cv']['tmp_name']);
               @$cv_data = base64_encode($cv);
+
+              // Other attachment : 
+              @$other_attachment = file_get_contents($_FILES['other_attachment']['tmp_name']);
+              @$other_attachment = base64_encode($other_attachment);
+              @$other_attachment_type = pathinfo($_FILES['other_attachment']['name'] , PATHINFO_EXTENSION);
 
               // INSERT EXPEAR ARRAY
               $exper_array = array();
@@ -471,7 +495,6 @@
             "vals_list" => [
                [
                   "name" => $full_name, 
-                  "image" => $image_data,
                   "birthdate" => $birthdate, 
                   "place" => $place, 
                   "home" => $home, 
@@ -525,6 +548,9 @@
                   "inform" => "Some inform notes.", 
                   "status" => "draft", 
                   "cv" => $cv_data , 
+                  "image" => $image ,
+                  "whatsapp_num" => $whatsapp_num ,
+                  "education_level" => $education_level ,
                   "train_ids" => [
                      [
                         0, 
@@ -539,6 +565,42 @@
                         ] 
                      ] 
                   ], 
+                  "attachment_ids" => [
+                        [
+                            0,
+                            0,
+                            [
+                                "name" => "ID attachment",
+                                "type" => $id_attachment_type,
+                                "file" => $id_attachment//binary file
+                                
+                            ]
+                        ]
+                    ],
+                  "certification_ids" => [
+                        [
+                            0,
+                            0,
+                            [
+                                "name" => "Education Certificate",
+                                "type" => $ed_certificate_type,
+                                "file" => $ed_certificate//binary file
+                                
+                            ]
+                        ]
+                  ],
+                  "other_attachment_ids" => [
+                        [
+                            0,
+                            0,
+                            [
+                                "name" => "Other attachment",
+                                "type" => $other_attachment_type,
+                                "file" => $other_attachment //binary file
+                                
+                            ]
+                        ]
+                    ],
                   "exper_ids" => $experArray, 
                   "skill_ids" => $skillsArray ,
                   "ref_ids" => $refArray, 
@@ -588,7 +650,7 @@
                $array = json_decode(  $response , true );
                // loop the array to fetch item
                foreach ($array as $key => $value) {
-                // echo $key."".$value;
+                 echo $key."".$value;
                    if($key == "msg" )
                      if($value == "Success")
                            // success add form alert ...
@@ -614,7 +676,7 @@
       </div>
 
       <div class="container">
-      <form method="POST" action="job_request.php">
+      <form method="POST" action="job_request.php" enctype="multipart/form-data">
 
       <div class="row">
 
@@ -738,7 +800,7 @@
 
       <div class="col-md-4 form-group">
       <label> رقم الواتساب </label>
-      <input type="number" name="whatsapp" class="form-control" placeholder="ex : 249912322447">
+      <input type="number" name="whatsapp_num" class="form-control" placeholder="ex : 249912322447">
       </div>
         
       </div>
@@ -895,7 +957,7 @@
       <div class="col-md-4 form-group">
       <label> هل قمت بانهاء الخدمة الوطنية ؟ </label>
       <select name="service" class="form-control">
-      <option> -- إختار -- </option>
+      <option selected disabled> -- إختار -- </option>
       <option value="yes"> نعم </option>
       <option value="no"> لا </option>
       </select>
@@ -908,7 +970,7 @@
 
       <div class="col-md-4 form-group">
       <label> إرفاق اثبات الشخصية  </label>
-      <input type="file" name="attach" class="form-control"/>
+      <input type="file" name="id_attachment" class="form-control"/>
       <label> <b style="color: #a12;"> ارفاق صورة JPG , JPEG , PNG  </b> </label>
       </div> 
 
@@ -921,26 +983,38 @@
   
       <div class="row">
 
-      <h4> المرحلة الجامعية </h4>
-
       <div class="col-md-4 form-group">
-      <label>   </label>
-      <input type="text" name="study_school" class="form-control" placeholder="إسم الجامعة">
+      <label> مستوي التعليم  </label>
+      <select name="education_level" class="form-control">
+      <option> -- إختار -- </option>
+      <option> دون الثانوي </option>
+      <option> الثانوى </option> 
+      <option> دبلوم </option> 
+      <option> بكلريوس </option> 
+      <option> ماجستير </option> 
+      <option> دكتوراة </option> 
+      <option> شهادة فنية </option> 
+      </select>
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" name="university_address" class="form-control" placeholder="مكان الجامعة">
+      <input type="text" name="study_school" class="form-control" placeholder="إسم المؤسسة">
       </div>
 
       <div class="col-md-4 form-group">
       <label>   </label>
-      <input type="text" name="study_field" class="form-control" placeholder="الكلية">
+      <input type="text" name="university_address" class="form-control" placeholder="مكان المؤسسة">
       </div>
 
       </div>
 
       <div class="row">
+
+      <div class="col-md-4 form-group">
+      <label>   </label>
+      <input type="text" name="study_field" class="form-control" placeholder="التخصص">
+      </div>
      
 
       <div class="col-md-4 form-group">
@@ -954,21 +1028,15 @@
       <option value="other"> اخرى </option>
       </select>
       </div>
-        
-      </div>
-      <div class="row">
 
-  
-      
       <div class="col-md-4 form-group">
-      <label> الدرجة العلمية  </label>
-      <select  name="certificate" class="form-control">
-      <option value="bachelor"> -- إختار -- </option>
-      <option value="bachelor"> دبلوم </option>
-      <option value="bachelor"> بكلريوس </option>
-      <option value="bachelor"> اخرى </option>
-      </select>
+      <label> ارفاق الشهادة  </label>
+      <input type="file" name="ed_certificate" class="form-control"/>
+      <label> <b style="color: #a12">  الرجاء ارفاق الشهادة بصيغة PDF </b> </label>
       </div>
+        
+
+
 
   
       </div>
@@ -1164,7 +1232,7 @@
 
         <div class="col-md-4 form-group">
               <label> مرفقات اخرى </label>
-              <input type="file" name="ref_mobile1" class="form-control" placeholder="الجوال"/>
+              <input type="file" name="other_attachment" class="form-control"/>
               <label> <b style="color: #a12;"> إضافة مستندات اخرى بصيغة PDF  </b> </label>
         </div>
 
