@@ -44,7 +44,13 @@ curl_setopt_array($curl, array(
                 "categ_id",
                 "taxes_id",
                 "product_variant_id",
-                "image_1920"
+                "image_1920",
+                "fleet_type",
+                "fleet_brand",
+                "fleet_model",
+                "fleet_size",
+                "fleet_manufacturing_year",
+                "fleet_available_quantity"
             ],
             "domain": [
                 [
@@ -106,6 +112,25 @@ if(curl_errno($curl)) {
                   // product price
                   echo "<input type='text' name='price' value='".$value3."' hidden/>";
                   echo "<b style='font-size:20px;'> 300 SDG </b><br/>";
+                }elseif($key3 == "fleet_type"){
+                  // fleet type
+                  echo "<div style='width:50%;float:right;text-align:left;padding:5px;'> Type ".$value3." </div>";
+                }elseif($key3 == "fleet_brand"){
+                  // fleet type
+                  echo "<div style='width:50%;float:left;text-align:left;padding:5px;'> Brand ".$value3." </div>";
+                }elseif($key3 == "fleet_model"){
+                  // fleet model
+                  echo "<div style='width:50%;float:right;text-align:left;padding:5px;'> Model ".$value3." </div>";
+                }elseif($key3 == "fleet_size"){
+                  // fleet model
+                  echo "<div style='width:50%;float:left;text-align:left;padding:5px;'> Size ".$value3." </div>";
+                }elseif($key3 == "fleet_manufacturing_year"){
+                  // product price
+                  echo "<div style='width:50%;float:right;text-align:left;padding:5px;'>  Manfucture Year ".$value3." </div>";
+
+                }elseif($key3 == "fleet_available_quantity"){
+                  // product price
+                  echo "<div style='width:50%;float:left;text-align:left;padding:5px;'> Available Quantaty  ".$value3."  </div>";
                 }
             }
               // devider between items 
