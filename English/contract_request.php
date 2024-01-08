@@ -207,8 +207,10 @@
   $ever_work_with_us =  $_POST['ever_work_with_us'];
   $social_media_selection =  $_POST['social_media_selection'];
   $friend = @$_POST['friend'];
-  $friend = "********// راجع";
   $company =  $_POST['company'];
+  $phone = $_POST['phone'];
+  $whatsapp_num = $_POST['whatsapp_num'];
+  $start_date = $_POST['start_date'];
 
   
   // echo "Data".$work_type_id.$work_duration_id.$mobilization_row_distance.$mobilization_waste_distance.$total_ton.$daily_ton.$daily_work_hours_id.$expected_beginning_of_work.$state.$region.$distance_from_nearest.$work_field_id.$living_selection.$subsistence_selection.$internet_selection.$communication_selection.$workshop_selection.$compressor_selection.$fuel_selection.$water_selection.$electricity_selection.$nearest_city.$nearest_market.$nearest_paved_road.$site_age.$customer_name.$customer_email.$customer_job_title.$customer_type_selection.$ever_work_with_us.$social_media_selection.$friend.$company;
@@ -242,7 +244,7 @@ $jayParsedAry = [
             "nearest_city" => $nearest_city, 
             "nearest_market" => $nearest_market, 
             "nearest_paved_road" => $nearest_paved_road, 
-            "site_age" => $site_age, 
+            "site_age" => $start_date, 
             "customer_name" => $customer_name, 
             "customer_email" => $customer_email, 
             "customer_job_title" => $customer_job_title, 
@@ -252,6 +254,8 @@ $jayParsedAry = [
             "friend" => $friend, 
             "company" => $company, 
             "other" => "Some other information", 
+            "whatsapp_num" => $whatsapp_num,
+            "phone" => $phone,
             "status" => "draft" 
            ] 
         ] 
@@ -262,7 +266,7 @@ $done=json_encode($jayParsedAry);
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://equipation-equipation-odoo-com-stage-10590858.dev.odoo.com/apiV2/rental.request/create',
+  CURLOPT_URL => 'https://equipation-equipation-odoo-com-stage-10590858.dev.odoo.com/apiV2/contracting.request/create',
   CURLOPT_SSL_VERIFYHOST => 0 ,
   CURLOPT_SSL_VERIFYPEER => 0 ,
   CURLOPT_RETURNTRANSFER => true,
@@ -293,7 +297,7 @@ if(curl_errno($curl)) {
     $array = json_decode(  $response , true );
     // loop the array to fetch item
     foreach ($array as $key => $value) {
-       // echo $key."".$value;
+        echo $key."".$value;
         if($key == "msg" )
           if($value == "Success")
                 // success add form alert ...
@@ -336,7 +340,7 @@ curl_close($curl);
 
                 <div class="col-md-4 form-group">
                 <label></label>
-                <input id="mobilization_row_distance" name="mobilization_row_distance" type="text" class="form-control" placeholder="Distance of mobilization row"/>
+                <input id="mobilization_row_distance" name="mobilization_row_distance" type="number" class="form-control" placeholder="Distance of mobilization row"/>
                 </div>
 
               </div>
@@ -350,12 +354,12 @@ curl_close($curl);
 
               <div class="col-md-4 form-group">
               <label>OTAL TON</label>
-              <input id="total_ton" name="total_ton" type="text" class="form-control" placeholder="distance of mobilization waste"/>
+              <input id="total_ton" name="total_ton" type="number" class="form-control" placeholder="distance of mobilization waste"/>
               </div> 
 
               <div class="col-md-4 form-group">
               <label>DAILY TON</label>
-              <input id="daily_ton" name="daily_ton" type="text" class="form-control" placeholder="distance of mobilization waste"/>
+              <input id="daily_ton" name="daily_ton" type="number" class="form-control" placeholder="distance of mobilization waste"/>
               </div> 
 
               </div>
@@ -373,7 +377,7 @@ curl_close($curl);
             <option value="20">20</option>
             <option value="hand"> manual entry  </option>
           </select>
-          <input id="work_hourshide" name="work_hourshide" type="text" class="form-control" placeholder="  manual entry Hour   " style="display: none;">
+          <input id="work_hourshide" name="work_hourshide" type="number" class="form-control" placeholder="  manual entry Hour   " style="display: none;">
         </div>
 
          <div class="col-md-4 form-group">
@@ -419,7 +423,7 @@ curl_close($curl);
           <div class="form-group col-md-4">
            <label>  The nature of the site </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="ready" name="region" required>
+             <select class="form-control mr-1" id="region" name="region" required>
                <option value="" disabled selected> -- Choose -- </option>
                <option value="Mountains"> Mountains </option>
                <option value=" Wells"> Wells </option>
@@ -431,7 +435,7 @@ curl_close($curl);
          </div>
 
         <div class="form-group col-md-4">
-       <input type="text" class="form-control" name="distance_from_nearest" id="distance_from_nearest" placeholder=" Nearest city  " required>
+       <input type="number" class="form-control" name="distance_from_nearest" id="distance_from_nearest" placeholder=" Nearest city  " required>
           </div>
       </div>
 
@@ -441,9 +445,9 @@ curl_close($curl);
         WORK FIELD <br/>
                   <select class="form-control mr-1" name="work_field_id" id="work_field_id" onchange="select_work_field();" required>
                     <option disabled selected> -- Choose   -- </option>
-                    <option> mining </option>
-                    <option>  cement </option>
-                    <option>  agricultural </option>
+                    <option value="1"> mining </option>
+                    <option value="2">  cement </option>
+                    <option value="3">  agricultural </option>
                     <option value="hand">   manual entry </option>
                   </select>
 
@@ -451,18 +455,12 @@ curl_close($curl);
           </div>
 
          <div class="form-group col-md-4">
-           <label>   SITE AGE </label>
-             <select class="form-control mr-1" id="site_age" name="site_age" onchange="select_old();" required>
-               <option value="" disabled selected> --   Choose -- </option>
-               <option value="new"> new </option>
-               <option value="old"> old </option>
-             </select>
-             <span id="oldhide" style="display: none;">
              work starting date (manual entry/calendar) :  <br/>
-             <input type="date" name="start_date" class="form-control" placeholder="   work starting date (manual entry/calendar) " >
-            </span>      
+             <input type="date" name="start_date" class="form-control" placeholder="   work starting date (manual entry/calendar) " required>     
          </div>
-              </div>
+             
+
+        </div>
 
 
           <div class="row">
@@ -671,13 +669,10 @@ curl_close($curl);
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <div class="form-group">
               <label for="exampleFormControlSelect2"> How to know us : </label>
-             <select multiple class="form-control" id="exampleFormControlSelect2" name="social_media_selection" required>
-                <option value="friend"> Friend </option>
-                <option value="social"> Social </option>
-                <option value="tv"> TV </option>
-                <option value="radio"> Radio </option>
-                <option value="ads"> ADS </option>
-                <option value="other"> Other </option>
+              <select multiple class="form-control" id="exampleFormControlSelect2" name="social_media_selection" required>
+                <option value="facebook"> Facebook </option>
+                <option value="twitter"> Twitter </option>
+                <option value="instagram"> Instagram </option>
               </select>
               </div>
              </div>
