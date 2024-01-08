@@ -146,6 +146,11 @@ if($_GET['id'] == "مقاولة"){
 EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات وتحقيق أهداف الشركات بكفاءة وجودة وأمان مع سعر منافس، نحن 
 سنكون في إنتظارك لخوض ذلك التحدي معك </p>
 </div>
+<div class="col-lg-2">
+</div>
+<div class="col-lg-10" style="padding: 0px;margin: 0px;">
+<a href="contract_request.php"><div class="btn btn-success" style="width: 100%;padding: 10px;border:none;"><b>  تقديم طلب  جديد + </b></div></a>
+</div>
 <?php
 } else if($_GET['id'] == "تاجير"){
 ?>

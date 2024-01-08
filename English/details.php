@@ -149,6 +149,11 @@ EQUIPATION is the best choice to meet these requirements and achieve the goals o
 efficiently, with quality and safety rules, at a competitive price. We will be waiting for you to take on 
 this challenge with you.   </p>
 </div>
+<div class="col-lg-3">
+</div>
+<div class="col-lg-9" style="padding: 0px;margin: 0px;">
+<a href="contract_request.php"><div class="btn btn-success" style="width: 100%;padding: 10px;border:none;"><b>     Send a service request + </b></div></a>
+</div>
 <?php
 } else if($_GET['id'] == "rental"){
 ?>

@@ -148,7 +148,7 @@
       <div class="container">
         <br/>
         <div class="section-title">
-          <h2> طلب مقاولة  </h2>
+          <h2> طلب المقاولة  </h2>
          </div>
       </div>
 
@@ -185,7 +185,6 @@
   $expected_beginning_of_work =  $_POST['expected_beginning_of_work'];
   $state =  $_POST['state'];
   $region =  $_POST['region'];
-  $distance_from_nearest =  $_POST['distance_from_nearest'];
   $work_field_id =  $_POST['work_field_id'];
   $living_selection = $_POST['living_selection'];
   $subsistence_selection = $_POST['subsistence_selection'];
@@ -197,9 +196,9 @@
   $water_selection =  $_POST['water_selection'];
   $electricity_selection = $_POST['electricity_selection'];
   $nearest_city =  $_POST['nearest_city'];
-  $nearest_market =  $_POST['nearest_market'];
+  //$nearest_market =  $_POST['nearest_market'];
   $nearest_paved_road =  $_POST['nearest_paved_road'];
-  $site_age = $_POST['site_age'];
+  //$site_age = $_POST['site_age'];
   $customer_name =  $_POST['customer_name'];
   $customer_email =  $_POST['customer_email'];
   $customer_job_title =  $_POST['customer_job_title'];
@@ -210,7 +209,7 @@
   $company =  $_POST['company'];
   $phone = $_POST['phone'];
   $whatsapp_num = $_POST['whatsapp_num'];
-  $start_date = $_POST['start_date'];
+   $start_date = $_POST['start_date'];
 
 
     // echo "Data".$work_type_id.$work_duration_id.$mobilization_row_distance.$mobilization_waste_distance.$total_ton.$daily_ton.$daily_work_hours_id.$expected_beginning_of_work.$state.$region.$distance_from_nearest.$work_field_id.$living_selection.$subsistence_selection.$internet_selection.$communication_selection.$workshop_selection.$compressor_selection.$fuel_selection.$water_selection.$electricity_selection.$nearest_city.$nearest_market.$nearest_paved_road.$site_age.$customer_name.$customer_email.$customer_job_title.$customer_type_selection.$ever_work_with_us.$social_media_selection.$friend.$company;
@@ -229,7 +228,6 @@ $jayParsedAry = [
             "expected_beginning_of_work" => $expected_beginning_of_work, 
             "state" => $state, 
             "region" => $region, 
-            "distance_from_nearest" => $distance_from_nearest, 
             "work_field_id" => $work_field_id, 
             "living_selection" => $living_selection, 
             "subsistence_selection" => $subsistence_selection, 
@@ -241,9 +239,9 @@ $jayParsedAry = [
             "water_selection" => $water_selection, 
             "electricity_selection" => $electricity_selection, 
             "nearest_city" => $nearest_city, 
-            "nearest_market" => $nearest_market, 
+            "nearest_market" => "", 
             "nearest_paved_road" => $nearest_paved_road, 
-            "site_age" => $site_age, 
+            "site_age" => $start_date, 
             "customer_name" => $customer_name, 
             "customer_email" => $customer_email, 
             "customer_job_title" => $customer_job_title, 
@@ -291,7 +289,7 @@ if(curl_errno($curl)) {
   echo 'Error: ' . curl_error($curl);
 } else {
 
-  //echo $response;
+  echo $response;
         // convert response to array
     $array = json_decode(  $response , true );
     // loop the array to fetch item
@@ -299,14 +297,15 @@ if(curl_errno($curl)) {
        // echo $key."".$value;
         if($key == "msg" )
           if($value == "Success")
-                // success add form alert ...
-                        echo "<div class='alert alert-success'>
-                        <span class='icon'> <i class='fa fa-check-circle'></i></span>
-                         <b> The request has been sent successfully , we at Equipation company are always happy to receive your requests at all times , Equipation company employee will respond to you as soon as possible via the phone number or email sent in the request , Thank you for your Understanding  </b> </div>";
-            else
-              echo "<div class='alert alert-danger'>
-                        <span class='icon'> <i class='fa fa-cancel'></i></span>
-                         <b> Erorr in sending Request </b> </div>";
+               // success add form alert ...
+                 echo "<div class='alert alert-success'>
+               <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                <b> تم ارسال الطلب بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال طلباتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
+   else
+            echo "<div class='alert alert-danger'>
+            <span class='icon'> <i class='fa fa-cancel'></i></span>
+             <b> خطأ في عملية الارسال </b> </div>";
+         
     }
   // echo gettype($x);
   // echo "R".$x;
@@ -338,7 +337,7 @@ curl_close($curl);
                 </div>
 
                 <div class="col-md-4 form-group">
-                <label style="color: red;">  ترجم </label> 
+                <label style="color: red;">   </label> 
                 <input id="mobilization_row_distance" name="mobilization_row_distance" type="number" class="form-control" placeholder="Distance of mobilization row"/>
                 </div>
 
@@ -347,17 +346,17 @@ curl_close($curl);
               <div class="row">
 
               <div class="col-md-4 form-group">
-              <label style="color: red;">  ترجم </label> 
+              <label style="color: red;">   </label> 
               <input id="mobilization_waste_distance" name="mobilization_waste_distance" type="text" class="form-control" placeholder="Distance of mobilization waste"/>
               </div>
 
               <div class="col-md-4 form-group">
-              <label style="color: red;">  ترجم </label> 
+              <label style="color: red;">   </label> 
               <input id="total_ton" name="total_ton" type="number" class="form-control" placeholder="Enter OTAL TON"/>
               </div>
 
               <div class="col-md-4 form-group">
-              <label style="color: red;">  ترجم </label> 
+              <label style="color: red;">   </label> 
               <input id="daily_ton" name="daily_ton" type="number" class="form-control" placeholder="Enter DAILY TON"/>
               </div> 
 
@@ -431,17 +430,26 @@ curl_close($curl);
              </select>
            </div>
          </div>
+         <div class="col-md-4 form-group mt-3 mt-md-0">
+            <label>  اقرب مدينة </label>
+            <input type="text" name="nearest_city" class="form-control" placeholder="ادخل اقرب مدينة" required/>
+            </div>
 
-        <div class="form-group col-md-4">
-          <br/>
-       <input type="number" class="form-control" name="distance_from_nearest" id="distance_from_nearest" placeholder=" اقرب مدينة " required>
-          </div>
+            <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
+            <label> اقرب سوق </label>
+            <input type="text" id="nearest_market" name="nearest_market" class="form-control" placeholder=" ادخل اقرب سوق" required/>
+            </div> -->
+
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+            <label>   اقرب طريق معبد </label>
+            <input type="text" id="nearest_paved_road" name="nearest_paved_road" class="form-control" placeholder="ادخل اقرب طريق معبد" required/>
+            </div>  
       </div>
 
       <div class="row">
        
         <div class="col-md-4 form-group mt-3 mt-md-0">
-        نوع العمل <br/>
+        طبيعة العمل <br/>
                   <select class="form-control mr-1" name="work_field_id" id="work_field_id" onchange="select_work_field();" required>
                     <option disabled selected> -- اختار   -- </option>
                     <option> التعدين </option>
@@ -490,6 +498,18 @@ curl_close($curl);
            </div>
          </div>
 
+         <div class="form-group col-md-4">
+           <label>  الاتصالات </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="communication_selection" name="communication_selection" required>
+               <option value="" disabled selected> --  اختار  -- </option>
+               <option value="available"> متوفر </option>
+               <option value="not_available"> غير متوفر </option>
+             </select>
+           </div>
+         </div>
+
+
           <div class="form-group col-md-4">
            <label> الانترنت </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
@@ -505,17 +525,7 @@ curl_close($curl);
 
        <div class="row">
             
-        <div class="form-group col-md-4">
-           <label>  الاتصالات </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="communication_selection" name="communication_selection" required>
-               <option value="" disabled selected> --  اختار  -- </option>
-               <option value="available"> متوفر </option>
-               <option value="not_available"> غير متوفر </option>
-             </select>
-           </div>
-         </div>
-
+    
          <div class="form-group col-md-4">
            <label>  الورشة </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
@@ -579,20 +589,7 @@ curl_close($curl);
 
           <div class="row">
 
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-            <label>  اقرب مدينة </label>
-            <input type="text" name="nearest_city" class="form-control" placeholder="ادخل اقرب مدينة" required/>
-            </div>
-
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-            <label> اقرب سوق </label>
-            <input type="text" id="nearest_market" name="nearest_market" class="form-control" placeholder=" ادخل اقرب سوق" required/>
-            </div>
-
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-            <label>   اقرب طريق معبد </label>
-            <input type="text" id="nearest_paved_road" name="nearest_paved_road" class="form-control" placeholder="ادخل اقرب طريق معبد" required/>
-            </div>                        
+                              
             
           </div>
 
@@ -608,12 +605,12 @@ curl_close($curl);
 
 
                 <div class="col-md-4 form-group">
-                  <label style="color: red"> *no api </label>
+                  <label style="color: red">  </label>
                   <input type="text" name="phone" class="form-control" id="phone" placeholder="   رقم الهاتف  مثال 00249123000000" required>
                 </div>
 
                 <div class="col-md-4 form-group">
-                  <label style="color: red"> *no api </label>
+                  <label style="color: red">  </label>
                   <input type="text" name="whatsapp_num" class="form-control" id="phone" placeholder="    رقم الواتساب  مثال 00249123000000" required>
                 </div>
 
@@ -646,7 +643,7 @@ curl_close($curl);
                 <select class="form-control mr-1" name="customer_type_selection" id="customer_type_selection" onchange="select_side();" required>
                 <option value="" disabled selected> --  اختار -- </option>
                 <option value="company"> شركة </option>
-                <option value="individual"> فرد </option>
+                <option value="person"> فرد </option>
                 </select>  
                 <input id="company" name="company" type="text" class="form-control" placeholder="ادخل اسم الشركة" style="display: none;" />
               </div>
@@ -666,10 +663,10 @@ curl_close($curl);
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <div class="form-group">
               <label for="exampleFormControlSelect2"> كيف تعرفت علينا </label>
-             <select multiple class="form-control" id="exampleFormControlSelect2" name="social_media_selection" required>
-                <option value="Facebook">فيس</option>
-                <option value="Twitter"> تويتر </option>
-                <option value="Instagram"> انستجرام </option>
+             <select  class="form-control" id="exampleFormControlSelect2" name="social_media_selection" required>
+                <option value="facebook">Facebook</option>
+                <option value="twitter"> Twitter </option>
+                <option value="instagram"> Instagram </option>
               </select>
               </div>
              </div>

@@ -185,7 +185,7 @@
   $expected_beginning_of_work =  $_POST['expected_beginning_of_work'];
   $state =  $_POST['state'];
   $region =  $_POST['region'];
-  $distance_from_nearest =  $_POST['distance_from_nearest'];
+ // $distance_from_nearest =  $_POST['distance_from_nearest'];
   $work_field_id =  $_POST['work_field_id'];
   $living_selection = $_POST['living_selection'];
   $subsistence_selection = $_POST['subsistence_selection'];
@@ -197,9 +197,9 @@
   $water_selection =  $_POST['water_selection'];
   $electricity_selection = $_POST['electricity_selection'];
   $nearest_city =  $_POST['nearest_city'];
-  $nearest_market =  $_POST['nearest_market'];
+  //$nearest_market =  $_POST['nearest_market'];
   $nearest_paved_road =  $_POST['nearest_paved_road'];
-  $site_age = $_POST['site_age'];
+  //$site_age = $_POST['site_age'];
   $customer_name =  $_POST['customer_name'];
   $customer_email =  $_POST['customer_email'];
   $customer_job_title =  $_POST['customer_job_title'];
@@ -230,7 +230,6 @@ $jayParsedAry = [
             "expected_beginning_of_work" => $expected_beginning_of_work, 
             "state" => $state, 
             "region" => $region, 
-            "distance_from_nearest" => $distance_from_nearest, 
             "work_field_id" => $work_field_id, 
             "living_selection" => $living_selection, 
             "subsistence_selection" => $subsistence_selection, 
@@ -242,7 +241,6 @@ $jayParsedAry = [
             "water_selection" => $water_selection, 
             "electricity_selection" => $electricity_selection, 
             "nearest_city" => $nearest_city, 
-            "nearest_market" => $nearest_market, 
             "nearest_paved_road" => $nearest_paved_road, 
             "site_age" => $start_date, 
             "customer_name" => $customer_name, 
@@ -297,7 +295,7 @@ if(curl_errno($curl)) {
     $array = json_decode(  $response , true );
     // loop the array to fetch item
     foreach ($array as $key => $value) {
-        echo $key."".$value;
+      //  echo $key."".$value;
         if($key == "msg" )
           if($value == "Success")
                 // success add form alert ...
@@ -434,9 +432,27 @@ curl_close($curl);
            </div>
          </div>
 
-        <div class="form-group col-md-4">
+        <!-- <div class="form-group col-md-4">
        <input type="number" class="form-control" name="distance_from_nearest" id="distance_from_nearest" placeholder=" Nearest city  " required>
-          </div>
+          </div> -->
+
+
+
+          <div class="col-md-4 form-group mt-3 mt-md-0">
+            <label> Narest City </label>
+            <input type="text" name="nearest_city" class="form-control" placeholder="Enter nearest city" required/>
+            </div>
+
+            <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
+            <label> Nearest Market </label>
+            <input type="text" id="nearest_market" name="nearest_market" class="form-control" placeholder="Enter nearest market" required/>
+            </div> -->
+
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+            <label> Nearest Paved Road </label>
+            <input type="text" id="nearest_paved_road" name="nearest_paved_road" class="form-control" placeholder="Enter nearest paved road" required/>
+            </div>                        
+            
       </div>
 
       <div class="row">
@@ -581,21 +597,7 @@ curl_close($curl);
 
           <div class="row">
 
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-            <label> Narest City </label>
-            <input type="text" name="nearest_city" class="form-control" placeholder="Enter nearest city" required/>
-            </div>
-
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-            <label> Nearest Market </label>
-            <input type="text" id="nearest_market" name="nearest_market" class="form-control" placeholder="Enter nearest market" required/>
-            </div>
-
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-            <label> Nearest Paved Road </label>
-            <input type="text" id="nearest_paved_road" name="nearest_paved_road" class="form-control" placeholder="Enter nearest paved road" required/>
-            </div>                        
-            
+         
           </div>
 
                 <h3 for="textAreaRemark">CUSTOMER DATA:  </h3>
@@ -609,12 +611,12 @@ curl_close($curl);
 
 
                 <div class="col-md-4 form-group">
-                  <label style="color: red"> *no api </label>
+                  <label style="color: red">  </label>
                   <input type="text" name="phone" class="form-control" id="phone" placeholder="  phone number ex: 00249123000000" required>
                 </div>
 
                 <div class="col-md-4 form-group">
-                  <label style="color: red"> *no api </label>
+                  <label style="color: red"> </label>
                   <input type="text" name="whatsapp_num" class="form-control" id="phone" placeholder="Whatsapp number ex: 00249123000000" required>
                 </div>
 
@@ -647,9 +649,9 @@ curl_close($curl);
                 <select class="form-control mr-1" name="customer_type_selection" id="customer_type_selection" onchange="select_side();" required>
                 <option value="" disabled selected> -- Choose -- </option>
                 <option value="company"> Company </option>
-                <option value="individual"> Individual </option>
+                <option value="person"> Individual </option>
                 </select>  
-                <input id="company" name="company" type="text" class="form-control" placeholder="ادخل اسم الشركة" style="display: none;" />
+                <input id="company" name="company" type="text" class="form-control" placeholder="    Company Name" style="display: none;" />
               </div>
 
     
@@ -669,7 +671,7 @@ curl_close($curl);
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <div class="form-group">
               <label for="exampleFormControlSelect2"> How to know us : </label>
-              <select multiple class="form-control" id="exampleFormControlSelect2" name="social_media_selection" required>
+              <select  class="form-control" id="exampleFormControlSelect2" name="social_media_selection" required>
                 <option value="facebook"> Facebook </option>
                 <option value="twitter"> Twitter </option>
                 <option value="instagram"> Instagram </option>
