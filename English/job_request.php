@@ -284,8 +284,8 @@
               @$full_name = $_POST['full_name'];
               @$birthdate = $_POST['birthdate'];
               @$place = $_POST['place'];
-              @$home = $_POST['home'];
-              @$house = $_POST['house'];
+          //    @$home = $_POST['home'];
+        //      @$house = $_POST['house'];
               @$national = $_POST['national'];
               @$type_national = $_POST['type_national'];
               @$other_national = $_POST['other_national'];
@@ -311,7 +311,7 @@
               @$street = "Origin Home :".$o1."-".$o2."-".$o3;
               @$street2 = "Origin Home :".$c1."-".$c2."-".$c3;
               
-              @$house_type = $_POST['house_type'];
+              //@$house_type = $_POST['house_type'];
 
               @$id_type = $_POST['id_type'];
               @$issue_place = $_POST['issue_place'];
@@ -327,6 +327,16 @@
 
               @$education_level = $_POST['education_level'];
               @$whatsapp_num = $_POST['whatsapp_num'];
+
+
+              @$restruction = $_POST['restruction'];
+              @$info = $_POST['info'];
+              @$related = $_POST['related'];
+              @$excepted = $_POST['excepted'];
+              @$employment_type = $_POST['employment_type'];
+              @$complain = $_POST['complain'];
+
+
 
               // Posst the files 
 
@@ -492,8 +502,6 @@
                   "name" => $full_name, 
                   "birthdate" => $birthdate, 
                   "place" => $place, 
-                  "home" => $home, 
-                  "house" => $house, 
                   "national" => $national, 
                   "type_national" => $type_national, 
                   "other_national" => $other_national, 
@@ -516,7 +524,6 @@
                   "state_id" => 1, 
                   "country_id" => 1, 
                   "country_code" => "XL", 
-                  "house_type" => $house_type, 
                   "note" => "Some personal note.", 
                   "id_type" => $id_type, 
                   "issue_place" => $issue_place, 
@@ -533,16 +540,17 @@
                   "details" => "Some more notes.", 
                   "training" => "Advanced Johnology", 
                   "know" => "tv", 
-                  "related" => "no", 
-                  "employment_type" => "full", 
-                  "excepted" => 50000, 
-                  "restruction" => "None.", 
-                  "info" => "Some info notes.", 
+                  "related" => $related, 
+                  "employment_type" => $employment_type, 
+                  "excepted" => $excepted, 
+                  "restruction" => $restruction, 
+                  "info" => $info, 
                   "sign" => "", 
                   "recute_date" => "2023-01-01", 
                   "inform" => "Some inform notes.", 
                   "status" => "draft", 
                   "cv" => $cv_data ,
+                  "complain" => $complain , 
                   "image" => $image ,
                   "whatsapp_num" => $whatsapp_num ,
                   "education_level" => $education_level ,
@@ -680,7 +688,7 @@
         <br/>
         <label> Type of Request  </label>
         <select name="request_type" class="form-control">
-          <option selected disabled> -- Select -- </option>
+          <option selected disabled>  </option>
           <option value="employment"> Employment </option>
           <option value="training"> Training </option>
         </select>
@@ -702,24 +710,26 @@
         <input type="date" name="birthdate" class="form-control">
       </div>
 
-      </div>
-
-      <div class="row">
-
       <div class="col-md-4 form-group">
         <label>   </label>
         <input type="text" name="place" class="form-control" placeholder="Place of birth">
       </div> 
 
-      <div class="col-md-4 form-group">
+
+      </div>
+
+      <div class="row">
+
+    
+      <!-- <div class="col-md-4 form-group">
         <label>   </label>
         <input type="text" name="home" class="form-control" placeholder="The Originam Place">
-      </div> 
+      </div>  -->
 
-      <div class="col-md-4 form-group">
+      <!-- <div class="col-md-4 form-group">
         <label>   </label>
         <input type="text" name="house" class="form-control" placeholder="The Current Place">
-      </div> 
+      </div>  -->
 
       </div>
 
@@ -727,14 +737,14 @@
 
       <div class="col-md-4 form-group">
         <label>   </label>
-        <input type="text" name="national" class="form-control" placeholder="Nationality">
+        <input type="text" name="national" class="form-control" placeholder="Natٌٌٌionality">
       </div>  
 
        <div class="col-md-4 form-group">
         <br/>
         <label> Type of Nationality  </label>
         <select name="type_national" class="form-control">
-          <option selected disabled> -- Select -- </option>
+          <option selected disabled>  </option>
           <option value="original"> Original </option>
           <option value="naturalize"> Naturalize </option>
         </select>
@@ -744,7 +754,7 @@
         <br/>
         <label> Do you have another Nationality  </label><br/>
         <select name="other_national" class="form-control">
-          <option selected disabled> -- Select -- </option>
+          <option selected disabled>  </option>
           <option value="yes"> Yes </option>
           <option value="no"> no </option>
         </select>
@@ -758,7 +768,7 @@
         <br/>
         <label> Social Status  </label>
         <select name="social_state" class="form-control">
-          <option selected disabled> -- Select -- </option>
+          <option selected disabled>  </option>
           <option value="single"> Single </option>
           <option value="married"> Marred </option>
           <option value="cohabitant"> Cohabitant </option>
@@ -771,7 +781,7 @@
         <br/>
         <label> Do You Have Children  </label><br/>
         <select name="children" class="form-control">
-          <option selected disabled> -- Select -- </option>
+          <option selected disabled>  </option>
           <option value="yes"> Yes </option>
           <option value="no"> No </option>
         </select>
@@ -893,15 +903,15 @@
 
       <div class="row">
 
-      <div class="col-md-4 form-group">
+      <!-- <div class="col-md-4 form-group">
         <br/>
         <label> Type of Accomm  </label>
          <select name="house_type" class="form-control">
-          <option selected disabled> -- Select -- </option>
+          <option selected disabled>  </option>
           <option value="owned"> Owned </option>
           <option value="rental_request"> Rental </option>
         </select>
-      </div> 
+      </div>  -->
 
       <div class="col-md-4 form-group">
       <label>   </label>
@@ -916,13 +926,12 @@
       <div class="col-md-4 form-group">
       ID type
       <select name="id_type" class="form-control">
-      <option selected disabled> -- Select -- </option>
+      <option selected disabled>  </option>
       <option value="id_card"> National Card </option>
       <option value="car_lince"> D.License </option>
       <option value="passport"> passport </option>
       <option value="other"> Other </option>
       </select>
-      <input type="text" class="form-control" placeholder="Enter The ID tyle">
       </div>
 
       <div class="col-md-4 form-group">
@@ -947,7 +956,7 @@
       <div class="col-md-4 form-group">
         Did You Finish your National Service ? 
       <select name="service" class="form-control">
-      <option selected disabled> -- Select -- </option>
+      <option selected disabled>  </option>
       <option value="yes"> Yes </option>
       <option value="no"> no </option>
       </select>
@@ -974,7 +983,7 @@
       <div class="col-md-4 form-group">
       <label>  Education level  </label>
       <select name="education_level" class="form-control">
-      <option> -- Select -- </option>
+      <option>  </option>
       <option> without secondary  </option>
       <option> Secondary  </option> 
       <option> Diploma </option> 
@@ -1009,7 +1018,7 @@
       <div class="col-md-4 form-group">
       <label> The Education Degree  </label>
       <select name="certificate" class="form-control">
-      <option selected disabled> -- Select -- </option>
+      <option selected disabled>  </option>
       <option value="graduate"> Graduate </option>
       <option value="bachelor"> Bachelor </option>
       <option value="master"> Master </option>
@@ -1068,7 +1077,7 @@
       <div class="col-md-3 form-group">
       <label> Evaluation </label>
       <select name="skill_val1" class="form-control">
-        <option selected disabled> -- Select -- </option>
+        <option selected disabled>  </option>
         <option value="Good"> Good  </option>
         <option value="Excellent"> Excellent  </option>
       </select>
@@ -1122,18 +1131,21 @@
       <div class="col-md-4 form-group">
       <label> How you know the companny ؟ </label>
      <br/>
-      <input type="checkbox">Frend<br/>
-      <input type="checkbox">Sticers<br/>
-      <input type="checkbox">Social Media<br/>
-      <input type="checkbox">Radio<br/>
-      <input type="checkbox">Television<br/>
+      <select  class="form-control" name="know" id="exampleFormControlSelect2">
+
+      <option value="social">  Social Media  </option>
+      <option value="tv"> Television </option>
+      <option value="friend"> friend</option>
+      <option value="ads">  Advertisements   </option>
+      <option value="other">  other  </option>
+    </select>
      </div>
 
       <div class="col-md-4 form-group">
       <label> Dou you have parenter or friend work with company  ؟ </label>
      <br/>
-    <select class="form-control">
-      <option> -- Select -- </option>
+    <select class="form-control" name="related">
+      <option>  </option>
       <option> Yes </option>
       <option> No </option>
     </select>
@@ -1143,16 +1155,17 @@
     <div class="col-md-4 form-group">
       <label> What the type of employment you want in company ؟ </label>
      <br/>
-    <select class="form-control">
-      <option> -- Select -- </option>
-      <option> Permit </option>
-      <option> Part time </option>
-      <option> مؤقت(Season) </option>
+    <select class="form-control" name="employment_type">
+      <option value="full" > full time </option>
+      <option value="part"> Part time </option>
+      <option value="temp">temporary </option>
+      <option value="training"> training </option>
+
     </select>
 
     <br/>
-    <label> What is suggest Part ؟ </label>
-    <input type="number" class="form-control" placeholder="Enter the suggest part">
+    <label> What is Expected price </label>
+    <input type="number" name="excepted" class="form-control" placeholder="Enter the Expected price">
 
      </div>
 
@@ -1164,17 +1177,17 @@
 
      <div class="col-md-4 form-group">
     <label>Do you have any reasons that would prevent you from continuing with the EQUIPATION team in Future ؟</label>
-    <textarea class="form-control" placeholder="The answer"></textarea>
+    <textarea class="form-control" name="complain" placeholder="The answer"></textarea>
     </div>
 
     <div class="col-md-4 form-group">
     <label> Do you have an addition or comment that you would like to present to Equipation Company?</label>
-    <textarea class="form-control" placeholder=" answer"></textarea>
+    <textarea class="form-control" name="info" placeholder=" answer"></textarea>
     </div>
 
     <div class="col-md-4 form-group">
     <label>Do you mind working in Equation branches outside Khartoum or Sudan?</label>
-    <textarea class="form-control" placeholder="answer"></textarea>
+    <textarea class="form-control" name="restruction" placeholder="answer"></textarea>
     </div>
       
     </div>
@@ -1200,11 +1213,7 @@
       <div class="row">
         <br/><br/>
         <br/><br/>
-        <b> By Submiting the  I acknowledge the correctness of the above-mentioned data and assume 
-full responsibility for any error found Also, I have no right to claim this document or the 
-attachments after handing them over to EQUIPATION employees The company is committed to 
-preserving the privacy of the above information and is not entitled to share it With any external 
-party without the knowledge of its owner </b>
+        <b> By submitting this application, I acknowledge the accuracy of the above-mentioned data</b>
         
       <div class="text-center"><button type="submit" name="send" style="background-color:orange;border-radius:20px;padding:10px;"> Send Request </button></div>
         

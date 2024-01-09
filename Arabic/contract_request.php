@@ -39,6 +39,7 @@
 </head>
 <script type="text/javascript">
   // ready to go with js function 
+  $skill_counter = 2 ; 
 
    // deal with period  
    function select_period(){
@@ -109,6 +110,39 @@
       }
    }
 
+   function add_distance_line() {
+    //alert("go");
+    var skills = document.getElementById("distancediv");
+
+    var div = document.createElement("div");
+    div.setAttribute("class" , "col-md-3 form-group");
+    var label = document.createElement("label");
+    var input = document.createElement("input");
+    input.setAttribute("class" , "form-control");
+    input.setAttribute("placeholder" , "المنتج ");
+    input.setAttribute("name" , "product" + $skill_counter);
+    div.appendChild(label);
+    div.appendChild(input);
+
+    var div2 = document.createElement("div");
+    div2.setAttribute("class" , "col-md-3 form-group");
+    var label2 = document.createElement("label");
+    label2.innerHTML = "";
+    var input2 = document.createElement("input");
+    input2.setAttribute("class" , "form-control");
+    input2.setAttribute("placeholder" , "المسافه ");
+    input2.setAttribute("name" , "distance" + $skill_counter);
+    div2.appendChild(label2);
+    div2.appendChild(input2);
+
+
+    skills.appendChild(div);
+    skills.appendChild(div2);
+    
+    $skill_counter ++;
+  }
+
+
 
 </script>
 <body>
@@ -177,11 +211,14 @@
                   // get the post value:
   $work_type_id = $_POST['work_type_id'];
   $work_duration_id =  $_POST['work_duration_id'];
-  $mobilization_row_distance =  $_POST['mobilization_row_distance'];
-  $mobilization_waste_distance =  $_POST['mobilization_waste_distance'];
+ // $mobilization_row_distance =  $_POST['mobilization_row_distance'];
+ // $mobilization_waste_distance =  $_POST['mobilization_waste_distance'];
   $total_ton =  $_POST['total_ton'];
   $daily_ton =  $_POST['daily_ton'];
   $daily_work_hours_id =  $_POST['daily_work_hours_id'];
+  $unit_of_measure =  $_POST['unit_of_measure'];
+
+  
   $expected_beginning_of_work =  $_POST['expected_beginning_of_work'];
   $state =  $_POST['state'];
   $region =  $_POST['region'];
@@ -212,6 +249,33 @@
    $start_date = $_POST['start_date'];
 
 
+        // INSERT SKILL ARRAY
+        $skill_array = array();
+        $skill_counter = 1 ;
+        while (isset($_POST['product'.$skill_counter])) {
+            array_push($skill_array,
+             $_POST['product'.$skill_counter],
+             $_POST['distance'.$skill_counter]);
+            $skill_counter ++;
+        }
+    // PRINT SKILLS ARRAY
+    $skill_name = "";
+    $skill_value = "";
+    $skillsArray = array();
+    foreach ($skill_array as $key => $value) {
+      if($key % 2 == 0)
+        $skill_name = $value ;
+      elseif ($key % 2 == 1) {
+        $skill_value = $value;
+      }
+      if($key % 2 == 1){
+        // echo "Data:".$skill_name." - ".$skill_value."<br/>"; 
+        array_push($skillsArray,[0,0,["name" => $skill_name,"distance" => $skill_value]]);
+      }
+
+    }
+
+
     // echo "Data".$work_type_id.$work_duration_id.$mobilization_row_distance.$mobilization_waste_distance.$total_ton.$daily_ton.$daily_work_hours_id.$expected_beginning_of_work.$state.$region.$distance_from_nearest.$work_field_id.$living_selection.$subsistence_selection.$internet_selection.$communication_selection.$workshop_selection.$compressor_selection.$fuel_selection.$water_selection.$electricity_selection.$nearest_city.$nearest_market.$nearest_paved_road.$site_age.$customer_name.$customer_email.$customer_job_title.$customer_type_selection.$ever_work_with_us.$social_media_selection.$friend.$company;
 
 $jayParsedAry = [
@@ -220,8 +284,6 @@ $jayParsedAry = [
            "vals_list" => [
             "work_type_id" => $work_type_id, 
             "work_duration_id" => $work_duration_id, 
-            "mobilization_row_distance" => $mobilization_row_distance, 
-            "mobilization_waste_distance" => $mobilization_waste_distance, 
             "total_ton" => $total_ton, 
             "daily_ton" => $daily_ton, 
             "daily_work_hours_id" => $daily_work_hours_id, 
@@ -250,8 +312,9 @@ $jayParsedAry = [
             "social_media_selection" => $social_media_selection, 
             "friend" => $friend, 
             "company" => $company, 
-            "other" => "Some other information", 
+            "unit_of_measure" => $unit_of_measure, 
             "whatsapp_num" => $whatsapp_num,
+            "mobilization_distance_ids" => $skillsArray ,
             "phone" => $phone,
             "status" => "draft" 
            ] 
@@ -289,7 +352,7 @@ if(curl_errno($curl)) {
   echo 'Error: ' . curl_error($curl);
 } else {
 
-  echo $response;
+//  echo $response;
         // convert response to array
     $array = json_decode(  $response , true );
     // loop the array to fetch item
@@ -321,13 +384,21 @@ curl_close($curl);
                
                 <div class="col-md-4 form-group">
                 نوع العمل <br/>
-                <input id="work_type_id" name="work_type_id" type="text" class="form-control" placeholder=" ادخل نوع العمل ">
+
+                <select class="form-control mr-1" name="work_type_id" id="work_type_id" onchange="select_period();" required>
+                    <option value="نقل مواد "> نقل مواد </option>
+                    <option value=" تشغيل منجم"> تشغيل منجم  </option>
+                    <option value="تأسيس معسكر"> تأسيس معسكر </option>
+                    <option value="تجهيز أحواض">  تجهيز أحواض </option>
+                    <option value="تعبيد طرق">  تعبيد طرق </option>
+
+                  </select>
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                 المدة  <br/>
                   <select class="form-control mr-1" name="work_duration_id" id="work_duration_id" onchange="select_period();" required>
-                    <option value="" disabled selected> --  اختار  -- </option>
+                    <option value="" disabled selected>  </option>
                     <option value="month"> شهر </option>
                     <option value="3month"> 3 شهور  </option>
                     <option value="year"> سنه </option>
@@ -336,32 +407,52 @@ curl_close($curl);
                   <input id="durationhide" name="durationhide" type="text" class="form-control" placeholder=" ادخال يدوي" style="display: none;">
                 </div>
 
-                <div class="col-md-4 form-group">
+                <!-- <div class="col-md-4 form-group">
                 <label style="color: red;">   </label> 
                 <input id="mobilization_row_distance" name="mobilization_row_distance" type="number" class="form-control" placeholder="Distance of mobilization row"/>
-                </div>
+                </div> -->
 
               </div>
 
               <div class="row">
 
-              <div class="col-md-4 form-group">
+              <!-- <div class="col-md-4 form-group">
               <label style="color: red;">   </label> 
               <input id="mobilization_waste_distance" name="mobilization_waste_distance" type="text" class="form-control" placeholder="Distance of mobilization waste"/>
+              </div> -->
+
+              <div class="col-md-4 form-group">
+              <label style="color: red;">   </label> 
+              <input id="total_ton" name="total_ton" type="number" class="form-control" placeholder="الكميه الكلية"/>
               </div>
 
               <div class="col-md-4 form-group">
               <label style="color: red;">   </label> 
-              <input id="total_ton" name="total_ton" type="number" class="form-control" placeholder="Enter OTAL TON"/>
-              </div>
-
-              <div class="col-md-4 form-group">
-              <label style="color: red;">   </label> 
-              <input id="daily_ton" name="daily_ton" type="number" class="form-control" placeholder="Enter DAILY TON"/>
+              <input id="daily_ton" name="daily_ton" type="number" class="form-control" placeholder="الكمية اليومية"/>
               </div> 
 
               </div>
 
+
+              <h3> اضافه منتج </h3>
+      
+      <div id="distancediv" class="row">
+
+      <div class="col-md-3 form-group">
+      <label></label>
+      <input type="text" name="product1" class="form-control" placeholder="المنتج"/>
+      </div>
+
+      <div class="col-md-3 form-group">
+      <label>  </label>
+      <input type="text" name="distance1" class="form-control" placeholder="المسافه"/>
+
+      </div>
+
+
+      </div><br/>
+      <span style="width: 150px; padding: 3px; margin: 5px;" class="btn btn-primary" onclick="add_distance_line();"> أضافة منتج + </span>
+     
               <div class="row">
 
         <div class="form-group col-md-4">
@@ -382,6 +473,19 @@ curl_close($curl);
          <label> التاريخ المتوقع لبداية العمل </label>
           <input id="expected_beginning_of_work" name="expected_beginning_of_work" type="date" class="form-control" placeholder=" "/>
         </div> 
+
+
+        <div class="col-md-4 form-group">
+         <label>    وحدة القياس </label>
+         <select class="form-control mr-1" id="unit_of_measure" name="unit_of_measure" onchange="select_hourday();" required>
+            <option value="" disabled selected>  </option>
+            <option value="طن">طن</option>
+            <option value="متر مكعب">متر مكعب</option>
+            <option value="كيلومتر">كيلومتر</option>
+            <option value="اخري">اخري</option>
+          </select>
+        </div> 
+                
                 
               </div>
     <br/>
@@ -452,7 +556,7 @@ curl_close($curl);
         <div class="col-md-4 form-group mt-3 mt-md-0">
         طبيعة العمل <br/>
                   <select class="form-control mr-1" name="work_field_id" id="work_field_id" onchange="select_work_field();" required>
-                    <option disabled selected> -- اختار   -- </option>
+                    <option disabled selected>  </option>
                     <option> التعدين </option>
                     <option>  الاسمنت </option>
                     <option>  الزراعة </option>
@@ -478,7 +582,7 @@ curl_close($curl);
            <label> السكن </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="living_selection" name="living_selection" required>
-               <option value="" disabled selected> --   اختار -- </option>
+               <option value="" disabled selected>  </option>
                <option value="excellent"> ممتاز </option>
                <option value="good"> جيد </option>
                <option value="normal"> عادي </option>
@@ -491,7 +595,7 @@ curl_close($curl);
            <label> الإعاشة </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="subsistence_selection" name="subsistence_selection" required>
-               <option value="" disabled selected> --   اختار -- </option>
+               <option value="" disabled selected>  </option>
                 <option value="excellent"> ممتاز </option>
                <option value="good"> جيد </option>
                <option value="normal"> عادي </option>
@@ -503,7 +607,7 @@ curl_close($curl);
            <label>  الاتصالات </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="communication_selection" name="communication_selection" required>
-               <option value="" disabled selected> --  اختار  -- </option>
+               <option value="" disabled selected>  </option>
                <option value="available"> متوفر </option>
                <option value="not_available"> غير متوفر </option>
              </select>
@@ -518,7 +622,7 @@ curl_close($curl);
            <label> الانترنت </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="internet_selection" name="internet_selection" required>
-               <option value="" disabled selected> --   اختار -- </option>
+               <option value="" disabled selected>  </option>
                <option value="available"> متوفر </option>
                <option value="not_available"> غير متوفر </option>
              </select>
@@ -530,7 +634,7 @@ curl_close($curl);
            <label>  الورشة </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="workshop_selection" name="workshop_selection" required>
-               <option value="" disabled selected> --   اختار -- </option>
+               <option value="" disabled selected>  </option>
                <option value="available"> متوفر </option>
                <option value="not_available"> غير متوفر </option>
              </select>
@@ -541,7 +645,7 @@ curl_close($curl);
            <label> الكمبرسون </label> 
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="compressor_selection" name="compressor_selection" required>
-               <option value="" disabled selected> --   اختار -- </option>
+               <option value="" disabled selected>  </option>
                <option value="available"> متوفر </option>
                <option value="not_available"> غير متوفر </option>
              </select>
@@ -556,7 +660,7 @@ curl_close($curl);
            <label> الوقود </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="fuel_selection" name="fuel_selection" required>
-               <option value="" disabled selected> --   اختار -- </option>
+               <option value="" disabled selected>  </option>
                <option value="available"> متوفر </option>
                <option value="not_available">  غير متوفر </option>
              </select>
@@ -568,7 +672,7 @@ curl_close($curl);
            <label> المياة </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="water_selection" name="water_selection" required>
-               <option value="" disabled selected> --   اختار   -- </option>
+               <option value="" disabled selected>  </option>
                <option value="available"> متوفر  </option>
                <option value="not_available">  غير متوفر </option>
              </select>
@@ -579,7 +683,7 @@ curl_close($curl);
            <label> الكهرباء </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="electricity_selection" name="electricity_selection" required>
-               <option value="" disabled selected> --   Choose -- </option>
+               <option value="" disabled selected>  </option>
                <option value="available"> متوفرة </option>
                <option value="not_available"> غير متوفرة </option>
              </select>
@@ -622,7 +726,7 @@ curl_close($curl);
               <div class="col-md-4 form- mt-4 mt-md-0">
               <lable>   نوع العلاقة بالموقع </lable> 
                 <select class="form-control mr-1" name="customer_job_title" id="job" onchange="" required>
-                <option value="" disabled selected> -- اختار  -- </option>
+                <option value="" disabled selected> </option>
                 <option value="مالك"> مالك   </option>
                 <option value="شريك"> شريك </option>
                 <option value="مدير"> مدير </option>
@@ -636,7 +740,7 @@ curl_close($curl);
               <div class="col-md-4 form-group">
                 <lable>   الجهه التابع لها </lable> 
                 <select class="form-control mr-1" name="customer_type_selection" id="customer_type_selection" onchange="select_side();" required>
-                <option value="" disabled selected> --  اختار -- </option>
+                <option value="" disabled selected>  </option>
                 <option value="company"> شركة </option>
                 <option value="person"> فرد </option>
                 </select>  
@@ -646,7 +750,7 @@ curl_close($curl);
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <lable> هل سبق لك العمل معنا </lable> 
                 <select class="form-control mr-1" name="ever_work_with_us" id="ever_work_with_us" onchange="select_wwus();" required>
-                <option value="" disabled selected> --  اختار -- </option>
+                <option value="" disabled selected>  </option>
                 <option value="yes"> نعم </option>
                 <option value="no"> لا </option>
                 </select>
@@ -659,7 +763,7 @@ curl_close($curl);
               <div class="form-group">
               <label for="exampleFormControlSelect2"> كيف تعرفت علينا </label>
              <select  class="form-control" id="exampleFormControlSelect2" name="social_media_selection" required>
-                <option value="" selected disabled> -- إختار -- </option>
+                <option value="" selected disabled>  </option>
                 <option value="facebook">Facebook</option>
                 <option value="twitter"> Twitter </option>
                 <option value="instagram"> Instagram </option>

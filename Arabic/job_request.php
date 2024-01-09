@@ -156,6 +156,13 @@
   }
 
 
+
+
+
+
+
+
+
   function add_habbit_line() {
     // alert("go");
     
@@ -291,8 +298,8 @@
               @$full_name = $_POST['full_name'];
               @$birthdate = $_POST['birthdate'];
               @$place = $_POST['place'];
-              @$home = $_POST['home'];
-              @$house = $_POST['house'];
+            //  @$home = $_POST['home'];
+            //  @$house = $_POST['house'];
               @$national = $_POST['national'];
               @$type_national = $_POST['type_national'];
               @$other_national = $_POST['other_national'];
@@ -318,7 +325,7 @@
               @$street = "Origin Home :".$o1."-".$o2."-".$o3;
               @$street2 = "Origin Home :".$c1."-".$c2."-".$c3;
               
-              @$house_type = $_POST['house_type'];
+              //@$house_type = $_POST['house_type'];
 
               @$id_type = $_POST['id_type'];
               @$issue_place = $_POST['issue_place'];
@@ -513,8 +520,6 @@
                   "name" => $full_name, 
                   "birthdate" => $birthdate, 
                   "place" => $place, 
-                  "home" => $home, 
-                  "house" => $house, 
                   "national" => $national, 
                   "type_national" => $type_national, 
                   "other_national" => $other_national, 
@@ -537,7 +542,6 @@
                   "state_id" => 1, 
                   "country_id" => 1, 
                   "country_code" => "XL", 
-                  "house_type" => $house_type, 
                   "note" => "Some personal note.", 
                   "id_type" => $id_type, 
                   "issue_place" => $issue_place, 
@@ -704,7 +708,7 @@
         <br/>
         <label> نوع الطلب  </label>
         <select name="request_type" class="form-control">
-          <option selected disabled> -- اختار -- </option>
+          <option selected disabled> --  -- </option>
           <option value="employment"> توظيف </option>
           <option value="training"> تدريب </option>
         </select>
@@ -735,15 +739,15 @@
         <input type="text" name="place" class="form-control" placeholder="مكان الميلاد">
       </div> 
 
-      <div class="col-md-4 form-group">
+      <!-- <div class="col-md-4 form-group">
         <label>   </label>
         <input type="text" name="home" class="form-control" placeholder="موطن الإقامة الاصلى">
-      </div> 
+      </div>  -->
 
-      <div class="col-md-4 form-group">
+      <!-- <div class="col-md-4 form-group">
         <label>   </label>
         <input type="text" name="house" class="form-control" placeholder="موطن الإقامة الحالى">
-      </div> 
+      </div>  -->
 
       </div>
 
@@ -757,7 +761,7 @@
        <div class="col-md-4 form-group">
         <label> نوع الجنسية  </label>
         <select name="type_national" class="form-control">
-          <option selected disabled> -- اختار -- </option>
+          <option selected disabled>    </option>
           <option value="original"> اصلية </option>
           <option value="naturalize"> توطين </option>
         </select>
@@ -766,7 +770,7 @@
       <div class="col-md-4 form-group">
         <label> هل لديك جنسية اخرى  </label>
         <select name="other_national" class="form-control">
-          <option selected disabled> -- اختار -- </option>
+          <option selected disabled>    </option>
           <option value="yes"> نعم </option>
           <option value="no"> لا </option>
         </select>
@@ -779,7 +783,7 @@
       <div class="col-md-4 form-group">
         <label> الحاله الإجتماعية  </label>
         <select name="social_state" class="form-control">
-          <option selected disabled> -- اختار -- </option>
+          <option selected disabled>    </option>
           <option value="single"> اعزب </option>
           <option value="married"> متزوج </option>
           <option value="cohabitant"> مرتبط </option>
@@ -791,7 +795,7 @@
       <div class="col-md-4 form-group">
       <label> هل لديك ابناء  </label>
         <select name="children" class="form-control">
-          <option selected disabled> -- اختار -- </option>
+          <option selected disabled>    </option>
           <option value="yes"> نعم </option>
           <option value="no"> لا </option>
         </select>
@@ -877,15 +881,15 @@
 
       <div class="row">
 
-      <div class="col-md-4 form-group">
+      <!-- <div class="col-md-4 form-group">
         <br/>
         <label> نوع السكن   </label>
          <select name="house_type" class="form-control">
-          <option selected disabled> -- اختار -- </option>
+          <option selected disabled>  </option>
           <option value="owned"> ملك </option>
           <option value="rental_request"> ايجار </option>
         </select>
-      </div> 
+      </div>  -->
 
       <div class="col-md-4 form-group">
       <label>   </label>
@@ -919,15 +923,15 @@
 
       <div class="row">
 
-      <div class="col-md-4 form-group">
+      <!-- <div class="col-md-4 form-group">
         <br/>
         <label> نوع السكن  </label>
         <select name="house_type" class="form-control">
-          <option selected disabled> -- Select -- </option>
-          <option value="owned"> Owned </option>
-          <option value="rental_request"> Rental </option>
+          <option selected disabled>  </option>
+          <option value="owned"> ملك </option>
+          <option value="rental_request"> إيجار </option>
         </select>
-      </div> 
+      </div>  -->
 
       <div class="col-md-4 form-group">
       <label>   </label>
@@ -943,13 +947,12 @@
       <div class="col-md-4 form-group">
       نوع إثبات الشخصية
       <select name="id_type" class="form-control">
-      <option selected disabled> -- اختار -- </option>
+      <option selected disabled>  </option>
       <option value="id_card"> بطاقة قومية </option>
       <option value="car_lince"> رخصة قيادة </option>
       <option value="passport"> جواز سفر </option>
       <option value="other"> اخرى </option>
       </select>
-      <input type="text" class="form-control" placeholder="ادخل نوع اثبات الهوية">
       </div>
 
       <div class="col-md-4 form-group">
@@ -974,7 +977,7 @@
       <div class="col-md-4 form-group">
       <label> هل قمت بانهاء الخدمة الوطنية ؟ </label>
       <select name="service" class="form-control">
-      <option selected disabled> -- إختار -- </option>
+      <option selected disabled> --  -- </option>
       <option value="yes"> نعم </option>
       <option value="no"> لا </option>
       </select>
@@ -1004,7 +1007,7 @@
       <div class="col-md-4 form-group">
       <label> مستوي التعليم  </label>
       <select name="education_level" class="form-control">
-      <option> -- إختار -- </option>
+      <option>  </option>
       <option> دون الثانوي </option>
       <option> الثانوى </option> 
       <option> دبلوم </option> 
@@ -1038,7 +1041,7 @@
       <div class="col-md-4 form-group">
       <label> الدرجة العلمية  </label>
       <select name="certificate" class="form-control">
-      <option selected disabled> -- اختار -- </option>
+      <option selected disabled>  </option>
       <option value="graduate"> تخريج </option>
       <option value="bachelor"> بكلريوس </option>
       <option value="master"> ماجستير </option>
@@ -1128,7 +1131,7 @@
       <div class="col-md-3 form-group">
       <label> التقييم </label>
       <select name="skill_val1" class="form-control">
-        <option selected disabled> -- Select -- </option>
+        <option selected disabled>  </option>
         <option value="Good"> جيدة  </option>
         <option value="Excellent"> ممتازة  </option>
       </select>
@@ -1198,7 +1201,7 @@
       <label> هل لديك شريك او صديق يعمل بالشركة ؟ </label>
      <br/>
     <select class="form-control"   name="related">
-      <option> -- إختار -- </option>
+      <option> --  -- </option>
       <option value="yes" > نعم </option>
       <option value="no"> لا </option>
     </select>
@@ -1209,7 +1212,7 @@
       <label> ما نوع التوظيف الذى ترغب بالإلتحاق به ضمن فريق إيكيوبيشن ؟ </label>
      <br/>
     <select class="form-control" name="employment_type">
-      <option> -- إختار -- </option>
+      <option>  </option>
       <option  value="full" > دائم </option>
       <option  value="part" > بارت تايم </option>
       <option  value="temp" > مؤقت(موسم) </option>
@@ -1265,8 +1268,7 @@
 
       <div class="row">
         <br/><br/>
-        <b> بتقديمي لهذا الطلب انا اقر بصحة البيانات المذكورة اعلاه وأتحمل كامل المسؤولية القانونية والمعتبرة عن الخطأ الموجود فيه </b>
-
+        <b> بتقديمي لهذا الطلب  أقر أنا  بصحة البيانات المذكورة اعلاه
       </div>
 
       <div class="row">
