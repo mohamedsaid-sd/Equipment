@@ -359,7 +359,7 @@ curl_close($curl);
                   </select>
                 </div> -->
 
-                <div class="col-md-3 form-group">
+                <div class="col-md-4 form-group">
                 Equipment type:  <br/>
                 
                   <select class="form-control mr-1" name="machine_type" id="machine_type"  required>
@@ -381,13 +381,13 @@ curl_close($curl);
                   </select>
                 </div>
 
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-4">
         <label>    quantity</label>
          <input type="number" class="form-control" id="inputDate" name="requested_number"  required />
          
       </div>
 
-      <div class="form-group col-md-3">
+      <div class="form-group col-md-4">
         <label>     size machine</label>
          <input type="text" class="form-control" id="inputDate" name="size_machine"  required />
          
@@ -429,13 +429,8 @@ curl_close($curl);
                   <input id="hour_num" name="hour_num" type="text" class="form-control" placeholder="  manual entry hour   " style="display: none;">
                 </div> -->
 
-              </div>
-     <!-- Start Input Start Time -->
-     <div class="row">
-
-     <div class="form-group col-md-4">
+                   <div class="form-group col-md-4">
         <label>DAILY WORK HOURS   </label>
-
           <select class="form-control mr-1" id="work_hours" name="work_hours" onchange="select_hourday();" required>
             <option value="" disabled selected> -- Choose  -- </option>
             <option value="10">10</option>
@@ -445,11 +440,14 @@ curl_close($curl);
             <option value="20">20</option>
             <option value="hand"> manual entry  </option>
           </select>
-
           <input id="work_hourshide" name="work_hourshide" type="text" class="form-control" placeholder="  manual entry Hour   " style="display: none;">
-        
-
       </div>
+
+              </div>
+     <!-- Start Input Start Time -->
+     <div class="row">
+
+
 
       <div class="form-group col-md-4">
         <label>    EXPECTED WORK START </label>
@@ -528,11 +526,12 @@ curl_close($curl);
              <input type="date" name="start_date" class="form-control" placeholder="   work starting date (manual entry/calendar) " >
             </span>      
          </div>
+
               </div>
 
 
           <div class="row">
-
+          <br/>
           <label> <b>JOB SITE READINESS  : </b> </label>
           
           <div class="form-group col-md-4">
@@ -702,19 +701,25 @@ curl_close($curl);
                   <input type="text" name="name" class="form-control" id="name" placeholder="  NAME " required>
                 </div>
 
-                <div class="col-md-3 form-group">
+                <div class="col-md-4 form-group">
                   <input type="number" name="phone" class="form-control"  placeholder="  phone " required>
                 </div>
 
-                <div class="col-md-3 form-group">
+                <div class="col-md-4 form-group">
                   <input type="number" name="whatsapp_num" class="form-control"  placeholder=" whatsap phone " required>
                 </div>
+
+              </div>
+
+              <div class="row">
+
+
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                   <input type="email" class="form-control" name="email" id="email" placeholder=" EMAIL " required>
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                <lable>     Type of relationship to the site </lable> 
+                <label>     Type of relationship to the site </label> 
                 <select class="form-control mr-1" name="job" id="job" onchange="" required>
                 <option value="" disabled selected> --  Choose -- </option>
                 <option value="Owner"> Owner   </option>
@@ -727,12 +732,8 @@ curl_close($curl);
 
                 </select>                   </div>
 
-              </div>
-
-              <div class="row">
-
-              <div class="col-md-4 form-group">
-                <lable>   CATEGORY </lable> 
+                       <div class="col-md-4 form-group">
+                <label>   Your side is </label> 
                 <select class="form-control mr-1" name="categ" id="categ" onchange="select_side();" required>
                 <option value="" disabled selected> --  Choose -- </option>
                 <option value="company"> company </option>
@@ -741,8 +742,14 @@ curl_close($curl);
                 <input id="company" name="company" type="text" class="form-control" placeholder="Enter company name" style="display: none;" />
               </div>
 
+              </div>
+
+              <div class="row">
+
+       
+
               <div class="col-md-4 form-group mt-3 mt-md-0">
-              <lable>     HAVE YOU EVER WORK WITH US </lable> 
+              <label>  Have you over worked with us :  </label> 
                 <select class="form-control mr-1" name="work" id="work" onchange="select_wwus();" required>
                 <option value="" disabled selected> --  Choose -- </option>
                 <option value="yes"> YES </option>
@@ -755,7 +762,7 @@ curl_close($curl);
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <div class="form-group">
-              <label for="exampleFormControlSelect2">  HOW TO RECOGNIZE US</label>
+              <label for="exampleFormControlSelect2">  How to know us : </label>
              <select  class="form-control" id="exampleFormControlSelect2" name="know" required>
                 <option value="friend">friend</option>
                 <option value="social">social</option>

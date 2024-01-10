@@ -275,10 +275,9 @@
   
     <!-- ======= Contact Section ======= -->
     <section class="contact">
+      
       <div class="container">
-
         <div class="section-title">
-        <br/>
           <h2>  طلب التوظيف  </h2>
          </div>
       </div>
@@ -945,7 +944,7 @@
       <h3> إثبات الشخصية </h3>
 
       <div class="col-md-4 form-group">
-      نوع إثبات الشخصية
+      <label> نوع إثبات الشخصية</label>
       <select name="id_type" class="form-control">
       <option selected disabled>  </option>
       <option value="id_card"> بطاقة قومية </option>
@@ -1267,8 +1266,7 @@
     <br/><br/>
 
       <div class="row">
-        <br/><br/>
-        <b> بتقديمي لهذا الطلب  أقر أنا  بصحة البيانات المذكورة اعلاه
+        <label>بتقديمي لهذا الطلب  أقر أنا  بصحة البيانات المذكورة اعلاه</label>
       </div>
 
       <div class="row">

@@ -47,7 +47,7 @@
 	}
 
 	#content p{
-		font-size: 25px;
+		font-size: 20px;
 		padding: 10px;
 		justify-content: all;
 		text-decoration: initial;
@@ -58,19 +58,21 @@
 	}
 
 	#lest{
-		height: 300px;
+		height: 100%;
 
 	}
 
 	#lest a{
-		display: block;
-		width: 100%;
+		display: inline;
+		/*width: 100%;*/
+    width: 200px;
 		background-color: #fff;
 		padding: 10px;
 		margin: 8px;
 		font-size: 20px;
 		color: #333;
 		border-radius: 5px;
+    float: right;
 	}
 
   #lest a:hover{
@@ -119,42 +121,32 @@
 
   <div class="row">
 
-   <div id="lest" class="col-lg-2">
-   	<div style="margin: 10px;">
-  		
-  		<a href="details.php?id=مقاولة"> <i class="fas fa-clipboard"></i> خدمات المقاولة </a> 
-  		<a href="details.php?id=تاجير"> <i class="fas fa-tractor"></i> خدمات التأجير </a> 
-  		<a href="details.php?id=تشغيل"> <i class="fab fa-teamspeak"></i> خدمات تشغيل المعدات </a> 
-  		<a href="details.php?id=توظيف"> <i class="fab fa-wpforms"></i> خدمات التوظيف </a> 
-  		<a href="details.php?id=صيانه"> <i class="fas fa-tools"></i> خدمات الصيانة </a> 
-  		<a href="details.php?id=ترحيل"> <i class="fas fa-truck-moving"></i> خدمات الترحيل </a> 
-	</div>
-  	</div>
+
 
 <?php
 if($_GET['id'] == "مقاولة"){
 ?>
-  <div id="content" class="col-lg-10">
+  <div id="content" class="col-lg-12">
   <img src="assets/img/gallery/gallery-1.jpg">
   		
   <h2> خدمات المقاولة </h2>
-  <p> تحتاج مشاريع المقاوالت دوما إلى نظام إداري متكامل يعتمد على األتمتة في معظم مراحله ويراعي في ذلك كل أحجام ومستويات 
-التغيرات والمطلوبات بتوفير اآلليات األنسب باألحجام المناسبة في يجب أن يكون المقاول مستعدًا دائمًا لتلبية وأهداف المشروعات. و
-التوقيت المناسب، وضمان حداثة أساطيل اآلليات وجودتها مع فريق هندسي مؤهل مستعد على مدار الساعة لضمان استمرارية 
-العمل دون توقف ودون إهدار لألوقات الضائعة. ويجب أن يكون إسم المقاول إسم موثوق ويعتمد عليه في تنفيذ المهام الصعبة 
-والمستحيلة، مع مراعاة الجودة في كل ذلك وهو العامل الفارق في هذه المنافسة. 
-EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات وتحقيق أهداف الشركات بكفاءة وجودة وأمان مع سعر منافس، نحن 
-سنكون في إنتظارك لخوض ذلك التحدي معك </p>
+  <p> تحتاج مشاريع المقاولة دوما إلى نظام إداري متكامل يعتمد على أتمتة في معظم مراحله ويراعي في ذلك كل أحجام ومستويات 
+التغيرات والمطلوبات بتوفير اليات الأنسب بالأحجام المناسبة فيجب أن يكون المقاول مستعدًا دائمًا لتلبية أهداف المشروعات و
+التوقيت المناسب، وضمان حداثة أساطيل الآليات وجودتها مع فريق هندسي مؤهل مستعد على مدار الساعة لضمان استمرارية 
+العمل دون توقف ودون إهدار الوقت الضائع ويجب أن يكون إسم المقاول إسم موثوق ويعتمد عليه في تنفيذ المهام الصعبة 
+والمستحيله، مع مراعاة الجودة في كل ذلك وهو العامل الفارق في هذه المنافسة. 
+EQUIPATION هي الخيار الأفضل لتلبية تلك المتطلبات وتحقيق أهداف الشركات بكفاءة وجودة وأمان مع سعر منافس، نحن 
+سنكون في انتظارك لخوض ذلك التحدي معك </p>
 </div>
 <div class="col-lg-2">
 </div>
-<div class="col-lg-10" style="padding: 0px;margin: 0px;">
+<div class="col-lg-12" style="padding: 0px;margin: 0px;">
 <a href="contract_request.php"><div class="btn btn-success" style="width: 100%;padding: 10px;border:none;"><b>  تقديم طلب  جديد + </b></div></a>
 </div>
 <?php
 } else if($_GET['id'] == "تاجير"){
 ?>
-  <div id="content" class="col-lg-10">
+  <div id="content" class="col-lg-12">
   <img src="assets/img/gallery/gallery-7.jpg">
   		
   <h2> خدمات التاجير </h2>
@@ -168,13 +160,13 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 </div>
 <div class="col-lg-2">
 </div>
-<div class="col-lg-10" style="padding: 0px;margin: 0px;">
+<div class="col-lg-12" style="padding: 0px;margin: 0px;">
 <a href="rental_request.php"><div class="btn btn-success" style="width: 100%;padding: 10px;border:none;"><b>  تقديم طلب  جديد + </b></div></a>
 </div>
 <?php
 } if($_GET['id'] == "تشغيل"){
 ?>
-  <div id="content" class="col-lg-10">
+  <div id="content" class="col-lg-12">
   <img src="assets/img/gallery/gallery-3.jpg">
   		
   <h2> خدمات التشغيل </h2>
@@ -195,14 +187,14 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 </div>
 <div class="col-lg-2">
 </div>
-<div class="col-lg-10" style="padding: 0px;margin: 0px;">
+<div class="col-lg-12" style="padding: 0px;margin: 0px;">
 <a href="run_request.php"><div class="btn btn-success" style="width: 100%;padding: 10px;border:none;"><b>  تقديم طلب  جديد + </b></div></a>
 </div>
 <?php
 } else if($_GET['id'] == "توظيف"){
 ?>
 
-<div id="content" class="col-lg-10">
+<div id="content" class="col-lg-12">
   <img src="assets/img/gallery/gallery-5.jpg">
   		
   <h2> خدمات التوظيف </h2>
@@ -213,13 +205,13 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 </div>
 <div class="col-lg-2">
 </div>
-<div class="col-lg-10" style="padding: 0px;margin: 0px;">
+<div class="col-lg-12" style="padding: 0px;margin: 0px;">
 <a href="job_request.php"><div class="btn btn-success" style="width: 100%;padding: 10px;border:none;"><b>  تقديم طلب  جديد + </b></div></a>
 </div>
 <?php
 } if($_GET['id'] == "صيانه"){
 ?>	
-<div id="content" class="col-lg-10">
+<div id="content" class="col-lg-12">
   <img src="assets/img/gallery/gallery-6.jpg">
   		
   <h2> خدمات الصيانه </h2>
@@ -230,7 +222,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 </div>
 <div class="col-lg-2">
 </div>
-<div class="col-lg-10" style="padding: 0px;margin: 0px;">
+<div class="col-lg-12" style="padding: 0px;margin: 0px;">
 <a href="maintenance_request.php"><div class="btn btn-success" style="width: 100%;padding: 10px;border:none;"><b>  تقديم طلب  جديد + </b></div></a>
 </div>
 <?php
@@ -239,7 +231,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 
 
 
-<div id="content" class="col-lg-10">
+<div id="content" class="col-lg-12">
   <img src="assets/img/gallery/gallery-8.jpg">
   		
   <h2> خدمات الترحيل </h2>
@@ -250,7 +242,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 </div>
 <div class="col-lg-2">
 </div>
-<div class="col-lg-10" style="padding: 0px;margin: 0px;">
+<div class="col-lg-12" style="padding: 0px;margin: 0px;">
 <a href="deportation_request.php"><div class="btn btn-success" style="width: 100%;padding: 10px;border:none;"><b>  تقديم طلب  جديد + </b></div></a>
 </div>
 
@@ -266,7 +258,17 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 
 
 
-
+   <div id="lest" class="col-lg-12">
+    <div style="margin: 10px;">
+      
+      <a href="details.php?id=مقاولة"> <i class="fas fa-clipboard"></i> خدمات المقاولة </a> 
+      <a href="details.php?id=تاجير"> <i class="fas fa-tractor"></i> خدمات التأجير </a> 
+      <a href="details.php?id=تشغيل"> <i class="fab fa-teamspeak"></i> خدمات تشغيل المعدات </a> 
+      <a href="details.php?id=توظيف"> <i class="fab fa-wpforms"></i> خدمات التوظيف </a> 
+      <a href="details.php?id=صيانه"> <i class="fas fa-tools"></i> خدمات الصيانة </a> 
+      <a href="details.php?id=ترحيل"> <i class="fas fa-truck-moving"></i> خدمات الترحيل </a> 
+  </div>
+    </div>
 
 
 

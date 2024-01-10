@@ -354,7 +354,7 @@ curl_close($curl);
 
           <h3>  Equipment Detailes </h3>
 
-          <div class="col-md-3 form-group">
+          <div class="col-md-4 form-group">
                 Equipment type:  <br/>
                 
                   <select class="form-control mr-1" name="machine_type" id="machine_type"  required>
@@ -375,27 +375,28 @@ curl_close($curl);
                 </div>
 
 
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-4">
         <label>     Size machine </label>
          <input type="text" class="form-control" id="inputDate" name="size_id"  required />
          
       </div>
 
-      <div class="form-group col-md-3">
+      <div class="form-group col-md-4">
         <label>     Brand machine </label>
          <input type="text" class="form-control" id="inputDate" name="brand_id"  required />
          
       </div>
-      <div class="form-group col-md-3">
-        <label>     Year of manufacture </label>
-        <input type="text" class="form-control " id="year_of_manufacture_idhide" name="year_of_manufacture_idhide" placeholder="Enter year of manufacture" >
-         
-      </div>
+
 
 
         </div>
 
         <div class="row">
+
+       <div class="form-group col-md-4">
+        <label>     Year of manufacture </label>
+        <input type="text" class="form-control " id="year_of_manufacture_idhide" name="year_of_manufacture_idhide" placeholder="Enter year of manufacture" >
+      </div>
 
         <div class="form-group col-md-4">
             <label>  License </label>
@@ -420,21 +421,19 @@ curl_close($curl);
 
             </select>
           </div>
-
-      <div class="col-md-4 form-group  mt-3 mt-md-0"> 
-        
-      <label>  Add any accessories with the equipment  </label>
-
-      <input type="text" id="description" name="description" class="form-control" placeholder="   
-Add any accessories with the equipment"> <font color="red">  </font> 
-          </div> 
           
         </div>
 
         <div class="row">
+        
+        <div class="col-md-4 form-group  mt-3 mt-md-0"> 
+        <label>  Add any accessories with the equipment  </label>
+        <input type="text" id="description" name="description" class="form-control" placeholder="
+        Add any accessories with the equipment"> <font color="red">  </font> 
+        </div> 
 
 
-        <div class="col-md-3 form-group mt-3 mt-md-0">
+        <div class="col-md-4 form-group mt-3 mt-md-0">
               Work field <br/>
                   <select class="form-control mr-1" name="work_field" id="work_field" onchange="select_work_field();"  required>
                     <option disabled selected>  </option>
@@ -449,7 +448,7 @@ Add any accessories with the equipment"> <font color="red">  </font>
           </div>
 
 
-          <div class="form-group col-md-3">
+          <div class="form-group col-md-4">
           <label> Contracts:  </label>
           <select class="form-control" id="cotracts_id" name="cotracts_id" onchange="select_contracts();">
             <option value="" disabled selected>  </option>
@@ -462,8 +461,11 @@ Add any accessories with the equipment"> <font color="red">  </font>
         <input  id="cotracts_idhide" name="cotracts_idhide" type="text" class="form-control" placeholder="Enter the contract" style="display: none;">
         </div>
 
+        </div>
 
-        <div class="form-group col-md-3">
+        <div class="row">
+
+                <div class="form-group col-md-3">
           <label> State </label>
           <select class="form-control" id="state_id" name="state_id" onchange="select_state();">
             <option value="" disabled selected>  </option>
@@ -475,11 +477,6 @@ Add any accessories with the equipment"> <font color="red">  </font>
           </select>
         <input type="text" id="state_idhide" name="state_idhide" class="form-control" placeholder="حدد الولاية" style="display: none;">
         </div>
-
-        </div>
-
-        <div class="row">
-
 
         <div class="form-group col-md-4">
           <label> Maintenance </label>
@@ -506,15 +503,6 @@ Add any accessories with the equipment"> <font color="red">  </font>
 
           
         </div>
-
-        <div class="row">
-
-        </div>
-
-        <div class="row">
-
-        </div>
-
 
 
         <div class="row mt-5">
@@ -587,7 +575,7 @@ Add any accessories with the equipment"> <font color="red">  </font>
 
 <div class="col-md-4 form-">
   <label></label>
-  <input type="text" name="full_name" class="form-control" id="full_name" placeholder="   الاسم  ثلاثي" required>
+  <input type="text" name="full_name" class="form-control" id="full_name" placeholder="Customer name" required>
 </div>
 
 <div class="col-md-4 form-">
@@ -612,7 +600,7 @@ Add any accessories with the equipment"> <font color="red">  </font>
                 </div>
 
                 <div class="col-md-4 form- mt-3 mt-md-0">
-                <lable>   Type of relationship to the site </lable> 
+                <label>   Type of relationship to the site </label> 
                 <select class="form-control mr-1" name="job" id="job" onchange="" required>
                <option value="" disabled selected> --  Choose -- </option>
                 <option value="Owner"> Owner   </option>
@@ -626,7 +614,7 @@ Add any accessories with the equipment"> <font color="red">  </font>
                   </div>
 
               <div class="col-md-4 form-">
-                <lable>  Your side is </lable> 
+                <label>  Your side is </label> 
                 <select class="form-control mr-1" name="work_for" id="work_for" onchange="select_side();" required>
                 <option value="" disabled selected> -- Choose -- </option>
                 <option value="company"> Company </option>
@@ -638,7 +626,7 @@ Add any accessories with the equipment"> <font color="red">  </font>
 
 
               <div class="col-md-4 form- mt-3 mt-md-0">
-              <lable>  Have you over worked with us : </lable> 
+              <label>  Have you over worked with us : </label> 
                 <select class="form-control mr-1" name="previous" id="previous" onchange="select_wwus();" required>
                  <option value="" disabled selected> -- Choose -- </option>
                 <option value="yes"> Yes </option>

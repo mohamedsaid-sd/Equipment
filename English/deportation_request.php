@@ -385,7 +385,7 @@ curl_close($curl);
               <div class="row">
 
                 <div class="col-md-4 form-group">
-                Type Of Machine: <br/>
+                <label> Type of machine </label>
                   <select class="form-control mr-1" name="machine" id="machine" onchange="select_type();">
                     <option value="" disabled selected> -- Choose   -- </option>
                     <option> Excavator </option>
@@ -397,7 +397,7 @@ curl_close($curl);
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                SIZE OF MACHINE <br/>
+                <label>Size of machine</label>
                 <input type="number" step="0.01" id="comprossor" name="comprossor" class="form-control" placeholder="Entry comprossor  size ">
                 </div>
                 
@@ -421,7 +421,7 @@ curl_close($curl);
               </div>
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
-                MODEL OF MACHINE <br/>
+                 <label>Model of machine</label>
                  <select class="form-control mr-1" name="model" id="model" onchange="select_brand();">
                     <option disabled selected> --   Choose  -- </option>
                     <option > GAT </option>
@@ -433,7 +433,6 @@ curl_close($curl);
               
                 </div>
 
-                </div>
 
           
                </div>
@@ -441,8 +440,7 @@ curl_close($curl);
      <div class="row">
 
      <div class="col-md-4 form-group">
-        <label>  WIEGHT OF MACHINE(TON) </label>
-       
+        <label>   wieght of machine(TON) </label>
           <select class="form-control mr-1" name="wieght" id="wieght" onchange="select_weight();">
           <option value="" disabled selected> --  Choose -- </option>  
             <option value="10">10</option>
@@ -456,7 +454,7 @@ curl_close($curl);
 
 
       <div class="form-group col-md-4">
-        <label>  TYPE OF MACHINE TO MOB/DIMOB </label>
+        <label> Type of machine to MOB/DIMOB  </label>
         <input id="lowbed" name="lowbed" type="number" step="0.01" class="form-control" placeholder="Enter lowbed Size"/>
       </div>
 
@@ -466,15 +464,13 @@ curl_close($curl);
    </div>
 
    <div class="form-group col-md-4">
-     <label>   trailer </label>
+     <label>   Trailer </label>
           <select class="form-control mr-1" name="trailer" id="trailer" >
             <option value="zs" disabled selected> --  Choose -- </option>
             <option value="zs">  zs </option>
             <option value="zy">  zy </option>
           
           </select>
-       
-    </div>
     
       </div>
 
@@ -486,7 +482,7 @@ curl_close($curl);
 
       <div class="row">
         <div class="col-md-4 form-group">
-        LOCATION MACHINE <br/>
+       <label>Location machine</label>
 
           <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="state" name="state_id" required>
@@ -546,7 +542,7 @@ curl_close($curl);
 
           <div class="row">
         <div class="col-md-4 form-group">
-        DESTINATION  <br/>
+        <label>Destination</label>
 
           <div class="d-flex flex-row justify-content-between align-items-center">
              <select class="form-control mr-1" id="des_state" name="des_state" required>
@@ -603,20 +599,28 @@ curl_close($curl);
              
               <!-- **********************Customer Data***************************** -->
               <h3 for="textAreaRemark">CUSTOMER DATA  </h3>
+              
               <div class="row">
 
-                <div class="col-md-3 form-group">
+                <div class="col-md-4 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="  NAME ">
                 </div>
-                <div class="col-md-3 form-group">
+
+                <div class="col-md-4 form-group">
                   <input type="text" name="whatsapp_num" class="form-control"  placeholder=" whatsapp phone (002499123xxx) " required>
-                </div>
-                <div class="col-md-3 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="email" id="email" placeholder=" EMAIL ">
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                <lable>     Type of relationship to the site </lable> 
+                  <input type="text" class="form-control" name="email" id="email" placeholder=" EMAIL ">
+                </div>
+
+       
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                <label>     Type of relationship to the site </label> 
                 <select class="form-control mr-1" name="job" id="job" onchange="" required>
                 <option value="" disabled selected> --  Choose -- </option>
                 <option value="Owner"> Owner   </option>
@@ -626,16 +630,12 @@ curl_close($curl);
                 <option value="Moderator"> Moderator </option>
                 <option value="agent"> agent </option>
                 <option value="broker"> broker </option>
-
                 </select> 
-                                </div>
+                </div>
 
-              </div>
-
-              <div class="row">
 
               <div class="col-md-4 form-group">
-                <lable>   CATEGORY</lable> 
+                <label> Category</label> 
                 <select class="form-control mr-1" name="work_for" id="work_for" onchange="select_side();">
                 <option value="" disabled selected> -- Choose  -- </option>
                 <option value="company"> company </option>
@@ -645,7 +645,7 @@ curl_close($curl);
               </div>
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
-              <lable>   HAVE YOU EVER WORK WITH US </lable> 
+              <label>  Have you ever work with us </label> 
                 <select class="form-control mr-1" name="previous" id="previous" onchange="select_wwus();">
                 <option value="" disabled selected> --  Choose -- </option>
                 <option value="yes"> Yes </option>
@@ -658,7 +658,7 @@ curl_close($curl);
               </div>
               <div class="col-md-4 form-group mt-3 mt-md-0">
               <div class="form-group">
-              <label for="exampleFormControlSelect2">  HOW TO RECOGNIZE US?</label>
+              <label for="exampleFormControlSelect2"> How to recognize us ?</label>
               <select  class="form-control" id="know" name="know">
                 <option value="media"> facebook	 </option>
                 <option value="google"> google </option>
@@ -700,8 +700,7 @@ curl_close($curl);
       </div>
       </div>
       <br>
-              <br>
-              <br>
+
               <div class="text-center"><button type="submit" name="send_form">  Send </button></div>
             </form>
 

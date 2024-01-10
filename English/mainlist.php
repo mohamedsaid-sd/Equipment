@@ -36,7 +36,7 @@
               <li><a href="job_request.php"> Job Request  </a></li>
               <li><a href="run_request.php"> Operation Request </a></li>
               <li><a href="maintenance_request.php"> Maintenance Request </a></li>
-              <li><a href="deportation_request.php"> Deportation Request </a></li>
+              <li><a href="deportation_request.php"> Migration Request </a></li>
               
     
             </ul>

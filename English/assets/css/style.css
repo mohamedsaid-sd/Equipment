@@ -561,7 +561,6 @@ section {
 
 .section-title {
   text-align: center;
-  padding-bottom: 30px;
   align-content: center;
   align-items: center;
   align-self: center;
@@ -1813,3 +1812,68 @@ section {
   color: #fff;
   text-decoration: none;
 }
+.contact .container form{
+  background-color: #fffaf6;
+  padding: 10px;
+  box-shadow: 2px 5px 8px  #aaa;
+  border-radius: 10px;
+  color: #555;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.contact .container form button{
+  background-color: orange;
+  padding: 5px;
+  margin: 5px;
+  font-weight: bold;
+  border: none;
+  width: 200px;
+  box-shadow: 1px 2px 3px black;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.contact .container form input , .contact .container form select , .contact .container form textarea{
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  box-shadow: 1px 1px 1px gray;
+  border-radius: 10px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+}
+
+.contact .container form select {
+  text-align : left;
+}
+
+.contact .container form label{
+ margin-left: 15px;
+ font-style: oblique;
+}
+
+.contact .container form h3{
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
+/*  border-bottom: solid 2px #222;*/
+  margin-left: 10px;
+  margin-top: 10px;
+  text-shadow: 1px 1px 1px #aaa;
+}
+
+
+.contact .container form h3{
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
+/*  border-bottom: solid 2px #222;*/
+  margin-left: 10px;
+  margin-top: 10px;
+  text-shadow: 1px 1px 1px #aaa;
+}
+

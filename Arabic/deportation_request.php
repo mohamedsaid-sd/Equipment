@@ -380,7 +380,7 @@ curl_close($curl);
               <div class="row">
 
                 <div class="col-md-4 form-group">
-                  نوع الآلية المرحلة <br/>
+                  <label>نوع الآلية المرحلة</label>
                   <select class="form-control mr-1" name="machine" id="machine" onchange="select_type();" >
                     <option value="" disabled selected> -- اختار النوع  -- </option>
                     <option> دفار </option>
@@ -392,7 +392,7 @@ curl_close($curl);
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                  مقاس الآلية  <br/>
+                  <label>مقاس الآلية</label>
                   <input type="number" step="0.01" id="comprossor" name="comprossor" class="form-control" placeholder="ادخل حجم كمبروسير ">
                 </div>
 
@@ -417,7 +417,7 @@ curl_close($curl);
 
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
-                 ماركة الآلية المرحلة <br/>
+                 <label>ماركة الآلية المرحلة</label>
                  <select class="form-control mr-1" name="model" id="model" onchange="select_brand();" >
                     <option disabled selected> --  اختار الماركة  -- </option>
                     <option> GAT </option>
@@ -632,7 +632,7 @@ curl_close($curl);
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                <lable>   نوع العلاقة بالموقع </lable> 
+                <label>   نوع العلاقة بالموقع </label> 
                 <select class="form-control mr-1" name="job" id="job" onchange="" required>
                 <option value="" disabled selected> -- اختار  -- </option>
                 <option value="مالك"> مالك   </option>
@@ -647,7 +647,7 @@ curl_close($curl);
                       </div>
 
               <div class="col-md-4 form-group">
-                <lable> الجهة  التابع لها </lable> 
+                <label> الجهة  التابع لها </label> 
                 <select class="form-control mr-1" name="work_for" id="work_for" onchange="select_side();" >
                 <option value="" disabled selected> -- اختار الجهة-- </option>
                 <option value="company"> شركة </option>
@@ -661,7 +661,7 @@ curl_close($curl);
             <div class="row">
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
-              <lable> هل  سبق لك العمل معنا </lable> 
+              <label>هل  سبق لك العمل معنا </label> 
                 <select class="form-control mr-1" name="previous" id="previous" onchange="select_wwus();" >
                 <option value="yes" disabled selected> -- اختار الاجابة -- </option>
                 <option value="yes"> نعم </option>
@@ -714,8 +714,6 @@ curl_close($curl);
       </div>
       </div>
       <br>
-              <br>
-              <br>
 
               <div class="text-center"><button type="submit" name="send_form"> إرسال الطلب </button></div>
             </form>

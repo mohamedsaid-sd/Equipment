@@ -430,7 +430,7 @@ curl_close($curl);
                 </div>
 
                 <div class="col-md-4 form- mt-3 mt-md-0">
-                <lable>   نوع العلاقة بالموقع </lable> 
+                <label>   نوع العلاقة بالموقع </label> 
                 <select class="form-control mr-1" name="job" id="job" onchange="" required>
                 <option value="" disabled selected> -- اختار  -- </option>
                 <option value="مالك"> مالك   </option>
@@ -444,7 +444,7 @@ curl_close($curl);
                   </div>
 
               <div class="col-md-4 form-">
-                <lable> الجةة التابع لها </lable> 
+                <label> الجةة التابع لها </label> 
                 <select class="form-control mr-1" name="work_for" id="work_for" onchange="select_side();" required>
                 <option value="" disabled selected> -- اختار  -- </option>
                 <option value="company"> شركة </option>
@@ -454,7 +454,7 @@ curl_close($curl);
               </div>
 
               <div class="col-md-4 form- mt-3 mt-md-0">
-              <lable> هل  سبق لك العمل معنا </lable> 
+              <label> هل  سبق لك العمل معنا </label> 
                 <select class="form-control mr-1" name="previous" id="previous" onchange="select_wwus();" required>
                 <option value="" disabled selected> -- اختار الاجابة -- </option>
                 <option value="yes"> نعم </option>

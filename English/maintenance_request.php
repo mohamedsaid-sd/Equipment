@@ -270,26 +270,30 @@ curl_close($curl);
 
               <div class="row">
                 <div class="col-md-4 form-group">
+                  <label></label>
                   <input type="text" name="Type" class="form-control" id="Type" placeholder="type of Machine " required>
                 </div>
                 <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <label></label>
                   <input type="text" class="form-control" name="model" id="model" placeholder=" Machine model   " required>
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
+                  <label></label>
                   <input type="text" class="form-control" name="engine" id="engine" placeholder=" Engine serial number   " required>
                 </div>
-
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="chassis" id="Sashinumber" placeholder=" Chaassis number  " required>
-                  </div>
 
               </div>
      <!-- Start Input Start Time -->
      <div class="row">
 
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <label></label>
+                    <input type="text" class="form-control" name="chassis" id="Sashinumber" placeholder=" Chaassis number  " required>
+                  </div>
+
      <div class="form-group col-md-4">
-            <br/>
+           <label></label>
             <input type="text" class="form-control" name="km_read" id="time" placeholder=" km_read   " required>
       </div>
 
@@ -339,13 +343,19 @@ curl_close($curl);
           </select>
         
         </div>
-      </div>
+
 
       </div>
 
-      <div class="form-group mt-3">
+
+    <div class="form-group col-md-4">
         <textarea class="form-control" name="issue_description" rows="5" placeholder=" Discription of the problem " required></textarea>
       </div>
+
+
+      </div>
+
+
       <br/>
       <h3 for="textAreaRemark"> Site data :  </h3>
 
@@ -424,23 +434,28 @@ curl_close($curl);
 
               <div class="row">
 
-                <div class="col-md-3 form-group">
+                <div class="col-md-4 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="  Customer name " required>
                 </div>
 
-                <div class="col-md-3 form-group">
+                <div class="col-md-4 form-group">
                   <input type="text" name="phone" class="form-control"  placeholder="  phone (002499123xxx) " required>
                 </div>
 
-                <div class="col-md-3 form-group">
+                <div class="col-md-4 form-group">
                   <input type="text" name="whatsapp_num" class="form-control"  placeholder=" whatsapp phone (002499123xxx) " required>
                 </div>
-                <div class="col-md-3 form-group mt-3 mt-md-0">
+
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-4 form-group mt-3 mt-md-0">
                   <input type="text" class="form-control" name="email" id="email" placeholder=" Customer Email " required>
                 </div>
 
-                <div class="col-md-3 form-group mt-3 mt-md-0">
-                <lable>     Type of relationship to the site </lable> 
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                <label>     Type of relationship to the site </label> 
                 <select class="form-control mr-1" name="job" id="job" onchange="" required>
                 <option value="" disabled selected> --  Choose -- </option>
                 <option value="Owner"> Owner   </option>
@@ -450,16 +465,12 @@ curl_close($curl);
                 <option value="Moderator"> Moderator </option>
                 <option value="agent"> agent </option>
                 <option value="broker"> broker </option>
-
                 </select> 
                   </div>
 
-              </div>
-
-              <div class="row">
-
+                
               <div class="col-md-4 form-group">
-                <lable>  Your side is </lable> 
+                <label>  Your side is </label> 
                 <select class="form-control mr-1" name="work_for" id="side" onchange="select_side();" required>
                 <option value="" disabled selected> -- Choose -- </option>
                 <option value="company"> Company </option>
@@ -468,8 +479,13 @@ curl_close($curl);
                 <input id="sidehide" type="text" name="company_name" class="form-control" placeholder="   Company Name " style="display: none;" />
               </div>
 
+
+              </div>
+
+              <div class="row">
+
               <div class="col-md-4 form-group mt-3 mt-md-0">
-              <lable> Have you over worked with us : </lable> 
+              <label> Have you over worked with us : </label> 
                 <select class="form-control mr-1" name="previous" id="wwus" onchange="select_wwus();" required>
                 <option value="" disabled selected> -- Choose -- </option>
                 <option value="yes"> Yes </option>

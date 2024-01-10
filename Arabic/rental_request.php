@@ -157,8 +157,8 @@
 
     <!-- ======= Contact Section ======= -->
     <section class="contact">
+      
       <div class="container">
-        <br/>
         <div class="section-title">
           <h2> طلب التأجير  </h2>
          </div>
@@ -352,8 +352,7 @@ curl_close($curl);
             <div class="row">
    
                 <div class="col-md-3 form-group">
-                نوع المعدة:  <br/>
-                
+               <label> نوع المعدة </label>
                   <select class="form-control mr-1" name="machine_type" id="machine_type"  required>
                     <option value="" disabled selected> -- اختار نوع المعدة  -- </option>
                     <option value="حفار"> حفار </option>
@@ -388,7 +387,7 @@ curl_close($curl);
       </div>
 
                 <div class="col-md-3 form-group mt-3 mt-md-0">
-                مدة العمل الكلية <br/>
+                <label>مدة العمل الكلية</label>
                   <select class="form-control mr-1" name="duration" id="duration" onchange="select_period();" required>
                     <option value="" disabled selected> --  اختار   -- </option>
                     <option value="month"> شهر </option>
@@ -406,7 +405,7 @@ curl_close($curl);
      <div class="row">
 
                <div class="col-md-3 form-group mt-3 mt-md-0">
-                نوع العقد: <br/>
+                 <label>نوع العقد:</label>
                   <select class="form-control mr-1" name="type_contract" id="month_rent" onchange="select_hour();"  required>
                     <option value="" disabled selected> -- اختار   -- </option>
                     <option value="عقد بالساعات ">  عقد بالساعات  </option>
@@ -488,7 +487,7 @@ curl_close($curl);
       <div class="row">
        
         <div class="col-md-4 form-group mt-3 mt-md-0">
-              مجال العمل <br/>
+             ,<label>مجال العمل </label>
                   <select class="form-control mr-1" name="work_field" id="work_field" onchange="select_work_field();"  required>
                     <option disabled selected> -- اختار المدة  -- </option>
                     <option> التعدين </option>
@@ -702,7 +701,7 @@ curl_close($curl);
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                <lable>   نوع العلاقه بالموقع </lable> 
+                <label>نوع العلاقه بالموقع</label>
                 <select class="form-control mr-1" name="job" id="job" onchange="" required>
                 <option value="" disabled selected> -- اختار  -- </option>
                 <option value="مالك"> مالك   </option>
@@ -716,7 +715,7 @@ curl_close($curl);
                 </div>
 
               <div class="col-md-4 form-group">
-                <lable> الجهة التابع لها </lable> 
+                <label> الجهة التابع لها </label> 
                 <select class="form-control mr-1" name="categ" id="categ" onchange="select_side();"  required>
                 <option value="" disabled selected> -- اختار  -- </option>
                 <option value="company"> شركة </option>
@@ -732,7 +731,7 @@ curl_close($curl);
    
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
-              <lable> هل  سبق لك العمل معنا </lable> 
+              <label> هل  سبق لك العمل معنا </label> 
                 <select class="form-control mr-1" name="work" id="work" onchange="select_wwus();" required >
                 <option value="" disabled selected> -- اختار الاجابة -- </option>
                 <option value="yes"> نعم </option>
@@ -762,7 +761,6 @@ curl_close($curl);
 
               </div>
 
-              <br/><br/>
               <div class="text-center"><button type="submit" name="Send-form"> إرسال الطلب </button></div>
             </form>
 

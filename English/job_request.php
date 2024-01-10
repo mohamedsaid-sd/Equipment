@@ -1208,12 +1208,11 @@
 
     </div>
   </div>
-    <br/><br/>
+
 
       <div class="row">
-        <br/><br/>
-        <br/><br/>
-        <b> By submitting this application, I acknowledge the accuracy of the above-mentioned data</b>
+      
+        <label>By submitting this application, I acknowledge the accuracy of the above-mentioned data</label>
         
       <div class="text-center"><button type="submit" name="send" style="background-color:orange;border-radius:20px;padding:10px;"> Send Request </button></div>
         

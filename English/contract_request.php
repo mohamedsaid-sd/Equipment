@@ -320,12 +320,12 @@ curl_close($curl);
             <div class="row">
                
                 <div class="col-md-4 form-group">
-                WORK TYPE <br/>
+                Work type <br/>
                 <input id="work_type_id" name="work_type_id" type="text" class="form-control" placeholder=" Work type Manual entry ">
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
-                DURATION <br/>
+                Duration <br/>
                   <select class="form-control mr-1" name="work_duration_id" id="work_duration_id" onchange="select_period();" required>
                     <option value="" disabled selected> --  Choose the duration  -- </option>
                     <option value="month"> month </option>
@@ -351,12 +351,12 @@ curl_close($curl);
               </div>   
 
               <div class="col-md-4 form-group">
-              <label>OTAL TON</label>
+              <label>Otal TION</label>
               <input id="total_ton" name="total_ton" type="number" class="form-control" placeholder="distance of mobilization waste"/>
               </div> 
 
               <div class="col-md-4 form-group">
-              <label>DAILY TON</label>
+              <label>Daily TON</label>
               <input id="daily_ton" name="daily_ton" type="number" class="form-control" placeholder="distance of mobilization waste"/>
               </div> 
 
@@ -365,7 +365,7 @@ curl_close($curl);
               <div class="row">
 
         <div class="form-group col-md-4">
-        <label>DAILY WORK HOURS   </label>
+        <label> Daily work hours   </label>
           <select class="form-control mr-1" id="daily_work_hours_id" name="daily_work_hours_id" onchange="select_hourday();" required>
             <option value="" disabled selected> -- Choose  -- </option>
             <option value="10">10</option>
@@ -379,7 +379,7 @@ curl_close($curl);
         </div>
 
          <div class="col-md-4 form-group">
-         <label>EXPECTED BEGINNING OF WORK</label>
+         <label> Expected begining of work</label>
           <input id="expected_beginning_of_work" name="expected_beginning_of_work" type="date" class="form-control" placeholder=" "/>
         </div> 
                 
@@ -631,7 +631,7 @@ curl_close($curl);
 
 
               <div class="col-md-4 form- mt-4 mt-md-0">
-              <lable>   Type of relationship to the site </lable> 
+              <label>   Type of relationship to the site </label> 
                 <select class="form-control mr-1" name="customer_job_title" id="job" onchange="" required>
                 <option value="" disabled selected> --  Choose -- </option>
                 <option value="Owner"> Owner   </option>
@@ -645,7 +645,7 @@ curl_close($curl);
               </div>
 
               <div class="col-md-4 form-group">
-                <lable>  Your side is </lable> 
+                <label>  Your side is </label> 
                 <select class="form-control mr-1" name="customer_type_selection" id="customer_type_selection" onchange="select_side();" required>
                 <option value="" disabled selected> -- Choose -- </option>
                 <option value="company"> Company </option>
@@ -657,7 +657,7 @@ curl_close($curl);
     
 
               <div class="col-md-4 form-group mt-3 mt-md-0">
-              <lable> Have you over worked with us : </lable>
+              <label> Have you over worked with us : </label>
                 <select class="form-control mr-1" name="ever_work_with_us" id="ever_work_with_us" onchange="select_wwus();" required>
                 <option value="" disabled selected> -- Choose -- </option>
                 <option value="yes"> Yes </option>
