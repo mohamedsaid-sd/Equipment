@@ -39,6 +39,7 @@
 </head>
 <script type="text/javascript">
   // ready to go with js function 
+  $skill_counter = 2 ; 
 
    // deal with period  
    function select_period(){
@@ -110,6 +111,51 @@
    }
 
 
+    // deal with work with us 
+    function select_wwus(){
+     var type = document.getElementById("ever_work_with_us").value;
+      if(type == "yes"){
+      document.getElementById("wwushide").style.display = "block";
+      }else{
+      document.getElementById("wwushide").value = "";
+      document.getElementById("wwushide").style.display = "none";
+      }
+   }
+
+   function add_distance_line() {
+    //alert("go");
+    var skills = document.getElementById("distancediv");
+
+    var div = document.createElement("div");
+    div.setAttribute("class" , "col-md-3 form-group");
+    var label = document.createElement("label");
+    var input = document.createElement("input");
+    input.setAttribute("class" , "form-control");
+    input.setAttribute("placeholder" , "product name ");
+    input.setAttribute("name" , "product" + $skill_counter);
+    div.appendChild(label);
+    div.appendChild(input);
+
+    var div2 = document.createElement("div");
+    div2.setAttribute("class" , "col-md-3 form-group");
+    var label2 = document.createElement("label");
+    label2.innerHTML = "";
+    var input2 = document.createElement("input");
+    input2.setAttribute("class" , "form-control");
+    input2.setAttribute("placeholder" , "Transportation distance ");
+    input2.setAttribute("name" , "distance" + $skill_counter);
+    div2.appendChild(label2);
+    div2.appendChild(input2);
+
+
+    skills.appendChild(div);
+    skills.appendChild(div2);
+    
+    $skill_counter ++;
+  }
+
+
+
 </script>
 <body>
 
@@ -121,8 +167,8 @@
         <a href="../English/index.php" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
         <a href="../Arabic/index.php" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
 
-        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-        <i class="bi bi-phone"></i> +249 6445
+        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">info@equipation.sd</a>
+        <i class="bi bi-phone"></i> +249912322447 
 
       </div>
       <div class="d-none d-lg-flex social-links align-items-center">
@@ -177,8 +223,10 @@
                   // get the post value:
   $work_type_id = $_POST['work_type_id'];
   $work_duration_id =  $_POST['work_duration_id'];
-  $mobilization_row_distance =  $_POST['mobilization_row_distance'];
-  $mobilization_waste_distance =  $_POST['mobilization_waste_distance'];
+//  $mobilization_row_distance =  $_POST['mobilization_row_distance'];
+ // $mobilization_waste_distance =  $_POST['mobilization_waste_distance'];
+ $unit_of_measure =  $_POST['unit_of_measure'];
+
   $total_ton =  $_POST['total_ton'];
   $daily_ton =  $_POST['daily_ton'];
   $daily_work_hours_id =  $_POST['daily_work_hours_id'];
@@ -212,6 +260,34 @@
   $whatsapp_num = $_POST['whatsapp_num'];
   $start_date = $_POST['start_date'];
 
+
+       // INSERT SKILL ARRAY
+       $skill_array = array();
+       $skill_counter = 1 ;
+       while (isset($_POST['product'.$skill_counter])) {
+           array_push($skill_array,
+            $_POST['product'.$skill_counter],
+            $_POST['distance'.$skill_counter]);
+           $skill_counter ++;
+       }
+   // PRINT SKILLS ARRAY
+   $skill_name = "";
+   $skill_value = "";
+   $skillsArray = array();
+   foreach ($skill_array as $key => $value) {
+     if($key % 2 == 0)
+       $skill_name = $value ;
+     elseif ($key % 2 == 1) {
+       $skill_value = $value;
+     }
+     if($key % 2 == 1){
+       // echo "Data:".$skill_name." - ".$skill_value."<br/>"; 
+       array_push($skillsArray,[0,0,["name" => $skill_name,"distance" => $skill_value]]);
+     }
+
+   }
+
+
   
   // echo "Data".$work_type_id.$work_duration_id.$mobilization_row_distance.$mobilization_waste_distance.$total_ton.$daily_ton.$daily_work_hours_id.$expected_beginning_of_work.$state.$region.$distance_from_nearest.$work_field_id.$living_selection.$subsistence_selection.$internet_selection.$communication_selection.$workshop_selection.$compressor_selection.$fuel_selection.$water_selection.$electricity_selection.$nearest_city.$nearest_market.$nearest_paved_road.$site_age.$customer_name.$customer_email.$customer_job_title.$customer_type_selection.$ever_work_with_us.$social_media_selection.$friend.$company;
 
@@ -222,8 +298,6 @@ $jayParsedAry = [
            "vals_list" => [
             "work_type_id" => $work_type_id, 
             "work_duration_id" => $work_duration_id, 
-            "mobilization_row_distance" => $mobilization_row_distance, 
-            "mobilization_waste_distance" => $mobilization_waste_distance, 
             "total_ton" => $total_ton, 
             "daily_ton" => $daily_ton, 
             "daily_work_hours_id" => $daily_work_hours_id, 
@@ -249,9 +323,10 @@ $jayParsedAry = [
             "customer_type_selection" => $customer_type_selection, 
             "ever_work_with_us" => $ever_work_with_us ,
             "social_media_selection" => $social_media_selection, 
+            "unit_of_measure" => $unit_of_measure, 
             "friend" => $friend, 
             "company" => $company, 
-            "other" => "Some other information", 
+            "mobilization_distance_ids" => $skillsArray ,
             "whatsapp_num" => $whatsapp_num,
             "phone" => $phone,
             "status" => "draft" 
@@ -321,7 +396,15 @@ curl_close($curl);
                
                 <div class="col-md-4 form-group">
                 Work type <br/>
-                <input id="work_type_id" name="work_type_id" type="text" class="form-control" placeholder=" Work type Manual entry ">
+
+                <select class="form-control mr-1" name="work_type_id" id="work_type_id" onchange="select_period();" required>
+                    <option value="Moving materials">Moving materials</option>
+                    <option value="Run Mine">Run Mine</option>
+                    <option value="Establishing a camp">Establishing a camp</option>
+                    <option value="Equipping basins">Equipping basins</option>
+                    <option value="road paving">road paving</option>
+
+                  </select>
                 </div>
 
                 <div class="col-md-4 form-group mt-3 mt-md-0">
@@ -336,19 +419,31 @@ curl_close($curl);
                   <input id="durationhide" name="durationhide" type="text" class="form-control" placeholder="    Manual entry " style="display: none;">
                 </div>
 
+
                 <div class="col-md-4 form-group">
+         <label>Unit of measurement</label>
+         <select class="form-control mr-1" id="unit_of_measure" name="unit_of_measure" onchange="select_hourday();" required>
+            <option value="" disabled selected> </option>
+            <option value="tons">tons</option>
+            <option value="cubic metres">cubic metres</option>
+            <option value="kilometers">Kilometers</option>
+            <option value="other">other</option>
+          </select>
+        </div>
+
+                <!-- <div class="col-md-4 form-group">
                 <label></label>
                 <input id="mobilization_row_distance" name="mobilization_row_distance" type="number" class="form-control" placeholder="Distance of mobilization row"/>
-                </div>
+                </div> -->
 
               </div>
 
               <div class="row">
 
-              <div class="col-md-4 form-group">
+              <!-- <div class="col-md-4 form-group">
               <label></label>
               <input id="mobilization_waste_distance" name="mobilization_waste_distance" type="text" class="form-control" placeholder="distance of mobilization waste"/>
-              </div>   
+              </div>    -->
 
               <div class="col-md-4 form-group">
               <label>Otal TION</label>
@@ -361,6 +456,26 @@ curl_close($curl);
               </div> 
 
               </div>
+
+              <h3>  Add the name of the transport intended to be transported and the transport distance </h3>
+      
+      <div id="distancediv" class="row">
+
+      <div class="col-md-3 form-group">
+      <label></label>
+      <input type="text" name="product1" class="form-control" placeholder="product name"/>
+      </div>
+
+      <div class="col-md-3 form-group">
+      <label>  </label>
+      <input type="text" name="distance1" class="form-control" placeholder="Transportation distance"/>
+
+      </div>
+
+
+      </div><br/>
+      <span style="width: 150px; padding: 3px; margin: 5px;" class="btn btn-primary" onclick="add_distance_line();">  Add a product + </span>
+    
 
               <div class="row">
 
@@ -432,6 +547,19 @@ curl_close($curl);
            </div>
          </div>
 
+             
+        <div class="col-md-4 form-group mt-3 mt-md-0">
+        WORK FIELD <br/>
+                  <select class="form-control mr-1" name="work_field_id" id="work_field_id" onchange="select_work_field();" required>
+                    <option disabled selected> -- Choose   -- </option>
+                    <option value="1"> mining </option>
+                    <option value="2">  cement </option>
+                    <option value="3">  agricultural </option>
+                    <option value="hand">   manual entry </option>
+                  </select>
+
+                  <input id="work_fieldhide" name="work_fieldhide" type="text" class="form-control" placeholder="   manual entry " style="display: none;">
+          </div>
         <!-- <div class="form-group col-md-4">
        <input type="number" class="form-control" name="distance_from_nearest" id="distance_from_nearest" placeholder=" Nearest city  " required>
           </div> -->
@@ -451,29 +579,19 @@ curl_close($curl);
             <div class="col-md-4 form-group mt-3 mt-md-0">
             <label> Nearest Paved Road </label>
             <input type="text" id="nearest_paved_road" name="nearest_paved_road" class="form-control" placeholder="Enter nearest paved road" required/>
-            </div>                        
+            </div>
+
+            <div class="form-group col-md-4">
+             work starting date (manual entry/calendar) :  <br/>
+             <input type="date" name="start_date" class="form-control" placeholder="   work starting date (manual entry/calendar) " required>     
+         </div>                      
             
       </div>
 
       <div class="row">
-       
-        <div class="col-md-4 form-group mt-3 mt-md-0">
-        WORK FIELD <br/>
-                  <select class="form-control mr-1" name="work_field_id" id="work_field_id" onchange="select_work_field();" required>
-                    <option disabled selected> -- Choose   -- </option>
-                    <option value="1"> mining </option>
-                    <option value="2">  cement </option>
-                    <option value="3">  agricultural </option>
-                    <option value="hand">   manual entry </option>
-                  </select>
+   
 
-                  <input id="work_fieldhide" name="work_fieldhide" type="text" class="form-control" placeholder="   manual entry " style="display: none;">
-          </div>
-
-         <div class="form-group col-md-4">
-             work starting date (manual entry/calendar) :  <br/>
-             <input type="date" name="start_date" class="form-control" placeholder="   work starting date (manual entry/calendar) " required>     
-         </div>
+        
              
 
         </div>

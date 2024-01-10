@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>  طلب مقاولة  </title>
+  <title>  طلب المقاولة  </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -119,7 +119,7 @@
     var label = document.createElement("label");
     var input = document.createElement("input");
     input.setAttribute("class" , "form-control");
-    input.setAttribute("placeholder" , "المنتج ");
+    input.setAttribute("placeholder" , "أسم المنتج ");
     input.setAttribute("name" , "product" + $skill_counter);
     div.appendChild(label);
     div.appendChild(input);
@@ -130,7 +130,7 @@
     label2.innerHTML = "";
     var input2 = document.createElement("input");
     input2.setAttribute("class" , "form-control");
-    input2.setAttribute("placeholder" , "المسافه ");
+    input2.setAttribute("placeholder" , "مسافه النقل ");
     input2.setAttribute("name" , "distance" + $skill_counter);
     div2.appendChild(label2);
     div2.appendChild(input2);
@@ -397,7 +397,7 @@ curl_close($curl);
                 <div class="col-md-4 form-group mt-3 mt-md-0">
                 <label>المدة</label>
                   <select class="form-control mr-1" name="work_duration_id" id="work_duration_id" onchange="select_period();" required>
-                    <option value="" disabled selected>  -- اختار -- </option>
+                    <option value="" disabled selected>   </option>
                     <option value="month"> شهر </option>
                     <option value="3month"> 3 شهور  </option>
                     <option value="year"> سنه </option>
@@ -406,10 +406,28 @@ curl_close($curl);
                   <input id="durationhide" name="durationhide" type="text" class="form-control" placeholder=" ادخال يدوي" style="display: none;">
                 </div>
 
+                <div class="col-md-4 form-group">
+         <label>    وحدة القياس </label>
+         <select class="form-control mr-1" id="unit_of_measure" name="unit_of_measure" onchange="select_hourday();" required>
+            <option value="" disabled selected>   </option>
+            <option value="طن">طن</option>
+            <option value="متر مكعب">متر مكعب</option>
+            <option value="كيلومتر">كيلومتر</option>
+            <option value="اخري">اخري</option>
+          </select>
+        </div> 
+               
+
               <div class="col-md-4 form-group">
               <label style="color: red;">   </label> 
               <input id="total_ton" name="total_ton" type="number" class="form-control" placeholder="الكميه الكلية"/>
               </div>
+
+              
+              <div class="col-md-4 form-group">
+              <label style="color: red;">   </label> 
+              <input id="daily_ton" name="daily_ton" type="number" class="form-control" placeholder="الكمية اليومية"/>
+              </div> 
 
                 <!-- <div class="col-md-4 form-group">
                 <label style="color: red;">   </label> 
@@ -428,26 +446,22 @@ curl_close($curl);
 
           
 
-              <div class="col-md-4 form-group">
-              <label style="color: red;">   </label> 
-              <input id="daily_ton" name="daily_ton" type="number" class="form-control" placeholder="الكمية اليومية"/>
-              </div> 
 
               </div>
 
 
-              <h3> اضافه منتج </h3>
+              <h3> اضافه  إسم المنتج المراد نقله ومسافة النقل </h3>
       
       <div id="distancediv" class="row">
 
       <div class="col-md-3 form-group">
       <label></label>
-      <input type="text" name="product1" class="form-control" placeholder="المنتج"/>
+      <input type="text" name="product1" class="form-control" placeholder="اسم المنتج"/>
       </div>
 
       <div class="col-md-3 form-group">
       <label>  </label>
-      <input type="text" name="distance1" class="form-control" placeholder="المسافه"/>
+      <input type="text" name="distance1" class="form-control" placeholder="مسافة النقل"/>
 
       </div>
 
@@ -477,17 +491,7 @@ curl_close($curl);
         </div> 
 
 
-        <div class="col-md-4 form-group">
-         <label>    وحدة القياس </label>
-         <select class="form-control mr-1" id="unit_of_measure" name="unit_of_measure" onchange="select_hourday();" required>
-            <option value="" disabled selected>  -- اختار -- </option>
-            <option value="طن">طن</option>
-            <option value="متر مكعب">متر مكعب</option>
-            <option value="كيلومتر">كيلومتر</option>
-            <option value="اخري">اخري</option>
-          </select>
-        </div> 
-                
+   
                 
               </div>
     <br/>
@@ -523,6 +527,19 @@ curl_close($curl);
 
           </div>
 
+          <div class="col-md-4 form-group mt-3 mt-md-0">
+        طبيعة العمل <br/>
+                  <select class="form-control mr-1" name="work_field_id" id="work_field_id" onchange="select_work_field();" required>
+                    <option disabled selected>   </option>
+                    <option> التعدين </option>
+                    <option>  الاسمنت </option>
+                    <option>  الزراعة </option>
+                    <option value="hand"> ادخال يدوي </option>
+                  </select>
+
+                  <input id="work_fieldhide" name="work_fieldhide" type="text" class="form-control" placeholder=" ادخال يدوي " style="display: none;">
+          </div>
+
           <div class="form- col-md-4">
            <label>  طبيعة الموقع </label>
            <div class="d-flex flex-row justify-content-between align-items-center">
@@ -540,6 +557,17 @@ curl_close($curl);
             <label>  اقرب مدينة </label>
             <input type="text" name="nearest_city" class="form-control" placeholder="ادخل اقرب مدينة" required/>
             </div>
+            
+        <div class="col-md-4 form-group mt-3 mt-md-0">
+        <label>   اقرب طريق معبد </label>
+        <input type="text" id="nearest_paved_road" name="nearest_paved_road" class="form-control" placeholder="ادخل اقرب طريق معبد" required/>
+        </div>  
+       
+        
+        <div class="form-group col-md-4">
+             تاريخ بداية العمل (ادخال يدوي) :  <br/>
+             <input type="date" name="start_date" class="form-control" placeholder="   work starting date (manual entry/calendar) " required>
+         </div>
 
             <!-- <div class="col-md-4 form-group mt-3 mt-md-0">
             <label> اقرب سوق </label>
@@ -550,28 +578,8 @@ curl_close($curl);
       <div class="row">
 
 
-        <div class="col-md-4 form-group mt-3 mt-md-0">
-        <label>   اقرب طريق معبد </label>
-        <input type="text" id="nearest_paved_road" name="nearest_paved_road" class="form-control" placeholder="ادخل اقرب طريق معبد" required/>
-        </div>  
-       
-        <div class="col-md-4 form-group mt-3 mt-md-0">
-        طبيعة العمل <br/>
-                  <select class="form-control mr-1" name="work_field_id" id="work_field_id" onchange="select_work_field();" required>
-                    <option disabled selected> -- اختار --  </option>
-                    <option> التعدين </option>
-                    <option>  الاسمنت </option>
-                    <option>  الزراعة </option>
-                    <option value="hand"> ادخال يدوي </option>
-                  </select>
+    
 
-                  <input id="work_fieldhide" name="work_fieldhide" type="text" class="form-control" placeholder=" ادخال يدوي " style="display: none;">
-          </div>
-
-         <div class="form-group col-md-4">
-             تاريخ بداية العمل (ادخال يدوي) :  <br/>
-             <input type="date" name="start_date" class="form-control" placeholder="   work starting date (manual entry/calendar) " required>
-         </div>
 
               </div>
 

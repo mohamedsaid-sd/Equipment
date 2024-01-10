@@ -133,9 +133,9 @@
 
         <a href="../English/index.php" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
         <a href="../Arabic/index.php" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
-
-        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-        <i class="bi bi-phone"></i> +249 6445
+        
+        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">info@equipation.sd</a>
+        <i class="bi bi-phone"></i> +249912322447 
 
       </div>
       <div class="d-none d-lg-flex social-links align-items-center">

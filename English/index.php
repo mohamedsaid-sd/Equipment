@@ -882,7 +882,7 @@ Therefore, we have opened this space to bring together all owners of trailers, f
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
-      <div class="container">
+      <!-- <div class="container">
 
         <div class="section-title">
           <h2> Contact us   </h2>
@@ -948,7 +948,7 @@ Therefore, we have opened this space to bring together all owners of trailers, f
 
         </div>
 
-      </div>
+      </div> -->
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->

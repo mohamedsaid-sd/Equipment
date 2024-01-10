@@ -786,7 +786,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
-      <div class="container">
+      <!-- <div class="container">
 
         <div class="section-title">
           <h2>التواصل معنا </h2>
@@ -804,56 +804,31 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>الموقع:</h4>
-                <p> السودان , الخرطوم , الكدا جوار الكدا </p>
+                <p> </p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>البريد الالكترونى:</h4>
-                <p>info@example.com</p>
+                <p>info@equipation.sd</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone" style="direction: rtl;"></i>
                 <h4>رقم الهاتف:</h4>
-                <p> 002496445</p>
+                <p> +249912322447 </p>
               </div>
 
             </div>
 
           </div>
 
-          <div class="col-lg-8 mt-5 mt-lg-0">
-
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder=" إسمك " required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="email" id="email" placeholder="البريد الالكتروني " required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="الموضوع " required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="الرسالة " required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit"> إرسال </button></div>
-            </form>
-
-          </div>
+   
 
         </div>
 
-      </div>
-    </section><!-- End Contact Section -->
+      </div> -->
+    </section>End Contact Section
 
   </main><!-- End #main -->
 
