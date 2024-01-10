@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title> Operation Request   </title>
+  <title> Operation Request  </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -175,7 +175,6 @@
    function select_clearences(){
     document.getElementById("clearances_idhide").style.display = "block";
    }
-
 </script>
 <body>
 
@@ -187,8 +186,8 @@
         <a href="../English/index.php" class="linkedin" style="padding: 5px;margin: 5px;">Eng</i></i></a> | 
         <a href="../Arabic/index.php" class="linkedin" style="padding: 5px;margin: 5px;"">Ara</i></i></a>
 
-        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-        <i class="bi bi-phone"></i> +249 6445
+        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">info@equipation.sd</a>
+        <i class="bi bi-phone"></i> +249912322447 
 
 
       </div>
@@ -206,6 +205,10 @@
 
   <main id="main">
 
+  
+
+    
+
     <!-- ======= Contact Section ======= -->
     <section class="contact">
       <div class="container">
@@ -215,17 +218,7 @@
          </div>
       </div>
 
-  
-
-      <div class="container">
-
-       <form action="run_request.php" method="post" role="form">
-
-        <div class="row mt-5">
-
-          <h3> OWNER DETAILS  </h3>
-
-                   <div class="my-3">
+             <div class="my-3">
                 
                 <div class="error-message"></div>
                 <div class="sent-message">
@@ -233,186 +226,60 @@
                   <?php
 
                   if(isset($_POST['send'])){
-                        // sending values :
-                        $full_name = $_POST['full_name'];
-                        $nationality = $_POST['nationality'];
-                        $id_number = $_POST['id_number'];
-                        $phone_number = $_POST['phone_number'];
-                        $phone_number_2 = $_POST['phone_number_2'];
-                        $whatsapp_num = $_POST['whatsapp_num'];
-                        $email = $_POST['email'];
-                        $tax_file = $_POST['tax_file'];
-                        $address = $_POST['address'];
-                        $recommendation = $_POST['recommendation'];
-                        $code_number = $_POST['code_number'];
-                        $years_in_field=$_POST['years_in_field'];
-                        $owned_machines=$_POST['owned_machines'];
-
-                        @$agent = $_POST['agent'];
-                        if($agent == "full_authority_agent"){
-                            $full_authority_agent= true;
-                            $limit_authority_agent= false;
-                        }else{
-                            $full_authority_agent= false;
-                            $limit_authority_agent= true;
-                        }
-                        $date_of_foundation=$_POST['date_of_foundation'];
-                        $registration_number=$_POST['registration_number'];
-                        $file_tax_number=$_POST['file_tax_number'];
-                        $expatriate_date=$_POST['expatriate_date'];
-                        @$compressor=$_POST['compressor'];
-                        if($compressor == "on")
-                        $compressor = true; else $compressor = false;
-                        @$generator_tower_light=$_POST['generator_tower_light'];
-                        if($generator_tower_light == "on")
-                        $generator_tower_light = true; else $generator_tower_light = false;
-                        @$welding_machine=$_POST['welding_machine'];
-                        if($welding_machine == "on")
-                        $welding_machine = true; else $welding_machine = false;
-                        @$cranes  =$_POST['cranes']; 
-                        if($cranes == "on")
-                        $cranes = true; else $cranes = false;
-                        @$heavy_trucks=$_POST['heavy_trucks'];
-                        if($heavy_trucks == "on")
-                        $heavy_trucks = true; else $heavy_trucks = false;
-                        @$excavation_equipment =$_POST['excavation_equipment'];
-                        if($excavation_equipment == "on")
-                        $excavation_equipment = true; else $excavation_equipment = false;
-                        @$pipeline_equipment =$_POST['pipeline_equipment'];
-                        if($pipeline_equipment == "on")
-                        $pipeline_equipment = true; else $pipeline_equipment = false;
-                        @$civil_equipment =$_POST['civil_equipment'];
-                        if($civil_equipment == "on")
-                        $civil_equipment = true; else $civil_equipment = false;
-                        @$mining_equipment =$_POST['mining_equipment']; 
-                        if($mining_equipment == "on")
-                        $mining_equipment = true; else $mining_equipment = false;
-                        @$agricultural_equipment =$_POST['agricultural_equipment'];
-                        if($agricultural_equipment == "on")
-                        $agricultural_equipment = true; else $agricultural_equipment = false;
-                        @$facility=$_POST['facility']; 
-                        if($facility == "on")
-                        @$facility = true; else @$facility = false;
-                        @$light_vehicles_trucks =$_POST['light_vehicles_trucks'];
-                        if($light_vehicles_trucks == "on")
-                        @$light_vehicles_trucks = true; else @$light_vehicles_trucks = false;
-                        @$air_compressor_selection =$_POST['air_compressor_selection']; 
-                        @$generator_tower_light_selection=$_POST['generator_tower_light_selection']; 
-                        @$welding_machine_selection=$_POST['welding_machine_selection'];
-                        @$excavator_selection =$_POST['excavator_selection']; 
-                        @$brand_id=$_POST['brand_id']; 
-                        if(@$brand_id == "hand")
-                          @$brand_id = $_POST['brand_idhide'];
-                        @$size_id=$_POST['size_id']; 
-                        if(@$size_id == "hand")
-                          @$size_id = $_POST['size_idhide'];
-                        @$model_id=$_POST['model_id'];
-                        if($model_id == "hand")
-                          @$model_id = $_POST['model_idhide'];
-                        @$year_of_manufacture_id=$_POST['year_of_manufacture_id'];
-                        if(@$year_of_manufacture_id == "hand")
-                          $year_of_manufacture_id = $_POST['year_of_manufacture_idhide'];
-                        @$monthly_rental_id=$_POST['monthly_rental_idhide']." ".$_POST['monthly_rental_id']; 
-                        @$condition_id=$_POST['condition_id'];
-                        if($condition_id == "hand")
-                          $condition_id = $_POST['condition_idhide'];
-                        @$state_id=$_POST['state_id']; 
-                        if($state_id == "hand")
-                          $state_id = $_POST['state_idhide'];
-                        @$advance_id =$_POST['advance_id']; 
-                        if($advance_id == "hand")
-                          $advance_id = $_POST['advance_idhide'];
-                        @$category_id=$_POST['category_id'];
-                        if($category_id == "hand")
-                          $category_id = $_POST['category_idhide'];
-
-                        @$clearances_id = $_POST['clearances_idhide']." ".$_POST['clearances_id'];
-
-                        @$maintenance_id = $_POST['maintenance_id'];
-                        if($maintenance_id == "hand")
-                          $maintenance_id = $_POST['maintenance_idhide'];
-                        if($maintenance_id == "handx")
-                          $maintenance_id = " by equipation with ".$_POST['maintenance_idhide']." detucted ";
-
-                        @$hair_operator_id=$_POST['hair_operator_id'];
-                        if($hair_operator_id == "hand")
-                          $hair_operator_id = $_POST['hair_operator_idhide'];
-                        @$availability_id = $_POST['availability_id'];
-                        if($availability_id == "hand")
-                          $availability_id = $_POST['availability_idhide'];
-                        if($availability_id == "handx")
-                          $availability_id = " after request before ".$_POST['availability_idhide']." day ";
-
-                        @$gorvernment_fees_id = $_POST['gorvernment_fees_id'];
-                        if($gorvernment_fees_id == "hand")
-                          $gorvernment_fees_id = $_POST['gorvernment_fees_idhide'];
-                        if($gorvernment_fees_id == "handx")
-                          $gorvernment_fees_id = "by equipation with ".$_POST['gorvernment_fees_idhide']." detucted";
-
-                        @$hourly_work_id = $_POST['hourly_work_id'];
-                        if($hourly_work_id == "hand")
-                          $hourly_work_id = $_POST['hourly_work_idhide'];
-                        if($hourly_work_id == "handx")
-                          $hourly_work_id = " not execeed ".$_POST['hourly_work_idhide']." hrs per day ";
-
-
-                        echo " Data : ".$full_name."-".$nationality."-".$id_number."-".$phone_number."-".$phone_number_2."-".$whatsapp_num."-".$email."-".$tax_file."-".$address."-".$recommendation."-".$code_number."-".$years_in_field."-".$owned_machines."-".$full_authority_agent."-".$limit_authority_agent."-".$date_of_foundation."-".$registration_number."-".$file_tax_number."-".$expatriate_date."-".$compressor."-".$generator_tower_light."-".$welding_machine."-".$cranes."-".$heavy_trucks."-".$excavation_equipment."-".$pipeline_equipment."-".$civil_equipment."-".$mining_equipment."-".$agricultural_equipment."-".$facility."".$light_vehicles_trucks."-".$air_compressor_selection."".$generator_tower_light_selection."-".$welding_machine_selection."-".$excavator_selection ."-".$brand_id."-".$size_id."-".$model_id."-".$year_of_manufacture_id."".$monthly_rental_id."-".$condition_id."-".$state_id."-".$advance_id."-".$category_id."-".$clearances_id."".$maintenance_id."-".$hair_operator_id."-".$availability_id."".$gorvernment_fees_id."-".$hourly_work_id;
+                                            // sending values :
+                      $full_name = $_POST['full_name'];
+                      $machine_type = $_POST['machine_type'];
+                      $phone_number = $_POST['phone_number'];
+                      $insurance_type = $_POST['insurance_type'];
+                      $description = $_POST['description'];
+                      $cotracts_id = $_POST['cotracts_id'];      
+                      $whatsapp_num = $_POST['whatsapp_num'];
+                      $nearest_road = $_POST['nearest_road'];
+                      $network = $_POST['network'];
+                      $job = $_POST['job'];        
+                      $email = $_POST['email'];
+                      $address = $_POST['address'];
+                      @$brand_id=$_POST['brand_id']; 
+                      @$size_id=$_POST['size_id']; 
+                      @$year_of_manufacture_id=$_POST['year_of_manufacture_id'];
+                      if(@$year_of_manufacture_id == "hand")
+                      $year_of_manufacture_id = $_POST['year_of_manufacture_idhide'];
+                      @$state_id=$_POST['state_id']; 
+                      if($state_id == "hand")
+                      $state_id = $_POST['state_idhide'];
+                      @$category_id=$_POST['category_id'];
+                      if($category_id == "hand")
+                      $category_id = $_POST['category_idhide'];
+                     @$hair_operator_id=$_POST['hair_operator_id'];
+                     if($hair_operator_id == "hand")
+                     $hair_operator_id = $_POST['hair_operator_idhide'];
+                     
+                        // echo " Data : ".$full_name."-".$nationality."-".$id_number."-".$phone_number."-".$phone_number_2."-".$whatsapp_num."-".$email."-".$tax_file."-".$address."-".$recommendation."-".$code_number."-".$years_in_field."-".$owned_machines."-".$full_authority_agent."-".$limit_authority_agent."-".$date_of_foundation."-".$registration_number."-".$file_tax_number."-".$expatriate_date."-".$compressor."-".$generator_tower_light."-".$welding_machine."-".$cranes."-".$heavy_trucks."-".$excavation_equipment."-".$pipeline_equipment."-".$civil_equipment."-".$mining_equipment."-".$agricultural_equipment."-".$facility."".$light_vehicles_trucks."-".$air_compressor_selection."".$generator_tower_light_selection."-".$welding_machine_selection."-".$excavator_selection ."-".$brand_id."-".$size_id."-".$model_id."-".$year_of_manufacture_id."".$monthly_rental_id."-".$condition_id."-".$state_id."-".$advance_id."-".$category_id."-".$clearances_id."".$maintenance_id."-".$hair_operator_id."-".$availability_id."".$gorvernment_fees_id."-".$hourly_work_id;
 
                     $jayParsedAry = [
     "params" => [
           "args" => [
              "vals_list" => [
                 "full_name" => $full_name, 
-                "nationality" => $nationality, 
-                "id_number" => $id_number, 
+                "nationality" => "", 
                 "phone_number" => $phone_number, 
-                "phone_number_2" => $phone_number_2, 
+                "insurance_type" => $insurance_type, 
+                "description" => $description, 
                 "whatsapp_num" => $whatsapp_num, 
                 "email" => $email, 
-                "tax_file" => $tax_file, 
+                "contracts_id" => $cotracts_id, 
                 "address" => $address, 
-                "recommendation" => $recommendation, 
-                "code_number" => $code_number, 
-                "years_in_field" => $years_in_field, 
-                "owned_machines" => $owned_machines, 
-                "full_authority_agent" => $full_authority_agent, 
-                "limit_authority_agent" => $limit_authority_agent, 
-                "date_of_foundation" => $date_of_foundation, 
-                "registration_number" => $registration_number, 
-                "file_tax_number" => $file_tax_number, 
-                "expatriate_date" => $expatriate_date, 
-                "compressor" => $compressor, 
-                "generator_tower_light" => $generator_tower_light, 
-                "welding_machine" => $welding_machine, 
-                "cranes" => $cranes, 
-                "heavy_trucks" => $heavy_trucks, 
-                "excavation_equipment" => $excavation_equipment, 
-                "pipeline_equipment" => $pipeline_equipment, 
-                "civil_equipment" => $civil_equipment, 
-                "mining_equipment" => $mining_equipment, 
-                "agricultural_equipment" => $agricultural_equipment, 
-                "facility" => $facility, 
-                "light_vehicles_trucks" => $light_vehicles_trucks, 
-                "air_compressor_selection" => $air_compressor_selection, 
-                "generator_tower_light_selection" => $generator_tower_light_selection, 
-                "welding_machine_selection" => $welding_machine_selection, 
-                "excavator_selection" => $excavator_selection, 
+                "nearest_road" => $nearest_road, 
+                "network" => $network, 
+                "job" => $job, 
+                "owned_machines" => "", 
                 "brand_id" => $brand_id, 
                 "size_id" => $size_id, 
-                "model_id" => $model_id, 
                 "year_of_manufacture_id" => $year_of_manufacture_id, 
-                "monthly_rental_id" => $monthly_rental_id, 
-                "condition_id" => $condition_id, 
                 "state_id" => $state_id, 
-                "advance_id" => $advance_id, 
                 "category_id" => $category_id, 
-                "status" => "draft" ,
-                "clearances_id" => $clearances_id,
-                "maintenance_id"=> $maintenance_id,
-                "hair_operator_id" => $hair_operator_id,
-                "gorvernment_fees_id" => $gorvernment_fees_id,
-                "hourly_work_id" => $hourly_work_id,
-                "availability_id" => $availability_id
+                "machine_type" => $machine_type ,
+                "hair_operator_id" => $hair_operator_id
              ] 
           ] 
        ] 
@@ -458,13 +325,13 @@ if(curl_errno($curl)) {
         if($key == "msg" )
           if($value == "Success")
                 // success add form alert ...
-                        echo "<div class='alert alert-success'>
-                        <span class='icon'> <i class='fa fa-check-circle'></i></span>
-                         <b> تم ارسال الطلب بنجاح يسعدنا دوما في شركة ايكيوبيشن استقبال طلباتكم طوال الوقت , سوف يقوم موظف شركة ايكيوبيشن بالرد عليك في اقرب وقت عن طريق رقم الهاتف او البريد الالكتروني المرسلين في الطلب ... شكرا لتفهمكم  </b> </div>";
+                         echo "<div class='alert alert-success'>
+                <span class='icon'> <i class='fa fa-check-circle'></i></span>
+                 <b> The request has been sent successfully , we at Equipation company are always happy to receive your requests at all times , Equipation company employee will respond to you as soon as possible via the phone number or email sent in the request , Thank you for your Understanding  </b> </div>";
             else
               echo "<div class='alert alert-danger'>
-                        <span class='icon'> <i class='fa fa-cancel'></i></span>
-                         <b> خطأ في عملية الارسال </b> </div>";
+      <span class='icon'> <i class='fa fa-cancel'></i></span>
+       <b> Erorr in sending Request </b> </div>";
     }
   // echo gettype($x);
   // echo "R".$x;
@@ -477,464 +344,331 @@ curl_close($curl);
                 </div>
               </div>
 
-          <div class="col-md-4 form-group  mt-3 mt-md-0">
-              <input type="text" id="full_name" name="full_name" class="form-control" placeholder="Full name" >
-          </div>
+  
 
-           <div class="col-md-4 form-group  mt-3 mt-md-0">
-              <input type="text" id="nationality" name="nationality" class="form-control" placeholder=" Nationality " >
-          </div>
+      <div class="container">
 
-           <div class="col-md-4 form-group  mt-3 mt-md-0">
-              <input type="number" id="id_number" name="id_number" class="form-control" placeholder=" ID number "> <font color="red"> * Optionaly </font> 
-          </div>
-
-        </div>
-
-        <div class="row">
-
-          <div class="col-md-4 form-group">
-              <input type="number" id="phone_number" name="phone_number" class="form-control" placeholder=" phone number  "  >
-          </div>
-
-          <div class="col-md-4 form-group  mt-3 mt-md-0">
-              <input type="text" id="phone_number_2" name="phone_number_2" class="form-control" placeholder=" phone number 2 "> <font color="red"> * Optionaly </font> 
-          </div>
-
-          <div class="col-md-4 form-group">
-              <input type="number" id="whatsapp_num" name="whatsapp_num" class="form-control" placeholder=" whatsapp number  " >
-          </div>
-          
-        </div>
-
-        <div class="row">
-
-        <div class="col-md-4 form-group">
-            <input type="email" id="email" name="email" class="form-control" placeholder=" Email "  >
-        </div>
-
-        <div class="col-md-4 form-group">
-            <input type="number" id="tax_file" name="tax_file" class="form-control" placeholder=" TAX file  ">  <font color="red"> * Optionaly </font> 
-        </div>
-
-         <div class="col-md-4 form-group">
-            <input type="text" id="address" name="address" class="form-control" placeholder=" Address " >
-        </div>
-          
-        </div>
-
-        <div class="row">
-
-         <div class="col-md-4 form-group">
-            <input type="text" id="recommendation" name="recommendation" class="form-control" placeholder=" Recommendation  "  >
-        </div>
-
-        <div class="col-md-4 form-group">
-             <input type="text" id="code_number" name="code_number" class="form-control" placeholder=" code number ">
-        </div>
-
-       <div class="col-md-4 form-group">
-             <!-- <input type="text" name="name" class="form-control" placeholder=" TITLE  "  > -->
-        </div>  
-          
-        </div>
-
-        <div class="row">
-          <label> TITLE </label>
-
-          <div class="form-group col-md-4">
-            <input type="number" class="form-control" id="years_in_field" name="years_in_field" placeholder="Enter the number of years in field" />
-          </div>
-
-          <div class="form-group col-md-4">
-            <input type="number" class="form-control" id="owned_machines" name="owned_machines" placeholder="Enter the number of owned machines" />
-          </div>
-
-         <div class="form-group col-md-4">
-            <label> agent/broker </label>
-            <select class="form-control" id="agent" name="agent">
-              <option value="" disabled selected> -- select -- </option>
-              <option>full authority agent</option>
-              <option>limit authority agent</option>
-            </select>
-          </div>
-
-        </div>
-
-        <div class="row">
-
-        <div class="form-group col-md-4">
-          <label> date of foundation </label>
-            <input type="date" class="form-control" id="date_of_foundation" name="date_of_foundation"/>
-        </div>
-
-         <div class="form-group col-md-4">
-          <label> registration number </label>
-            <input type="text" class="form-control" id="registration_number" name="registration_number" placeholder="Enter the registration number" />
-        </div>
-
-         <div class="form-group col-md-4">
-          <label> file tax number </label>
-            <input type="text" class="form-control" id="file_tax_number" name="file_tax_number" placeholder="Enter the file tax number" />
-        </div>
-
-        </div>
-
-        <div class="row">
-
-        <div class="form-group col-md-4">
-          <label> expatriate </label>
-            <input type="date" class="form-control" id="expatriate_date" name="expatriate_date" />
-        </div>
-          
-        </div>
+       <form action="run_request.php" method="post" role="form">
 
         <div class="row mt-5">
 
-          <h3> MACHINES INFORMATION  </h3>
+          <h3>  Equipment Detailes </h3>
 
-          <div class="form-group col-md-4">
-           <label> Group  </label><br/>
-           <input type="checkbox" name="compressor"> Compressor <br/>
-           <input type="checkbox" name="generator_tower_light"> Generator Tower Light <br/>
-           <input type="checkbox" name="welding_machine"> Welding Machine <br/>
-           <input type="checkbox" name="cranes"> Cranes <br/>
-           <input type="checkbox" name="heavy_trucks"> Heavy Trucks <br/>
-           <input type="checkbox" name="excavation_equipment"> Excavation Equipment <br/>
-           <input type="checkbox" name="pipeline_equipment"> Pipeline Equipment <br/>
-           <input type="checkbox" name="civil_equipment"> Civil Equipment <br/>
-           <input type="checkbox" name="mining_equipment"> Mining Equipment <br/>
-           <input type="checkbox" name="agricultural_equipment"> Agricultural Equipment <br/>
-           <input type="checkbox" name="facility"> Facility <br/>
-           <input type="checkbox" name="light_vehicles_trucks"> Light Vehicles Trucks <br/>
-
-           <!-- <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="ready" name="ready" >
-               <option value="" disabled selected> -- Choose -- </option>
-               <option> Compressor </option>
-               <option> generator and tower light  </option>
-               <option> welding machine  </option>
-               <option> carnes  </option>
-               <option> Heavy trucks  </option>
-               <option> Excavation equipment  </option>
-               <option> Pipe line equipment  </option>
-               <option> Civil equipment   </option>
-               <option> Mining equipment  </option>
-               <option> agricultural equipment  </option>
-               <option> facility </option>
-               <option> Light vihicles and trucks   </option>
-               <option> Entry new category </option>
-             </select>
-             </div> -->
-             <!-- <input type="text" class="form-control
-             " name="" placeholder="Entry new category"> -->
-
-           
-         </div>
-
-         <div class="form-group col-md-4">
-           <label> TYPE MACHINE </label><br/>
-
-          <label> air compressor </label>
-          <select class="form-control mr-1" id="air_compressor_selection" name="air_compressor_selection"  >
-              <option value="" disabled selected> -- Choose -- </option>
-              <option> fixed </option>
-              <option> mobile </option>
-           </select> 
-
-           <label> welding machine </label>
-          <select class="form-control mr-1" id="welding_machine_selection" name="welding_machine_selection"  >
-              <option value="" disabled selected> -- Choose -- </option>
-              <option> fixed </option>
-              <option> mobile </option>
-           </select> 
+          <div class="col-md-3 form-group">
+                Equipment type:  <br/>
+                
+                  <select class="form-control mr-1" name="machine_type" id="machine_type"  required>
+                    <option value="" disabled selected> --   Choose  -- </option>
+                    <option value="Digger"> Digger </option>
+                    <option value="LOBID">  LOBID </option>
+                    <option value="Loader">  Loader </option>
+                    <option value="Dozer">  Dozer </option>
+                    <option value="Forklift">  Forklift </option>
+                    <option value="Checkout">  Checkout </option>
+                    <option value="Crane">  Crane </option>
+                    <option value=" Water Disguise ">   Water Disguise </option>
+                    <option value="reader">  reader </option>
+                    <option value="  Tanker Jazz">    Tanker Jazz </option>
+                    <option value="Flat">  Flat </option>
+                    <option value="generator">  generator </option>
+                  </select>
+                </div>
 
 
-           <!--   <select class="form-control mr-1" id="ready" name="ready"  >
-              <option value="" disabled selected> -- Choose -- </option>
-              <option> air compressor  </option>
-              <option> generator and tower light </option>
-              <option> welding machine  </option>
-              <option> excavation equipment   </option>
-             </select> -->
+                <div class="form-group col-md-3">
+        <label>     Size machine </label>
+         <input type="text" class="form-control" id="inputDate" name="size_id"  required />
+         
+      </div>
 
-            
+      <div class="form-group col-md-3">
+        <label>     Brand machine </label>
+         <input type="text" class="form-control" id="inputDate" name="brand_id"  required />
+         
+      </div>
+      <div class="form-group col-md-3">
+        <label>     Year of manufacture </label>
+        <input type="text" class="form-control " id="year_of_manufacture_idhide" name="year_of_manufacture_idhide" placeholder="Enter year of manufacture" >
+         
+      </div>
 
- <!--            <select class="form-control mr-1" id="ready" name="ready" >
-              <option value="" disabled selected> -- Choose -- </option>
-              <option> fuel </option>
-              <option> electrical </option>
-            </select>
- -->
-           
-<!-- 
-            <select class="form-control mr-1" id="ready" name="ready" >
-              <option value="" disabled selected> -- Choose -- </option>
-              <option> crawler  </option>
-              <option> wheel </option>
-            </select>    -->
+
         </div>
 
-          <div class="form-group col-md-4">
-          <br/>
-          <label> generator and tower light </label>
-          <select class="form-control mr-1" id="generator_tower_light_selection" name="generator_tower_light_selection"  >
-              <option value="" disabled selected> -- Choose -- </option>
-              <option value="soundproof"> Soundproof </option>
-              <option value="open"> Open  </option>
-            </select>  
-
-          <label>excavation equipment</label><br/>
-          <select class="form-control mr-1" id="excavator_selection" name="excavator_selection" >
-              <option value="" disabled selected> -- Choose -- </option>
-              <option> dozer </option>
-              <option> grader </option>
-            </select>
-
-
-           <label> BRAND  </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="brand_id" name="brand_id" onchange="select_brand();">
-               <option value="" disabled selected> -- Choose -- </option>
-               <option> cat </option>
-               <option> JCB </option>
-               <option> Atlas Capco </option>
-               <option> HYUNDAI </option>
-               <option> DOOSAN </option>
-               <option value="hand"> Entry new brand </option>
-             </select>
-             </div>
-             <input type="text" class="form-control
-             " id="brand_idhide" name="brand_idhide" placeholder=" Entry new brand " style="display: none;">
-         </div>
-
-          <div class="form-group col-md-4">
-           <label> SIZE </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="size_id" name="size_id" onchange="select_size();">
-               <option value="" disabled selected> -- Choose -- </option>
-               <option> 250 CFM ( Compressor ) </option>
-               <option> 2000 KVA ( gen ) </option>
-               <option> 220 ( excavator ) </option>
-               <option> D9R ( dozer ) </option>
-               <option> 160أ ( grader ) </option>
-               <option value="hand"> Entry new size </option>
-             </select>
-             </div>
-             <input type="text" class="form-control
-             " id="size_idhide" name="size_idhide" placeholder="   Entry new size " style="display: none;" />
-         </div>
-
-            <div class="form-group col-md-4">
-           <label>  MODEL </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="model_id" name="model_id"  onchange="select_model();">
-               <option value="" disabled selected> -- choose -- </option>
-               <option> HX225 </option>
-               <option> SD25 </option>
-               <option value="hand"> entry new model </option>
-             </select>
-             </div>
-             <input type="text" class="form-control
-             " id="model_idhide" name="model_idhide" placeholder=" Entry machine model " style="display: none;">
-         </div>
-
-         <div class="form-group col-md-4">
-           <label> YEAR OF MANUFACTURE   </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="year_of_manufacture_id" name="year_of_manufacture_id" onchange="select_year();">
-               <option value="" disabled selected> -- Choose -- </option>
-               <option> 2022 </option>
-               <option> 2023 </option>
-               <option value="hand"> manualy entry </option>
-             </select>
-             </div>
-             <input type="text" class="form-control
-             " id="year_of_manufacture_idhide" name="year_of_manufacture_idhide" placeholder=" Entry manufacture year " style="display: none;">
-         </div>
-
-      </div>
-
-      <div class="row">
-
-          <div class="form-group col-md-4">
-           <label> MONTHLY RENTAL </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="monthly_rental_id" name="monthly_rental_id">
-               <option value="" disabled selected> -- Choose -- </option>
-               <option> SGD </option>
-               <option> USD </option>
-             </select>
-             </div>
-             <input type="text" class="form-control
-             " name="monthly_rental_idhide" placeholder="entry rental amount ">
-         </div>
-
-          <div class="form-group col-md-4">
-           <label>  CONDITION </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="condition_id" name="condition_id" onchange="select_condition();">
-               <option value="" disabled selected> -- Choose -- </option>
-               <option> new (not more than 500 hours or 1500 km) </option>
-               <option> almost new (between 501 hours and 1000 hrs ) </option>
-               <option> medium (between 1001 hrs and 2500 hrs) </option>
-               <option> consumable (over 2501 hrs) </option>
-               <option value="hand"> entry manual condition </option>
-             </select>
-             </div>
-             <input type="text" class="form-control" id="condition_idhide" name="condition_idhide" placeholder=" entry manual condition " style="display: none;">
-         </div>
-        
-      </div>
-
-
-
-
-
-      <div class="row">
-
-        <h3> CONTRACT TERMS  :  </h3>
+        <div class="row">
 
         <div class="form-group col-md-4">
-          <label> STATE </label>
+            <label>  License </label>
+            <select class="form-control" id="" name="">
+              <option value="" disabled selected> -- Choose --  </option>
+              <option value="valid license">  Valid License </option>
+              <option value="expired license">   Expired License  </option>
+              <option value="not licensed">   Not Licensed  </option>
+
+            </select>
+          </div>
+
+          <div class="form-group col-md-4">
+            <label>  Insuarance </label>
+            <select class="form-control" id="insurance_type" name="insurance_type">
+              <option value="" disabled selected> </option>
+              <option value="full insuarance"> Full Insuarance </option>
+              <option value="engineering insuarance"> Engineering Insuarance </option>
+              <option value="compulsory Insuarance"> Compulsory Insuarance </option>
+              <option value="without insuarance"> Without Insuarance </option>
+
+
+            </select>
+          </div>
+
+      <div class="col-md-4 form-group  mt-3 mt-md-0"> 
+        
+      <label>  Add any accessories with the equipment  </label>
+
+      <input type="text" id="description" name="description" class="form-control" placeholder="   
+Add any accessories with the equipment"> <font color="red">  </font> 
+          </div> 
+          
+        </div>
+
+        <div class="row">
+
+
+        <div class="col-md-3 form-group mt-3 mt-md-0">
+              Work field <br/>
+                  <select class="form-control mr-1" name="work_field" id="work_field" onchange="select_work_field();"  required>
+                    <option disabled selected>  </option>
+                    <option disabled selected> -- Choose   -- </option>
+                    <option> mining </option>
+                    <option>  cement </option>
+                    <option>  agricultural </option>
+                    <!-- <option value="hand">  ادخال يدوي </option> -->
+                  </select>
+
+                  <!-- <input id="work_fieldhide" name="work_fieldhide" type="text" class="form-control" placeholder=" ادخل مجال العمل  يدويا " style="display: none;"> -->
+          </div>
+
+
+          <div class="form-group col-md-3">
+          <label> Contracts:  </label>
+          <select class="form-control" id="cotracts_id" name="cotracts_id" onchange="select_contracts();">
+            <option value="" disabled selected>  </option>
+            <option> none </option>
+            <option> long (not less than 12 months) </option>
+            <option> medium (not less than 3 months)  </option>
+            <option> short ( no more than a month)  </option>
+            <option value="hand"> manual entry </option>
+          </select>
+        <input  id="cotracts_idhide" name="cotracts_idhide" type="text" class="form-control" placeholder="Enter the contract" style="display: none;">
+        </div>
+
+
+        <div class="form-group col-md-3">
+          <label> State </label>
           <select class="form-control" id="state_id" name="state_id" onchange="select_state();">
-            <option value="" disabled selected> -- Choose -- </option>
+            <option value="" disabled selected>  </option>
             <option> none </option>
             <option> inside sudan </option>
-            <option> all state of sudan except ... </option>
-            <option> specific state ... </option>
+            <option> all state of sudan except ……… </option>
+            <option> specific state….. </option>
             <option value="hand"> add new place </option>
           </select>
-        <input type="text" id="state_idhide" name="state_idhide" class="form-control" placeholder=" Specified the state " style="display: none;">
+        <input type="text" id="state_idhide" name="state_idhide" class="form-control" placeholder="حدد الولاية" style="display: none;">
         </div>
 
-        <div class="form-group col-md-4">
-          <label> ADVANCE </label>
-          <select class="form-control" id="advance_id" name="advance_id" onchange="select_advance();">
-            <option value="" disabled selected> -- Choose -- </option>
-            <option> none </option>
-            <option> required (XX% of contract value ) </option>
-            <option> full rent required  </option>
-            <option> guarantee </option>
-            <option value="hand"> entry new condition </option>
-          </select>
-        <input type="text" id="advance_idhide" name="advance_idhide" class="form-control" placeholder=" entry new condition " style="display: none;">
         </div>
 
+        <div class="row">
+
+
         <div class="form-group col-md-4">
-          <label> CATEGORY  </label>
+          <label> Maintenance </label>
+            <select class="form-control mr-1" id="hair_operator_id" name="hair_operator_id" onchange="select_hair_operator();" required>
+               <option value="" disabled selected> -- Choose --  </option>
+               <option> by equipation </option>
+               <option> by me </option>
+               <option value="hand"> manual entry </option>
+             </select>
+        <input id="hair_operator_idhide" name="hair_operator_idhide" type="text" class="form-control" placeholder=" حدد القيد  " style="display: none;">
+        </div>
+
+
+        <div class="form-group col-md-3">
+          <label> Category  </label>
           <select class="form-control" id="category_id" name="category_id" onchange="select_catogry();">
             <option value="" disabled selected> -- Choose -- </option>
-            <option> none </option>
+            <option>  none    </option>
             <option> companies only </option>
-            <option> contractiong only </option>
-            <option value="hand"> manual entry </option>
+            <!-- <option  value="hand"> اضافة قيد جديد </option> -->
           </select>
-        <input type="text" id="category_idhide" name="category_idhide" class="form-control" placeholder="  manual entry " style="display: none;">
-        </div>
-        
-      </div>
-
-      <div class="row">
-        <div class="form-group col-md-4">
-          <label> CONTRACTS  </label>
-          <select class="form-control" id="cotracts_id" name="cotracts_id" onchange="select_contracts();">
-            <option value="" disabled selected> -- Choose -- </option>
-            <option> none </option>
-            <option> long (not less than 12 month) </option>
-            <option> medium (not less than 3 month) </option>
-            <option> short (no more than a month) </option>
-            <option value="hand"> manual entry </option>
-          </select>
-        <input id="cotracts_idhide" name="cotracts_idhide" type="text" class="form-control" placeholder="Enter manual contract" style="display: none;">
+        <input type="text" id="category_idhide" name="category_idhide" class="form-control" placeholder="Entry the category " style="display: none;">
         </div>
 
-        <div class="form-group col-md-4">
-          <label> CLEARENCES  </label>
-          <select class="form-control" id="clearances_id" name="clearances_id" onchange="select_clearences()">
-            <option value="" disabled selected> -- Choose -- </option>
-            <option> USD </option>
-            <option> SDG </option>
-          </select>
-        <input id="clearances_idhide" name="clearances_idhide" type="text" class="form-control" placeholder="Enter clearances" style="display: none;">
+          
         </div>
 
-        <div class="form-group col-md-4">
-          <label> MAINTENANCE  </label>
-            <select class="form-control mr-1" id="maintenance_id" name="maintenance_id" onchange="select_maintenance();">
-               <option value="" disabled selected> -- Choose -- </option>
-               <option> by me </option>
-               <option> by equipation with ful detucted </option>
-               <option value="handx"> by equipation with XX% detucted </option>
-               <option> by equipation </option>
-               <option value="hand"> manual entry </option>
-             </select>
-        <input type="text" id="maintenance_idhide" name="maintenance_idhide" class="form-control" placeholder="Enter  maintenance detucted  " style="display: none;">
+        <div class="row">
+
         </div>
 
-     </div>
+        <div class="row">
 
-      <div class="row">
-
-         <div class="form-group col-md-4">
-          <label>  HAIR OPRATOR  </label>
-            <select class="form-control mr-1" id="hair_operator_id" name="hair_operator_id" onchange="select_hair_operator();">
-               <option value="" disabled selected> -- Choose -- </option>
-               <option> by equipation </option>
-               <option> set by me </option>
-               <option value="hand"> manual entry </option>
-             </select>
-        <input type="text" id="hair_operator_idhide" name="hair_operator_idhide" class="form-control" placeholder="Enter hair operator" style="display: none;">
         </div>
 
-         <div class="form-group col-md-4">
-           <label> AVAILABLITY  </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="availability_id" name="availability_id" onchange="select_availablity();">
-               <option value="" disabled selected> -- Choose -- </option>
-               <option> on request </option>
-               <option value="handx"> after request before xx day </option>
-               <option value="hand"> manual entry </option>
-             </select>
-             </div>
-             <input id="availability_idhide" name="availability_idhide" type="text" class="form-control
-             " name="" placeholder="Enter days / availability" style="display: none;">
-         </div>  
 
-         <div class="form-group col-md-4">
-           <label> GOVERNMENT FEES </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="gorvernment_fees_id" name="gorvernment_fees_id" onchange="select_gorvernment_fees();">
-               <option value="" disabled selected> -- Choose -- </option>
-               <option> by me </option>
-               <option> by equipation with full detucted </option>
-               <option value="handx"> by equipation with XX% detucted </option>
-               <option> by equipation </option>
-               <option value="hand"> manual entry </option>
-             </select>
-             </div>
-             <input id="gorvernment_fees_idhide" name="gorvernment_fees_idhide" type="text" class="form-control
-             " name="" placeholder="Enter detuced / or geverments fees" style="display: none;">
-         </div>        
+
+        <div class="row mt-5">
+
+          <h3>  Site description </h3>
 
           <div class="form-group col-md-4">
-           <label> HOURLY WORK  </label>
-           <div class="d-flex flex-row justify-content-between align-items-center">
-             <select class="form-control mr-1" id="hourly_work_id" name="hourly_work_id" onchange="select_hourly_work();">
-               <option value="" disabled selected> -- Choose -- </option>
-               <option> none </option>
-               <option value="handx"> not execeed xx hrs per day </option>
-               <option value="hand"> manual entry </option>
-             </select>
-             </div>
-             <input id="hourly_work_idhide" name="hourly_work_idhide" type="text" class="form-control" placeholder="Enter hours" style="display: none;">
-         </div>
-
 
       </div>
 
-     
-         <div class="text-center"><button type="submit" name="send" style="background-color:orange;border-radius:20px;padding:10px;"> Send Request </button></div>
+      <div class="row">
+
+          <div class="form-group col-md-4">
+           <label>  states </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+           <select class="form-control mr-1" id="state_id" name="" required>
+               <option value="" disabled selected> -- Choose -- </option>
+               <option value="Khartoum"> Khartoum </option>
+               <option value=" North Kordofan"> North Kordofan </option>
+               <option value="Northern"> Northern </option>
+               <option value="Kassala"> Kassala </option>
+               <option value="Blue Nile"> Blue Nile </option>
+               <option value="North Darfur "> North Darfur  </option>
+               <option value="South Darfur "> South Darfur  </option>
+               <option value="South Kordofan "> South Kordofan  </option>
+               <option value="Gezira"> Gezira </option>
+               <option value="White Nile "> White Nile  </option>
+               <option value="River Nile "> River Nile  </option>
+               <option value="Red Sea"> Red Sea </option>
+               <option value="Al Qadarif "> Al Qadarif  </option>
+               <option value="Sennar"> Sennar </option>
+               <option value="West Darfur "> West Darfur  </option>
+               <option value="Central Darfur "> Central Darfur  </option>
+               <option value="East Darfur "> East Darfur  </option>
+               <option value="West Kordofan"> West Kordofan </option>
+             </select>
+             </div>
+             
+          
+         </div>
+
+         <div class="col-md-4 form- mt-3 mt-md-0">
+              <br/>
+            <input type="text" class="form-control" name="address" id="address" placeholder="  Enter the nearest city" required>
+          </div>
+
+          <div class="col-md-4 form- mt-3 mt-md-0">
+            <br/>
+            <input type="text" class="form-control" name="nearest_road" id="nearest_road" placeholder="Distance to nearest paved road" required>
+          </div>
+
+          <div class="col-md-4 form- mt-3 mt-md-0">
+              <label>  Network availability </label>
+           <div class="d-flex flex-row justify-content-between align-items-center">
+             <select class="form-control mr-1" id="ready" name="network" required>
+                <option value="" disabled selected> -- Choose -- </option>
+               <option value="available"> Available  </option>
+               <option value="not_available"> Not Available </option>
+             </select>
+           </div>
+          </div>  
+      </div>
+
+
+
+     <br/><h3 for="textAreaRemark"> Customer data </h3>
+
+
+     <div class="row">
+
+<div class="col-md-4 form-">
+  <label></label>
+  <input type="text" name="full_name" class="form-control" id="full_name" placeholder="   الاسم  ثلاثي" required>
+</div>
+
+<div class="col-md-4 form-">
+  <label></label>
+  <input type="text" name="phone_number" class="form-control" id="phone" placeholder="  phone (002499123xxx) " required>
+</div>
+
+<div class="col-md-4 form-">
+  <label></label>
+  <input type="text" name="whatsapp_num" class="form-control" id="whatsapp_num" placeholder="    whatsapp phone (002499123xxx) " required>
+</div>
+
+</div>
+
+
+
+      <div class="row">
+
+      <div class="col-md-4 form- mt-3 mt-md-0">
+                  <label></label>
+                  <input type="text" class="form-control" name="email" id="email" placeholder="Customer Email " required>
+                </div>
+
+                <div class="col-md-4 form- mt-3 mt-md-0">
+                <lable>   Type of relationship to the site </lable> 
+                <select class="form-control mr-1" name="job" id="job" onchange="" required>
+               <option value="" disabled selected> --  Choose -- </option>
+                <option value="Owner"> Owner   </option>
+                <option value="Partner"> Partner </option>
+                <option value="Manager"> Manager </option>
+                <option value="Employee"> Employee </option>
+                <option value="Moderator"> Moderator </option>
+                <option value="agent"> agent </option>
+                <option value="broker"> broker </option>
+                </select> 
+                  </div>
+
+              <div class="col-md-4 form-">
+                <lable>  Your side is </lable> 
+                <select class="form-control mr-1" name="work_for" id="work_for" onchange="select_side();" required>
+                <option value="" disabled selected> -- Choose -- </option>
+                <option value="company"> Company </option>
+                <option value="individual"> Individual </option>
+                </select>  
+                <input id="sidehide" type="text" name="company_name" class="form-control" placeholder="Enter company Name" style="display: none;" />
+              </div>  
+
+
+
+              <div class="col-md-4 form- mt-3 mt-md-0">
+              <lable>  Have you over worked with us : </lable> 
+                <select class="form-control mr-1" name="previous" id="previous" onchange="select_wwus();" required>
+                 <option value="" disabled selected> -- Choose -- </option>
+                <option value="yes"> Yes </option>
+                <option value="no"> No </option>
+                </select>
+               <input id="wwushide" type="text" class="form-control" placeholder=" On any construction site with us" style="display: none;" />
+               <!-- required style="display:none" -->
+               
+              
+
+              </div>
+
+
+              <div class="col-md-4 form- mt-3 mt-md-0">
+              <div class="form-">
+              <label for="exampleFormControlSelect2"> How to know us : </label>
+              <select  class="form-control" name="know" id="exampleFormControlSelect2">
+                <option value="media"> Facebook </option>
+                <option value="media"> Twiter </option>
+                <option value="advertisemen"> Advertisment </option>
+                <option value="friend"> By a friend </option>
+                <option value="other"> Others  </option>
+              </select>
+              </div>
+             </div>
+
+      </div>
+
+
+              <div class="text-center">  <br/><br/><button type="submit" name="send" style="background-color:orange;border-radius:20px;padding:10px;"> Send Request </button></div>
             </form>
 
           </div>
@@ -946,10 +680,9 @@ curl_close($curl);
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
+   <!-- ======= Footer ======= -->
   <?php include 'footer.php'; ?>
-
-
+  
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
