@@ -208,8 +208,8 @@
                     @$work_field = $_POST['work_fieldhide'];
                   @$site_age = $_POST['site_age'];
                   if($site_age == "old")
-                    @$start_date = $_POST['start_date'];
-                  else @$start_date = "2023-05-01";
+                  //   @$start_date = $_POST['start_date'];
+                  // else @$start_date = "2023-05-01";
                   @$name    = $_POST['name'];
                   @$email   = $_POST['email'];
                   @$job     = $_POST['job'];
@@ -257,7 +257,6 @@ $jayParsedAry = [
               "distance" => @$distance, 
               "state" => @$state, 
               "site_age" => @$site_age, 
-              "start_date" => @$start_date, 
               "name" => @$name, 
               "email" => @$email, 
               "job" => @$job, 
@@ -508,10 +507,10 @@ curl_close($curl);
                <option value="new"> جديد </option>
                <option value="old"> قديم </option>
              </select>
-             <span id="oldhide" style="display: none;">
+             <!-- <span id="oldhide" style="display: none;">
               حدد تاريخ بداية العمل :  <br/>
              <input type="date" name="start_date" class="form-control" placeholder=" تاريخ بداية العمل " >
-            </span>      
+            </span>       -->
          </div>
               </div>
 
