@@ -258,7 +258,7 @@
     </section><!-- End About Section -->
 
     <!-- ======= Counts  احصائيات Section ======= -->
-  <!-- <section id="counts" class="counts">
+  <section id="counts" class="counts">
       <div class="container">
 
         <div class="row">
@@ -282,7 +282,7 @@
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
               <i class="fas fa-flask"></i>
-              <span data-purecounter-start="0" data-purecounter-end="71,702" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="71" data-purecounter-duration="1" class="purecounter"></span>
               <p>عدد ساعات عمل المعدات </p>
             </div>
           </div>
@@ -290,7 +290,7 @@
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
               <i class="fas fa-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="771,975" data-purecounter-duration="1" class="purecounter"></span>
+              <span data-purecounter-start="0" data-purecounter-end="771" data-purecounter-duration="1" class="purecounter"></span>
               <p>كمية العمل بالإنتاج</p>
             </div>
           </div>
@@ -298,7 +298,7 @@
         </div>
 
       </div>
-    </section>End Counts Section -->
+    </section>End Counts Section
 
     <!-- ======= Services Section ======= -->
     <section id="departments" class="departments">
