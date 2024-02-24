@@ -2,7 +2,7 @@
 // $response["prams"]=array();
 //$json = json_encode($data);
 
-$url = "https://equipation-equipation-odoo-com-stage-10590858.dev.odoo.com/apiV2/company_info";
+$url = "https://equipation-equipation-odoo-com-stage-11715972.dev.odoo.com/apiV2/company_info";
 $array=array();
 $json=json_encode($array,JSON_FORCE_OBJECT);
 $ch = curl_init($url);

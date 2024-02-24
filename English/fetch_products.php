@@ -19,7 +19,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://equipation-equipation-odoo-com-stage-10590858.dev.odoo.com/apiV2/product.template/search_read',
+  CURLOPT_URL => 'https://equipation-equipation-odoo-com-stage-11715972.dev.odoo.com/apiV2/product.template/search_read',
   CURLOPT_SSL_VERIFYHOST => 0 ,
   CURLOPT_SSL_VERIFYPEER => 0 ,
   CURLOPT_RETURNTRANSFER => true,

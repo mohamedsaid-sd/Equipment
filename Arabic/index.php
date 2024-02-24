@@ -168,25 +168,87 @@
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
             <h3>من نحن   </h3>
             <p> 
-            منصة إكوبيشن هي منصة خدمية تتبع لشركة إكوبيشن والتي تعمل على توفير أحدث وأفضل الآليات والمعدات الثقيلة للمشاريع الإنتاجية في مختلف الولايات وفي مختلف المجالات، بدات العمل منذ العام 2015م، وذلك بمواكبتها لأحدث النظم الإدارية المتطورة والمحكمة.            
+            شركة إكوبيشن للاستثمار المحدودة، تأسست في عام 2021م كشركة سودانية واعدة في مجال خدمات التعدين، حيث تقدم مجموعة شاملة ومتكاملة من الخدمات في هذا القطاع، بدأت الشركة رحلتها بتأجير وتشغيل المعدات والآليات الثقيلة، وسرعان ما تمكنت من توسيع نطاق عملها لتشمل مقاولات التعدين وتأسيس وإدارة وتشغيل المناجم في المشاريع التعدينية، وتعتبر إكوبيشن من الشركات القليلة التي تقدم خدمات النقل ضمن نطاق أعمالها، وخاصة للمسافات البعيدة، وتتميز بجودة عالية وكفاءة في تقديم هذه الخدمات. 
+بجانب ذلك، تقدم خدمات الصيانة للمعدات والآليات الثقيلة، حيث تضمن الحفاظ على أعلى مستويات الأداء والاستدامة لأصول الشركة وأصول عملائها، كما تعتمد على فريق عمل متخصص ومدرَّب بشكلٍ متطور، وتهدف دائمًا إلى توفير الموارد البشرية المتخصصة التي تلبي متطلبات الإنتاج والصناعة وتحقق أهداف العملاء بكفاءة عالية، بالإضافة إلى ذلك، تقدم الشركة خدمات توفير وتركيب ومتابعة أنظمة التتبع، وهو جانب أساسي يساهم في تعزيز كفاءة عمليات الإنتاج وضمان التحكم والأمان في المشاريع.
             </p>
+
 
             <div class="icon-box">
               <!-- <div class="icon"><i class="bx bx-fingerprint"></i></div> -->
-              <h4 class="title"><a href="">رسالتنا</a></h4>
-              <p class="description">الانتاج جوهر التعمير لذلك يجب علينا دعمه وخدمته </p>
+              <h4 class="title"><a href="">قصتنا</a></h4>
+              <p class="description">   قصة تأسيس شركة إكوبيشن للاستثمار المحدودة؛ تعكس رحلة طموحة وملهمة في قطاع التعدين بالسودان، قبل عشرة أعوام، بدأت المسيرة برؤية متجددة لتقديم الدعم وتوفير الخدمات اللازمة للمشاريع الإنتاجية في ظل ضعف البنية التحتية ونقص الخدمات المتوفرة في هذا القطاع، فمنذ عام ٢٠١٤م، اتخذت الشركة مساراً ثابتاً نحو توفير المعدات الثقيلة وتنفيذ المشاريع التأسيسية والتشغيلية لدعم الأفراد والشركات في قطاع التعدين.
+لم توقف العوائق الجغرافية أو الصعوبات البيئية أو تحديات العمل الشاقة؛ إرادتهم من المساهمة في استخراج المعادن كمورد اقتصادي أساسي للبلاد، وفي بداية العام ٢٠٢١م، جاءت المرحلة التالية لتوطيد هذه الرؤية في شكلها المطوَّر بتأسيس شركة إكوبيشن للاستثمار المحدودة، لتفتح صفحةً جديدةً مطوَّرة بتوفير أحدث وأنسب المعدات وأفضل الكوادر وأجود الأنظمة، متسلحة بأرقى الأخلاقيات. </p>
             </div>
+
+            <div class="icon-box">
+              <!-- <div class="icon"><i class="bx bx-fingerprint"></i></div> -->
+              <h4 class="title"><a href="">كلمة رئيس مجلس الإدارة</a></h4>
+              <p class="description">   في شركة إكوبيشن للاستثمار المحدودة نؤمن بأن الجودة ليست دائماً الخيار الأغلى، بل هي الاستثمار الأكثر قيمة وفاعلية على المدى الطويل، من خلال التزامنا بتقديم أفضل الخدمات والمنتجات ذات الجودة العالية، نسعى جاهدين لتحقيق رضا عملائنا وتحقيق التميز في جميع جوانب أعمالنا، كما نؤمن بأن النجاح لا يأتي بسهولة، ولكنه يتطلب الإبداع والتفاني في تجاوز التحديات وتقديم الحلول المبتكرة التي تلبي احتياجات عملائنا بشكل فعال وموثوق. 
+محمد إدريس علي  </p>
+            </div>
+
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+
+
+
+
+
+     <!-- ======= About Section ======= -->
+     <section id="about" class="about">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
+            <a href="#" class="glightbox play-btn mb-4"></a>
+          </div>
+
+          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+     
+          <div class="icon-box">
+              <!-- <div class="icon"><i class="bx bx-fingerprint"></i></div> -->
+              <h4 class="title"><a href="">رسالتنا</a></h4>
+              <p class="description">   تؤمن شركة إكوبيشن بأن وفرة الموارد تستوجب ثورة في عمليات الإنتاج، لذلك نسعى جاهدين لتحقيقها من خلال الإبداع في الأفكار، والابتكار في الأنظمة، والقوة في الموارد البشرية والمادية. </p>
+            </div>
+
+  
 
             <div class="icon-box">
               <!-- <div class="icon"><i class="bx bx-gift"></i></div> -->
               <h4 class="title"><a href="">رؤيتنا </a></h4>
-              <p class="description"> ان نكون الشركة الأولى في مجال خدمات الإنتاج في السودان في العام 2025 </p>
+              <p class="description">نطمح إلى تحقيق مكانة رائدة محليًا وعالميًا في مجال خدمات التعدين، ونتطلع إلى امتلاك حصة تبلغ 80% من سوق خدمات التعدين في السودان بحلول عام 2030م، من خلال تقديم خدمات متميزة وعالية الجودة. </p>
             </div>
 
             <div class="icon-box">
              <!--  <div class="icon"><i class="bx bx-atom"></i></div> -->
               <h4 class="title"><a href="">قيمنا</a></h4>
-              <p class="description"> الاتزام الجاد بالعمل و سرعة الاستجابه بأعلى الجودات وخطة التطوير المستمر  </p>
+            
+            <p class="description">
+              
+           ملتزمون بتقديم خدمات عالية الجودة ونعمل بمصداقية وشفافية مع جميع العملاء والشركاء.
+                
+            </p>
+
+            <p class="description">
+              
+            نسعى دائمًا إلى تحقيق أعلى معايير الجودة في كل ما نقدمه من خدمات ومنتجات                   
+               </p>
+               <p class="description">
+              
+               نعمل دائما على الابتكار والتطور المستمر، ونسعى جاهدين لتحسين وتطوير خدماتنا.                   
+               </p>
+      
+               <p class="description">
+              
+               تطلعات عملائنا وأهدافهم؛ هي أهدافنا، لذلك نحرص على كسب رضاهم التام وثقتهم الغالية
+              </p>
+
             </div>
 
           </div>
@@ -196,7 +258,7 @@
     </section><!-- End About Section -->
 
     <!-- ======= Counts  احصائيات Section ======= -->
-    <!-- <section id="counts" class="counts">
+  <!-- <section id="counts" class="counts">
       <div class="container">
 
         <div class="row">
@@ -204,32 +266,32 @@
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
               <i class="fas fa-user-md"></i>
-              <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Doctors</p>
+              <span data-purecounter-start="0" data-purecounter-end="323" data-purecounter-duration="1" class="purecounter"></span>
+              <p>عدد المشاريع</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
             <div class="count-box">
               <i class="far fa-hospital"></i>
-              <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Departments</p>
+              <span data-purecounter-start="0" data-purecounter-end="69" data-purecounter-duration="1" class="purecounter"></span>
+              <p>عدد العملاء</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
               <i class="fas fa-flask"></i>
-              <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Research Labs</p>
+              <span data-purecounter-start="0" data-purecounter-end="71,702" data-purecounter-duration="1" class="purecounter"></span>
+              <p>عدد ساعات عمل المعدات </p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
               <i class="fas fa-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Awards</p>
+              <span data-purecounter-start="0" data-purecounter-end="771,975" data-purecounter-duration="1" class="purecounter"></span>
+              <p>كمية العمل بالإنتاج</p>
             </div>
           </div>
 
@@ -249,30 +311,39 @@
 
         <div class="row" style="margin: 5px;">
 
-        <div class="col-lg-4">
+        <div class="col-lg-3">
        <a href="details.php?id=مقاولة"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-clipboard"></i> <b> خدمات المقاولة </b> </div></a>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-lg-3">
         <a href="details.php?id=تاجير"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-tractor"></i> <b> خدمات التأجير </b> </div>
         </div></a>
         
-        <div class="col-lg-4">
+        <div class="col-lg-3">
         <a href="details.php?id=تشغيل"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fab fa-teamspeak"></i> <b> خدمات التشغيل </b> </div></a>
         </div>
         
-        <div class="col-lg-4">
+        <div class="col-lg-3">
         <a href="details.php?id=توظيف"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fab fa-wpforms"></i> <b> خدمات التوظيف </b> </div></a>
         </div>
         
-        <div class="col-lg-4">
+        <div class="col-lg-3">
         <a href="details.php?id=صيانه"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-tools"></i> <b>خدمات الصيانة </b> </div></a>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-lg-3">
         <a href="details.php?id=ترحيل"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-truck-moving"></i> <b> خدمات الترحيل </b> </div></a>
         </div>
           
+        <div class="col-lg-3">
+        <a href="details.php?id=تتبع"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fab fa-periscope"></i> <b>  خدمات أنظمة التتبع   </b> </div></a>
+        </div>
+
+
+
+        <div class="col-lg-3">
+        <a href="details.php?id=تأسيس"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fab fa-think-peaks"></i> <b>  تأسيس مشاريع التعدين      </b> </div></a>
+        </div>
         </div>
 
   
@@ -557,88 +628,45 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 
 
     <!-- ======= Doctors Section ======= -->
-    <!-- <section id="doctors" class="doctors">
+    <section id="doctors" class="doctors">
       <div class="container">
 
         <div class="section-title">
-          <h2>Doctors</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>شركاء النجاح</h2>
         </div>
 
         <div class="row">
 
-          <div class="col-lg-6">
+          <div class="col-lg-4">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets/img/logo.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Medical Officer</span>
-                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
+                <h4>شركة كابيتال للمعدات </h4>
+            
+               
               </div>
             </div>
           </div>
 
-          <div class="col-lg-6 mt-4 mt-lg-0">
+          <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
+              <div class="pic"><img src="assets/img/logo.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Anesthesiologist</span>
-                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
+                <h4>شركة الأودو </h4>
+           
               </div>
             </div>
           </div>
 
-          <div class="col-lg-6 mt-4">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-3.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>Cardiology</span>
-                <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mt-4">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/doctors/doctors-4.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Neurosurgeon</span>
-                <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-                <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div>
-              </div>
-            </div>
-          </div>
+     
 
         </div>
 
       </div>
-    </section -->><!-- End Doctors Section -->
+    </section -->><!-- End Doctors Section
+
+
+    
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <!-- <section id="faq" class="faq section-bg">
@@ -786,7 +814,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
-      <!-- <div class="container">
+      <div class="container">
 
         <div class="section-title">
           <h2>التواصل معنا </h2>
@@ -802,12 +830,18 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
           <div class="col-lg-4">
             <div class="info">
               <div class="address">
-                <i class="bi bi-geo-alt"></i>
                 <h4>الموقع:</h4>
-                <p> </p>
+                <p> المكتب الرئيسي:
+مكتب قطر – 
+الدوحة - لوسيل: 97450095633+
+
+مكتب السودان: 
+الخرطوم: 249912322447+/ 
+عطبرة: +249123214737 /
+ بورتسودان: +249912322596</p>
               </div>
 
-              <div class="email">
+              <!-- <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>البريد الالكترونى:</h4>
                 <p>info@equipation.sd</p>
@@ -817,7 +851,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
                 <i class="bi bi-phone" style="direction: rtl;"></i>
                 <h4>رقم الهاتف:</h4>
                 <p> +249912322447 </p>
-              </div>
+              </div> -->
 
             </div>
 
@@ -827,7 +861,7 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 
         </div>
 
-      </div> -->
+      </div>
     </section>End Contact Section
 
   </main><!-- End #main -->
