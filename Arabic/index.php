@@ -173,19 +173,7 @@
             </p>
 
 
-            <div class="icon-box">
-              <!-- <div class="icon"><i class="bx bx-fingerprint"></i></div> -->
-              <h4 class="title"><a href="">قصتنا</a></h4>
-              <p class="description">   قصة تأسيس شركة إكوبيشن للاستثمار المحدودة؛ تعكس رحلة طموحة وملهمة في قطاع التعدين بالسودان، قبل عشرة أعوام، بدأت المسيرة برؤية متجددة لتقديم الدعم وتوفير الخدمات اللازمة للمشاريع الإنتاجية في ظل ضعف البنية التحتية ونقص الخدمات المتوفرة في هذا القطاع، فمنذ عام ٢٠١٤م، اتخذت الشركة مساراً ثابتاً نحو توفير المعدات الثقيلة وتنفيذ المشاريع التأسيسية والتشغيلية لدعم الأفراد والشركات في قطاع التعدين.
-لم توقف العوائق الجغرافية أو الصعوبات البيئية أو تحديات العمل الشاقة؛ إرادتهم من المساهمة في استخراج المعادن كمورد اقتصادي أساسي للبلاد، وفي بداية العام ٢٠٢١م، جاءت المرحلة التالية لتوطيد هذه الرؤية في شكلها المطوَّر بتأسيس شركة إكوبيشن للاستثمار المحدودة، لتفتح صفحةً جديدةً مطوَّرة بتوفير أحدث وأنسب المعدات وأفضل الكوادر وأجود الأنظمة، متسلحة بأرقى الأخلاقيات. </p>
-            </div>
-
-            <div class="icon-box">
-              <!-- <div class="icon"><i class="bx bx-fingerprint"></i></div> -->
-              <h4 class="title"><a href="">كلمة رئيس مجلس الإدارة</a></h4>
-              <p class="description">   في شركة إكوبيشن للاستثمار المحدودة نؤمن بأن الجودة ليست دائماً الخيار الأغلى، بل هي الاستثمار الأكثر قيمة وفاعلية على المدى الطويل، من خلال التزامنا بتقديم أفضل الخدمات والمنتجات ذات الجودة العالية، نسعى جاهدين لتحقيق رضا عملائنا وتحقيق التميز في جميع جوانب أعمالنا، كما نؤمن بأن النجاح لا يأتي بسهولة، ولكنه يتطلب الإبداع والتفاني في تجاوز التحديات وتقديم الحلول المبتكرة التي تلبي احتياجات عملائنا بشكل فعال وموثوق. 
-محمد إدريس علي  </p>
-            </div>
+           
 
 
           </div>
@@ -201,20 +189,34 @@
 
 
      <!-- ======= About Section ======= -->
-     <section id="about" class="about">
+     <div class="vision">
+
+
       <div class="container-fluid">
 
         <div class="row">
-          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
-            <a href="#" class="glightbox play-btn mb-4"></a>
-          </div>
+        
 
-          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+          <div class="col-xl-12 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
      
-          <div class="icon-box">
+          <div class="icon-box aos-animate">
               <!-- <div class="icon"><i class="bx bx-fingerprint"></i></div> -->
               <h4 class="title"><a href="">رسالتنا</a></h4>
               <p class="description">   تؤمن شركة إكوبيشن بأن وفرة الموارد تستوجب ثورة في عمليات الإنتاج، لذلك نسعى جاهدين لتحقيقها من خلال الإبداع في الأفكار، والابتكار في الأنظمة، والقوة في الموارد البشرية والمادية. </p>
+            </div>
+
+             <div class="icon-box aos-animate">
+              <!-- <div class="icon"><i class="bx bx-fingerprint"></i></div> -->
+              <h4 class="title"><a href="">قصتنا</a></h4>
+              <p class="description">   قصة تأسيس شركة إكوبيشن للاستثمار المحدودة؛ تعكس رحلة طموحة وملهمة في قطاع التعدين بالسودان، قبل عشرة أعوام، بدأت المسيرة برؤية متجددة لتقديم الدعم وتوفير الخدمات اللازمة للمشاريع الإنتاجية في ظل ضعف البنية التحتية ونقص الخدمات المتوفرة في هذا القطاع، فمنذ عام ٢٠١٤م، اتخذت الشركة مساراً ثابتاً نحو توفير المعدات الثقيلة وتنفيذ المشاريع التأسيسية والتشغيلية لدعم الأفراد والشركات في قطاع التعدين.
+لم توقف العوائق الجغرافية أو الصعوبات البيئية أو تحديات العمل الشاقة؛ إرادتهم من المساهمة في استخراج المعادن كمورد اقتصادي أساسي للبلاد، وفي بداية العام ٢٠٢١م، جاءت المرحلة التالية لتوطيد هذه الرؤية في شكلها المطوَّر بتأسيس شركة إكوبيشن للاستثمار المحدودة، لتفتح صفحةً جديدةً مطوَّرة بتوفير أحدث وأنسب المعدات وأفضل الكوادر وأجود الأنظمة، متسلحة بأرقى الأخلاقيات. </p>
+            </div>
+
+            <div class="icon-box">
+              <!-- <div class="icon"><i class="bx bx-fingerprint"></i></div> -->
+              <h4 class="title"><a href="">كلمة رئيس مجلس الإدارة</a></h4>
+              <p class="description">   في شركة إكوبيشن للاستثمار المحدودة نؤمن بأن الجودة ليست دائماً الخيار الأغلى، بل هي الاستثمار الأكثر قيمة وفاعلية على المدى الطويل، من خلال التزامنا بتقديم أفضل الخدمات والمنتجات ذات الجودة العالية، نسعى جاهدين لتحقيق رضا عملائنا وتحقيق التميز في جميع جوانب أعمالنا، كما نؤمن بأن النجاح لا يأتي بسهولة، ولكنه يتطلب الإبداع والتفاني في تجاوز التحديات وتقديم الحلول المبتكرة التي تلبي احتياجات عملائنا بشكل فعال وموثوق. 
+محمد إدريس علي  </p>
             </div>
 
   
@@ -255,7 +257,7 @@
         </div>
 
       </div>
-    </section><!-- End About Section -->
+    </div><!-- End About Section -->
 
     <!-- ======= Counts  احصائيات Section ======= -->
   <section id="counts" class="counts">
@@ -265,33 +267,33 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
-              <i class="fas fa-user-md"></i>
+               <!-- <i class="bx bx-bar-chart"></i> -->
               <span data-purecounter-start="0" data-purecounter-end="323" data-purecounter-duration="1" class="purecounter"></span>
-              <p>عدد المشاريع</p>
+              <p>+عدد المشاريع</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
             <div class="count-box">
-              <i class="far fa-hospital"></i>
+              <!-- <i class="fas fa-user"></i> -->
               <span data-purecounter-start="0" data-purecounter-end="69" data-purecounter-duration="1" class="purecounter"></span>
-              <p>عدد العملاء</p>
+              <p>+عدد العملاء</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
-              <i class="fas fa-flask"></i>
+               <!-- <i class="fas fa-hour"></i> -->
               <span data-purecounter-start="0" data-purecounter-end="71" data-purecounter-duration="1" class="purecounter"></span>
-              <p>عدد ساعات عمل المعدات </p>
+              <p>+عدد ساعات عمل المعدات </p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
-              <i class="fas fa-award"></i>
+              <!-- <i class="fas fa-award"></i> -->
               <span data-purecounter-start="0" data-purecounter-end="771" data-purecounter-duration="1" class="purecounter"></span>
-              <p>كمية العمل بالإنتاج</p>
+              <p>+كمية العمل بالإنتاج</p>
             </div>
           </div>
 
@@ -637,23 +639,20 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 
         <div class="row">
 
-          <div class="col-lg-4">
+          <div class="col-lg-6 mt-4 mt-lg-0">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/logo.jpg" class="img-fluid" alt=""></div>
+              <img src="assets/img/apple-touch-icon.png" style="height: 50px ;width: 100px;margin: 15px;border-radius: 10px;border:solid 0px black;" alt="">
               <div class="member-info">
-                <h4>شركة كابيتال للمعدات </h4>
-            
-               
+               <br/> <h4 style="font-size: 25px;">شركة كابيتال للمعدات </h4>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 mt-4 mt-lg-0">
+          <div class="col-lg-6 mt-4 mt-lg-0">
             <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/logo.jpg" class="img-fluid" alt=""></div>
+              <img src="assets/img/apple-touch-icon.png" style="height: 50px ;width: 100px;margin: 15px;border-radius: 10px;border:solid 0px black;" alt="">
               <div class="member-info">
-                <h4>شركة الأودو </h4>
-           
+               <br/> <h4 style="font-size: 25px;">شركة الأودو </h4>
               </div>
             </div>
           </div>
@@ -814,22 +813,60 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
-      <div class="container">
 
-        <div class="section-title">
-          <h2>التواصل معنا </h2>
-          <p> يسعدنا في شركة إكوبيشن التواصل مع عملائنا في كل الاوقات , ويسعدنا دوما الرد علي رسائلكم مقترحاتكم وارائكم </p>
+    <div class="container">
+
+    <div class="section-title" style="text-align: right;">
+      <h2>التواصل معنا </h2>
+      <p> يسعدنا في شركة إكوبيشن التواصل مع عملائنا في كل الاوقات , ويسعدنا دوما الرد علي رسائلكم مقترحاتكم وارائكم </p>
+    </div><br/>
+
+   <div class="container" style="width: 50%;float: left;">
+
+        <div class="row mt-12">
+
+          <div class="col-lg-12">
+            <div class="info">
+              <div class="address">
+               <i class="bi bi-geo-alt" style="float: left;"></i>
+                <h4> مكاتب السودان :</h4>
+                <p> الخرطوم - عطبرة - بورتسودان   </p>
+
+              </div>
+
+          <!--     <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email :</h4>
+                <p>info@example.com</p>
+              </div> -->
+
+              <div class="phone">
+                <i class="bi bi-phone" style="float: left;"></i>
+                <h4>ارقم الهاتف : </h4>
+                <p> الخرطوم: <br/> <b>249912322447+</b> <br/>
+                 عطبرة: <br/> <b>249123214737+</b> <br/>
+                 بورتسودان: <br/> <b>249912322596+</b> </p>
+              </div>
+
+            </div>
+
+          </div>
         </div>
       </div>
 
-  
+      <div class="container" style="width: 50%;float: right;">
+        <div class="row mt-12">
 
-      <div class="container">
-        <div class="row mt-5">
-
-          <div class="col-lg-4">
+          <div class="col-lg-12">
             <div class="info">
+
               <div class="address">
+               <i class="bi bi-geo-alt" style="float: left;"></i>
+                <h4> المكتب الرئيسي :</h4>
+                <p> قطر : الدوحة - لوسيل   </p>
+              </div>
+
+<!--               <div class="address">
                 <h4>الموقع:</h4>
                 <p> المكتب الرئيسي:
 مكتب قطر – 
@@ -839,19 +876,25 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
 الخرطوم: 249912322447+/ 
 عطبرة: +249123214737 /
  بورتسودان: +249912322596</p>
-              </div>
+              </div> -->
 
-              <!-- <div class="email">
+       <!--        <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location :</h4>
+                <p> sudan , Khartoum   </p>
+              </div> -->
+
+         <!--      <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>البريد الالكترونى:</h4>
                 <p>info@equipation.sd</p>
-              </div>
+              </div> -->
 
               <div class="phone">
                 <i class="bi bi-phone" style="direction: rtl;"></i>
-                <h4>رقم الهاتف:</h4>
-                <p> +249912322447 </p>
-              </div> -->
+                <h4>رقم الهاتف : </h4>
+                <p> <b> 97450095633+ </b></p>
+              </div>
 
             </div>
 
@@ -862,7 +905,12 @@ EQUIPATION هي الخيار األفضل لتلبية تلك المتطلبات
         </div>
 
       </div>
-    </section>End Contact Section
+
+    </div><!-- End Div Contener -->
+     
+
+
+    </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
 
