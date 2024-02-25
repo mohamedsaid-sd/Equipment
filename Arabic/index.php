@@ -160,6 +160,10 @@
     <section id="about" class="about">
       <div class="container-fluid">
 
+        <div class="section-title">
+          <h2>  من نحن  </h2>
+        </div>
+
         <div class="row">
           <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
             <a href="#" class="glightbox play-btn mb-4"></a>
@@ -185,56 +189,120 @@
 
 
 
-
-
-
-     <!-- ======= About Section ======= -->
-     <div class="vision">
-
-
-      <div class="container-fluid">
-
-        <div class="row">
-        
-
-          <div class="col-xl-12 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-     
-          <div class="icon-box aos-animate">
-              <!-- <div class="icon"><i class="bx bx-fingerprint"></i></div> -->
-              <h4 class="title"><a href="">رسالتنا</a></h4>
-              <p class="description">   تؤمن شركة إكوبيشن بأن وفرة الموارد تستوجب ثورة في عمليات الإنتاج، لذلك نسعى جاهدين لتحقيقها من خلال الإبداع في الأفكار، والابتكار في الأنظمة، والقوة في الموارد البشرية والمادية. </p>
-            </div>
-
-             <div class="icon-box aos-animate">
-              <!-- <div class="icon"><i class="bx bx-fingerprint"></i></div> -->
-              <h4 class="title"><a href="">قصتنا</a></h4>
-              <p class="description">   قصة تأسيس شركة إكوبيشن للاستثمار المحدودة؛ تعكس رحلة طموحة وملهمة في قطاع التعدين بالسودان، قبل عشرة أعوام، بدأت المسيرة برؤية متجددة لتقديم الدعم وتوفير الخدمات اللازمة للمشاريع الإنتاجية في ظل ضعف البنية التحتية ونقص الخدمات المتوفرة في هذا القطاع، فمنذ عام ٢٠١٤م، اتخذت الشركة مساراً ثابتاً نحو توفير المعدات الثقيلة وتنفيذ المشاريع التأسيسية والتشغيلية لدعم الأفراد والشركات في قطاع التعدين.
-لم توقف العوائق الجغرافية أو الصعوبات البيئية أو تحديات العمل الشاقة؛ إرادتهم من المساهمة في استخراج المعادن كمورد اقتصادي أساسي للبلاد، وفي بداية العام ٢٠٢١م، جاءت المرحلة التالية لتوطيد هذه الرؤية في شكلها المطوَّر بتأسيس شركة إكوبيشن للاستثمار المحدودة، لتفتح صفحةً جديدةً مطوَّرة بتوفير أحدث وأنسب المعدات وأفضل الكوادر وأجود الأنظمة، متسلحة بأرقى الأخلاقيات. </p>
-            </div>
-
-            <div class="icon-box">
-              <!-- <div class="icon"><i class="bx bx-fingerprint"></i></div> -->
-              <h4 class="title"><a href="">كلمة رئيس مجلس الإدارة</a></h4>
-              <p class="description">   في شركة إكوبيشن للاستثمار المحدودة نؤمن بأن الجودة ليست دائماً الخيار الأغلى، بل هي الاستثمار الأكثر قيمة وفاعلية على المدى الطويل، من خلال التزامنا بتقديم أفضل الخدمات والمنتجات ذات الجودة العالية، نسعى جاهدين لتحقيق رضا عملائنا وتحقيق التميز في جميع جوانب أعمالنا، كما نؤمن بأن النجاح لا يأتي بسهولة، ولكنه يتطلب الإبداع والتفاني في تجاوز التحديات وتقديم الحلول المبتكرة التي تلبي احتياجات عملائنا بشكل فعال وموثوق. 
-محمد إدريس علي  </p>
-            </div>
-
+        <div id="pref" class="pref">
+        <div class="container">
   
+      <!--     <div class="section-title">
+            <h2> عن الشركة </h2>
+            <p>
+              عملت شركة Equipment في كل ولايات السودان وفي مجالات متعددة
+              .</p>
+          </div> -->
+  
+          <div class="row gy-4">
+            <div class="col-lg-3">
+              <ul class="nav nav-tabs flex-column">
+                 <li class="nav-item">
+                  <a class="nav-link active show" data-bs-toggle="tab" href="#tab-7"> قصتنا </a>
+                </li>
 
-            <div class="icon-box">
-              <!-- <div class="icon"><i class="bx bx-gift"></i></div> -->
-              <h4 class="title"><a href="">رؤيتنا </a></h4>
-              <p class="description">نطمح إلى تحقيق مكانة رائدة محليًا وعالميًا في مجال خدمات التعدين، ونتطلع إلى امتلاك حصة تبلغ 80% من سوق خدمات التعدين في السودان بحلول عام 2030م، من خلال تقديم خدمات متميزة وعالية الجودة. </p>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-8"> رسالتنا </a>
+                </li>
+               
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-9">كلمة رئيس مجلس الإدارة </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-10"> رؤيتنا </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-11"> اهدافنا </a>
+                </li>
+  
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-12"> قيمنا </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-13"> كلمة عن فريق إيكيوبيشن </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-14"> لماذا اختار إيكيوبيشن ؟ </a>
+                </li>
+              </ul>
             </div>
+            <div class="col-lg-9">
+              <div class="tab-content">
 
-            <div class="icon-box">
-             <!--  <div class="icon"><i class="bx bx-atom"></i></div> -->
-            
-            <h4 class="title"><a href="">اهدافنا</a></h4>
-            
-            <p class="description">
-              
-            <ul>
+                <div class="tab-pane active show" id="tab-7">
+                  <div class="row gy-4">
+                    <div class="col-lg-11 details order-2 order-lg-1">
+                      <h3> قصتنا </h3><hr/>
+                      <!-- <p class="fst-italic"> توفر Equipation الأليات اللازمة لتشغيل المحاجر وتعمل الشركة في  </p> -->
+                      <p>
+                        
+                        قصة تأسيس شركة إكوبيشن للاستثمار المحدودة؛ تعكس رحلة طموحة وملهمة في قطاع التعدين بالسودان، قبل عشرة أعوام، بدأت المسيرة برؤية متجددة لتقديم الدعم وتوفير الخدمات اللازمة للمشاريع الإنتاجية في ظل ضعف البنية التحتية ونقص الخدمات المتوفرة في هذا القطاع، فمنذ عام ٢٠١٤م، اتخذت الشركة مساراً ثابتاً نحو توفير المعدات الثقيلة وتنفيذ المشاريع التأسيسية والتشغيلية لدعم الأفراد والشركات في قطاع التعدين.
+لم توقف العوائق الجغرافية أو الصعوبات البيئية أو تحديات العمل الشاقة؛ إرادتهم من المساهمة في استخراج المعادن كمورد اقتصادي أساسي للبلاد، وفي بداية العام ٢٠٢١م، جاءت المرحلة التالية لتوطيد هذه الرؤية في شكلها المطوَّر بتأسيس شركة إكوبيشن للاستثمار المحدودة، لتفتح صفحةً جديدةً مطوَّرة بتوفير أحدث وأنسب المعدات وأفضل الكوادر وأجود الأنظمة، متسلحة بأرقى الأخلاقيات. 
+
+                      </p>
+                    </div>
+                    <!-- <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="assets/img/gallery/gallery-2.jpg" alt="" class="img-fluid" style="width: 100%; height: 90%;">
+                    </div> -->
+                  </div>
+                </div>
+
+                <div class="tab-pane" id="tab-8">
+                  <div class="row gy-4">
+                    <div class="col-lg-11 details order-2 order-lg-1">
+                      <h3> رسالتنا </h3> <hr/>
+                     <!--  <p class="fst-italic"> تعمل شركة Equiption في مشاريع إستحراج الذهب في مختلف مناطق السودان </p> -->
+                      <p>
+                        تؤمن شركة إكوبيشن بأن وفرة الموارد تستوجب ثورة في عمليات الإنتاج، لذلك نسعى جاهدين لتحقيقها من خلال الإبداع في الأفكار، والابتكار في الأنظمة، والقوة في الموارد البشرية والمادية.
+                      </p>
+                    </div>
+                    <!-- <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="assets/img/gallery/gallery-1.jpg" alt="" class="img-fluid" style="width: 100%; height: 90%;">
+                    </div> -->
+                  </div>
+                </div>
+
+                <div class="tab-pane" id="tab-9">
+                  <div class="row gy-4">
+                    <div class="col-lg-11 details order-2 order-lg-1">
+                      <h3> كلمة رئيس مجلس الإدارة </h3> <hr/>
+                     <!--  <p> تلعب الاليات الثقيلة دورا في تحضير الاراضى الزراعية وتسويتها . تساهم Equipation بفعالية في عدد من المشتريع الزراعية عن طريق توفير اليات ذات اداء عالي وفريق فني مختص </p> -->
+                      <p>
+                          في شركة إكوبيشن للاستثمار المحدودة نؤمن بأن الجودة ليست دائماً الخيار الأغلى، بل هي الاستثمار الأكثر قيمة وفاعلية على المدى الطويل، من خلال التزامنا بتقديم أفضل الخدمات والمنتجات ذات الجودة العالية، نسعى جاهدين لتحقيق رضا عملائنا وتحقيق التميز في جميع جوانب أعمالنا، كما نؤمن بأن النجاح لا يأتي بسهولة، ولكنه يتطلب الإبداع والتفاني في تجاوز التحديات وتقديم الحلول المبتكرة التي تلبي احتياجات عملائنا بشكل فعال وموثوق. 
+محمد إدريس علي 
+                      </p>
+                    </div>
+                    <!-- <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="assets/img/gallery/gallery-3.jpg" alt="" class="img-fluid" style="width: 100%; height: 90%;">
+                    </div> -->
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab-10">
+                  <div class="row gy-4">
+                    <div class="col-lg-11 details order-2 order-lg-1">
+                      <h3> رؤيتنا </h3> <hr/>
+                      <!-- <p> تعمل Equipation علي تنفيذ مشاريع الطرق والجسور ومصارف المياء مسلحة بأحدث الآليات <br> --> </p>
+                      <p> نطمح إلى تحقيق مكانة رائدة محليًا وعالميًا في مجال خدمات التعدين، ونتطلع إلى امتلاك حصة تبلغ 80% من سوق خدمات التعدين في السودان بحلول عام 2030م، من خلال تقديم خدمات متميزة وعالية الجودة. </p>
+                    </div>
+                   <!--  <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="assets/img/gallery/gallery-5.jpg" alt="" class="img-fluid" style="width: 100%; height: 110%;">
+                    </div> -->
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab-11">
+                  <div class="row gy-4">
+                    <div class="col-lg-11 details order-2 order-lg-1">
+                      <h3> اهدافنا </h3> <hr/>
+                      <!-- <p> تماشيا مع الطفرة العمرانية التي تشهدها البلاد , طورت Equipation من خدماتها في مجال الإنشاءات ووفرت مجموعة من الخدمات التي تخدم مشاريع الإنشاءات منها :  </p> -->
+                      <p>
+                                   <ul>
 
 
             
@@ -261,15 +329,21 @@
 
              
             </ul>
+                        </p>
+                    </div>
+                   <!--  <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="assets/img/gallery/gallery-4.jpg" alt="" class="img-fluid" style="width: 100%; height: 90%;">
+                    </div> -->
+                  </div>
+                </div>
 
-            <h4 class="title"><a href="">قيمنا</a></h4>
-            
-            <p class="description">
-              
-            <ul>
-
-
-            
+                <div class="tab-pane" id="tab-12">
+                  <div class="row gy-4">
+                    <div class="col-lg-11 details order-2 order-lg-1">
+                      <h3>قيمنا </h3> <hr/>
+                      <!-- <p> انطلاقا من مسؤوليتها تجاه البلاد والعباد نفذت Equipation عددا من المشاريع الوطنية مثل :  </p> -->
+                      <p>
+           <ul>
             <li>
            ملتزمون بتقديم خدمات عالية الجودة ونعمل بمصداقية وشفافية مع جميع العملاء والشركاء.
             </li>
@@ -287,59 +361,117 @@
             </li>
              
             </ul>
-            
-              </p>
+             </p>
+                    </div>
+                   <!--  <div class="col-lg-4 text-center order-1 order-lg-2">
+                      <img src="assets/img/gallery/gallery-6.jpg" alt="" class="img-fluid" style="width: 100%; height: 90%;">
+                    </div> -->
+                  </div>
+                </div>
 
+                <div class="tab-pane" id="tab-13">
+                  <div class="row gy-4">
+                    <div class="col-lg-11 details order-2 order-lg-1">
+                      <h3> كلمة عن فريق إيكوبيشن </h3> <hr/>
+                      <p>
+                        فريق شركة إكوبيشن للإستثمار المحدودة هو عماد نجاحنا ومحرك تقدمنا، يتكون فريقنا من مجموعة متنوعة ومتخصصة من المهنيين والموظفين الملتزمين بتحقيق أهداف الشركة وتقديم أعلى مستويات الجودة والخدمة لعملائنا، ويتمتع أعضاء فريقنا بالخبرة والكفاءة في مجالاتهم المختلفة، مما يمكنهم من تنفيذ المشاريع بكفاءة عالية وفق أعلى المعايير المهنية.
+                        كما يتسم عمل فريقنا بالتعاون والتنسيق المستمر، حيث يعمل الجميع بروح الفريق الواحد لتحقيق الأهداف المشتركة، ويتميز بالابتكار والإبداع في التعامل مع التحديات، ويسعى دائمًا لاستخدام أحدث التقنيات لتحسين خدماتنا وتحقيق النجاح المستدام.
+
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                 <div class="tab-pane" id="tab-14">
+                  <div class="row gy-4">
+                    <div class="col-lg-11 details order-2 order-lg-1">
+                      <h3> لماذا تختار إكوبيشن ؟ </h3> <hr/>
+                      <p>
+                        <ul>
+                        <li> ملتزمون بتقديم أعلى مستويات الجودة في جميع منتجاتنا وخدماتنا. </li>
+                        <li> نضع السلامة والصحة المهنية في صدارة أولوياتنا. </li>
+                        <li> نستثمر في البحث والتطوير لتحسين كفاءة خدماتنا وتحقيق أعلى مستويات الإنتاجية.</li>
+                        <li> نلتزم بتقديم خدماتنا ومنتجاتنا في الوقت المحدد وبمواعيد محددة مسبقًا . </li>
+                        <li> نقدم خدمة عملاء ممتازة ونحافظ على تواصل مستمر مع عملائنا. </li>
+                        <li> نؤمن بأهمية دورنا في المجتمع ونسعى لتحقيق التنمية المستدامة. </li>
+                        </ul>
+                       </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-
           </div>
+  
         </div>
+      </div><!-- End Pref Section -->
 
-      </div>
-    </div><!-- End About Section -->
 
     <!-- ======= Counts  احصائيات Section ======= -->
-  <section id="counts" class="counts">
+  <section id="counts" class="counts" style="background-color: gold;">
       <div class="container">
+
+        <div class="section-title">
+          <h2>  إحصائيات إيكوبيشن  </h2>
+          <p style="background-color: #000000aa; color: #fff;padding: 10px;font-weight: bold;"> تُعتبر الإحصائيات أحد أدوات قياس الأداء الرئيسية التي تعكس نجاح شركة إكوبيشن للإستثمار المحدودة في مجال خدمات التعدين، حيث تعكس هذه الأرقام الحجم الهائل للأنشطة والمشاريع التي تقوم بها الشركة، وتوضح جهودها المستمرة لتحقيق النجاح والتميز في مجال التعدين، من خلال إنجاز عدد كبير من المشاريع، وخدمة عدد متزايد من العملاء، وتشغيل آلاف الساعات على المعدات، وإنتاج كميات هائلة من المواد، تؤكد هذه الإحصائيات على قدرة الشركة على تقديم الخدمات بجودة عالية وبفاعلية ممتازة في السوق، وهذه أهم إحصائيات الشركة:  </p>
+        </div>
 
         <div class="row">
 
-          <div class="col-lg-3 col-md-6">
+          
+
+          <div class="col-lg-2 col-md-6">
             <div class="count-box">
                <!-- <i class="bx bx-bar-chart"></i> -->
               <span data-purecounter-start="0" data-purecounter-end="323" data-purecounter-duration="1" class="purecounter"></span>
-              <p>+عدد المشاريع</p>
+              <p>+ المشاريع </p>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+          <div class="col-lg-2 col-md-6 mt-5 mt-md-0">
             <div class="count-box">
               <!-- <i class="fas fa-user"></i> -->
               <span data-purecounter-start="0" data-purecounter-end="69" data-purecounter-duration="1" class="purecounter"></span>
-              <p>+عدد العملاء</p>
+              <p>+ العملاء </p>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+          <div class="col-lg-2 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
                <!-- <i class="fas fa-hour"></i> -->
               <span data-purecounter-start="0" data-purecounter-end="71" data-purecounter-duration="1" class="purecounter"></span>
-              <p>+عدد ساعات عمل المعدات </p>
+              <p>+ ساعات عمل المعدات </p>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+          <div class="col-lg-2 col-md-6 mt-5 mt-lg-0">
             <div class="count-box">
               <!-- <i class="fas fa-award"></i> -->
-              <span data-purecounter-start="0" data-purecounter-end="771" data-purecounter-duration="1" class="purecounter"></span>
-              <p>+كمية العمل بالإنتاج</p>
+              <span data-purecounter-start="0" data-purecounter-end="771979" data-purecounter-duration="1" class="purecounter"></span>
+              <p>+ كمية العمل بالإنتاج</p>
+            </div>
+          </div>
+
+           <div class="col-lg-2 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <!-- <i class="fas fa-award"></i> -->
+              <span data-purecounter-start="0" data-purecounter-end="40" data-purecounter-duration="1" class="purecounter"></span>
+              <p>+ الآليات المشغله</p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <!-- <i class="fas fa-award"></i> -->
+              <span data-purecounter-start="0" data-purecounter-end="10000" data-purecounter-duration="1" class="purecounter"></span>
+              <p>+ المختصين في القطاع</p>
             </div>
           </div>
 
         </div>
 
       </div>
-    </section>End Counts Section
+    </section><!-- End Counts Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="departments" class="departments">

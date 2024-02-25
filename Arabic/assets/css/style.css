@@ -956,7 +956,6 @@ section {
   top: -25px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 20px;
   background: #1977cc;
   color: #fff;
   border-radius: 50px;
@@ -968,7 +967,7 @@ section {
 }
 
 .counts .count-box span {
-  font-size: 36px;
+  font-size: 32px;
   display: block;
   font-weight: 600;
   color: #fff;
@@ -978,8 +977,7 @@ section {
   padding: 0;
   margin: 0;
   font-family: "Raleway", sans-serif;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 15px;
   color: #fff;
 }
 
@@ -1248,6 +1246,87 @@ section {
   .services .nav-link.active {
     color: #eee;
     background-color: orange;
+  }
+}
+
+/*--------------------------------------------------------------
+# Pref
+--------------------------------------------------------------*/
+
+.pref {
+  background-color: #fff;
+  margin-top: 50px;
+  color: #123;
+}
+
+.pref {
+  overflow: hidden;
+}
+
+.pref .nav-tabs {
+  border: 0;
+  background-color: #fff;
+  width: 100%;
+  margin: 0px;padding: 0px;
+}
+
+.pref .nav-link {
+  color: gray;
+  font-weight: bold;
+  text-align: center;
+   margin: 0px;padding: 0px;
+}
+
+.pref .nav-link:hover {
+  color: gold;
+  background-color: gray;
+}
+
+.pref .nav-link.active {
+  color: #fff;
+  background-color: gray;
+}
+
+.pref .tab-pane.active {
+  animation-delay: 1s;
+  /*animation: fadeIn 3s ease-out;*/
+  animation : up-down 3s ;
+}
+
+.pref .details h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #2c4964;
+  text-align: center;
+}
+
+.pref .details p {
+  text-align: center;
+  color: #123;
+}
+
+.pref .details p:last-child {
+  margin-bottom: 5;
+}
+
+@media (max-width: 992px) {
+  .pref .nav-link {
+    background-color: #fff;
+    padding: 0px;margin: 0px;
+  }
+
+  .pref .nav-link.active {
+    color: gold;
+    background-color: #fff;
+    border-bottom: solid 1px black;
+  }
+
+  .pref p {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
   }
 }
 
