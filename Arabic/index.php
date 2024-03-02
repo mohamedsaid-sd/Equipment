@@ -485,16 +485,22 @@
         <div class="row" style="margin: 5px;">
 
         <div class="col-lg-3">
+        <a href="details.php?id=تأسيس"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fab fa-think-peaks"></i> <b>   خدمات تأسيس المواقع      </b> </div></a>
+        </div>
+
+        <div class="col-lg-3">
        <a href="details.php?id=مقاولة"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-clipboard"></i> <b> خدمات المقاولة </b> </div></a>
+        </div>
+
+        <div class="col-lg-3">
+        <a href="details.php?id=تشغيل"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fab fa-teamspeak"></i> <b> خدمات التشغيل </b> </div></a>
         </div>
 
         <div class="col-lg-3">
         <a href="details.php?id=تاجير"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fas fa-tractor"></i> <b> خدمات التأجير </b> </div>
         </div></a>
         
-        <div class="col-lg-3">
-        <a href="details.php?id=تشغيل"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fab fa-teamspeak"></i> <b> خدمات التشغيل </b> </div></a>
-        </div>
+       
         
         <div class="col-lg-3">
         <a href="details.php?id=توظيف"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fab fa-wpforms"></i> <b> خدمات التوظيف </b> </div></a>
@@ -514,9 +520,7 @@
 
 
 
-        <div class="col-lg-3">
-        <a href="details.php?id=تأسيس"><div class="icon" style="margin: 5px;background-color: #fff;padding: 15px;border-radius:1px;color: gray;text-align: center;border-bottom : solid 4px #ddd;font-weight: bold;font-size: 20px;"> <i class="fab fa-think-peaks"></i> <b>  تأسيس مشاريع التعدين      </b> </div></a>
-        </div>
+       
         </div>
 
   
